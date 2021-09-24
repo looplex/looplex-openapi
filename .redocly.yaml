@@ -6,7 +6,6 @@ lint:
     - recommended
   rules:
     no-unused-components: warning
-    resolve-ref: warning
 referenceDocs:
   htmlTemplate: ./docs/index.html
   theme:
