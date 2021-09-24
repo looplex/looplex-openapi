@@ -2,7 +2,7 @@
   "name": "looplex-openapi",
   "version": "1.0.0",
   "dependencies": {
-    "@redocly/openapi-cli": "*",
+    "@redocly/openapi-cli": "^1.0.0-beta.61",
     "ncp": "^2.0.0",
     "redoc-cli": "^0.12.3",
     "rimraf": "^3.0.2"
@@ -12,5 +12,13 @@
     "start": "openapi preview-docs",
     "build": "rimraf public && openapi bundle -o public && redoc-cli bundle public/openapi.yaml -t docs/index.html --output public/index.html && ncp docs/assets public/assets && ncp docs/favicon.ico public/favicon.ico",
     "test": "openapi validate"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
