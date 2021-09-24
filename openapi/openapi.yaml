@@ -64,9 +64,9 @@ servers:
   - url: 'https://example.com/api/v1'
 paths:
   '/users/{username}':
-    $ref: 'paths\users@{username}.yaml'
+    $ref: 'paths/users@{username}.yaml'
   /echo:
-    $ref: paths\echo.yaml
+    $ref: paths/echo.yaml
 components:
   securitySchemes:
     main_auth:
