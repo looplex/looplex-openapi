@@ -34,7 +34,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\User.yaml
+            $ref: ../components/schemas/User.yaml
           example:
             username: user1
             email: user@example.com
@@ -69,9 +69,9 @@ put:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\User.yaml
+          $ref: ../components/schemas/User.yaml
       application/xml:
         schema:
-          $ref: ..\components\schemas\User.yaml
+          $ref: ../components/schemas/User.yaml
     description: Updated user object
     required: true
