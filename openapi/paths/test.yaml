@@ -1,0 +1,35 @@
+get:
+  tags:
+    - User operations
+  summary: Test operation
+  description: |
+    Test
+  operationId: test
+  security:
+    - auth_token: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Login.yaml
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LoginResponseDTO.yaml
+    '400':
+      description: Bad Request
+    '404':
+      description: Not Found
+      content:
+        Example json:
+          examples:
+            example-0:
+              value:
+                invalidField: address
+        Example string:
+          examples:
+            example-1:
+              value: The first name was invalid

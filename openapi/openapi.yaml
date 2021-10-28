@@ -59,6 +59,10 @@ tags:
     description: Example echo operations
   - name: User
     description: Operations about user
+  - name: Document Assembler
+    description: Document assembler operations
+  - name: User Operations
+    description: User operations, such as login and profile consulting
 servers:
   - url: 'http://example.com/api/v1'
   - url: 'https://example.com/api/v1'
@@ -67,6 +71,15 @@ paths:
     $ref: 'paths/users@{username}.yaml'
   /echo:
     $ref: paths/echo.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/export':
+    get:
+      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@export-get.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/import':
+    post:
+      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@import-post.yaml
+  /public/user/login:
+    post:
+      $ref: paths/user.yaml
 components:
   securitySchemes:
     main_auth:
@@ -81,6 +94,10 @@ components:
       type: apiKey
       in: header
       name: api_key
+    auth_token:
+      type: apiKey
+      in: header
+      name: auth_token
     basic_auth:
       type: http
       scheme: basic

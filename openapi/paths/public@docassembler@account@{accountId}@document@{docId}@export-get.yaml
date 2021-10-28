@@ -1,0 +1,32 @@
+tags:
+  - Document Assembler
+summary: Export a document in the file format chosen.
+description: Export a document in the file format chosen.
+operationId: exportFileUsingGET
+parameters:
+  - $ref: ../components/parameters/AccountId.yaml
+  - $ref: ../components/parameters/DocId.yaml
+  - name: lang
+    in: query
+    description: Language
+    schema:
+      type: string
+      default: pt_BR
+  - name: fileFormat
+    in: query
+    description: The output file extension
+    schema:
+      type: string
+  - name: binary
+    in: query
+    description: <binary or url download>
+    schema:
+      type: boolean
+  - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DocumentExportDTO.yaml
