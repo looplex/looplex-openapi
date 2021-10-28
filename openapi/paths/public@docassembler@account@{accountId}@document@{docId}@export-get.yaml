@@ -1,6 +1,6 @@
 tags:
   - Document Assembler
-summary: Export a document in the file format chosen.
+summary: Export a document.
 description: Export a document in the file format chosen.
 operationId: exportFileUsingGET
 parameters:

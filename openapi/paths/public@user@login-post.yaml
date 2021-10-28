@@ -3,7 +3,7 @@ tags:
 summary: Login operation
 description: |
   Basic login into our platform.
-operationId: login
+operationId: loginUsingPOST
 security:
   - auth_token: []
 requestBody:

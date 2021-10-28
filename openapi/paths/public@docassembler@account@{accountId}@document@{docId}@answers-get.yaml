@@ -1,0 +1,16 @@
+tags:
+  - Document Assembler
+summary: Export a document answers.
+description: Export a document answers in the file format chosen.
+operationId: exportAnswersUsingGET
+parameters:
+  - $ref: ../components/parameters/AccountId.yaml
+  - $ref: ../components/parameters/DocId.yaml
+  - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DocumentExportDTO.yaml

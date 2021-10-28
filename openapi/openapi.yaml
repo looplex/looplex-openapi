@@ -71,6 +71,9 @@ paths:
     $ref: 'paths/users@{username}.yaml'
   /echo:
     $ref: paths/echo.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/answers':
+    get:
+      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@answers-get.yaml
   '/public/docassembler/account/{accountId}/document/{docId}/export':
     get:
       $ref: paths/public@docassembler@account@{accountId}@document@{docId}@export-get.yaml
