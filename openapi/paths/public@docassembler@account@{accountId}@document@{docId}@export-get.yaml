@@ -12,11 +12,15 @@ parameters:
     schema:
       type: string
       default: pt_BR
-  - name: fileFormat
+  - name: output
     in: query
     description: The output file extension
     schema:
       type: string
+      enum:
+        - PDF
+        - DOCX
+      default: PDF
   - name: binary
     in: query
     description: <binary or url download>
