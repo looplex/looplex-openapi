@@ -80,6 +80,9 @@ paths:
   '/public/docassembler/account/{accountId}/document/{docId}/import':
     post:
       $ref: paths/public@docassembler@account@{accountId}@document@{docId}@import-post.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/json':
+    post:
+      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@json-post.yaml
   /public/user/login:
     post:
       $ref: paths/public@user@login-post.yaml
