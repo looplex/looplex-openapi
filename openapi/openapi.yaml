@@ -83,6 +83,9 @@ paths:
   '/public/docassembler/account/{accountId}/document/{docId}/json':
     post:
       $ref: paths/public@docassembler@account@{accountId}@document@{docId}@json-post.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/revision-all-answers':
+    get:
+      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@revision-all-answers-get.yaml
   /public/user/login:
     post:
       $ref: paths/public@user@login-post.yaml
