@@ -1,0 +1,37 @@
+tags:
+  - Document Assembler
+summary: Export a document from JSON-answers.
+description: Export a document from JSON-answers and the template in the file format chosen, and save the document at last.
+operationId: importAllOperandsInPersistentDocumentUsingPOST
+parameters:
+  - $ref: ../components/parameters/AccountId.yaml
+  - $ref: ../components/parameters/Template.yaml
+  - name: lang
+    in: query
+    description: The document language
+    schema:
+      enum:
+        - PT_BR
+      type: string
+  - name: output
+    in: query
+    description: The output file extension
+    schema:
+      enum:
+        - DOCX
+        - PDF
+      type: string
+  - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: string
+      example: string
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DocumentExportDTO.yaml

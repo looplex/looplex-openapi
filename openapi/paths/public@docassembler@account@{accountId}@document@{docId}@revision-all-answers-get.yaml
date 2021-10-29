@@ -13,4 +13,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/DocumentExportDTO'
+          $ref: ../components/schemas/DocumentExportDTO.yaml

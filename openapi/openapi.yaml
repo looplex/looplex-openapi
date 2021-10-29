@@ -68,27 +68,30 @@ servers:
   - url: 'https://example.com/api/v1'
 paths:
   '/users/{username}':
-    $ref: 'paths/users@{username}.yaml'
+    $ref: ./paths/users@{username}.yaml
   /echo:
-    $ref: paths/echo.yaml
+    $ref: ./paths/echo.yaml
   '/public/docassembler/account/{accountId}/document/{docId}/answers':
     get:
-      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@answers-get.yaml
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@answers-get.yaml
   '/public/docassembler/account/{accountId}/document/{docId}/export':
     get:
-      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@export-get.yaml
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@export-get.yaml
   '/public/docassembler/account/{accountId}/document/{docId}/import':
     post:
-      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@import-post.yaml
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@import-post.yaml
   '/public/docassembler/account/{accountId}/document/{docId}/json':
     post:
-      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@json-post.yaml
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@json-post.yaml
   '/public/docassembler/account/{accountId}/document/{docId}/revision-all-answers':
     get:
-      $ref: paths/public@docassembler@account@{accountId}@document@{docId}@revision-all-answers-get.yaml
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@revision-all-answers-get.yaml
+  '/public/docassembler/account/{accountId}/template/{template}/persistent':
+    post:
+      $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@persistent-post.yaml
   /public/user/login:
     post:
-      $ref: paths/public@user@login-post.yaml
+      $ref: ./paths/public@user@login-post.yaml
 components:
   securitySchemes:
     main_auth:
