@@ -89,6 +89,9 @@ paths:
   '/public/docassembler/account/{accountId}/template/{template}/persistent':
     post:
       $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@persistent-post.yaml
+  '/public/docassembler/account/{accountId}/template/{template}/transient':
+    post:
+      $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@transient-post.yaml
   /public/user/login:
     post:
       $ref: ./paths/public@user@login-post.yaml

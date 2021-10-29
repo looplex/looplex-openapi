@@ -1,8 +1,8 @@
 tags:
   - Document Assembler
-summary: Export a document from JSON-answers and save the document.
-description: Export a document from JSON-answers and the template in the file format chosen, and save the document at last.
-operationId: importAllOperandsInPersistentDocumentUsingPOST
+summary: Export a document from JSON-answers and delete the document.
+description: Export a document from JSON-answers and the template in the file format chosen, and delete the document at last.
+operationId: importAllOperandsInTransientDocumentUsingPOST
 parameters:
   - $ref: ../components/parameters/AccountId.yaml
   - $ref: ../components/parameters/Template.yaml
@@ -32,6 +32,12 @@ responses:
   '200':
     description: OK
     content:
+      application/octet-stream:
+        schema:
+          $ref: ../components/schemas/DocumentExportDTO.yaml
+        examples:
+          default:
+            value: 
       application/json:
         schema:
           $ref: ../components/schemas/DocumentExportDTO.yaml
