@@ -115,6 +115,12 @@ paths:
       $ref: ./paths/public@account@{accountId}@document@{docId}-get.yaml
     delete:
       $ref: ./paths/public@account@{accountId}@document@{docId}-delete.yaml
+  '/public/account/{accountId}/document/{docId}/rem':
+    delete:
+      $ref: ./paths/public@account@{accountId}@document@{docId}@rem-delete.yaml
+  '/public/account/{accountId}/document/{docId}/s3':
+    delete:
+      $ref: ./paths/public@account@{accountId}@document@{docId}@s3-delete.yaml
   '/public/account/{accountId}/template':
     get:
       $ref: ./paths/public@account@{accountId}@template-get.yaml
