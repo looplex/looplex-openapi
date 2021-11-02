@@ -1,0 +1,19 @@
+tags:
+  - Template
+summary: Find a template by account and template ids
+description: Find a template associated to an account by their ids
+operationId: findTemplateByAccountAndIdUsingGET
+parameters:
+  - $ref: ../components/parameters/AccountId.yaml
+  - $ref: ../components/parameters/TemplateId.yaml
+  - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      '*/*':
+        schema:
+          $ref: ../components/schemas/Template.yaml
+        examples:
+          default:
+            value: 
