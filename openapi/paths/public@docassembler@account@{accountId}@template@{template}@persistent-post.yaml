@@ -6,21 +6,8 @@ operationId: importAllOperandsInPersistentDocumentUsingPOST
 parameters:
   - $ref: ../components/parameters/AccountId.yaml
   - $ref: ../components/parameters/Template.yaml
-  - name: lang
-    in: query
-    description: The document language
-    schema:
-      enum:
-        - PT_BR
-      type: string
-  - name: output
-    in: query
-    description: The output file extension
-    schema:
-      enum:
-        - DOCX
-        - PDF
-      type: string
+  - $ref: ../components/parameters/Lang.yaml
+  - $ref: ../components/parameters/Output.yaml
   - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:

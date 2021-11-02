@@ -6,26 +6,9 @@ operationId: exportFileUsingGET
 parameters:
   - $ref: ../components/parameters/AccountId.yaml
   - $ref: ../components/parameters/DocId.yaml
-  - name: lang
-    in: query
-    description: Language
-    schema:
-      type: string
-      default: pt_BR
-  - name: output
-    in: query
-    description: The output file extension
-    schema:
-      type: string
-      enum:
-        - PDF
-        - DOCX
-      default: PDF
-  - name: binary
-    in: query
-    description: <binary or url download>
-    schema:
-      type: boolean
+  - $ref: ../components/parameters/Lang.yaml
+  - $ref: ../components/parameters/Output.yaml
+  - $ref: ../components/parameters/Binary.yaml
   - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   '200':

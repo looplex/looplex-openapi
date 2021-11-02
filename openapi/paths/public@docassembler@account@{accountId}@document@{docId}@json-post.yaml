@@ -6,14 +6,7 @@ operationId: importAnswersJsonUsingPOST
 parameters:
   - $ref: ../components/parameters/AccountId.yaml
   - $ref: ../components/parameters/DocId.yaml
-  - name: force
-    in: query
-    description: Force operands import
-    schema:
-      enum:
-        - false
-        - true
-      type: boolean
+  - $ref: ../components/parameters/Force.yaml
   - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
