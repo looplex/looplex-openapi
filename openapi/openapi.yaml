@@ -99,6 +99,8 @@ paths:
   '/public/account/{accountId}/document':
     post:
       $ref: ./paths/public@account@{accountId}@document-post.yaml
+    patch:
+      $ref: ./paths/public@account@{accountId}@document-patch.yaml
   '/public/account/{accountId}/template':
     get:
       $ref: ./paths/public@account@{accountId}@template-get.yaml

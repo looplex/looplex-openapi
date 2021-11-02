@@ -1,0 +1,16 @@
+tags:
+  - Documents
+summary: Partial update document
+description: Partially update a document
+operationId: partialUpdateDocumentUsingPATCH
+parameters:
+  - $ref: ../components/parameters/AccountId.yaml
+  - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../components/schemas/Document.yaml
+responses:
+  '200':
+    description: OK
