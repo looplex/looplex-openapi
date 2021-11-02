@@ -61,6 +61,8 @@ tags:
     description: Operations about user
   - name: Document Assembler
     description: Document assembler operations
+  - name: Documents
+    description: Documents operations
   - name: Template
     description: Template operations
   - name: User Operations
@@ -94,6 +96,9 @@ paths:
   '/public/docassembler/account/{accountId}/template/{template}/transient':
     post:
       $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@transient-post.yaml
+  '/public/account/{accountId}/document':
+    post:
+      $ref: ./paths/public@account@{accountId}@document-post.yaml
   '/public/account/{accountId}/template':
     get:
       $ref: ./paths/public@account@{accountId}@template-get.yaml
