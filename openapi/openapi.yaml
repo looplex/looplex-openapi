@@ -110,6 +110,11 @@ paths:
   '/public/account/{accountId}/document/template/{templateIdentifier}':
     get:
       $ref: ./paths/public@account@{accountId}@document@template@{templateIdentifier}-get.yaml
+  '/public/account/{accountId}/document/{docId}':
+    get:
+      $ref: ./paths/public@account@{accountId}@document@{docId}-get.yaml
+    delete:
+      $ref: ./paths/public@account@{accountId}@document@{docId}-delete.yaml
   '/public/account/{accountId}/template':
     get:
       $ref: ./paths/public@account@{accountId}@template-get.yaml
