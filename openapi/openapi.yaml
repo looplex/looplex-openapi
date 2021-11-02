@@ -107,6 +107,9 @@ paths:
   '/public/account/{accountId}/document/unhide':
     post:
       $ref: ./paths/public@account@{accountId}@document@unhide-post.yaml
+  '/public/account/{accountId}/document/template/{templateIdentifier}':
+    get:
+      $ref: ./paths/public@account@{accountId}@document@template@{templateIdentifier}-get.yaml
   '/public/account/{accountId}/template':
     get:
       $ref: ./paths/public@account@{accountId}@template-get.yaml
