@@ -18,7 +18,7 @@ properties:
     description: Document's parent id
     format: int64
   parentVersion:
-    $ref: '#/components/schemas/Document'
+    type: object
   previousDocumentStatus:
     enum:
       - ALL
