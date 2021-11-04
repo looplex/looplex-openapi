@@ -59,14 +59,77 @@ tags:
     description: Example echo operations
   - name: User
     description: Operations about user
+  - name: Document Assembler
+    description: Document assembler operations
+  - name: Documents
+    description: Documents operations
+  - name: Template
+    description: Template operations
+  - name: User Operations
+    description: User operations, such as login and profile consulting
 servers:
   - url: 'http://example.com/api/v1'
   - url: 'https://example.com/api/v1'
 paths:
   '/users/{username}':
-    $ref: 'paths/users@{username}.yaml'
+    $ref: ./paths/users@{username}.yaml
   /echo:
-    $ref: paths/echo.yaml
+    $ref: ./paths/echo.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/answers':
+    get:
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@answers-get.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/export':
+    get:
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@export-get.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/import':
+    post:
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@import-post.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/json':
+    post:
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@json-post.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/revision-all-answers':
+    get:
+      $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@revision-all-answers-get.yaml
+  '/public/docassembler/account/{accountId}/template/{template}/persistent':
+    post:
+      $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@persistent-post.yaml
+  '/public/docassembler/account/{accountId}/template/{template}/transient':
+    post:
+      $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@transient-post.yaml
+  '/public/account/{accountId}/document':
+    post:
+      $ref: ./paths/public@account@{accountId}@document-post.yaml
+    patch:
+      $ref: ./paths/public@account@{accountId}@document-patch.yaml
+  '/public/account/{accountId}/document/hide':
+    post:
+      $ref: ./paths/public@account@{accountId}@document@hide-post.yaml
+  '/public/account/{accountId}/document/unhide':
+    post:
+      $ref: ./paths/public@account@{accountId}@document@unhide-post.yaml
+  '/public/account/{accountId}/document/template/{templateIdentifier}':
+    get:
+      $ref: ./paths/public@account@{accountId}@document@template@{templateIdentifier}-get.yaml
+  '/public/account/{accountId}/document/{docId}':
+    get:
+      $ref: ./paths/public@account@{accountId}@document@{docId}-get.yaml
+    delete:
+      $ref: ./paths/public@account@{accountId}@document@{docId}-delete.yaml
+  '/public/account/{accountId}/document/{docId}/rem':
+    delete:
+      $ref: ./paths/public@account@{accountId}@document@{docId}@rem-delete.yaml
+  '/public/account/{accountId}/document/{docId}/s3':
+    delete:
+      $ref: ./paths/public@account@{accountId}@document@{docId}@s3-delete.yaml
+  '/public/account/{accountId}/template':
+    get:
+      $ref: ./paths/public@account@{accountId}@template-get.yaml
+  '/public/account/{accountId}/template/{templateId}':
+    get:
+      $ref: ./paths/public@account@{accountId}@template@{templateId}-get.yaml
+  /public/user/login:
+    post:
+      $ref: ./paths/public@user@login-post.yaml
 components:
   securitySchemes:
     main_auth:
@@ -81,6 +144,10 @@ components:
       type: apiKey
       in: header
       name: api_key
+    auth_token:
+      type: apiKey
+      in: header
+      name: auth_token
     basic_auth:
       type: http
       scheme: basic

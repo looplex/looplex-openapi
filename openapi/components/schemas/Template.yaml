@@ -1,0 +1,44 @@
+title: Template
+type: object
+properties:
+  author:
+    type: object
+    additionalProperties:
+      type: string
+    description: The template's author
+  creationDate:
+    type: string
+    description: The date the template was created
+  description:
+    type: string
+    description: The template description
+    example: <description>
+  id:
+    type: integer
+    description: The numeric id associated to the template
+    format: int64
+    example: '1.0'
+  identifier:
+    type: string
+    description: The string identifier associated to the template
+    example: Example_Lawsuit_Template
+  logo:
+    type: string
+  name:
+    type: string
+    description: The template name
+    example: Example Lawsuit Template
+  price:
+    type: number
+    description: The price our system attributed to the template
+    format: double
+  tags:
+    type: array
+    items:
+      type: string
+  version:
+    type: integer
+    description: The template version
+    format: int32
+    example: 1
+description: Template data transfer object

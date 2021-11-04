@@ -1,0 +1,35 @@
+title: Document
+type: object
+properties:
+  documentStatusEnum:
+    enum:
+      - ALL
+    type: string
+    description: Document's current status
+  id:
+    type: integer
+    description: Document's id
+    format: int64
+  name:
+    type: string
+    description: Document's name
+  parentId:
+    type: integer
+    description: Document's parent id
+    format: int64
+  parentVersion:
+    type: object
+  previousDocumentStatus:
+    enum:
+      - ALL
+    type: string
+    description: Document's previous status
+  shelfId:
+    type: integer
+    description: Document's shelf id
+    format: int64
+  version:
+    type: integer
+    description: Document's version
+    format: int32
+description: Document's info

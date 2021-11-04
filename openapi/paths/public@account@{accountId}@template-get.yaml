@@ -1,0 +1,18 @@
+tags:
+  - Template
+summary: Find and return all templates
+description: Find and return all the templates an account has access to, by account id
+operationId: findTemplatesByAccountUsingGET
+parameters:
+  - $ref: ../components/parameters/AccountId.yaml
+  - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      '*/*':
+        schema:
+          $ref: ../components/schemas/Template.yaml
+        examples:
+          default:
+            value: 

@@ -1,0 +1,25 @@
+title: DocumentExportDTO
+type: object
+properties:
+  docPath:
+    type: string
+    description: The URL to download the document
+    example: https://s3.amazonaws.com/looplex-clients/<user-email>/-2140158082/<generated-document-name>.<doc-extension>
+  docSize:
+    type: integer
+    description: The document size
+    format: int64
+    example: 0
+  documentId:
+    type: string
+    description: The ID of the created document
+    example: 24
+  documentName:
+    type: string
+    description: The document name
+    example: Document name
+  userId:
+    type: string
+    description: The ID of the user that created the document
+    example: 65
+description: Description of the exported document
