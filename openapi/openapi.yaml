@@ -75,10 +75,6 @@ servers:
     description: Default server
   - url: 'https://example.com/api/v1'
 paths:
-  '/users/{username}':
-    $ref: ./paths/users@{username}.yaml
-  /echo:
-    $ref: ./paths/echo.yaml
   '/public/docassembler/account/{accountId}/document/{docId}/answers':
     get:
       $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@answers-get.yaml
