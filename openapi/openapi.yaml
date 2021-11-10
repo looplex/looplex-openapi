@@ -55,20 +55,24 @@ externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: 'https://github.com/Rebilly/generator-openapi-repo'
 tags:
-  - name: Echo
-    description: Example echo operations
-  - name: User
-    description: Operations about user
   - name: Document Assembler
     description: Document assembler operations
   - name: Documents
     description: Documents operations
   - name: Template
     description: Template operations
-  - name: User Operations
+  - name: User
     description: User operations, such as login and profile consulting
+x-tagGroups:
+  - name: Endpoints
+    tags:
+      - Document Assembler
+      - Documents
+      - Template
+      - User
 servers:
   - url: 'http://example.com/api/v1'
+    description: Default server
   - url: 'https://example.com/api/v1'
 paths:
   '/users/{username}':
