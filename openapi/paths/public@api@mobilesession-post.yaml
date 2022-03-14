@@ -1,0 +1,25 @@
+tags: 
+  - Login (Lawsoft)
+summary: Login mobile
+description: Login do Mobile
+operationId: api-mobilesession
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../components/parameters/lawsoft/LoginParametro.yaml
+responses:
+  "200":
+    description: Resultado do login
+    content:
+      application/json:
+        schema: 
+          $ref: ../components/schemas/lawsoft/ResultadoDeLogin.yaml
+  "401":
+    description: Em caso de erro de timeout ou sessão expirada
+  "500":
+    description: Em caso de erro diferente de timeout ou sessão expirada
+    content:
+      application/json:
+        schema: 
+          $ref: ../components/schemas/lawsoft/InternalServerErrorResponse.yaml

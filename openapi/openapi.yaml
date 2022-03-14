@@ -2,17 +2,17 @@ openapi: 3.0.2
 info:
   version: 1.0.0
   title: openapi.looplex.com.br
-  termsOfService: 'https://docs.looplex.com.br/legal/termos-de-uso'
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
   contact:
     name: Developers Looplex
     email: developer@looplex.com.br
-    url: 'https://www.looplex.com.br'
+    url: "https://www.looplex.com.br"
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
   x-logo:
-    url: '/assets/images/logo.png'
-    href: '/'
+    url: "/assets/images/logo.png"
+    href: "/"
   description: >
     This is an **example** API to demonstrate features of OpenAPI specification
 
@@ -53,7 +53,7 @@ info:
     guesswork in calling the service.
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
-  url: 'https://github.com/Rebilly/generator-openapi-repo'
+  url: "https://github.com/Rebilly/generator-openapi-repo"
 tags:
   - name: Document Assembler
     description: Document assembler operations
@@ -63,6 +63,8 @@ tags:
     description: Template operations
   - name: User
     description: User operations, such as login and profile consulting
+  - name: Sessão (Lawsoft)
+    description: Endpoints de sessão
 x-tagGroups:
   - name: Endpoints
     tags:
@@ -70,76 +72,82 @@ x-tagGroups:
       - Documents
       - Template
       - User
+      - Login (Lawsoft)
 servers:
-  - url: 'http://example.com/api/v1'
+  - url: "http://example.com/api/v1"
     description: Default server
-  - url: 'https://example.com/api/v1'
+  - url: "https://example.com/api/v1"
+  - url: "https://www.sys.lawoffice.com.br/"
 paths:
-  '/public/docassembler/account/{accountId}/document/{docId}/answers':
+  "/public/docassembler/account/{accountId}/document/{docId}/answers":
     get:
       $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@answers-get.yaml
-  '/public/docassembler/account/{accountId}/document/{docId}/export':
+  "/public/docassembler/account/{accountId}/document/{docId}/export":
     get:
       $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@export-get.yaml
-  '/public/docassembler/account/{accountId}/document/{docId}/import':
+  "/public/docassembler/account/{accountId}/document/{docId}/import":
     post:
       $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@import-post.yaml
-  '/public/docassembler/account/{accountId}/document/{docId}/json':
+  "/public/docassembler/account/{accountId}/document/{docId}/json":
     post:
       $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@json-post.yaml
-  '/public/docassembler/account/{accountId}/document/{docId}/revision-all-answers':
+  "/public/docassembler/account/{accountId}/document/{docId}/revision-all-answers":
     get:
       $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@revision-all-answers-get.yaml
-  '/public/docassembler/account/{accountId}/template/{template}/persistent':
+  "/public/docassembler/account/{accountId}/template/{template}/persistent":
     post:
       $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@persistent-post.yaml
-  '/public/docassembler/account/{accountId}/template/{template}/transient':
+  "/public/docassembler/account/{accountId}/template/{template}/transient":
     post:
       $ref: ./paths/public@docassembler@account@{accountId}@template@{template}@transient-post.yaml
-  '/public/account/{accountId}/document':
+  "/public/account/{accountId}/document":
     post:
       $ref: ./paths/public@account@{accountId}@document-post.yaml
     patch:
       $ref: ./paths/public@account@{accountId}@document-patch.yaml
-  '/public/account/{accountId}/document/hide':
+  "/public/account/{accountId}/document/hide":
     post:
       $ref: ./paths/public@account@{accountId}@document@hide-post.yaml
-  '/public/account/{accountId}/document/unhide':
+  "/public/account/{accountId}/document/unhide":
     post:
       $ref: ./paths/public@account@{accountId}@document@unhide-post.yaml
-  '/public/account/{accountId}/document/template/{templateIdentifier}':
+  "/public/account/{accountId}/document/template/{templateIdentifier}":
     get:
       $ref: ./paths/public@account@{accountId}@document@template@{templateIdentifier}-get.yaml
-  '/public/account/{accountId}/document/{docId}':
+  "/public/account/{accountId}/document/{docId}":
     get:
       $ref: ./paths/public@account@{accountId}@document@{docId}-get.yaml
     delete:
       $ref: ./paths/public@account@{accountId}@document@{docId}-delete.yaml
-  '/public/account/{accountId}/document/{docId}/rem':
+  "/public/account/{accountId}/document/{docId}/rem":
     delete:
       $ref: ./paths/public@account@{accountId}@document@{docId}@rem-delete.yaml
-  '/public/account/{accountId}/document/{docId}/s3':
+  "/public/account/{accountId}/document/{docId}/s3":
     delete:
       $ref: ./paths/public@account@{accountId}@document@{docId}@s3-delete.yaml
-  '/public/account/{accountId}/template':
+  "/public/account/{accountId}/template":
     get:
       $ref: ./paths/public@account@{accountId}@template-get.yaml
-  '/public/account/{accountId}/template/{templateId}':
+  "/public/account/{accountId}/template/{templateId}":
     get:
       $ref: ./paths/public@account@{accountId}@template@{templateId}-get.yaml
   /public/user/login:
     post:
       $ref: ./paths/public@user@login-post.yaml
+  "/public/api/mobilesession-post.yaml":
+    post:
+      $ref: ./paths/public@api@mobilesession-post.yaml
+
 components:
   securitySchemes:
     main_auth:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: 'http://example.com/api/oauth/dialog'
+          authorizationUrl: "http://example.com/api/oauth/dialog"
           scopes:
-            'read:users': read users info
-            'write:users': modify or remove users
+            "read:users": read users info
+            "write:users": modify or remove users
     api_key:
       type: apiKey
       in: header

@@ -1,0 +1,11 @@
+type: object
+properties:
+  user:
+    type: string
+    description: "Login"
+  pwd: 
+    type: string
+    description: "Senha"
+  domain:
+    type: string
+    description: "Escritório"
