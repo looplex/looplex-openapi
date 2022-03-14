@@ -140,6 +140,9 @@ paths:
   "/public/api/session-post.yaml":
     post:
       $ref: ./paths/public@api@session-post.yaml
+  "/public/api/logoff-delete":
+    delete:
+      $ref: ./paths/public@api@logoff-delete.yaml
 
 components:
   securitySchemes:

@@ -1,0 +1,16 @@
+tags:
+  - Login (Lawsoft)
+summary: Logoff
+description: Efetua o logoff
+operationId: api-logoff
+responses:
+  "204":
+    description: Logoff efetuado corretamente.
+  "401":
+    description: Em caso de erro de timeout ou sessão expirada.
+  "500":
+    description: Em caso de erro diferente de timeout ou sessão expirada.
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/lawsoft/InternalServerErrorResponse.yaml

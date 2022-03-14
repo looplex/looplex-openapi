@@ -6,33 +6,6 @@ info:
 servers:
   - url: https://lawsoft-apim.azure-api.net/lawsoft-api-internal
 paths:
-  /api/logoff:
-    delete:
-      tags:
-        - Sessão
-      summary: /api/logoff
-      description: Faz o logoff.
-      operationId: logoff
-      responses:
-        "204":
-          description: Logoff efetuado corretamente.
-          content:
-            application/json: {}
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-              example:
-                Message: string
-                ExceptionMessage: string
-                ExceptionType: string
-                StackTrace: string
   /api/agenda/totaleventos:
     get:
       tags:
