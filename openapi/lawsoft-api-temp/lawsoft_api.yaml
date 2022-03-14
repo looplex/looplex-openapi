@@ -6,48 +6,6 @@ info:
 servers:
   - url: https://lawsoft-apim.azure-api.net/lawsoft-api-internal
 paths:
-  /api/session:
-    post:
-      tags:
-        - Sessão
-      summary: /api/session
-      description: Login da API.
-      operationId: session
-      requestBody:
-        description: Parâmetros para login.
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Parametros_de_login"
-            example:
-              escritorio: string
-              token: string
-      responses:
-        "200":
-          description: Resultado do login.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Resultado_de_login"
-              example:
-                Context: string
-                Successful: true
-                ErrorMessage: string
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-              example:
-                Message: string
-                ExceptionMessage: string
-                ExceptionType: string
-                StackTrace: string
   /api/logoff:
     delete:
       tags:

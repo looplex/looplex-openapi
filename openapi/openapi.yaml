@@ -63,8 +63,8 @@ tags:
     description: Template operations
   - name: User
     description: User operations, such as login and profile consulting
-  - name: Sessão (Lawsoft)
-    description: Endpoints de sessão
+  - name: Login (Lawsoft)
+    description: Endpoints de login
 x-tagGroups:
   - name: Endpoints
     tags:
@@ -137,6 +137,9 @@ paths:
   "/public/api/mobilesession-post.yaml":
     post:
       $ref: ./paths/public@api@mobilesession-post.yaml
+  "/public/api/session-post.yaml":
+    post:
+      $ref: ./paths/public@api@session-post.yaml
 
 components:
   securitySchemes:
