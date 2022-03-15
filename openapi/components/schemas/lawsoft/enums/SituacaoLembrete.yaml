@@ -1,0 +1,19 @@
+type: enum
+example: 1
+description: |
+  1: A notificar
+
+  2: Descartado por ambos
+
+  3: Notificado
+
+  4: Descartado pelo executor
+
+  5: Descartado pelo responsável
+schema:
+  enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
