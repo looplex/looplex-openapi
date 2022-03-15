@@ -3,6 +3,8 @@ tags:
 summary: Logoff
 description: Efetua o logoff
 operationId: api-logoff
+parameters:
+  - $ref: ../components/parameters/lawsoft/Profile.yaml
 responses:
   "204":
     description: Logoff efetuado corretamente.
