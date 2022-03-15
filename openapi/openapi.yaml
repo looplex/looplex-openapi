@@ -73,6 +73,7 @@ x-tagGroups:
       - Template
       - User
       - Login (Lawsoft)
+      - Agenda (Lawsoft)
 servers:
   - url: "http://example.com/api/v1"
     description: Default server
@@ -143,6 +144,9 @@ paths:
   "/public/api/logoff-delete":
     delete:
       $ref: ./paths/public@api@logoff-delete.yaml
+  "/public/api/agenda/totaleventos":
+    get:
+      $ref: ./paths/public@api@agenda@totaleventos-get.yaml
 
 components:
   securitySchemes:

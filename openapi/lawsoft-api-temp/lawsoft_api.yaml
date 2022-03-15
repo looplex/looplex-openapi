@@ -6,34 +6,6 @@ info:
 servers:
   - url: https://lawsoft-apim.azure-api.net/lawsoft-api-internal
 paths:
-  /api/agenda/totaleventos:
-    get:
-      tags:
-        - Agenda
-      summary: /api/agenda/totaleventos
-      description: Total de eventos.
-      operationId: total-de-eventos
-      responses:
-        "200":
-          description: Retorna a quantidade de eventos de agenda do profissional para os próximos 7 dias.
-          content:
-            application/json:
-              example: 1
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-              example:
-                Message: string
-                ExceptionMessage: string
-                ExceptionType: string
-                StackTrace: string
   /api/agenda/proximoslancamentos:
     get:
       tags:
