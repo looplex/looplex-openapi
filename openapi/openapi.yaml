@@ -156,6 +156,9 @@ paths:
   "/public/api/agenda/post":
     post:
       $ref: ./paths/public@api@agenda@post-post.yaml
+  "/public/api/agenda/put":
+    put:
+      $ref: ./paths/public@api@agenda@put-put.yaml
 
 components:
   securitySchemes:
