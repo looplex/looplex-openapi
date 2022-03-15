@@ -150,6 +150,9 @@ paths:
   "/public/api/agenda/proximos-lancamentos":
     get:
       $ref: ./paths/public@api@agenda@proximos-lancamentos-get.yaml
+  "/public/api/agenda":
+    get:
+      $ref: ./paths/public@api@agenda-get.yaml
 
 components:
   securitySchemes:
