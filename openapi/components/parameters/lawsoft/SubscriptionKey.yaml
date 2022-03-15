@@ -1,6 +1,6 @@
 name: SubscriptionKey
 in: header
-description: Subscription Key provided by Lawsoft
+description: Key to use the API provided by Lawsoft
 required: true
 schema:
   type: string

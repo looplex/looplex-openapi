@@ -5,6 +5,7 @@ description: Retorna um array com os próximos compromissos de agenda do profiss
 operationId: api-agenda-proximos-lancamentos  
 parameters:
   - $ref: ../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: data
     in: query
     description: A data
