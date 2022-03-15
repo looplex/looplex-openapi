@@ -1,0 +1,86 @@
+name: DTOItemAgenda
+type: object
+properties:
+  IDItemAgenda: 
+    type: integer
+    example: 15
+  IDItemAgendaPai: 
+    type: integer
+    description: Se for uma subtarefa, esse valor é o identificador da tarefa pai, senão será null
+    example: null
+  Tipo: 
+    type: enum
+    $ref: ./enums/TipoItemAgenda.yaml
+  Situacao:  
+    type: integer
+    $ref: ./enums/SituacaoDoItemAgenda.yaml
+  Data: 
+    type: string
+    example: "2022-01-01T12:00:00"
+  DataFormatada: 
+    type: string
+    example: "01/01/2022"
+  DataLimite: 
+    type: string
+    example: "2022-01-01T12:00:00"
+  DataLimiteFormatada: 
+    type: string
+    example: "01/01/2022"
+  Lembrete: 
+    type: string
+    example: null
+  IDTitulocobranca: 
+    type: integer
+    example: null
+  Titulo: 
+    type: string
+    example: "Item de agenda"
+  IDCaso: 
+    type: integer
+    example: 10
+  IDForo: 
+    type: integer
+    example: 140
+  Observacao: 
+    type: string
+    example: "Observação do item de agenda"
+  Local: 
+    type: string
+    example: "São Paulo"
+  IDFuncionarioCriador: 
+    type: integer
+    example: 30
+  FuncionarioExecutor: 
+    type: integer
+    example: 30
+  NomeFuncionarioExecutor: 
+    type: string
+    example: "Nome do funcionário executor"
+  FuncionariosParticipantes: 
+    type: integer[]
+    example: [10, 20]
+  DataCriacao: 
+    type: string
+    example: "2022-01-01T12:00:00"
+  DataCriacaoFormatada: 
+    type: string
+    example: "01/01/2022"
+  DataRealizacao: 
+    type: string? 
+  DataRealizacaoFormatada: 
+    type: string
+    example: null
+  DataRegistroRealizacao: 
+    type: string
+    example: null
+  DataRegistroRealizacaoFormatada: 
+    type: string
+    example: null
+  ObservacaoRegistroRealizacao: 
+    type: string
+    example: "Observação da realização"
+  SituacaoLembrete: 
+    type: integer
+    $ref: ./enums/SituacaoLembrete.yaml
+  IsEditable: 
+    type: boolean

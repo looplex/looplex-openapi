@@ -147,6 +147,9 @@ paths:
   "/public/api/agenda/totaleventos":
     get:
       $ref: ./paths/public@api@agenda@totaleventos-get.yaml
+  "/public/api/agenda/proximos-lancamentos":
+    get:
+      $ref: ./paths/public@api@agenda@proximos-lancamentos-get.yaml
 
 components:
   securitySchemes:
