@@ -135,31 +135,31 @@ paths:
   /public/user/login:
     post:
       $ref: ./paths/public@user@login-post.yaml
-  "/public/api/mobilesession-post.yaml":
+  "/api/mobilesession":
     post:
       $ref: ./paths/public@api@mobilesession-post.yaml
-  "/public/api/session-post.yaml":
+  "/api/session":
     post:
       $ref: ./paths/public@api@session-post.yaml
-  "/public/api/logoff-delete":
+  "/api/logoff":
     delete:
       $ref: ./paths/public@api@logoff-delete.yaml
-  "/public/api/agenda/totaleventos":
+  "/api/agenda/totaleventos":
     get:
       $ref: ./paths/public@api@agenda@totaleventos-get.yaml
-  "/public/api/agenda/proximos-lancamentos":
+  "/api/agenda/proximoslancamentos":
     get:
       $ref: ./paths/public@api@agenda@proximos-lancamentos-get.yaml
-  "/public/api/agenda":
+  "/api/agenda":
     get:
       $ref: ./paths/public@api@agenda-get.yaml
-  "/public/api/agenda/post":
+  "/api/agenda/remover1":
     post:
       $ref: ./paths/public@api@agenda@post-post.yaml
-  "/public/api/agenda/put":
+  "/api/agenda/remover2":
     put:
       $ref: ./paths/public@api@agenda@put-put.yaml
-  "/public/api/casos/{idCaso}/agenda/get":
+  "/api/casos/{idCaso}/agenda":
     get:
       $ref: ./paths/public@api@casos@{idCaso}@agenda-get.yaml
 
