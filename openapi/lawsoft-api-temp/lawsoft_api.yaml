@@ -6,45 +6,6 @@ info:
 servers:
   - url: https://lawsoft-apim.azure-api.net/lawsoft-api-internal
 paths:
-  "/api/agenda/{tipo}/{id}":
-    delete:
-      tags:
-        - Agenda
-      summary: "/api/agenda/{tipo}/{id}"
-      description: Exclui o item de agenda.
-      operationId: excluir-item-de-agenda
-      parameters:
-        - name: tipo
-          in: path
-          description: "- 1: Atividade Externa\n- 2: Prazo\n- 4: Audiência\n- 8: Compromisso de trabalho\n- 9: Compromisso particular"
-          required: true
-          schema:
-            type: integer
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        "204":
-          description: O item de agenda foi excluído.
-          content:
-            application/json: {}
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-              example:
-                Message: string
-                ExceptionMessage: string
-                ExceptionType: string
-                StackTrace: string
   /api/agenda/executores:
     get:
       tags:

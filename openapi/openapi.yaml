@@ -162,6 +162,9 @@ paths:
   "/api/casos/{idCaso}/agenda":
     get:
       $ref: ./paths/public@api@casos@{idCaso}@agenda-get.yaml
+  "/api/agenda/{tipo}/{id}":
+    delete:
+      $ref: ./paths/public@api@agenda@{tipo}@{id}-delete.yaml
 
 components:
   securitySchemes:
