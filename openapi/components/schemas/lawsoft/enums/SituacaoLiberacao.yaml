@@ -1,0 +1,10 @@
+type: enum
+example: -2147483646 
+description: |
+  -2147483647: Aberto
+
+  -2147483646: Fechado
+
+  -2147483645: Programado
+
+  -2147483644: Liberado para fechamento

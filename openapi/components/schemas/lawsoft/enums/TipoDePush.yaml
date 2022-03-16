@@ -1,0 +1,5 @@
+type: enum
+description: |
+  1: Publicação
+
+  2: Andamento

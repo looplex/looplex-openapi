@@ -1,0 +1,16 @@
+type: enum
+example: 2
+description: |
+  1: Geração de prazo
+
+  2: Geração de atividade externa
+
+  3: Geração de audiência
+
+  4: Lançamento de hora
+
+  5: Geração de tarefa
+
+  6: Marcado como lixo
+
+  7: Finalizar

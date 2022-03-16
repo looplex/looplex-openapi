@@ -1,0 +1,6 @@
+type: enum
+example: 1
+description: |
+  1: Transferência
+
+  2: Recuperação
