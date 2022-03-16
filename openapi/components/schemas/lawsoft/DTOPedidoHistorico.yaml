@@ -1,0 +1,43 @@
+name: DTOPedidoHistorico
+type: object
+properties:
+  MoedaSolicitadoText:
+    type: string
+  PorcentagemExitoText:
+    type: string
+  SituacaoText:
+    type: string
+  Situacao:
+    type: integer
+  JustificativaPedido:
+    type: string
+  dtDecisao:
+    type: string
+  PorcentagemExito:
+    type: integer
+  vlContigenciado:
+    type: number
+  MoedaContigenciado:
+    type: integer
+  MoedaDeferido:
+    type: integer
+  MoedaSolicitado:
+    type: integer
+  vlSolicitado:
+    type: number
+  vlDeferido:
+    type: number
+  IdProcessoDecisao:
+    type: integer
+  IdProcessoExpectativaReivindicacao:
+    type: integer
+  dtInclusaoRegistro:
+    type: string
+  IdPedidoHistorico:
+    type: integer
+  MoedaContigenciadoText:
+    type: string
+  MoedaDeferidoText:
+    type: string
+  Observacao:
+    type: string
