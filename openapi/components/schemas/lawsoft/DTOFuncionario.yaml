@@ -1,0 +1,84 @@
+name: DTOFuncionario
+type: object
+properties:
+  IDFuncionario:
+    type: integer
+    example: 10
+  Nome:
+    type: string
+    example: "Funcionário"
+    description: "Nome do funcionário" 
+  Apelido:
+    type: string
+    example: ""
+  Logradouro:
+    type: string
+    example: ""
+  NumeroLogradouro:
+    type: string
+    example: ""
+  Bairro:
+    type: string
+    example: ""
+  Cidade:
+    type: string
+    example: ""
+  Estado:
+    type: string
+    example: ""
+  Complemento:
+    type: string
+    example: ""
+  CEP:
+    type: string
+    example: ""
+  Email:
+    type: string
+    example: ""
+  CPF:
+    type: string
+    example: ""
+  RG:
+    type: string
+    example: ""
+  EstadoCivil:
+    $ref: enums/EstadoCivil.yaml
+  DataDeNascimento:
+    type: string
+    example: ""
+  DataDeNascimentoFormatada:
+    type: string
+    example: ""
+  Cargo:
+    type: string
+    example: ""
+  DataDeAdmissao:
+    type: string
+    example: ""
+  DataDeAdmissaoFormatada:
+    type: string
+    example: ""
+  DataDeDemissao:
+    type: string
+    example: ""
+  DataDeDemissaoFormatada:
+    type: string
+    example: ""
+  Oab:
+    type: string
+    example: ""
+  NumeroDeDependentes:
+    type: integer
+    example: 0
+  Admin:
+    type: boolean
+    example: false
+  Observacoes:
+    type: string
+    example: ""
+  VinculoEmpregaticio:
+    $ref: enums/VinculoEmpregaticio.yaml
+
+
+
+
