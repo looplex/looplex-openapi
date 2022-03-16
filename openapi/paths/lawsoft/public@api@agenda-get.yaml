@@ -4,8 +4,8 @@ summary: Obtém agenda
 description: Obtém um array com os compromissos de agenda de acordo com o filtro informado.
 operationId: api-agenda
 parameters:
-  - $ref: ../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: ano
     in: query
     required: true
@@ -45,7 +45,7 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../components/schemas/lawsoft/DTOItemAgenda.yaml
+          $ref: ../../components/schemas/lawsoft/DTOItemAgenda.yaml
   "401":
     description: Em caso de erro de timeout ou sessão expirada.
   "500":
@@ -53,4 +53,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../components/schemas/lawsoft/InternalServerErrorResponse.yaml
+          $ref: ../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

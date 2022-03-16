@@ -9,14 +9,14 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../components/parameters/lawsoft/LoginParametro.yaml
+        $ref: ../../components/parameters/lawsoft/LoginParametro.yaml
 responses:
   "200":
     description: Resultado do login
     content:
       application/json:
         schema: 
-          $ref: ../components/schemas/lawsoft/ResultadoDeLogin.yaml
+          $ref: ../../components/schemas/lawsoft/ResultadoDeLogin.yaml
   "401":
     description: Em caso de erro de timeout ou sessão expirada
   "500":
@@ -24,4 +24,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../components/schemas/lawsoft/InternalServerErrorResponse.yaml
+          $ref: ../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

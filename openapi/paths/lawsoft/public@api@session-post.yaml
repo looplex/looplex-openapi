@@ -4,19 +4,19 @@ summary: Login
 description: Login para automatização
 operationId: api-session
 parameters:
-  - $ref: ../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../components/parameters/lawsoft/SubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../components/parameters/lawsoft/LoginParametroSession.yaml
+        $ref: ../../components/parameters/lawsoft/LoginParametroSession.yaml
 responses:
   "200":
     description: Resultado do login.
     content:
       application/json:
         schema: 
-          $ref: ../components/schemas/lawsoft/ResultadoDeLogin.yaml
+          $ref: ../../components/schemas/lawsoft/ResultadoDeLogin.yaml
   "401":
     description: Em caso de erro de timeout ou sessão expirada.
   "500":
@@ -24,4 +24,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../components/schemas/lawsoft/InternalServerErrorResponse.yaml
+          $ref: ../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
