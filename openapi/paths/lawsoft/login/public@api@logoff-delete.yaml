@@ -4,8 +4,8 @@ summary: Logoff
 description: Efetua o logoff
 operationId: api-logoff
 parameters:
-  - $ref: ../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
 responses:
   "204":
     description: Logoff efetuado corretamente.
@@ -16,4 +16,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

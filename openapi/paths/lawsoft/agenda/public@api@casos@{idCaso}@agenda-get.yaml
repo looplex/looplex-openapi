@@ -1,11 +1,16 @@
 tags: 
   - Agenda (Lawsoft)
-summary: Obtém agenda
-description: Obtém um array com os compromissos de agenda de acordo com o filtro informado.
-operationId: api-agenda
+summary: Obtém a agenda do caso
+description: Obtém um array com os compromissos de agenda do caso de acordo com o filtro informado.
+operationId: api-casos-{idCaso}-agenda
 parameters:
-  - $ref: ../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: idCaso
+    in: path
+    required: true
+    schema:
+      type: integer
   - name: ano
     in: query
     required: true
@@ -41,11 +46,11 @@ parameters:
       type: boolean
 responses:
   "200":
-    description: Obtém um array com os compromissos de agenda de acordo com o filtro informado.
+    description: Obtém um array com os compromissos de agenda do caso de acordo com o filtro informado.
     content:
       application/json:
         schema: 
-          $ref: ../../components/schemas/lawsoft/DTOItemAgenda.yaml
+          $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
   "401":
     description: Em caso de erro de timeout ou sessão expirada.
   "500":
@@ -53,4 +58,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
