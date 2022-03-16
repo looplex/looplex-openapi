@@ -165,6 +165,9 @@ paths:
   "/api/agenda/{tipo}/{id}":
     delete:
       $ref: ./paths/lawsoft/agenda/public@api@agenda@{tipo}@{id}-delete.yaml
+  "/api/agenda/executores":
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@executores-get.yaml
 
 components:
   securitySchemes:
