@@ -1,0 +1,21 @@
+name: DTOContato
+type: object
+properties:
+  IDContato:
+    type: integer
+  IDCliente:
+    type: integer
+  Nome:
+    type: string
+  Email:
+    type: string
+  Cargo:
+    type: string
+  CodigoPais:
+    type: integer
+  DDD:
+    type: integer
+  Telefone:
+    type: integer
+  Ramal:
+    type: integer

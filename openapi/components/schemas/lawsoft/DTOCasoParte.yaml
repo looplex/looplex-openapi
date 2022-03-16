@@ -1,0 +1,47 @@
+name: DTOCasoParte
+type: object
+properties:
+  NomeCliente:
+    type: string
+  TituloCaso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  IdCaso:
+    type: integer
+  IdParte:
+    type: integer
+  NomeRazaoSocial:
+    type: string
+  Envolvimento:
+    type: string
+  CPF:
+    type: string
+  CNPJ:
+    type: string
+  NomeAdvogado:
+    type: string
+  OABAdvogado:
+    type: string
+  RegimeDeContratacao:
+  type: string
+DataAdmissao:
+  type: string
+DataAdmissaoFormatada:
+  type: striing
+DataDemissao:
+  type: string
+DataDemissaoFormatada:
+  type: string
+Cargo:
+  type: string
+CentroDeCusto:
+  type: string
+Area:
+  type: string
+Departamento:
+  type: string
+TipoDeEnvolvimento:
+  type: string
