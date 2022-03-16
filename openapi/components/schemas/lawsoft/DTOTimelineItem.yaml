@@ -13,3 +13,5 @@ TextoItem:
   type: string
 TipoItemAgenda:
   type: string
+Titulo:
+  type: string
