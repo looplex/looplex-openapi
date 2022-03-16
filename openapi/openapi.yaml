@@ -137,34 +137,34 @@ paths:
       $ref: ./paths/public@user@login-post.yaml
   "/api/mobilesession":
     post:
-      $ref: ./paths/lawsoft/public@api@mobilesession-post.yaml
+      $ref: ./paths/lawsoft/login/public@api@mobilesession-post.yaml
   "/api/session":
     post:
-      $ref: ./paths/lawsoft/public@api@session-post.yaml
+      $ref: ./paths/lawsoft/login/public@api@session-post.yaml
   "/api/logoff":
     delete:
-      $ref: ./paths/lawsoft/public@api@logoff-delete.yaml
+      $ref: ./paths/lawsoft/login/public@api@logoff-delete.yaml
   "/api/agenda/totaleventos":
     get:
-      $ref: ./paths/lawsoft/public@api@agenda@totaleventos-get.yaml
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@totaleventos-get.yaml
   "/api/agenda/proximoslancamentos":
     get:
-      $ref: ./paths/lawsoft/public@api@agenda@proximos-lancamentos-get.yaml
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@proximos-lancamentos-get.yaml
   "/api/agenda":
     get:
-      $ref: ./paths/lawsoft/public@api@agenda-get.yaml
+      $ref: ./paths/lawsoft/agenda/public@api@agenda-get.yaml
   "/api/agenda/remover1":
     post:
-      $ref: ./paths/lawsoft/public@api@agenda@post-post.yaml
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@post-post.yaml
   "/api/agenda/remover2":
     put:
-      $ref: ./paths/lawsoft/public@api@agenda@put-put.yaml
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@put-put.yaml
   "/api/casos/{idCaso}/agenda":
     get:
-      $ref: ./paths/lawsoft/public@api@casos@{idCaso}@agenda-get.yaml
+      $ref: ./paths/lawsoft/agenda/public@api@casos@{idCaso}@agenda-get.yaml
   "/api/agenda/{tipo}/{id}":
     delete:
-      $ref: ./paths/lawsoft/public@api@agenda@{tipo}@{id}-delete.yaml
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@{tipo}@{id}-delete.yaml
 
 components:
   securitySchemes:
