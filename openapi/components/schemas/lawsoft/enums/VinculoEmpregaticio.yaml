@@ -1,0 +1,20 @@
+type: enum
+example: 2
+description: |
+  1: Estagiário
+
+  2: CLT
+
+  3: Autônomo
+
+  4: Terceirizado
+
+  5: Outro
+
+  6: Sócio
+
+  7: Correspondente
+
+  8: Advogado
+
+  9: Aprendiz

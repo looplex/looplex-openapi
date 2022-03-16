@@ -1,0 +1,14 @@
+type: enum
+example: 1
+description: |
+  1: Solteiro
+
+  2: Casado
+
+  3: Viúvo
+
+  4: Desquitado
+
+  5: Divorciado
+
+  6: Outros
