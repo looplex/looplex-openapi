@@ -1,7 +1,7 @@
 type: object
 properties:
   User:
-    $ref: UserLogin.yaml
+    $ref: ../../schemas/lawsoft/DTOUser.yaml
   Version:
     type: string  
     description: "A versão do aparelho"
