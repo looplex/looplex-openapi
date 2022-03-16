@@ -1,0 +1,7 @@
+name: DTOObjetoNomeValor
+type: object
+properties:
+  Nome:
+    type: string
+  Valor:
+    type: string

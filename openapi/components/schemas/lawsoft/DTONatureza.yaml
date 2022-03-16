@@ -1,0 +1,15 @@
+name: DTONatureza
+type: object
+properties:
+  NomeCliente:
+    type: string
+  TituloCaso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  NomeNatureza:
+    type: string
+  IdCaso:
+    type: integer
