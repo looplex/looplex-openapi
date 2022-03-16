@@ -1,0 +1,9 @@
+name: DTOEnum
+type: object
+properties:
+  Valor:
+    type: string
+  ID:
+    type: integer
+  Description:
+    type: string

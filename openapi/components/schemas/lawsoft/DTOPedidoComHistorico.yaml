@@ -1,0 +1,33 @@
+name: DTOPedidoComHistorico
+type: object
+properties:
+  PedidoCausa:
+    type: string
+  RiscoPai:
+    type: integer
+  RiscoPaiText:
+    type: string
+  ValorPrevistoPai:
+    type: number
+  SituacaoPaiText:
+    type: string
+  ValorContingenciadoPai:
+    type: number
+  ValorDeferidoPelaUltimaDecisao:
+    type: number
+  MoedaDeferidoPelaUltimaDecisao:
+    type: string
+  Historico:
+    type: array
+    items: 
+      $ref: DTOPedidoHistorico.yaml
+  ValorPrevistoPelaUltimaDecisao:
+    type: number
+  ValorContingenciadoPelaUltimaDecisao:
+    type: number
+  RiscoUltimaDecisao:
+    type: integer
+  RiscoUltimaDecisaoText:
+    type: string
+  SituacaoUltimaDecisao:
+    type: string
