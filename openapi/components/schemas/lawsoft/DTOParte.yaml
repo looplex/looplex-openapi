@@ -1,0 +1,15 @@
+name: DTOParte
+type: object
+properties:
+  IdParte: 
+    type: integer
+  Nome:
+    type: string
+  NomeAdvogado:
+    type: string
+  CPF:
+    type: string
+  OABAdvogado:
+    type: string
+  TipoPessoa:
+    type: integer
