@@ -10,10 +10,3 @@ description: |
   4: Descartado pelo executor
 
   5: Descartado pelo responsável
-schema:
-  enum:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5

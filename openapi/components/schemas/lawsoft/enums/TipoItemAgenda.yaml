@@ -1,4 +1,5 @@
 type: enum
+example: 1
 description: |
   1: Atividade externa,
 

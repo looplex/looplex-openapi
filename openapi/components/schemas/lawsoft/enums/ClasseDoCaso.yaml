@@ -1,0 +1,10 @@
+type: enum
+example: 1
+description: |
+  1: Processo
+
+  2: Subprocesso
+
+  3: Recurso
+
+  4: Incidente
