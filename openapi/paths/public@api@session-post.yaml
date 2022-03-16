@@ -3,6 +3,8 @@ tags:
 summary: Login
 description: Login para automatização
 operationId: api-session
+parameters:
+  - $ref: ../components/parameters/lawsoft/SubscriptionKey.yaml
 requestBody:
   content:
     application/json:

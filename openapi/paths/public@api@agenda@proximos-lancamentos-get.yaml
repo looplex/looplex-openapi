@@ -18,6 +18,12 @@ parameters:
     description: Retorna 4 por padrão
     schema:
       type: integer 
+  - name: idCaso
+    in: query
+    required: false
+    description: "Filtro pelo caso"
+    schema:
+      type: integer
 responses:
   "200":
     description: Retorna um array com os próximos compromissos de agenda do profissional.

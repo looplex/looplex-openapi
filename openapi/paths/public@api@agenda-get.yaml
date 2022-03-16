@@ -6,21 +6,6 @@ operationId: api-agenda
 parameters:
   - $ref: ../components/parameters/lawsoft/Profile.yaml
   - $ref: ../components/parameters/lawsoft/SubscriptionKey.yaml
-  - name: dia
-    in: query
-    required: false
-    schema:
-      type: integer
-  - name: ignoraIdFuncionario
-    in: query
-    required: false
-    schema:
-      type: boolean
-  - name: removeIguais
-    in: query
-    required: false
-    schema:
-      type: boolean
   - name: ano
     in: query
     required: true
@@ -31,9 +16,27 @@ parameters:
     required: true
     schema:
       type: integer
+  - name: dia
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: ignoraIdFuncionario
+    in: query
+    required: false
+    description: "Default: false"
+    schema:
+      type: boolean
+  - name: removeIguais
+    in: query
+    required: false
+    description: "Default: true"
+    schema:
+      type: boolean
   - name: agendaWeb
     in: query
     required: false
+    description: "Default: false. O Lawsoft Web deve passar true para que sejam retornados os itens dos 15 dias anteriores e posteriores ao mês informado."
     schema:
       type: boolean
 responses:

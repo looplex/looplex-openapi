@@ -11,9 +11,14 @@ parameters:
     required: true
     schema:
       type: integer
+  - name: ano
+    in: query
+    required: true
+    schema:
+      type: integer
   - name: mes
     in: query
-    required: false
+    required: true
     schema:
       type: integer
   - name: dia
@@ -24,18 +29,15 @@ parameters:
   - name: ignoraIdFuncionario
     in: query
     required: false
+    description: "Default: false"
     schema:
       type: boolean
   - name: removeIguais
     in: query
     required: false
+    description: "Default: true"
     schema:
       type: boolean
-  - name: ano
-    in: query
-    required: false
-    schema:
-      type: integer
   - name: agendaWeb
     in: query
     required: false
