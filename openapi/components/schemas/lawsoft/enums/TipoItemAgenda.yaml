@@ -1,5 +1,4 @@
 type: enum
-example: 1
 description: |
   1: Atividade externa,
 
@@ -10,10 +9,3 @@ description: |
   8: Compromisso de trabalho, 
 
   9: Compromisso particular
-schema:
-  enum: 
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
