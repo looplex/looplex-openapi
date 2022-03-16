@@ -1,0 +1,9 @@
+name: EncapsuladorDeResposta
+type: object
+properties:
+  Response:
+    type: object
+  Success:
+    type: boolean
+  ExceptionMessage:
+    type: string

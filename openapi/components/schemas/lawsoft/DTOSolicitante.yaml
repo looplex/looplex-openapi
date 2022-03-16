@@ -1,0 +1,7 @@
+name: DTOSolicitante
+type: object
+properties:
+  DsNome: 
+    type: string
+  CdSolicitante:
+    type: integer

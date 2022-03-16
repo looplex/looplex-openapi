@@ -1,0 +1,15 @@
+name: DTOValoresDoCasoAntigo
+type: object
+properties:
+  Risco:
+    type: string
+  ValorDaCausa:
+    type: string
+  ValorDaCausaAtualizado:
+    type: string
+  ValorPrevisto:
+    type: string
+  ValorContingencia:
+    type: string
+  TotalDosPedidos:
+    type: string

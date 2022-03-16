@@ -1,0 +1,9 @@
+name: DTOClassificacao
+type: object
+properties:
+  ID:
+    type: integer
+  Titulo:
+    type: string
+  TextoPadrao:
+    type: string

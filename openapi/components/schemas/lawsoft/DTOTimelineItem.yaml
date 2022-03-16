@@ -1,0 +1,15 @@
+name: DTOTimelineItem
+type: object
+properties:
+  IDItem:
+    type: integer
+  DataFormatada:
+    type: string
+  TipoItem:
+    $ref: enums/TipoItemTimeline.yaml
+TipoItemString:
+  type: string
+TextoItem:
+  type: string
+TipoItemAgenda:
+  type: string

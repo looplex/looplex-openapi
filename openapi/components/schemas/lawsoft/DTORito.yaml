@@ -1,0 +1,17 @@
+name: DTORito
+type: object
+properties:
+  cdRito:
+    type: integer
+  cdGrupoRito:
+    type: integer
+  dsNome:
+    type: string
+  inEsperaPoloPassivo:
+    type: boolean
+  dsPoloAtivo:
+    type: string
+  dsPoloPassivo:
+    type: string
+  dsPoloTerceiro:
+    type: string

@@ -1,0 +1,28 @@
+name: DTOValoresDoCaso
+type: object
+properties:
+  Risco:
+    type: integer
+  TipoRisco:
+    type: integer
+  ValorDaCausa:
+    type: number
+  MoedaValorDaCausa:
+    type: integer
+  ValorDaCausaAtualizado:
+    type: number
+  MoedaValorDaCausaAtualizado:
+    type: integer
+  ValorPrevisto:
+    type: number
+  MoedaValorPrevisto:
+    type: integer
+  ValorContingencia:
+    type: number
+  ValorContingenciaAtualizado:
+    type: number
+  MoedaValorContingencia:
+    type: integer
+  Pedidos:
+    description: "Array de DTOCasoPedidoSimples"
+    $ref: DTOCasoPedidoSimples.yaml
