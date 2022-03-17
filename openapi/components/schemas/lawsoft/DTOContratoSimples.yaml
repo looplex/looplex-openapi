@@ -1,0 +1,9 @@
+name: DTOContratoSimples
+type: object
+properties:
+  Titulo:
+    type: string
+  IDCliente:
+    type: integer
+  Descricao:
+    type: string

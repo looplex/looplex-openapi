@@ -1,0 +1,23 @@
+name: DTOAndamentoSimples
+type: object
+properties:
+  NomeCliente:
+    type: string
+  TituloCaso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  idAndamento:
+    type: integer
+  Classificacao:
+    type: string
+  DataCompetencia:
+    type: string
+  DataCompetenciaFormatada:
+    type: string
+  TextoAndamento:
+    type: string
+  IdCaso:
+    type: integer

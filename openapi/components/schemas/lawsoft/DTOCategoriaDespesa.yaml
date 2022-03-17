@@ -1,0 +1,15 @@
+name: DTOCategoriaDespesa
+type: object
+properties:
+  NomeCategoria:
+    type: string
+  IDCategoria:
+    type: integer
+  IDCategoriaPai:
+    type: integer
+  IsKmRodado:
+    type: boolean
+  SubCategorias:
+    type: array
+    items:
+      $ref: DTOCategoriaDespesa.yaml

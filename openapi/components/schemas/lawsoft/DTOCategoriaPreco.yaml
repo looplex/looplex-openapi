@@ -1,0 +1,17 @@
+name: DTOCategoriaPreco
+type: object
+properties:
+  IdCategoria:
+    type: integer
+  IdEscritorio:
+    type: integer
+  NomeCategoria:
+    type: string
+  NumeroMoeda:
+    type: integer
+  NumeroSituacao:
+    type: integer
+  ValorHoraTrabalhada:
+    type: number
+  valorHoraTrabalhadaReal:
+    type: number
