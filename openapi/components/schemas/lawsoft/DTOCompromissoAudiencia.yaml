@@ -27,6 +27,7 @@ properties:
     type: string
   Participantes:
     type: array
+    example: [10, 20]
     items:
       type: integer
   Descricao:
