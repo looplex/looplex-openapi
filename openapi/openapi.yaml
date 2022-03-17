@@ -222,6 +222,11 @@ paths:
     get:
       $ref: ./paths/lawsoft/agenda/public@api@casos@num@tabagenda-get.yaml
   
+  # Andamentos
+  "/api/andamentos/templates":
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@templates-get.yaml
+
   #Timeline
   "/api/timeline/items":
     get:
