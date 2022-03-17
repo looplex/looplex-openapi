@@ -168,6 +168,12 @@ paths:
   "/api/agenda/executores":
     get:
       $ref: ./paths/lawsoft/agenda/public@api@agenda@executores-get.yaml
+  "/api/agenda/participantes":
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@participantes-get.yaml
+  "/api/agenda/titulos":
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@titulos-get.yaml
 
 components:
   securitySchemes:

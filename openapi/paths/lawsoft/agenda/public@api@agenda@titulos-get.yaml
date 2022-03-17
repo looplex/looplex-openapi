@@ -1,20 +1,25 @@
 tags: 
   - Agenda (Lawsoft)
-summary: Obtém os executores.
-description: 
-operationId: api-agenda-executores
+summary: Títulos de agenda
+description: Obtém os títulos de agenda.
+operationId: api-agenda-titulos
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: tipo
+    in: query
+    required: true
+    schema:
+      $ref: ../../../components/schemas/lawsoft/enums/TipoItemAgenda.yaml
 responses:
   "200":
-    description: Retorna um array com os executores.
+    description: Retorna um array com os títulos de agenda.
     content:
       application/json:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOFuncionario.yaml
+            $ref: ../../../components/schemas/lawsoft/DTOTituloAgenda.yaml
   "401":
     description: Em caso de erro de timeout ou sessão expirada.
   "500":
