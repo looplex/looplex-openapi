@@ -1,0 +1,14 @@
+type: enum
+example: 1
+description: |
+  1: Planilha de horas
+
+  2: Push de publicação
+
+  3: Push de andamento
+
+  4: Outlook
+
+  5: Automático
+
+  6: Manual

@@ -1,0 +1,54 @@
+type: enum
+example: 4
+description: |
+  1: Prazo
+
+  2: Compromisso
+
+  3: Audiência
+
+  4: Atividade externa
+
+  5: Publicação
+
+  6: Decisão
+
+  7: Exclusão
+
+  8: Arquivo morto
+
+  9: Encerramento
+
+  10: Planilha de horas
+
+  11: Push de publicação
+
+  12: Push de andamento
+
+  13: Outlook
+
+  14: Movimentação processual
+
+  15: Publicação processual
+
+  16: Publicação geral
+
+  17: Nova distribuição
+
+  18: Cadastro agendado
+
+  19: Status pedido
+
+  20: Mudanças processo
+
+  21: Falha monitoramento
+
+  22: Nova CIPPROC
+
+  23: Mudança de conteúdo
+
+  24: Nova intimação
+
+  25: Retorno solicitação
+
+  26: Relatório concluído
