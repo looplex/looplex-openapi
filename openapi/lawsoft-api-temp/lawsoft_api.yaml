@@ -6,36 +6,6 @@ info:
 servers:
   - url: https://lawsoft-apim.azure-api.net/lawsoft-api-internal
 paths:
-  "/api/casos/{idCaso}/audiencias":
-    get:
-      tags:
-        - Agenda
-      summary: "/api/casos/{idCaso}/audiencias"
-      description: Obtém as audiências por caso.
-      operationId: obtem-as-audiencias-por-caso
-      parameters:
-        - name: idCaso
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Retorna um array com as audiências do caso.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOCompromissoAudiencia"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   /api/casos/num/audiencias:
     get:
       tags:
