@@ -1,0 +1,12 @@
+type: enum
+example: 2
+description: |
+  1: Aprovado
+
+  2: Aguardando aprovação
+
+  3: Pré aprovado
+
+  4: Não aprovado
+
+  5: Aprovado e pré aprovado
