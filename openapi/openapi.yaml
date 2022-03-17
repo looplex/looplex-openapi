@@ -177,6 +177,12 @@ paths:
   "/api/casos/{idCaso}/audiencias":
     get:
       $ref: ./paths/lawsoft/agenda/public@api@casos@{idCaso}@audiencias-get.yaml
+  "/api/casos/num/audiencias":
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@casos@num@audiencias-get.yaml
+  "/api/casos/{idCaso}/tabagenda":
+    get: 
+      $ref: ./paths/lawsoft/agenda/public@api@casos@{idCaso}@tabagenda-get.yaml
 
 components:
   securitySchemes:
