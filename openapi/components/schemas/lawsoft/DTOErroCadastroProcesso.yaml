@@ -1,0 +1,15 @@
+name: DTOErroCadastroProcesso
+type: object
+properties:
+  IdPreProcesso:
+    type: integer
+  DetalheErro:
+    type: string
+  NumeroExterno:
+    type: string
+  NumeroSequencial:
+    type: integer
+  NumeroInterno:
+    type: string
+  TituloProcesso:
+    type: string

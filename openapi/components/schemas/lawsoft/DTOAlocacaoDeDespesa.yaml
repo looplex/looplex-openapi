@@ -1,0 +1,23 @@
+name: DTOAlocacaoDeDespesa
+type: object
+properties:
+  IDAlocacaoDeDespesa:
+    type: integer
+  IDDespesa:
+    type: integer
+  IDCliente:
+    type: integer
+  IDContrato:
+    type: integer
+  IDCaso:
+    type: integer
+  PorcentagemAlocada:
+    type: number
+  ValorAlocado:
+    type: number
+  IDFechamento:
+    type: integer
+  IDCategoriaDeDespesa:
+    type: integer
+  Caso:
+    $ref: DTOCasoSimples.yaml

@@ -1,0 +1,21 @@
+name: DTOContrato
+type: object
+properties:
+  IDContrato:
+    type: integer
+  Titulo:
+    type: string
+  IDCliente:
+    type: integer
+  NomeCliente:
+    type: string
+  Observacao:
+    type: string
+  DataInicio:
+    type: string
+  DataPrevisaoEncerramento:
+    type: string
+  DataEncerramento:
+    type: string
+  Situacao:
+    $ref: enums/ContratoSituacao.yaml

@@ -1,0 +1,31 @@
+name: DTOItemAgendaSimples
+type: object
+properties:
+  NomeClienteProcesso:
+    type: string
+  TituloProcesso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  TipoDeItem:
+    type: string
+  Data:
+    type: string
+  DataFormatada:
+    type: string
+  Assunto:
+    type: string
+  IdCaso:
+    type: integer
+  idExecutor:
+    type: integer
+  Executor:
+    type: string
+  Observacao:
+    type: string
+  IdPai:
+    type: integer
+  Recorrencia:
+    $ref: DTORecorrenciaDeItemAgenda.yaml

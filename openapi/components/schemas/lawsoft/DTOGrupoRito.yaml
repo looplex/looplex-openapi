@@ -1,0 +1,17 @@
+name: DTOGrupoRito
+type: object
+properties:
+  cdGrupoRito:
+    type: integer
+  dsNome:
+    type: string
+  cdGrupoPai:
+    type: integer
+  Ritos:
+    type: array
+    items:
+      $ref: DTORito.yaml
+  Grupos:
+    type: array
+    items: 
+      $ref: DTOGrupoRito.yaml

@@ -1,0 +1,35 @@
+name: DTOAdiantamento
+type: object
+properties:
+  IDAdiantamento:
+    type: integer
+  IDFuncionarioFavorecido:
+    type: integer
+  IDFuncionarioTransacao:
+    type: integer
+  IDContaFinanceira:
+    type: integer
+  DataDaSolicitacao:
+    type: string
+  Valor:
+    type: number
+  Observacao:
+    type: string
+  NrDebito:
+    type: integer
+  IDEscritorio:
+    type: integer
+  Situacao:
+    $ref: enums/SituacaoAdiantamento.yaml
+  DataPrevistaParaLiberar:
+    type: string
+  IDFuncionarioAprovador:
+    type: integer
+  DataDaAprovacao:
+    type: string
+  ObservacaoAprovador:
+    type: string
+  NrChave:
+    type: integer
+  IDFuncionarioIndicado:
+    type: integer

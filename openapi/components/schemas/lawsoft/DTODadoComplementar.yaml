@@ -1,0 +1,21 @@
+name: DTODadoComplementar
+type: object
+properties:
+  NomeCliente:
+    type: string
+  TituloCaso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  Nome:
+    type: string
+  TipoCampo:
+    type: string
+  Valores:
+    type: array
+    items:
+      type: string
+  IdCaso:
+    type: integer

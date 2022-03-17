@@ -1,0 +1,13 @@
+name: DTOAndamentoTemplate
+type: object
+properties:
+  IDAndamentoTemplate:
+    type: integer
+  IDEscritorio:
+    type: integer
+  TextoTemplate:
+    type: string
+  NomeTemplate:
+    type: string
+  GrupoDeCaso:
+    $ref: enums/RamosJudicial.yaml

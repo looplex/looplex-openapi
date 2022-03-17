@@ -1,0 +1,9 @@
+name: DTODecisao
+type: object
+properties:
+  IdDecisao:
+    type: integer
+  IdEscritorio:
+    type: integer
+  Nome:
+    type: string
