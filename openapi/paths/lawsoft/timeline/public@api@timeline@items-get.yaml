@@ -1,0 +1,80 @@
+tags: 
+  - Timeline (Lawsoft)
+summary: Timeline do caso
+description: Lista timeline do caso.
+operationId: api-timeline-items
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: cdProcesso
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: dataInicial
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: dataFinal
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: andamentoManual
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - name: andamentoAutomatico
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - name: timesheet
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - name: agenda
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - name: decisao
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - name: despesa
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - name: garantia
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - name: paginaAtual
+    in: query
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém os itens de timeline."
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOTimelineItem.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

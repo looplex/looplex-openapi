@@ -72,8 +72,39 @@ x-tagGroups:
       - Documents
       - Template
       - User
-      - Login (Lawsoft)
       - Agenda (Lawsoft)
+      - Andamento (Lawsoft)
+      - Area (Lawsoft)
+      - Busca (Lawsoft)
+      - Casos (Lawsoft)
+      - Categoria (Lawsoft) 
+      - Cliente (Lawsoft)
+      - Conta de acesso (Lawsoft)
+      - Contato (Lawsoft)
+      - Contrato (Lawsoft)
+      - Dados complementares (Lawsoft)
+      - Decisões (Lawsoft)
+      - Despesas (Lawsoft)
+      - Expectativa reivindicação (Lawsoft)
+      - Fase caso (Lawsoft)
+      - Funcionário (Lawsoft)
+      - Garantia (Lawsoft)
+      - Hierarquia (Lawsoft)
+      - Natureza (Lawsoft)
+      - Partes (Lawsoft)
+      - Pedidos (Lawsoft)
+      - Permissão (Lawsoft)
+      - Produtos (Lawsoft)
+      - Push (Lawsoft)
+      - Render (Lawsoft)
+      - Session (Lawsoft)
+      - Tabela preço categoria (Lawsoft)
+      - Tabela preço (Lawsoft)
+      - Tarefa (Lawsoft)
+      - Timeline (Lawsoft)
+      - Timesheet (Lawsoft)
+      - Valores apurados (Lawsoft)
+
 servers:
   - url: "http://example.com/api/v1"
     description: Default server
@@ -135,15 +166,19 @@ paths:
   /public/user/login:
     post:
       $ref: ./paths/public@user@login-post.yaml
+  
+  # Session
   "/api/mobilesession":
     post:
-      $ref: ./paths/lawsoft/login/public@api@mobilesession-post.yaml
+      $ref: ./paths/lawsoft/session/public@api@mobilesession-post.yaml
   "/api/session":
     post:
-      $ref: ./paths/lawsoft/login/public@api@session-post.yaml
+      $ref: ./paths/lawsoft/session/public@api@session-post.yaml
   "/api/logoff":
     delete:
-      $ref: ./paths/lawsoft/login/public@api@logoff-delete.yaml
+      $ref: ./paths/lawsoft/session/public@api@logoff-delete.yaml
+  
+  # Agenda
   "/api/agenda/totaleventos":
     get:
       $ref: ./paths/lawsoft/agenda/public@api@agenda@totaleventos-get.yaml
@@ -183,6 +218,14 @@ paths:
   "/api/casos/{idCaso}/tabagenda":
     get: 
       $ref: ./paths/lawsoft/agenda/public@api@casos@{idCaso}@tabagenda-get.yaml
+  "/api/casos/num/tabagenda":
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@casos@num@tabagenda-get.yaml
+  
+  #Timeline
+  "/api/timeline/items":
+    get:
+      $ref: ./paths/lawsoft/timeline/public@api@timeline@items-get.yaml
 
 components:
   securitySchemes:

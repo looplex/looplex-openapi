@@ -7,11 +7,11 @@ properties:
     type: string
   TipoItem:
     $ref: enums/TipoItemTimeline.yaml
-TipoItemString:
-  type: string
-TextoItem:
-  type: string
-TipoItemAgenda:
-  type: string
-Titulo:
-  type: string
+  TipoItemString:
+    type: string
+  TextoItem:
+    type: string
+  TipoItemAgenda:
+    type: integer
+  Titulo:
+    type: string
