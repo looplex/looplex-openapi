@@ -1,0 +1,9 @@
+name: CasosCliente
+type: object
+properties:
+  IDCliente:
+    type: integer
+  IDCasos:
+    type: array
+    items:
+      type: integer

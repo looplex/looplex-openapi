@@ -1,0 +1,31 @@
+name: DTOAnexo
+type: object
+properties:
+  path:
+    type: string
+  name:
+    type: string
+  #type:
+    #type: string
+    # Essa propriedade existe no DTO mas não pode se chamar type pois é reservado no YAML
+  size:
+    type: integer
+  cdAnexo:
+    type: integer
+  base64:
+    type: string
+  anexoAExcluir:
+    type: boolean
+    description: "Essa propriedade indica que o cliente excluiu o anexo da interface do Mobile então deve ser apagado do LO e do storage"
+  rotacionarImagem:
+    type: boolean
+    description: "Indica se a imagem deve ser rotacionada antes de ser gravada"
+  isSelected:
+    type: boolean
+    description: "Essa propriedade é utilizada apenas no aplicativo"
+  title:
+    type: string
+    description: "Essa propriedade é utilizada apenas no aplicativo"
+  value:
+    type: string
+    description: "Essa propriedade é utilizada apenas no aplicativo"

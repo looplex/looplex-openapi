@@ -1,0 +1,100 @@
+name: DTOProcessoPreCadastro
+type: object
+properties:
+  idPreProcesso:
+    type: integer
+  idCliente:
+    type: integer
+  envolvimentoCliente:
+    $ref: enums/PoloLawOffice.yaml
+  nrExito:
+    type: integer
+  nrTipoExito:
+    type: integer
+  nrMoedaInicialCausa:
+    type: integer
+  idResponsavel:
+    type: integer
+  idProcessoPai:
+    type: integer
+  idArea:
+    type: integer
+  idPasta:
+    type: integer
+  dsAssunto:
+    type: string
+  idRito:
+    type: integer
+  idForo:
+    type: integer
+  cdNoForoVara:
+    type: integer
+  numeroSequencial:
+    type: integer
+  confidencial:
+    type: boolean
+  dataCriacao:
+    type: string
+  dataUltimaAlteracao:
+    type: string
+  classeDoProcesso:
+    $ref: enums/ClasseDoCaso.yaml
+  tipo:
+    $ref: enums/RamosJudicial.yaml
+  situacaoDoProcesso:
+    $ref: enums/SituacaoDoCaso.yaml
+  tituloProcesso:
+    type: string
+  observacao:
+    type: string
+  numeroInterno:
+    type: string
+  idContrato:
+    type: integer
+  idFase:
+    type: integer
+  nivel:
+    type: string
+  numeroExterno:
+    type: string
+  valorCausa:
+    type: number
+  valorExpectativaApuracao:
+    type: number
+  valorContingencia:
+    type: number
+  cnj:
+    type: string
+  utilizaPedidosDoProcessoPai:
+    type: boolean
+  foroTemporario:
+    type: string
+  comentarioExpectativaDaCausa:
+    type: string
+  segundoNumero:
+    type: string
+  anotacoesSegundoNumero:
+    type: string
+  dataEntrada:
+    type: string
+  dataDistribuicao:
+    type: string
+  dataCitacao:
+    type: string
+  hierarquia:
+    type: array
+    items:
+      $ref: HierarquiaParaLO.yaml
+  coResponsaveis:
+    type: array
+    items:
+      type: integer
+  idProcessoNoFornecedorPush:
+    type: integer
+  nrFornecedorPush:
+    type: integer
+  partes:
+    type: array
+    items:
+      $ref: ParteParaLO.yaml
+  

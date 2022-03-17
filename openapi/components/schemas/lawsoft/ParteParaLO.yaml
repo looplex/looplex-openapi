@@ -1,0 +1,13 @@
+name: ParteParaLO
+type: object
+properties:
+  IdParteNoLo:
+    type: integer
+  nomeParte:
+    type: string
+  tipoPessoa:
+    $ref: enums/TipoPessoa.yaml
+  polo:
+    $ref: enums/PoloLawOffice.yaml
+  principal:
+    type: boolean
