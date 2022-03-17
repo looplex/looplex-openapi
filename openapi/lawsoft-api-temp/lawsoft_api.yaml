@@ -4236,35 +4236,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
-  /api/andamentos/templates:
-    get:
-      tags:
-        - Andamentos
-      summary: /api/andamentos/templates
-      description: Retorna um array com os templates de andamentos
-      operationId: api-andamentos-templates
-      parameters:
-        - name: tipoCaso
-          in: query
-          description: "- 1: Administrativo\n- 2: Interno\n- 3: Judicial Estadual\n- 4: Judicial Federal\n- 5: Judicial Trabalhista\n- 6: Interno Escritório\n- 7: Militar Estadual\n- 8: Eleitoral\n- 9: Militar da União"
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Retorna um array com os templates de andamentos
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOAndamentoTemplate"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   /api/ContaDeAcesso/ObtemContaDeAcesso2:
     get:
       tags:

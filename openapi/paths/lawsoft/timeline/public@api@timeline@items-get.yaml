@@ -6,61 +6,90 @@ operationId: api-timeline-items
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: paginaAtual
+    in: query
+    required: true
+    description: "Número da página a carregar"
+    schema:
+      type: integer
   - name: cdProcesso
     in: query
+    description: "Número do caso"
     required: true
     schema:
       type: integer
   - name: dataInicial
     in: query
+    example: "2022-01-01T12:00:00"
     required: false
     schema:
       type: string
   - name: dataFinal
     in: query
+    example: "2022-01-01T12:00:00"
     required: false
     schema:
       type: string
   - name: andamentoManual
     in: query
+    description: "Indica se inclui os andamentos manuais na resposta"
     required: false
     schema:
       type: boolean
   - name: andamentoAutomatico
     in: query
+    description: "Indica se inclui os andamentos automáticos na resposta"
     required: false
     schema:
       type: boolean
   - name: timesheet
     in: query
+    description: "Indica se inclui os lançamentos de hora na resposta"
     required: false
     schema:
       type: boolean
   - name: agenda
     in: query
+    description: "Indica se inclui os itens de agenda na resposta"
+    required: false
+    schema:
+      type: boolean
+  - name: tarefa
+    in: query
+    description: "Indica se inclui as tarefas na resposta"
     required: false
     schema:
       type: boolean
   - name: decisao
     in: query
+    description: "Indica se inclui as decisões na resposta"
     required: false
     schema:
       type: boolean
   - name: despesa
     in: query
+    description: "Indica se inclui as despesas na resposta"
     required: false
     schema:
       type: boolean
   - name: garantia
     in: query
+    description: "Indica se inclui as garantias na resposta"
     required: false
     schema:
       type: boolean
-  - name: paginaAtual
+  - name: pushAndamentos
     in: query
-    required: true
+    description: "Indica se inclui os itens de push de andamento na resposta"
+    required: false
     schema:
-      type: integer
+      type: boolean
+  - name: pushPublicacao
+    in: query
+    description: "Indica se inclui os itens de push de publicação na resposta"
+    required: false
+    schema:
+      type: boolean
 responses:
   "200":
     description: "Obtém os itens de timeline."

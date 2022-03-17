@@ -3,8 +3,12 @@ type: object
 properties:
   IDItem:
     type: integer
+    example: 12
+    description: "Identificador do item de timeline"
   DataFormatada:
     type: string
+    example: "17/03/2022"
+    description: "Data do item de timeline"
   TipoItem:
     $ref: enums/TipoItemTimeline.yaml
   TipoItemString:
