@@ -1,0 +1,6 @@
+type: enum
+example: 1
+description: |
+  1: Ativo
+
+  3: Encerrado

@@ -1,0 +1,10 @@
+type: enum
+example: 1
+description: |
+  1: Aguardando liberação
+
+  2: Aguardando aprovação
+
+  3: Liberado
+
+  4: Recusado
