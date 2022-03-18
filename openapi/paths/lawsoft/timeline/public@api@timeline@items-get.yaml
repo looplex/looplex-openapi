@@ -10,10 +10,12 @@ parameters:
     in: query
     required: true
     description: "Número da página a carregar"
+    example: 2
     schema:
       type: integer
   - name: cdProcesso
     in: query
+    example: 81
     description: "Número do caso"
     required: true
     schema:
@@ -33,60 +35,70 @@ parameters:
   - name: andamentoManual
     in: query
     description: "Indica se inclui os andamentos manuais na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: andamentoAutomatico
     in: query
     description: "Indica se inclui os andamentos automáticos na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: timesheet
     in: query
     description: "Indica se inclui os lançamentos de hora na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: agenda
     in: query
     description: "Indica se inclui os itens de agenda na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: tarefa
     in: query
     description: "Indica se inclui as tarefas na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: decisao
     in: query
     description: "Indica se inclui as decisões na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: despesa
     in: query
     description: "Indica se inclui as despesas na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: garantia
     in: query
     description: "Indica se inclui as garantias na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: pushAndamentos
     in: query
     description: "Indica se inclui os itens de push de andamento na resposta"
+    example: true
     required: false
     schema:
       type: boolean
   - name: pushPublicacao
     in: query
     description: "Indica se inclui os itens de push de publicação na resposta"
+    example: true
     required: false
     schema:
       type: boolean
