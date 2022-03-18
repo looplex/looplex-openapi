@@ -240,6 +240,13 @@ paths:
     get:
       $ref: ./paths/lawsoft/produtos/public@api@casos@num@produtos-get.yaml
 
+  # Permissão
+  "/api/permissao/{idFuncionalidade}":
+    get:
+      $ref: ./paths/lawsoft/permissao/public@api@permissao@{idFuncionalidade}-get.yaml
+
+  
+
 components:
   securitySchemes:
     main_auth:

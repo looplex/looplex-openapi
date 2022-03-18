@@ -3201,35 +3201,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
-  "/api/permissao/{idFuncionalidade}":
-    get:
-      tags:
-        - Permissão
-      summary: "/api/permissao/{idFuncionalidade}"
-      description: Retorna um booleano indicando se possui determinada permissão.
-      operationId: api-permissao-idfuncionalidade
-      parameters:
-        - name: idFuncionalidade
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Retorna um booleano indicando se possui determinada permissão.
-          content:
-            application/json:
-              example: "True"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   "/api/push/escritorio/todos/listar/{somenteBloqueados}":
     get:
       tags:
