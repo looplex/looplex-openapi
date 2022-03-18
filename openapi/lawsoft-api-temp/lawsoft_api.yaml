@@ -3230,43 +3230,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
-  /api/casos/num/produtos:
-    get:
-      tags:
-        - Produtos
-      summary: /api/casos/num/produtos
-      description: "Obtém um array com os produtos por caso por identificador do caso, numero interno ou numero externo."
-      operationId: api-casos-num-produtos
-      parameters:
-        - name: NumeroInterno
-          in: query
-          schema:
-            type: integer
-        - name: NumeroExterno
-          in: query
-          schema:
-            type: string
-        - name: IdProcesso
-          in: query
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: "Obtém um array com os produtos por caso por identificador do caso, numero interno ou numero externo."
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOProduto"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   "/api/push/escritorio/todos/listar/{somenteBloqueados}":
     get:
       tags:
