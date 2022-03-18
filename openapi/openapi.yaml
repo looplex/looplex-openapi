@@ -256,6 +256,14 @@ paths:
     get:
       $ref: ./paths/lawsoft/fase_caso/public@api@casos@num@fase-get.yaml
 
+  # Dados complementares
+  "/api/casos/{idCaso}/dadoscomplementares":
+    get:
+      $ref: ./paths/lawsoft/dados_complementares/public@api@casos@{idCaso}@dadoscomplementares-get.yaml
+  "/api/casos/num/dadoscomplementares":
+    get:
+      $ref: ./paths/lawsoft/dados_complementares/public@api@casos@num@dadoscomplementares-get.yaml
+
 components:
   securitySchemes:
     main_auth:
