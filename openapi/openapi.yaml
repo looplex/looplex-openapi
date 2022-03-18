@@ -245,7 +245,16 @@ paths:
     get:
       $ref: ./paths/lawsoft/permissao/public@api@permissao@{idFuncionalidade}-get.yaml
 
-  
+  # Fase
+  "/api/casos/fase/{nrGrupo}":
+    get:
+      $ref: ./paths/lawsoft/fase_caso/public@api@casos@fase@{nrGrupo}-get.yaml
+  "/api/casos/{nrSequencia}/fase":
+    get:
+      $ref: ./paths/lawsoft/fase_caso/public@api@casos@{nrSequencia}@fase-get.yaml
+  "/api/casos/num/fase":
+    get:
+      $ref: ./paths/lawsoft/fase_caso/public@api@casos@num@fase-get.yaml
 
 components:
   securitySchemes:

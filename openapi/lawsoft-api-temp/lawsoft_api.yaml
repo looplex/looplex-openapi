@@ -2257,73 +2257,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
-  "/api/casos/{nrSequencia}/fase":
-    get:
-      tags:
-        - FaseCaso
-      summary: "/api/casos/{nrSequencia}/fase"
-      description: Obtém a fase do caso.
-      operationId: api-casos-nrsequencia-fase
-      parameters:
-        - name: nrSequencia
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Obtém a fase do caso.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOFaseCaso"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-  /api/casos/num/fase:
-    get:
-      tags:
-        - FaseCaso
-      summary: /api/casos/num/fase
-      description: "Obtém um array com as fases dos casos encontrados de acordo com o numero interno, numero externo ou identificador do caso."
-      operationId: api-casos-num-fase
-      parameters:
-        - name: NumeroInterno
-          in: query
-          schema:
-            type: integer
-        - name: NumeroExterno
-          in: query
-          schema:
-            type: string
-        - name: IdProcesso
-          in: query
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: "Obtém um array com as fases dos casos encontrados de acordo com o numero interno, numero externo ou identificador do caso."
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOFaseCaso"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   "/api/funcionarios/porIds/{ids}":
     get:
       tags:
@@ -4364,35 +4297,6 @@ paths:
           description: Em caso de erro de timeout ou sessão expirada.
           content:
             application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-  "/api/casos/fase/{nrGrupo}":
-    get:
-      tags:
-        - FaseCaso
-      summary: "/api/casos/fase/{nrGrupo}"
-      description: Obtém um array com as fases do caso de acordo com o tipo de processo
-      operationId: api-casos-fase-nrgrupo
-      parameters:
-        - name: nrGrupo
-          in: path
-          description: "1: Administrativo, 2: Interno, 3: Judicial Estadual, 4: Judicial Federal, 5: Judicial Trabalhista, 6: Interno Escritório, 7: Militar Estadual, 8: Eleitoral, 9: Militar da União"
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Obtém um array com as fases do caso de acordo com o tipo de processo
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOFaseCaso"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
         "500":
           description: Em caso de erro diferente de timeout ou sessão expirada.
           content:
