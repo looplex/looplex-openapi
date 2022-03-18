@@ -3230,36 +3230,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
-  "/api/casos/{idCaso}/produtos":
-    get:
-      tags:
-        - Produtos
-      summary: "/api/casos/{idCaso}/produtos"
-      description: Obtém um array com os produtos por caso.
-      operationId: api-casos-idcaso-produtos
-      parameters:
-        - name: idCaso
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Obtém um array com os produtos por caso.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOProduto"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   /api/casos/num/produtos:
     get:
       tags:

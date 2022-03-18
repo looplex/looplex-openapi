@@ -232,6 +232,14 @@ paths:
     get:
       $ref: ./paths/lawsoft/timeline/public@api@timeline@items-get.yaml
 
+  # Produtos
+  "/api/casos/{idCaso}/produtos":
+    get:
+      $ref: ./paths/lawsoft/produtos/public@api@casos@{idCaso}@produtos-get.yaml
+  "/api/casos/num/produtos":
+    get:
+      $ref: ./paths/lawsoft/produtos/public@api@casos@num@produtos-get.yaml
+
 components:
   securitySchemes:
     main_auth:
