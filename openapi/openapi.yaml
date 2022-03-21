@@ -299,6 +299,14 @@ paths:
     get:
       $ref: ./paths/lawsoft/dados_complementares/public@api@casos@num@dadoscomplementares-get.yaml
 
+  # Casos
+  "/api/casos/inclui":
+    post:
+      $ref: ./paths/lawsoft/casos/public@api@casos@inclui-post.yaml
+  "/api/clientes/{idCliente}/casos":
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@clientes@{idCliente}@casos-get.yaml
+
 components:
   securitySchemes:
     main_auth:
