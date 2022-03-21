@@ -226,6 +226,41 @@ paths:
   "/api/andamentos/templates":
     get:
       $ref: ./paths/lawsoft/andamento/public@api@andamentos@templates-get.yaml
+  "/api/andamentos/classificacoes":
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@classificacoes-get.yaml
+  "/api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}":
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@casos@{idCaso}@andamentos@{data}@{primeiraLeitura}@{totalAndamentosLidosPeloMobile}-get.yaml
+  "/api/casos/{idCaso}/andamentosimples":
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@casos@{idCaso}@andamentosimples-get.yaml
+  "/api/casos/num/andamentosimples":
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@casos@num@andamentosimples-get.yaml
+  "/api/andamentos/{id}":
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@{id}-get.yaml
+  "/api/andamentos":
+    post:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@post-post.yaml
+  "/api/andamentos/{idAndamento}":
+    put:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
+  "/api/andamentos/{idAndamento}/remover1":
+    delete:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
+
+  # Áreas
+  "/api/areas":
+    get:
+      $ref: ./paths/lawsoft/area/public@api@areas@get-get.yaml
+  "/api/areas/porDomain/{domain}":
+    get:
+      $ref: ./paths/lawsoft/area/public@api@areas@porDomain@{domain}-get.yaml
+  "/api/areas/{id}":
+    get:
+      $ref: ./paths/lawsoft/area/public@api@areas@{id}@get-get.yaml
 
   #Timeline
   "/api/timeline/items":
