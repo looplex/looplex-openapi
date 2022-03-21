@@ -1,6 +1,6 @@
 tags: 
   - Casos (Lawsoft)
-summary: Inclui caso
+summary: Inclui casos
 description: Inclui casos.
 operationId: api-casos-inclui
 parameters:
@@ -10,7 +10,9 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/lawsoft/DTOProcessoPreCadastro.yaml
+        type: array
+        items:
+          $ref: ../../../components/schemas/lawsoft/DTOProcessoPreCadastro.yaml
 responses:
   "200":
     description: "Retorna um objeto contendo os processos cadastrados e os processos com erro (caso haja)."
