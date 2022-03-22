@@ -1,0 +1,30 @@
+tags: 
+  - Casos (Lawsoft)
+summary: Pastas do cliente (Capa)
+description: Retorna um array com as pastas do cliente (Capa).
+operationId: api-casos-{idCliente}-pastasDoCaso
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: idCliente
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Retorna um array com as pastas do cliente (Capa)."
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOPasta.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
