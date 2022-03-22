@@ -306,6 +306,15 @@ paths:
   "/api/clientes/{idCliente}/casos":
     get:
       $ref: ./paths/lawsoft/casos/public@api@clientes@{idCliente}@casos-get.yaml
+  "/api/clientes/{idCliente}/pastas":
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@clientes@{idCliente}@pastas-get.yaml
+  "/api/casos/{idCliente}/pastasDoCaso":
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@{idCliente}@pastasDoCaso-get.yaml
+  "/api/casos/{id}":
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@{id}-get.yaml
 
 components:
   securitySchemes:
