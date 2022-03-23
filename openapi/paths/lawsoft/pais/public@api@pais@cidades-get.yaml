@@ -1,0 +1,32 @@
+tags: 
+  - País (Lawsoft)
+summary: Cidades
+description: Lista as cidades de acordo com o estado informado
+operationId: api-pais-cidades
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: uf
+    in: query
+    description: "UF para obter as cidades"
+    example: "SP"
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: "Lista as cidades de acordo com o estado informado"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOCidade.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

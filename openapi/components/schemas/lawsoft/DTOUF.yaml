@@ -1,0 +1,9 @@
+name: DTOUF
+type: object
+properties:
+  ID:
+    example: "AL"
+    type: string
+  UF:
+    example: "Alagoas"
+    type: string

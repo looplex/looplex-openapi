@@ -1,0 +1,9 @@
+name: DTOPais
+type: object
+properties:
+  ID:
+    example: 26
+    type: integer
+  Pais:
+    example: "Brasil"
+    type: string

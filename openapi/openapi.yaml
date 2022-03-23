@@ -104,6 +104,7 @@ x-tagGroups:
       - Timeline (Lawsoft)
       - Timesheet (Lawsoft)
       - Valores apurados (Lawsoft)
+      - País (Lawsoft)
 
 servers:
   - url: "http://example.com/api/v1"
@@ -349,6 +350,17 @@ paths:
   "/api/clientes/enderecos":
     get:
       $ref: ./paths/lawsoft/cliente/public@api@clientes@enderecos-get.yaml
+
+  # País
+  "/api/pais":
+    get:
+      $ref: ./paths/lawsoft/pais/public@api@pais-get.yaml
+  "/api/pais/uf":
+    get:
+      $ref: ./paths/lawsoft/pais/public@api@pais@uf-get.yaml
+  "/api/pais/cidades":
+    get:
+      $ref: ./paths/lawsoft/pais/public@api@pais@cidades-get.yaml
 
 components:
   securitySchemes:
