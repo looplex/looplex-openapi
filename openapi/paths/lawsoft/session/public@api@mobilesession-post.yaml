@@ -16,7 +16,7 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ResultadoDeLogin.yaml
+          $ref: ../../../components/schemas/lawsoft/DTOLogonResult.yaml
   "401":
     description: Em caso de erro de timeout ou sessão expirada
   "500":
