@@ -324,6 +324,31 @@ paths:
   "/api/casos/meuscasos/{cdResponsavel}":
     get:
       $ref: ./paths/lawsoft/casos/public@api@casos@meuscasos@{cdResponsavel}-get.yaml
+  "/api/casos/RamosJudiciais":
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@RamosJudiciais-get.yaml
+  "/api/casos":
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos-get.yaml
+
+  # Categoria
+  "/api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco":
+    get:
+      $ref: ./paths/lawsoft/categoria/public@api@escritorios@{IdEscritorio}@{intfiltroCategoria}@categoriaspreco-get.yaml
+  "/api/escritorios/{IdEscritorio}/categoriaspreco":
+    get:
+      $ref: ./paths/lawsoft/categoria/public@api@escritorios@{IdEscritorio}@categoriaspreco-get.yaml
+
+  # Cliente
+  "/api/clientes/todos":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@todos-get.yaml
+  "/api/clientes":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes-get.yaml
+  "/api/clientes/enderecos":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@enderecos-get.yaml
 
 components:
   securitySchemes:

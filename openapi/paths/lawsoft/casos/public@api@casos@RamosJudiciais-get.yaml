@@ -1,0 +1,25 @@
+tags: 
+  - Casos (Lawsoft)
+summary: Ramos Judiciais
+description: Obtém os ramos judiciais
+operationId: api-casos-RamosJudiciais
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+responses:
+  "200":
+    description: "Obtém os ramos judiciais"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOEnum.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

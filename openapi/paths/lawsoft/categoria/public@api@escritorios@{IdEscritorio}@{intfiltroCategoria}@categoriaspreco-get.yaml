@@ -1,0 +1,35 @@
+tags: 
+  - Categoria (Lawsoft)
+summary: Categorias de preço do escritório
+description: Retorna um array com as categorias de preço do escritório de acordo com o filtro informado.
+operationId: api-escritorios-{IdEscritorio},{intfiltroCategoria}-categoriaspreco
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: IdEscritorio
+    in: path
+    required: true
+    schema:
+      type: integer
+  - name: intfiltroCategoria
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Retorna um array com as categorias de preço do escritório de acordo com o filtro informado."
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOCategoriaPreco.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
