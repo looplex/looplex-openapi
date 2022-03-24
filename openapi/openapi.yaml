@@ -362,6 +362,23 @@ paths:
     get:
       $ref: ./paths/lawsoft/pais/public@api@pais@cidades-get.yaml
 
+  # Contrato
+  "/api/contratos":
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@contratos-get.yaml
+  "/api/casos/{idCaso}/contratosimples":
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@casos@{idCaso}@contratosimples-get.yaml
+  "/api/contratos/{idCliente}/contratosCliente":
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@contratos@{idCliente}@contratosCliente-get.yaml
+  "/api/clientes/{idCliente}/contratos":
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@clientes@{idCliente}@contratos-get.yaml
+  "/api/contratos/{id}":
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@contratos@{id}-get.yaml
+
 components:
   securitySchemes:
     main_auth:
