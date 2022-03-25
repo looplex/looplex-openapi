@@ -379,6 +379,20 @@ paths:
     get:
       $ref: ./paths/lawsoft/contrato/public@api@contratos@{id}-get.yaml
 
+  # Hierarquia
+  "/api/hierarquia/ritos":
+    get: 
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@ritos-get.yaml
+  "/api/hierarquia/tipos":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@tipos-get.yaml
+  "/api/hierarquia/regioes":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@regioes-get.yaml
+  "/api/hierarquia/GrupoForoPorTipo":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforoportipo-get.yaml
+
 components:
   securitySchemes:
     main_auth:
