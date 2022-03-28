@@ -1,0 +1,19 @@
+tags:
+  - Tasks
+summary: Add tasks
+description: Create a new task or set of tasks. You can also pass children tasks as arguments to create tree hierarchies.
+operationId: addTasksUsingPOST
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: ../components/schemas/Task.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Task.yaml

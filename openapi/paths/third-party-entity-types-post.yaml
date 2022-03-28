@@ -1,0 +1,16 @@
+tags:
+- Third Party Entity Types
+summary: Add Third Party Entity Type
+operationId: addThirdPartyEntityTypeUsingPOST
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../components/schemas/ThirdPartyEntityType.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          $ref: ../components/schemas/ThirdPartyEntityType.yaml

@@ -1,0 +1,14 @@
+tags:
+- Third Party Entities
+summary: Get third party entities
+description: Returns a list of all the third party entities
+operationId: getThirdPartyEntitiesUsingGET
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          type: array
+          items:
+            $ref: ../components/schemas/ThirdPartyEntity.yaml

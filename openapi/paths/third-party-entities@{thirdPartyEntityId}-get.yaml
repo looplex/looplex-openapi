@@ -1,0 +1,13 @@
+tags:
+- Third Party Entities
+summary: Get third party entity by id
+operationId: getThirdPartyEntityByIdUsingGET
+parameters:
+  - $ref: ../components/parameters/ThirdPartyEntityId.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          $ref: ../components/schemas/ThirdPartyEntity.yaml

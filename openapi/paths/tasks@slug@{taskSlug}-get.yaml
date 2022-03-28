@@ -1,0 +1,20 @@
+tags:
+- Tasks
+summary: Get task by Slug
+description: Find a specific task by its slug
+operationId: getTaskBySlugUsingGET
+parameters:
+- name: taskSlug
+  in: path
+  description: Task slug
+  required: true
+  style: simple
+  schema:
+    type: String
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          $ref: ../components/schemas/Task.yaml

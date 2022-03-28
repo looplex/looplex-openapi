@@ -1,0 +1,21 @@
+title: ThirdPartyEntityType
+type: object
+properties:
+  createdAt:
+    type: string
+    format: date-time
+  customFields:
+    type: string
+    description: Json attribute to store custom fields related to the entity
+      type.
+  id:
+    type: integer
+    description: The unique identifier to be associated with the type.
+    format: int64
+  lastUpdatedAt:
+    type: string
+    format: date-time
+  name:
+    type: string
+  owner:
+    type: string

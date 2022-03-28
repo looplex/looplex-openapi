@@ -1,0 +1,10 @@
+name: testName
+in: path
+description: The id associated to the task
+required: true
+schema:
+  exclusiveMaximum: true
+  minimum: 1.0
+  exclusiveMinimum: true
+  type: integer
+  format: int64

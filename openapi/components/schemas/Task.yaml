@@ -1,0 +1,64 @@
+title: Task
+description: Tasks info
+type: object
+properties:
+  ancestry:
+    type: string
+    description: test-description
+    default: 10
+  children:
+    type: array
+    description: Sub-tasks associated to the task
+    items:
+      $ref: "./Task.yaml"
+  createdAt:
+    type: string
+    format: date-time
+  customFields:
+    type: string
+    description: Json attribute to store custom fields related to the task
+  dueDate:
+    type: string
+    description: The task due date
+    format: date-time
+  endDate:
+    type: string
+    description: The task end date
+    format: date-time
+  id:
+    type: integer
+    description: The unique identifier to be associated with the task
+    format: int64
+  lastUpdatedAt:
+    type: string
+    format: date-time
+  name:
+    type: string
+    description: The name that will be displayed in the tasks table
+  orgPath:
+    type: string
+  owner:
+    type: string
+    description: The user associated as owner of the task
+  slug:
+    type: string
+  startDate:
+    type: string
+    description: The task start date
+    format: date-time
+  status:
+    type: string
+    description: The status of the task (to-do / doing / done)
+    enum:
+    - DONE
+    - EXECUTING
+    - SOON
+    - WAITING_EXECUTION
+  tags:
+    type: array
+    description: The tags associated to the task
+    items:
+      type: string
+  uuid:
+    type: string
+    format: uuid

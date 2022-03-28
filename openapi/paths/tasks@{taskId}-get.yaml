@@ -1,0 +1,14 @@
+tags:
+- Tasks
+summary: Get task by id
+description: Find a specific task by its ID
+operationId: getTaskByIdUsingGET
+parameters:
+  - $ref: ../components/parameters/TaskId.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          $ref: ../components/schemas/Task.yaml

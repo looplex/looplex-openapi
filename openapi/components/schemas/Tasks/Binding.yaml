@@ -1,0 +1,14 @@
+title: Binding
+type: object
+properties:
+  taskId:
+    type: integer
+    description: The ID of the task to be associated with an entity
+    format: int64
+    example: 10
+  thirdPartyEntityId:
+    type: integer
+    description: The ID of the entity to be associated with a task
+    format: int64
+    example: 12
+description: A binding represents an association between a task and a third party entity.

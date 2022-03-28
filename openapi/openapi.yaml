@@ -65,6 +65,16 @@ tags:
     description: User operations, such as login and profile consulting
   - name: Login (Lawsoft)
     description: Endpoints de login
+  - name: Tasks
+    description: Tasks operations
+  - name: Board
+    description: Unified board endpoint
+  - name: Bindings
+    description: Bindings operations
+  - name: Third Party Entities
+    description: Third Party Entities operations
+  - name: Third Party Entity Types
+    description: Third Party Entity Types operations
 x-tagGroups:
   - name: Endpoints
     tags:
@@ -106,13 +116,33 @@ x-tagGroups:
       - Valores apurados (Lawsoft)
       - País (Lawsoft)
 
+  - name: Tasks
+    tags:
+      - Bindings
+      - Board
+      - Tasks
+      - Third Party Entities
+      - Third Party Entity Types
 servers:
   - url: "http://example.com/api/v1"
     description: Default server
   - url: "https://example.com/api/v1"
   - url: "https://www.sys.lawoffice.com.br/"
 paths:
-  "/public/docassembler/account/{accountId}/document/{docId}/answers":
+  '/bindings':
+    get:
+      $ref: ./paths/bindings-get.yaml
+    post:
+      $ref: ./paths/bindings-post.yaml
+    delete:
+      $ref: ./paths/bindings-delete.yaml
+  '/board':
+    get:
+      $ref: ./paths/board-get.yaml
+  '/board/me':
+    get:
+      $ref: ./paths/board@me-get.yaml
+  '/public/docassembler/account/{accountId}/document/{docId}/answers':
     get:
       $ref: ./paths/public@docassembler@account@{accountId}@document@{docId}@answers-get.yaml
   "/public/docassembler/account/{accountId}/document/{docId}/export":
@@ -399,6 +429,52 @@ paths:
     get:
       $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
 
+  '/tasks':
+    get:
+      $ref: ./paths/tasks-get.yaml
+    post:
+      $ref: ./paths/tasks-post.yaml
+  '/tasks/{taskId}':
+    patch:
+      $ref: ./paths/tasks@{taskId}-patch.yaml
+    get:
+      $ref: ./paths/tasks@{taskId}-get.yaml
+    delete:
+      $ref: ./paths/tasks@{taskId}-delete.yaml
+  '/tasks/{taskSlug}':
+    get:
+      $ref: ./paths/tasks@slug@{taskSlug}-get.yaml
+  '/tasks/{typeId}/{thirdPartyEntityId}':
+    get:
+      $ref: ./paths/tasks@{typeId}@{thirdPartyEntityId}-get.yaml
+  '/third-party-entities':
+    get:
+      $ref: ./paths/third-party-entities-get.yaml
+    post:
+      $ref: ./paths/third-party-entities-post.yaml
+    put:
+      $ref: ./paths/third-party-entities-put.yaml
+  '/third-party-entities/{thirdPartyEntityId}':
+    get:
+      $ref: ./paths/third-party-entities@{thirdPartyEntityId}-get.yaml
+    patch:
+      $ref: ./paths/third-party-entities@{thirdPartyEntityId}-patch.yaml
+    delete:
+      $ref: ./paths/third-party-entities@{thirdPartyEntityId}-delete.yaml
+  '/third-party-entity-types':
+    get:
+      $ref: ./paths/third-party-entity-types-get.yaml
+    post:
+      $ref: ./paths/third-party-entity-types-post.yaml
+    put:
+      $ref: ./paths/third-party-entity-types-put.yaml
+  '/third-party-entity-types/{thirdPartyEntityTypeId}':
+    get:
+      $ref: ./paths/third-party-entity-types@{thirdPartyEntityTypeId}-get.yaml
+    patch:
+      $ref: ./paths/third-party-entity-types@{thirdPartyEntityTypeId}-patch.yaml
+    delete:
+      $ref: ./paths/third-party-entity-types@{thirdPartyEntityTypeId}-delete.yaml
 components:
   securitySchemes:
     main_auth:

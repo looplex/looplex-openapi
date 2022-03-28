@@ -1,0 +1,13 @@
+tags:
+- Third Party Entity Types
+summary: Get third party entity types
+operationId: getThirdPartyEntityTypesUsingGET
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          type: array
+          items:
+            $ref: ../components/schemas/ThirdPartyEntityType.yaml

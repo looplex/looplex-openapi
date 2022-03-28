@@ -1,0 +1,32 @@
+tags:
+- Tasks
+summary: Find all tasks attached to a third party entity
+description: Find all tasks attached to a third party entity by its ID and type
+  ID
+operationId: findTasksByThirdPartEntityAndTypeUsingGET
+parameters:
+- name: typeId
+  in: path
+  description: typeId
+  required: true
+  style: simple
+  schema:
+    type: integer
+    format: int64
+- name: thirdPartyEntityId
+  in: path
+  description: thirdPartyEntityId
+  required: true
+  style: simple
+  schema:
+    type: integer
+    format: int64
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          type: array
+          items:
+            $ref: ../components/schemas/Task.yaml

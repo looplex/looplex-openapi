@@ -1,0 +1,14 @@
+tags:
+- Third Party Entities
+summary: Delete third party entity
+operationId: deleteThirdPartyEntityUsingDELETE
+parameters:
+  - $ref: ../components/parameters/ThirdPartyEntityId.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          type: integer
+          format: int64
