@@ -104,6 +104,11 @@ paths:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
   
+
+
+
+
+  
   /api/casos/id/num:
     get:
       tags:
@@ -1461,78 +1466,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/DTOTabelaPrecoCategoria"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-  
-  /api/hierarquia/GrupoForo:
-    get:
-      tags:
-        - Hierarquia
-      summary: /api/hierarquia/GrupoForo
-      description: "Obtém um array com os grupos foro por ramo de justiça, estado e grupo de família."
-      operationId: api-hierarquia-grupoforo
-      parameters:
-        - name: nrRamoJudicial
-          in: query
-          schema:
-            type: integer
-        - name: dsUF
-          in: query
-          schema:
-            type: string
-        - name: nrGrupoFamilia
-          in: query
-          schema:
-            type: integer
-        - name: cdRegiao
-          in: query
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: "Obtém um array com os grupos foro por ramo de justiça, estado e grupo de família."
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOGrupoForo"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
-  /api/hierarquia/GrupoForoSuperiores:
-    get:
-      tags:
-        - Hierarquia
-      summary: /api/hierarquia/GrupoForoSuperiores
-      description: Obtém um array com os grupos foro superiores por ramo judicial.
-      operationId: api-hierarquia-grupoforosuperiores
-      parameters:
-        - name: nrRamoJudicial
-          in: query
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Obtém um array com os grupos foro superiores por ramo judicial.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOGrupoForo"
         "401":
           description: Em caso de erro de timeout ou sessão expirada.
           content:

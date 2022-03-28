@@ -392,6 +392,12 @@ paths:
   "/api/hierarquia/GrupoForoPorTipo":
     get:
       $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforoportipo-get.yaml
+  "/api/hierarquia/GrupoForo":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforo-get.yaml
+  "/api/hierarquia/GrupoForoSuperiores":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
 
 components:
   securitySchemes:
