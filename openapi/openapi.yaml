@@ -96,6 +96,7 @@ x-tagGroups:
       - Decisões (Lawsoft)
       - Despesas (Lawsoft)
       - Expectativa reivindicação (Lawsoft)
+      - Envolvimento das partes (Lawsoft)
       - Fase caso (Lawsoft)
       - Funcionário (Lawsoft)
       - Garantia (Lawsoft)
@@ -437,6 +438,11 @@ paths:
   "/api/hierarquia/GrupoForoSuperiores":
     get:
       $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
+
+  # Parte Papel (Envolvimento das partes)
+  "/api/envolvimentos":
+    get:
+      $ref: ./paths/lawsoft/parte_papel/public@api@envolvimentos-get.yaml
 
   '/tasks':
     get:

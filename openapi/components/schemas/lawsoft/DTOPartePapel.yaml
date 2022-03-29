@@ -1,0 +1,9 @@
+name: DTOPartePapel
+type: object
+properties:
+  ID:
+    type: integer
+    example: 1
+  Envolvimento:
+    type: string
+    example: "Verificador do caso"
