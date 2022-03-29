@@ -1,4 +1,4 @@
-name: DTOCategoriaPreco
+title: DTOCategoriaPreco
 type: object
 properties:
   IdCategoria:

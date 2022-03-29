@@ -1,4 +1,4 @@
-name: DTOAdiantamento
+title: DTOAdiantamento
 type: object
 properties:
   IDAdiantamento:

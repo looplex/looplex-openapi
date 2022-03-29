@@ -1,4 +1,4 @@
-name: DTOAlocacaoDeDespesa
+title: DTOAlocacaoDeDespesa
 type: object
 properties:
   IDAlocacaoDeDespesa:

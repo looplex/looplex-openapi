@@ -1,4 +1,4 @@
-name: DTOPartePapel
+title: DTOPartePapel
 type: object
 properties:
   ID:

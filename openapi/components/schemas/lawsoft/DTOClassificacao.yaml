@@ -1,4 +1,4 @@
-name: DTOClassificacao
+title: DTOClassificacao
 type: object
 properties:
   ID:

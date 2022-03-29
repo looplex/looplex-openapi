@@ -1,4 +1,4 @@
-name: DTOSolicitante
+title: DTOSolicitante
 type: object
 properties:
   DsNome: 

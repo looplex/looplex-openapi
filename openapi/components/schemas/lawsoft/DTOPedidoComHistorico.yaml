@@ -1,4 +1,4 @@
-name: DTOPedidoComHistorico
+title: DTOPedidoComHistorico
 type: object
 properties:
   PedidoCausa:

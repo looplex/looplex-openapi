@@ -1,4 +1,4 @@
-name: DTOEnderecoCliente
+title: DTOEnderecoCliente
 type: object
 properties:
   IDCliente:

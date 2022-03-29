@@ -1,4 +1,4 @@
-name: DTOProduto
+title: DTOProduto
 type: object
 properties:
   NomeCliente:

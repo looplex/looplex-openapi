@@ -1,4 +1,4 @@
-name: DTOCasoPedidoSimples
+title: DTOCasoPedidoSimples
 type: object
 properties:
   Risco:

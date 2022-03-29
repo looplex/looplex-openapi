@@ -1,4 +1,4 @@
-name: DTOGrupoRito
+title: DTOGrupoRito
 type: object
 properties:
   cdGrupoRito:

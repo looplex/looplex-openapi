@@ -1,4 +1,4 @@
-name: DTOObjetoNomeID
+title: DTOObjetoNomeID
 type: object
 properties:
   Nome:

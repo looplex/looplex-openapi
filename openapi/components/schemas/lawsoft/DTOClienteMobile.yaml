@@ -1,4 +1,4 @@
-name: DTOClienteMobile
+title: DTOClienteMobile
 type: object
 properties:
   IDCliente:

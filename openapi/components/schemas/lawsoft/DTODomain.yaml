@@ -1,4 +1,4 @@
-name: DTODomain
+title: DTODomain
 type: object
 properties:
   Id:

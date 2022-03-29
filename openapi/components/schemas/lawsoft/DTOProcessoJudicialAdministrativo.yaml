@@ -1,4 +1,4 @@
-name: DTOProcessoJudicialAdministrativo
+title: DTOProcessoJudicialAdministrativo
 type: object
 properties:
   idPreProcesso:  

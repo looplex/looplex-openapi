@@ -1,4 +1,4 @@
-name: DTOHistoricoPush
+title: DTOHistoricoPush
 type: object
 properties:
   Chave:

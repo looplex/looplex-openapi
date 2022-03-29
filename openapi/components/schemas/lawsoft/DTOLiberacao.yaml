@@ -1,4 +1,4 @@
-name: DTOLiberacao
+title: DTOLiberacao
 type: object
 properties:
   DataUltimaLiberacao:

@@ -128,7 +128,7 @@ servers:
   - url: "http://example.com/api/v1"
     description: Default server
   - url: "https://example.com/api/v1"
-  - url: "https://www.sys.lawoffice.com.br/"
+  - url: "https://www.sys.lawoffice.com.br"
 paths:
   '/bindings':
     get:

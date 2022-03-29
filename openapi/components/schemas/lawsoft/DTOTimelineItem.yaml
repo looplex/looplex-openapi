@@ -1,4 +1,4 @@
-name: DTOTimelineItem
+title: DTOTimelineItem
 type: object
 properties:
   IDItem:

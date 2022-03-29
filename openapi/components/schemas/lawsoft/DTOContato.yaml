@@ -1,4 +1,4 @@
-name: DTOContato
+title: DTOContato
 type: object
 properties:
   IDContato:

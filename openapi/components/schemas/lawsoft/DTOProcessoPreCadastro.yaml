@@ -1,4 +1,4 @@
-name: DTOProcessoPreCadastro
+title: DTOProcessoPreCadastro
 type: object
 properties:
   idPreProcesso:

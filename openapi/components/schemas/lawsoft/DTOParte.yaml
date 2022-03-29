@@ -1,4 +1,4 @@
-name: DTOParte
+title: DTOParte
 type: object
 properties:
   IdParte: 

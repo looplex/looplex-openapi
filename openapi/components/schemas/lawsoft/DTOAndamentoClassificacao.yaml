@@ -1,4 +1,4 @@
-name: DTOAndamentoClassificacao
+title: DTOAndamentoClassificacao
 type: object
 properties:
   IDAndamentoClassificacao:

@@ -1,4 +1,4 @@
-name: DTOAndamento
+title: DTOAndamento
 type: object
 properties:
   NrTipoClassificacaoAutomatica:

@@ -1,4 +1,4 @@
-name: DTOPedidoCausa
+title: DTOPedidoCausa
 type: object
 properties:
   Id:

@@ -1,4 +1,4 @@
-name: DTOFuncionario
+title: DTOFuncionario
 type: object
 properties:
   IDFuncionario:

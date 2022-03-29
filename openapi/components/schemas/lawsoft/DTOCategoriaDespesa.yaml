@@ -1,4 +1,4 @@
-name: DTOCategoriaDespesa
+title: DTOCategoriaDespesa
 type: object
 properties:
   NomeCategoria:

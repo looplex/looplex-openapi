@@ -1,4 +1,4 @@
-name: DTOAndamentoTemplate
+title: DTOAndamentoTemplate
 type: object
 properties:
   IDAndamentoTemplate:

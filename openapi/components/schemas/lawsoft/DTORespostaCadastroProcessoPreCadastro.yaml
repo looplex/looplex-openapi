@@ -1,4 +1,4 @@
-name: DTORespostaCadastroProcessoPreCadastro
+title: DTORespostaCadastroProcessoPreCadastro
 type: object
 properties:
   HouveException:

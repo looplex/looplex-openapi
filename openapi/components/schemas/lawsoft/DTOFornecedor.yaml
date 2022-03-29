@@ -1,4 +1,4 @@
-name: DTOFornecedor
+title: DTOFornecedor
 type: object
 properties:
   IDFornecedor:

@@ -1,4 +1,4 @@
-name: DTOFaseCaso
+title: DTOFaseCaso
 type: object
 properties:
   NomeCliente:

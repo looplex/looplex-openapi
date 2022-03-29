@@ -1,4 +1,4 @@
-name: DTOAndamentoSimples
+title: DTOAndamentoSimples
 type: object
 properties:
   NomeCliente:

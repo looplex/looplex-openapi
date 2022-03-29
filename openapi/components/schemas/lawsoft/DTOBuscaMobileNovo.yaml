@@ -1,4 +1,4 @@
-name: DTOBuscaMobileNovo
+title: DTOBuscaMobileNovo
 type: object
 properties:
   IdsClientesComCasos:

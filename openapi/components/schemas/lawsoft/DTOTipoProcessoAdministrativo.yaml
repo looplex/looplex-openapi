@@ -1,4 +1,4 @@
-name: DTOTipoProcessoAdministrativo
+title: DTOTipoProcessoAdministrativo
 type: object
 properties:
   IdTipoProcessoAdministrativo:

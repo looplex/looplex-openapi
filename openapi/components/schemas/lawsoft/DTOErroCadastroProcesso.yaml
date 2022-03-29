@@ -1,4 +1,4 @@
-name: DTOErroCadastroProcesso
+title: DTOErroCadastroProcesso
 type: object
 properties:
   IdPreProcesso:

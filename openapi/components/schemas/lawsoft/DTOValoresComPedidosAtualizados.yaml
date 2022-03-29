@@ -1,4 +1,4 @@
-name: DTOValoresComPedidosAtualizados
+title: DTOValoresComPedidosAtualizados
 type: object
 properties:
   Pedidos:

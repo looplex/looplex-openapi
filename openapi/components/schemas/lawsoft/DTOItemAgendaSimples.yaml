@@ -1,4 +1,4 @@
-name: DTOItemAgendaSimples
+title: DTOItemAgendaSimples
 type: object
 properties:
   NomeClienteProcesso:

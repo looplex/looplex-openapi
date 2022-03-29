@@ -1,4 +1,4 @@
-name: DTOPedidoHistorico
+title: DTOPedidoHistorico
 type: object
 properties:
   MoedaSolicitadoText:

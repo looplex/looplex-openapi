@@ -1,4 +1,4 @@
-name: EncapsuladorDeResposta
+title: EncapsuladorDeResposta
 type: object
 properties:
   Response:

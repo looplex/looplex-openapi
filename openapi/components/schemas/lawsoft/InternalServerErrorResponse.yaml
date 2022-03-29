@@ -1,3 +1,4 @@
+title: InternalServerErrorResponse
 type: object
 properties:
   Message: 

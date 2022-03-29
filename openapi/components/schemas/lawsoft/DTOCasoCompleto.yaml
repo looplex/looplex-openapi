@@ -1,4 +1,4 @@
-name: DTOCasoCompleto
+title: DTOCasoCompleto
 type: object
 properties:
   CdNoForoVara:

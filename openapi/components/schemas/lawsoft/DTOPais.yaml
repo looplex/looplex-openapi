@@ -1,4 +1,4 @@
-name: DTOPais
+title: DTOPais
 type: object
 properties:
   ID:

@@ -1,4 +1,4 @@
-name: DTONatureza
+title: DTONatureza
 type: object
 properties:
   NomeCliente:

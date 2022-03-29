@@ -1,4 +1,4 @@
-name: DTOGrupoForo
+title: DTOGrupoForo
 type: object
 properties:
   inAdmiteMunicipio:

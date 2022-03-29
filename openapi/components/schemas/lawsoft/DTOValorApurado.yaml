@@ -1,4 +1,4 @@
-name: DTOValorApurado
+title: DTOValorApurado
 type: object
 properties:
   NomeCliente:

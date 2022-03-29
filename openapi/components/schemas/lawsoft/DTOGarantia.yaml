@@ -1,4 +1,4 @@
-name: DTOGarantia
+title: DTOGarantia
 type: object
 properties:
   IdGarantia:

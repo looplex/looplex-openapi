@@ -1,4 +1,4 @@
-name: DTODadoComplementar
+title: DTODadoComplementar
 type: object
 properties:
   NomeCliente:

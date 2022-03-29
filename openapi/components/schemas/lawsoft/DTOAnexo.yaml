@@ -1,4 +1,4 @@
-name: DTOAnexo
+title: DTOAnexo
 type: object
 properties:
   path:

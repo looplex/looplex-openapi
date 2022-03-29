@@ -1,4 +1,4 @@
-name: DTOCasoParte
+title: DTOCasoParte
 type: object
 properties:
   NomeCliente:

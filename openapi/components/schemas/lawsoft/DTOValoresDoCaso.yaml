@@ -1,4 +1,4 @@
-name: DTOValoresDoCaso
+title: DTOValoresDoCaso
 type: object
 properties:
   Risco:

@@ -1,4 +1,4 @@
-name: FuncionarioLogin
+title: FuncionarioLogin
 type: object
 properties:
   ID:

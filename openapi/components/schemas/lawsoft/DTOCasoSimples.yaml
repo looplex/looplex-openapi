@@ -1,4 +1,4 @@
-name: DTOCasoSimples
+title: DTOCasoSimples
 type: object
 properties:
   IDCaso:

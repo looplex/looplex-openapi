@@ -1,4 +1,4 @@
-name: DTOCasoGarantia
+title: DTOCasoGarantia
 type: object
 properties:
   NomeCliente:

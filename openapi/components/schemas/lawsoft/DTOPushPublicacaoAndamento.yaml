@@ -1,4 +1,4 @@
-name: DTOPushPublicacaoAndamento
+title: DTOPushPublicacaoAndamento
 type: object
 properties:
   IDPushPublicacaoAndamento:

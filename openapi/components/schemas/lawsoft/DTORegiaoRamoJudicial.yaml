@@ -1,4 +1,4 @@
-name: DTORegiaoRamoJudicial
+title: DTORegiaoRamoJudicial
 type: object
 properties:
   nrRamoJudicial:

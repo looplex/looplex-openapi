@@ -1,4 +1,4 @@
-name: DTOEnum
+title: DTOEnum
 type: object
 properties:
   Valor:

@@ -1,4 +1,4 @@
-name: DTOContaDeAcesso
+title: DTOContaDeAcesso
 type: object
 properties:
   IDFuncionario:

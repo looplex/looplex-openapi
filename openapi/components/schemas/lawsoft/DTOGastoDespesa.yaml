@@ -1,4 +1,4 @@
-name: DTOGastoDespesa
+title: DTOGastoDespesa
 type: object
 properties:
   TipoDespesa:

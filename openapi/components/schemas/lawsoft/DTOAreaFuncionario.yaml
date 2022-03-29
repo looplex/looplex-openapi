@@ -1,4 +1,4 @@
-name: DTOAreaFuncionario
+title: DTOAreaFuncionario
 type: object
 properties:
   IDFuncionarioArea:

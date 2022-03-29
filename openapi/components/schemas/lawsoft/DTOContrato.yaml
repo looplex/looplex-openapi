@@ -1,4 +1,4 @@
-name: DTOContrato
+title: DTOContrato
 type: object
 properties:
   IDContrato:

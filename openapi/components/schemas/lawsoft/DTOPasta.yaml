@@ -1,4 +1,4 @@
-name: DTOPasta
+title: DTOPasta
 type: object
 properties:
   IDPasta:

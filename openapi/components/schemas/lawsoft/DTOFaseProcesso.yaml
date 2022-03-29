@@ -1,4 +1,4 @@
-name: DTOFaseProcesso
+title: DTOFaseProcesso
 type: object
 properties:
   cdFaseProcesso:

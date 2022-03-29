@@ -1,4 +1,4 @@
-name: DTOAcaoPush
+title: DTOAcaoPush
 type: object
 properties:
   IDAcaoPush:

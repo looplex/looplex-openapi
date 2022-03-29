@@ -1,4 +1,4 @@
-name: DTOPlanilhaHoras
+title: DTOPlanilhaHoras
 type: object
 properties:
   NrLEDESTaskCode:

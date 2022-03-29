@@ -1,4 +1,4 @@
-name: DTOCidade
+title: DTOCidade
 type: object
 properties:
   ID:

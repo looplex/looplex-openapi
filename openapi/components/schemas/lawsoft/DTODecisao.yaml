@@ -1,4 +1,4 @@
-name: DTODecisao
+title: DTODecisao
 type: object
 properties:
   IdDecisao:

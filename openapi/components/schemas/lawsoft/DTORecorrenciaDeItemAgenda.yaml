@@ -1,4 +1,4 @@
-name: DTORecorrenciaDeItemAgenda
+title: DTORecorrenciaDeItemAgenda
 type: object
 properties:
   Tipo:

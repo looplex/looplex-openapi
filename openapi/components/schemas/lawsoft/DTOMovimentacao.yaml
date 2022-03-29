@@ -1,4 +1,4 @@
-name: DTOMovimentacao
+title: DTOMovimentacao
 type: object
 properties:
   IdMovimentacao:

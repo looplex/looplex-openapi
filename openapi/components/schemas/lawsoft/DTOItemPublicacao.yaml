@@ -1,4 +1,4 @@
-name: DTOItemPublicacao
+title: DTOItemPublicacao
 type: object
 properties:
   IDItemPublicacao:

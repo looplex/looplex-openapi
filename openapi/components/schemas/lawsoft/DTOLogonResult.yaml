@@ -1,4 +1,4 @@
-name: DTOLogonResult
+title: DTOLogonResult
 type: object
 properties:
   Context:

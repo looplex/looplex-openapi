@@ -1,4 +1,4 @@
-name: DTOProcessoDecisaoValor
+title: DTOProcessoDecisaoValor
 type: object
 properties:
   nrExitoPerda:

@@ -1,4 +1,4 @@
-name: DTOProcessoDecisao
+title: DTOProcessoDecisao
 type: object
 properties:
   Valores:

@@ -1,4 +1,4 @@
-name: DTOUser
+title: DTOUser
 type: object
 properties:
   user:

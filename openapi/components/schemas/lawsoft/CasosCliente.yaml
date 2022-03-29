@@ -1,4 +1,4 @@
-name: CasosCliente
+title: CasosCliente
 type: object
 properties:
   IDCliente:

@@ -1,4 +1,4 @@
-name: DTOTabelaPrecoCategoria
+title: DTOTabelaPrecoCategoria
 type: object
 properties:
   IdCategoria:

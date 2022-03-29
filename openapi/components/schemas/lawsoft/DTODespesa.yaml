@@ -1,4 +1,4 @@
-name: DTODespesa
+title: DTODespesa
 type: object
 properties:
   ObservacaoAnexo:

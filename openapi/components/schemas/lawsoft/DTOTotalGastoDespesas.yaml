@@ -1,4 +1,4 @@
-name: DTOTotalGastoDespesas
+title: DTOTotalGastoDespesas
 type: object
 properties:
   Gastos:

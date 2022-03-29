@@ -1,4 +1,4 @@
-name: DTOContratoSimples
+title: DTOContratoSimples
 type: object
 properties:
   Titulo:

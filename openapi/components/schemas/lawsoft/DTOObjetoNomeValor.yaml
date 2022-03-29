@@ -1,4 +1,4 @@
-name: DTOObjetoNomeValor
+title: DTOObjetoNomeValor
 type: object
 properties:
   Nome:
