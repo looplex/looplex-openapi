@@ -57,8 +57,10 @@ properties:
     type: string
     example: "Nome do funcionário executor"
   FuncionariosParticipantes: 
-    type: integer[]
     example: [10, 20]
+    type: array
+    items: 
+      type: integer
   DataCriacao: 
     type: string
     example: "2022-01-01T12:00:00"
@@ -66,7 +68,7 @@ properties:
     type: string
     example: "01/01/2022"
   DataRealizacao: 
-    type: string? 
+    type: string
   DataRealizacaoFormatada: 
     type: string
     example: null
@@ -80,7 +82,6 @@ properties:
     type: string
     example: "Observação da realização"
   SituacaoLembrete: 
-    type: integer
     $ref: ./enums/SituacaoLembrete.yaml
   IsEditable: 
     type: boolean

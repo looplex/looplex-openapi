@@ -1,4 +1,4 @@
-type: enum
+type: string
 example: -2147483646 
 description: |
   -2147483647: Aberto

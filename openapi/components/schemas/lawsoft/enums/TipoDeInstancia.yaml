@@ -1,4 +1,4 @@
-type: enum
+type: string
 example: 1
 description: |
   1: Tribunal

@@ -1,4 +1,4 @@
-type: enum
+type: string
 example: 4
 description: |
   1: Prazo
