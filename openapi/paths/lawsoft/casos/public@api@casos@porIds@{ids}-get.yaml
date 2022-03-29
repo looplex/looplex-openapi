@@ -11,7 +11,9 @@ parameters:
     example: "[1, 10]"
     required: true
     schema:
-      type: string
+      type: array
+      items: 
+        type: integer
 responses:
   "200":
     description: "Obtém os casos pelos identificadores informados"
