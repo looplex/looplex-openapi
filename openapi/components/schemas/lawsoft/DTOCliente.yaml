@@ -22,7 +22,7 @@ properties:
   Observacoes:
     type: string
   CPFCNPJ:
-    type:string
+    type: string
   TratoConfidencial:
     type: boolean
   InscricaoMunicipal:

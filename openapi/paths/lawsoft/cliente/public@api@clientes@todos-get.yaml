@@ -1,14 +1,14 @@
 tags: 
   - Cliente (Lawsoft)
 summary: Clientes
-description: 
+description: "Obtém uma lista com todos os clientes"
 operationId: api-clientes-todos
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
 responses:
   "200":
-    description: "Retorna um array com todos os clientes"
+    description: "Obtém uma lista com todos os clientes"
     content:
       application/json:
         schema: 
