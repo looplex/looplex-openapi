@@ -1512,36 +1512,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
-  "/api/casos/{idCaso}/Partes":
-    get:
-      tags:
-        - Partes
-      summary: "/api/casos/{idCaso}/Partes"
-      description: Obtém um array com as partes do caso.
-      operationId: api-casos-idcaso-partes
-      parameters:
-        - name: idCaso
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Obtém um array com as partes do caso.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOCasoParte"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   /api/casos/num/partes:
     get:
       tags:
