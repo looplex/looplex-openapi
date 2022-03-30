@@ -13,6 +13,8 @@ properties:
     type: string
   RG:
     type: string
+  nomeParte:
+    type: string
   Nome:
     type: string
   RazaoSocial:
