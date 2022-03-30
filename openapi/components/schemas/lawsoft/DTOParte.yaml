@@ -43,5 +43,16 @@ properties:
     type: array
     items: 
       $ref: DTOEnvolvimento.yaml
-  
+  NomeCliente:
+    type: string
+    description: "Preenchido apenas na pesquisa de partes do caso"
+  TituloCaso:
+    type: string
+    description: "Preenchido apenas na pesquisa de partes do caso"
+  NumeroInterno:
+    type: string
+    description: "Preenchido apenas na pesquisa de partes do caso"
+  NumeroExterno:
+    type: string
+    description: "Preenchido apenas na pesquisa de partes do caso"
   
