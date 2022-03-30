@@ -8,7 +8,7 @@ parameters:
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: nome
     in: query
-    description: "Termo de pesquisa. Mínimo de 3 caracteres"
+    description: "Termo de pesquisa. Mínimo de 4 caracteres"
     required: true
     schema:
       type: string
