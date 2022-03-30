@@ -442,6 +442,11 @@ paths:
     get:
       $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
 
+  # Parte
+  "/api/Partes":
+    get:
+      $ref: ./paths/lawsoft/partes/public@api@partes-get.yaml
+
   # Parte Papel (Envolvimento das partes)
   "/api/envolvimentos":
     get:

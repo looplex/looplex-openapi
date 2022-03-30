@@ -1542,36 +1542,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Erro_interno_no_servidor"
-  /api/Partes:
-    get:
-      tags:
-        - Partes
-      summary: /api/Partes
-      description: Obtém um array com as partes do LO de acordo com o nome informado.
-      operationId: api-partes
-      parameters:
-        - name: nome
-          in: query
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: Obtém um array com as partes do LO de acordo com o nome informado.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DTOParte"
-        "401":
-          description: Em caso de erro de timeout ou sessão expirada.
-          content:
-            application/json: {}
-        "500":
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Erro_interno_no_servidor"
   /api/casos/num/partes:
     get:
       tags:

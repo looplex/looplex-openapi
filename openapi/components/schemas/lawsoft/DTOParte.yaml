@@ -3,13 +3,43 @@ type: object
 properties:
   IdParte: 
     type: integer
-  Nome:
-    type: string
-  NomeAdvogado:
-    type: string
+  Polo:
+    $ref: enums/PoloLawOffice.yaml
+  TipoPessoa:
+    $ref: enums/TipoPessoa.yaml
   CPF:
     type: string
-  OABAdvogado:
+  CNPJ:
     type: string
-  TipoPessoa:
+  RG:
+    type: string
+  Nome:
+    type: string
+  RazaoSocial:
+    type: string
+  NomeFantasia:
+    type: string
+  NomeContato:
+    type: string
+  Email:
+    type: string
+  TipoEnvolvimento:
     type: integer
+  PoloPrincipal:
+    type: boolean
+  Observacoes:
+    type: string
+  Endereco:
+    $ref: DTOEnderecoParte.yaml
+  Telefones:
+    type: array
+    items:
+      $ref: DTOTelefoneParte.yaml
+  Advogado:
+    $ref: DTODadosAdvogado.yaml
+  Envolvimento:
+    type: array
+    items: 
+      $ref: DTOEnvolvimento.yaml
+  
+  

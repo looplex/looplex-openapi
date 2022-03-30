@@ -1,0 +1,10 @@
+type: string
+example: 3
+description: |
+  1: Residencial
+
+  2: Comercial
+
+  3: Celular
+
+  4: Fax

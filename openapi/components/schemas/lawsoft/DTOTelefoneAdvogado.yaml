@@ -1,0 +1,11 @@
+title: DTOTelefoneAdvogado
+type: object
+properties:
+  TipoTelefone:
+    $ref: enums/TipoDeTelefone.yaml
+  DDD:
+    type: string
+  Numero:
+    type: string
+  Ramal:
+    type: string
