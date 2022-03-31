@@ -1,4 +1,4 @@
-type: string
+type: integer
 example: 17
 description: |
   1: Insere escritório publicação

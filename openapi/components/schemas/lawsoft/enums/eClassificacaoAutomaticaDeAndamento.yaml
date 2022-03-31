@@ -1,4 +1,4 @@
-type: string
+type: integer
 example: 4
 description: |
   1: Prazo

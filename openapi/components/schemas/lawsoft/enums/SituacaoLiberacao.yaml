@@ -1,4 +1,4 @@
-type: string
+type: integer
 example: -2147483646 
 description: |
   -2147483647: Aberto

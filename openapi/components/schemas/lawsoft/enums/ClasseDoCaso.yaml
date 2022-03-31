@@ -1,4 +1,4 @@
-type: string
+type: integer
 example: 1
 description: |
   1: Processo
