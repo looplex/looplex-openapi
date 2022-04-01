@@ -60,5 +60,5 @@ properties:
   inNecessitaDeSolicitanteParaLancamentoDeHoras:
     type: boolean
   Status:
-    type: enum
+    type: integer
     description: "StatusCode definitions: https://docs.microsoft.com/en-us/dotnet/api/system.net.httpstatuscode?view=netframework-4.5"

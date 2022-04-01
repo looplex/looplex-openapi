@@ -1,6 +1,8 @@
 title: DTOEnderecoParte
 type: object
 properties:
+  Tipo:
+    $ref: enums/TipoDeEndereco.yaml
   CEP:
     type: string
   Logradouro:

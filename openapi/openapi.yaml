@@ -382,6 +382,9 @@ paths:
   "/api/escritorios/{IdEscritorio}/categoriaspreco":
     get:
       $ref: ./paths/lawsoft/categoria/public@api@escritorios@{IdEscritorio}@categoriaspreco-get.yaml
+  "/api/funcionarios/{IdsMin},{IdsMax}/categorias":
+    get:
+      $ref: ./paths/lawsoft/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
 
   # Cliente
   "/api/clientes/todos":
@@ -393,6 +396,18 @@ paths:
   "/api/clientes/enderecos":
     get:
       $ref: ./paths/lawsoft/cliente/public@api@clientes@enderecos-get.yaml
+  "/api/clientes/porDomain/{domain}":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@porDomain@domain-get.yaml
+  "/api/clientes/ficha":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@ficha-get.yaml
+  "/api/clientes/ficha_mobile":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@ficha@mobile-get.yaml
+  "/api/clientes/mobile":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@mobile-get.yaml
 
   # País
   "/api/pais":
