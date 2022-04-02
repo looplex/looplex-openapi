@@ -17,7 +17,7 @@ properties:
     type: integer
   Pais:
     type: string
-  IDEstado:
+  IDEstado: 
     type: string
   Estado:
     type: string
