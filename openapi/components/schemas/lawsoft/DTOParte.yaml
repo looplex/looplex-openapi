@@ -3,6 +3,7 @@ type: object
 properties:
   IdParte: 
     type: integer
+    description: "Se for menor ou igual a zero insere uma nova parte, senão, atualiza a parte de acordo com o identificador informado."
   Polo:
     $ref: enums/PoloLawOffice.yaml
   TipoPessoa:

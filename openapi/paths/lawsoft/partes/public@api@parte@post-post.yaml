@@ -10,7 +10,7 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/parameters/lawsoft/DTOParte.yaml
+        $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
 responses:
   "200":
     description: "Retorna os dados da parte após a inserção ou atualização"
