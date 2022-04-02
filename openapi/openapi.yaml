@@ -470,6 +470,9 @@ paths:
   "/api/parte/{cdParte}":
     delete:
       $ref: ./paths/lawsoft/partes/public@api@parte@delete-delete.yaml
+  "/api/partes/desvincular":
+    post:
+      $ref: ./paths/lawsoft/partes/public@api@partes@desvincular-post.yaml
 
   # Parte Papel (Envolvimento das partes)
   "/api/envolvimentos":

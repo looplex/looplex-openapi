@@ -1,0 +1,29 @@
+tags: 
+  - Partes (Lawsoft)
+summary: Desvincular parte
+description: Desvincula a parte do processo informado
+operationId: api-partes-desvincular
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: processo
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: parte
+    in: query
+    required: true
+    schema:
+      type: integer
+responses:
+  "204":
+    description: "A parte foi desvinculada do processo"
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
