@@ -10,14 +10,18 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
+        type: array
+        items:
+          $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
 responses:
   "200":
     description: "Retorna os dados da parte após a inserção ou atualização"
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
