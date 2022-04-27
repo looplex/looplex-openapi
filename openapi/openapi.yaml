@@ -209,7 +209,16 @@ paths:
   "/api/logoff":
     delete:
       $ref: ./paths/lawsoft/session/public@api@logoff-delete.yaml
-  
+  "/api/versao":
+    get: 
+      $ref: ./paths/lawsoft/session/public@api@versao-get.yaml
+  "/api/obtemdomainporemail":
+    get:
+      $ref: ./paths/lawsoft/session/public@api@obtemdomainporemail-get.yaml
+  "/api/websession":
+    post:
+      $ref: ./paths/lawsoft/session/public@api@websession-post.yaml
+
   # Agenda
   "/api/agenda/totaleventos":
     get:
