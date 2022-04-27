@@ -303,6 +303,14 @@ paths:
     get:
       $ref: ./paths/lawsoft/area/public@api@areas@{id}@get-get.yaml
 
+  # Conta de acesso
+  "/api/ContaDeAcesso/ObtemContaDeAcesso":
+    get:
+      $ref: ./paths/lawsoft/conta_de_acesso/public@api@ContaDeAcesso@ObtemContaDeAcesso-get.yaml
+  "/api/ContaDeAcesso/ObtemContaDeAcesso2":
+    get:
+      $ref: ./paths/lawsoft/conta_de_acesso/public@api@ContaDeAcesso@ObtemContaDeAcesso2-get.yaml
+
   #Timeline
   "/api/timeline/items":
     get:
