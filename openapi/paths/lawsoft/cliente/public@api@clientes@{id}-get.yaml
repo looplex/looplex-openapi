@@ -1,0 +1,28 @@
+tags: 
+  - Cliente (Lawsoft)
+summary: Informações do cliente
+description: Obtém as informações do cliente de acordo com o identificador informado
+operationId: api-clientes-{id}
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém as informações do cliente de acordo com o identificador informado"
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/DTOCliente.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

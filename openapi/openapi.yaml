@@ -408,6 +408,15 @@ paths:
   "/api/clientes/mobile":
     get:
       $ref: ./paths/lawsoft/cliente/public@api@clientes@mobile-get.yaml
+  "/api/clientes/{id}":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@{id}-get.yaml
+  "/api/clientes/porIds/{idsClientes}":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@porIds@{idsClientes}-get.yaml
+  "/api/clientes/{idCliente}/pasta":
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@{idCliente}@pasta-get.yaml
 
   # País
   "/api/pais":
