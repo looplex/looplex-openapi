@@ -370,6 +370,20 @@ paths:
     get:
       $ref: ./paths/lawsoft/cliente/public@api@clientes@{idCliente}@pasta-get.yaml
 
+  # Contatos
+  "/api/contatos/{id}":
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@contatos@{id}-get.yaml
+  "/api/contatos":
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@contatos-get.yaml
+  "/api/clientes/{idCliente}/contatos":
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@clientes@{idCliente}@contatos-get.yaml
+  "/api/contatos/solicitantes":
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@contatos@solicitantes-get.yaml
+
   # Conta de acesso
   "/api/ContaDeAcesso/ObtemContaDeAcesso":
     get:
