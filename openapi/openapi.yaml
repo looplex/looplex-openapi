@@ -326,6 +326,12 @@ paths:
   "/api/casos/busca":
     get:
       $ref: ./paths/lawsoft/casos/public@api@casos@busca-get.yaml
+  "/api/casos/edit":
+    put:
+      $ref: ./paths/lawsoft/casos/public@api@casos@edit-put.yaml
+  "/api/casos/listacasos":
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@listacasos-get.yaml
 
 # Categoria
   "/api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco":
