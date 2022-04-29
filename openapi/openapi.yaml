@@ -434,6 +434,29 @@ paths:
     get:
       $ref: ./paths/lawsoft/fase_caso/public@api@casos@num@fase-get.yaml
 
+  # Funcionários
+  "/api/funcionarios/porIds/{ids}":
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios@porIds@{ids}-get.yaml
+  "/api/funcionarios/porId/{id}":
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios@porId@{id}-get.yaml
+  "/api/funcionarios":
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios-get.yaml
+  "/api/areas/{idArea}/funcionarios":
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@areas@{idArea}@funcionarios-get.yaml
+  "/api/funcionarios/{idFuncionario}/areas":
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios@{idFuncionario}@areas-get.yaml
+  "/api/escritorios/{IdEscritorio}/funcionarios":
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@escritorios@{IdEscritorio}@funcionarios-get.yaml
+  "/api/escritorios/funcionarios":
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@escritorios@funcionarios-get.yaml
+
 # Hierarquia
   "/api/hierarquia/ritos":
     get: 

@@ -1,0 +1,37 @@
+tags: 
+  - Funcionário (Lawsoft)
+summary: Funcionários (Filtro)
+description: Obtém uma lista de informações de funcionários de acordo com o filtro informado
+operationId: api-funcionarios
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: ativos
+    in: query
+    required: false
+    description: "Default: true"
+    schema:
+      type: boolean
+  - name: inativos
+    in: query
+    description: "Default: false"
+    required: false
+    schema:
+      type: boolean
+responses:
+  "200":
+    description: "Obtém uma lista de informações de funcionários de acordo com o filtro informado"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOFuncionario.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
