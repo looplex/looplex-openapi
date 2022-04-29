@@ -476,6 +476,15 @@ paths:
   "/api/hierarquia/GrupoForoSuperiores":
     get:
       $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
+  "/api/hierarquia/GrupoForoDetalhado":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@GrupoForoDetalhado-get.yaml
+  "/api/hierarquia/UFPorRegiao":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@UFPorRegiao-get.yaml
+  "/api/hierarquia/fases":
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@fases-get.yaml
 
 # Produtos
   "/api/casos/{idCaso}/produtos":

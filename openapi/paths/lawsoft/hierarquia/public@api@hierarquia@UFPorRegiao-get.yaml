@@ -1,0 +1,32 @@
+tags: 
+  - Hierarquia (Lawsoft)
+summary: UF por região e ramo judicial
+description: Obtém as UFs de acordo com a região e ramo judicial
+operationId: api-hierarquia-UFPorRegiao
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: regiao
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: nrRamoJudicial
+    in: query
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém as UFs de acordo com a região e ramo judicial"
+    content:
+      application/json:
+        example: ["SP", "RJ"]
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
