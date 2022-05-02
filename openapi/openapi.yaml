@@ -268,9 +268,11 @@ paths:
   "/api/andamentos/{idAndamento}":
     put:
       $ref: ./paths/lawsoft/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
-  "/api/andamentos/{idAndamento}/remover1":
     delete:
       $ref: ./paths/lawsoft/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
+  "/api/andamentos/update/{idAndamento}":
+    put:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@update@{idAndamento}-put.yaml
 
   # Áreas
   "/api/areas":
