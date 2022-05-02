@@ -2,7 +2,7 @@ tags:
   - País (Lawsoft)
 summary: Cidades
 description: Lista as cidades de acordo com o estado informado
-operationId: api-pais-cidades
+operationId: citiesByState
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

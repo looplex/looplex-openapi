@@ -2,7 +2,7 @@ tags:
   - Session (Lawsoft)
 summary: Login web
 description: Efetua o login (Lawsoft web)
-operationId: api-websession
+operationId: webLogin
 parameters:
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
 requestBody:

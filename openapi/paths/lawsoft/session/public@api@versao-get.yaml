@@ -2,7 +2,7 @@ tags:
   - Session (Lawsoft)
 summary: Serviço
 description: Obtém o serviço para o escritório (usado nas requisições da api)
-operationId: api-versao
+operationId: apiVersion
 parameters:
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: domain

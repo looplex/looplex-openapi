@@ -2,7 +2,7 @@ tags:
   - Funcionário (Lawsoft)
 summary: Funcionários (Filtro)
 description: Obtém uma lista de informações de funcionários de acordo com o filtro informado
-operationId: api-funcionarios
+operationId: employees
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

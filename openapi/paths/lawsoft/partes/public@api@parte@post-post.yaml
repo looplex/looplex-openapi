@@ -1,8 +1,8 @@
 tags: 
   - Partes (Lawsoft)
 summary: Inserção de Parte
-description: Insere ou atualiza uma parte existente
-operationId: api-parte-post
+description: Insere ou atualiza as partes informadas
+operationId: postOrUpdateParts
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

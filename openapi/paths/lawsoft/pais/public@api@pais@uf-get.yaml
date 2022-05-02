@@ -2,7 +2,7 @@ tags:
   - País (Lawsoft)
 summary: Estados
 description: Obtém a lista de estados do Brasil
-operationId: api-pais-uf
+operationId: statesOfBrazil
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

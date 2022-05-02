@@ -2,7 +2,7 @@ tags:
   - Produtos (Lawsoft)
 summary: Produtos por caso
 description: Obtém um array com os produtos por caso.
-operationId: api-casos-{idCaso}-produtos
+operationId: caseProductsByCaseIndentifier
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

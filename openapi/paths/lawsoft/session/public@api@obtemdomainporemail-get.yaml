@@ -2,7 +2,7 @@ tags:
   - Session (Lawsoft)
 summary: Escritórios por email
 description: Obtém uma lista de escritórios em que o email está vinculado
-operationId: api-obtemdomainporemail
+operationId: apiGetDomains
 parameters:
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: email

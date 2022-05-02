@@ -2,7 +2,7 @@ tags:
   - Funcionário (Lawsoft)
 summary: Áreas do funcionário
 description: Obtém uma lista de áreas do funcionário
-operationId: api-funcionarios-{idFuncionario}-areas
+operationId: employeeAreas
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

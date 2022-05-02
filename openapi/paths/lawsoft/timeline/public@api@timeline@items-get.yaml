@@ -2,7 +2,7 @@ tags:
   - Timeline (Lawsoft)
 summary: Timeline do caso
 description: Lista timeline do caso.
-operationId: api-timeline-items
+operationId: caseTimeline
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
