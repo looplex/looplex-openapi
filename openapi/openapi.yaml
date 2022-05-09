@@ -95,13 +95,14 @@ x-tagGroups:
       - Dados complementares (Lawsoft)
       - Decisões (Lawsoft)
       - Despesas (Lawsoft)
-      - Expectativa reivindicação (Lawsoft)
       - Envolvimento das partes (Lawsoft)
+      - Expectativa reivindicação (Lawsoft)
       - Fase caso (Lawsoft)
       - Funcionário (Lawsoft)
       - Garantia (Lawsoft)
       - Hierarquia (Lawsoft)
       - Natureza (Lawsoft)
+      - País (Lawsoft)
       - Partes (Lawsoft)
       - Pedidos (Lawsoft)
       - Permissão (Lawsoft)
@@ -109,13 +110,12 @@ x-tagGroups:
       - Push (Lawsoft)
       - Render (Lawsoft)
       - Session (Lawsoft)
-      - Tabela preço categoria (Lawsoft)
       - Tabela preço (Lawsoft)
+      - Tabela preço categoria (Lawsoft)
       - Tarefa (Lawsoft)
       - Timeline (Lawsoft)
       - Timesheet (Lawsoft)
       - Valores apurados (Lawsoft)
-      - País (Lawsoft)
 
   - name: Tasks
     tags:
@@ -559,7 +559,7 @@ paths:
     get:
       $ref: ./paths/lawsoft/timeline/public@api@timeline@items-get.yaml
 
-    
+
 
   '/tasks':
     get:
