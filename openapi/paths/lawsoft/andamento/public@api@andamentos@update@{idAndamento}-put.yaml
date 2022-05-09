@@ -2,7 +2,7 @@ tags:
   - Andamento (Lawsoft)
 summary: Atualizar andamento Web
 description: Atualiza o andamento
-operationId: api-andamentos-update-{idAndamento}
+operationId: api-andamentos-update-idAndamento
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

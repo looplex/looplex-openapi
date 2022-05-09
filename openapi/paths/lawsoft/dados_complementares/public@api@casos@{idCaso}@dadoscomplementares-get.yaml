@@ -2,7 +2,7 @@ tags:
   - Dados complementares (Lawsoft)
 summary: Dados complementares do caso
 description: Obtém um array com os dados complementares de acordo com o identificador do caso.
-operationId: api-casos-{idCaso}-dadoscomplementares
+operationId: api-casos-idCaso-dadoscomplementares
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

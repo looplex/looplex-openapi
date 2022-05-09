@@ -2,7 +2,7 @@ tags:
   - Cliente (Lawsoft)
 summary: Identificador pasta web
 description: Obtém identificador pasta da Web
-operationId: api-clientes-{idCliente}-pasta
+operationId: api-clientes-idCliente-pasta
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

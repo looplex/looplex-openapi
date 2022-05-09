@@ -2,7 +2,7 @@ tags:
   - Cliente (Lawsoft)
 summary: Informações dos clientes
 description: Obtém um array com as informações do clientes de acordo com os identificadores informados
-operationId: api-clientes-porIds-{idsClientes}
+operationId: api-clientes-porIds-idsClientes
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

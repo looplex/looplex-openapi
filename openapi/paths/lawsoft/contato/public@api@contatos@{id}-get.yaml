@@ -2,7 +2,7 @@ tags:
   - Contato (Lawsoft)
 summary: Contato
 description: Obtém informações do contato
-operationId: api-contatos-{id}
+operationId: api-contatos-id
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

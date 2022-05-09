@@ -2,7 +2,7 @@ tags:
   - Casos (Lawsoft)
 summary: Ficha do caso
 description: Obtém a ficha do caso
-operationId: api-casos-{id}-ficha
+operationId: api-casos-id-ficha
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

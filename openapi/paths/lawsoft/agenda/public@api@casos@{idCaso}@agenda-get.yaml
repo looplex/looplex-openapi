@@ -2,7 +2,7 @@ tags:
   - Agenda (Lawsoft)
 summary: Obtém a agenda do caso
 description: Obtém um array com os compromissos de agenda do caso de acordo com o filtro informado.
-operationId: api-casos-{idCaso}-agenda
+operationId: api-casos-idCaso-agenda
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

@@ -2,7 +2,7 @@ tags:
   - Funcionário (Lawsoft)
 summary: Funcionários do escritório
 description: Obtém as informações dos funcionários de acordo com o escritório informado
-operationId: api-escritorios-{IdEscritorio}-funcionarios
+operationId: api-escritorios-IdEscritorio-funcionarios
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

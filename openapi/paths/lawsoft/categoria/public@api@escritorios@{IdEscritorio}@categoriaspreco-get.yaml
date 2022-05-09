@@ -2,7 +2,7 @@ tags:
   - Categoria (Lawsoft)
 summary: Categorias de preço do escritório
 description: Retorna um array com as categorias de preço do escritório
-operationId: api-escritorios-{IdEscritorio}-categoriaspreco
+operationId: api-escritorios-IdEscritorio-categoriaspreco
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

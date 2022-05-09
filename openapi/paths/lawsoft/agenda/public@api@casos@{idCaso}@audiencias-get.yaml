@@ -2,7 +2,7 @@ tags:
   - Agenda (Lawsoft)
 summary: Audiências por caso
 description: Obtém as audiências por caso.
-operationId: api-casos-{idCaso}-audiencias
+operationId: api-casos-idCaso-audiencias
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

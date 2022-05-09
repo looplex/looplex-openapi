@@ -2,7 +2,7 @@ tags:
   - Fase caso (Lawsoft)
 summary: Fase do caso
 description: Obtém a fase do caso.
-operationId: api-casos-{nrSequencia}-fase
+operationId: api-casos-nrSequencia-fase
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
