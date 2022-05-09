@@ -1,0 +1,30 @@
+tags: 
+  - Timesheet (Lawsoft)
+summary: Áreas para lançamento de hora
+description: Obtém as áreas para lançamento de hora
+operationId: api-timesheet-funcionarios-idFuncionario-areas
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: idFuncionario
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém as áreas para lançamento de hora"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOArea.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

@@ -1,0 +1,38 @@
+tags: 
+  - Timesheet (Lawsoft)
+summary: Período de lançamento de timesheet
+description: Obtém as datas de permissão para lançamento de timesheet
+operationId: api-timesheet-listaporperiodo
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: nrAplicabilidade
+    in: query
+    required: true
+    schema:
+      $ref: ../../../components/schemas/lawsoft/enums/PeriodoLancamentoAplicabilidade.yaml
+  - name: idFuncionario
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: dataDeHoje
+    in: query
+    example: "\"2022-05-09\""
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: "Obtém as datas de permissão para lançamento de timesheet"
+    content:
+      application/json:
+        example: ['2022-05-01','2022-05-09']
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

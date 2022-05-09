@@ -1,0 +1,6 @@
+title: PeriodoLancamentoAplicabilidade
+type: integer
+description: |
+  1: Timesheet
+
+  2: Despesa
