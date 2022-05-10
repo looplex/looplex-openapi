@@ -1,0 +1,40 @@
+tags: 
+  - Pedidos (Lawsoft)
+summary: Pedidos do caso
+description: Obtém os pedidos dos casos informados
+operationId: api-casos-num-pedidos
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: NumeroInterno
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: NumeroExterno
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: IdProcesso
+    in: query
+    required: false
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém os pedidos dos casos informados"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOCasoPedido.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

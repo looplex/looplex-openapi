@@ -521,6 +521,26 @@ paths:
     get:
       $ref: ./paths/lawsoft/parte_papel/public@api@envolvimentos-get.yaml
 
+  # Pedidos
+  "/api/casos/{idCaso}/Pedidos":
+    get:
+      $ref: ./paths/lawsoft/pedidos/public@api@casos@idCaso@Pedidos-get.yaml
+  "/api/casos/num/pedidos":
+    get:
+      $ref: ./paths/lawsoft/pedidos/public@api@casos@num@pedidos-get.yaml
+  "/api/Pedidos/possiveisStatus":
+    get:
+      $ref: ./paths/lawsoft/pedidos/public@api@Pedidos@possiveisStatus-get.yaml
+  "/api/Pedidos/possiveisExitos":
+    get:
+      $ref: ./paths/lawsoft/pedidos/public@api@Pedidos@possiveisExitos-get.yaml
+  "/api/casos/{idCaso}/pedidos":
+    post:
+      $ref: ./paths/lawsoft/pedidos/public@api@casos@idCaso@pedidos-post.yaml
+  "/api/Pedidos/causas":
+    get:
+      $ref: ./paths/lawsoft/pedidos/public@api@Pedidos@causas-get.yaml
+
   # Permissão
   "/api/permissao/{idFuncionalidade}":
     get:
