@@ -2,7 +2,7 @@ tags:
   - Permissão 
 summary: Verifica permissão
 description: Retorna um booleano indicando se possui determinada permissão.
-operationId: api-permissao-{idFuncionalidade}
+operationId: apiPermission
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

@@ -2,7 +2,7 @@ tags:
   - Agenda 
 summary: Exclui item de agenda
 description: Excluir o item de agenda.
-operationId: api-agenda-{tipo}-{id}
+operationId: api-agenda-tipo-id
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

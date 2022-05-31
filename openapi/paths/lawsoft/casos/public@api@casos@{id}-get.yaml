@@ -2,7 +2,7 @@ tags:
   - Casos 
 summary: Obtém caso
 description: Obtém o caso
-operationId: api-casos-{id}
+operationId: api-casos-id
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

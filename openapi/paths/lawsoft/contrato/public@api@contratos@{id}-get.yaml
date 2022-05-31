@@ -2,7 +2,7 @@ tags:
   - Contrato 
 summary: Contrato
 description: Obtém o contrato de acordo com o identificador informado
-operationId: api-contratos-{id}
+operationId: api-contratos-id
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

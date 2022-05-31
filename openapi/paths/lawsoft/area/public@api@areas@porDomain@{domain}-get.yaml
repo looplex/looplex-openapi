@@ -2,7 +2,7 @@ tags:
   - Area 
 summary: Obtém as áreas do escritório
 description: Retorna um array com as áreas de acordo com o escritório informado.
-operationId: api-areas-porDomain-{domain}
+operationId: api-areas-porDomain-domain
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

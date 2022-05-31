@@ -2,7 +2,7 @@ tags:
   - Fase caso 
 summary: Obtém as fases do caso
 description: Obtém um array com as fases do caso de acordo com o tipo de processo
-operationId: api-casos-fase-{nrGrupo}
+operationId: api-casos-fase-nrGrupo
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

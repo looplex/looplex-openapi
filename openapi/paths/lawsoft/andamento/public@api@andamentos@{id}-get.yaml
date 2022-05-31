@@ -2,7 +2,7 @@ tags:
   - Andamento 
 summary: Andamento por identificador
 description: Obtém o andamento de acordo com o identificador informado.
-operationId: api-andamentos-{id}
+operationId: api-andamentos-id
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

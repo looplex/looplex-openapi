@@ -1,0 +1,27 @@
+tags: 
+  - Session (Lawsoft)
+summary: Serviço
+description: Obtém o serviço para o escritório (usado nas requisições da api)
+operationId: apiVersion
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: domain
+    in: query
+    description: "O nome do escritório"
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: "Obtém o serviço para o escritório (usado nas requisições da api)"
+    content:
+      application/json:
+        example: "http://sys2.lawoffice.com.br"
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

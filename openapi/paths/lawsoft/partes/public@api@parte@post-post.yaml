@@ -1,8 +1,8 @@
 tags: 
   - Partes 
 summary: Inserção de Parte
-description: Insere ou atualiza uma parte existente
-operationId: api-parte-post
+description: Insere ou atualiza as partes informadas
+operationId: postOrUpdateParts
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
@@ -10,14 +10,18 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
+        type: array
+        items:
+          $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
 responses:
   "200":
     description: "Retorna os dados da parte após a inserção ou atualização"
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":

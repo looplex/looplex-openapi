@@ -1,0 +1,27 @@
+tags: 
+  - Timesheet (Lawsoft)
+summary: Mais recente
+description: Obtém mais recente
+operationId: api-timesheet-obtemmaisrecente
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: nrAplicabilidade
+    in: query
+    required: true
+    schema:
+      $ref: ../../../components/schemas/lawsoft/enums/PeriodoLancamentoAplicabilidade.yaml
+responses:
+  "200":
+    description: "Obtém mais recente"
+    content:
+      application/json:
+        example: ['2022-05-01','2022-05-09']
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

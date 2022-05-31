@@ -2,7 +2,7 @@ tags:
   - Envolvimento das partes 
 summary: Envolvimento das partes
 description: Obtém os envolvimentos das partes de acordo com o tipo de cadastro
-operationId: api-envolvimentos
+operationId: apiEnvolvimentos
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

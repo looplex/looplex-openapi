@@ -89,6 +89,8 @@ properties:
     type: string
   DataDeDistribuicaoFormatada:
     type: string
+  DataDeCitacaoFormatada:
+    type: string
   DataDeEncerramentoFormatada:
     type: string
   DataPrevistaDeEncerramentoFormatada:

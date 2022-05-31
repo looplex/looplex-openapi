@@ -1,0 +1,35 @@
+tags: 
+  - Casos (Lawsoft)
+summary: Edita caso
+description: Edita propriedades específicas do caso
+operationId: api-casos-edit
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: id
+    in: query
+    required: true
+    schema:
+      type: integer
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: ../../../components/schemas/lawsoft/DTOObjetoNomeValor.yaml
+responses:
+  "200":
+    description: "Retorna o caso atualizado após a atualização das propriedades"
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/DTOCasoCompleto.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

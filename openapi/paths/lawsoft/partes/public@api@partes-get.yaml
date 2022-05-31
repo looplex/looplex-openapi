@@ -2,7 +2,7 @@ tags:
   - Partes 
 summary: Pesquisa de Partes
 description: Obtém uma lista de partes de acordo com o termo informado.
-operationId: api-partes
+operationId: getPartsByTerm
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
