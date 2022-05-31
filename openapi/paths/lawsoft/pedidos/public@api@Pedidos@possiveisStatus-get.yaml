@@ -1,0 +1,25 @@
+tags: 
+  - Pedidos (Lawsoft)
+summary: Status do pedido
+description: Obtém os possíveis status do pedido
+operationId: api-Pedidos-possiveisStatus
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+responses:
+  "200":
+    description: "Obtém os possíveis status do pedido"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOObjetoNomeID.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

@@ -1,0 +1,29 @@
+tags: 
+  - Session (Lawsoft)
+summary: Escritórios por email
+description: Obtém uma lista de escritórios em que o email está vinculado
+operationId: apiGetDomains
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: email
+    in: query
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: "Obtém uma lista de escritórios em que o email está vinculado"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTODomain.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

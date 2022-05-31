@@ -2,7 +2,7 @@ tags:
   - Session 
 summary: Logoff
 description: Efetua o logoff
-operationId: api-logoff
+operationId: apiLogout
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

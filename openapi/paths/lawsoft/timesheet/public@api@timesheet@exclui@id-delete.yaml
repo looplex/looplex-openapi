@@ -1,0 +1,24 @@
+tags: 
+  - Timesheet (Lawsoft)
+summary: Exclui lançamento de hora
+description: Exclui o lançamento de hora
+operationId: api-timesheet-exclui-id
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "204":
+    description: "Exclui o lançamento de hora"
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

@@ -2,6 +2,7 @@ title: EncapsuladorDeResposta
 type: object
 properties:
   Response:
+    description: "O conteúdo dessa propriedade é do mesmo tipo enviado no body da requisição"
     type: object
   Success:
     type: boolean

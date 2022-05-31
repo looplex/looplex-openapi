@@ -1,0 +1,25 @@
+tags: 
+  - Timesheet (Lawsoft)
+summary: Task Codes
+description: Obtém a lista de Task Codes
+operationId: api-timesheet-taskcodes
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+responses:
+  "200":
+    description: "Obtém a lista de Task Codes"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/LEDESCodes.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

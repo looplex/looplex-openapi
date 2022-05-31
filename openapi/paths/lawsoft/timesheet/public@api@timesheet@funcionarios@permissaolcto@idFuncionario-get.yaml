@@ -1,0 +1,30 @@
+tags: 
+  - Timesheet (Lawsoft)
+summary: Funcionários com permissão de lançamento
+description: Obtém a lista de funcionários com permissão de lançamento
+operationId: api-timesheet-funcionarios-permissaolcto-idFuncionario
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: idFuncionario
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém a lista de funcionários com permissão de lançamento"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOFuncionario.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

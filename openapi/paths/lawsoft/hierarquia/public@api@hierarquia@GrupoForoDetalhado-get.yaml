@@ -1,0 +1,33 @@
+tags: 
+  - Hierarquia (Lawsoft)
+summary: Grupo foro
+description: Obtém as informações do grupo foro
+operationId: api-hierarquia-GrupoForoDetalhado
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: cdGrupoForo
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: cdUF
+    in: query
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: "Obtém as informações do grupo foro"
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/DTOGrupoForo.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

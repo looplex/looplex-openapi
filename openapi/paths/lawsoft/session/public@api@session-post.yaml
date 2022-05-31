@@ -2,7 +2,7 @@ tags:
   - Session 
 summary: Login
 description: Login para automatização
-operationId: api-session
+operationId: apiLogin
 parameters:
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
 requestBody:

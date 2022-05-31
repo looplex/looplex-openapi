@@ -1,0 +1,31 @@
+tags: 
+  - Pedidos (Lawsoft)
+summary: Atualiza pedidos
+description: Atualiza pedidos do caso
+operationId: api-casos-idCaso-pedidos
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: idCaso
+    in: path
+    required: true
+    schema:
+      type: integer
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: ../../../components/schemas/lawsoft/DTOCasoPedidoSimples.yaml
+responses:
+  "204":
+    description: "Os pedidos do caso foram atualizados"
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
