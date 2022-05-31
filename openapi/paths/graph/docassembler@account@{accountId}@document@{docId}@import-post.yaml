@@ -1,0 +1,26 @@
+tags:
+  - Document Assembler
+summary: Import answers to document
+description: Require the account id, document id and the file with the answers in json format.
+operationId: importAnswersUsingPOST
+parameters:
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/DocId.yaml
+  - $ref: ../../components/parameters/Force.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        properties:
+          files:
+            type: array
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: boolean
+        example: true
+      multipart/form-data: { }

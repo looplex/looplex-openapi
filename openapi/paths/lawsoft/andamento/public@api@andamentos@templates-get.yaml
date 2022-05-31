@@ -1,5 +1,5 @@
 tags: 
-  - Andamento (Lawsoft)
+  - Andamento 
 summary: Templates de andamento
 description: Obtém um array com os templates de andamentos
 operationId: api-andamentos-templates

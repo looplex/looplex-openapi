@@ -1,5 +1,5 @@
 tags: 
-  - Agenda (Lawsoft)
+  - Agenda 
 summary: Exclui item de agenda
 description: Excluir o item de agenda.
 operationId: api-agenda-{tipo}-{id}

@@ -1,5 +1,5 @@
 tags: 
-  - Agenda (Lawsoft)
+  - Agenda 
 summary: Obtém audiências
 description: Obtém audiências por numero interno, externo ou identificador do caso
 operationId: api-casos-num-audiencias

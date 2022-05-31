@@ -1,5 +1,5 @@
 tags: 
-  - Timeline (Lawsoft)
+  - Timeline 
 summary: Timeline do caso
 description: Lista timeline do caso.
 operationId: api-timeline-items

@@ -1,0 +1,319 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "version": "1.0.0",
+    "title": "Looplex 365",
+    "termsOfService": "https://docs.looplex.com.br/legal/termos-de-uso",
+    "contact": {
+      "name": "Developers Looplex",
+      "email": "developer@looplex.com.br",
+      "url": "https://www.looplex.com.br"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-logo": {
+      "url": "/assets/images/logo.png",
+      "href": "/"
+    },
+    "description": "# Looplex 365\n# Começando\n...\n"
+  },
+  "servers": [
+    {
+      "url": "https://apim.looplex.com",
+      "description": "Looplex 365 Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Looplex 365",
+      "description": "Looplex 365 operations"
+    }
+  ],
+  "paths": {
+    "/looplex365/docass-render": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "Document Assembler Render",
+        "description": "...",
+        "operationId": "docass-render",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/easydocs-render": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "Easy Docs Render",
+        "description": "...",
+        "operationId": "easydocs-render",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/headless-surf": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "Headless Surf",
+        "description": "...",
+        "operationId": "headless-surf",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/jsbox": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "JsBox",
+        "description": "...",
+        "operationId": "jsbox",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/looplex-render": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "Looplex Render",
+        "description": "...",
+        "operationId": "looplex-render",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/mjml-render": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "Mjml Render",
+        "description": "...",
+        "operationId": "mjml-render",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/mustache-render": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "Mustache Render",
+        "description": "...",
+        "operationId": "mustache-render",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/pdf-convert": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "PDF Converter",
+        "description": "...",
+        "operationId": "pdf-converter",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/looplex365/word-convert": {
+      "post": {
+        "tags": [
+          "Looplex 365"
+        ],
+        "summary": "Word Converter",
+        "description": "...",
+        "operationId": "word-converter",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Subscription-Key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Ocp_Apim_Subscription_Key",
+        "description": "Chave fornecida pelo time Looplex."
+      }
+    },
+    "parameters": {
+      "AccountId": {
+        "name": "accountId",
+        "in": "path",
+        "description": "The id associated to the account",
+        "required": true,
+        "schema": {
+          "exclusiveMaximum": true,
+          "minimum": 1,
+          "exclusiveMinimum": true,
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "DocId": {
+        "name": "docId",
+        "in": "path",
+        "description": "The id associated to the document",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header",
+        "description": "Subscription key provided by Looplex",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "Subscription-Key": []
+    }
+  ]
+}

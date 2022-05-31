@@ -1,5 +1,5 @@
 tags: 
-  - Area (Lawsoft)
+  - Area 
 summary: Obtém as áreas do escritório
 description: Retorna um array com as áreas de acordo com o escritório informado.
 operationId: api-areas-porDomain-{domain}

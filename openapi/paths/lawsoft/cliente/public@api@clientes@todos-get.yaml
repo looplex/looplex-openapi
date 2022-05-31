@@ -1,5 +1,5 @@
 tags: 
-  - Cliente (Lawsoft)
+  - Cliente 
 summary: Clientes
 description: "Obtém uma lista com todos os clientes"
 operationId: api-clientes-todos

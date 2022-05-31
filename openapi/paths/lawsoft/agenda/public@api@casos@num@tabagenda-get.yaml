@@ -1,5 +1,5 @@
 tags: 
-  - Agenda (Lawsoft)
+  - Agenda 
 summary: Obtém compromissos
 description: Obtém compromissos, prazos e publicações por numero interno, externo ou identificador do caso.
 operationId: api-casos-num-tabagenda

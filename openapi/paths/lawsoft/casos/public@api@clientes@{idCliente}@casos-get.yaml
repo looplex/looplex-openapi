@@ -1,5 +1,5 @@
 tags: 
-  - Casos (Lawsoft)
+  - Casos 
 summary: Casos do cliente
 description: Retorna um array com os casos do cliente.
 operationId: api-clientes-{idCliente}-casos

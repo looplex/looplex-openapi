@@ -1,5 +1,5 @@
 tags: 
-  - Area (Lawsoft)
+  - Area 
 summary: Obtém a área
 description: Retorna a área de acordo com o identificador informado.
 operationId: api-areas-{id}-get

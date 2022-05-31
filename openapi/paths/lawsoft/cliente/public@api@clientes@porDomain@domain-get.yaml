@@ -1,5 +1,5 @@
 tags: 
-  - Cliente (Lawsoft)
+  - Cliente 
 summary: Clientes do escritório
 description: Obtém a lista de clientes do escritório informado
 operationId: api-clientes-porDomain-domain

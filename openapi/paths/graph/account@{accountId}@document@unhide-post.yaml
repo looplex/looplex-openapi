@@ -1,0 +1,12 @@
+tags:
+  - Documents
+summary: Restore multiple documents status
+description: Restore multiple documents status
+operationId: restoreMultipleDocumentsStatusUsingPOST
+parameters:
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/Ids.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

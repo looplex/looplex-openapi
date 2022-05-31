@@ -1,5 +1,5 @@
 tags: 
-  - Agenda (Lawsoft)
+  - Agenda 
 summary: Obtém participantes
 description: Obtém os participantes.
 operationId: api-agenda-participantes

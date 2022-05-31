@@ -1,5 +1,5 @@
 tags: 
-  - Partes (Lawsoft)
+  - Partes 
 summary: Pesquisa de Partes
 description: Obtém uma lista de partes de acordo com o termo informado.
 operationId: api-partes

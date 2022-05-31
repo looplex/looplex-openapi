@@ -1,5 +1,5 @@
 tags: 
-  - Categoria (Lawsoft)
+  - Categoria 
 summary: Categorias de preço do escritório
 description: Retorna um array com as categorias de preço do escritório
 operationId: api-escritorios-{IdEscritorio}-categoriaspreco

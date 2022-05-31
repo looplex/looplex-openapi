@@ -1,5 +1,5 @@
 tags: 
-  - Agenda (Lawsoft)
+  - Agenda 
 summary: Executores
 description: "Retorna um array com os executores"
 operationId: api-agenda-executores

@@ -1,5 +1,5 @@
 tags: 
-  - Hierarquia (Lawsoft)
+  - Hierarquia 
 summary: Ritos
 description: Obtém um array com os ritos de acordo com os filtros informados
 operationId: api-hierarquia-ritos

@@ -1,4 +1,4 @@
-name: testName
+name: taskId
 in: path
 description: The id associated to the task
 required: true

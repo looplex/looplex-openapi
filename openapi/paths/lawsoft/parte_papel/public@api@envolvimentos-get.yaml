@@ -1,5 +1,5 @@
 tags: 
-  - Envolvimento das partes (Lawsoft)
+  - Envolvimento das partes 
 summary: Envolvimento das partes
 description: Obtém os envolvimentos das partes de acordo com o tipo de cadastro
 operationId: api-envolvimentos

@@ -1,5 +1,5 @@
 tags: 
-  - Andamento (Lawsoft)
+  - Andamento 
 summary: Incluir andamento
 description: Inclui o andamento
 operationId: api-andamentos-post

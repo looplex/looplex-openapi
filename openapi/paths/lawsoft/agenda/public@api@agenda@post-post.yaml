@@ -1,5 +1,5 @@
 tags: 
-  - Agenda (Lawsoft)
+  - Agenda 
 summary: Inclui item de agenda
 description: Inclui o compromisso de agenda.
 operationId: api-agenda-post

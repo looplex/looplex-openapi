@@ -1,0 +1,103 @@
+title: Task
+description: Tasks info
+properties:
+  ancestry:
+    type: string
+    description: 'O caminho de ancestralidade até a tarefa composto pelos ids dos seus ancestrais separados por pontos. 
+      Exemplo: A tarefa 1 tem como sub-tarefa a 2, que por sua vez tem como sub-tarefa a 3. Logo, o campo ancestry da tarefa 3 será 1.2'
+    example: null
+  children:
+    type: array
+    description: Associated sub-tasks.
+    items:
+      $ref: "./Task.yaml"
+    example: {
+      "ancestry": "13",
+      "children": [],
+      "createdAt": "2019-08-24T14:15:22Z",
+      "customFields": {
+      "name": "ob2",
+      "port_type": null
+      },
+      "dueDate": "2019-08-24T14:15:22Z",
+      "endDate": "2019-08-24T14:15:22Z",
+      "id": 14,
+      "lastUpdatedAt": "2019-08-24T14:15:22Z",
+      "name": "Validação Externa",
+      "orgPath": "string",
+      "owner": "string",
+      "slug": "validacao-externa-123e4567-e89b-12d3-a456-426614174000",
+      "startDate": "2019-08-24T14:15:22Z",
+      "status": "DONE",
+      "tags": "Bancária",
+      "uuid": "095be615-a8ad-4c33-8e9c-c7612fbf6c9f"
+    }
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+    description: When the task was created.
+  customFields:
+    type: string
+    description: Json field to store custom data associated to the task.
+    example: {"documentId":"11","documentUrl": "https://link.to"}
+  dueDate:
+    type: string
+    description: When the task should be finished.
+    format: date-time
+  endDate:
+    type: string
+    description: When the task was actually finished.
+    format: date-time
+  id:
+    type: integer
+    description: The task's identification.
+    format: int64
+    example: 13
+    readOnly: true
+  updatedAt:
+    type: string
+    description: When the task was last updated.
+    format: date-time
+    readOnly: true
+  name:
+    type: string
+    description: O nome exibido na interface de tarefas.
+    example: Protocolar Documento
+  orgPath:
+    type: string
+    readOnly: true
+    description: O identificador do usuário, gerado a partir de seu token de autorização.
+    example: looplex.com.br.diego-reidelas
+  owner:
+    type: string
+    description: O último usuário a interagir com a tarefa.
+    readOnly: true
+  slug:
+    type: string
+    description: Um identificador slug gerado a partir nome da tarefa.
+    example: protocolar-documento-123e4567-e89b-12d3-a456-426614174000
+    readOnly: true
+  startDate:
+    type: string
+    description: When the task should start.
+    format: date-time
+  status:
+    type: string
+    description: O status atual da tarefa. Determinará o quadro em que a tarefa será exibida, caso ela seja a raiz de uma árvore.
+    enum:
+    - DONE
+    - EXECUTING
+    - SOON
+    - WAITING_EXECUTION
+  tags:
+    type: array
+    description: The array of tags associated to the task. Open field.
+    example: Bancária
+    items:
+      type: string
+  uuid:
+    type: string
+    format: uuid
+    readOnly: true
+    description: The task's universal unique id.

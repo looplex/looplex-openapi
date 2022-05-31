@@ -1,5 +1,5 @@
 tags: 
-  - Partes (Lawsoft)
+  - Partes 
 summary: Exclusão de parte
 description: Exclui a parte se não for um cliente e não estiver vinculada a nenhum processo 
 operationId: api-parte-delete

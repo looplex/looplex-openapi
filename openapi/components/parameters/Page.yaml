@@ -1,6 +1,6 @@
 name: page
 in: query
-description: The page that will be served
+description: The page that will be served.
 required: false
 schema:
   type: integer

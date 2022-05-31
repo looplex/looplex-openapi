@@ -1,5 +1,5 @@
 tags: 
-  - Casos (Lawsoft)
+  - Casos 
 summary: Pastas do cliente (Capa)
 description: Retorna um array com as pastas do cliente (Capa).
 operationId: api-casos-{idCliente}-pastasDoCaso

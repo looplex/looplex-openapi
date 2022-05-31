@@ -1,5 +1,5 @@
 tags: 
-  - Andamento (Lawsoft)
+  - Andamento 
 summary: Classificações de andamento
 description: Retorna um array com as classificações de andamento do escritório.
 operationId: api-andamentos-classificacoes

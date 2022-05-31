@@ -1,5 +1,5 @@
 tags: 
-  - Contrato (Lawsoft)
+  - Contrato 
 summary: Contratos
 description: Obtém os contratos de acordo com o filtro informado
 operationId: api-contratos

@@ -1,5 +1,5 @@
 tags: 
-  - Session (Lawsoft)
+  - Session 
 summary: Login
 description: Login para automatização
 operationId: api-session

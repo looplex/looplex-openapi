@@ -1,5 +1,5 @@
 tags: 
-  - Casos (Lawsoft)
+  - Casos 
 summary: Ramos Judiciais
 description: Obtém os ramos judiciais
 operationId: api-casos-RamosJudiciais

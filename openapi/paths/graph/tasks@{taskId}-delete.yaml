@@ -1,0 +1,15 @@
+tags:
+- Tasks
+summary: Delete task
+description: Delete a task tree (or node) from the root's id.
+operationId: deleteTaskUsingDELETE
+parameters:
+  - $ref: ../../components/parameters/TaskId.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          type: integer
+          format: int64

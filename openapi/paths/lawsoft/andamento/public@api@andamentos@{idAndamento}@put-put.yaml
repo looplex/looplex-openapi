@@ -1,5 +1,5 @@
 tags: 
-  - Andamento (Lawsoft)
+  - Andamento 
 summary: Atualizar andamento
 description: Atualiza o andamento.
 operationId: api-andamentos-{idAndamento}-put

@@ -1,0 +1,12 @@
+tags:
+  - Other
+summary: Office Render
+description: Generates DOCX Renders
+operationId: officeRender
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          $ref: ../../components/schemas/tasks-api/PageResponse.yaml

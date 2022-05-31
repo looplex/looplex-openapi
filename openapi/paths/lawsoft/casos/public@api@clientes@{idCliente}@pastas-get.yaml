@@ -1,5 +1,5 @@
 tags: 
-  - Casos (Lawsoft)
+  - Casos 
 summary: Pastas do cliente
 description: Obtém um array com as pastas do cliente
 operationId: api-clientes-{idCliente}-pastas

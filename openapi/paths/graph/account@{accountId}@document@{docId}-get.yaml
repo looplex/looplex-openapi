@@ -1,0 +1,12 @@
+tags:
+  - Documents
+summary: Find a document by account and document ids
+description: Require the account and document ids.
+operationId: findDocumentByIdUsingGET
+parameters:
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/DocId.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

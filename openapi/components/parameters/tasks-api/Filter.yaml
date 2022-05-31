@@ -1,0 +1,7 @@
+name: filter
+in: query
+description: Search filters. The filters must follow the SCIM pattern, properly url encoded.
+required: false
+schema:
+  type: string
+  example: aaaaaaaaaaaa

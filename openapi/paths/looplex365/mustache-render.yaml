@@ -1,0 +1,12 @@
+tags:
+  - Looplex 365
+summary: Mustache Render
+description: ...
+operationId: mustache-render
+parameters:
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/DocId.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

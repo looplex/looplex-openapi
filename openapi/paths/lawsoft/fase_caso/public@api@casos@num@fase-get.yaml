@@ -1,5 +1,5 @@
 tags: 
-  - Fase caso (Lawsoft)
+  - Fase caso 
 summary: Fases dos casos
 description: Obtém um array com as fases dos casos encontrados de acordo com o numero interno, numero externo ou identificador do caso.
 operationId: api-casos-num-fase

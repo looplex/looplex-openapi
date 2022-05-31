@@ -1,5 +1,5 @@
 tags: 
-  - Agenda (Lawsoft)
+  - Agenda 
 summary: Obtém agenda
 description: Obtém um array com os compromissos de agenda de acordo com o filtro informado.
 operationId: api-agenda

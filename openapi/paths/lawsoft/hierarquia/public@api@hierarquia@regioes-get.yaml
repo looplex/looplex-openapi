@@ -1,5 +1,5 @@
 tags: 
-  - Hierarquia (Lawsoft)
+  - Hierarquia 
 summary: Regiões
 description: Obtém as regiões de acordo com o filtro informado
 operationId: api-hierarquia-regioes

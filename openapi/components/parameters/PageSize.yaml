@@ -1,5 +1,6 @@
 name: pageSize
 in: query
+description: The size of each content page.
 required: false
 schema:
   type: integer

@@ -1,0 +1,14 @@
+tags:
+- Tasks
+summary: Get tasks
+description: Get trees from the root's id.
+operationId: getTaskByIdUsingGET
+parameters:
+  - $ref: ../../components/parameters/TaskId.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          $ref: ../../components/schemas/tasks-api/Task.yaml

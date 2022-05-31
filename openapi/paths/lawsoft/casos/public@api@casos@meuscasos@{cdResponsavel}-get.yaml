@@ -1,5 +1,5 @@
 tags: 
-  - Casos (Lawsoft)
+  - Casos 
 summary: Casos por responsável
 description: Retorna um array de casos onde sou responsável
 operationId: api-casos-meuscasos-{cdResponsavel}

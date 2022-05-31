@@ -1,5 +1,5 @@
 tags: 
-  - Produtos (Lawsoft)
+  - Produtos 
 summary: Produtos do caso
 description: Obtém um array com os produtos por caso por identificador do caso, numero interno ou numero externo.
 operationId: api-casos-num-produtos

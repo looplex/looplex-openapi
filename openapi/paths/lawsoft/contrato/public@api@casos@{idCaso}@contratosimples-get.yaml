@@ -1,5 +1,5 @@
 tags: 
-  - Contrato (Lawsoft)
+  - Contrato 
 summary: Contrato do caso
 description: Obtém o contrato simples do caso informado
 operationId: api-casos-{idCaso}-contratosimples

@@ -1,5 +1,5 @@
 tags: 
-  - Andamento (Lawsoft)
+  - Andamento 
 summary: Andamentos simples do caso
 description: Retorna um array de andamentos simples do caso informado.
 operationId: api-casos-{idCaso}-andamentosimples

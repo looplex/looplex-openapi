@@ -1,5 +1,5 @@
 tags: 
-  - Cliente (Lawsoft)
+  - Cliente 
 summary: Endereços de cliente
 description: Obtém um array com os endereços dos clientes
 operationId: api-clientes-enderecos

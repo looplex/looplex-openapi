@@ -1,5 +1,5 @@
 tags: 
-  - Casos (Lawsoft)
+  - Casos 
 summary: Ficha do caso
 description: Obtém a ficha do caso
 operationId: api-casos-{id}-ficha

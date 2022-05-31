@@ -1,5 +1,5 @@
 tags: 
-  - Casos (Lawsoft)
+  - Casos 
 summary: Ficha de caso por casos
 description: Retorna um array de fichas de casos encontrados de acordo com o identificador, numero interno ou numero externo.
 operationId: api-casos-id-ficha-num

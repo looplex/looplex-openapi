@@ -1,0 +1,61 @@
+title: CreateTasksRequest
+description: Create a new task
+type: object
+properties:
+  children:
+    type: array
+    description: Sub-tasks associated to the task
+    example: {
+      "children": [],
+      "customFields": {
+      "name": "ob2",
+      "port_type": null
+      },
+      "dueDate": "2019-08-24T14:15:22Z",
+      "endDate": "2019-08-24T14:15:22Z",
+      "name": "Validação Externa",
+      "startDate": "2019-08-24T14:15:22Z",
+      "status": "DONE",
+      "tags": "Bancária"
+    }
+    items:
+      $ref: "./CreateTaskRequest.yaml"
+  customFields:
+    type: string
+    description: Json attribute to store custom fields related to the task
+    example: {"name":"ob1","port_type"}
+  dueDate:
+    type: string
+    description: When the task should end
+    format: date-time
+  endDate:
+    type: string
+    description: When the task actually ended
+    format: date-time
+  name:
+    type: string
+    description: The name that will be displayed in the tasks table
+    example: Protocolar Documento
+  startDate:
+    type: string
+    description: The task start date
+    format: date-time
+  status:
+    type: string
+    description: The current status of the task
+    enum:
+    - DONE
+    - EXECUTING
+    - SOON
+    - WAITING_EXECUTION
+  tags:
+    type: array
+    description: The tags associated to the task
+    example: Bancária
+    items:
+      type: string
+required:
+  - dueDate
+  - startDate
+  - name
+  - status
