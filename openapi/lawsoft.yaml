@@ -321,9 +321,17 @@ paths:
     post:
       $ref: './paths/lawsoft/decisoes/public@api@Decisoes-post.yaml'
   /api/Decisoes/{id}:
+    get:
+      $ref: './paths/lawsoft/decisoes/public@api@Decisoes@id-get.yaml'
     put:
       $ref: './paths/lawsoft/decisoes/public@api@Decisoes@id-put.yaml'
-  
+  /api/casos/{idCaso}/DecisoesComValores:
+    get:
+      $ref: './paths/lawsoft/decisoes/public@api@casos@idCaso@DecisoesComValores-get.yaml'
+  /api/Decisoes/{idProcessoDecisao}:
+    delete:
+      $ref: './paths/lawsoft/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
+
   # Fase
   /api/casos/fase/{nrGrupo}:
     get:
