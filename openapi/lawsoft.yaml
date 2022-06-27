@@ -167,6 +167,11 @@ paths:
     get:
       $ref: ./paths/lawsoft/area/public@api@areas@{id}@get-get.yaml
 
+  # Busca
+  /api/busca/mobilenovo:
+    get:
+      $ref: './paths/lawsoft/busca/public@api@busca@mobilenovo-get.yaml'
+
   # Casos
   /api/casos/inclui:
     post:
