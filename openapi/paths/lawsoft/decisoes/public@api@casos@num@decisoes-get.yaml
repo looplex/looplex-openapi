@@ -1,0 +1,40 @@
+tags:
+  - Decisões
+summary: Decisões do caso por identificadores
+operationId: api-casos-num-decisoes
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: NumeroInterno
+    in: query
+    example: "10"
+    required: false
+    schema:
+      type: integer
+  - name: NumeroExterno
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: IdProcesso
+    in: query
+    required: false
+    schema:
+      type: integer
+responses:
+  "200":
+    description: Decisões do caso por identificadores
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOCasoDecisao.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

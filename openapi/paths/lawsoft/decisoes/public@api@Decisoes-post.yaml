@@ -1,0 +1,25 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Decisões
+summary: Incluir decisão
+operationId: api-Decisoes
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  # Adicione aqui os parâmetros da requisição. Verificar menu "Adicionar parâmetro" 
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../../components/schemas/lawsoft/DTOProcessoDecisao.yaml
+responses:
+  "204":
+    description: A decisão foi incluída
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
