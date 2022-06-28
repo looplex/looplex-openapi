@@ -4590,7 +4590,7 @@
           "Decisões"
         ],
         "summary": "Decisão com valores",
-        "operationId": "api-Decisoes-id",
+        "operationId": "api-Decisoes-id-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -4638,7 +4638,7 @@
           "Decisões"
         ],
         "summary": "Atualiza decisão",
-        "operationId": "api-Decisoes-id",
+        "operationId": "api-Decisoes-id-put",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -7306,6 +7306,7 @@
         "type": "object",
         "properties": {
           "IdParteNoLo": {
+            "example": -2147483648,
             "type": "integer"
           },
           "nomeParte": {
@@ -7327,45 +7328,61 @@
         "type": "object",
         "properties": {
           "idPreProcesso": {
+            "example": -2147483648,
             "type": "integer"
           },
           "idCliente": {
+            "example": -2147483648,
+            "type": "integer"
+          },
+          "idResponsavel": {
+            "example": -2147483648,
+            "type": "integer"
+          },
+          "idArea": {
+            "example": -2147483648,
             "type": "integer"
           },
           "envolvimentoCliente": {
             "$ref": "#/components/schemas/PoloLawOffice"
           },
+          "tipo": {
+            "$ref": "#/components/schemas/RamosJudicial"
+          },
+          "dsAssunto": {
+            "description": "Título da pasta",
+            "type": "string"
+          },
           "nrExito": {
+            "example": -2147483648,
             "type": "integer"
           },
           "nrTipoExito": {
+            "example": -2147483648,
             "type": "integer"
           },
           "nrMoedaInicialCausa": {
-            "type": "integer"
-          },
-          "idResponsavel": {
+            "example": -2147483648,
             "type": "integer"
           },
           "idProcessoPai": {
-            "type": "integer"
-          },
-          "idArea": {
+            "example": -2147483648,
             "type": "integer"
           },
           "idPasta": {
+            "example": -2147483648,
             "type": "integer"
           },
-          "dsAssunto": {
-            "type": "string"
-          },
           "idRito": {
+            "example": -2147483648,
             "type": "integer"
           },
           "idForo": {
+            "example": -2147483648,
             "type": "integer"
           },
           "cdNoForoVara": {
+            "example": -2147483648,
             "type": "integer"
           },
           "numeroSequencial": {
@@ -7383,13 +7400,11 @@
           "classeDoProcesso": {
             "$ref": "#/components/schemas/ClasseDoCaso"
           },
-          "tipo": {
-            "$ref": "#/components/schemas/RamosJudicial"
-          },
           "situacaoDoProcesso": {
             "$ref": "#/components/schemas/SituacaoDoCaso"
           },
           "tituloProcesso": {
+            "description": "Título do processo",
             "type": "string"
           },
           "observacao": {
@@ -7399,9 +7414,11 @@
             "type": "string"
           },
           "idContrato": {
+            "example": -2147483648,
             "type": "integer"
           },
           "idFase": {
+            "example": -2147483648,
             "type": "integer"
           },
           "nivel": {
@@ -7459,6 +7476,7 @@
             }
           },
           "idProcessoNoFornecedorPush": {
+            "example": -2147483648,
             "type": "integer"
           },
           "nrFornecedorPush": {
@@ -7470,7 +7488,15 @@
               "$ref": "#/components/schemas/ParteParaLO"
             }
           }
-        }
+        },
+        "required": [
+          "idCliente",
+          "envolvimentoCliente",
+          "idResponsavel",
+          "idArea",
+          "dsAssunto",
+          "tipo"
+        ]
       },
       "DTOErroCadastroProcesso": {
         "title": "DTOErroCadastroProcesso",

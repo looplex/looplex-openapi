@@ -53,30 +53,42 @@ tags:
     x-displayName: Agenda
   - name: Andamento
     x-displayName: Andamento
+  - name: Andamento (Lawsoft)
+    x-displayName: Andamento (Lawsoft)
   - name: Area
     x-displayName: Area
-  - name: Timeline
-    x-displayName: Timeline
-  - name: Produtos
-    x-displayName: Produtos
-  - name: Permissão
-    x-displayName: Permissão
-  - name: Fase caso
-    x-displayName: Fase caso
-  - name: Dados complementares
-    x-displayName: Dados complementares
+  - name: Busca
+    x-displayName: Busca
   - name: Casos
     x-displayName: Casos
+  - name: Casos (Lawsoft)
+    x-displayName: Casos (Lawsoft)
   - name: Categoria
     x-displayName: Categoria
   - name: Cliente
     x-displayName: Cliente
-  - name: País
-    x-displayName: País
+  - name: Cliente (Lawsoft)
+    x-displayName: Cliente (Lawsoft)
+  - name: Contato (Lawsoft)
+    x-displayName: Contato (Lawsoft)
+  - name: Conta de acesso (Lawsoft)
+    x-displayName: Conta de acesso (Lawsoft)
   - name: Contrato
     x-displayName: Contrato
+  - name: Dados complementares
+    x-displayName: Dados complementares
+  - name: Decisões
+    x-displayName: Decisões
+  - name: Fase caso
+    x-displayName: Fase caso
+  - name: Funcionário (Lawsoft)
+    x-displayName: Funcionário (Lawsoft)
   - name: Hierarquia
     x-displayName: Hierarquia
+  - name: Hierarquia (Lawsoft)
+    x-displayName: Hierarquia (Lawsoft)
+  - name: País
+    x-displayName: País
   - name: Partes
     x-displayName: Partes
   - name: Envolvimento das partes
@@ -113,18 +125,24 @@ x-tagGroups:
       - Session
       - Agenda
       - Andamento
+      - Andamento (Lawsoft)
       - Area
-      - Timeline
-      - Produtos
-      - Permissão
-      - Fase caso
-      - Dados complementares
+      - Busca
       - Casos
+      - Casos (Lawsoft)
       - Categoria
       - Cliente
-      - País
+      - Cliente (Lawsoft)
+      - Contato (Lawsoft)
+      - Conta de acesso (Lawsoft)
       - Contrato
+      - Dados complementares
+      - Decisões
+      - Fase caso
+      - Funcionário (Lawsoft)
       - Hierarquia
+      - Hierarquia (Lawsoft)
+      - País
       - Partes
       - Envolvimento das partes
     description: >
@@ -907,7 +925,7 @@ paths:
         - Session
       summary: Login mobile
       description: Login do Mobile
-      operationId: api-mobilesession
+      operationId: apiMobileLogin
       parameters:
         - $ref: '#/components/parameters/SubscriptionKey'
       requestBody:
@@ -936,7 +954,7 @@ paths:
         - Session
       summary: Login
       description: Login para automatização
-      operationId: api-session
+      operationId: apiLogin
       parameters:
         - $ref: '#/components/parameters/SubscriptionKey'
       requestBody:
@@ -965,7 +983,7 @@ paths:
         - Session
       summary: Logoff
       description: Efetua o logoff
-      operationId: api-logoff
+      operationId: apiLogout
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1184,7 +1202,7 @@ paths:
       description: >-
         Obtém um array com os compromissos de agenda do caso de acordo com o
         filtro informado.
-      operationId: 'api-casos-{idCaso}-agenda'
+      operationId: api-casos-idCaso-agenda
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1252,7 +1270,7 @@ paths:
         - Agenda
       summary: Exclui item de agenda
       description: Excluir o item de agenda.
-      operationId: 'api-agenda-{tipo}-{id}'
+      operationId: api-agenda-tipo-id
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1370,7 +1388,7 @@ paths:
         - Agenda
       summary: Audiências por caso
       description: Obtém as audiências por caso.
-      operationId: 'api-casos-{idCaso}-audiencias'
+      operationId: api-casos-idCaso-audiencias
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1446,7 +1464,7 @@ paths:
         - Agenda
       summary: Obtém compromissos
       description: 'Obtém compromissos, prazos e publicações por caso.'
-      operationId: 'api-casos-{idCaso}-tabagenda'
+      operationId: api-casos-idCaso-tabagenda
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1588,7 +1606,7 @@ paths:
         Retorna um array com os andamentos do caso de acordo com o filtro
         informado.
       operationId: >-
-        api-casos-{idCaso}-andamentos-{data}-{primeiraLeitura}-{totalAndamentosLidosPeloMobile}
+        api-casos-idCaso-andamentos-data-primeiraLeitura-totalAndamentosLidosPeloMobile
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1638,7 +1656,7 @@ paths:
         - Andamento
       summary: Andamentos simples do caso
       description: Retorna um array de andamentos simples do caso informado.
-      operationId: 'api-casos-{idCaso}-andamentosimples'
+      operationId: api-casos-idCaso-andamentosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1716,7 +1734,7 @@ paths:
         - Andamento
       summary: Andamento por identificador
       description: Obtém o andamento de acordo com o identificador informado.
-      operationId: 'api-andamentos-{id}'
+      operationId: api-andamentos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1776,7 +1794,7 @@ paths:
         - Andamento
       summary: Atualizar andamento
       description: Atualiza o andamento.
-      operationId: 'api-andamentos-{idAndamento}-put'
+      operationId: api-andamentos-idAndamento-put
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1805,13 +1823,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/andamentos/{idAndamento}/remover1':
     delete:
       tags:
         - Andamento
       summary: Apagar andamento
       description: Apaga o andamento
-      operationId: 'api-andamentos-{idAndamento}-delete'
+      operationId: api-andamentos-idAndamento-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1823,6 +1840,41 @@ paths:
       responses:
         '204':
           description: O andamento foi excluído.
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/andamentos/update/{idAndamento}':
+    put:
+      tags:
+        - Andamento (Lawsoft)
+      summary: Atualizar andamento Web
+      description: Atualiza o andamento
+      operationId: api-andamentos-update-idAndamento
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idAndamento
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOAndamento'
+      responses:
+        '200':
+          description: Atualiza o andamento
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EncapsuladorDeResposta'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -1880,7 +1932,7 @@ paths:
         - Area
       summary: Obtém as áreas do escritório
       description: Retorna um array com as áreas de acordo com o escritório informado.
-      operationId: 'api-areas-porDomain-{domain}'
+      operationId: api-areas-porDomain-domain
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1912,7 +1964,7 @@ paths:
         - Area
       summary: Obtém a área
       description: Retorna a área de acordo com o identificador informado.
-      operationId: 'api-areas-{id}-get'
+      operationId: api-areas-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -1936,418 +1988,46 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/timeline/items:
+  /api/busca/mobilenovo:
     get:
       tags:
-        - Timeline
-      summary: Timeline do caso
-      description: Lista timeline do caso.
-      operationId: api-timeline-items
+        - Busca
+      summary: Busca
+      description: Obtém os clientes e casos que correspondem ao termo informado
+      operationId: api-busca-mobilenovo
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
-        - name: paginaAtual
+        - name: termo
           in: query
           required: true
-          description: Número da página a carregar
-          example: 2
-          schema:
-            type: integer
-        - name: cdProcesso
-          in: query
-          example: 81
-          description: Número do caso
-          required: true
-          schema:
-            type: integer
-        - name: dataInicial
-          in: query
-          example: '2022-01-01T12:00:00'
-          required: false
           schema:
             type: string
-        - name: dataFinal
+        - name: ativos
           in: query
-          example: '2022-01-01T12:00:00'
           required: false
-          schema:
-            type: string
-        - name: andamentoManual
-          in: query
-          description: Indica se inclui os andamentos manuais na resposta
-          example: true
-          required: false
+          description: 'Default: true'
           schema:
             type: boolean
-        - name: andamentoAutomatico
+        - name: inativos
           in: query
-          description: Indica se inclui os andamentos automáticos na resposta
-          example: true
           required: false
+          description: 'Default: false'
           schema:
             type: boolean
-        - name: timesheet
+        - name: apenasMeusCasos
           in: query
-          description: Indica se inclui os lançamentos de hora na resposta
-          example: true
           required: false
-          schema:
-            type: boolean
-        - name: agenda
-          in: query
-          description: Indica se inclui os itens de agenda na resposta
-          example: true
-          required: false
-          schema:
-            type: boolean
-        - name: tarefa
-          in: query
-          description: Indica se inclui as tarefas na resposta
-          example: true
-          required: false
-          schema:
-            type: boolean
-        - name: decisao
-          in: query
-          description: Indica se inclui as decisões na resposta
-          example: true
-          required: false
-          schema:
-            type: boolean
-        - name: despesa
-          in: query
-          description: Indica se inclui as despesas na resposta
-          example: true
-          required: false
-          schema:
-            type: boolean
-        - name: garantia
-          in: query
-          description: Indica se inclui as garantias na resposta
-          example: true
-          required: false
-          schema:
-            type: boolean
-        - name: pushAndamentos
-          in: query
-          description: Indica se inclui os itens de push de andamento na resposta
-          example: true
-          required: false
-          schema:
-            type: boolean
-        - name: pushPublicacao
-          in: query
-          description: Indica se inclui os itens de push de publicação na resposta
-          example: true
-          required: false
+          description: 'Default: false'
           schema:
             type: boolean
       responses:
         '200':
-          description: Obtém os itens de timeline.
+          description: Obtém os clientes e casos que correspondem ao termo informado
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOTimelineItem'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/produtos':
-    get:
-      tags:
-        - Produtos
-      summary: Produtos por caso
-      description: Obtém um array com os produtos por caso.
-      operationId: 'api-casos-{idCaso}-produtos'
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: idCaso
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Obtém um array com os produtos por caso.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOProduto'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/num/produtos:
-    get:
-      tags:
-        - Produtos
-      summary: Produtos do caso
-      description: >-
-        Obtém um array com os produtos por caso por identificador do caso,
-        numero interno ou numero externo.
-      operationId: api-casos-num-produtos
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: NumeroInterno
-          in: query
-          required: false
-          schema:
-            type: integer
-        - name: NumeroExterno
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: IdProcesso
-          in: query
-          required: false
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: >-
-            Obtém um array com os produtos por caso por identificador do caso,
-            numero interno ou numero externo.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOProduto'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/permissao/{idFuncionalidade}':
-    get:
-      tags:
-        - Permissão
-      summary: Verifica permissão
-      description: Retorna um booleano indicando se possui determinada permissão.
-      operationId: 'api-permissao-{idFuncionalidade}'
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: idFuncionalidade
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Retorna um booleano indicando se possui determinada permissão.
-          content:
-            application/json:
-              example: 'true'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/fase/{nrGrupo}':
-    get:
-      tags:
-        - Fase caso
-      summary: Obtém as fases do caso
-      description: Obtém um array com as fases do caso de acordo com o tipo de processo
-      operationId: 'api-casos-fase-{nrGrupo}'
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: nrGrupo
-          in: path
-          required: true
-          schema:
-            $ref: '#/components/schemas/RamosJudicial'
-      responses:
-        '200':
-          description: Obtém um array com as fases do caso de acordo com o tipo de processo
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOFaseCaso'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{nrSequencia}/fase':
-    get:
-      tags:
-        - Fase caso
-      summary: Fase do caso
-      description: Obtém a fase do caso.
-      operationId: 'api-casos-{nrSequencia}-fase'
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: nrSequencia
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Obtém a fase do caso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DTOFaseCaso'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/num/fase:
-    get:
-      tags:
-        - Fase caso
-      summary: Fases dos casos
-      description: >-
-        Obtém um array com as fases dos casos encontrados de acordo com o numero
-        interno, numero externo ou identificador do caso.
-      operationId: api-casos-num-fase
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: NumeroInterno
-          in: query
-          required: false
-          schema:
-            type: integer
-        - name: NumeroExterno
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: IdProcesso
-          in: query
-          required: false
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: >-
-            Obtém um array com as fases dos casos encontrados de acordo com o
-            numero interno, numero externo ou identificador do caso.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOFaseCaso'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/dadoscomplementares':
-    get:
-      tags:
-        - Dados complementares
-      summary: Dados complementares do caso
-      description: >-
-        Obtém um array com os dados complementares de acordo com o identificador
-        do caso.
-      operationId: 'api-casos-{idCaso}-dadoscomplementares'
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: idCaso
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: >-
-            Obtém um array com os dados complementares de acordo com o
-            identificador do caso.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTODadoComplementar'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/num/dadoscomplementares:
-    get:
-      tags:
-        - Dados complementares
-      summary: Dados complementares dos casos
-      description: >-
-        Obtém um array com os dados complementares pelo numero interno, numero
-        externo ou identificador do caso.
-      operationId: api-casos-num-dadoscomplementares
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: NumeroInterno
-          in: query
-          required: false
-          schema:
-            type: integer
-        - name: NumeroExterno
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: IdProcesso
-          in: query
-          required: false
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: >-
-            Obtém um array com os dados complementares pelo numero interno,
-            numero externo ou identificador do caso.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTODadoComplementar'
+                $ref: '#/components/schemas/DTOBuscaMobileNovo'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -2396,7 +2076,7 @@ paths:
         - Casos
       summary: Casos do cliente
       description: Retorna um array com os casos do cliente.
-      operationId: 'api-clientes-{idCliente}-casos'
+      operationId: api-clientes-idCliente-casos
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2446,7 +2126,7 @@ paths:
         - Casos
       summary: Pastas do cliente
       description: Obtém um array com as pastas do cliente
-      operationId: 'api-clientes-{idCliente}-pastas'
+      operationId: api-clientes-idCliente-pastas
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2478,7 +2158,7 @@ paths:
         - Casos
       summary: Pastas do cliente (Capa)
       description: Retorna um array com as pastas do cliente (Capa).
-      operationId: 'api-casos-{idCliente}-pastasDoCaso'
+      operationId: api-casos-idCliente-pastasDoCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2510,7 +2190,7 @@ paths:
         - Casos
       summary: Obtém caso
       description: Obtém o caso
-      operationId: 'api-casos-{id}'
+      operationId: api-casos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2540,7 +2220,7 @@ paths:
         - Casos
       summary: Ficha do caso
       description: Obtém a ficha do caso
-      operationId: 'api-casos-{id}-ficha'
+      operationId: api-casos-id-ficha
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2616,7 +2296,7 @@ paths:
         - Casos
       summary: Casos por responsável
       description: Retorna um array de casos onde sou responsável
-      operationId: 'api-casos-meuscasos-{cdResponsavel}'
+      operationId: api-casos-meuscasos-cdResponsavel
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2756,7 +2436,7 @@ paths:
         - Casos
       summary: Casos por identificadores
       description: Obtém os casos pelos identificadores informados
-      operationId: 'api-casos-porIds-{ids}'
+      operationId: api-casos-porIds-ids
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2882,6 +2562,82 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/casos/edit:
+    put:
+      tags:
+        - Casos (Lawsoft)
+      summary: Edita caso
+      description: Edita propriedades específicas do caso
+      operationId: api-casos-edit
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOObjetoNomeValor'
+      responses:
+        '200':
+          description: Retorna o caso atualizado após a atualização das propriedades
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCasoCompleto'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/casos/listacasos:
+    get:
+      tags:
+        - Casos (Lawsoft)
+      summary: Casos
+      description: Lista todos os casos de acordo com o filtro informado
+      operationId: api-casos-listacasos
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: ativos
+          in: query
+          required: false
+          description: 'Default: true'
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          required: false
+          description: 'Default: false'
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Lista todos os casos de acordo com o filtro informado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   '/api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco':
     get:
       tags:
@@ -2890,7 +2646,7 @@ paths:
       description: >-
         Retorna um array com as categorias de preço do escritório de acordo com
         o filtro informado.
-      operationId: 'api-escritorios-{IdEscritorio},{intfiltroCategoria}-categoriaspreco'
+      operationId: api-escritorios-IdEscritorio-intfiltroCategoria-categoriaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -2929,7 +2685,7 @@ paths:
         - Categoria
       summary: Categorias de preço do escritório
       description: Retorna um array com as categorias de preço do escritório
-      operationId: 'api-escritorios-{IdEscritorio}-categoriaspreco'
+      operationId: api-escritorios-IdEscritorio-categoriaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3242,25 +2998,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/pais:
+  '/api/clientes/{id}':
     get:
       tags:
-        - País
-      summary: Países
-      description: Obtém a lista de países
-      operationId: api-pais
+        - Cliente (Lawsoft)
+      summary: Informações do cliente
+      description: Obtém as informações do cliente de acordo com o identificador informado
+      operationId: api-clientes-id
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
-          description: Obtém a lista de países
+          description: >-
+            Obtém as informações do cliente de acordo com o identificador
+            informado
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOPais'
+                $ref: '#/components/schemas/DTOCliente'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -3269,59 +3030,253 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/pais/uf:
+  '/api/clientes/porIds/{idsClientes}':
     get:
       tags:
-        - País
-      summary: Estados
-      description: Obtém a lista de estados do Brasil
-      operationId: api-pais-uf
+        - Cliente (Lawsoft)
+      summary: Informações dos clientes
+      description: >-
+        Obtém um array com as informações do clientes de acordo com os
+        identificadores informados
+      operationId: api-clientes-porIds-idsClientes
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
-      responses:
-        '200':
-          description: Obtém a lista de estados do Brasil
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOUF'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/pais/cidades:
-    get:
-      tags:
-        - País
-      summary: Cidades
-      description: Lista as cidades de acordo com o estado informado
-      operationId: api-pais-cidades
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-        - name: uf
-          in: query
-          description: UF para obter as cidades
-          example: SP
+        - name: idsClientes
+          in: path
+          example: '[1, 15]'
           required: true
           schema:
             type: string
       responses:
         '200':
-          description: Lista as cidades de acordo com o estado informado
+          description: >-
+            Obtém um array com as informações do clientes de acordo com os
+            identificadores informados
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DTOCidade'
+                  $ref: '#/components/schemas/DTOCliente'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/clientes/{idCliente}/pasta':
+    get:
+      tags:
+        - Cliente (Lawsoft)
+      summary: Identificador pasta web
+      description: Obtém identificador pasta da Web
+      operationId: api-clientes-idCliente-pasta
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idCliente
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém identificador pasta da Web
+          content:
+            application/json:
+              example: 10
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/contatos/{id}':
+    get:
+      tags:
+        - Contato (Lawsoft)
+      summary: Contato
+      description: Obtém informações do contato
+      operationId: api-contatos-id
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém informações do contato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOContato'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/contatos:
+    get:
+      tags:
+        - Contato (Lawsoft)
+      summary: Contatos
+      description: Obtém uma lista de contatos
+      operationId: api-contatos
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém uma lista de contatos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOContato'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/clientes/{idCliente}/contatos':
+    get:
+      tags:
+        - Contato (Lawsoft)
+      summary: Contatos do cliente
+      description: Obtém uma lista com os contatos do cliente
+      operationId: api-clientes-idCliente-contatos
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idCliente
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém uma lista com os contatos do cliente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOContato'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/contatos/solicitantes:
+    get:
+      tags:
+        - Contato (Lawsoft)
+      summary: Solicitantes
+      description: Obtém uma lista de solicitantes do cliente
+      operationId: api-contatos-solicitantes
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: codCliente
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém uma lista de solicitantes do cliente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOSolicitante'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/ContaDeAcesso/ObtemContaDeAcesso:
+    get:
+      tags:
+        - Conta de acesso (Lawsoft)
+      summary: Conta de acesso por nome
+      description: Obtém a conta de acesso por nome
+      operationId: api-ContaDeAcesso-ObtemContaDeAcesso
+      parameters:
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: nomeUsuario
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: domain
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Obtém a conta de acesso por nome
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOContaDeAcesso'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/ContaDeAcesso/ObtemContaDeAcesso2:
+    get:
+      tags:
+        - Conta de acesso (Lawsoft)
+      summary: Conta de acesso por nome
+      description: Obtém a conta de acesso por nome
+      operationId: api-ContaDeAcesso-ObtemContaDeAcesso2
+      parameters:
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: nomeUsuario
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: domain
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Obtém a conta de acesso por nome
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOContaDeAcesso'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -3375,7 +3330,7 @@ paths:
         - Contrato
       summary: Contrato do caso
       description: Obtém o contrato simples do caso informado
-      operationId: 'api-casos-{idCaso}-contratosimples'
+      operationId: api-casos-idCaso-contratosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3405,7 +3360,7 @@ paths:
         - Contrato
       summary: Contratos do cliente
       description: Obtém os contratos do cliente de acordo com o filtro informado
-      operationId: 'api-contratos-{idCliente}-contratosCliente'
+      operationId: api-contratos-idCliente-contratosCliente
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3449,7 +3404,7 @@ paths:
         - Contrato
       summary: Contratos do cliente
       description: Obtém os contratos do cliente de acordo com o filtro informado
-      operationId: 'api-clientes-{idCliente}-contratos'
+      operationId: api-clientes-idCliente-contratos
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3493,7 +3448,7 @@ paths:
         - Contrato
       summary: Contrato
       description: Obtém o contrato de acordo com o identificador informado
-      operationId: 'api-contratos-{id}'
+      operationId: api-contratos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3509,6 +3464,696 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOContrato'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/casos/{idCaso}/dadoscomplementares':
+    get:
+      tags:
+        - Dados complementares
+      summary: Dados complementares do caso
+      description: >-
+        Obtém um array com os dados complementares de acordo com o identificador
+        do caso.
+      operationId: api-casos-idCaso-dadoscomplementares
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idCaso
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: >-
+            Obtém um array com os dados complementares de acordo com o
+            identificador do caso.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTODadoComplementar'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/casos/num/dadoscomplementares:
+    get:
+      tags:
+        - Dados complementares
+      summary: Dados complementares dos casos
+      description: >-
+        Obtém um array com os dados complementares pelo numero interno, numero
+        externo ou identificador do caso.
+      operationId: api-casos-num-dadoscomplementares
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: NumeroInterno
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: >-
+            Obtém um array com os dados complementares pelo numero interno,
+            numero externo ou identificador do caso.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTODadoComplementar'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/casos/{idCaso}/Decisoes':
+    get:
+      tags:
+        - Decisões
+      summary: Decisões do caso
+      description: Obtém as decisões do caso
+      operationId: api-casos-idCaso-Decisoes
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idCaso
+          in: path
+          example: '100'
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém as decisões do caso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoDecisao'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/casos/num/decisoes:
+    get:
+      tags:
+        - Decisões
+      summary: Decisões do caso por identificadores
+      operationId: api-casos-num-decisoes
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: NumeroInterno
+          in: query
+          example: '10'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Decisões do caso por identificadores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoDecisao'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/Decisoes/tipos:
+    get:
+      tags:
+        - Decisões
+      summary: Tipos de decisões
+      operationId: api-Decisoes-tipos
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém um array com os tipos de decisões
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTODecisao'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/Decisoes:
+    post:
+      tags:
+        - Decisões
+      summary: Incluir decisão
+      operationId: api-Decisoes
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOProcessoDecisao'
+      responses:
+        '204':
+          description: A decisão foi incluída
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/Decisoes/{id}':
+    get:
+      tags:
+        - Decisões
+      summary: Decisão com valores
+      operationId: api-Decisoes-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém a decisão com os valores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOProcessoDecisao'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+    put:
+      tags:
+        - Decisões
+      summary: Atualiza decisão
+      operationId: api-Decisoes-id-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOProcessoDecisao'
+      responses:
+        '204':
+          description: A decisão foi atualizada
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/casos/{idCaso}/DecisoesComValores':
+    get:
+      tags:
+        - Decisões
+      summary: Decisões do caso com valores
+      operationId: api-casos-idCaso-DecisoesComValores
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idCaso
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém um array de decisões do caso com valores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOProcessoDecisao'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/Decisoes/{idProcessoDecisao}':
+    delete:
+      tags:
+        - Decisões
+      summary: Exclui decisão
+      operationId: api-Decisoes-idProcessoDecisao
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idProcessoDecisao
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: A decisão foi excluída.
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/casos/fase/{nrGrupo}':
+    get:
+      tags:
+        - Fase caso
+      summary: Obtém as fases do caso
+      description: Obtém um array com as fases do caso de acordo com o tipo de processo
+      operationId: api-casos-fase-nrGrupo
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: nrGrupo
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+      responses:
+        '200':
+          description: Obtém um array com as fases do caso de acordo com o tipo de processo
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFaseCaso'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/casos/{nrSequencia}/fase':
+    get:
+      tags:
+        - Fase caso
+      summary: Fase do caso
+      description: Obtém a fase do caso.
+      operationId: api-casos-nrSequencia-fase
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: nrSequencia
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém a fase do caso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOFaseCaso'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/casos/num/fase:
+    get:
+      tags:
+        - Fase caso
+      summary: Fases dos casos
+      description: >-
+        Obtém um array com as fases dos casos encontrados de acordo com o numero
+        interno, numero externo ou identificador do caso.
+      operationId: api-casos-num-fase
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: NumeroInterno
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: >-
+            Obtém um array com as fases dos casos encontrados de acordo com o
+            numero interno, numero externo ou identificador do caso.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFaseCaso'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/funcionarios/porIds/{ids}':
+    get:
+      tags:
+        - Funcionário (Lawsoft)
+      summary: Funcionários
+      description: >-
+        Obtém as informações dos funcionários de acordo com os identificadores
+        informados
+      operationId: employeesByIdentifiers
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: ids
+          in: path
+          example: '[10,20]'
+          required: true
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        '200':
+          description: >-
+            Obtém as informações dos funcionários de acordo com os
+            identificadores informados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionario'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/funcionarios/porId/{id}':
+    get:
+      tags:
+        - Funcionário (Lawsoft)
+      summary: Funcionário
+      description: >-
+        Obtém as informações do funcionário de acordo com o identificador
+        informado
+      operationId: employeeByIdentifier
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          example: '10'
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: >-
+            Obtém as informações do funcionário de acordo com o identificador
+            informado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOFuncionario'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/funcionarios:
+    get:
+      tags:
+        - Funcionário (Lawsoft)
+      summary: Funcionários (Filtro)
+      description: >-
+        Obtém uma lista de informações de funcionários de acordo com o filtro
+        informado
+      operationId: employees
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: ativos
+          in: query
+          required: false
+          description: 'Default: true'
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          description: 'Default: false'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: >-
+            Obtém uma lista de informações de funcionários de acordo com o
+            filtro informado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionario'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/areas/{idArea}/funcionarios':
+    get:
+      tags:
+        - Funcionário (Lawsoft)
+      summary: Funcionários da área
+      description: >-
+        Obtém uma lista de informações dos funcionários de acordo com a área e o
+        filtro informado
+      operationId: employeesByAreaIdentifier
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idArea
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: ativos
+          in: query
+          description: 'Default: true'
+          required: false
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          description: 'Default: false'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: >-
+            Obtém uma lista de informações dos funcionários de acordo com a área
+            e o filtro informado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionario'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/funcionarios/{idFuncionario}/areas':
+    get:
+      tags:
+        - Funcionário (Lawsoft)
+      summary: Áreas do funcionário
+      description: Obtém uma lista de áreas do funcionário
+      operationId: employeeAreas
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idFuncionario
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém uma lista de áreas do funcionário
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOAreaFuncionario'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/escritorios/{IdEscritorio}/funcionarios':
+    get:
+      tags:
+        - Funcionário (Lawsoft)
+      summary: Funcionários do escritório
+      description: >-
+        Obtém as informações dos funcionários de acordo com o escritório
+        informado
+      operationId: api-escritorios-IdEscritorio-funcionarios
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: IdEscritorio
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: >-
+            Obtém as informações dos funcionários de acordo com o escritório
+            informado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionarioBase'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/escritorios/funcionarios:
+    get:
+      tags:
+        - Funcionário (Lawsoft)
+      summary: Funcionários ativos do escritório
+      description: Obtém uma lista de informações dos funcionários ativos do escritório
+      operationId: api-escritorios-funcionarios
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém uma lista de informações dos funcionários ativos do escritório
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionarioBase'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -3760,13 +4405,204 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/hierarquia/GrupoForoDetalhado:
+    get:
+      tags:
+        - Hierarquia (Lawsoft)
+      summary: Grupo foro
+      description: Obtém as informações do grupo foro
+      operationId: api-hierarquia-GrupoForoDetalhado
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: cdGrupoForo
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: cdUF
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Obtém as informações do grupo foro
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOGrupoForo'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/hierarquia/UFPorRegiao:
+    get:
+      tags:
+        - Hierarquia (Lawsoft)
+      summary: UF por região e ramo judicial
+      description: Obtém as UFs de acordo com a região e ramo judicial
+      operationId: statesByRegion
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: regiao
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: nrRamoJudicial
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+      responses:
+        '200':
+          description: Obtém as UFs de acordo com a região e ramo judicial
+          content:
+            application/json:
+              example:
+                - SP
+                - RJ
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/hierarquia/fases:
+    get:
+      tags:
+        - Hierarquia (Lawsoft)
+      summary: Fases de processo por ramo judicial
+      description: Obtém as fases de processo por ramo judicial
+      operationId: api-hierarquia-fases
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: nrRamoJudicial
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+      responses:
+        '200':
+          description: Obtém as fases de processo por ramo judicial
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFaseProcesso'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/pais:
+    get:
+      tags:
+        - País
+      summary: Países
+      description: Obtém a lista de países
+      operationId: countries
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém a lista de países
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPais'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/pais/uf:
+    get:
+      tags:
+        - País
+      summary: Estados
+      description: Obtém a lista de estados do Brasil
+      operationId: statesOfBrazil
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém a lista de estados do Brasil
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOUF'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/pais/cidades:
+    get:
+      tags:
+        - País
+      summary: Cidades
+      description: Lista as cidades de acordo com o estado informado
+      operationId: citiesByState
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: uf
+          in: query
+          description: UF para obter as cidades
+          example: SP
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista as cidades de acordo com o estado informado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCidade'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   /api/Partes:
     get:
       tags:
         - Partes
       summary: Pesquisa de Partes
       description: Obtém uma lista de partes de acordo com o termo informado.
-      operationId: api-partes
+      operationId: getPartsByTerm
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3799,7 +4635,7 @@ paths:
         - Partes
       summary: Partes do caso
       description: Obtém as partes vinculadas ao caso informado
-      operationId: api-casos-idCaso-partes
+      operationId: linkedPartsByCase
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3830,8 +4666,8 @@ paths:
       tags:
         - Partes
       summary: Inserção de Parte
-      description: Insere ou atualiza uma parte existente
-      operationId: api-parte-post
+      description: Insere ou atualiza as partes informadas
+      operationId: postOrUpdateParts
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3839,14 +4675,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DTOParte'
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOParte'
       responses:
         '200':
           description: Retorna os dados da parte após a inserção ou atualização
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DTOParte'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOParte'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -3863,7 +4703,7 @@ paths:
       description: >-
         Exclui a parte se não for um cliente e não estiver vinculada a nenhum
         processo
-      operationId: api-parte-delete
+      operationId: deletePart
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3894,7 +4734,7 @@ paths:
         - Partes
       summary: Desvincular parte
       description: Desvincula a parte do processo informado
-      operationId: api-partes-desvincular
+      operationId: unlinkPartFromCase
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -3919,13 +4759,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/envolvimentos:
+  /api/envolvimentos":
     get:
       tags:
         - Envolvimento das partes
       summary: Envolvimento das partes
       description: Obtém os envolvimentos das partes de acordo com o tipo de cadastro
-      operationId: api-envolvimentos
+      operationId: apiEnvolvimentos
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
@@ -5326,6 +6166,19 @@ components:
           type: string
         IdCaso:
           type: integer
+    EncapsuladorDeResposta:
+      title: EncapsuladorDeResposta
+      type: object
+      properties:
+        Response:
+          description: >-
+            O conteúdo dessa propriedade é do mesmo tipo enviado no body da
+            requisição
+          type: object
+        Success:
+          type: boolean
+        ExceptionMessage:
+          type: string
     DTOArea:
       title: DTOArea
       type: object
@@ -5336,107 +6189,26 @@ components:
           type: string
         Ativa:
           type: boolean
-    TipoItemTimeline:
-      type: integer
-      example: 1
-      description: |
-        1: Andamento manual
-
-        2: Andamento automático
-
-        3: Timesheet
-
-        4: Agenda
-
-        5: Tarefa
-
-        6: Decisão
-
-        7: Despesa
-
-        8: Garantia
-
-        9: Push de andamento
-
-        10: Push de publicação
-    DTOTimelineItem:
-      title: DTOTimelineItem
+    CasosCliente:
+      title: CasosCliente
       type: object
       properties:
-        IDItem:
+        IDCliente:
           type: integer
-          example: 12
-          description: Identificador do item de timeline
-        DataFormatada:
-          type: string
-          example: 17/03/2022
-          description: Data do item de timeline
-        TipoItem:
-          $ref: '#/components/schemas/TipoItemTimeline'
-        TipoItemString:
-          type: string
-        TextoItem:
-          type: string
-        TipoItemAgenda:
-          type: integer
-        Titulo:
-          type: string
-    DTOProduto:
-      title: DTOProduto
-      type: object
-      properties:
-        NomeCliente:
-          type: string
-        TituloCaso:
-          type: string
-        NumeroInterno:
-          type: string
-        NumeroExterno:
-          type: string
-        dsProduto:
-          type: string
-        IdCaso:
-          type: integer
-    DTOFaseCaso:
-      title: DTOFaseCaso
-      type: object
-      properties:
-        NomeCliente:
-          type: string
-        TituloCaso:
-          type: string
-        NumeroInterno:
-          type: string
-        NumeroExterno:
-          type: string
-        NomeFaseCaso:
-          type: string
-        IDFaseProcesso:
-          type: integer
-        IdCaso:
-          type: integer
-    DTODadoComplementar:
-      title: DTODadoComplementar
-      type: object
-      properties:
-        NomeCliente:
-          type: string
-        TituloCaso:
-          type: string
-        NumeroInterno:
-          type: string
-        NumeroExterno:
-          type: string
-        Nome:
-          type: string
-        TipoCampo:
-          type: string
-        Valores:
+        IDCasos:
           type: array
           items:
-            type: string
-        IdCaso:
-          type: integer
+            type: integer
+    DTOBuscaMobileNovo:
+      title: DTOBuscaMobileNovo
+      type: object
+      properties:
+        IdsClientesComCasos:
+          type: array
+          items:
+            $ref: '#/components/schemas/CasosCliente'
+        TermoBuscado:
+          type: string
     PoloLawOffice:
       type: integer
       example: 1
@@ -5509,6 +6281,7 @@ components:
       type: object
       properties:
         IdParteNoLo:
+          example: -2147483648
           type: integer
         nomeParte:
           type: string
@@ -5523,32 +6296,47 @@ components:
       type: object
       properties:
         idPreProcesso:
+          example: -2147483648
           type: integer
         idCliente:
+          example: -2147483648
+          type: integer
+        idResponsavel:
+          example: -2147483648
+          type: integer
+        idArea:
+          example: -2147483648
           type: integer
         envolvimentoCliente:
           $ref: '#/components/schemas/PoloLawOffice'
+        tipo:
+          $ref: '#/components/schemas/RamosJudicial'
+        dsAssunto:
+          description: Título da pasta
+          type: string
         nrExito:
+          example: -2147483648
           type: integer
         nrTipoExito:
+          example: -2147483648
           type: integer
         nrMoedaInicialCausa:
-          type: integer
-        idResponsavel:
+          example: -2147483648
           type: integer
         idProcessoPai:
-          type: integer
-        idArea:
+          example: -2147483648
           type: integer
         idPasta:
+          example: -2147483648
           type: integer
-        dsAssunto:
-          type: string
         idRito:
+          example: -2147483648
           type: integer
         idForo:
+          example: -2147483648
           type: integer
         cdNoForoVara:
+          example: -2147483648
           type: integer
         numeroSequencial:
           type: integer
@@ -5560,19 +6348,20 @@ components:
           type: string
         classeDoProcesso:
           $ref: '#/components/schemas/ClasseDoCaso'
-        tipo:
-          $ref: '#/components/schemas/RamosJudicial'
         situacaoDoProcesso:
           $ref: '#/components/schemas/SituacaoDoCaso'
         tituloProcesso:
+          description: Título do processo
           type: string
         observacao:
           type: string
         numeroInterno:
           type: string
         idContrato:
+          example: -2147483648
           type: integer
         idFase:
+          example: -2147483648
           type: integer
         nivel:
           type: string
@@ -5611,6 +6400,7 @@ components:
           items:
             type: integer
         idProcessoNoFornecedorPush:
+          example: -2147483648
           type: integer
         nrFornecedorPush:
           type: integer
@@ -5618,6 +6408,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ParteParaLO'
+      required:
+        - idCliente
+        - envolvimentoCliente
+        - idResponsavel
+        - idArea
+        - dsAssunto
+        - tipo
     DTOErroCadastroProcesso:
       title: DTOErroCadastroProcesso
       type: object
@@ -5839,6 +6636,8 @@ components:
           type: string
         DataDeDistribuicaoFormatada:
           type: string
+        DataDeCitacaoFormatada:
+          type: string
         DataDeEncerramentoFormatada:
           type: string
         DataPrevistaDeEncerramentoFormatada:
@@ -5922,6 +6721,16 @@ components:
           type: integer
         Description:
           type: string
+    DTOObjetoNomeValor:
+      title: DTOObjetoNomeValor
+      type: object
+      properties:
+        Nome:
+          type: string
+          description: O nome da propriedade a editar
+        Valor:
+          type: string
+          description: O novo valor a gravar
     DTOCategoriaPreco:
       title: DTOCategoriaPreco
       type: object
@@ -6136,39 +6945,48 @@ components:
           description: >-
             StatusCode definitions:
             https://docs.microsoft.com/en-us/dotnet/api/system.net.httpstatuscode?view=netframework-4.5
-    DTOPais:
-      title: DTOPais
+    DTOContato:
+      title: DTOContato
       type: object
       properties:
-        ID:
-          example: 26
+        IDContato:
           type: integer
-        Pais:
-          example: Brasil
+        IDCliente:
+          type: integer
+        Nome:
           type: string
-    DTOUF:
-      title: DTOUF
+        Email:
+          type: string
+        Cargo:
+          type: string
+        CodigoPais:
+          type: integer
+        DDD:
+          type: integer
+        Telefone:
+          type: integer
+        Ramal:
+          type: integer
+    DTOSolicitante:
+      title: DTOSolicitante
       type: object
       properties:
-        ID:
-          example: AL
+        DsNome:
           type: string
-        UF:
-          example: Alagoas
-          type: string
-    DTOCidade:
-      title: DTOCidade
+        CdSolicitante:
+          type: integer
+    DTOContaDeAcesso:
+      title: DTOContaDeAcesso
       type: object
       properties:
-        ID:
-          example: 80
+        IDFuncionario:
           type: integer
-        IDUF:
-          example: 13
-          type: integer
-        Cidade:
-          example: Alvarães
+        Conta:
           type: string
+        IsPrimeiroAcesso:
+          type: boolean
+        IsOldPassword:
+          type: boolean
     ContratoSituacao:
       type: integer
       example: 1
@@ -6208,6 +7026,223 @@ components:
           type: integer
         Descricao:
           type: string
+    DTODadoComplementar:
+      title: DTODadoComplementar
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        Nome:
+          type: string
+        TipoCampo:
+          type: string
+        Valores:
+          type: array
+          items:
+            type: string
+        IdCaso:
+          type: integer
+    DTOCasoDecisao:
+      title: DTOCasoDecisao
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        DataDecisao:
+          type: string
+        DataDecisaoFormatada:
+          type: string
+        Observacao:
+          type: string
+        ValorDeferido:
+          type: number
+        ExitoPerda:
+          type: string
+        Decisao:
+          type: string
+        Encerramento:
+          type: boolean
+        IdCasoDecisao:
+          type: integer
+        IdCaso:
+          type: integer
+    DTODecisao:
+      title: DTODecisao
+      type: object
+      properties:
+        IdDecisao:
+          type: integer
+        IdEscritorio:
+          type: integer
+        Nome:
+          type: string
+    Moeda:
+      type: integer
+      example: 1
+      description: |
+        1: Real
+
+        2: Dólar americano
+
+        3: Euro
+    DTOProcessoDecisaoValor:
+      title: DTOProcessoDecisaoValor
+      type: object
+      properties:
+        nrExitoPerda:
+          type: integer
+        nrMoeda:
+          $ref: '#/components/schemas/Moeda'
+        nrMoedaSolicitado:
+          $ref: '#/components/schemas/Moeda'
+        dsJustificativaPedido:
+          type: string
+        nrMoedaContigenciado:
+          $ref: '#/components/schemas/Moeda'
+        vlContigenciado:
+          type: number
+        vlDeferido:
+          type: number
+        IdProcessoExpectativaReivindicacao:
+          type: integer
+        IdProcessoDecisao:
+          type: integer
+        inAlterado:
+          type: boolean
+        IdProcessoDecisaoValor:
+          type: integer
+        vlSolicitado:
+          type: number
+        nrSituacao:
+          type: integer
+    DTOProcessoDecisao:
+      title: DTOProcessoDecisao
+      type: object
+      properties:
+        Valores:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOProcessoDecisaoValor'
+        inDeEncerramento:
+          type: boolean
+        cdParteJuiz:
+          type: integer
+        cdParteAdvAcusacao:
+          type: integer
+        cdParteAdvDefesa:
+          type: integer
+        Observacao:
+          type: string
+        vlDeferido:
+          type: number
+        DataOcorrencia:
+          type: string
+        IdCaso:
+          type: integer
+        Decisao:
+          type: integer
+        nrExitoPerda:
+          type: integer
+        IdCasoDecisao:
+          type: integer
+    DTOFaseCaso:
+      title: DTOFaseCaso
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        NomeFaseCaso:
+          type: string
+        IDFaseProcesso:
+          type: integer
+        IdCaso:
+          type: integer
+    DTOAreaFuncionario:
+      title: DTOAreaFuncionario
+      type: object
+      properties:
+        IDFuncionarioArea:
+          type: integer
+        IDFuncionario:
+          type: integer
+        IDArea:
+          type: integer
+        NomeArea:
+          type: string
+        Supervisor:
+          type: boolean
+        Gerente:
+          type: boolean
+        Padrao:
+          type: boolean
+        DataInicio:
+          type: string
+        DataFim:
+          type: string
+        DataAlteracao:
+          type: string
+    DTOFuncionarioBase:
+      title: DTOFuncionarioBase
+      type: object
+      properties:
+        IdFuncionario:
+          type: integer
+        IdCategoria:
+          type: integer
+        IdContaAcesso:
+          type: integer
+        IdEscritorio:
+          type: integer
+        IdMaterialPerfilSolicitacao:
+          type: integer
+        NomeFuncionario:
+          type: string
+        NomeCargo:
+          type: string
+        NomeCategoria:
+          type: string
+        NomeContaAcesso:
+          type: string
+        NomeAreas:
+          type: string
+        NomeUsuarioImpressao:
+          type: string
+        DataDeAdmissao:
+          type: string
+        DataDeDemissao:
+          type: string
+        EhAdmin:
+          type: boolean
+        GeraDespesaContasPagas:
+          type: boolean
+        NumeroAlocacaoAreaTipo:
+          type: integer
+        NumeroNivelLancamentoDespesa:
+          type: integer
+        NumeroSituacaoCategoria:
+          type: integer
+        NumeroUsuarioCopia:
+          type: integer
+        NumeroVinculoEmpregaticio:
+          type: integer
     DTORito:
       title: DTORito
       type: object
@@ -6318,6 +7353,53 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOGrupoForo'
+    DTOFaseProcesso:
+      title: DTOFaseProcesso
+      type: object
+      properties:
+        cdFaseProcesso:
+          type: integer
+        cdEscritorio:
+          type: integer
+        dsFaseProcesso:
+          type: string
+        nrGrupo:
+          $ref: '#/components/schemas/RamosJudicial'
+        nrGrupoText:
+          type: string
+    DTOPais:
+      title: DTOPais
+      type: object
+      properties:
+        ID:
+          example: 26
+          type: integer
+        Pais:
+          example: Brasil
+          type: string
+    DTOUF:
+      title: DTOUF
+      type: object
+      properties:
+        ID:
+          example: AL
+          type: string
+        UF:
+          example: Alagoas
+          type: string
+    DTOCidade:
+      title: DTOCidade
+      type: object
+      properties:
+        ID:
+          example: 80
+          type: integer
+        IDUF:
+          example: 13
+          type: integer
+        Cidade:
+          example: Alvarães
+          type: string
     DTOEnderecoParte:
       title: DTOEnderecoParte
       type: object
