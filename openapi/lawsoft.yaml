@@ -433,6 +433,11 @@ paths:
     get:
       $ref: ./paths/lawsoft/parte_papel/public@api@envolvimentos-get.yaml
 
+  # Push
+  /api/push/publicacoes:
+    get:
+      $ref: './paths/lawsoft/push/public@api@push@publicacoes-get.yaml'
+
 components:
   securitySchemes:
     api_key:

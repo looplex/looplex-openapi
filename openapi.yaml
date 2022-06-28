@@ -85,6 +85,8 @@ tags:
     x-displayName: Partes
   - name: Envolvimento das partes
     x-displayName: Envolvimento das partes
+  - name: Push
+    x-displayName: Push
 x-tagGroups:
   - name: graph
     tags:
@@ -133,6 +135,7 @@ x-tagGroups:
       - País
       - Partes
       - Envolvimento das partes
+      - Push
     description: >
       This is an **example** API to demonstrate features of OpenAPI
       specification
@@ -4789,6 +4792,59 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/push/publicacoes:
+    get:
+      tags:
+        - Push
+      summary: Publicações
+      description: Obtém as publicações
+      operationId: api-push-publicacoes
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: ano
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: novos
+          in: query
+          description: 'Default: true'
+          required: false
+          schema:
+            type: boolean
+        - name: visualizados
+          in: query
+          description: 'Default: true'
+          required: false
+          schema:
+            type: boolean
+        - name: finalizados
+          in: query
+          description: 'Default: false'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Obtém as publicações
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemPublicacao'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
 components:
   securitySchemes:
     Subscription-Key:
@@ -7580,6 +7636,50 @@ components:
         Envolvimento:
           type: string
           example: Verificador do caso
+    StatusItemPublicacao:
+      type: integer
+      example: 1
+      description: |
+        1: Nova
+
+        2: Visualizada
+
+        4: Finalizada
+    SituacaoDeAndamentoPublicacao:
+      type: integer
+      example: 2
+      description: |
+        1: A aprovar
+
+        2: Aprovado
+
+        3: Publicado
+    DTOItemPublicacao:
+      title: DTOItemPublicacao
+      type: object
+      properties:
+        IDItemPublicacao:
+          type: integer
+        DataDePublicacao:
+          type: string
+        Status:
+          $ref: '#/components/schemas/StatusItemPublicacao'
+        Text:
+          type: string
+        IDProcesso:
+          type: integer
+        DataDeDisponibilizacao:
+          type: string
+        IDAutor:
+          type: integer
+        Situacao:
+          $ref: '#/components/schemas/SituacaoDeAndamentoPublicacao'
+        TextContinuacao:
+          type: string
+        IDAndamento:
+          type: integer
+        TipoDePush:
+          $ref: '#/components/schemas/TipoDePush'
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: 'https://github.com/Rebilly/generator-openapi-repo'

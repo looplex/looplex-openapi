@@ -6412,6 +6412,92 @@
           }
         }
       }
+    },
+    "/api/push/publicacoes": {
+      "get": {
+        "tags": [
+          "Push"
+        ],
+        "summary": "Publicações",
+        "description": "Obtém as publicações",
+        "operationId": "api-push-publicacoes",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "ano",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "novos",
+            "in": "query",
+            "description": "Default: true",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "visualizados",
+            "in": "query",
+            "description": "Default: true",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "finalizados",
+            "in": "query",
+            "description": "Default: false",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Obtém as publicações",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOItemPublicacao"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -9170,6 +9256,55 @@
           "Envolvimento": {
             "type": "string",
             "example": "Verificador do caso"
+          }
+        }
+      },
+      "StatusItemPublicacao": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Nova\n\n2: Visualizada\n\n4: Finalizada\n"
+      },
+      "SituacaoDeAndamentoPublicacao": {
+        "type": "integer",
+        "example": 2,
+        "description": "1: A aprovar\n\n2: Aprovado\n\n3: Publicado\n"
+      },
+      "DTOItemPublicacao": {
+        "title": "DTOItemPublicacao",
+        "type": "object",
+        "properties": {
+          "IDItemPublicacao": {
+            "type": "integer"
+          },
+          "DataDePublicacao": {
+            "type": "string"
+          },
+          "Status": {
+            "$ref": "#/components/schemas/StatusItemPublicacao"
+          },
+          "Text": {
+            "type": "string"
+          },
+          "IDProcesso": {
+            "type": "integer"
+          },
+          "DataDeDisponibilizacao": {
+            "type": "string"
+          },
+          "IDAutor": {
+            "type": "integer"
+          },
+          "Situacao": {
+            "$ref": "#/components/schemas/SituacaoDeAndamentoPublicacao"
+          },
+          "TextContinuacao": {
+            "type": "string"
+          },
+          "IDAndamento": {
+            "type": "integer"
+          },
+          "TipoDePush": {
+            "$ref": "#/components/schemas/TipoDePush"
           }
         }
       }

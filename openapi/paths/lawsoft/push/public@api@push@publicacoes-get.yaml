@@ -1,0 +1,53 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Push
+summary: Publicações
+description: Obtém as publicações
+operationId: api-push-publicacoes
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: ano
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: mes
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: novos
+    in: query
+    description: "Default: true"
+    required: false
+    schema:
+      type: boolean
+  - name: visualizados
+    in: query
+    description: "Default: true"
+    required: false
+    schema:
+      type: boolean
+  - name: finalizados
+    in: query
+    description: "Default: false"
+    required: false
+    schema:
+      type: boolean
+  # Adicione aqui o body da requisição (se houver). Verificar menu "Copiar Body da requisição" 
+responses:
+  "200":
+    description: Obtém as publicações
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/DTOItemPublicacao.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
