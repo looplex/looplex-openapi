@@ -2750,7 +2750,7 @@
     "/api/casos/edit": {
       "put": {
         "tags": [
-          "Casos (Lawsoft)"
+          "Casos"
         ],
         "summary": "Edita caso",
         "description": "Edita propriedades específicas do caso",
@@ -2813,7 +2813,7 @@
     "/api/casos/listacasos": {
       "get": {
         "tags": [
-          "Casos (Lawsoft)"
+          "Casos"
         ],
         "summary": "Casos",
         "description": "Lista todos os casos de acordo com o filtro informado",
