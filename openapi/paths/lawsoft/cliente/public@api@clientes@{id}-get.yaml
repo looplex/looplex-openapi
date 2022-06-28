@@ -1,5 +1,5 @@
 tags: 
-  - Cliente (Lawsoft)
+  - Cliente
 summary: Informações do cliente
 description: Obtém as informações do cliente de acordo com o identificador informado
 operationId: api-clientes-id

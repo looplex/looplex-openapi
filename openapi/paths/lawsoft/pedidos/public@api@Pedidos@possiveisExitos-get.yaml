@@ -1,5 +1,5 @@
 tags: 
-  - Pedidos (Lawsoft)
+  - Pedidos 
 summary: Êxitos do pedido
 description: Obtém os possíveis êxitos do pedido
 operationId: api-Pedidos-possiveisExitos

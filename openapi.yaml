@@ -53,8 +53,6 @@ tags:
     x-displayName: Agenda
   - name: Andamento
     x-displayName: Andamento
-  - name: Andamento (Lawsoft)
-    x-displayName: Andamento (Lawsoft)
   - name: Area
     x-displayName: Area
   - name: Busca
@@ -65,12 +63,10 @@ tags:
     x-displayName: Categoria
   - name: Cliente
     x-displayName: Cliente
-  - name: Cliente (Lawsoft)
-    x-displayName: Cliente (Lawsoft)
-  - name: Contato (Lawsoft)
-    x-displayName: Contato (Lawsoft)
-  - name: Conta de acesso (Lawsoft)
-    x-displayName: Conta de acesso (Lawsoft)
+  - name: Contato
+    x-displayName: Contato
+  - name: Conta de acesso
+    x-displayName: Conta de acesso
   - name: Contrato
     x-displayName: Contrato
   - name: Dados complementares
@@ -79,12 +75,10 @@ tags:
     x-displayName: Decisões
   - name: Fase caso
     x-displayName: Fase caso
-  - name: Funcionário (Lawsoft)
-    x-displayName: Funcionário (Lawsoft)
+  - name: Funcionário
+    x-displayName: Funcionário
   - name: Hierarquia
     x-displayName: Hierarquia
-  - name: Hierarquia (Lawsoft)
-    x-displayName: Hierarquia (Lawsoft)
   - name: País
     x-displayName: País
   - name: Partes
@@ -123,22 +117,19 @@ x-tagGroups:
       - Session
       - Agenda
       - Andamento
-      - Andamento (Lawsoft)
       - Area
       - Busca
       - Casos
       - Categoria
       - Cliente
-      - Cliente (Lawsoft)
-      - Contato (Lawsoft)
-      - Conta de acesso (Lawsoft)
+      - Contato
+      - Conta de acesso
       - Contrato
       - Dados complementares
       - Decisões
       - Fase caso
-      - Funcionário (Lawsoft)
+      - Funcionário
       - Hierarquia
-      - Hierarquia (Lawsoft)
       - País
       - Partes
       - Envolvimento das partes
@@ -1848,7 +1839,7 @@ paths:
   '/api/andamentos/update/{idAndamento}':
     put:
       tags:
-        - Andamento (Lawsoft)
+        - Andamento
       summary: Atualizar andamento Web
       description: Atualiza o andamento
       operationId: api-andamentos-update-idAndamento
@@ -2998,7 +2989,7 @@ paths:
   '/api/clientes/{id}':
     get:
       tags:
-        - Cliente (Lawsoft)
+        - Cliente
       summary: Informações do cliente
       description: Obtém as informações do cliente de acordo com o identificador informado
       operationId: api-clientes-id
@@ -3030,7 +3021,7 @@ paths:
   '/api/clientes/porIds/{idsClientes}':
     get:
       tags:
-        - Cliente (Lawsoft)
+        - Cliente
       summary: Informações dos clientes
       description: >-
         Obtém um array com as informações do clientes de acordo com os
@@ -3067,7 +3058,7 @@ paths:
   '/api/clientes/{idCliente}/pasta':
     get:
       tags:
-        - Cliente (Lawsoft)
+        - Cliente
       summary: Identificador pasta web
       description: Obtém identificador pasta da Web
       operationId: api-clientes-idCliente-pasta
@@ -3096,7 +3087,7 @@ paths:
   '/api/contatos/{id}':
     get:
       tags:
-        - Contato (Lawsoft)
+        - Contato
       summary: Contato
       description: Obtém informações do contato
       operationId: api-contatos-id
@@ -3126,7 +3117,7 @@ paths:
   /api/contatos:
     get:
       tags:
-        - Contato (Lawsoft)
+        - Contato
       summary: Contatos
       description: Obtém uma lista de contatos
       operationId: api-contatos
@@ -3153,7 +3144,7 @@ paths:
   '/api/clientes/{idCliente}/contatos':
     get:
       tags:
-        - Contato (Lawsoft)
+        - Contato
       summary: Contatos do cliente
       description: Obtém uma lista com os contatos do cliente
       operationId: api-clientes-idCliente-contatos
@@ -3185,7 +3176,7 @@ paths:
   /api/contatos/solicitantes:
     get:
       tags:
-        - Contato (Lawsoft)
+        - Contato
       summary: Solicitantes
       description: Obtém uma lista de solicitantes do cliente
       operationId: api-contatos-solicitantes
@@ -3217,7 +3208,7 @@ paths:
   /api/ContaDeAcesso/ObtemContaDeAcesso:
     get:
       tags:
-        - Conta de acesso (Lawsoft)
+        - Conta de acesso
       summary: Conta de acesso por nome
       description: Obtém a conta de acesso por nome
       operationId: api-ContaDeAcesso-ObtemContaDeAcesso
@@ -3251,7 +3242,7 @@ paths:
   /api/ContaDeAcesso/ObtemContaDeAcesso2:
     get:
       tags:
-        - Conta de acesso (Lawsoft)
+        - Conta de acesso
       summary: Conta de acesso por nome
       description: Obtém a conta de acesso por nome
       operationId: api-ContaDeAcesso-ObtemContaDeAcesso2
@@ -3902,7 +3893,7 @@ paths:
   '/api/funcionarios/porIds/{ids}':
     get:
       tags:
-        - Funcionário (Lawsoft)
+        - Funcionário
       summary: Funcionários
       description: >-
         Obtém as informações dos funcionários de acordo com os identificadores
@@ -3941,7 +3932,7 @@ paths:
   '/api/funcionarios/porId/{id}':
     get:
       tags:
-        - Funcionário (Lawsoft)
+        - Funcionário
       summary: Funcionário
       description: >-
         Obtém as informações do funcionário de acordo com o identificador
@@ -3976,7 +3967,7 @@ paths:
   /api/funcionarios:
     get:
       tags:
-        - Funcionário (Lawsoft)
+        - Funcionário
       summary: Funcionários (Filtro)
       description: >-
         Obtém uma lista de informações de funcionários de acordo com o filtro
@@ -4019,7 +4010,7 @@ paths:
   '/api/areas/{idArea}/funcionarios':
     get:
       tags:
-        - Funcionário (Lawsoft)
+        - Funcionário
       summary: Funcionários da área
       description: >-
         Obtém uma lista de informações dos funcionários de acordo com a área e o
@@ -4067,7 +4058,7 @@ paths:
   '/api/funcionarios/{idFuncionario}/areas':
     get:
       tags:
-        - Funcionário (Lawsoft)
+        - Funcionário
       summary: Áreas do funcionário
       description: Obtém uma lista de áreas do funcionário
       operationId: employeeAreas
@@ -4099,7 +4090,7 @@ paths:
   '/api/escritorios/{IdEscritorio}/funcionarios':
     get:
       tags:
-        - Funcionário (Lawsoft)
+        - Funcionário
       summary: Funcionários do escritório
       description: >-
         Obtém as informações dos funcionários de acordo com o escritório
@@ -4135,7 +4126,7 @@ paths:
   /api/escritorios/funcionarios:
     get:
       tags:
-        - Funcionário (Lawsoft)
+        - Funcionário
       summary: Funcionários ativos do escritório
       description: Obtém uma lista de informações dos funcionários ativos do escritório
       operationId: api-escritorios-funcionarios
@@ -4405,7 +4396,7 @@ paths:
   /api/hierarquia/GrupoForoDetalhado:
     get:
       tags:
-        - Hierarquia (Lawsoft)
+        - Hierarquia
       summary: Grupo foro
       description: Obtém as informações do grupo foro
       operationId: api-hierarquia-GrupoForoDetalhado
@@ -4440,7 +4431,7 @@ paths:
   /api/hierarquia/UFPorRegiao:
     get:
       tags:
-        - Hierarquia (Lawsoft)
+        - Hierarquia
       summary: UF por região e ramo judicial
       description: Obtém as UFs de acordo com a região e ramo judicial
       operationId: statesByRegion
@@ -4476,7 +4467,7 @@ paths:
   /api/hierarquia/fases:
     get:
       tags:
-        - Hierarquia (Lawsoft)
+        - Hierarquia
       summary: Fases de processo por ramo judicial
       description: Obtém as fases de processo por ramo judicial
       operationId: api-hierarquia-fases

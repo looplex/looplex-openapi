@@ -1,5 +1,5 @@
 tags: 
-  - Timesheet (Lawsoft)
+  - Timesheet 
 summary: Títulos para timesheet
 description: Obtém a lista de títulos para lançamentos de hora
 operationId: api-timesheet-areas-idArea-titulos

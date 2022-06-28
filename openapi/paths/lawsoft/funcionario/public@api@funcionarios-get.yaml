@@ -1,5 +1,5 @@
 tags: 
-  - Funcionário (Lawsoft)
+  - Funcionário 
 summary: Funcionários (Filtro)
 description: Obtém uma lista de informações de funcionários de acordo com o filtro informado
 operationId: employees

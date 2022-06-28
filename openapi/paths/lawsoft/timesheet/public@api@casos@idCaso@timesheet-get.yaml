@@ -1,5 +1,5 @@
 tags: 
-  - Timesheet (Lawsoft)
+  - Timesheet 
 summary: Horas lançadas do caso
 description: Obtém a lista de horas do caso
 operationId: api-casos-idCaso-timesheet

@@ -1,5 +1,5 @@
 tags: 
-  - Funcionário (Lawsoft)
+  - Funcionário 
 summary: Funcionário
 description: Obtém as informações do funcionário de acordo com o identificador informado
 operationId: employeeByIdentifier

@@ -1,5 +1,5 @@
 tags: 
-  - Timesheet (Lawsoft)
+  - Timesheet 
 summary: Exclui lançamento de hora
 description: Exclui o lançamento de hora
 operationId: api-timesheet-exclui-id

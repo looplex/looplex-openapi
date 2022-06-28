@@ -1,5 +1,5 @@
 tags: 
-  - Pedidos (Lawsoft)
+  - Pedidos 
 summary: Status do pedido
 description: Obtém os possíveis status do pedido
 operationId: api-Pedidos-possiveisStatus

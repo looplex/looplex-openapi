@@ -1,5 +1,5 @@
 tags: 
-  - Funcionário (Lawsoft)
+  - Funcionário
 summary: Funcionários da área
 description: Obtém uma lista de informações dos funcionários de acordo com a área e o filtro informado
 operationId: employeesByAreaIdentifier

@@ -1,5 +1,5 @@
 tags: 
-  - Timesheet (Lawsoft)
+  - Timesheet 
 summary: Hora por identificador
 description: Obtém os detalhes da hora de acordo com o identificador informado
 operationId: api-timesheet-obtem-id

@@ -1,5 +1,5 @@
 tags: 
-  - Timesheet (Lawsoft)
+  - Timesheet 
 summary: Task Codes
 description: Obtém a lista de Task Codes
 operationId: api-timesheet-taskcodes

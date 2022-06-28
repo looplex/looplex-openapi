@@ -1581,7 +1581,7 @@
     "/api/andamentos/update/{idAndamento}": {
       "put": {
         "tags": [
-          "Andamento (Lawsoft)"
+          "Andamento"
         ],
         "summary": "Atualizar andamento Web",
         "description": "Atualiza o andamento",
@@ -3467,7 +3467,7 @@
     "/api/clientes/{id}": {
       "get": {
         "tags": [
-          "Cliente (Lawsoft)"
+          "Cliente"
         ],
         "summary": "Informações do cliente",
         "description": "Obtém as informações do cliente de acordo com o identificador informado",
@@ -3518,7 +3518,7 @@
     "/api/clientes/porIds/{idsClientes}": {
       "get": {
         "tags": [
-          "Cliente (Lawsoft)"
+          "Cliente"
         ],
         "summary": "Informações dos clientes",
         "description": "Obtém um array com as informações do clientes de acordo com os identificadores informados",
@@ -3573,7 +3573,7 @@
     "/api/clientes/{idCliente}/pasta": {
       "get": {
         "tags": [
-          "Cliente (Lawsoft)"
+          "Cliente"
         ],
         "summary": "Identificador pasta web",
         "description": "Obtém identificador pasta da Web",
@@ -3622,7 +3622,7 @@
     "/api/contatos/{id}": {
       "get": {
         "tags": [
-          "Contato (Lawsoft)"
+          "Contato"
         ],
         "summary": "Contato",
         "description": "Obtém informações do contato",
@@ -3673,7 +3673,7 @@
     "/api/contatos": {
       "get": {
         "tags": [
-          "Contato (Lawsoft)"
+          "Contato"
         ],
         "summary": "Contatos",
         "description": "Obtém uma lista de contatos",
@@ -3719,7 +3719,7 @@
     "/api/clientes/{idCliente}/contatos": {
       "get": {
         "tags": [
-          "Contato (Lawsoft)"
+          "Contato"
         ],
         "summary": "Contatos do cliente",
         "description": "Obtém uma lista com os contatos do cliente",
@@ -3773,7 +3773,7 @@
     "/api/contatos/solicitantes": {
       "get": {
         "tags": [
-          "Contato (Lawsoft)"
+          "Contato"
         ],
         "summary": "Solicitantes",
         "description": "Obtém uma lista de solicitantes do cliente",
@@ -3827,7 +3827,7 @@
     "/api/ContaDeAcesso/ObtemContaDeAcesso": {
       "get": {
         "tags": [
-          "Conta de acesso (Lawsoft)"
+          "Conta de acesso"
         ],
         "summary": "Conta de acesso por nome",
         "description": "Obtém a conta de acesso por nome",
@@ -3883,7 +3883,7 @@
     "/api/ContaDeAcesso/ObtemContaDeAcesso2": {
       "get": {
         "tags": [
-          "Conta de acesso (Lawsoft)"
+          "Conta de acesso"
         ],
         "summary": "Conta de acesso por nome",
         "description": "Obtém a conta de acesso por nome",
@@ -4958,7 +4958,7 @@
     "/api/funcionarios/porIds/{ids}": {
       "get": {
         "tags": [
-          "Funcionário (Lawsoft)"
+          "Funcionário"
         ],
         "summary": "Funcionários",
         "description": "Obtém as informações dos funcionários de acordo com os identificadores informados",
@@ -5016,7 +5016,7 @@
     "/api/funcionarios/porId/{id}": {
       "get": {
         "tags": [
-          "Funcionário (Lawsoft)"
+          "Funcionário"
         ],
         "summary": "Funcionário",
         "description": "Obtém as informações do funcionário de acordo com o identificador informado",
@@ -5068,7 +5068,7 @@
     "/api/funcionarios": {
       "get": {
         "tags": [
-          "Funcionário (Lawsoft)"
+          "Funcionário"
         ],
         "summary": "Funcionários (Filtro)",
         "description": "Obtém uma lista de informações de funcionários de acordo com o filtro informado",
@@ -5132,7 +5132,7 @@
     "/api/areas/{idArea}/funcionarios": {
       "get": {
         "tags": [
-          "Funcionário (Lawsoft)"
+          "Funcionário"
         ],
         "summary": "Funcionários da área",
         "description": "Obtém uma lista de informações dos funcionários de acordo com a área e o filtro informado",
@@ -5204,7 +5204,7 @@
     "/api/funcionarios/{idFuncionario}/areas": {
       "get": {
         "tags": [
-          "Funcionário (Lawsoft)"
+          "Funcionário"
         ],
         "summary": "Áreas do funcionário",
         "description": "Obtém uma lista de áreas do funcionário",
@@ -5258,7 +5258,7 @@
     "/api/escritorios/{IdEscritorio}/funcionarios": {
       "get": {
         "tags": [
-          "Funcionário (Lawsoft)"
+          "Funcionário"
         ],
         "summary": "Funcionários do escritório",
         "description": "Obtém as informações dos funcionários de acordo com o escritório informado",
@@ -5312,7 +5312,7 @@
     "/api/escritorios/funcionarios": {
       "get": {
         "tags": [
-          "Funcionário (Lawsoft)"
+          "Funcionário"
         ],
         "summary": "Funcionários ativos do escritório",
         "description": "Obtém uma lista de informações dos funcionários ativos do escritório",
@@ -5754,7 +5754,7 @@
     "/api/hierarquia/GrupoForoDetalhado": {
       "get": {
         "tags": [
-          "Hierarquia (Lawsoft)"
+          "Hierarquia"
         ],
         "summary": "Grupo foro",
         "description": "Obtém as informações do grupo foro",
@@ -5813,7 +5813,7 @@
     "/api/hierarquia/UFPorRegiao": {
       "get": {
         "tags": [
-          "Hierarquia (Lawsoft)"
+          "Hierarquia"
         ],
         "summary": "UF por região e ramo judicial",
         "description": "Obtém as UFs de acordo com a região e ramo judicial",
@@ -5873,7 +5873,7 @@
     "/api/hierarquia/fases": {
       "get": {
         "tags": [
-          "Hierarquia (Lawsoft)"
+          "Hierarquia"
         ],
         "summary": "Fases de processo por ramo judicial",
         "description": "Obtém as fases de processo por ramo judicial",

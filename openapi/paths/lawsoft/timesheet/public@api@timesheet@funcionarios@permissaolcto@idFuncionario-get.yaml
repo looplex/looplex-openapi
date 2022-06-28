@@ -1,5 +1,5 @@
 tags: 
-  - Timesheet (Lawsoft)
+  - Timesheet 
 summary: Funcionários com permissão de lançamento
 description: Obtém a lista de funcionários com permissão de lançamento
 operationId: api-timesheet-funcionarios-permissaolcto-idFuncionario

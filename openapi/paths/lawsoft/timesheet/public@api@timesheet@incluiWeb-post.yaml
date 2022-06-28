@@ -1,5 +1,5 @@
 tags: 
-  - Timesheet (Lawsoft)
+  - Timesheet 
 summary: Inclui timesheet
 description: Inclui o timesheet
 operationId: api-timesheet-incluiWeb
