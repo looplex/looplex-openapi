@@ -154,6 +154,8 @@ servers:
     description: Looplex 365 Server
   - url: 'https://www.sys.lawoffice.com.br'
     description: Lawsoft server
+  - url: 'https://lawsoft-apim.azure-api.net/lawsoft-api-internal'
+    description: Lawsoft server
 paths:
   /tasks:
     get:

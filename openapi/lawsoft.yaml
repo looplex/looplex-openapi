@@ -69,6 +69,8 @@ x-tagGroups:
 servers:
   - url: "https://www.sys.lawoffice.com.br"
     description: Lawsoft server
+  - url: "https://lawsoft-apim.azure-api.net/lawsoft-api-internal"
+    description: "Lawsoft server"
 paths:
   # Session
   /api/mobilesession:
