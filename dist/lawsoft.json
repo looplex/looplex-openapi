@@ -1949,7 +1949,7 @@
           "Calculo Monetário"
         ],
         "summary": "Obtém cálculo monetário",
-        "operationId": "api-CalculoMonetario-id",
+        "operationId": "api-CalculoMonetario-id-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -1997,7 +1997,7 @@
           "Calculo Monetário"
         ],
         "summary": "Exclui cálculo monetário",
-        "operationId": "api-CalculoMonetario-id",
+        "operationId": "api-CalculoMonetario-id-delete",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"

@@ -2,7 +2,7 @@
 tags:
   - Calculo Monetário
 summary: Obtém cálculo monetário
-operationId: api-CalculoMonetario-id
+operationId: api-CalculoMonetario-id-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
