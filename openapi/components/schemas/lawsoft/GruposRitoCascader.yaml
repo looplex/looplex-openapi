@@ -1,0 +1,12 @@
+# GruposRitoCascader (Varas e Foros unificados)
+name: GruposRitoCascader
+type: object
+properties:
+  value:
+    type: integer
+  label:
+    type: string
+  children:
+    type: array
+    items:
+      $ref: GruposRitoCascader.yaml

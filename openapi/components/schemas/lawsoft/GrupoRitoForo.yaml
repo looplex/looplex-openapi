@@ -1,0 +1,10 @@
+# GrupoRitoForo (Varas e Foros unificados)
+name: GrupoRitoForo
+type: object
+properties:
+  cdGrupoRitoForo:
+    type: integer
+  cdForo:
+    type: integer
+  cdGrupoRito:
+    type: integer

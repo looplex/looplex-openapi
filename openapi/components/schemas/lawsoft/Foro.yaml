@@ -1,0 +1,37 @@
+# Foro (Varas e Foros Unificados)
+name: Foro
+type: object
+properties:
+  GrupoId:  
+    type: integer
+    example: null
+  IDPai:
+    type: integer
+    example: null
+  nrOrdenacao:
+    type: integer
+    example: 1
+  dsNome:
+    type: string
+  dsCategoriaFilhos:
+    type: string
+  dsHierarquiaCompleta:
+    type: string
+  nrNivel:
+    type: integer
+  inAtivo:
+    type: boolean
+  dsCodigoOriginal:
+    type: string
+  isEditavel:
+    type: boolean
+  Filhos:
+    type: array
+    items:
+      $ref: Foro.yaml
+  responsavelAlteracao:
+    type: string
+  LabelProximosNiveis:
+    type: string
+  Default:
+    $ref: Foro.yaml
