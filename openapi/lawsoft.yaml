@@ -66,6 +66,7 @@ x-tagGroups:
       - Timeline 
       - Timesheet 
       - Valores apurados 
+      - Varas e Foros
       - País 
 servers:
   - url: "https://www.sys.lawoffice.com.br"
@@ -94,10 +95,8 @@ paths:
   /api/agenda:
     get:
       $ref: ./paths/lawsoft/agenda/public@api@agenda-get.yaml
-  /api/agenda/remover1:
     post:
       $ref: ./paths/lawsoft/agenda/public@api@agenda@post-post.yaml
-  /api/agenda/remover2:
     put:
       $ref: ./paths/lawsoft/agenda/public@api@agenda@put-put.yaml
   /api/casos/{idCaso}/agenda:
@@ -515,6 +514,14 @@ paths:
   /api/push/publicacoes:
     get:
       $ref: './paths/lawsoft/push/public@api@push@publicacoes-get.yaml'
+
+  # Varas e Foros (Somente métodos GET)
+  /api/VF/ListaPorNivel:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaPorNivel-get.yaml'
+  /api/VF/ObtemFilhosPorPai:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@ObtemFilhosPorPai-get.yaml'
 
 components:
   securitySchemes:

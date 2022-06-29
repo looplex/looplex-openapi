@@ -2,7 +2,7 @@ tags:
   - Agenda 
 summary: Obtém agenda
 description: Obtém um array com os compromissos de agenda de acordo com o filtro informado.
-operationId: api-agenda
+operationId: api-agenda-get
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml

@@ -67,6 +67,7 @@
         "Timeline",
         "Timesheet",
         "Valores apurados",
+        "Varas e Foros",
         "País"
       ]
     }
@@ -334,7 +335,7 @@
         ],
         "summary": "Obtém agenda",
         "description": "Obtém um array com os compromissos de agenda de acordo com o filtro informado.",
-        "operationId": "api-agenda",
+        "operationId": "api-agenda-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -419,9 +420,7 @@
             }
           }
         }
-      }
-    },
-    "/api/agenda/remover1": {
+      },
       "post": {
         "tags": [
           "Agenda"
@@ -471,9 +470,7 @@
             }
           }
         }
-      }
-    },
-    "/api/agenda/remover2": {
+      },
       "put": {
         "tags": [
           "Agenda"
@@ -7680,6 +7677,91 @@
           }
         }
       }
+    },
+    "/api/VF/ListaPorNivel": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Lista por nível",
+        "operationId": "api-VF-ListaPorNivel",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "nivel",
+            "in": "query",
+            "example": "1",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista os grupos por nível",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListaPorNivelResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ObtemFilhosPorPai": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém filhos por pai",
+        "operationId": "api-VF-ObtemFilhosPorPai",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "grupoId",
+            "in": "query",
+            "example": "10",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "somenteAtivos",
+            "in": "query",
+            "required": false,
+            "description": "Default: true",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista os grupos por pai",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObtemFilhosPorPaiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -11259,6 +11341,126 @@
           },
           "TipoDePush": {
             "$ref": "#/components/schemas/TipoDePush"
+          }
+        }
+      },
+      "Foro": {
+        "name": "Foro",
+        "type": "object",
+        "properties": {
+          "GrupoId": {
+            "type": "integer",
+            "example": null
+          },
+          "IDPai": {
+            "type": "integer",
+            "example": null
+          },
+          "nrOrdenacao": {
+            "type": "integer",
+            "example": 1
+          },
+          "dsNome": {
+            "type": "string"
+          },
+          "dsCategoriaFilhos": {
+            "type": "string"
+          },
+          "dsHierarquiaCompleta": {
+            "type": "string"
+          },
+          "nrNivel": {
+            "type": "integer"
+          },
+          "inAtivo": {
+            "type": "boolean"
+          },
+          "dsCodigoOriginal": {
+            "type": "string"
+          },
+          "isEditavel": {
+            "type": "boolean"
+          },
+          "Filhos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Foro"
+            }
+          },
+          "responsavelAlteracao": {
+            "type": "string"
+          },
+          "LabelProximosNiveis": {
+            "type": "string"
+          },
+          "Default": {
+            "$ref": "#/components/schemas/Foro"
+          }
+        }
+      },
+      "TipoRespostaRequisicao": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Exception\n\n2: Sem dados\n\n3: Com dados\n"
+      },
+      "ListaPorNivelResponse": {
+        "name": "ListaPorNivelResponse",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "Grupos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Foro"
+                }
+              },
+              "CategoriaFilhos": {
+                "type": "string"
+              },
+              "Nivel": {
+                "type": "integer"
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ObtemFilhosPorPaiResponse": {
+        "name": "ObtemFilhosPorPaiResponse",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "Grupos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Foro"
+                }
+              },
+              "NivelEditavel": {
+                "type": "boolean"
+              },
+              "CategoriaFilhos": {
+                "type": "string"
+              },
+              "Nivel": {
+                "type": "integer"
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
           }
         }
       }
