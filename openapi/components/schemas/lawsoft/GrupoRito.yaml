@@ -1,0 +1,23 @@
+# GrupoRito (Varas e Foros unificados)
+name: GrupoRito
+type: object
+properties:
+  cdGrupoRito:
+    type: integer
+  dsNome:
+    type: string
+  cdGrupoPai:
+    type: integer
+  Grupos:
+    type: array
+    items:
+      $ref: GrupoRito.yaml
+  Ritos:
+    type: array
+    items:
+      $ref: Rito.yaml
+  _hasRitos:
+    type: boolean
+  _hasGrupos:
+    type: boolean
+  
