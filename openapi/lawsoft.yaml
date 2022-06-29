@@ -176,7 +176,29 @@ paths:
       $ref: './paths/lawsoft/busca/public@api@busca@mobilenovo-get.yaml'
 
   # Calculo Monetário
-  
+  /api/casos/{cdProcesso}/CalculosMonetarios:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@casos@cdProcesso@CalculosMonetarios-get.yaml'
+  /api/CalculoMonetario/{id}:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@id-get.yaml'
+    delete:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@id-delete.yaml'
+  /api/casos/{id}/Calcula:
+    post:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@casos@id@Calcula-post.yaml'
+  /api/CalculoMonetario/Indices:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@Indices-get.yaml'
+  /api/CalculoMonetario/Modelos:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@Modelos-get.yaml'
+  /api/CalculoMonetario/Modelos/{id}:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@Modelos@id-get.yaml'
+  /api/casos/{id}/ValoresParaCalculo:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@casos@id@ValoresParaCalculo-get.yaml'
 
   # Casos
   /api/casos/inclui:

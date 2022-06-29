@@ -38,6 +38,7 @@
         "Area",
         "Busca",
         "Casos",
+        "Calculo Monetário",
         "Categoria",
         "Cliente",
         "Conta de acesso",
@@ -1869,6 +1870,410 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DTOBuscaMobileNovo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{cdProcesso}/CalculosMonetarios": {
+      "get": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Lista cálculo monetário",
+        "operationId": "api-casos-cdProcesso-CalculosMonetarios",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "cdProcesso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista os cálculos monetários",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOProcessoPedidoCalculo"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CalculoMonetario/{id}": {
+      "get": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Obtém cálculo monetário",
+        "operationId": "api-CalculoMonetario-id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Obtém cálculo monetário",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOProcessoPedidoCalculo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Exclui cálculo monetário",
+        "operationId": "api-CalculoMonetario-id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "O cálculo monetário foi excluído"
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{id}/Calcula": {
+      "post": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Calcula Valores para atualização monetária",
+        "operationId": "api-casos-id-Calcula",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "salvar",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTabelaCalculoParametros"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOResultadoTabelaCalculo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CalculoMonetario/Indices": {
+      "get": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Listar indices monetários",
+        "operationId": "api-CalculoMonetario-Indices",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Indices monetários",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOIndiceMonetario"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CalculoMonetario/Modelos": {
+      "get": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Listar modelos de Cálculo",
+        "operationId": "api-CalculoMonetario-Modelos",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Modelos de cálculo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOModeloCalculo"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CalculoMonetario/Modelos/{id}": {
+      "get": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Obtém modelo de cálculo",
+        "operationId": "api-CalculoMonetario-Modelos-id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Modelo de cálculo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOModeloCalculo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{id}/ValoresParaCalculo": {
+      "get": {
+        "tags": [
+          "Calculo Monetário"
+        ],
+        "summary": "Lista valores para cálculo",
+        "operationId": "api-casos-id-ValoresParaCalculo",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valores para cálculo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOValorCalculo"
+                  }
                 }
               }
             }
@@ -8124,6 +8529,394 @@
           },
           "TermoBuscado": {
             "type": "string"
+          }
+        }
+      },
+      "DTOMultaEHonorarios": {
+        "name": "DTOMultaEHonorarios",
+        "type": "object",
+        "properties": {
+          "ValorMulta": {
+            "type": "number"
+          },
+          "ValorHonorario": {
+            "type": "number"
+          },
+          "isMultaSobreJurosCompensatorios": {
+            "type": "boolean"
+          },
+          "isMultaSobreJurosMoratorios": {
+            "type": "boolean"
+          },
+          "isHonorarioEhPercentual": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PeriodoTaxaJuros": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Mensal\n\n2: Anual\n\n3: Diário\n"
+      },
+      "TipoCapitalizacaoJuros": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Simples\n\n2: Composta\n"
+      },
+      "DTOItemJuros": {
+        "name": "DTOItemJuros",
+        "type": "object",
+        "properties": {
+          "Taxa": {
+            "type": "number"
+          },
+          "Periodo": {
+            "$ref": "#/components/schemas/PeriodoTaxaJuros"
+          },
+          "isProRata": {
+            "type": "boolean"
+          },
+          "Capitalizacao": {
+            "$ref": "#/components/schemas/TipoCapitalizacaoJuros"
+          },
+          "ApartirDe": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "PeriodoText": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOJurosCalculo": {
+        "name": "DTOJurosCalculo",
+        "type": "object",
+        "properties": {
+          "JurosCompensatorios": {
+            "$ref": "#/components/schemas/DTOItemJuros"
+          },
+          "JurosMoratorios": {
+            "$ref": "#/components/schemas/DTOItemJuros"
+          },
+          "isJurosMoratoriosSobreCompensatorios": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DTOValorCalculo": {
+        "name": "DTOValorCalculo",
+        "type": "object",
+        "properties": {
+          "Valor": {
+            "type": "number"
+          },
+          "Data": {
+            "type": "string"
+          },
+          "DataJM": {
+            "type": "string"
+          },
+          "DataJC": {
+            "type": "string"
+          },
+          "Descricao": {
+            "type": "string"
+          },
+          "cdIdentificador": {
+            "type": "string"
+          },
+          "IsPedido": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DTOTabelaCalculoParametros": {
+        "name": "DTOTabelaCalculoParametros",
+        "type": "object",
+        "properties": {
+          "DataIndicePedidos": {
+            "type": "string",
+            "example": null
+          },
+          "isClonarCalculo": {
+            "type": "boolean"
+          },
+          "cdPedidoCalculo": {
+            "type": "integer"
+          },
+          "dsTitulo": {
+            "type": "string"
+          },
+          "isManterAtualizado": {
+            "type": "boolean"
+          },
+          "vlCorrigido": {
+            "type": "number"
+          },
+          "NomeTabela": {
+            "type": "string"
+          },
+          "DataReembolso": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "DataJurosMoratoriosPedidos": {
+            "type": "string",
+            "example": null
+          },
+          "DataJurosCompensatoriosPedidos": {
+            "type": "string",
+            "example": null
+          },
+          "cdModeloCalculo": {
+            "type": "integer",
+            "example": null
+          },
+          "DataJurosMoratorios": {
+            "type": "string"
+          },
+          "DataJurosCompensatorios": {
+            "type": "string"
+          },
+          "DataIndice": {
+            "type": "string"
+          },
+          "MultaEHonorarios": {
+            "$ref": "#/components/schemas/DTOMultaEHonorarios"
+          },
+          "Juros": {
+            "$ref": "#/components/schemas/DTOJurosCalculo"
+          },
+          "ValoresParaCustasIncorridas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOValorCalculo"
+            }
+          },
+          "ValoresParaCorrecao": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOValorCalculo"
+            }
+          },
+          "cdTabela": {
+            "type": "integer",
+            "example": null
+          },
+          "inUsaValoresExpectativaProcesso": {
+            "type": "boolean"
+          }
+        }
+      },
+      "SituacaoDoPedidoCalculoMonetario": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Ativa\n\n2: Inativa\n"
+      },
+      "DTOProcessoPedidoCalculo": {
+        "name": "DTOProcessoPedidoCalculo",
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer"
+          },
+          "IdIndice": {
+            "type": "integer"
+          },
+          "DataInclusao": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "DataCalculoIndice": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "Parametros": {
+            "$ref": "#/components/schemas/DTOTabelaCalculoParametros"
+          },
+          "IdProcesso": {
+            "type": "integer"
+          },
+          "Situacao": {
+            "$ref": "#/components/schemas/SituacaoDoPedidoCalculoMonetario"
+          },
+          "IdModeloCalculo": {
+            "type": "integer"
+          },
+          "nrSituacaoText": {
+            "type": "string"
+          },
+          "inManterAtualizado": {
+            "type": "boolean"
+          },
+          "vlCorrigidoAtualizado": {
+            "type": "number"
+          },
+          "inUsaValoresProcesso": {
+            "type": "boolean"
+          },
+          "inUltimoCalculadoProcesso": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DTOResultadoItemJuros": {
+        "name": "DTOResultadoItemJuros",
+        "type": "object",
+        "properties": {
+          "Valor": {
+            "type": "number"
+          },
+          "DataInicial": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "DataFinal": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "Percentagem": {
+            "type": "number"
+          }
+        }
+      },
+      "DTOFatorAtualizacaoIntervalo": {
+        "name": "DTOFatorAtualizacaoIntervalo",
+        "type": "object",
+        "properties": {
+          "fatorAlto": {
+            "type": "number"
+          },
+          "fatorBaixo": {
+            "type": "number"
+          }
+        }
+      },
+      "DTOResultadoItemCalculo": {
+        "name": "DTOResultadoItemCalculo",
+        "type": "object",
+        "properties": {
+          "ValorOriginal": {
+            "type": "number"
+          },
+          "ValorFatorado": {
+            "type": "number"
+          },
+          "JurosCompensatorios": {
+            "$ref": "#/components/schemas/DTOResultadoItemJuros"
+          },
+          "JurosMoratorios": {
+            "$ref": "#/components/schemas/DTOResultadoItemJuros"
+          },
+          "ValorMulta": {
+            "type": "number"
+          },
+          "ValorHonorarios": {
+            "type": "number"
+          },
+          "SubTotalComJuros": {
+            "type": "number"
+          },
+          "Total": {
+            "type": "number"
+          },
+          "FatorAtualizacao": {
+            "$ref": "#/components/schemas/DTOFatorAtualizacaoIntervalo"
+          },
+          "DataCorrecao": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "Descricao": {
+            "type": "string"
+          }
+        }
+      },
+      "TipoCalculoTabela": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Fator\n\n2: Divisor\n"
+      },
+      "DTOResultadoTabelaCalculo": {
+        "name": "DTOResultadoTabelaCalculo",
+        "type": "object",
+        "properties": {
+          "ValorTotal": {
+            "type": "number"
+          },
+          "ValorTotalSemCorrecao": {
+            "type": "number"
+          },
+          "Items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOResultadoItemCalculo"
+            }
+          },
+          "DataAtualizaValores": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "TipoCalculoUsado": {
+            "$ref": "#/components/schemas/TipoCalculoTabela"
+          },
+          "CdPedidoCalculo": {
+            "type": "integer"
+          }
+        }
+      },
+      "DTOIndiceMonetarioDados": {
+        "name": "DTOIndiceMonetarioDados",
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer"
+          },
+          "IdIndiceMonetario": {
+            "type": "integer"
+          },
+          "DataCorrecao": {
+            "type": "string",
+            "example": "2022-06-01T12:00:00"
+          },
+          "ValorCorrecao": {
+            "type": "number"
+          }
+        }
+      },
+      "DTOIndiceMonetario": {
+        "name": "DTOIndiceMonetario",
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer"
+          },
+          "Nome": {
+            "type": "string"
+          },
+          "TipoCalculo": {
+            "type": "integer"
+          },
+          "TipoCalculoText": {
+            "type": "string"
+          },
+          "UltimoDado": {
+            "$ref": "#/components/schemas/DTOIndiceMonetarioDados"
+          }
+        }
+      },
+      "DTOModeloCalculo": {
+        "name": "DTOModeloCalculo",
+        "type": "object",
+        "properties": {
+          "IdModeloCalculo": {
+            "type": "integer"
+          },
+          "NomeTabela": {
+            "type": "string"
+          },
+          "Parametros": {
+            "$ref": "#/components/schemas/DTOTabelaCalculoParametros"
           }
         }
       },
