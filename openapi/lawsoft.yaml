@@ -339,6 +339,56 @@ paths:
     delete:
       $ref: './paths/lawsoft/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
 
+  # Despesas
+  /api/despesas/totaldespesasmes:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@totaldespesasmes-get.yaml'
+  /api/despesas/proximoslancamentos:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@proximoslancamentos-get.yaml'
+  /api/despesas/adiantamentosliberados:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@adiantamentosliberados-get.yaml'
+  /api/despesas/adiantamentos/categorias:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@adiantamentos@categorias-get.yaml'
+  /api/despesas/adiantamentos/fornecedores:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@adiantamentos@fornecedores-get.yaml'
+  /api/despesas/reembolsos/categorias:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@reembolsos@categorias-get.yaml'
+  /api/despesas/reembolsos/fornecedores:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@reembolsos@fornecedores-get.yaml'
+  /api/despesas/voucher:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@voucher-get.yaml'
+  /api/despesas/voucher/{idVoucher}/categorias:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@voucher@idVoucher@categorias-get.yaml'
+  /api/despesas/voucher/{idVoucher}/fornecedores:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@voucher@idVoucher@fornecedores-get.yaml'
+  /api/despesas/obtem:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@obtem-get.yaml'
+  /api/despesas/obtem/{id}:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@obtem@id-get.yaml'
+  /api/despesas/inclui:
+    post:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@inclui-post.yaml'
+  /api/despesas/atualiza:
+    put:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@atualiza-put.yaml'
+  /api/despesas/exclui/{id}:
+    delete:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@exclui@id-delete.yaml'
+  /api/despesas/valorKMRodado:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@valorKMRodado-get.yaml'
+
   # Fase
   /api/casos/fase/{nrGrupo}:
     get:

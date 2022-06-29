@@ -3,4 +3,6 @@ type: object
 properties:
   Gastos:
     description: "Array de DTOGastoDespesa"
-    $ref: DTOGastoDespesa.yaml
+    type: array
+    items:
+      $ref: DTOGastoDespesa.yaml

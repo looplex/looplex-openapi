@@ -73,6 +73,8 @@ tags:
     x-displayName: Dados complementares
   - name: Decisões
     x-displayName: Decisões
+  - name: Despesas
+    x-displayName: Despesas
   - name: Fase caso
     x-displayName: Fase caso
   - name: Funcionário
@@ -129,6 +131,7 @@ x-tagGroups:
       - Contrato
       - Dados complementares
       - Decisões
+      - Despesas
       - Fase caso
       - Funcionário
       - Hierarquia
@@ -3787,6 +3790,457 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/totaldespesasmes:
+    get:
+      tags:
+        - Despesas
+      summary: Total de despesas por tipo
+      description: Conta o total de despesa do funcionário por tipo no mês
+      operationId: api-despesas-totaldespesasmes
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Total de despesas por tipo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOTotalGastoDespesas'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/proximoslancamentos:
+    get:
+      tags:
+        - Despesas
+      summary: Próximos lançamentos por profissional
+      description: Lista os próximos lançamentos por profissional
+      operationId: api-despesas-proximoslancamentos
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: dataDespesaString
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista os próximos lançamentos por profissional
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/adiantamentosliberados:
+    get:
+      tags:
+        - Despesas
+      summary: Adiantamentos em aberto
+      description: Obtém os adiantamentos em aberto
+      operationId: api-despesas-adiantamentosliberados
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém os adiantamentos em aberto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOLiberacao'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/adiantamentos/categorias:
+    get:
+      tags:
+        - Despesas
+      summary: Categorias de adiantamento
+      description: Obtém as categorias de adiantamento
+      operationId: api-despesas-adiantamentos-categorias
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém as categorias de adiantamento
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCategoriaDespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/adiantamentos/fornecedores:
+    get:
+      tags:
+        - Despesas
+      summary: Fornecedores de adiantamento
+      description: Obtém os fornecedores de adiantamento
+      operationId: api-despesas-adiantamentos-fornecedores
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém os fornecedores de adiantamento
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOFornecedor'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/reembolsos/categorias:
+    get:
+      tags:
+        - Despesas
+      summary: Categorias de reembolso
+      description: Obtém as categorias de reembolso
+      operationId: api-despesas-reembolsos-categorias
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém as categorias de reembolso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCategoriaDespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/reembolsos/fornecedores:
+    get:
+      tags:
+        - Despesas
+      summary: Fornecedores de reembolso
+      description: Obtém os fornecedores de reembolso
+      operationId: api-despesas-reembolsos-fornecedores
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém os fornecedores de reembolso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOFornecedor'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/voucher:
+    get:
+      tags:
+        - Despesas
+      summary: Vouchers permitidos ao funcionário
+      operationId: api-despesas-voucher
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Obtém os vouchers permitidos ao funcionário
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOVoucher'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/despesas/voucher/{idVoucher}/categorias':
+    get:
+      tags:
+        - Despesas
+      summary: Categorias de voucher
+      operationId: api-despesas-voucher-idVoucher-categorias
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idVoucher
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém as categorias de voucher
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCategoriaDespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/despesas/voucher/{idVoucher}/fornecedores':
+    get:
+      tags:
+        - Despesas
+      summary: Fornecedores de voucher
+      operationId: api-despesas-voucher-idVoucher-fornecedores
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idVoucher
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém os fornecedores de voucher
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOFornecedor'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/obtem:
+    get:
+      tags:
+        - Despesas
+      summary: Despesas em aberto
+      operationId: api-despesas-obtem
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: ano
+          in: query
+          example: '2022'
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          example: '06'
+          required: true
+          schema:
+            type: integer
+        - name: tipoDePagamento
+          in: query
+          example: '2'
+          required: false
+          schema:
+            $ref: '#/components/schemas/TipoFormaLancamento'
+      responses:
+        '200':
+          description: Obtém as despesas em aberto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/despesas/obtem/{id}':
+    get:
+      tags:
+        - Despesas
+      summary: Despesa
+      operationId: api-despesas-obtem-id
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Obtém os detalhes da despesa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/inclui:
+    post:
+      tags:
+        - Despesas
+      summary: Inclui despesa
+      operationId: api-despesas-inclui
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: selecionaAprovador
+          in: query
+          required: false
+          description: 'Default: false'
+          schema:
+            type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTODespesa'
+      responses:
+        '200':
+          description: A despesa incluída
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/atualiza:
+    put:
+      tags:
+        - Despesas
+      summary: Atualizar despesa
+      operationId: api-despesas-atualiza
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: selecionaAprovador
+          in: query
+          description: 'Default: false'
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTODespesa'
+      responses:
+        '200':
+          description: A despesa atualizada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/despesas/exclui/{id}':
+    delete:
+      tags:
+        - Despesas
+      summary: Excluir despesa
+      operationId: api-despesas-exclui-id
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: A despesa foi excluída.
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/despesas/valorKMRodado:
+    get:
+      tags:
+        - Despesas
+      summary: Valor KM Rodado
+      operationId: api-despesas-valorKMRodado
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+      responses:
+        '200':
+          description: Valor do KM rodado
+          content:
+            application/json:
+              example: 10
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   '/api/casos/fase/{nrGrupo}':
     get:
       tags:
@@ -7202,6 +7656,293 @@ components:
         nrExitoPerda:
           type: integer
         IdCasoDecisao:
+          type: integer
+    DTOGastoDespesa:
+      title: DTOGastoDespesa
+      type: object
+      properties:
+        TipoDespesa:
+          type: string
+        TotalGasto:
+          type: number
+    DTOTotalGastoDespesas:
+      title: DTOTotalGastoDespesas
+      type: object
+      properties:
+        Gastos:
+          description: Array de DTOGastoDespesa
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOGastoDespesa'
+    DTOAnexo:
+      title: DTOAnexo
+      type: object
+      properties:
+        path:
+          type: string
+        name:
+          type: string
+        size:
+          type: integer
+        cdAnexo:
+          type: integer
+        base64:
+          type: string
+        anexoAExcluir:
+          type: boolean
+          description: >-
+            Essa propriedade indica que o cliente excluiu o anexo da interface
+            do Mobile então deve ser apagado do LO e do storage
+        rotacionarImagem:
+          type: boolean
+          description: Indica se a imagem deve ser rotacionada antes de ser gravada
+        isSelected:
+          type: boolean
+          description: Essa propriedade é utilizada apenas no aplicativo
+        title:
+          type: string
+          description: Essa propriedade é utilizada apenas no aplicativo
+        value:
+          type: string
+          description: Essa propriedade é utilizada apenas no aplicativo
+    TipoFormaLancamento:
+      type: integer
+      example: 2
+      description: |
+        1: Fundo fixo (Adiantamento)
+
+        2: Voucher
+
+        3: Reembolso
+
+        4: Contas a pagar
+
+        5: Estorno
+    SituacaoLancamentoDespesa:
+      type: integer
+      example: 2
+      description: |
+        1: Aprovado
+
+        2: Aguardando aprovação
+
+        3: Pré aprovado
+
+        4: Não aprovado
+
+        5: Aprovado e pré aprovado
+    DTOAlocacaoDeDespesa:
+      title: DTOAlocacaoDeDespesa
+      type: object
+      properties:
+        IDAlocacaoDeDespesa:
+          type: integer
+        IDDespesa:
+          type: integer
+        IDCliente:
+          type: integer
+        IDContrato:
+          type: integer
+        IDCaso:
+          type: integer
+        PorcentagemAlocada:
+          type: number
+        ValorAlocado:
+          type: number
+        IDFechamento:
+          type: integer
+        IDCategoriaDeDespesa:
+          type: integer
+        Caso:
+          $ref: '#/components/schemas/DTOCasoSimples'
+    DTODespesa:
+      title: DTODespesa
+      type: object
+      properties:
+        ObservacaoAnexo:
+          type: string
+        Anexos:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOAnexo'
+        CategoriaLancamento:
+          type: string
+        DataDaDespesa:
+          type: string
+        DataDaDespesaFormatada:
+          type: string
+        ValorDaDespesa:
+          type: number
+        IDFuncionarioTransacao:
+          type: integer
+        DataTransacao:
+          type: string
+        DataTransacaoFormatada:
+          type: string
+        Moeda:
+          $ref: '#/components/schemas/Moeda'
+        IDFuncionarioFavorecido:
+          type: integer
+        IDCategoriaLancamento:
+          type: integer
+        IDVoucher:
+          type: integer
+        IDLiberacao:
+          type: integer
+        IDFornecedor:
+          type: integer
+        Documento:
+          type: string
+        TipoDePagamento:
+          $ref: '#/components/schemas/TipoFormaLancamento'
+        IDEscritorio:
+          type: integer
+        QtdKMRodado:
+          type: integer
+        TextoDaDespesa:
+          type: string
+        TemTextoModificado:
+          type: boolean
+        ValorKMRodado:
+          type: number
+        Situacao:
+          $ref: '#/components/schemas/SituacaoLancamentoDespesa'
+        DataAprovacao:
+          type: string
+        DataAprovacaoFormatada:
+          type: string
+        ObservacaoAprovador:
+          type: string
+        IDFuncionarioAprovador:
+          type: integer
+        IDFuncionarioIndicado:
+          type: integer
+        IDTarifacao:
+          type: integer
+        IDSolicitacaoMaterialItem:
+          type: integer
+        IDGeracaoDespesa:
+          type: integer
+        IDDespesa:
+          type: integer
+        Alocacoes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOAlocacaoDeDespesa'
+        IsEditable:
+          type: boolean
+    SituacaoLiberacao:
+      type: integer
+      example: -2147483646
+      description: |
+        -2147483647: Aberto
+
+        -2147483646: Fechado
+
+        -2147483645: Programado
+
+        -2147483644: Liberado para fechamento
+    DTOLiberacao:
+      title: DTOLiberacao
+      type: object
+      properties:
+        DataUltimaLiberacao:
+          type: string
+        Descricao:
+          type: string
+        ID:
+          type: integer
+        Situacao:
+          $ref: '#/components/schemas/SituacaoLiberacao'
+        ValorDespesasLancadas:
+          type: number
+        ValorLiberado:
+          type: number
+        Adiantamento:
+          type: string
+    DTOCategoriaDespesa:
+      title: DTOCategoriaDespesa
+      type: object
+      properties:
+        NomeCategoria:
+          type: string
+        IDCategoria:
+          type: integer
+        IDCategoriaPai:
+          type: integer
+        IsKmRodado:
+          type: boolean
+        SubCategorias:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCategoriaDespesa'
+    DTOFornecedor:
+      title: DTOFornecedor
+      type: object
+      properties:
+        IDFornecedor:
+          type: integer
+        Nome:
+          type: string
+        DDD:
+          type: integer
+        Telefone:
+          type: string
+        Extensao:
+          type: string
+        Banco:
+          type: string
+        Agencia:
+          type: string
+        ContaBanco:
+          type: string
+        Logradouro:
+          type: string
+        NumeroDoEndereco:
+          type: string
+        Complemento:
+          type: string
+        Bairro:
+          type: string
+        Cidade:
+          type: string
+        Estado:
+          type: string
+        CEP:
+          type: string
+        Observacao:
+          type: string
+        HomePage:
+          type: string
+        DataUltimoLancamento:
+          type: string
+        Pais:
+          type: string
+        IDEscritorio:
+          type: integer
+        CPFCNPJ:
+          type: string
+        Tipo:
+          type: string
+        Email:
+          type: string
+        DsCodigoSAP:
+          type: string
+        DsCodigoOriginal:
+          type: string
+        IDFuncionarioVinculado:
+          type: integer
+    DTOVoucher:
+      title: DTOVoucher
+      type: object
+      properties:
+        Observacao:
+          type: string
+        IDFornecedor:
+          type: integer
+        Nome:
+          type: string
+        ID:
           type: integer
     DTOFaseCaso:
       title: DTOFaseCaso

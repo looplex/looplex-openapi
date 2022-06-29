@@ -1,0 +1,25 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Despesas
+summary: Total de despesas por tipo
+description: Conta o total de despesa do funcionário por tipo no mês 
+operationId: api-despesas-totaldespesasmes
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  # Adicione aqui o body da requisição (se houver). Verificar menu "Copiar Body da requisição" 
+responses:
+  "200":
+    description: Total de despesas por tipo
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/DTOTotalGastoDespesas.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
