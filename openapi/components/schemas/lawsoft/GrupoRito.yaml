@@ -4,10 +4,13 @@ type: object
 properties:
   cdGrupoRito:
     type: integer
+    example: 2
   dsNome:
     type: string
+    example: "Procedimentos"
   cdGrupoPai:
     type: integer
+    example: 1
   Grupos:
     type: array
     items:
@@ -18,6 +21,8 @@ properties:
       $ref: Rito.yaml
   _hasRitos:
     type: boolean
+    example: false
   _hasGrupos:
     type: boolean
+    example: false
   

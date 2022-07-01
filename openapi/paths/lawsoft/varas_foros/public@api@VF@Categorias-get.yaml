@@ -1,0 +1,19 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Varas e Foros
+summary: Categorias
+operationId: api-VF-Categorias
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Response"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ResponseObtemCategorias.yaml

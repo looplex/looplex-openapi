@@ -2,36 +2,43 @@
 name: Foro
 type: object
 properties:
-  GrupoId:  
+  grupoId:  
     type: integer
-    example: null
-  IDPai:
+    example: 3
+  idPai:
     type: integer
     example: null
   nrOrdenacao:
     type: integer
-    example: 1
+    example: 3
   dsNome:
     type: string
+    example: "Judicial Estadual"
   dsCategoriaFilhos:
     type: string
+    example: "Instância"
   dsHierarquiaCompleta:
     type: string
+    example: "3"
   nrNivel:
     type: integer
+    example: 1
   inAtivo:
     type: boolean
+    example: true
   dsCodigoOriginal:
     type: string
+    example: null
   isEditavel:
     type: boolean
-  Filhos:
+    example: false
+  filhos:
     type: array
     items:
       $ref: Foro.yaml
   responsavelAlteracao:
     type: string
-  LabelProximosNiveis:
+    example: null
+  labelProximosNiveis:
     type: string
-  Default:
-    $ref: Foro.yaml
+    example: null

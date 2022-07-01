@@ -3,18 +3,16 @@ type: object
 properties:
   respostaAPI:
     type: string
-  conteudo:
-    type: object
-    properties:
-      grupos: 
-        description: "Esse campo só será retornado se o parâmetro gruposPrincipais for true"
-        type: array
-        items:
-          $ref: GrupoRito.yaml
-      items:
-        description: "Esse campo só será retornado se o parâmetro gruposPrincipais for false"
-        type: array
-        items: 
-          $ref: GruposRitoCascader.yaml
+    description: "Mensagem de sucesso ou erro na requisição"
+  responseGruposPrincipais:
+    description: "Esse campo só será retornado se o parâmetro gruposPrincipais for true. Nome do objeto de resposta: conteudo"
+    type: array
+    items:
+      $ref: GrupoRito.yaml
+  responseGruposNaoPrincipais:
+    description: "Esse campo só será retornado se o parâmetro gruposPrincipais for false. Nome do objeto de resposta: conteudo"
+    type: array
+    items: 
+      $ref: GruposRitoCascader.yaml
   tipoResposta:
     $ref: enums/TipoRespostaRequisicao.yaml

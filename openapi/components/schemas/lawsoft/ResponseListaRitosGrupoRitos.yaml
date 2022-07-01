@@ -3,22 +3,27 @@ type: object
 properties:
   respostaAPI:
     type: string
+    description: "Mensagem de sucesso ou erro na requisição"
   conteudo:
     type: object
     properties:
-      TipoDePesquisa:
+      tipoDePesquisa:
         type: string
         description: "Indica onde foi feita a pesquisa"
+        example: "Pesquisa por rito"
       rito:
         type: number
         description: "Esse campo só será retornado se a pesquisa for por rito"
+        example: 18000
       grupoRito:
         type: number
         description: "Esse campo só será retornado se a pesquisa for por grupo rito"
+        example: 18000
       grupoRitoPai:
         type: number
         description: "Esse campo só será retornado se a pesquisa for por rito pai"
-      GruposRito:
+        example: 18000
+      gruposRito:
         type: array
         items:
           $ref: GrupoRito.yaml

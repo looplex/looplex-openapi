@@ -3,18 +3,22 @@ type: object
 properties:
   respostaAPI:
     type: string
+    description: "Mensagem de sucesso ou erro na requisição"
   conteudo:
     type: object
     properties:
-      Grupos:
+      grupos:
         type: array
         items:
           $ref: Foro.yaml
-      NivelEditavel:
+      nivelEditavel:
         type: boolean
-      CategoriaFilhos: 
+        example: false
+      categoriaFilhos: 
         type: string
-      Nivel:
+        example: "Estados"
+      nivel:
         type: integer
+        example: 2
   tipoResposta:
     $ref: enums/TipoRespostaRequisicao.yaml

@@ -3,12 +3,16 @@ type: object
 properties:
   respostaAPI:
     type: string
+    description: "Mensagem de sucesso ou erro na requisição"
+    example: ""
   conteudo:
     type: object
     properties:
-      HierarquiaCompleta:
+      hierarquiaCompleta:
         type: string
-      HierarquiaFormatada:
+        example: "3.10.38.60"
+      hierarquiaFormatada:
         type: string
+        example: "SP -> Adamantina"
   tipoResposta:
     $ref: enums/TipoRespostaRequisicao.yaml

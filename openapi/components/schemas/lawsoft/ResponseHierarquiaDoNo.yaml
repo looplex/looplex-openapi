@@ -3,16 +3,19 @@ type: object
 properties:
   respostaAPI:
     type: string
+    description: "Mensagem de sucesso ou erro na requisição"
   conteudo:
     type: object
     properties:
-      Hierarquia:
+      hierarquia:
         type: array
         items:
           $ref: Foro.yaml
-      HierarquiaFormatada:
+      hierarquiaFormatada:
         type: string
-      ProximoNivel:
+        example: "Judicial Estadual -> 1ª Instância"
+      proximoNivel:
         type: string
+        example: "Estados"
   tipoResposta:
     $ref: enums/TipoRespostaRequisicao.yaml

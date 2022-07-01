@@ -1,0 +1,26 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Varas e Foros
+summary: Obtém próximos níveis
+description: Obtém os próximos níveis depois do item informado (2 no máximo).
+operationId: api-VF-ProximosNiveis
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: cdNo
+    in: query
+    description: "O identificado do item"
+    required: true
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Response"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ResponseObtemProximosNiveis.yaml

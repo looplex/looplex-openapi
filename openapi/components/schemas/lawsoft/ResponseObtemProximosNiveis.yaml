@@ -1,4 +1,4 @@
-name: ListaPorNivelResponse
+name: ResponseObtemProximosNiveis
 type: object
 properties:
   respostaAPI:
@@ -7,13 +7,9 @@ properties:
   conteudo:
     type: object
     properties:
-      grupos:
+      proximosNiveis:
         type: array
         items:
           $ref: Foro.yaml
-      categoriaFilhos:
-        type: string
-      nivel:
-        type: integer
-  tipoResposta: 
+  tipoResposta:
     $ref: enums/TipoRespostaRequisicao.yaml
