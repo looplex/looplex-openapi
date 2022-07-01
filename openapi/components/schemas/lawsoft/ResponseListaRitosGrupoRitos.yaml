@@ -1,0 +1,26 @@
+name: ResponseListaRitosGrupoRitos
+type: object
+properties:
+  respostaAPI:
+    type: string
+  conteudo:
+    type: object
+    properties:
+      TipoDePesquisa:
+        type: string
+        description: "Indica onde foi feita a pesquisa"
+      rito:
+        type: number
+        description: "Esse campo só será retornado se a pesquisa for por rito"
+      grupoRito:
+        type: number
+        description: "Esse campo só será retornado se a pesquisa for por grupo rito"
+      grupoRitoPai:
+        type: number
+        description: "Esse campo só será retornado se a pesquisa for por rito pai"
+      GruposRito:
+        type: array
+        items:
+          $ref: GrupoRito.yaml
+  tipoResposta:
+    $ref: enums/TipoRespostaRequisicao.yaml

@@ -46,13 +46,13 @@ x-tagGroups:
       - Dados complementares 
       - Decisões 
       - Despesas 
-      - Expectativa reivindicação 
+      - Expectativa reivindicação # verificar
       - Envolvimento das partes 
       - Fase caso 
       - Funcionário 
-      - Garantia 
+      - Garantia # verificar
       - Hierarquia 
-      - Natureza 
+      - Natureza # verificar
       - Partes 
       - Pedidos 
       - Permissão 
@@ -60,12 +60,12 @@ x-tagGroups:
       - Push 
       - Render 
       - Session 
-      - Tabela preço categoria 
-      - Tabela preço 
-      - Tarefa 
-      - Timeline 
+      - Tabela preço categoria # verificar
+      - Tabela preço # verificar
+      - Tarefa # Verificar
+      - Timeline # verificar
       - Timesheet 
-      - Valores apurados 
+      - Valores apurados # verifcar
       - Varas e Foros
       - País 
 servers:
@@ -522,6 +522,25 @@ paths:
   /api/VF/ObtemFilhosPorPai:
     get:
       $ref: './paths/lawsoft/varas_foros/public@api@VF@ObtemFilhosPorPai-get.yaml'
+  /api/VF/ObtemFilhosPorNomePai:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@ObtemFilhosPorNomePai-get.yaml'  
+  /api/VF/ObtemPorID:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@ObtemPorID-get.yaml'
+  /api/VF/ListaHierarquia:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaHierarquia-get.yaml'
+  /api/VF/HierarquiaFormatadaDoNo:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@HierarquiaFormatadaDoNo-get.yaml'
+  /api/VF/ListaRitosGrupoRitos:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaRitosGrupoRitos-get.yaml'
+  /api/VF/ListaGruposRito:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaGruposRito-get.yaml'
+  
 
 components:
   securitySchemes:

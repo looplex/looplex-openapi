@@ -1,0 +1,20 @@
+name: ResponseListaGruposRito
+type: object
+properties:
+  respostaAPI:
+    type: string
+  conteudo:
+    type: object
+    properties:
+      grupos: 
+        description: "Esse campo só será retornado se o parâmetro gruposPrincipais for true"
+        type: array
+        items:
+          $ref: GrupoRito.yaml
+      items:
+        description: "Esse campo só será retornado se o parâmetro gruposPrincipais for false"
+        type: array
+        items: 
+          $ref: GruposRitoCascader.yaml
+  tipoResposta:
+    $ref: enums/TipoRespostaRequisicao.yaml

@@ -1,0 +1,14 @@
+name: ResponseHierarquiaFormatadaDoNo
+type: object
+properties:
+  respostaAPI:
+    type: string
+  conteudo:
+    type: object
+    properties:
+      HierarquiaCompleta:
+        type: string
+      HierarquiaFormatada:
+        type: string
+  tipoResposta:
+    $ref: enums/TipoRespostaRequisicao.yaml
