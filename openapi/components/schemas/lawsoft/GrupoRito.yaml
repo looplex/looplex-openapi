@@ -11,11 +11,11 @@ properties:
   cdGrupoPai:
     type: integer
     example: 1
-  Grupos:
+  grupos:
     type: array
     items:
       $ref: GrupoRito.yaml
-  Ritos:
+  ritos:
     type: array
     items:
       $ref: Rito.yaml

@@ -1,121 +1,115 @@
-tags: 
-  - Timeline 
-summary: Timeline do caso
-description: Lista timeline do caso.
-operationId: caseTimeline
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Timeline
+summary: Timeline
+operationId: api-timeline-items
+# Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: paginaAtual
     in: query
+    example: 1
+    description: "Número da página"
     required: true
-    description: "Número da página a carregar"
-    example: 2
     schema:
       type: integer
   - name: cdProcesso
     in: query
-    example: 81
-    description: "Número do caso"
+    example: 100
+    description: "O identificador do processo"
     required: true
     schema:
       type: integer
   - name: dataInicial
     in: query
-    example: "2022-01-01T12:00:00"
-    required: false
+    example: "2022-06-01T12:00:00"
+    description: "A data inicial da pesquisa"
+    required: true
     schema:
       type: string
   - name: dataFinal
     in: query
-    example: "2022-01-01T12:00:00"
-    required: false
+    example: "2022-06-05T16:00:00"
+    description: "A data final da pesquisa"
+    required: true
     schema:
       type: string
   - name: andamentoManual
     in: query
-    description: "Indica se inclui os andamentos manuais na resposta"
-    example: true
+    description: "Indica se deve retornar andamentos manuais. Default: false"
     required: false
     schema:
       type: boolean
   - name: andamentoAutomatico
     in: query
-    description: "Indica se inclui os andamentos automáticos na resposta"
-    example: true
+    description: "Indica se deve retornar andamentos automáticos. Default: false"
     required: false
     schema:
       type: boolean
   - name: timesheet
     in: query
-    description: "Indica se inclui os lançamentos de hora na resposta"
-    example: true
+    description: "Indica se deve retornar timesheet. Default: false"
     required: false
     schema:
       type: boolean
   - name: agenda
     in: query
-    description: "Indica se inclui os itens de agenda na resposta"
-    example: true
+    description: "Indica se deve retornar itens de agenda. Default: false"
     required: false
     schema:
       type: boolean
   - name: tarefa
     in: query
-    description: "Indica se inclui as tarefas na resposta"
-    example: true
+    description: "Indica se deve retornar tarefas. Default: false"
     required: false
     schema:
       type: boolean
   - name: decisao
     in: query
-    description: "Indica se inclui as decisões na resposta"
-    example: true
+    description: "Indica se deve retornar decisões. Default: false"
     required: false
     schema:
       type: boolean
   - name: despesa
     in: query
-    description: "Indica se inclui as despesas na resposta"
-    example: true
+    description: "Indica se deve retornar despesas. Default: false"
     required: false
     schema:
       type: boolean
   - name: garantia
     in: query
-    description: "Indica se inclui as garantias na resposta"
-    example: true
+    description: "Indica se deve retornar garantias. Default: false"
     required: false
     schema:
       type: boolean
   - name: pushAndamentos
     in: query
-    description: "Indica se inclui os itens de push de andamento na resposta"
-    example: true
+    description: "Indica se deve retornar push de andamento. Default: false"
     required: false
     schema:
       type: boolean
   - name: pushPublicacao
     in: query
-    description: "Indica se inclui os itens de push de publicação na resposta"
-    example: true
+    description: "Indica se deve retornar push de publicação. Default: false"
     required: false
     schema:
       type: boolean
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
 responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Obtém os itens de timeline."
+    description: "Itens da timeline"
     content:
       application/json:
         schema:
-          type: array
-          items:
-            $ref: ../../../components/schemas/lawsoft/DTOTimelineItem.yaml
+          $ref: ../../../components/schemas/lawsoft/DTOTimelineItem.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
     description: "Em caso de erro diferente de timeout ou sessão expirada."
     content:
       application/json:
-        schema: 
+        schema:
           $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

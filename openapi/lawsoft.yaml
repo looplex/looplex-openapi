@@ -517,6 +517,21 @@ paths:
     get:
       $ref: './paths/lawsoft/push/public@api@push@publicacoes-get.yaml'
 
+  # Tabela de preço
+  /api/escritorios/{idEscritorio}/tabelaspreco:
+    get:
+      $ref: './paths/lawsoft/tabela_preco/public@api@escritorios@idEscritorio@tabelaspreco-get.yaml'
+
+  # Tarefa
+  /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
+    get:
+      $ref: './paths/lawsoft/tarefa/public@api@casos@tarefas@cdProcesso@ignoraIdFuncionario@filtro-get.yaml'
+
+  # Timeline
+  /api/timeline/items:
+    get:
+      $ref: './paths/lawsoft/timeline/public@api@timeline@items-get.yaml'
+
   # Varas e Foros (Somente métodos GET)
   /api/VF/ListaPorNivel:
     get:

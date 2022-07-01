@@ -3,7 +3,8 @@ type: object
 properties:
   respostaAPI:
     type: string
-    description: "Mensagem de sucesso ou erro na requisição"
+    example: ""
+    description: "Resposta da API (quando necessário)"
   responseGruposPrincipais:
     description: "Esse campo só será retornado se o parâmetro gruposPrincipais for true. Nome do objeto de resposta: conteudo"
     type: array

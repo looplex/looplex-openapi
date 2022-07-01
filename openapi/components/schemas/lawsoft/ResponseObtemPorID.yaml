@@ -3,7 +3,8 @@ type: object
 properties:
   respostaAPI:
     type: string
-    description: "Mensagem de sucesso ou erro na requisição"
+    example: ""
+    description: "Resposta da API (quando necessário)"
   conteudo:
     $ref: Foro.yaml
   tipoResposta:

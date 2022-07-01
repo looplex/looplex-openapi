@@ -3,12 +3,11 @@ type: object
 properties:
   respostaAPI:
     type: string
-    description: "Mensagem de sucesso ou erro na requisição"
+    example: ""
+    description: "Resposta da API (quando necessário)"
   conteudo:
-    type: object
-    properties:
-      cdNo:
-        description: "0 é retornado caso o item não seja encontrado"
-        type: integer
+    type: integer
+    example: 3
+    description: "0 é retornado caso o item não seja encontrado"
   tipoResposta:
     $ref: enums/TipoRespostaRequisicao.yaml
