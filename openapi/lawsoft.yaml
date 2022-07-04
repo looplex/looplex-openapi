@@ -532,6 +532,14 @@ paths:
     get:
       $ref: './paths/lawsoft/timeline/public@api@timeline@items-get.yaml'
 
+  # Valores apurados
+  /api/casos/{idCaso}/valoresapurados:
+    get:
+      $ref: './paths/lawsoft/valores_apurados/public@api@casos@idCaso@valoresapurados-get.yaml'
+  /api/casos/num/valoresapurados:
+    get:
+      $ref: './paths/lawsoft/valores_apurados/public@api@casos@num@valoresapurados-get.yaml'
+
   # Varas e Foros (Somente métodos GET)
   /api/VF/ListaPorNivel:
     get:

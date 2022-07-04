@@ -7986,6 +7986,132 @@
         }
       }
     },
+    "/api/casos/{idCaso}/valoresapurados": {
+      "get": {
+        "tags": [
+          "Valores apurados"
+        ],
+        "summary": "Valores apurados por caso",
+        "operationId": "api-casos-idCaso-valoresapurados",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valores apurados por caso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOValorApurado"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/num/valoresapurados": {
+      "get": {
+        "tags": [
+          "Valores apurados"
+        ],
+        "summary": "Valores apurados dos casos",
+        "description": "Obtém os valores apurados dos casos de acordo com o Identificador do caso, numero interno ou numero externo",
+        "operationId": "api-casos-num-valoresapurados",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "NumeroInterno",
+            "in": "query",
+            "description": "Default: 0",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "NumeroExterno",
+            "in": "query",
+            "description": "Default: empty string",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "IdProcesso",
+            "in": "query",
+            "description": "Default: 0",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valores apurados dos casos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOValorApurado"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/VF/ListaPorNivel": {
       "get": {
         "tags": [
@@ -7994,9 +8120,6 @@
         "summary": "Lista por nível",
         "operationId": "api-VF-ListaPorNivel",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
           {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
@@ -8032,9 +8155,6 @@
         "summary": "Obtém filhos por pai",
         "operationId": "api-VF-ObtemFilhosPorPai",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
           {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
@@ -8079,9 +8199,6 @@
         "summary": "Obtém itens filhos por nome pai",
         "operationId": "api-VF-ObtemFilhosPorNomePai",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
           {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
@@ -8128,9 +8245,6 @@
         "operationId": "api-VF-ObtemPorID",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
           {
@@ -8167,9 +8281,6 @@
         "operationId": "api-VF-ListaHierarquia",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
           {
@@ -8204,9 +8315,6 @@
         "operationId": "api-VF-HierarquiaFormatadaDoNo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
           {
@@ -8240,9 +8348,6 @@
         "summary": "Lista ritos e grupos de ritos",
         "operationId": "api-VF-ListaRitosGrupoRitos",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
           {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
@@ -8288,9 +8393,6 @@
         "operationId": "api-VF-ListaGruposRito",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
           {
@@ -8325,9 +8427,6 @@
         "summary": "Vinculos de grupo e rito",
         "operationId": "api-VF-ListaVinculoGrupoERito",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
           {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
@@ -8365,9 +8464,6 @@
         "operationId": "api-VF-ritosDoNo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
           {
@@ -8403,9 +8499,6 @@
         "operationId": "api-VF-RitosDoGrupo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
           {
@@ -8440,9 +8533,6 @@
         "summary": "Obtém identificador por nome",
         "operationId": "api-VF-cdNoPorNome",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
           {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
@@ -8481,9 +8571,6 @@
         "operationId": "api-VF-ProximosNiveis",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
             "$ref": "#/components/parameters/SubscriptionKey"
           },
           {
@@ -8518,9 +8605,6 @@
         "summary": "Categorias",
         "operationId": "api-VF-Categorias",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
           {
             "$ref": "#/components/parameters/SubscriptionKey"
           }
@@ -12188,6 +12272,45 @@
             "type": "string",
             "description": "O titulo do item",
             "example": "Atividade externa - 01/07/2022"
+          }
+        }
+      },
+      "DTOValorApurado": {
+        "title": "DTOValorApurado",
+        "type": "object",
+        "properties": {
+          "NomeCliente": {
+            "type": "string"
+          },
+          "TituloCaso": {
+            "type": "string"
+          },
+          "NumeroInterno": {
+            "type": "string"
+          },
+          "NumeroExterno": {
+            "type": "string"
+          },
+          "Data": {
+            "type": "string"
+          },
+          "DataFormatada": {
+            "type": "string"
+          },
+          "NomePedido": {
+            "type": "string"
+          },
+          "ValorApurado": {
+            "type": "number"
+          },
+          "Moeda": {
+            "type": "string"
+          },
+          "Observacao": {
+            "type": "string"
+          },
+          "IdCaso": {
+            "type": "integer"
           }
         }
       },
