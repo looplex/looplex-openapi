@@ -46,13 +46,13 @@ x-tagGroups:
       - Dados complementares 
       - Decisões 
       - Despesas 
-      - Expectativa reivindicação # verificar
+      - Expectativa reivindicação 
       - Envolvimento das partes 
       - Fase caso 
       - Funcionário 
-      - Garantia # verificar
+      - Garantia 
       - Hierarquia 
-      - Natureza # verificar
+      - Natureza 
       - Partes 
       - Pedidos 
       - Permissão 
@@ -60,12 +60,12 @@ x-tagGroups:
       - Push 
       - Render 
       - Session 
-      - Tabela preço categoria # verificar
-      - Tabela preço # verificar
-      - Tarefa # Verificar
-      - Timeline # verificar
+      - Tabela preço categoria 
+      - Tabela preço 
+      - Tarefa 
+      - Timeline 
       - Timesheet 
-      - Valores apurados # verifcar
+      - Valores apurados
       - Varas e Foros
       - País 
 servers:
@@ -483,11 +483,9 @@ paths:
   /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
     delete:
       $ref: './paths/lawsoft/garantia/public@api@casos@GarantiaMovimentacao@Exclui@idGarantiaMovimentacao-delete.yaml'
-  
   /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
     post:
       $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@IncluiMovimentacao-post.yaml'
-  
 
   # Hierarquia
   /api/hierarquia/ritos:
