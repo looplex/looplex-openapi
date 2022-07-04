@@ -480,6 +480,14 @@ paths:
   /api/casos/Garantia/Atualiza/{idCaso}:
     put:
       $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@Atualiza@idCaso-put.yaml'
+  /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
+    delete:
+      $ref: './paths/lawsoft/garantia/public@api@casos@GarantiaMovimentacao@Exclui@idGarantiaMovimentacao-delete.yaml'
+  
+  /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
+    post:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@IncluiMovimentacao-post.yaml'
+  
 
   # Hierarquia
   /api/hierarquia/ritos:
