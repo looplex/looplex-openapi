@@ -490,6 +490,14 @@ paths:
     get:
       $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@fases-get.yaml
 
+  # Natureza
+  /api/casos/{idCaso}/natureza:
+    get:
+      $ref: './paths/lawsoft/natureza/public@api@casos@idCaso@natureza-get.yaml'
+  /api/casos/num/natureza:
+    get:
+      $ref: './paths/lawsoft/natureza/public@api@casos@num@natureza-get.yaml'
+
   # País
   /api/pais:
     get:

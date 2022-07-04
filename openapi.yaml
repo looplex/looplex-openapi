@@ -85,6 +85,8 @@ tags:
     x-displayName: Funcionário
   - name: Hierarquia
     x-displayName: Hierarquia
+  - name: Natureza
+    x-displayName: Natureza
   - name: País
     x-displayName: País
   - name: Partes
@@ -151,6 +153,7 @@ x-tagGroups:
       - Fase caso
       - Funcionário
       - Hierarquia
+      - Natureza
       - País
       - Partes
       - Envolvimento das partes
@@ -5298,6 +5301,84 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/casos/{idCaso}/natureza':
+    get:
+      tags:
+        - Natureza
+      summary: Natureza por caso
+      operationId: api-casos-idCaso-natureza
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idCaso
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Natureza por caso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTONatureza'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/casos/num/natureza:
+    get:
+      tags:
+        - Natureza
+      summary: Natureza dos casos
+      description: >-
+        Obtém as naturezas dos casos encontrados de acordo com o identificador
+        do caso, numero interno ou numero externo
+      operationId: api-casos-num-natureza
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: NumeroInterno
+          in: query
+          description: 'Default: 0'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'Default: empty string'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'Default: 0'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Natureza dos casos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTONatureza'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   /api/pais:
     get:
       tags:
@@ -9523,6 +9604,22 @@ components:
           $ref: '#/components/schemas/RamosJudicial'
         nrGrupoText:
           type: string
+    DTONatureza:
+      title: DTONatureza
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        NomeNatureza:
+          type: string
+        IdCaso:
+          type: integer
     DTOPais:
       title: DTOPais
       type: object
