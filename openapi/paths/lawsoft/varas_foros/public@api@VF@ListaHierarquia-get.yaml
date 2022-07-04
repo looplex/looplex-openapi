@@ -6,7 +6,6 @@ description: Obtém a hierarquia do item informado
 operationId: api-VF-ListaHierarquia
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: no
     in: query

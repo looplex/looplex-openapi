@@ -5,7 +5,6 @@ summary: Hierarquia formatada do item
 operationId: api-VF-HierarquiaFormatadaDoNo
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: no
     in: query
