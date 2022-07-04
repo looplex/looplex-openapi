@@ -541,6 +541,11 @@ paths:
     get:
       $ref: './paths/lawsoft/tabela_preco/public@api@escritorios@idEscritorio@tabelaspreco-get.yaml'
 
+  # Tabela preço categoria
+  /api/escritorios/{idEscritorio}/tabelasprecocategoria:
+    get:
+      $ref: './paths/lawsoft/tabela_preco_categoria/public@api@escritorios@idEscritorio@tabelasprecocategoria-get.yaml'
+
   # Tarefa
   /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
     get:

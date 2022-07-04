@@ -97,6 +97,8 @@ tags:
     x-displayName: Push
   - name: Tabela preço
     x-displayName: Tabela preço
+  - name: Tabela preço categoria
+    x-displayName: Tabela preço categoria
   - name: Tarefa
     x-displayName: Tarefa
   - name: Timeline
@@ -159,6 +161,7 @@ x-tagGroups:
       - Envolvimento das partes
       - Push
       - Tabela preço
+      - Tabela preço categoria
       - Tarefa
       - Timeline
       - Valores apurados
@@ -5757,6 +5760,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  '/api/escritorios/{idEscritorio}/tabelasprecocategoria':
+    get:
+      tags:
+        - Tabela preço categoria
+      summary: Lista tabelas de preço categoria
+      operationId: api-escritorios-idEscritorio-tabelasprecocategoria
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: idEscritorio
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tabelas de preço categoria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOTabelaPrecoCategoria'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   '/api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}':
     get:
       tags:
@@ -9899,6 +9933,34 @@ components:
           type: integer
         NomeTabela:
           type: string
+    DTOTabelaPrecoCategoria:
+      title: DTOTabelaPrecoCategoria
+      type: object
+      properties:
+        IdCategoria:
+          type: integer
+        IdTabelaPreco:
+          type: integer
+        IdTabelaPrecoCategoria:
+          type: integer
+        NomeCategoria:
+          type: string
+        NomeTabelaPreco:
+          type: string
+        DataVigencia:
+          type: string
+        EhPadrao:
+          type: boolean
+        NumeroMoeda:
+          type: integer
+        NumeroMoedaHoraPadrao:
+          type: integer
+        NumeroMoedaInt:
+          type: integer
+        ValorHora:
+          type: number
+        ValorHoraTrabalhadaPadrao:
+          type: number
     FiltroSituacaoItemAgenda:
       type: integer
       example: 1
