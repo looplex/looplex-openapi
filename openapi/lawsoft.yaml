@@ -416,6 +416,17 @@ paths:
     get:
       $ref: './paths/lawsoft/despesa/public@api@despesas@valorKMRodado-get.yaml'
 
+  # Expectativa reivindicação
+  /api/casos/{idCaso}/Valores:
+    get:
+      $ref: './paths/lawsoft/expectativa_reivindicacao/public@api@casos@idCaso@Valores-get.yaml'
+  /api/casos/{idCaso}/PedidosComHistorico:
+    get:
+      $ref: './paths/lawsoft/expectativa_reivindicacao/public@api@casos@idCaso@PedidosComHistorico-get.yaml'
+  /api/expectativa/valores/{idCaso}:
+    get:
+      $ref: './paths/lawsoft/expectativa_reivindicacao/public@api@expectativa@valores@idCaso-get.yaml'
+
   # Fase
   /api/casos/fase/{nrGrupo}:
     get:

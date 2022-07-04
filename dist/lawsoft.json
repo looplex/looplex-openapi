@@ -5963,6 +5963,156 @@
         }
       }
     },
+    "/api/casos/{idCaso}/Valores": {
+      "get": {
+        "tags": [
+          "Expectativa reivindicação"
+        ],
+        "summary": "Valores do caso",
+        "operationId": "api-casos-idCaso-Valores",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valores do caso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOValoresDoCaso"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{idCaso}/PedidosComHistorico": {
+      "get": {
+        "tags": [
+          "Expectativa reivindicação"
+        ],
+        "summary": "Pedidos com histórico",
+        "operationId": "api-casos-idCaso-PedidosComHistorico",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Pedidos com histórico",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOValoresComPedidosAtualizados"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/expectativa/valores/{idCaso}": {
+      "get": {
+        "tags": [
+          "Expectativa reivindicação"
+        ],
+        "summary": "Valores do caso inicial",
+        "operationId": "api-expectativa-valores-idCaso",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valores do caso inicial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOValoresDoCasoAntigo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/fase/{nrGrupo}": {
       "get": {
         "tags": [
@@ -11550,6 +11700,244 @@
           },
           "ID": {
             "type": "integer"
+          }
+        }
+      },
+      "DTOCasoPedidoSimples": {
+        "title": "DTOCasoPedidoSimples",
+        "type": "object",
+        "properties": {
+          "Risco": {
+            "type": "integer"
+          },
+          "ValorPrevisto": {
+            "type": "number"
+          },
+          "ValorContingencia": {
+            "type": "number"
+          },
+          "Nome": {
+            "type": "string"
+          },
+          "Situacao": {
+            "type": "integer"
+          },
+          "IdProcessoExpectativaReivindicacao": {
+            "type": "integer"
+          },
+          "IdPedidoCausa": {
+            "type": "integer"
+          },
+          "Justificativa": {
+            "type": "string"
+          },
+          "MoedaValorPrevisto": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "MoedaValorContingenciado": {
+            "$ref": "#/components/schemas/Moeda"
+          }
+        }
+      },
+      "DTOValoresDoCaso": {
+        "title": "DTOValoresDoCaso",
+        "type": "object",
+        "properties": {
+          "Risco": {
+            "type": "integer"
+          },
+          "TipoRisco": {
+            "type": "integer"
+          },
+          "ValorDaCausa": {
+            "type": "number"
+          },
+          "MoedaValorDaCausa": {
+            "type": "integer"
+          },
+          "ValorDaCausaAtualizado": {
+            "type": "number"
+          },
+          "MoedaValorDaCausaAtualizado": {
+            "type": "integer"
+          },
+          "ValorPrevisto": {
+            "type": "number"
+          },
+          "MoedaValorPrevisto": {
+            "type": "integer"
+          },
+          "ValorContingencia": {
+            "type": "number"
+          },
+          "ValorContingenciaAtualizado": {
+            "type": "number"
+          },
+          "MoedaValorContingencia": {
+            "type": "integer"
+          },
+          "Pedidos": {
+            "description": "Array de DTOCasoPedidoSimples",
+            "$ref": "#/components/schemas/DTOCasoPedidoSimples"
+          }
+        }
+      },
+      "DTOPedidoHistorico": {
+        "title": "DTOPedidoHistorico",
+        "type": "object",
+        "properties": {
+          "MoedaSolicitadoText": {
+            "type": "string"
+          },
+          "PorcentagemExitoText": {
+            "type": "string"
+          },
+          "SituacaoText": {
+            "type": "string"
+          },
+          "Situacao": {
+            "type": "integer"
+          },
+          "JustificativaPedido": {
+            "type": "string"
+          },
+          "dtDecisao": {
+            "type": "string"
+          },
+          "PorcentagemExito": {
+            "type": "integer"
+          },
+          "vlContigenciado": {
+            "type": "number"
+          },
+          "MoedaContigenciado": {
+            "type": "integer"
+          },
+          "MoedaDeferido": {
+            "type": "integer"
+          },
+          "MoedaSolicitado": {
+            "type": "integer"
+          },
+          "vlSolicitado": {
+            "type": "number"
+          },
+          "vlDeferido": {
+            "type": "number"
+          },
+          "IdProcessoDecisao": {
+            "type": "integer"
+          },
+          "IdProcessoExpectativaReivindicacao": {
+            "type": "integer"
+          },
+          "dtInclusaoRegistro": {
+            "type": "string"
+          },
+          "IdPedidoHistorico": {
+            "type": "integer"
+          },
+          "MoedaContigenciadoText": {
+            "type": "string"
+          },
+          "MoedaDeferidoText": {
+            "type": "string"
+          },
+          "Observacao": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOPedidoComHistorico": {
+        "title": "DTOPedidoComHistorico",
+        "type": "object",
+        "properties": {
+          "PedidoCausa": {
+            "type": "string"
+          },
+          "RiscoPai": {
+            "type": "integer"
+          },
+          "RiscoPaiText": {
+            "type": "string"
+          },
+          "ValorPrevistoPai": {
+            "type": "number"
+          },
+          "SituacaoPaiText": {
+            "type": "string"
+          },
+          "ValorContingenciadoPai": {
+            "type": "number"
+          },
+          "ValorDeferidoPelaUltimaDecisao": {
+            "type": "number"
+          },
+          "MoedaDeferidoPelaUltimaDecisao": {
+            "type": "string"
+          },
+          "Historico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOPedidoHistorico"
+            }
+          },
+          "ValorPrevistoPelaUltimaDecisao": {
+            "type": "number"
+          },
+          "ValorContingenciadoPelaUltimaDecisao": {
+            "type": "number"
+          },
+          "RiscoUltimaDecisao": {
+            "type": "integer"
+          },
+          "RiscoUltimaDecisaoText": {
+            "type": "string"
+          },
+          "SituacaoUltimaDecisao": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOValoresComPedidosAtualizados": {
+        "title": "DTOValoresComPedidosAtualizados",
+        "type": "object",
+        "properties": {
+          "Pedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOPedidoComHistorico"
+            }
+          },
+          "vlValorPrevistoAtualizado": {
+            "type": "number"
+          },
+          "vlValorContigenciaAtualizado": {
+            "type": "number"
+          }
+        }
+      },
+      "DTOValoresDoCasoAntigo": {
+        "title": "DTOValoresDoCasoAntigo",
+        "type": "object",
+        "properties": {
+          "Risco": {
+            "type": "string"
+          },
+          "ValorDaCausa": {
+            "type": "string"
+          },
+          "ValorDaCausaAtualizado": {
+            "type": "string"
+          },
+          "ValorPrevisto": {
+            "type": "string"
+          },
+          "ValorContingencia": {
+            "type": "string"
+          },
+          "TotalDosPedidos": {
+            "type": "string"
           }
         }
       },
