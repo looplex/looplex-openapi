@@ -560,7 +560,72 @@ paths:
       $ref: './paths/lawsoft/timeline/public@api@timeline@items-get.yaml'
 
   # Timesheet
-  
+  /api/timesheet/totalhoras:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@totalhoras-get.yaml'
+  /api/timesheet/proximoslancamentos:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@proximoslancamentos-get.yaml'
+  /api/timesheet/activitycodes:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@activitycodes-get.yaml'
+  /api/timesheet/taskcodes:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@taskcodes-get.yaml'
+  /api/timesheet/listaporperiodo:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@listaporperiodo-get.yaml'
+  /api/timesheet/obtemmaisrecente:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@obtemmaisrecente-get.yaml'
+  /api/timesheet/obtem:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@obtem-get.yaml'
+  /api/timesheet/funcionarios/{idFuncionario}/areas:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@funcionarios@idFuncionario@areas-get.yaml'
+  /api/timesheet/areas/{idArea}/titulos:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@areas@idArea@titulos-get.yaml'
+  /api/timesheet/funcionarios:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@funcionarios-get.yaml'
+  /api/timesheet/funcionarios/permissaolcto/{idFuncionario}:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@funcionarios@permissaolcto@idFuncionario-get.yaml'
+  /api/timesheet/classificacoes:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@classificacoes-get.yaml'
+  /api/casos/{idCaso}/timesheet:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@casos@idCaso@timesheet-get.yaml'
+  /api/timesheet/caso/{idCaso}:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@caso@idCaso-get.yaml'
+  /api/timesheet/obtem/{id}:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@obtem@id-get.yaml'
+  /api/timesheet/inclui:
+    post:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@inclui-post.yaml'
+  /api/timesheet/incluiWeb:
+    post:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@incluiWeb-post.yaml'
+  /api/timesheet/atualizaWeb:
+    put:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@atualizaWeb-put.yaml'
+  /api/timesheet/atualiza:
+    put:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@atualiza-put.yaml'
+  /api/timesheet/exclui/{id}:
+    delete:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@exclui@id-delete.yaml'
+  /api/timesheet/limiteMinimo:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@limiteMinimo-get.yaml'
+  /api/timesheet/arredondamento:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@arredondamento-get.yaml'
 
   # Valores apurados
   /api/casos/{idCaso}/valoresapurados:

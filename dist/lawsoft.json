@@ -8315,6 +8315,1122 @@
         }
       }
     },
+    "/api/timesheet/totalhoras": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Total de horas lançadas no mês pelo profissional",
+        "operationId": "api-timesheet-totalhoras",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Total de horas lançadas",
+            "content": {
+              "application/json": {
+                "example": 5
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/proximoslancamentos": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Ultimos lançamentos de timesheet pelo profissional",
+        "operationId": "api-timesheet-proximoslancamentos",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lançamentos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/activitycodes": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Activity Codes",
+        "description": "Lista os Activity Codes",
+        "operationId": "api-timesheet-activitycodes",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Activity Codes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LEDESCodes"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/taskcodes": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Task Codes",
+        "description": "Lista os Task Codes",
+        "operationId": "api-timesheet-taskcodes",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task Codes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LEDESCodes"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/listaporperiodo": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Exceções de período de lançamento",
+        "operationId": "api-timesheet-listaporperiodo",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "nrAplicabilidade",
+            "in": "query",
+            "example": "1",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/PeriodoLancamentoAplicabilidade"
+            }
+          },
+          {
+            "name": "idFuncionario",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "dataDeHoje",
+            "in": "query",
+            "example": "2022-06-01T12:00:00",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Período",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "2022-06-01T12:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/obtemmaisrecente": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Obtém mais recente",
+        "operationId": "api-timesheet-obtemmaisrecente",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "nrAplicabilidade",
+            "in": "query",
+            "required": true,
+            "example": 1,
+            "schema": {
+              "$ref": "#/components/schemas/PeriodoLancamentoAplicabilidade"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resposta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "2022-06-01T12:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/obtem": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Horas lançadas do funcionário",
+        "operationId": "api-timesheet-obtem",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "ano",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Horas lançadas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/funcionarios/{idFuncionario}/areas": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Áreas para lançamento de horas",
+        "operationId": "api-timesheet-funcionarios-idFuncionario-areas",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idFuncionario",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Áreas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOArea"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/areas/{idArea}/titulos": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Títulos para lançamento de horas",
+        "operationId": "api-timesheet-areas-idArea-titulos",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idArea",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Títulos para lançamento de hora",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOClassificacao"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/funcionarios": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Funcionários para lançamento de horas",
+        "operationId": "api-timesheet-funcionarios",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Funcionários para lançamento de horas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOFuncionario"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/funcionarios/permissaolcto/{idFuncionario}": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Funcionários com permissão de lançamento",
+        "operationId": "api-timesheet-funcionarios-permissaolcto-idFuncionario",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idFuncionario",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Funcionários com permissão de lançamento",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOFuncionario"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/classificacoes": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Classificações para lançamento de horas",
+        "operationId": "api-timesheet-classificacoes",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Classificações",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOClassificacao"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{idCaso}/timesheet": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Horas lançadas do caso",
+        "operationId": "api-casos-idCaso-timesheet",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ano",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Horas lançadas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/caso/{idCaso}": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Horas lançadas do caso",
+        "operationId": "api-timesheet-caso-idCaso",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Horas lançadas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/obtem/{id}": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Detalhes do lançamento de timesheet",
+        "operationId": "api-timesheet-obtem-id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalhes do lançamento de hora",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/inclui": {
+      "post": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Inclui lançamento de hora",
+        "operationId": "api-timesheet-inclui",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOPlanilhaHoras"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lançamento de hora inserido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/incluiWeb": {
+      "post": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Inclui lançamento de hora",
+        "operationId": "api-timesheet-incluiWeb",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOPlanilhaHoras"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lançamento de hora inserido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/atualizaWeb": {
+      "put": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Atualiza lançamento de hora",
+        "operationId": "api-timesheet-atualizaWeb",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOPlanilhaHoras"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lançamento de hora atualizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/atualiza": {
+      "put": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Atualiza lançamento de hora",
+        "operationId": "api-timesheet-atualiza",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOPlanilhaHoras"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lançamento de hora atualizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/exclui/{id}": {
+      "delete": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Exclui lançamento de hora",
+        "operationId": "api-timesheet-exclui-id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "O identificador do lançamento de hora",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "O lançamento de hora foi excluído."
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/limiteMinimo": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Limite mínimo",
+        "description": "Obtém o limite mínimo em minutos para o lançamento de hora",
+        "operationId": "api-timesheet-limiteMinimo",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Limite mínimo",
+            "content": {
+              "application/json": {
+                "example": 15
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/timesheet/arredondamento": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Arredondamento",
+        "description": "Obtém o arredondamento de minutos",
+        "operationId": "api-timesheet-arredondamento",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Arredondamento",
+            "content": {
+              "application/json": {
+                "example": 10
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{idCaso}/valoresapurados": {
       "get": {
         "tags": [
@@ -12905,6 +14021,147 @@
             "type": "string",
             "description": "O titulo do item",
             "example": "Atividade externa - 01/07/2022"
+          }
+        }
+      },
+      "TipoDeTarefa": {
+        "type": "integer",
+        "example": 2,
+        "description": "1: Aprimoramento profissional\n\n2: Horas debitáveis\n\n3: Horas de relacionamento\n\n4: Horas não debitáveis\n"
+      },
+      "SituacaoDaPlanilhaDeHoras": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Aberta\n\n2: A aprovar\n\n3: Aprovada\n\n4: Não aprovada\n"
+      },
+      "DTOPlanilhaHoras": {
+        "title": "DTOPlanilhaHoras",
+        "type": "object",
+        "properties": {
+          "NrLEDESTaskCode": {
+            "type": "string"
+          },
+          "NrLEDESActivityCode": {
+            "type": "string"
+          },
+          "DsSolicitante": {
+            "type": "string"
+          },
+          "CdSolicitante": {
+            "type": "integer"
+          },
+          "IDCliente": {
+            "type": "integer"
+          },
+          "IDProcesso": {
+            "type": "integer"
+          },
+          "IDFuncionario": {
+            "type": "integer"
+          },
+          "NomeFuncionario": {
+            "type": "string"
+          },
+          "Descricao": {
+            "type": "string"
+          },
+          "DataExecucao": {
+            "type": "string"
+          },
+          "TipoDeTarefa": {
+            "$ref": "#/components/schemas/TipoDeTarefa"
+          },
+          "QtdMinutos": {
+            "type": "integer"
+          },
+          "IDFuncionarioResponsavel": {
+            "type": "integer"
+          },
+          "IDFuncionarioBeneficiario": {
+            "type": "integer"
+          },
+          "IDFechamentoPlanilhaHoras": {
+            "type": "integer"
+          },
+          "IDRegistroFechamentoContaCliente": {
+            "type": "integer"
+          },
+          "SituacaoDaPlanilha": {
+            "$ref": "#/components/schemas/SituacaoDaPlanilhaDeHoras"
+          },
+          "MotivoDaRecusa": {
+            "type": "string"
+          },
+          "IDClassificacaoHorasDebitaveis": {
+            "type": "integer"
+          },
+          "IDClassificacao": {
+            "type": "integer"
+          },
+          "DsClassificacao": {
+            "type": "string"
+          },
+          "Titulo": {
+            "type": "string"
+          },
+          "IDAndamento": {
+            "type": "integer"
+          },
+          "IDArea": {
+            "type": "integer"
+          },
+          "IDContrato": {
+            "type": "integer"
+          },
+          "DataLancamento": {
+            "type": "string"
+          },
+          "InFaturadoPreVersao35": {
+            "type": "boolean"
+          },
+          "IDLancamentoDeHoras": {
+            "type": "integer"
+          },
+          "IsEditable": {
+            "type": "boolean"
+          }
+        }
+      },
+      "LEDESCodes": {
+        "title": "LEDES Code",
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ChildCodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LEDESCodes"
+            }
+          }
+        }
+      },
+      "PeriodoLancamentoAplicabilidade": {
+        "title": "PeriodoLancamentoAplicabilidade",
+        "type": "integer",
+        "description": "1: Timesheet\n\n2: Despesa\n"
+      },
+      "DTOClassificacao": {
+        "title": "DTOClassificacao",
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Titulo": {
+            "type": "string"
+          },
+          "TextoPadrao": {
+            "type": "string"
           }
         }
       },
