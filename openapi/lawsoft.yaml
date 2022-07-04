@@ -461,6 +461,9 @@ paths:
     get:
       $ref: ./paths/lawsoft/funcionario/public@api@escritorios@funcionarios-get.yaml
 
+  # Garantia
+
+
   # Hierarquia
   /api/hierarquia/ritos:
     get: 
@@ -555,6 +558,9 @@ paths:
   /api/timeline/items:
     get:
       $ref: './paths/lawsoft/timeline/public@api@timeline@items-get.yaml'
+
+  # Timesheet
+  
 
   # Valores apurados
   /api/casos/{idCaso}/valoresapurados:
