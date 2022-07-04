@@ -6688,6 +6688,348 @@
         }
       }
     },
+    "/api/casos/Garantia/{idCasoGarantia}": {
+      "get": {
+        "tags": [
+          "Garantia"
+        ],
+        "summary": "Detalhes da garantia",
+        "description": "Obtém os detalhes da garantia",
+        "operationId": "api-casos-Garantia-idCasoGarantia",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCasoGarantia",
+            "in": "path",
+            "description": "O identificador da garantia",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalhes da garantia",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCasoGarantia"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{idCaso}/Garantias": {
+      "get": {
+        "tags": [
+          "Garantia"
+        ],
+        "summary": "Garantias do caso",
+        "description": "Obtém as garantias do caso",
+        "operationId": "api-casos-idCaso-Garantias",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Garantias do caso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCasoGarantia"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TiposGarantia": {
+      "get": {
+        "tags": [
+          "Garantia"
+        ],
+        "summary": "Tipos de garantia",
+        "operationId": "api-TiposGarantia",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tipos de garantia",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOGarantia"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/num/garantias": {
+      "get": {
+        "tags": [
+          "Garantia"
+        ],
+        "summary": "Garantias dos casos",
+        "description": "Obtém as garantias dos casos de acordo com o identificador do caso, numero interno ou numero externo",
+        "operationId": "api-casos-num-garantias",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "NumeroInterno",
+            "in": "query",
+            "description": "Default: 0",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "NumeroExterno",
+            "in": "query",
+            "description": "Default: empty string",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "IdProcesso",
+            "in": "query",
+            "description": "Default: 0",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Garantias",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCasoGarantia"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/Garantia/Inclui/{idCaso}": {
+      "post": {
+        "tags": [
+          "Garantia"
+        ],
+        "summary": "Inclui garantia",
+        "operationId": "api-casos-Garantia-Inclui-idCaso",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCasoGarantia"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resposta",
+            "content": {
+              "application/json": {
+                "example": 10
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/Garantia/Atualiza/{idCaso}": {
+      "put": {
+        "tags": [
+          "Garantia"
+        ],
+        "summary": "Atualiza garantia",
+        "operationId": "api-casos-Garantia-Atualiza-idCaso",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/SubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCasoGarantia"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A garantia atualizada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCasoGarantia"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/hierarquia/ritos": {
       "get": {
         "tags": [
@@ -13362,6 +13704,142 @@
           },
           "NumeroVinculoEmpregaticio": {
             "type": "integer"
+          }
+        }
+      },
+      "TipoDeMovimentacao": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Transferência\n\n2: Recuperação\n"
+      },
+      "StatusAlvara": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Aguardando expedição alvará\n\n2: Alvará retirado\n\n3: Alvará recuperado\n"
+      },
+      "DTOMovimentacao": {
+        "title": "DTOMovimentacao",
+        "type": "object",
+        "properties": {
+          "IdMovimentacao": {
+            "type": "integer"
+          },
+          "IdCasoGarantia": {
+            "type": "integer"
+          },
+          "vlGarantiaAtualizado": {
+            "type": "number"
+          },
+          "Moeda": {
+            "type": "string"
+          },
+          "NrMoeda": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "TipoDeMovimentacao": {
+            "type": "string"
+          },
+          "NrTipoDeMovimentacao": {
+            "$ref": "#/components/schemas/TipoDeMovimentacao"
+          },
+          "Transferido": {
+            "type": "string"
+          },
+          "Justificativa": {
+            "type": "string"
+          },
+          "ValorMovimentacao": {
+            "type": "number"
+          },
+          "ValorSaldoRemanescente": {
+            "type": "number"
+          },
+          "StatusAlvara": {
+            "type": "string"
+          },
+          "EnumStatusAlvara": {
+            "$ref": "#/components/schemas/StatusAlvara"
+          },
+          "DataMovimentacao": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCasoGarantia": {
+        "title": "DTOCasoGarantia",
+        "type": "object",
+        "properties": {
+          "NomeCliente": {
+            "type": "string"
+          },
+          "TituloCaso": {
+            "type": "string"
+          },
+          "NumeroInterno": {
+            "type": "string"
+          },
+          "NumeroExterno": {
+            "type": "string"
+          },
+          "IdCasoGarantia": {
+            "type": "integer"
+          },
+          "Movimentacoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOMovimentacao"
+            }
+          },
+          "Moeda": {
+            "type": "string"
+          },
+          "NrMoeda": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "IdGarantia": {
+            "type": "integer"
+          },
+          "Garantia": {
+            "type": "string"
+          },
+          "idCaso": {
+            "type": "integer"
+          },
+          "DataDeposito": {
+            "type": "string"
+          },
+          "DataDepositoFormatada": {
+            "type": "string"
+          },
+          "ValorGarantia": {
+            "type": "number"
+          },
+          "ValorGarantiaAtualizado": {
+            "type": "number"
+          },
+          "Observacao": {
+            "type": "string"
+          },
+          "Identificacao": {
+            "type": "string"
+          },
+          "ValorSaldoRemanescente": {
+            "type": "number"
+          }
+        }
+      },
+      "DTOGarantia": {
+        "title": "DTOGarantia",
+        "type": "object",
+        "properties": {
+          "IdGarantia": {
+            "type": "integer"
+          },
+          "IdEscritorio": {
+            "type": "integer"
+          },
+          "DescricaoGarantia": {
+            "type": "string"
           }
         }
       },

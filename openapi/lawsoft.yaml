@@ -462,7 +462,24 @@ paths:
       $ref: ./paths/lawsoft/funcionario/public@api@escritorios@funcionarios-get.yaml
 
   # Garantia
-
+  /api/casos/Garantia/{idCasoGarantia}:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@idCasoGarantia-get.yaml'
+  /api/casos/{idCaso}/Garantias:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@casos@idCaso@Garantias-get.yaml'
+  /api/TiposGarantia:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@TiposGarantia-get.yaml'
+  /api/casos/num/garantias:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@casos@num@garantias-get.yaml'
+  /api/casos/Garantia/Inclui/{idCaso}:
+    post:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@Inclui@idCaso-post.yaml'
+  /api/casos/Garantia/Atualiza/{idCaso}:
+    put:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@Atualiza@idCaso-put.yaml'
 
   # Hierarquia
   /api/hierarquia/ritos:
