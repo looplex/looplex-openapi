@@ -128,7 +128,10 @@ paths:
   /api/casos/num/tabagenda:
     get:
       $ref: ./paths/lawsoft/agenda/public@api@casos@num@tabagenda-get.yaml
-  
+  /api/compromissos:
+    get:
+      $ref: './paths/lawsoft/agenda/public@api@compromissos-get.yaml'
+      
   # Andamentos
   /api/andamentos/templates:
     get:

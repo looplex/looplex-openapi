@@ -1,0 +1,35 @@
+name: DTOCompromissoSimples
+type: object
+properties:
+  IDCompromisso:
+    description: "O identificador do compromisso"
+    type: integer
+  IDArea:
+    description: "O identificador da área"
+    type: integer
+  IDFuncionario:
+    description: "Funcionário que criou o item de agenda"
+    type: integer
+  IDFuncionarioResponsavel:
+    description: "Funcionário responsável pelo item de agenda"
+    type: integer
+  DataInicial:
+    description: "A data do item de agenda"
+    type: string
+  DataFinal:
+    description: "A data limite do item de agenda"
+    type: string
+  DataRealizacao:
+    description: "A data em que foi concluido o item"
+    type: string
+  Concluido:
+    description: "Indica se o item está concluído"
+    type: boolean
+  TipoItemAgenda:
+    $ref: enums/TipoItemAgenda.yaml
+  Titulo:
+    description: "O título do item de agenda"
+    type: string
+  Descricao:
+    description: "A descrição do item de agenda"
+    type: string
