@@ -10780,7 +10780,7 @@
       "TipoItemAgenda": {
         "type": "integer",
         "example": 1,
-        "description": "1: Atividade externa,\n\n2: Prazo, \n\n4: Audiência, \n\n8: Compromisso de trabalho, \n\n9: Compromisso particular\n"
+        "description": "1: Atividade externa,\n\n2: Prazo, \n\n4: Audiência, \n\n10: Compromisso\n"
       },
       "SituacaoDoItemAgenda": {
         "type": "integer",
