@@ -1,13 +1,15 @@
-tags: 
-  - Timesheet (Lawsoft)
-summary: Período de lançamento de timesheet
-description: Obtém as datas de permissão para lançamento de timesheet
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Timesheet
+summary: Exceções de período de lançamento
 operationId: api-timesheet-listaporperiodo
+# Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
   - name: nrAplicabilidade
     in: query
+    example: "1"
     required: true
     schema:
       $ref: ../../../components/schemas/lawsoft/enums/PeriodoLancamentoAplicabilidade.yaml
@@ -18,21 +20,28 @@ parameters:
       type: integer
   - name: dataDeHoje
     in: query
-    example: "\"2022-05-09\""
+    example: "2022-06-01T12:00:00"
     required: true
     schema:
       type: string
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
 responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Obtém as datas de permissão para lançamento de timesheet"
+    description: "Período"
     content:
       application/json:
-        example: ['2022-05-01','2022-05-09']
+        schema:
+          type: array
+          items:
+            type: string
+            example: "2022-06-01T12:00:00"
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
     description: "Em caso de erro diferente de timeout ou sessão expirada."
     content:
       application/json:
-        schema: 
+        schema:
           $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

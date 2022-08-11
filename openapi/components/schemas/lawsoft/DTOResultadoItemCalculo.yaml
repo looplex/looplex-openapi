@@ -1,0 +1,26 @@
+name: DTOResultadoItemCalculo
+type: object
+properties:
+  ValorOriginal:
+    type: number
+  ValorFatorado:
+    type: number
+  JurosCompensatorios:
+    $ref: DTOResultadoItemJuros.yaml
+  JurosMoratorios:
+    $ref: DTOResultadoItemJuros.yaml
+  ValorMulta:
+    type: number
+  ValorHonorarios:
+    type: number
+  SubTotalComJuros:
+    type: number
+  Total:
+    type: number
+  FatorAtualizacao:
+    $ref: DTOFatorAtualizacaoIntervalo.yaml
+  DataCorrecao:
+    type: string
+    example: "2022-06-01T12:00:00"
+  Descricao:
+    type: string

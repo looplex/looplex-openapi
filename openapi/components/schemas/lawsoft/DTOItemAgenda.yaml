@@ -85,3 +85,8 @@ properties:
     $ref: ./enums/SituacaoLembrete.yaml
   IsEditable: 
     type: boolean
+  IDStatusEncerramentoItemAgenda:
+    type: integer
+  StatusEncerramentoItemAgenda:
+    type: string
+    example: ""

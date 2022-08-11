@@ -1,5 +1,5 @@
 tags: 
-  - Pedidos (Lawsoft)
+  - Pedidos 
 summary: Atualiza pedidos
 description: Atualiza pedidos do caso
 operationId: api-casos-idCaso-pedidos

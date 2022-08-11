@@ -1,0 +1,27 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Despesas
+summary: Vouchers permitidos ao funcionário
+operationId: api-despesas-voucher
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: Obtém os vouchers permitidos ao funcionário
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/DTOVoucher.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

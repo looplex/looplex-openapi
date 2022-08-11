@@ -1,0 +1,50 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Tarefa
+summary: Compromissos por filtro tarefas Web
+operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: cdProcesso
+    in: path
+    required: true
+    schema:
+      type: integer
+  - name: ignoraIdFuncionario
+    in: path
+    required: true
+    schema:
+      type: boolean
+  - name: filtro
+    in: path
+    required: true
+    schema:
+      $ref: ../../../components/schemas/lawsoft/enums/FiltroSituacaoItemAgenda.yaml
+  - name: numeroDeRecorrencias
+    in: query
+    required: false
+    description: "Default: 10"
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Compromissos"
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

@@ -2,6 +2,7 @@ title: ParteParaLO
 type: object
 properties:
   IdParteNoLo:
+    example: -2147483648
     type: integer
   nomeParte:
     type: string

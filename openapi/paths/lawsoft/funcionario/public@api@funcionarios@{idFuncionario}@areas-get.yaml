@@ -1,5 +1,5 @@
 tags: 
-  - Funcionário (Lawsoft)
+  - Funcionário 
 summary: Áreas do funcionário
 description: Obtém uma lista de áreas do funcionário
 operationId: employeeAreas

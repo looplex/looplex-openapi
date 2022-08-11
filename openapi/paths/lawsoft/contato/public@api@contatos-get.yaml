@@ -1,5 +1,5 @@
 tags: 
-  - Contato (Lawsoft)
+  - Contato
 summary: Contatos
 description: Obtém uma lista de contatos
 operationId: api-contatos

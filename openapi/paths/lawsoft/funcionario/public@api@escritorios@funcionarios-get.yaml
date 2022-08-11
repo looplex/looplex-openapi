@@ -1,5 +1,5 @@
 tags: 
-  - Funcionário (Lawsoft)
+  - Funcionário 
 summary: Funcionários ativos do escritório
 description: Obtém uma lista de informações dos funcionários ativos do escritório
 operationId: api-escritorios-funcionarios

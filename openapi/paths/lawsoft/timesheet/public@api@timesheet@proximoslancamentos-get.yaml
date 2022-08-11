@@ -1,17 +1,21 @@
-tags: 
-  - Timesheet (Lawsoft)
-summary: Lançamentos de timesheet
-description: Lista últimos lancamentos de timesheet por profissional
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Timesheet
+summary: Ultimos lançamentos de timesheet pelo profissional
 operationId: api-timesheet-proximoslancamentos
+# Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
 responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Lista últimos lançamentos de timesheet por profissional"
+    description: "Lançamentos"
     content:
       application/json:
-        schema: 
+        schema:
           type: array
           items:
             $ref: ../../../components/schemas/lawsoft/DTOPlanilhaHoras.yaml
@@ -21,5 +25,5 @@ responses:
     description: "Em caso de erro diferente de timeout ou sessão expirada."
     content:
       application/json:
-        schema: 
+        schema:
           $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

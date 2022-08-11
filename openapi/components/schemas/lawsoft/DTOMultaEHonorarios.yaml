@@ -1,0 +1,13 @@
+name: DTOMultaEHonorarios
+type: object
+properties:
+  ValorMulta:
+    type: number
+  ValorHonorario:
+    type: number
+  isMultaSobreJurosCompensatorios:
+    type: boolean
+  isMultaSobreJurosMoratorios:
+    type: boolean
+  isHonorarioEhPercentual:
+    type: boolean

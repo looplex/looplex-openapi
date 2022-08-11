@@ -1,0 +1,32 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Decisões
+summary: Decisões do caso
+description: Obtém as decisões do caso
+operationId: api-casos-idCaso-Decisoes
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: idCaso
+    in: path
+    example: "100"
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: Obtém as decisões do caso
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOCasoDecisao.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

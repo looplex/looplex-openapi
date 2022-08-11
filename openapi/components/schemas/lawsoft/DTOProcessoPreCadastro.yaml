@@ -2,32 +2,47 @@ title: DTOProcessoPreCadastro
 type: object
 properties:
   idPreProcesso:
+    example: -2147483648
     type: integer
   idCliente:
+    example: -2147483648
+    type: integer
+  idResponsavel:
+    example: -2147483648
+    type: integer
+  idArea:
+    example: -2147483648
     type: integer
   envolvimentoCliente:
     $ref: enums/PoloLawOffice.yaml
+  tipo:
+    $ref: enums/RamosJudicial.yaml
+  dsAssunto:
+    description: "Título da pasta"
+    type: string
   nrExito:
+    example: -2147483648
     type: integer
   nrTipoExito:
+    example: -2147483648
     type: integer
   nrMoedaInicialCausa:
-    type: integer
-  idResponsavel:
+    example: -2147483648
     type: integer
   idProcessoPai:
-    type: integer
-  idArea:
+    example: -2147483648
     type: integer
   idPasta:
+    example: -2147483648
     type: integer
-  dsAssunto:
-    type: string
   idRito:
+    example: -2147483648
     type: integer
   idForo:
+    example: -2147483648
     type: integer
   cdNoForoVara:
+    example: -2147483648
     type: integer
   numeroSequencial:
     type: integer
@@ -39,19 +54,20 @@ properties:
     type: string
   classeDoProcesso:
     $ref: enums/ClasseDoCaso.yaml
-  tipo:
-    $ref: enums/RamosJudicial.yaml
   situacaoDoProcesso:
     $ref: enums/SituacaoDoCaso.yaml
   tituloProcesso:
+    description: "Título do processo"
     type: string
   observacao:
     type: string
   numeroInterno:
     type: string
   idContrato:
+    example: -2147483648
     type: integer
   idFase:
+    example: -2147483648
     type: integer
   nivel:
     type: string
@@ -90,6 +106,7 @@ properties:
     items:
       type: integer
   idProcessoNoFornecedorPush:
+    example: -2147483648
     type: integer
   nrFornecedorPush:
     type: integer
@@ -97,4 +114,10 @@ properties:
     type: array
     items:
       $ref: ParteParaLO.yaml
-  
+required:
+  - idCliente
+  - envolvimentoCliente
+  - idResponsavel
+  - idArea
+  - dsAssunto
+  - tipo

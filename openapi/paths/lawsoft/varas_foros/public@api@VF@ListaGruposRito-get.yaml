@@ -1,0 +1,24 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Varas e Foros
+summary: Lista grupos de rito
+operationId: api-VF-ListaGruposRito
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - name: gruposPrincipais
+    in: query
+    description: "Default: true"
+    required: false
+    schema:
+      type: boolean
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Response"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ResponseListaGruposRito.yaml
