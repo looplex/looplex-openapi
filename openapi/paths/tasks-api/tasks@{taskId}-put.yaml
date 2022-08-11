@@ -1,7 +1,7 @@
 tags:
   - Tasks
 summary: Replace
-description: Replace a whole task.
+description: Replace a task.
 operationId: putTaskUsingPUT
 parameters:
   - $ref: ../../components/parameters/TaskId.yaml

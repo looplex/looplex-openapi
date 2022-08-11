@@ -1,0 +1,82 @@
+
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: Documents
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
+  contact:
+    name: Developers Looplex
+    email: developer@looplex.com.br
+    url: "https://www.looplex.com.br"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  x-logo:
+    url: "/assets/images/logo.png"
+    href: "/"
+  description: >
+    # Graph
+    
+    Looplex Graph é grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.
+
+
+    # Começando
+
+    ...
+servers:
+  - url: "https://apim.looplex.com/api/v1/graph"
+    description: Graph server
+tags:
+  - name: Document Assembler
+    description: Document assembler operations
+  - name: Documents
+    description: Documents operations
+paths:
+  /docassembler/account/{accountId}/document/{docId}/answers:
+    get:
+      $ref: ./paths/graph/docassembler@account@{accountId}@document@{docId}@answers-get.yaml
+  /docassembler/account/{accountId}/document/{docId}/export:
+    get:
+      $ref: ./paths/graph/docassembler@account@{accountId}@document@{docId}@export-get.yaml
+  /docassembler/account/{accountId}/document/{docId}/import:
+    post:
+      $ref: ./paths/graph/docassembler@account@{accountId}@document@{docId}@import-post.yaml
+  /docassembler/account/{accountId}/document/{docId}/json:
+    post:
+      $ref: ./paths/graph/docassembler@account@{accountId}@document@{docId}@json-post.yaml
+  /docassembler/account/{accountId}/document/{docId}/revision-all-answers:
+    get:
+      $ref: ./paths/graph/docassembler@account@{accountId}@document@{docId}@revision-all-answers-get.yaml
+  /account/{accountId}/document:
+    post:
+      $ref: ./paths/graph/account@{accountId}@document-post.yaml
+    patch:
+      $ref: ./paths/graph/account@{accountId}@document-patch.yaml
+  /account/{accountId}/document/hide:
+    post:
+      $ref: ./paths/graph/account@{accountId}@document@hide-post.yaml
+  /account/{accountId}/document/unhide:
+    post:
+      $ref: ./paths/graph/account@{accountId}@document@unhide-post.yaml
+  /account/{accountId}/document/template/{templateIdentifier}:
+    get:
+      $ref: ./paths/graph/account@{accountId}@document@template@{templateIdentifier}-get.yaml
+  /account/{accountId}/document/{docId}:
+    get:
+      $ref: ./paths/graph/account@{accountId}@document@{docId}-get.yaml
+    delete:
+      $ref: ./paths/graph/account@{accountId}@document@{docId}-delete.yaml
+  /account/{accountId}/document/{docId}/rem:
+    delete:
+      $ref: ./paths/graph/account@{accountId}@document@{docId}@rem-delete.yaml
+  /graph/account/{accountId}/document/{docId}/s3:
+    delete:
+      $ref: ./paths/graph/account@{accountId}@document@{docId}@s3-delete.yaml
+components:
+  securitySchemes:
+    Subscription-Key:
+      $ref: ./components/securitySchemes/ocp_apim_subscription_key.yaml
+security:
+  -  Subscription-Key: []
+    
+  

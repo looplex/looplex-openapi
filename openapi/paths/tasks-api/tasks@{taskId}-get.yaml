@@ -1,7 +1,7 @@
 tags:
 - Tasks
-summary: Get tasks
-description: Get trees from the root's id.
+summary: Get task
+description: Get a task tree by its root id.
 operationId: getTaskByIdUsingGET
 parameters:
   - $ref: ../../components/parameters/TaskId.yaml

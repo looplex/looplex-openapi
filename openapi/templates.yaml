@@ -1,0 +1,45 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: Templates
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
+  contact:
+    name: Developers Looplex
+    email: developer@looplex.com.br
+    url: "https://www.looplex.com.br"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  x-logo:
+    url: "/assets/images/logo.png"
+    href: "/"
+  description: >
+    # Graph
+    
+    Looplex Graph é grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.
+
+
+    # Começando
+
+    ...
+servers:
+  - url: "https://apim.looplex.com/api/v1/templates"
+    description: Graph server
+tags:
+  - name: Template
+    description: Template operations
+paths:
+  /account/{accountId}/template:
+    get:
+      $ref: ./paths/graph/account@{accountId}@template-get.yaml
+  /account/{accountId}/template/{templateId}:
+    get:
+      $ref: ./paths/graph/account@{accountId}@template@{templateId}-get.yaml
+components:
+  securitySchemes:
+    Subscription-Key:
+      $ref: ./components/securitySchemes/ocp_apim_subscription_key.yaml
+security:
+  -  Subscription-Key: []
+    
+  

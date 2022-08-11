@@ -2,10 +2,12 @@ title: UpdateTaskRequest
 description: Update a task
 type: object
 properties:
-  customFields:
-    type: string
-    description: Json attribute to store custom fields related to the task
-    example: {"name":"ob1","port_type"}
+  assignee:
+    type: object
+    $ref: "./Assignee.yaml"
+  document:
+    type: object
+    $ref: "./TaskDocument.yaml"
   dueDate:
     type: string
     description: When the task should end

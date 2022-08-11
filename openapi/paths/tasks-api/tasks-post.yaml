@@ -1,15 +1,14 @@
 tags:
   - Tasks
 summary: Add task
-description: Add a new task or tree of tasks.
+description: Add a new tree of tasks.
 operationId: addTasksUsingPOST
 requestBody:
   content:
     application/json:
       schema:
-        type: array
-        items:
-          $ref: ../../components/schemas/tasks-api/CreateTaskRequest.yaml
+        type: object
+        $ref: ../../components/schemas/tasks-api/CreateTaskRequest.yaml
 responses:
   '200':
     description: OK
