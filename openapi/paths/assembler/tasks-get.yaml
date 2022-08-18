@@ -4,7 +4,7 @@ summary: Get organization tasks
 description: Return all the user's organization tasks.
 operationId: getOrgTasksUsingGET
 parameters:
-  - $ref: ../../components/parameters/tasks-api/filter.yaml
+  - $ref: ../../components/parameters/tasks-api/Filter.yaml
   - $ref: ../../components/parameters/PageSize.yaml
   - $ref: ../../components/parameters/Page.yaml
   - $ref: ../../components/parameters/tasks-api/SortBy.yaml

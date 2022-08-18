@@ -1,6 +1,6 @@
 tags:
   - Tasks
-summary: Add task
+summary: Create Tasks
 description: Add a new tree of tasks.
 operationId: addTasksUsingPOST
 requestBody:
