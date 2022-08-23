@@ -772,8 +772,6 @@ paths:
       description: ...
       operationId: docass-render
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
@@ -804,8 +802,6 @@ paths:
       description: ...
       operationId: headless-surf
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
@@ -820,8 +816,6 @@ paths:
       description: ...
       operationId: jsbox
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
@@ -836,8 +830,6 @@ paths:
       description: ...
       operationId: looplex-render
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
@@ -852,8 +844,6 @@ paths:
       description: ...
       operationId: mjml-render
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
@@ -868,8 +858,6 @@ paths:
       description: ...
       operationId: mustache-render
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
@@ -884,8 +872,6 @@ paths:
       description: ...
       operationId: pdf-converter
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
@@ -900,8 +886,6 @@ paths:
       description: ...
       operationId: word-converter
       parameters:
-        - $ref: '#/components/parameters/AccountId'
-        - $ref: '#/components/parameters/DocId'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':

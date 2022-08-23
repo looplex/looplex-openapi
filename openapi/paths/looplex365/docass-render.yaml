@@ -4,8 +4,6 @@ summary: Document Assembler Render
 description: ...
 operationId: docass-render
 parameters:
-  - $ref: ../../components/parameters/AccountId.yaml
-  - $ref: ../../components/parameters/DocId.yaml
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   '200':

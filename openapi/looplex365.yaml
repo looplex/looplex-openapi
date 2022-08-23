@@ -37,7 +37,7 @@ paths:
       $ref: ./paths/looplex365/headless-surf.yaml
   /looplex365/jsbox:
     post:
-      $ref: ./paths/looplex365/jsbox-post.yaml
+      $ref: ./paths/looplex365/jsbox.yaml
   /looplex365/looplex-render:
     post:
       $ref: ./paths/looplex365/looplex-render.yaml

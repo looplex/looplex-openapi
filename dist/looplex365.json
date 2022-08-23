@@ -42,12 +42,6 @@
         "operationId": "docass-render",
         "parameters": [
           {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
-          {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
@@ -94,12 +88,6 @@
         "operationId": "headless-surf",
         "parameters": [
           {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
-          {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
@@ -119,12 +107,6 @@
         "description": "...",
         "operationId": "jsbox",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
@@ -146,12 +128,6 @@
         "operationId": "looplex-render",
         "parameters": [
           {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
-          {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
@@ -171,12 +147,6 @@
         "description": "...",
         "operationId": "mjml-render",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
@@ -198,12 +168,6 @@
         "operationId": "mustache-render",
         "parameters": [
           {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
-          {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
@@ -224,12 +188,6 @@
         "operationId": "pdf-converter",
         "parameters": [
           {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
-          {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
@@ -249,12 +207,6 @@
         "description": "...",
         "operationId": "word-converter",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/AccountId"
-          },
-          {
-            "$ref": "#/components/parameters/DocId"
-          },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
@@ -277,6 +229,15 @@
       }
     },
     "parameters": {
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header",
+        "description": "Subscription key provided by Looplex",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "AccountId": {
         "name": "accountId",
         "in": "path",
@@ -298,15 +259,6 @@
         "schema": {
           "type": "integer",
           "format": "int64"
-        }
-      },
-      "OcpApimSubscriptionKey": {
-        "name": "Ocp-Apim-Subscription-Key",
-        "in": "header",
-        "description": "Subscription key provided by Looplex",
-        "required": true,
-        "schema": {
-          "type": "string"
         }
       }
     }

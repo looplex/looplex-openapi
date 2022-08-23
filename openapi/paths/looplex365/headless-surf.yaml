@@ -4,8 +4,6 @@ summary: Headless Surf
 description: ...
 operationId: headless-surf
 parameters:
-  - $ref: ../../components/parameters/AccountId.yaml
-  - $ref: ../../components/parameters/DocId.yaml
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   '200':
