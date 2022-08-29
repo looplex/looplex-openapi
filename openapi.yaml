@@ -164,7 +164,6 @@ x-tagGroups:
       - Timeline
       - Timesheet
       - Valores apurados
-      - Varas e Foros
     description: >
       This is an **example** API to demonstrate features of OpenAPI
       specification
@@ -176,6 +175,9 @@ x-tagGroups:
 
       [OpenAPI/Swagger
       format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
+  - name: looplex_varas_foros
+    tags:
+      - Varas e Foros
 servers:
   - url: https://graph.looplex.com/api/v1/assembler
     description: Graph server
@@ -183,6 +185,8 @@ servers:
     description: Looplex 365 Server
   - url: https://graph.looplex.com/cases
     description: Looplex Cases Server
+  - url: https://graph.looplex.com/varas_foros
+    description: Looplex Varas e Foros Server
 paths:
   /documents/{docId}/answers:
     get:

@@ -231,10 +231,15 @@
         "Tarefa",
         "Timeline",
         "Timesheet",
-        "Valores apurados",
-        "Varas e Foros"
+        "Valores apurados"
       ],
       "description": "This is an **example** API to demonstrate features of OpenAPI specification\n# Introduction\nThis API definition is intended to to be a good starting point for describing your API in \n[OpenAPI/Swagger format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).\n"
+    },
+    {
+      "name": "looplex_varas_foros",
+      "tags": [
+        "Varas e Foros"
+      ]
     }
   ],
   "servers": [
@@ -249,6 +254,10 @@
     {
       "url": "https://graph.looplex.com/cases",
       "description": "Looplex Cases Server"
+    },
+    {
+      "url": "https://graph.looplex.com/varas_foros",
+      "description": "Looplex Varas e Foros Server"
     }
   ],
   "paths": {
