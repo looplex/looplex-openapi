@@ -182,7 +182,7 @@ servers:
   - url: https://apim.looplex.com
     description: Looplex 365 Server
   - url: https://graph.looplex.com/cases
-    description: Looplex Cases
+    description: Looplex Cases Server
 paths:
   /documents/{docId}/answers:
     get:

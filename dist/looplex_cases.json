@@ -75,7 +75,7 @@
   "servers": [
     {
       "url": "https://graph.looplex.com/cases",
-      "description": "Looplex Cases"
+      "description": "Looplex Cases Server"
     }
   ],
   "paths": {
