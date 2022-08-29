@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   version: 1.0.0
-  title: Lawsoft
+  title: Looplex Cases
   termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
   contact:
     name: Developers Looplex
@@ -69,12 +69,8 @@ x-tagGroups:
       - Varas e Foros
       - País 
 servers:
-  - url: "https://www.sys.lawoffice.com.br"
-    description: Lawsoft server
-  - url: "https://lawsoft-apim.azure-api.net/lawsoft-api-internal"
-    description: "Lawsoft server"
-  - url: "https://localhost:5001"
-    description: "Lawsoft server localhost"
+  - url: "https://graph.looplex.com/cases"
+    description: "Looplex Cases"
 paths:
   # Session
   /api/mobilesession:

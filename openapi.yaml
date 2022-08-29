@@ -130,7 +130,7 @@ x-tagGroups:
       # Looplex 365
       # Começando
       ...
-  - name: lawsoft
+  - name: looplex_cases
     tags:
       - Login
       - Session
@@ -181,12 +181,8 @@ servers:
     description: Graph server
   - url: https://apim.looplex.com
     description: Looplex 365 Server
-  - url: https://www.sys.lawoffice.com.br
-    description: Lawsoft server
-  - url: https://lawsoft-apim.azure-api.net/lawsoft-api-internal
-    description: Lawsoft server
-  - url: https://localhost:5001
-    description: Lawsoft server localhost
+  - url: https://graph.looplex.com/cases
+    description: Looplex Cases
 paths:
   /documents/{docId}/answers:
     get:
