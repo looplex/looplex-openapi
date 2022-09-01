@@ -127,6 +127,9 @@ paths:
   /api/compromissos:
     get:
       $ref: './paths/lawsoft/agenda/public@api@compromissos-get.yaml'
+  /api/agenda/{id}/{tipo}:
+    get:
+      $ref: './paths/lawsoft/agenda/public@api@agenda@id@tipo-get.yaml'
       
   # Andamentos
   /api/andamentos/templates:

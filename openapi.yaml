@@ -1554,6 +1554,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/agenda/{id}/{tipo}:
+    get:
+      tags:
+        - Agenda
+      summary: Obtem item de agenda
+      description: Obtem as informações do item de agenda
+      operationId: api-agenda-id-tipo
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: id
+          in: path
+          description: Identificador do caso
+          required: true
+          schema:
+            type: integer
+        - name: tipo
+          in: path
+          description: Tipo do item de agenda
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoItemAgenda'
+      responses:
+        '200':
+          description: Resposta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   /api/andamentos/templates:
     get:
       tags:
