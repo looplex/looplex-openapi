@@ -1,11 +1,13 @@
 title: DTOTelefoneAdvogado
 type: object
 properties:
+  IDTelefone:
+    type: integer
   TipoTelefone:
     $ref: enums/TipoDeTelefone.yaml
   DDD:
     type: string
-  Numero:
+  Telefone:
     type: string
-  Ramal:
+  Extensao:
     type: string

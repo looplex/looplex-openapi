@@ -1033,7 +1033,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DTOItemAgenda'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgenda'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -1084,10 +1086,7 @@ paths:
         - name: agendaWeb
           in: query
           required: false
-          description: >-
-            Default: false. O Lawsoft Web deve passar true para que sejam
-            retornados os itens dos 15 dias anteriores e posteriores ao mês
-            informado.
+          description: 'Default: false'
           schema:
             type: boolean
       responses:
@@ -1098,7 +1097,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DTOItemAgenda'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgenda'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -1212,10 +1213,7 @@ paths:
         - name: agendaWeb
           in: query
           required: false
-          description: >-
-            Default: false. O Lawsoft Web deve passar true para que sejam
-            retornados os itens dos 15 dias anteriores e posteriores ao mês
-            informado.
+          description: 'Default: false'
           schema:
             type: boolean
       responses:
@@ -1226,7 +1224,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DTOItemAgenda'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgenda'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -1519,33 +1519,25 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/SubscriptionKey'
-        - name: idFuncionario
+        - name: idsFuncionarios
           in: query
-          description: O identificador do funcionário
+          description: Os identificadores dos funcionários
           required: true
           schema:
-            type: integer
-        - name: mes
+            type: string
+        - name: data
           in: query
-          description: O mês para pesquisa
+          description: A data para pesquisa
           required: true
           schema:
-            type: integer
-        - name: ano
-          in: query
-          description: O ano para pesquisa
-          required: true
-          schema:
-            type: integer
+            type: string
       responses:
         '200':
-          description: Os compromissos
+          description: Os compromissos serializados em JSON
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOCompromissoSimples'
+                type: string
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -1576,6 +1568,12 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/TipoItemAgenda'
+        - name: isPlatformWeb
+          in: query
+          required: false
+          description: 'Default: false'
+          schema:
+            type: boolean
       responses:
         '200':
           description: Resposta
@@ -1583,6 +1581,68 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/agenda/status_encerramento:
+    get:
+      tags:
+        - Agenda
+      summary: Status de encerramento (Agenda)
+      description: Lista os possíveis status de encerramento para um item de agenda
+      operationId: api-agenda-status_encerramento
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/SubscriptionKey'
+        - name: inCompromisso
+          in: query
+          example: 'true'
+          description: Status para Compromissos?
+          required: false
+          schema:
+            type: boolean
+        - name: inPrazo
+          in: query
+          example: 'false'
+          description: Status para prazos?
+          required: false
+          schema:
+            type: boolean
+        - name: inAtividadeExterna
+          in: query
+          example: 'false'
+          description: Status para atividade externa?
+          required: false
+          schema:
+            type: boolean
+        - name: inPublicacao
+          in: query
+          example: 'false'
+          description: Status para publicação?
+          required: false
+          schema:
+            type: boolean
+        - name: inAudiencia
+          in: query
+          example: 'false'
+          description: Status para audiência?
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Possíveis status de encerramento de item de agenda
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOStatusEncerramentoItemAgenda'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -8102,6 +8162,8 @@ components:
         4: Audiência, 
 
         10: Compromisso
+
+        11: Publicação
     SituacaoDoItemAgenda:
       type: integer
       example: 1
@@ -8134,6 +8196,9 @@ components:
       title: DTOItemAgenda
       type: object
       properties:
+        IDCaso:
+          type: integer
+          example: 10
         IDItemAgenda:
           type: integer
           example: 15
@@ -8143,54 +8208,30 @@ components:
             Se for uma subtarefa, esse valor é o identificador da tarefa pai,
             senão será null
           example: null
-        Tipo:
-          type: enum
-          $ref: '#/components/schemas/TipoItemAgenda'
-        Situacao:
-          type: integer
-          $ref: '#/components/schemas/SituacaoDoItemAgenda'
-        Data:
-          type: string
-          example: '2022-01-01T12:00:00'
-        DataFormatada:
-          type: string
-          example: 01/01/2022
-        DataLimite:
-          type: string
-          example: '2022-01-01T12:00:00'
-        DataLimiteFormatada:
-          type: string
-          example: 01/01/2022
-        Lembrete:
-          type: string
-          example: null
-        IDTitulocobranca:
-          type: integer
-          example: null
-        Titulo:
-          type: string
-          example: Item de agenda
-        IDCaso:
-          type: integer
-          example: 10
-        IDForo:
-          type: integer
-          example: 140
-        Observacao:
-          type: string
-          example: Observação do item de agenda
-        Local:
-          type: string
-          example: São Paulo
         IDFuncionarioCriador:
           type: integer
           example: 30
+        Tipo:
+          type: enum
+          $ref: '#/components/schemas/TipoItemAgenda'
+        Titulo:
+          type: string
+          example: Item de agenda
+        IDTitulocobranca:
+          type: integer
+          example: null
+        Data:
+          type: string
+          example: '2022-01-01T12:00:00'
+        Lembrete:
+          type: string
+          example: null
+        DataLimite:
+          type: string
+          example: '2022-01-01T12:00:00'
         FuncionarioExecutor:
           type: integer
           example: 30
-        NomeFuncionarioExecutor:
-          type: string
-          example: Nome do funcionário executor
         FuncionariosParticipantes:
           example:
             - 10
@@ -8198,14 +8239,40 @@ components:
           type: array
           items:
             type: integer
+        Observacao:
+          type: string
+          example: Observação do item de agenda
+        DataRealizacao:
+          type: string
+        IDStatusEncerramentoItemAgenda:
+          type: integer
+        ObservacaoRegistroRealizacao:
+          type: string
+          example: Observação da realização
+        Situacao:
+          type: integer
+          $ref: '#/components/schemas/SituacaoDoItemAgenda'
+        DataFormatada:
+          type: string
+          example: 01/01/2022
+        DataLimiteFormatada:
+          type: string
+          example: 01/01/2022
+        IDForo:
+          type: integer
+          example: 140
+        Local:
+          type: string
+          example: São Paulo
+        NomeFuncionarioExecutor:
+          type: string
+          example: Nome do funcionário executor
         DataCriacao:
           type: string
           example: '2022-01-01T12:00:00'
         DataCriacaoFormatada:
           type: string
           example: 01/01/2022
-        DataRealizacao:
-          type: string
         DataRealizacaoFormatada:
           type: string
           example: null
@@ -8215,18 +8282,25 @@ components:
         DataRegistroRealizacaoFormatada:
           type: string
           example: null
-        ObservacaoRegistroRealizacao:
-          type: string
-          example: Observação da realização
         SituacaoLembrete:
           $ref: '#/components/schemas/SituacaoLembrete'
         IsEditable:
           type: boolean
-        IDStatusEncerramentoItemAgenda:
-          type: integer
+        Concluido:
+          type: boolean
+          description: Indica se o item está concluído
         StatusEncerramentoItemAgenda:
           type: string
           example: ''
+        NomeClienteFormatado:
+          type: string
+          description: O nome do cliente do caso em que o item de agenda foi vinculado
+        AreaFormatada:
+          type: string
+          description: O nome da área do caso em que o item de agenda foi vinculado
+        TituloCasoFormatado:
+          type: string
+          description: O titulo do caso em que o item de agenda foi vinculado
     EstadoCivil:
       type: integer
       example: 1
@@ -8466,41 +8540,17 @@ components:
           type: integer
         Recorrencia:
           $ref: '#/components/schemas/DTORecorrenciaDeItemAgenda'
-    DTOCompromissoSimples:
-      name: DTOCompromissoSimples
+    DTOStatusEncerramentoItemAgenda:
+      title: DTOStatusEncerramentoItemAgenda
       type: object
       properties:
-        IDCompromisso:
-          description: O identificador do compromisso
+        IDStatusEncerramento:
+          description: Identificador do status
+          example: '10'
           type: integer
-        IDArea:
-          description: O identificador da área
-          type: integer
-        IDFuncionario:
-          description: Funcionário que criou o item de agenda
-          type: integer
-        IDFuncionarioResponsavel:
-          description: Funcionário responsável pelo item de agenda
-          type: integer
-        DataInicial:
-          description: A data do item de agenda
-          type: string
-        DataFinal:
-          description: A data limite do item de agenda
-          type: string
-        DataRealizacao:
-          description: A data em que foi concluido o item
-          type: string
-        Concluido:
-          description: Indica se o item está concluído
-          type: boolean
-        TipoItemAgenda:
-          $ref: '#/components/schemas/TipoItemAgenda'
         Titulo:
-          description: O título do item de agenda
-          type: string
-        Descricao:
-          description: A descrição do item de agenda
+          description: O status de encerramento
+          example: Item concluído
           type: string
     RamosJudicial:
       type: integer
@@ -10816,6 +10866,8 @@ components:
       title: DTOEnderecoParte
       type: object
       properties:
+        IDEnderecoParte:
+          type: integer
         Tipo:
           $ref: '#/components/schemas/TipoDeEndereco'
         CEP:
@@ -10855,6 +10907,8 @@ components:
       title: DTOTelefoneParte
       type: object
       properties:
+        IDTelefone:
+          type: integer
         TipoTelefone:
           $ref: '#/components/schemas/TipoDeTelefone'
         DDD:
@@ -10867,18 +10921,22 @@ components:
       title: DTOTelefoneAdvogado
       type: object
       properties:
+        IDTelefone:
+          type: integer
         TipoTelefone:
           $ref: '#/components/schemas/TipoDeTelefone'
         DDD:
           type: string
-        Numero:
+        Telefone:
           type: string
-        Ramal:
+        Extensao:
           type: string
     DTODadosAdvogado:
       title: DTODadosAdvogado
       type: object
       properties:
+        IDAdvogadoParte:
+          type: integer
         Nome:
           type: string
         Escritorio:
@@ -10910,6 +10968,16 @@ components:
           description: >-
             Se for menor ou igual a zero insere uma nova parte, senão, atualiza
             a parte de acordo com o identificador informado.
+        IdCliente:
+          type: integer
+        NrCliente:
+          type: integer
+        inContato:
+          type: boolean
+        inMigradoParaNovosContatos:
+          type: boolean
+        IdFuncionario:
+          type: integer
         Polo:
           $ref: '#/components/schemas/PoloLawOffice'
         TipoPessoa:
@@ -10934,6 +11002,8 @@ components:
           type: string
         TipoEnvolvimento:
           type: integer
+        TipoEnvolvimentoPapel:
+          type: string
         PoloPrincipal:
           type: boolean
         Observacoes:

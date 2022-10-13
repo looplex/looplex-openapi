@@ -1,6 +1,8 @@
 title: DTOTelefoneParte
 type: object
 properties:
+  IDTelefone:
+    type: integer
   TipoTelefone:
     $ref: enums/TipoDeTelefone.yaml
   DDD:

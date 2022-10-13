@@ -19,11 +19,11 @@ parameters:
       description: "Número do item de agenda"
 responses:
   "204":
-    description: O item de agenda foi excluído.
+    description: "O item de agenda foi excluído."
   "401":
-    description: Em caso de erro de timeout ou sessão expirada.
+    description: "Em caso de erro de timeout ou sessão expirada."
   "500":
-    description: Em caso de erro diferente de timeout ou sessão expirada.
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
     content:
       application/json:
         schema: 

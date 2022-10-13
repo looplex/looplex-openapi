@@ -8,7 +8,7 @@ parameters:
   - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
 responses:
   "200":
-    description: Retorna um array com os participantes.
+    description: "Retorna um array com os participantes."
     content:
       application/json:
         schema: 
@@ -16,9 +16,9 @@ responses:
           items:
             $ref: ../../../components/schemas/lawsoft/DTOFuncionario.yaml
   "401":
-    description: Em caso de erro de timeout ou sessão expirada.
+    description: "Em caso de erro de timeout ou sessão expirada."
   "500":
-    description: Em caso de erro diferente de timeout ou sessão expirada.
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
     content:
       application/json:
         schema: 

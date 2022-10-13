@@ -1,6 +1,8 @@
 title: DTODadosAdvogado
 type: object
 properties:
+  IDAdvogadoParte:
+    type: integer
   Nome:
     type: string
   Escritorio:

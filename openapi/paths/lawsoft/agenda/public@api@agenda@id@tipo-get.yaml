@@ -20,6 +20,12 @@ parameters:
     required: true
     schema:
       $ref: ../../../components/schemas/lawsoft/enums/TipoItemAgenda.yaml
+  - name: isPlatformWeb
+    in: query
+    required: false
+    description: "Default: false"
+    schema:
+      type: boolean
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

@@ -1,6 +1,8 @@
 title: DTOEnderecoParte
 type: object
 properties:
+  IDEnderecoParte:
+    type: integer
   Tipo:
     $ref: enums/TipoDeEndereco.yaml
   CEP:

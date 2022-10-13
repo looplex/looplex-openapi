@@ -13,7 +13,7 @@ parameters:
       $ref: ../../../components/schemas/lawsoft/enums/TipoItemAgenda.yaml
 responses:
   "200":
-    description: Retorna um array com os títulos de agenda.
+    description: "Retorna um array com os títulos de agenda."
     content:
       application/json:
         schema: 
@@ -21,9 +21,9 @@ responses:
           items:
             $ref: ../../../components/schemas/lawsoft/DTOTituloAgenda.yaml
   "401":
-    description: Em caso de erro de timeout ou sessão expirada.
+    description: "Em caso de erro de timeout ou sessão expirada."
   "500":
-    description: Em caso de erro diferente de timeout ou sessão expirada.
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
     content:
       application/json:
         schema: 

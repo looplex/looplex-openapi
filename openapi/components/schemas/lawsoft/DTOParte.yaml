@@ -4,6 +4,16 @@ properties:
   IdParte: 
     type: integer
     description: "Se for menor ou igual a zero insere uma nova parte, senão, atualiza a parte de acordo com o identificador informado."
+  IdCliente:
+    type: integer
+  NrCliente:
+    type: integer
+  inContato:
+    type: boolean
+  inMigradoParaNovosContatos:
+    type: boolean
+  IdFuncionario:
+    type: integer
   Polo:
     $ref: enums/PoloLawOffice.yaml
   TipoPessoa:
@@ -28,6 +38,8 @@ properties:
     type: string
   TipoEnvolvimento:
     type: integer
+  TipoEnvolvimentoPapel:
+    type: string
   PoloPrincipal:
     type: boolean
   Observacoes:

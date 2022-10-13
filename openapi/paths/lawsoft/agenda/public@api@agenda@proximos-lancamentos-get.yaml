@@ -30,7 +30,9 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
   "401":
     description: Em caso de erro de timeout ou sessão expirada.
   "500":

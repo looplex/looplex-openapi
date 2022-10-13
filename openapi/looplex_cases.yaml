@@ -130,7 +130,10 @@ paths:
   /api/agenda/{id}/{tipo}:
     get:
       $ref: './paths/lawsoft/agenda/public@api@agenda@id@tipo-get.yaml'
-      
+  /api/agenda/status_encerramento:
+    get:
+      $ref: './paths/lawsoft/agenda/public@api@agenda@status_encerramento-get.yaml'
+
   # Andamentos
   /api/andamentos/templates:
     get:
