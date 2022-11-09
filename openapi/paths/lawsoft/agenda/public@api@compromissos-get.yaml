@@ -29,7 +29,9 @@ responses:
     content:
       application/json:
         schema:
-          type: string
+          type: array
+          items:
+            ref: ../../../components/schemas/lawsoft/DTOCompromissoSimples.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
