@@ -1539,8 +1539,7 @@ paths:
               schema:
                 type: array
                 items:
-                  ref: >-
-                    ../../../components/schemas/lawsoft/DTOCompromissoSimples.yaml
+                  $ref: '#/components/schemas/DTOCompromissoSimples'
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -8558,6 +8557,57 @@ components:
           type: integer
         Recorrencia:
           $ref: '#/components/schemas/DTORecorrenciaDeItemAgenda'
+    DTOCompromissoSimples:
+      name: DTOCompromissoSimples
+      type: object
+      properties:
+        IDCompromisso:
+          description: O identificador do compromisso
+          type: integer
+        IDArea:
+          description: O identificador da área
+          type: integer
+        IDFuncionario:
+          description: Funcionário que criou o item de agenda
+          type: integer
+        IDFuncionarioResponsavel:
+          description: Funcionário responsável pelo item de agenda
+          type: integer
+        DataInicial:
+          description: A data do item de agenda
+          type: string
+        DataFinal:
+          description: A data limite do item de agenda
+          type: string
+        DataRealizacao:
+          description: A data em que foi concluido o item
+          type: string
+        Concluido:
+          description: Indica se o item está concluído
+          type: boolean
+        TipoItemAgenda:
+          $ref: '#/components/schemas/TipoItemAgenda'
+        Titulo:
+          description: O título do item de agenda
+          type: string
+        Descricao:
+          description: A descrição do item de agenda
+          type: string
+        NumeroLawOffice:
+          description: O numero do caso no LawOffice
+          type: integer
+        TituloCaso:
+          description: O titulo do caso
+          type: string
+        NumeroExternoCaso:
+          description: O numero externo do caso
+          type: string
+        Cliente:
+          description: O nome do cliente do caso
+          type: string
+        Executor:
+          description: O nome do executor do item de agenda
+          type: string
     DTOStatusEncerramentoItemAgenda:
       title: DTOStatusEncerramentoItemAgenda
       type: object
