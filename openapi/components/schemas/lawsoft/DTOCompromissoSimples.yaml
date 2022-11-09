@@ -33,3 +33,18 @@ properties:
   Descricao:
     description: "A descrição do item de agenda"
     type: string
+  NumeroLawOffice:
+    description: "O numero do caso no LawOffice"
+    type: integer
+  TituloCaso:
+    description: "O titulo do caso"
+    type: string
+  NumeroExternoCaso:
+    description: "O numero externo do caso"
+    type: string
+  Cliente:
+    description: "O nome do cliente do caso"
+    type: string
+  Executor:
+    description: "O nome do executor do item de agenda"
+    type: string
