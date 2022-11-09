@@ -25,7 +25,7 @@ parameters:
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Os compromissos serializados em JSON"
+    description: "Os compromissos"
     content:
       application/json:
         schema:

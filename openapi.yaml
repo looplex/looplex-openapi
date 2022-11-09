@@ -1533,7 +1533,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Os compromissos serializados em JSON
+          description: Os compromissos
           content:
             application/json:
               schema:
