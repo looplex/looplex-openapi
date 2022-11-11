@@ -73,6 +73,8 @@ servers:
   #   description: "Looplex Cases Server"
   - url: "https://sys.lawoffice.com.br"
     description: "Looplex Cases Server"
+  - url: "https://qamobileservice.lawoffice.com.br"
+    description: "Looplex Cases Server (Homologação)"
 paths:
   # Session
   /api/mobilesession:

@@ -256,6 +256,10 @@
       "description": "Looplex Cases Server"
     },
     {
+      "url": "https://qamobileservice.lawoffice.com.br",
+      "description": "Looplex Cases Server (Homologação)"
+    },
+    {
       "url": "https://graph.looplex.com/varas_foros",
       "description": "Looplex Varas e Foros Server"
     }
