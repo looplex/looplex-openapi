@@ -183,7 +183,7 @@ servers:
     description: Graph server
   - url: https://apim.looplex.com
     description: Looplex 365 Server
-  - url: https://graph.looplex.com/cases
+  - url: https://sys.lawoffice.com.br
     description: Looplex Cases Server
   - url: https://graph.looplex.com/varas_foros
     description: Looplex Varas e Foros Server
