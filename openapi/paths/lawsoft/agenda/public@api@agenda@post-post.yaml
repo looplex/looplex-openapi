@@ -5,7 +5,7 @@ description: Inclui o compromisso de agenda.
 operationId: api-agenda-post
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:

@@ -5,7 +5,7 @@ description: Obtém um array com os compromissos de agenda do caso de acordo com
 operationId: api-casos-idCaso-agenda
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
     required: true

@@ -5,7 +5,7 @@ description: Obtém uma lista de informações de funcionários de acordo com o 
 operationId: employees
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: ativos
     in: query
     required: false

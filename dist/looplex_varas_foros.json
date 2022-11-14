@@ -47,7 +47,7 @@
         "operationId": "api-VF-ListaPorNivel",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nivel",
@@ -82,7 +82,7 @@
         "operationId": "api-VF-ObtemFilhosPorPai",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "grupoId",
@@ -126,7 +126,7 @@
         "operationId": "api-VF-ObtemFilhosPorNomePai",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nomeNo",
@@ -171,7 +171,7 @@
         "operationId": "api-VF-ObtemPorID",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "no",
@@ -207,7 +207,7 @@
         "operationId": "api-VF-ListaHierarquia",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "no",
@@ -241,7 +241,7 @@
         "operationId": "api-VF-HierarquiaFormatadaDoNo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "no",
@@ -275,7 +275,7 @@
         "operationId": "api-VF-ListaRitosGrupoRitos",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipoPesquisa",
@@ -319,7 +319,7 @@
         "operationId": "api-VF-ListaGruposRito",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "gruposPrincipais",
@@ -354,7 +354,7 @@
         "operationId": "api-VF-ListaVinculoGrupoERito",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idVara",
@@ -390,7 +390,7 @@
         "operationId": "api-VF-ritosDoNo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdNo",
@@ -425,7 +425,7 @@
         "operationId": "api-VF-RitosDoGrupo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdGrupoRito",
@@ -460,7 +460,7 @@
         "operationId": "api-VF-cdNoPorNome",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nome",
@@ -497,7 +497,7 @@
         "operationId": "api-VF-ProximosNiveis",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdNo",
@@ -532,7 +532,7 @@
         "operationId": "api-VF-Categorias",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -568,10 +568,10 @@
       }
     },
     "parameters": {
-      "SubscriptionKey": {
-        "name": "SubscriptionKey",
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
         "in": "header",
-        "description": "Key to use the API provided by Lawsoft",
+        "description": "Subscription key provided by Looplex",
         "required": true,
         "schema": {
           "type": "string"

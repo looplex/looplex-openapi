@@ -5,7 +5,7 @@ description: Obtém uma lista de áreas do funcionário
 operationId: employeeAreas
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idFuncionario
     in: path
     required: true

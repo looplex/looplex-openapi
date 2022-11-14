@@ -4,7 +4,7 @@ summary: Decisão com valores
 operationId: api-Decisoes-id-get
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: id
     in: path
     required: true

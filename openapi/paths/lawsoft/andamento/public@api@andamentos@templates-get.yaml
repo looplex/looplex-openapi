@@ -5,7 +5,7 @@ description: Obtém um array com os templates de andamentos
 operationId: api-andamentos-templates
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: tipoCaso
     in: query
     required: true

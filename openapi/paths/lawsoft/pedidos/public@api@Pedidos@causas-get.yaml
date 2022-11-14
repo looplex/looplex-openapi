@@ -5,7 +5,7 @@ description:
 operationId: api-Pedidos-causas
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   "200":
     description: "Pedido causa"

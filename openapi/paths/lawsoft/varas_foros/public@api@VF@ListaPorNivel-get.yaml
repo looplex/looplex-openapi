@@ -5,7 +5,7 @@ summary: Lista por nível
 operationId: api-VF-ListaPorNivel
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nivel
     in: query
     example: "1"

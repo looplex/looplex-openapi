@@ -5,7 +5,7 @@ description: Quantidade de eventos de agenda do profissional para os próximos 7
 operationId: api-agenda-totaleventos
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   "200":
     description: Retorna a quantidade de eventos de agenda do profissional para os próximos 7 dias.

@@ -1,20 +1,26 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Despesas
-summary: Total de despesas por tipo
-description: Conta o total de despesa do funcionário por tipo no mês 
-operationId: api-despesas-totaldespesasmes
+  - Session
+summary: Login
+operationId: api-logon
+# Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  # Adicione aqui o body da requisição (se houver). Verificar menu "Copiar Body da requisição" 
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../../components/schemas/lawsoft/DTOUser.yaml
+# Responses
 responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: Total de despesas por tipo
+    description: "Resultado do login"
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/DTOTotalGastoDespesas.yaml
+          $ref: ../../../components/schemas/lawsoft/DTOLogonResult.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":

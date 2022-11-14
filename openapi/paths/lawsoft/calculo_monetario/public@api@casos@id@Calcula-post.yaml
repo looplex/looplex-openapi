@@ -6,7 +6,7 @@ operationId: api-casos-id-Calcula
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: id
     in: path
     required: true

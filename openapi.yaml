@@ -183,10 +183,8 @@ servers:
     description: Graph server
   - url: https://apim.looplex.com
     description: Looplex 365 Server
-  - url: https://sys.lawoffice.com.br
+  - url: https://graph.looplex.com/cases
     description: Looplex Cases Server
-  - url: https://qamobileservice.lawoffice.com.br
-    description: Looplex Cases Server (Homologação)
   - url: https://graph.looplex.com/varas_foros
     description: Looplex Varas e Foros Server
 paths:
@@ -894,20 +892,19 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  /api/mobilesession:
+  /api/logon:
     post:
       tags:
         - Session
-      summary: Login mobile
-      description: Login do Mobile
-      operationId: apiMobileLogin
+      summary: Login
+      operationId: api-logon
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoginParametro'
+              $ref: '#/components/schemas/DTOUser'
       responses:
         '200':
           description: Resultado do login
@@ -915,56 +912,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOLogonResult'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/session:
-    post:
-      tags:
-        - Session
-      summary: Login
-      description: Login para automatização
-      operationId: apiLogin
-      parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/LoginParametroSession'
-      responses:
-        '200':
-          description: Resultado do login.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResultadoDeLogin'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/logoff:
-    delete:
-      tags:
-        - Session
-      summary: Logoff
-      description: Efetua o logoff
-      operationId: apiLogout
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
-      responses:
-        '204':
-          description: Logoff efetuado corretamente.
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -982,7 +929,7 @@ paths:
       operationId: api-agenda-totaleventos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: >-
@@ -1008,7 +955,7 @@ paths:
       operationId: api-agenda-proximos-lancamentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: data
           in: query
           description: A data
@@ -1057,7 +1004,7 @@ paths:
       operationId: api-agenda-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           required: true
@@ -1118,7 +1065,7 @@ paths:
       operationId: api-agenda-post
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -1147,7 +1094,7 @@ paths:
       operationId: api-agenda-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -1179,7 +1126,7 @@ paths:
       operationId: api-casos-idCaso-agenda
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -1246,7 +1193,7 @@ paths:
       operationId: api-agenda-tipo-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipo
           in: path
           required: true
@@ -1278,7 +1225,7 @@ paths:
       operationId: api-agenda-executores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Retorna um array com os executores.
@@ -1305,7 +1252,7 @@ paths:
       operationId: api-agenda-participantes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Retorna um array com os participantes.
@@ -1332,7 +1279,7 @@ paths:
       operationId: api-agenda-titulos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipo
           in: query
           required: true
@@ -1364,7 +1311,7 @@ paths:
       operationId: api-casos-idCaso-audiencias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -1396,7 +1343,7 @@ paths:
       operationId: api-casos-num-audiencias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -1440,7 +1387,7 @@ paths:
       operationId: api-casos-idCaso-tabagenda
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           example: 'Exemplo: [1, 10]'
@@ -1475,7 +1422,7 @@ paths:
       operationId: api-casos-num-tabagenda
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -1520,7 +1467,7 @@ paths:
       operationId: api-compromissos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idsFuncionarios
           in: query
           description: Os identificadores dos funcionários
@@ -1559,7 +1506,7 @@ paths:
       operationId: api-agenda-id-tipo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           description: Identificador do caso
@@ -1602,7 +1549,7 @@ paths:
       operationId: api-agenda-status_encerramento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: inCompromisso
           in: query
           example: 'true'
@@ -1664,7 +1611,7 @@ paths:
       operationId: api-andamentos-templates
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipoCaso
           in: query
           required: true
@@ -1696,7 +1643,7 @@ paths:
       operationId: api-andamentos-classificacoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Retorna um array com as classificações de andamento do escritório.
@@ -1726,7 +1673,7 @@ paths:
         api-casos-idCaso-andamentos-data-primeiraLeitura-totalAndamentosLidosPeloMobile
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -1776,7 +1723,7 @@ paths:
       operationId: api-casos-idCaso-andamentosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -1810,7 +1757,7 @@ paths:
       operationId: api-casos-num-andamentosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -1854,7 +1801,7 @@ paths:
       operationId: api-andamentos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -1884,7 +1831,7 @@ paths:
       operationId: api-andamentos-post
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -1914,7 +1861,7 @@ paths:
       operationId: api-andamentos-idAndamento-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idAndamento
           in: path
           required: true
@@ -1948,7 +1895,7 @@ paths:
       operationId: api-andamentos-idAndamento-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idAndamento
           in: path
           required: true
@@ -1974,7 +1921,7 @@ paths:
       operationId: api-andamentos-update-idAndamento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idAndamento
           in: path
           required: true
@@ -2011,7 +1958,7 @@ paths:
       operationId: api-areas-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -2052,7 +1999,7 @@ paths:
       operationId: api-areas-porDomain-domain
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: domain
           in: path
           required: true
@@ -2084,7 +2031,7 @@ paths:
       operationId: api-areas-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2114,7 +2061,7 @@ paths:
       operationId: api-busca-mobilenovo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: termo
           in: query
           required: true
@@ -2161,7 +2108,7 @@ paths:
       operationId: api-casos-cdProcesso-CalculosMonetarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdProcesso
           in: path
           required: true
@@ -2192,7 +2139,7 @@ paths:
       operationId: api-CalculoMonetario-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2220,7 +2167,7 @@ paths:
       operationId: api-CalculoMonetario-id-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2245,7 +2192,7 @@ paths:
       operationId: api-casos-id-Calcula
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2284,7 +2231,7 @@ paths:
       operationId: api-CalculoMonetario-Indices
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Indices monetários
@@ -2310,7 +2257,7 @@ paths:
       operationId: api-CalculoMonetario-Modelos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Modelos de cálculo
@@ -2336,7 +2283,7 @@ paths:
       operationId: api-CalculoMonetario-Modelos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2365,7 +2312,7 @@ paths:
       operationId: api-casos-id-ValoresParaCalculo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2397,7 +2344,7 @@ paths:
       operationId: api-casos-inclui
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -2431,7 +2378,7 @@ paths:
       operationId: api-clientes-idCliente-casos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -2481,7 +2428,7 @@ paths:
       operationId: api-clientes-idCliente-pastas
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -2513,7 +2460,7 @@ paths:
       operationId: api-casos-idCliente-pastasDoCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -2545,7 +2492,7 @@ paths:
       operationId: api-casos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2575,7 +2522,7 @@ paths:
       operationId: api-casos-id-ficha
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -2607,7 +2554,7 @@ paths:
       operationId: api-casos-id-ficha-num
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -2651,7 +2598,7 @@ paths:
       operationId: api-casos-meuscasos-cdResponsavel
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdResponsavel
           in: path
           required: true
@@ -2683,7 +2630,7 @@ paths:
       operationId: api-casos-RamosJudiciais
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os ramos judiciais
@@ -2710,7 +2657,7 @@ paths:
       operationId: api-casos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -2749,7 +2696,7 @@ paths:
       operationId: api-casos-id-num
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -2791,7 +2738,7 @@ paths:
       operationId: api-casos-porIds-ids
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ids
           in: path
           example: '[1, 10]'
@@ -2828,7 +2775,7 @@ paths:
       operationId: api-casos-num
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdProcesso
           in: query
           example: '[1, 10]'
@@ -2879,7 +2826,7 @@ paths:
       operationId: api-casos-busca
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: termo
           in: query
           required: true
@@ -2923,7 +2870,7 @@ paths:
       operationId: api-casos-edit
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: query
           required: true
@@ -2960,7 +2907,7 @@ paths:
       operationId: api-casos-listacasos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           required: false
@@ -3001,7 +2948,7 @@ paths:
       operationId: api-escritorios-IdEscritorio-intfiltroCategoria-categoriaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdEscritorio
           in: path
           required: true
@@ -3040,7 +2987,7 @@ paths:
       operationId: api-escritorios-IdEscritorio-categoriaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdEscritorio
           in: path
           required: true
@@ -3072,7 +3019,7 @@ paths:
       operationId: api-funcionarios-IdsMin-IdsMax-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdsMin
           in: path
           required: true
@@ -3109,7 +3056,7 @@ paths:
       operationId: api-clientes-todos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém uma lista com todos os clientes
@@ -3136,7 +3083,7 @@ paths:
       operationId: api-clientes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -3187,7 +3134,7 @@ paths:
       operationId: api-clientes-enderecos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém um array com os endereços dos clientes
@@ -3214,7 +3161,7 @@ paths:
       operationId: api-clientes-porDomain-domain
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: domain
           in: path
           required: true
@@ -3246,7 +3193,7 @@ paths:
       operationId: api-clientes-ficha
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: query
           required: true
@@ -3276,7 +3223,7 @@ paths:
       operationId: api-clientes-ficha-mobile
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: query
           required: true
@@ -3306,7 +3253,7 @@ paths:
       operationId: api-clientes-mobile
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -3359,7 +3306,7 @@ paths:
       operationId: api-clientes-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -3393,7 +3340,7 @@ paths:
       operationId: api-clientes-porIds-idsClientes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idsClientes
           in: path
           example: '[1, 15]'
@@ -3428,7 +3375,7 @@ paths:
       operationId: api-clientes-idCliente-pasta
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -3457,7 +3404,7 @@ paths:
       operationId: api-contatos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -3487,7 +3434,7 @@ paths:
       operationId: api-contatos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém uma lista de contatos
@@ -3514,7 +3461,7 @@ paths:
       operationId: api-clientes-idCliente-contatos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -3546,7 +3493,7 @@ paths:
       operationId: api-contatos-solicitantes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: codCliente
           in: query
           required: true
@@ -3577,7 +3524,7 @@ paths:
       description: Obtém a conta de acesso por nome
       operationId: api-ContaDeAcesso-ObtemContaDeAcesso
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nomeUsuario
           in: query
           required: true
@@ -3611,7 +3558,7 @@ paths:
       description: Obtém a conta de acesso por nome
       operationId: api-ContaDeAcesso-ObtemContaDeAcesso2
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nomeUsuario
           in: query
           required: false
@@ -3646,7 +3593,7 @@ paths:
       operationId: api-contratos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -3685,7 +3632,7 @@ paths:
       operationId: api-casos-idCaso-contratosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -3715,7 +3662,7 @@ paths:
       operationId: api-contratos-idCliente-contratosCliente
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -3759,7 +3706,7 @@ paths:
       operationId: api-clientes-idCliente-contratos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -3803,7 +3750,7 @@ paths:
       operationId: api-contratos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -3835,7 +3782,7 @@ paths:
       operationId: api-casos-idCaso-dadoscomplementares
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -3871,7 +3818,7 @@ paths:
       operationId: api-casos-num-dadoscomplementares
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -3915,7 +3862,7 @@ paths:
       operationId: api-casos-idCaso-Decisoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           example: '100'
@@ -3947,7 +3894,7 @@ paths:
       operationId: api-casos-num-decisoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           example: '10'
@@ -3989,7 +3936,7 @@ paths:
       operationId: api-Decisoes-tipos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém um array com os tipos de decisões
@@ -4015,7 +3962,7 @@ paths:
       operationId: api-Decisoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -4040,7 +3987,7 @@ paths:
       operationId: api-Decisoes-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -4068,7 +4015,7 @@ paths:
       operationId: api-Decisoes-id-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -4098,7 +4045,7 @@ paths:
       operationId: api-casos-idCaso-DecisoesComValores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -4129,7 +4076,7 @@ paths:
       operationId: api-Decisoes-idProcessoDecisao
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idProcessoDecisao
           in: path
           required: true
@@ -4155,7 +4102,7 @@ paths:
       operationId: api-despesas-totaldespesasmes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Total de despesas por tipo
@@ -4180,7 +4127,7 @@ paths:
       operationId: api-despesas-proximoslancamentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: dataDespesaString
           in: query
           required: true
@@ -4210,7 +4157,7 @@ paths:
       operationId: api-despesas-adiantamentosliberados
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os adiantamentos em aberto
@@ -4235,7 +4182,7 @@ paths:
       operationId: api-despesas-adiantamentos-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém as categorias de adiantamento
@@ -4260,7 +4207,7 @@ paths:
       operationId: api-despesas-adiantamentos-fornecedores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os fornecedores de adiantamento
@@ -4285,7 +4232,7 @@ paths:
       operationId: api-despesas-reembolsos-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém as categorias de reembolso
@@ -4310,7 +4257,7 @@ paths:
       operationId: api-despesas-reembolsos-fornecedores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os fornecedores de reembolso
@@ -4334,7 +4281,7 @@ paths:
       operationId: api-despesas-voucher
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os vouchers permitidos ao funcionário
@@ -4358,7 +4305,7 @@ paths:
       operationId: api-despesas-voucher-idVoucher-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idVoucher
           in: path
           required: true
@@ -4387,7 +4334,7 @@ paths:
       operationId: api-despesas-voucher-idVoucher-fornecedores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idVoucher
           in: path
           required: true
@@ -4416,7 +4363,7 @@ paths:
       operationId: api-despesas-obtem
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           example: '2022'
@@ -4458,7 +4405,7 @@ paths:
       operationId: api-despesas-obtem-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -4487,7 +4434,7 @@ paths:
       operationId: api-despesas-inclui
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: selecionaAprovador
           in: query
           required: false
@@ -4522,7 +4469,7 @@ paths:
       operationId: api-despesas-atualiza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: selecionaAprovador
           in: query
           description: 'Default: false'
@@ -4557,7 +4504,7 @@ paths:
       operationId: api-despesas-exclui-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -4582,7 +4529,7 @@ paths:
       operationId: api-despesas-valorKMRodado
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Valor do KM rodado
@@ -4605,7 +4552,7 @@ paths:
       operationId: api-casos-idCaso-Valores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -4634,7 +4581,7 @@ paths:
       operationId: api-casos-idCaso-PedidosComHistorico
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -4663,7 +4610,7 @@ paths:
       operationId: api-expectativa-valores-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -4693,7 +4640,7 @@ paths:
       operationId: api-casos-fase-nrGrupo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrGrupo
           in: path
           required: true
@@ -4725,7 +4672,7 @@ paths:
       operationId: api-casos-nrSequencia-fase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrSequencia
           in: path
           required: true
@@ -4757,7 +4704,7 @@ paths:
       operationId: api-casos-num-fase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -4803,7 +4750,7 @@ paths:
       operationId: employeesByIdentifiers
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ids
           in: path
           example: '[10,20]'
@@ -4842,7 +4789,7 @@ paths:
       operationId: employeeByIdentifier
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           example: '10'
@@ -4877,7 +4824,7 @@ paths:
       operationId: employees
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           required: false
@@ -4920,7 +4867,7 @@ paths:
       operationId: employeesByAreaIdentifier
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idArea
           in: path
           required: true
@@ -4966,7 +4913,7 @@ paths:
       operationId: employeeAreas
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idFuncionario
           in: path
           required: true
@@ -5000,7 +4947,7 @@ paths:
       operationId: api-escritorios-IdEscritorio-funcionarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdEscritorio
           in: path
           required: true
@@ -5034,7 +4981,7 @@ paths:
       operationId: api-escritorios-funcionarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém uma lista de informações dos funcionários ativos do escritório
@@ -5061,7 +5008,7 @@ paths:
       operationId: api-casos-Garantia-idCasoGarantia
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCasoGarantia
           in: path
           description: O identificador da garantia
@@ -5092,7 +5039,7 @@ paths:
       operationId: api-casos-idCaso-Garantias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -5123,7 +5070,7 @@ paths:
       operationId: api-TiposGarantia
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Tipos de garantia
@@ -5152,7 +5099,7 @@ paths:
       operationId: api-casos-num-garantias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           description: 'Default: 0'
@@ -5196,7 +5143,7 @@ paths:
       operationId: api-casos-Garantia-Inclui-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           description: O identificador do caso
@@ -5230,7 +5177,7 @@ paths:
       operationId: api-casos-Garantia-Atualiza-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           description: O identificador do caso
@@ -5266,7 +5213,7 @@ paths:
       operationId: api-casos-GarantiaMovimentacao-Exclui-idGarantiaMovimentacao
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idGarantiaMovimentacao
           in: path
           example: '1'
@@ -5299,7 +5246,7 @@ paths:
       operationId: api-casos-Garantia-IncluiMovimentacao
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           example: 1
@@ -5337,7 +5284,7 @@ paths:
       operationId: api-hierarquia-ritos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrClasse
           in: query
           required: false
@@ -5384,7 +5331,7 @@ paths:
       operationId: api-hierarquia-tipos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os tipos de processos administrativos
@@ -5411,7 +5358,7 @@ paths:
       operationId: api-hierarquia-regioes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -5445,7 +5392,7 @@ paths:
       operationId: api-hierarquia-grupoforoportipo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -5499,7 +5446,7 @@ paths:
       operationId: api-hierarquia-grupoforo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -5548,7 +5495,7 @@ paths:
       operationId: api-hierarquia-grupoforosuperiores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: true
@@ -5580,7 +5527,7 @@ paths:
       operationId: api-hierarquia-GrupoForoDetalhado
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdGrupoForo
           in: query
           required: true
@@ -5615,7 +5562,7 @@ paths:
       operationId: statesByRegion
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: regiao
           in: query
           required: true
@@ -5651,7 +5598,7 @@ paths:
       operationId: api-hierarquia-fases
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -5682,7 +5629,7 @@ paths:
       operationId: api-casos-idCaso-natureza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -5716,7 +5663,7 @@ paths:
       operationId: api-casos-num-natureza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           description: 'Default: 0'
@@ -5761,7 +5708,7 @@ paths:
       operationId: countries
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém a lista de países
@@ -5788,7 +5735,7 @@ paths:
       operationId: statesOfBrazil
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém a lista de estados do Brasil
@@ -5815,7 +5762,7 @@ paths:
       operationId: citiesByState
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: uf
           in: query
           description: UF para obter as cidades
@@ -5849,7 +5796,7 @@ paths:
       operationId: getPartsByTerm
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nome
           in: query
           description: Termo de pesquisa. Mínimo de 4 caracteres
@@ -5882,7 +5829,7 @@ paths:
       operationId: linkedPartsByCase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -5914,7 +5861,7 @@ paths:
       operationId: postOrUpdateParts
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -5950,7 +5897,7 @@ paths:
       operationId: deletePart
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdParte
           in: path
           description: O identificador da parte
@@ -5981,7 +5928,7 @@ paths:
       operationId: unlinkPartFromCase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: processo
           in: query
           required: true
@@ -6012,7 +5959,7 @@ paths:
       operationId: apiEnvolvimentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipoProcesso
           in: query
           required: true
@@ -6054,7 +6001,7 @@ paths:
       operationId: api-push-publicacoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           required: true
@@ -6107,7 +6054,7 @@ paths:
       operationId: api-escritorios-idEscritorio-tabelaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idEscritorio
           in: path
           required: true
@@ -6138,7 +6085,7 @@ paths:
       operationId: api-escritorios-idEscritorio-tabelasprecocategoria
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idEscritorio
           in: path
           required: true
@@ -6169,7 +6116,7 @@ paths:
       operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdProcesso
           in: path
           required: true
@@ -6216,7 +6163,7 @@ paths:
       operationId: api-timeline-items
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: paginaAtual
           in: query
           example: 1
@@ -6328,7 +6275,7 @@ paths:
       operationId: api-timesheet-totalhoras
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Total de horas lançadas
@@ -6351,7 +6298,7 @@ paths:
       operationId: api-timesheet-proximoslancamentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Lançamentos
@@ -6378,7 +6325,7 @@ paths:
       operationId: api-timesheet-activitycodes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Activity Codes
@@ -6405,7 +6352,7 @@ paths:
       operationId: api-timesheet-taskcodes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Task Codes
@@ -6431,7 +6378,7 @@ paths:
       operationId: api-timesheet-listaporperiodo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrAplicabilidade
           in: query
           example: '1'
@@ -6475,7 +6422,7 @@ paths:
       operationId: api-timesheet-obtemmaisrecente
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrAplicabilidade
           in: query
           required: true
@@ -6508,7 +6455,7 @@ paths:
       operationId: api-timesheet-obtem
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           required: true
@@ -6544,7 +6491,7 @@ paths:
       operationId: api-timesheet-funcionarios-idFuncionario-areas
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idFuncionario
           in: path
           required: true
@@ -6575,7 +6522,7 @@ paths:
       operationId: api-timesheet-areas-idArea-titulos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idArea
           in: path
           required: true
@@ -6606,7 +6553,7 @@ paths:
       operationId: api-timesheet-funcionarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Funcionários para lançamento de horas
@@ -6632,7 +6579,7 @@ paths:
       operationId: api-timesheet-funcionarios-permissaolcto-idFuncionario
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idFuncionario
           in: path
           required: true
@@ -6663,7 +6610,7 @@ paths:
       operationId: api-timesheet-classificacoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Classificações
@@ -6689,7 +6636,7 @@ paths:
       operationId: api-casos-idCaso-timesheet
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -6730,7 +6677,7 @@ paths:
       operationId: api-timesheet-caso-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -6761,7 +6708,7 @@ paths:
       operationId: api-timesheet-obtem-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -6790,7 +6737,7 @@ paths:
       operationId: api-timesheet-inclui
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -6819,7 +6766,7 @@ paths:
       operationId: api-timesheet-incluiWeb
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -6848,7 +6795,7 @@ paths:
       operationId: api-timesheet-atualizaWeb
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -6877,7 +6824,7 @@ paths:
       operationId: api-timesheet-atualiza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -6906,7 +6853,7 @@ paths:
       operationId: api-timesheet-exclui-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           description: O identificador do lançamento de hora
@@ -6933,7 +6880,7 @@ paths:
       operationId: api-timesheet-limiteMinimo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Limite mínimo
@@ -6957,7 +6904,7 @@ paths:
       operationId: api-timesheet-arredondamento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Arredondamento
@@ -6980,7 +6927,7 @@ paths:
       operationId: api-casos-idCaso-valoresapurados
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -7014,7 +6961,7 @@ paths:
       operationId: api-casos-num-valoresapurados
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           description: 'Default: 0'
@@ -7057,7 +7004,7 @@ paths:
       summary: Lista por nível
       operationId: api-VF-ListaPorNivel
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nivel
           in: query
           example: '1'
@@ -7078,7 +7025,7 @@ paths:
       summary: Obtém filhos por pai
       operationId: api-VF-ObtemFilhosPorPai
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: grupoId
           in: query
           example: '10'
@@ -7105,7 +7052,7 @@ paths:
       summary: Obtém itens filhos por nome pai
       operationId: api-VF-ObtemFilhosPorNomePai
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nomeNo
           in: query
           example: Judicial Estadual
@@ -7133,7 +7080,7 @@ paths:
       summary: Obtém item por identificador
       operationId: api-VF-ObtemPorID
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: 'no'
           in: query
           description: identificador do item
@@ -7155,7 +7102,7 @@ paths:
       description: Obtém a hierarquia do item informado
       operationId: api-VF-ListaHierarquia
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: 'no'
           in: query
           required: true
@@ -7175,7 +7122,7 @@ paths:
       summary: Hierarquia formatada do item
       operationId: api-VF-HierarquiaFormatadaDoNo
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: 'no'
           in: query
           required: true
@@ -7195,7 +7142,7 @@ paths:
       summary: Lista ritos e grupos de ritos
       operationId: api-VF-ListaRitosGrupoRitos
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipoPesquisa
           in: query
           required: true
@@ -7222,7 +7169,7 @@ paths:
       summary: Lista grupos de rito
       operationId: api-VF-ListaGruposRito
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: gruposPrincipais
           in: query
           description: 'Default: true'
@@ -7243,7 +7190,7 @@ paths:
       summary: Vinculos de grupo e rito
       operationId: api-VF-ListaVinculoGrupoERito
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idVara
           in: query
           example: '3210'
@@ -7265,7 +7212,7 @@ paths:
       summary: Ritos do item
       operationId: api-VF-ritosDoNo
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdNo
           in: query
           required: true
@@ -7286,7 +7233,7 @@ paths:
       description: Obtém os ritos do grupo informado
       operationId: api-VF-RitosDoGrupo
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdGrupoRito
           in: query
           description: O identificador do grupo de ritos
@@ -7307,7 +7254,7 @@ paths:
       summary: Obtém identificador por nome
       operationId: api-VF-cdNoPorNome
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nome
           in: query
           example: Judicial Estadual
@@ -7330,7 +7277,7 @@ paths:
       description: Obtém os próximos níveis depois do item informado (2 no máximo).
       operationId: api-VF-ProximosNiveis
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdNo
           in: query
           description: O identificado do item
@@ -7351,7 +7298,7 @@ paths:
       summary: Categorias
       operationId: api-VF-Categorias
       parameters:
-        - $ref: '#/components/parameters/SubscriptionKey'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Response
@@ -7531,13 +7478,6 @@ components:
       schema:
         type: integer
         format: int64
-    SubscriptionKey:
-      name: SubscriptionKey
-      in: header
-      description: Key to use the API provided by Lawsoft
-      required: true
-      schema:
-        type: string
     Profile:
       name: Profile
       in: header
@@ -8062,35 +8002,18 @@ components:
       title: DTOUser
       type: object
       properties:
-        user:
-          type: string
-          description: Login
-        pwd:
-          type: string
-          description: Senha
-        domain:
-          type: string
-          description: Escritório
-    LoginParametro:
-      type: object
-      properties:
         User:
-          $ref: '#/components/schemas/DTOUser'
-        Version:
-          type: string
-          description: A versão do aparelho
-        DeviceIdentification:
-          type: string
-          description: Identificação do dispositivo
-        Workstation:
-          type: string
-          description: Não lembro o que é
-        AccessCode:
-          type: string
-          description: Código de acesso
-        NovoMobile:
-          type: boolean
-          description: Efetuar login apenas com o app novo
+          type: object
+          properties:
+            user:
+              type: string
+              description: Login
+            pwd:
+              type: string
+              description: Senha
+            domain:
+              type: string
+              description: Escritório
     FuncionarioLogin:
       title: FuncionarioLogin
       type: object
@@ -8132,29 +8055,6 @@ components:
         StackTrace:
           type: string
           description: Local da exception
-    LoginParametroSession:
-      type: object
-      properties:
-        escritorio:
-          type: string
-          description: Nome do escritório
-        token:
-          type: string
-          description: Token obtido no Lawsoft client
-    ResultadoDeLogin:
-      title: ResultadoDeLogin
-      type: object
-      properties:
-        Context:
-          type: string
-          description: Contexto de login
-          example: contexto
-        Successfull:
-          type: boolean
-          description: Indica se o login foi efetuado com sucesso
-        ErrorMessage:
-          type: string
-          description: Indica o erro ocorrido no login, caso houver.
     TipoItemAgenda:
       type: integer
       example: 1

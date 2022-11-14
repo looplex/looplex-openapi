@@ -1,6 +1,0 @@
-name: SubscriptionKey
-in: header
-description: Key to use the API provided by Lawsoft
-required: true
-schema:
-  type: string

@@ -5,7 +5,7 @@ description: Casos por identificador, numero interno ou numero externo
 operationId: api-casos-id-num
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: NumeroInterno
     in: query
     required: false

@@ -5,7 +5,7 @@ description: Obtém a lista de clientes para o mobile de acordo com o filtro inf
 operationId: api-clientes-mobile
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: ativos
     in: query
     description: "Default: true"

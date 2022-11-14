@@ -5,7 +5,7 @@ description: Obtém os envolvimentos das partes de acordo com o tipo de cadastro
 operationId: apiEnvolvimentos
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: tipoProcesso
     in: query
     required: true

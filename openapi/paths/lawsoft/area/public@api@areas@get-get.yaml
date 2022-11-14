@@ -5,7 +5,7 @@ description: Retorna um array com as áreas encontradas de acordo com o filtro i
 operationId: api-areas-get
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: ativos
     in: query
     description: "Default: true"

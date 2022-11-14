@@ -6,7 +6,7 @@ operationId: api-timesheet-obtemmaisrecente
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nrAplicabilidade
     in: query
     required: true

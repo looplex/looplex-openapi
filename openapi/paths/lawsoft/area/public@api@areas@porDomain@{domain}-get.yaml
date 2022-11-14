@@ -5,7 +5,7 @@ description: Retorna um array com as áreas de acordo com o escritório informad
 operationId: api-areas-porDomain-domain
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: domain
     in: path
     required: true

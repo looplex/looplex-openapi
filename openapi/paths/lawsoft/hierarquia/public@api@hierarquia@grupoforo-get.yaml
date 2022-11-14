@@ -5,7 +5,7 @@ description: Obtém os grupos de foro por ramo de justiça, estado e grupo de fa
 operationId: api-hierarquia-grupoforo
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nrRamoJudicial
     in: query
     required: false

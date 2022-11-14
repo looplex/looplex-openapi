@@ -7,7 +7,7 @@ operationId: api-casos-GarantiaMovimentacao-Exclui-idGarantiaMovimentacao
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idGarantiaMovimentacao
     in: path
     example: "1"

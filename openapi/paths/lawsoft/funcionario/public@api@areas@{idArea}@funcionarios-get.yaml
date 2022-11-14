@@ -5,7 +5,7 @@ description: Obtém uma lista de informações dos funcionários de acordo com a
 operationId: employeesByAreaIdentifier
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idArea
     in: path
     required: true

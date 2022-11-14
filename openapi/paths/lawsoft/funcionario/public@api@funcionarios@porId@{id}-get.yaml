@@ -5,7 +5,7 @@ description: Obtém as informações do funcionário de acordo com o identificad
 operationId: employeeByIdentifier
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: id
     in: path
     example: "10"

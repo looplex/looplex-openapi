@@ -5,7 +5,7 @@ description: Obtém um array com as informações do clientes de acordo com os i
 operationId: api-clientes-porIds-idsClientes
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idsClientes
     in: path
     example: "[1, 15]"

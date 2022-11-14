@@ -74,33 +74,28 @@
   ],
   "servers": [
     {
-      "url": "https://sys.lawoffice.com.br",
+      "url": "https://graph.looplex.com/cases",
       "description": "Looplex Cases Server"
-    },
-    {
-      "url": "https://qamobileservice.lawoffice.com.br",
-      "description": "Looplex Cases Server (Homologação)"
     }
   ],
   "paths": {
-    "/api/mobilesession": {
+    "/api/logon": {
       "post": {
         "tags": [
           "Session"
         ],
-        "summary": "Login mobile",
-        "description": "Login do Mobile",
-        "operationId": "apiMobileLogin",
+        "summary": "Login",
+        "operationId": "api-logon",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginParametro"
+                "$ref": "#/components/schemas/DTOUser"
               }
             }
           }
@@ -115,91 +110,6 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada"
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/session": {
-      "post": {
-        "tags": [
-          "Session"
-        ],
-        "summary": "Login",
-        "description": "Login para automatização",
-        "operationId": "apiLogin",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/SubscriptionKey"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginParametroSession"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Resultado do login.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ResultadoDeLogin"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/logoff": {
-      "delete": {
-        "tags": [
-          "Session"
-        ],
-        "summary": "Logoff",
-        "description": "Efetua o logoff",
-        "operationId": "apiLogout",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "$ref": "#/components/parameters/SubscriptionKey"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Logoff efetuado corretamente."
           },
           "401": {
             "description": "Em caso de erro de timeout ou sessão expirada."
@@ -230,7 +140,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -271,7 +181,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "data",
@@ -344,7 +254,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ano",
@@ -439,7 +349,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -489,7 +399,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -541,7 +451,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -646,7 +556,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipo",
@@ -699,7 +609,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -745,7 +655,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -791,7 +701,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipo",
@@ -845,7 +755,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -899,7 +809,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -969,7 +879,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -1024,7 +934,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -1094,7 +1004,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idsFuncionarios",
@@ -1158,7 +1068,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -1228,7 +1138,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "inCompromisso",
@@ -1324,7 +1234,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipoCaso",
@@ -1378,7 +1288,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -1424,7 +1334,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -1503,7 +1413,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -1557,7 +1467,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -1627,7 +1537,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -1678,7 +1588,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -1730,7 +1640,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idAndamento",
@@ -1788,7 +1698,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idAndamento",
@@ -1832,7 +1742,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idAndamento",
@@ -1892,7 +1802,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -1956,7 +1866,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "domain",
@@ -2010,7 +1920,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2061,7 +1971,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "termo",
@@ -2138,7 +2048,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdProcesso",
@@ -2191,7 +2101,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2239,7 +2149,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2282,7 +2192,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2349,7 +2259,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -2394,7 +2304,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -2439,7 +2349,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2489,7 +2399,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2543,7 +2453,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -2598,7 +2508,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -2679,7 +2589,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -2733,7 +2643,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -2787,7 +2697,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2838,7 +2748,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2889,7 +2799,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -2959,7 +2869,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdResponsavel",
@@ -3013,7 +2923,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -3059,7 +2969,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -3123,7 +3033,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -3193,7 +3103,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ids",
@@ -3251,7 +3161,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IdProcesso",
@@ -3333,7 +3243,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "termo",
@@ -3405,7 +3315,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -3468,7 +3378,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -3532,7 +3442,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IdEscritorio",
@@ -3594,7 +3504,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IdEscritorio",
@@ -3648,7 +3558,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IdsMin",
@@ -3710,7 +3620,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -3756,7 +3666,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -3838,7 +3748,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -3884,7 +3794,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "domain",
@@ -3938,7 +3848,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -3989,7 +3899,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -4040,7 +3950,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -4122,7 +4032,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -4173,7 +4083,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idsClientes",
@@ -4228,7 +4138,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -4277,7 +4187,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -4328,7 +4238,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -4374,7 +4284,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -4428,7 +4338,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "codCliente",
@@ -4479,7 +4389,7 @@
         "operationId": "api-ContaDeAcesso-ObtemContaDeAcesso",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nomeUsuario",
@@ -4535,7 +4445,7 @@
         "operationId": "api-ContaDeAcesso-ObtemContaDeAcesso2",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nomeUsuario",
@@ -4594,7 +4504,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -4658,7 +4568,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -4709,7 +4619,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -4781,7 +4691,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -4853,7 +4763,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -4904,7 +4814,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -4958,7 +4868,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -5028,7 +4938,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -5082,7 +4992,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -5152,7 +5062,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5197,7 +5107,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -5241,7 +5151,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -5289,7 +5199,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -5341,7 +5251,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -5394,7 +5304,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idProcessoDecisao",
@@ -5438,7 +5348,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5481,7 +5391,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "dataDespesaString",
@@ -5532,7 +5442,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5575,7 +5485,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5618,7 +5528,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5661,7 +5571,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5704,7 +5614,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5746,7 +5656,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5788,7 +5698,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idVoucher",
@@ -5838,7 +5748,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idVoucher",
@@ -5888,7 +5798,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ano",
@@ -5957,7 +5867,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -6007,7 +5917,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "selecionaAprovador",
@@ -6067,7 +5977,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "selecionaAprovador",
@@ -6127,7 +6037,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -6170,7 +6080,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -6210,7 +6120,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -6260,7 +6170,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -6310,7 +6220,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -6361,7 +6271,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrGrupo",
@@ -6415,7 +6325,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrSequencia",
@@ -6466,7 +6376,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -6536,7 +6446,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ids",
@@ -6594,7 +6504,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -6646,7 +6556,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -6710,7 +6620,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idArea",
@@ -6782,7 +6692,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idFuncionario",
@@ -6836,7 +6746,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IdEscritorio",
@@ -6890,7 +6800,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -6936,7 +6846,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCasoGarantia",
@@ -6988,7 +6898,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -7041,7 +6951,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -7087,7 +6997,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -7159,7 +7069,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -7217,7 +7127,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -7278,7 +7188,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idGarantiaMovimentacao",
@@ -7332,7 +7242,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -7395,7 +7305,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrClasse",
@@ -7473,7 +7383,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -7519,7 +7429,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrRamoJudicial",
@@ -7573,7 +7483,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrRamoJudicial",
@@ -7659,7 +7569,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrRamoJudicial",
@@ -7737,7 +7647,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrRamoJudicial",
@@ -7791,7 +7701,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdGrupoForo",
@@ -7850,7 +7760,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "regiao",
@@ -7910,7 +7820,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrRamoJudicial",
@@ -7963,7 +7873,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -8017,7 +7927,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -8090,7 +8000,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -8136,7 +8046,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -8182,7 +8092,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "uf",
@@ -8238,7 +8148,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nome",
@@ -8293,7 +8203,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -8347,7 +8257,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -8405,7 +8315,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdParte",
@@ -8457,7 +8367,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "processo",
@@ -8509,7 +8419,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipoProcesso",
@@ -8579,7 +8489,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ano",
@@ -8665,7 +8575,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idEscritorio",
@@ -8718,7 +8628,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idEscritorio",
@@ -8771,7 +8681,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdProcesso",
@@ -8849,7 +8759,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "paginaAtual",
@@ -9021,7 +8931,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9061,7 +8971,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9107,7 +9017,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9153,7 +9063,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9198,7 +9108,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrAplicabilidade",
@@ -9270,7 +9180,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrAplicabilidade",
@@ -9325,7 +9235,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ano",
@@ -9386,7 +9296,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idFuncionario",
@@ -9439,7 +9349,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idArea",
@@ -9492,7 +9402,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9537,7 +9447,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idFuncionario",
@@ -9590,7 +9500,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9635,7 +9545,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -9704,7 +9614,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -9757,7 +9667,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -9807,7 +9717,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -9858,7 +9768,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -9909,7 +9819,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -9960,7 +9870,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -10011,7 +9921,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -10056,7 +9966,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -10097,7 +10007,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -10137,7 +10047,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -10191,7 +10101,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "$ref": "#/components/parameters/SubscriptionKey"
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -10270,10 +10180,10 @@
       }
     },
     "parameters": {
-      "SubscriptionKey": {
-        "name": "SubscriptionKey",
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
         "in": "header",
-        "description": "Key to use the API provided by Lawsoft",
+        "description": "Subscription key provided by Looplex",
         "required": true,
         "schema": {
           "type": "string"
@@ -10294,45 +10204,22 @@
         "title": "DTOUser",
         "type": "object",
         "properties": {
-          "user": {
-            "type": "string",
-            "description": "Login"
-          },
-          "pwd": {
-            "type": "string",
-            "description": "Senha"
-          },
-          "domain": {
-            "type": "string",
-            "description": "Escritório"
-          }
-        }
-      },
-      "LoginParametro": {
-        "type": "object",
-        "properties": {
           "User": {
-            "$ref": "#/components/schemas/DTOUser"
-          },
-          "Version": {
-            "type": "string",
-            "description": "A versão do aparelho"
-          },
-          "DeviceIdentification": {
-            "type": "string",
-            "description": "Identificação do dispositivo"
-          },
-          "Workstation": {
-            "type": "string",
-            "description": "Não lembro o que é"
-          },
-          "AccessCode": {
-            "type": "string",
-            "description": "Código de acesso"
-          },
-          "NovoMobile": {
-            "type": "boolean",
-            "description": "Efetuar login apenas com o app novo"
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "string",
+                "description": "Login"
+              },
+              "pwd": {
+                "type": "string",
+                "description": "Senha"
+              },
+              "domain": {
+                "type": "string",
+                "description": "Escritório"
+              }
+            }
           }
         }
       },
@@ -10393,38 +10280,6 @@
           "StackTrace": {
             "type": "string",
             "description": "Local da exception"
-          }
-        }
-      },
-      "LoginParametroSession": {
-        "type": "object",
-        "properties": {
-          "escritorio": {
-            "type": "string",
-            "description": "Nome do escritório"
-          },
-          "token": {
-            "type": "string",
-            "description": "Token obtido no Lawsoft client"
-          }
-        }
-      },
-      "ResultadoDeLogin": {
-        "title": "ResultadoDeLogin",
-        "type": "object",
-        "properties": {
-          "Context": {
-            "type": "string",
-            "description": "Contexto de login",
-            "example": "contexto"
-          },
-          "Successfull": {
-            "type": "boolean",
-            "description": "Indica se o login foi efetuado com sucesso"
-          },
-          "ErrorMessage": {
-            "type": "string",
-            "description": "Indica o erro ocorrido no login, caso houver."
           }
         }
       },

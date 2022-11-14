@@ -5,7 +5,7 @@ description: Obtém o andamento de acordo com o identificador informado.
 operationId: api-andamentos-id
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: id
     in: path
     required: true

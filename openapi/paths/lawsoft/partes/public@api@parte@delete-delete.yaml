@@ -5,7 +5,7 @@ description: Exclui a parte se não for um cliente e não estiver vinculada a ne
 operationId: deletePart
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: cdParte
     in: path
     description: "O identificador da parte"

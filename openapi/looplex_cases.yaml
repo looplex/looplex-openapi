@@ -69,24 +69,14 @@ x-tagGroups:
       - Varas e Foros
       - País 
 servers:
-  # - url: "https://graph.looplex.com/cases"
-  #   description: "Looplex Cases Server"
-  - url: "https://sys.lawoffice.com.br"
+  - url: "https://graph.looplex.com/cases"
     description: "Looplex Cases Server"
-  - url: "https://qamobileservice.lawoffice.com.br"
-    description: "Looplex Cases Server (Homologação)"
 paths:
   # Session
-  /api/mobilesession:
+  /api/logon:
     post:
-      $ref: ./paths/lawsoft/session/public@api@mobilesession-post.yaml
-  /api/session:
-    post:
-      $ref: ./paths/lawsoft/session/public@api@session-post.yaml
-  /api/logoff:
-    delete:
-      $ref: ./paths/lawsoft/session/public@api@logoff-delete.yaml
-  
+      $ref: ./paths/lawsoft/session/public@api@logon-post.yaml
+
   # Agenda
   /api/agenda/totaleventos:
     get:

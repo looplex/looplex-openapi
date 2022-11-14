@@ -5,7 +5,7 @@ description: Obtém os casos de acordo com o filtro informado
 operationId: api-casos-busca
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: termo
     in: query
     required: true

@@ -4,7 +4,7 @@ summary: Conta de acesso por nome
 description: Obtém a conta de acesso por nome
 operationId: api-ContaDeAcesso-ObtemContaDeAcesso2
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nomeUsuario
     in: query
     required: false

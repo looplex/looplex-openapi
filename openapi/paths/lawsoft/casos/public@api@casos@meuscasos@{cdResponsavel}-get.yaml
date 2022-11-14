@@ -5,7 +5,7 @@ description: Retorna um array de casos onde sou responsável
 operationId: api-casos-meuscasos-cdResponsavel
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: cdResponsavel
     in: path
     required: true

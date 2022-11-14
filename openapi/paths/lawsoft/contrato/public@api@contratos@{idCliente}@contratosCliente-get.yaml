@@ -5,7 +5,7 @@ description: Obtém os contratos do cliente de acordo com o filtro informado
 operationId: api-contratos-idCliente-contratosCliente
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
-  - $ref: ../../../components/parameters/lawsoft/SubscriptionKey.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCliente
     in: path
     required: true
