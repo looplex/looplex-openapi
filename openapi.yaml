@@ -910,8 +910,14 @@ paths:
           description: Resultado do login
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/DTOLogonResult'
+              type: object
+              properties:
+                Profile:
+                  description: Contexto a ser usado nas requisições
+                  type: string
+                Successful:
+                  description: Se o login foi feito corretamente
+                  type: boolean
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
         '500':
@@ -8014,32 +8020,6 @@ components:
             domain:
               type: string
               description: Escritório
-    FuncionarioLogin:
-      title: FuncionarioLogin
-      type: object
-      properties:
-        ID:
-          type: integer
-        Nome:
-          type: string
-        Domain:
-          type: string
-    DTOLogonResult:
-      title: DTOLogonResult
-      type: object
-      properties:
-        Context:
-          type: string
-        Access_Token:
-          type: string
-        Successful:
-          type: boolean
-        ErrorMessage:
-          type: string
-        Profile:
-          type: string
-        Funcionario:
-          $ref: '#/components/schemas/FuncionarioLogin'
     InternalServerErrorResponse:
       type: object
       properties:

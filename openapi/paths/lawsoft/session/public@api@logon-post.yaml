@@ -19,8 +19,14 @@ responses:
     description: "Resultado do login"
     content:
       application/json:
-        schema:
-          $ref: ../../../components/schemas/lawsoft/DTOLogonResult.yaml
+        type: object
+        properties:
+          Profile: 
+            description: "Contexto a ser usado nas requisições"
+            type: string
+          Successful:
+            description: "Se o login foi feito corretamente"
+            type: boolean
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
