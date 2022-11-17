@@ -1574,15 +1574,17 @@
             "description": "Resultado do login",
             "content": {
               "application/json": {
-                "type": "object",
-                "properties": {
-                  "Profile": {
-                    "description": "Contexto a ser usado nas requisições",
-                    "type": "string"
-                  },
-                  "Successful": {
-                    "description": "Se o login foi feito corretamente",
-                    "type": "boolean"
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Profile": {
+                      "description": "Contexto a ser usado nas requisições",
+                      "type": "string"
+                    },
+                    "Successful": {
+                      "description": "Se o login foi feito corretamente",
+                      "type": "boolean"
+                    }
                   }
                 }
               }
