@@ -118,6 +118,10 @@ properties:
     type: array
     items:
       $ref: DTOAndamento.yaml
+  itensDeAgenda:
+    type: array
+    items:
+      $ref: DTOItemAgenda.yaml
 required:
   - idCliente
   - envolvimentoCliente

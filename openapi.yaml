@@ -9263,6 +9263,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOAndamento'
+        itensDeAgenda:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOItemAgenda'
       required:
         - idCliente
         - envolvimentoCliente
