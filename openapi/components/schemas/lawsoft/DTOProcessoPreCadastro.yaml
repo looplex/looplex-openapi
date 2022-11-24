@@ -114,6 +114,10 @@ properties:
     type: array
     items:
       $ref: ParteParaLO.yaml
+  andamentos:
+    type: array
+    items:
+      $ref: DTOAndamento.yaml
 required:
   - idCliente
   - envolvimentoCliente

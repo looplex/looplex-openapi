@@ -11667,6 +11667,12 @@
             "items": {
               "$ref": "#/components/schemas/ParteParaLO"
             }
+          },
+          "andamentos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOAndamento"
+            }
           }
         },
         "required": [
