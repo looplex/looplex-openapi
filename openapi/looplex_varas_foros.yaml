@@ -77,6 +77,9 @@ paths:
   /api/VF/Categorias:
     get:
       $ref: './paths/lawsoft/varas_foros/public@api@VF@Categorias-get.yaml'
+  /api/VF/Rito:
+    get:
+      $ref: './paths/lawsoft/varas_foros/public@api@VF@Rito-get.yaml'
 
 components:
   securitySchemes:

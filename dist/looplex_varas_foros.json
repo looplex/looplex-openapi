@@ -548,6 +548,56 @@
           }
         }
       }
+    },
+    "/api/VF/Rito": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém rito por identificador",
+        "description": "Obtém o rito de acordo com o identifcador informado",
+        "operationId": "api-VF-Rito",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "idRito",
+            "in": "query",
+            "example": "1",
+            "description": "O identificador do rito",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resposta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rito"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1128,6 +1178,27 @@
           },
           "tipoResposta": {
             "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "InternalServerErrorResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Mensagem do erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Não sei o que é isso"
+          },
+          "ExceptionType": {
+            "type": "string",
+            "description": "Também não sei o que é"
+          },
+          "StackTrace": {
+            "type": "string",
+            "description": "Local da exception"
           }
         }
       }
