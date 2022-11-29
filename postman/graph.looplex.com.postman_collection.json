@@ -44,16 +44,16 @@
 			"name": "cases",
 			"item": [
 				{
-					"name": "Login",
+					"name": "login",
 					"item": [
 						{
-							"name": "Login",
+							"name": "login",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"User\": {\r\n    \"user\": \"string\",\r\n    \"pwd\": \"string\",\r\n    \"domain\": \"string\"\r\n  }\r\n}",
+									"raw": "{\r\n    \"User\": {\r\n        \"user\": \"string\",\r\n        \"pwd\": \"string\",\r\n        \"domain\": \"string\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -73,7 +73,7 @@
 							},
 							"response": [
 								{
-									"name": "Resultado do Login",
+									"name": "resultado_login",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
@@ -99,13 +99,13 @@
 									},
 									"status": "OK",
 									"code": 200,
-									"_postman_previewlanguage": null,
+									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\r\n    \"Profile\": \"string\",\r\n    \"Successful\": true\r\n}"
+									"body": "{\n    \"Profile\": \"string\",\n    \"Successful\": true\n}"
 								},
 								{
-									"name": "Em caso de erro de timeout ou sessão expirada.",
+									"name": "erro_timeout",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
@@ -131,13 +131,13 @@
 									},
 									"status": "Unauthorized",
 									"code": 401,
-									"_postman_previewlanguage": null,
+									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": null
+									"body": ""
 								},
 								{
-									"name": "Em caso de erro diferente de timeout ou sessão expirada.",
+									"name": "exception",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
@@ -163,10 +163,10 @@
 									},
 									"status": "Internal Server Error",
 									"code": 500,
-									"_postman_previewlanguage": null,
+									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Mensagem do erro\",\r\n    \"ExceptionMessage\": \"string\",\r\n    \"ExceptionType\": \"string\",\r\n    \"StackTrace\": \"string\"\r\n}"
+									"body": "{\n    \"Message\": \"Mensagem do erro\",\n    \"ExceptionMessage\": \"string\",\n    \"ExceptionType\": \"string\",\n    \"StackTrace\": \"string\"\n}"
 								}
 							]
 						}
