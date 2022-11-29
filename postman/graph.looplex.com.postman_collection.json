@@ -111,7 +111,7 @@
 	"variable": [
 		{
 			"key": "BASEPATH",
-			"value": "https://apim.looplex.com",
+			"value": "https://graph.looplex.com",
 			"type": "string"
 		}
 	]
