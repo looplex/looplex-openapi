@@ -427,6 +427,9 @@ paths:
       $ref: './paths/lawsoft/expectativa_reivindicacao/public@api@expectativa@valores@idCaso-get.yaml'
 
   # Fase
+  /api/fase:
+    get:
+      $ref: './paths/lawsoft/fase_caso/public@api@fase-get.yaml'
   /api/casos/fase/{nrGrupo}:
     get:
       $ref: ./paths/lawsoft/fase_caso/public@api@casos@fase@{nrGrupo}-get.yaml

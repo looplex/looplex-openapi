@@ -115,6 +115,10 @@
       "x-displayName": "Expectativa reivindicação"
     },
     {
+      "name": "Fase do caso",
+      "x-displayName": "Fase do caso"
+    },
+    {
       "name": "Fase caso",
       "x-displayName": "Fase caso"
     },
@@ -217,6 +221,7 @@
         "Decisões",
         "Despesas",
         "Expectativa reivindicação",
+        "Fase do caso",
         "Fase caso",
         "Funcionário",
         "Garantia",
@@ -7717,6 +7722,52 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DTOValoresDoCasoAntigo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/fase": {
+      "get": {
+        "tags": [
+          "Fase do caso"
+        ],
+        "summary": "Fases",
+        "description": "Obtém as fases",
+        "operationId": "api-fase",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fases",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOFase"
+                  }
                 }
               }
             }
@@ -16244,6 +16295,27 @@
           },
           "TotalDosPedidos": {
             "type": "string"
+          }
+        }
+      },
+      "DTOFase": {
+        "title": "DTOFase",
+        "type": "object",
+        "properties": {
+          "IDFase": {
+            "type": "integer",
+            "example": 1
+          },
+          "NomeFase": {
+            "type": "string",
+            "example": "Fase 1"
+          },
+          "TipoProcesso": {
+            "$ref": "#/components/schemas/RamosJudicial"
+          },
+          "TipoProcessoText": {
+            "type": "string",
+            "example": "Judicial Estadual"
           }
         }
       },
