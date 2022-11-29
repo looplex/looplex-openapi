@@ -61,11 +61,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASEPATH}}/api/logon",
+									"raw": "{{BASEPATH}}/cases/api/logon",
 									"host": [
 										"{{BASEPATH}}"
 									],
 									"path": [
+										"cases",
 										"api",
 										"logon"
 									]
