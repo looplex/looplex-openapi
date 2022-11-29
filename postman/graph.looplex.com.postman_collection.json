@@ -101,7 +101,7 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [],
 									"cookie": [],
 									"body": "{\n    \"Profile\": \"string\",\n    \"Successful\": true\n}"
 								},
@@ -144,7 +144,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"User\": {\r\n    \"user\": \"string\",\r\n    \"pwd\": \"string\",\r\n    \"domain\": \"string\"\r\n  }\r\n}",
+											"raw": "{\r\n  \"User\": {\r\n    \"user\": \"\",\r\n    \"pwd\": \"string\",\r\n    \"domain\": \"string\"\r\n  }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -207,6 +207,71 @@
 		{
 			"name": "storage",
 			"item": []
+		},
+		{
+			"name": "varas_foros",
+			"item": [
+				{
+					"name": "identificador-por-nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEPATH}}/varas_foros/api/VF/cdNoPorNome?nome=Judicial Estadual",
+							"host": [
+								"{{BASEPATH}}"
+							],
+							"path": [
+								"varas_foros",
+								"api",
+								"VF",
+								"cdNoPorNome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Judicial Estadual",
+									"description": "O nome do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/varas_foros/api/VF/cdNoPorNome?nome=Judicial Estadual",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"varas_foros",
+										"api",
+										"VF",
+										"cdNoPorNome"
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "Judicial Estadual",
+											"description": "O nome do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n  \"respostaAPI\": \"\",\r\n  \"conteudo\": 3,\r\n  \"tipoResposta\": 3\r\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
