@@ -4,12 +4,12 @@
   "dependencies": {
     "@redocly/openapi-cli": "^1.0.0-beta.61",
     "ncp": "^2.0.0",
-    "postman-to-openapi": "^2.9.0",
     "redoc-cli": "^0.12.3",
     "rimraf": "^3.0.2"
   },
   "private": true,
   "scripts": {
+    "p2o": "node p2o.mjs",
     "start": "openapi preview-docs",
     "prebuild": "rimraf public",
     "build": "openapi bundle -o public/openapi.yaml && redoc-cli bundle public/openapi.yaml -t docs/index.html --output public/index.html",
@@ -17,7 +17,8 @@
     "test": "openapi lint"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "3.3.0"
+    "cz-conventional-changelog": "3.3.0",
+    "postman-to-openapi": "^2.9.0"
   },
   "config": {
     "commitizen": {
