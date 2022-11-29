@@ -42,7 +42,137 @@
 		},
 		{
 			"name": "cases",
-			"item": []
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"User\": {\r\n    \"user\": \"string\",\r\n    \"pwd\": \"string\",\r\n    \"domain\": \"string\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASEPATH}}/api/logon",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"logon"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Resultado do Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"User\": {\r\n    \"user\": \"string\",\r\n    \"pwd\": \"string\",\r\n    \"domain\": \"string\"\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\r\n    \"Profile\": \"string\",\r\n    \"Successful\": true\r\n}"
+								},
+								{
+									"name": "Em caso de erro de timeout ou sessão expirada.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"User\": {\r\n    \"user\": \"string\",\r\n    \"pwd\": \"string\",\r\n    \"domain\": \"string\"\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Em caso de erro diferente de timeout ou sessão expirada.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"User\": {\r\n    \"user\": \"string\",\r\n    \"pwd\": \"string\",\r\n    \"domain\": \"string\"\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Mensagem do erro\",\r\n    \"ExceptionMessage\": \"string\",\r\n    \"ExceptionType\": \"string\",\r\n    \"StackTrace\": \"string\"\r\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "people",
