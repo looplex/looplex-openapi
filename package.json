@@ -4,6 +4,7 @@
   "dependencies": {
     "@redocly/openapi-cli": "^1.0.0-beta.61",
     "ncp": "^2.0.0",
+    "postman-to-openapi": "^2.9.0",
     "redoc-cli": "^0.12.3",
     "rimraf": "^3.0.2"
   },

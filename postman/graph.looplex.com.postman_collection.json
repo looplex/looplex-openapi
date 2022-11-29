@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "411d0d65-ff08-4c4b-bde7-0ccbc34277ec",
+		"name": "graph.looplex.com",
+		"description": "Looplex Graph é uma plataforma de APIs que conectam múltipos serviços e dados jurídicos.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1674422"
+	},
+	"item": [
+		{
+			"name": "actions",
+			"item": [
+				{
+					"name": "office-render",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"template\": \"\",\r\n  \"datasource\": {},\r\n  \"partials\": {},\r\n  \"lambdas\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEPATH}}/actions/v1/office-render",
+							"host": [
+								"{{BASEPATH}}"
+							],
+							"path": [
+								"actions",
+								"v1",
+								"office-render"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cases",
+			"item": []
+		},
+		{
+			"name": "people",
+			"item": []
+		},
+		{
+			"name": "finances",
+			"item": []
+		},
+		{
+			"name": "assembler",
+			"item": [
+				{
+					"name": "documents",
+					"item": []
+				},
+				{
+					"name": "templates",
+					"item": []
+				},
+				{
+					"name": "users",
+					"item": []
+				}
+			]
+		},
+		{
+			"name": "flows",
+			"item": []
+		},
+		{
+			"name": "storage",
+			"item": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Ocp-Apim-Subscription-Key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEPATH",
+			"value": "https://apim.looplex.com",
+			"type": "string"
+		}
+	]
+}
