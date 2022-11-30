@@ -53,7 +53,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"User\": {\r\n        \"user\": \"string\",\r\n        \"pwd\": \"string\",\r\n        \"domain\": \"string\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"User\": {\r\n        \"user\": \"user\",\r\n        \"pwd\": \"pwd\",\r\n        \"domain\": \"domain\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -172,6 +172,215 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "dados_complementares",
+					"item": [
+						{
+							"name": "api-dado_complementar",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-ContextInf",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"cases",
+										"api",
+										"dado_complementar"
+									],
+									"query": [
+										{
+											"key": "areaId",
+											"value": null,
+											"description": "O identificador da área"
+										},
+										{
+											"key": "funcionarioId",
+											"value": null,
+											"description": "O identificador do funcionário"
+										},
+										{
+											"key": "casoId",
+											"value": null,
+											"description": "O identificador do caso"
+										},
+										{
+											"key": "tipoCaso",
+											"value": "3",
+											"description": "O tipo do caso"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"cases",
+												"api",
+												"dado_complementar"
+											],
+											"query": [
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "O identificador da área"
+												},
+												{
+													"key": "funcionarioId",
+													"value": null,
+													"description": "O identificador do funcionário"
+												},
+												{
+													"key": "casoId",
+													"value": null,
+													"description": "O identificador do caso"
+												},
+												{
+													"key": "tipoCaso",
+													"value": "3",
+													"description": "O tipo do caso"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "erro_timeout",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"cases",
+												"api",
+												"dado_complementar"
+											],
+											"query": [
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "O identificador da área"
+												},
+												{
+													"key": "funcionarioId",
+													"value": null,
+													"description": "O identificador do funcionário"
+												},
+												{
+													"key": "casoId",
+													"value": null,
+													"description": "O identificador do caso"
+												},
+												{
+													"key": "tipoCaso",
+													"value": "3",
+													"description": "O tipo do caso"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "exception",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"cases",
+												"api",
+												"dado_complementar"
+											],
+											"query": [
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "O identificador da área"
+												},
+												{
+													"key": "funcionarioId",
+													"value": null,
+													"description": "O identificador do funcionário"
+												},
+												{
+													"key": "casoId",
+													"value": null,
+													"description": "O identificador do caso"
+												},
+												{
+													"key": "tipoCaso",
+													"value": "3",
+													"description": "O tipo do caso"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -217,7 +426,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASEPATH}}/varas_foros/api/VF/cdNoPorNome?nome=Judicial Estadual",
+							"raw": "{{BASEPATH}}/varas_foros/api/VF/cdNoPorNome?nome=Administrativo",
 							"host": [
 								"{{BASEPATH}}"
 							],
@@ -230,7 +439,7 @@
 							"query": [
 								{
 									"key": "nome",
-									"value": "Judicial Estadual",
+									"value": "Administrativo",
 									"description": "O nome do item"
 								}
 							]
