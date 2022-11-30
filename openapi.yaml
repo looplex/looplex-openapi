@@ -924,6 +924,17 @@ paths:
                     type: boolean
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
+        '403':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Message:
+                    description: Descrição do erro
+                    type: string
+                    example: Credenciais inválidas
         '500':
           description: Em caso de erro diferente de timeout ou sessão expirada.
           content:
