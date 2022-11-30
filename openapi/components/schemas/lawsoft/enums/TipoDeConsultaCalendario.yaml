@@ -1,0 +1,10 @@
+type: integer
+example: 1
+description: |
+  1: dayGridMonth
+
+  2: timeGridWeek
+
+  3: timeGridDay
+
+  4: listWeek

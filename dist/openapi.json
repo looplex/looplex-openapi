@@ -2524,6 +2524,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "typeMode",
+            "in": "query",
+            "description": "Tipo para definir o intervalo de datas",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/TipoDeConsultaCalendario"
+            }
           }
         ],
         "responses": {
@@ -13657,6 +13666,11 @@
             "$ref": "#/components/schemas/DTORecorrenciaDeItemAgenda"
           }
         }
+      },
+      "TipoDeConsultaCalendario": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: dayGridMonth\n\n2: timeGridWeek\n\n3: timeGridDay\n\n4: listWeek\n"
       },
       "DTOCompromissoSimples": {
         "name": "DTOCompromissoSimples",
