@@ -651,6 +651,9 @@ paths:
   /api/timesheet/arredondamento:
     get:
       $ref: './paths/lawsoft/timesheet/public@api@timesheet@arredondamento-get.yaml'
+  /api/timesheet:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet-get.yaml'
 
   # Valores apurados
   /api/casos/{idCaso}/valoresapurados:

@@ -11591,6 +11591,81 @@
         }
       }
     },
+    "/api/timesheet": {
+      "get": {
+        "tags": [
+          "Timesheet"
+        ],
+        "summary": "Timesheet por filtro",
+        "description": "Lista os lançamentos de hora por filtro",
+        "operationId": "api-timesheet",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "idsFuncionarios",
+            "in": "query",
+            "example": "1,2",
+            "description": "Os ids de funcionarios separados por virgula",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "data",
+            "in": "query",
+            "example": "2011-10-13 00:00:00.000",
+            "description": "A data para pesquisa",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "typeMode",
+            "in": "query",
+            "description": "Tipo para definir o intervalo de datas",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/TipoDeConsultaCalendario"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOPlanilhaHoras"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{idCaso}/valoresapurados": {
       "get": {
         "tags": [
