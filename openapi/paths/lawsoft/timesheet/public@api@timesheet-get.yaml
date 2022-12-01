@@ -15,16 +15,23 @@ parameters:
     required: true
     schema:
       type: string
-  - name: data
+  - name: dataInicial
     in: query
     example: "2011-10-13 00:00:00.000"
-    description: "A data para pesquisa"
+    description: "A data inicial da pesquisa"
     required: true
+    schema:
+      type: string
+  - name: dataFinal
+    in: query
+    example: "2011-10-13 00:00:00.000"
+    description: "A data final da pesquisa"
+    required: false
     schema:
       type: string
   - name: typeMode
     in: query
-    description: "Tipo para definir o intervalo de datas"
+    description: "Tipo de pesquisa para definir o intervalo de datas"
     required: false
     schema:
       $ref: ../../../components/schemas/lawsoft/enums/TipoDeConsultaCalendario.yaml

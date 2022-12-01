@@ -2528,7 +2528,6 @@
           {
             "name": "typeMode",
             "in": "query",
-            "description": "Tipo para definir o intervalo de datas",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/TipoDeConsultaCalendario"
@@ -11630,7 +11629,7 @@
             "name": "typeMode",
             "in": "query",
             "description": "Tipo para definir o intervalo de datas",
-            "required": false,
+            "required": true,
             "schema": {
               "$ref": "#/components/schemas/TipoDeConsultaCalendario"
             }

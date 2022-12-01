@@ -22,7 +22,6 @@ parameters:
       type: string
   - name: typeMode
     in: query
-    description: "Tipo para definir o intervalo de datas"
     required: false
     schema:
       $ref: ../../../components/schemas/lawsoft/enums/TipoDeConsultaCalendario.yaml
