@@ -10142,11 +10142,21 @@
             }
           },
           {
-            "name": "data",
+            "name": "dataInicial",
             "in": "query",
             "example": "2011-10-13 00:00:00.000",
-            "description": "A data para pesquisa",
+            "description": "A data inicial da pesquisa",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataFinal",
+            "in": "query",
+            "example": "2011-10-13 00:00:00.000",
+            "description": "A data final da pesquisa",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -10154,8 +10164,7 @@
           {
             "name": "typeMode",
             "in": "query",
-            "description": "Tipo para definir o intervalo de datas",
-            "required": true,
+            "required": false,
             "schema": {
               "$ref": "#/components/schemas/TipoDeConsultaCalendario"
             }
@@ -10870,7 +10879,7 @@
       "TipoDeConsultaCalendario": {
         "type": "integer",
         "example": 1,
-        "description": "1: dayGridMonth\n\n2: timeGridWeek\n\n3: timeGridDay\n\n4: listWeek\n"
+        "description": "1: dayGridMonth\n\n2: timeGridWeek\n\n3: timeGridDay\n\n4: listWeek\n\n5: interval\n"
       },
       "DTOCompromissoSimples": {
         "name": "DTOCompromissoSimples",

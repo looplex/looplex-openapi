@@ -6989,17 +6989,23 @@ paths:
           required: true
           schema:
             type: string
-        - name: data
+        - name: dataInicial
           in: query
           example: '2011-10-13 00:00:00.000'
-          description: A data para pesquisa
+          description: A data inicial da pesquisa
           required: true
+          schema:
+            type: string
+        - name: dataFinal
+          in: query
+          example: '2011-10-13 00:00:00.000'
+          description: A data final da pesquisa
+          required: false
           schema:
             type: string
         - name: typeMode
           in: query
-          description: Tipo para definir o intervalo de datas
-          required: true
+          required: false
           schema:
             $ref: '#/components/schemas/TipoDeConsultaCalendario'
       responses:
@@ -8575,6 +8581,8 @@ components:
         3: timeGridDay
 
         4: listWeek
+
+        5: interval
     DTOCompromissoSimples:
       name: DTOCompromissoSimples
       type: object
