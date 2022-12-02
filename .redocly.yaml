@@ -4,15 +4,17 @@
 # https://redocly.com/docs/openapi-visual-reference/server-variables/#visuals
 # https://redocly.com/docs/redocly-openapi/#redocly-openapi-vs-code-extension
 # https://redocly.com/docs/api-reference-docs/configuration/functionality/#example-redocly-configuration-file
-
-apiDefinitions:
-  main: openapi/openapi.yaml
-lint:
-  extends:
-    - recommended
-  rules:
-    no-unused-components: warning
+apis: 
+  looplex_graph:
+    root: openapi/openapi.yaml
+    rules:
+      no-ambiguous-paths: error
+rules: 
+  no-unused-components: warn
+extends: 
+  - recommended
 features.openapi: 
+  menuToggle: true
   expandDefaultServerVariables: true
   htmlTemplate: ./docs/index.html
   theme: 
