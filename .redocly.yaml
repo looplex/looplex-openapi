@@ -1,4 +1,10 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
+
+# Documentações para configuração
+# https://redocly.com/docs/openapi-visual-reference/server-variables/#visuals
+# https://redocly.com/docs/redocly-openapi/#redocly-openapi-vs-code-extension
+# https://redocly.com/docs/api-reference-docs/configuration/functionality/#example-redocly-configuration-file
+
 apiDefinitions:
   main: openapi/openapi.yaml
 lint:
@@ -6,9 +12,10 @@ lint:
     - recommended
   rules:
     no-unused-components: warning
-referenceDocs:
+features.openapi: 
+  expandDefaultServerVariables: true
   htmlTemplate: ./docs/index.html
-  theme:
-    colors:
-      primary:
+  theme: 
+    colors: 
+      primary: 
         main: "#336699"
