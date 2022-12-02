@@ -12,7 +12,6 @@ rules:
 extends: 
   - recommended
 features.openapi: 
-  menuToggle: true
   expandDefaultServerVariables: true
   htmlTemplate: ./docs/index.html
   theme: 
