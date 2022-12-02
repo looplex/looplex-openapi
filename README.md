@@ -248,3 +248,6 @@ You'll also notice `$ref`s to code samples.
 You can add languages by adding new folders at the appropriate path level.
 
 More details inside the `code_samples` folder README.
+
+## Extension for Visual Studio Code
+https://redocly.com/docs/redocly-openapi/#redocly-openapi-vs-code-extension

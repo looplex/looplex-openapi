@@ -1,8 +1,6 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 
 # Documentações para configuração
-# https://redocly.com/docs/openapi-visual-reference/server-variables/#visuals
-# https://redocly.com/docs/redocly-openapi/#redocly-openapi-vs-code-extension
 # https://redocly.com/docs/api-reference-docs/configuration/functionality/#example-redocly-configuration-file
 apis: 
   looplex_graph:
