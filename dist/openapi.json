@@ -13775,8 +13775,14 @@
             "description": "Funcionário responsável pelo item de agenda",
             "type": "integer"
           },
-          "DataInicial": {
+          "NumeroPasta": {
+            "type": "integer"
+          },
+          "Data": {
             "description": "A data do item de agenda",
+            "type": "string"
+          },
+          "HoraInicial": {
             "type": "string"
           },
           "DataFinal": {
@@ -13798,11 +13804,17 @@
             "description": "O título do item de agenda",
             "type": "string"
           },
+          "Assunto": {
+            "type": "string"
+          },
           "Descricao": {
             "description": "A descrição do item de agenda",
             "type": "string"
           },
-          "NumeroLawOffice": {
+          "IDProcesso": {
+            "type": "integer"
+          },
+          "NumeroDoCaso": {
             "description": "O numero do caso no LawOffice",
             "type": "integer"
           },
@@ -13810,8 +13822,17 @@
             "description": "O titulo do caso",
             "type": "string"
           },
+          "NumeroInterno": {
+            "type": "string"
+          },
           "NumeroExternoCaso": {
             "description": "O numero externo do caso",
+            "type": "string"
+          },
+          "Rito": {
+            "type": "string"
+          },
+          "Vencido": {
             "type": "string"
           },
           "Cliente": {
@@ -13820,6 +13841,18 @@
           },
           "Executor": {
             "description": "O nome do executor do item de agenda",
+            "type": "string"
+          },
+          "Situacao": {
+            "type": "string"
+          },
+          "PoloAtivo": {
+            "type": "string"
+          },
+          "PoloPassivo": {
+            "type": "string"
+          },
+          "Classificacao": {
             "type": "string"
           }
         }
