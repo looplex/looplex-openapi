@@ -1,0 +1,27 @@
+title: DTOValorDadoComplementar
+type: object
+properties:
+  IDCaso:
+    description: "O identificador do caso"
+    example: "1"
+    type: integer
+  IDFuncionario:
+    description: "O identificador do funcionário"
+    example: "1"
+    type: integer
+  IDProcessoValorDadoComplementar:
+    description: ""
+    example: ""
+    type: integer
+  IDFuncionarioValorDadoComplementar:
+    description: ""
+    example: ""
+    type: integer
+  Valor:
+    description: ""
+    example: ""
+    type: string
+  DataDeAtualizacao:
+    description: ""
+    example: ""
+    type: string

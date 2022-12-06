@@ -1,0 +1,61 @@
+title: DTOParametroDadoComplementar
+type: object
+properties:
+  IDArea:
+    description: ""
+    example: "1"
+    type: integer
+  IDCliente:
+    description: ""
+    example: "1"
+    type: integer
+  IDContrato:
+    description: ""
+    example: "1"
+    type: integer
+  IDEscritorio:
+    description: ""
+    example: "1"
+    type: integer
+  IDCategoriaLancamento:
+    description: ""
+    example: "1"
+    type: integer
+  IDParametroDadoComplementar:
+    description: ""
+    example: "1"
+    type: integer
+  TipoProcesso:
+    $ref: enums/RamosJudicial.yaml
+  TipoCampoDadoComplementar:
+    $ref: enums/TipoDadoComplementar.yaml
+  TipoVinculo:
+    $ref: enums/TipoVinculoDadoComplementar.yaml
+  TituloDadoComplementar:
+    description: ""
+    example: "Nome completo"
+    type: string
+  TipoCampoDadoComplementarText:
+    description: ""
+    example: ""
+    type: string
+  TamanhoCampo:
+    description: "O tamanho do campo (se aplicável)"
+    example: "200"
+    type: integer
+  OrdemDoCampo:
+    description: ""
+    example: "1"
+    type: integer
+  Obrigatorio:
+    description: ""
+    example: "false"
+    type: boolean
+  Opcoes:
+    type: array
+    items:
+      $ref: DTOItemDadoComplementar.yaml
+  Valores:
+    type: array
+    items:
+      $ref: DTOValorDadoComplementar.yaml
