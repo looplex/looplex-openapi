@@ -5055,6 +5055,95 @@
         }
       }
     },
+    "/api/dado_complementar": {
+      "get": {
+        "tags": [
+          "Dados complementares"
+        ],
+        "summary": "Dados Complementares Por Filtro",
+        "description": "Obtem array de dados complementares pelo(s) parâmetro(s)",
+        "operationId": "api-dado_complementar",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "clienteId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "areaId",
+            "in": "query",
+            "description": "A área deve ser do caso",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "tipoCaso",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
+          },
+          {
+            "name": "obtemDadosComplementaresDeFuncionario",
+            "in": "query",
+            "description": "Decide se obtem ou não os dados complementares de funcionários",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "obtemDadosComplementaresDeCaso",
+            "in": "query",
+            "description": "Decide se obtem ou não dados complementares apenas do processo (globais)",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Obtem um array de dados complementares conforme os parâmetros passados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{idCaso}/Decisoes": {
       "get": {
         "tags": [
