@@ -4961,55 +4961,12 @@
       }
     },
     "/api/dado_complementar/{id}": {
-      "delete": {
-        "tags": [
-          "Dados complementares"
-        ],
-        "summary": "Excluir dado complementar",
-        "operationId": "api-dado_complementar-id",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "example": "1",
-            "description": "O identificador do dado complementar",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "O dado complementar foi excluído"
-          },
-          "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
-                }
-              }
-            }
-          }
-        }
-      },
       "get": {
         "tags": [
           "Dados complementares"
         ],
         "summary": "Obter dado complementar por identificador",
-        "operationId": "api-dado_complementar-id",
+        "operationId": "api-dado_complementar-id-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -5053,16 +5010,13 @@
             }
           }
         }
-      }
-    },
-    "/api/dado_complementar": {
-      "get": {
+      },
+      "delete": {
         "tags": [
           "Dados complementares"
         ],
-        "summary": "Dados Complementares Por Filtro",
-        "description": "Obtem array de dados complementares pelo(s) parâmetro(s)",
-        "operationId": "api-dado_complementar",
+        "summary": "Excluir dado complementar",
+        "operationId": "api-dado_complementar-id-delete",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -5071,62 +5025,19 @@
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
-            "name": "clienteId",
-            "in": "query",
-            "required": false,
+            "name": "id",
+            "in": "path",
+            "example": "1",
+            "description": "O identificador do dado complementar",
+            "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "areaId",
-            "in": "query",
-            "description": "A área deve ser do caso",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "tipoCaso",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/RamosJudicial"
-            }
-          },
-          {
-            "name": "obtemDadosComplementaresDeFuncionario",
-            "in": "query",
-            "description": "Decide se obtem ou não os dados complementares de funcionários",
-            "required": false,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "obtemDadosComplementaresDeCaso",
-            "in": "query",
-            "description": "Decide se obtem ou não dados complementares apenas do processo (globais)",
-            "required": false,
-            "schema": {
-              "type": "boolean"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Obtem um array de dados complementares conforme os parâmetros passados",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOParametroDadoComplementar"
-                  }
-                }
-              }
-            }
+            "description": "O dado complementar foi excluído"
           },
           "401": {
             "description": "Em caso de erro de timeout ou sessão expirada."
@@ -5144,7 +5055,7 @@
         }
       }
     },
-    "/api/dado_complementarRemover": {
+    "/api/dado_complementar": {
       "get": {
         "tags": [
           "Dados complementares"

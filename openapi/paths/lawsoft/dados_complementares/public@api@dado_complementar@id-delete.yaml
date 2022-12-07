@@ -2,7 +2,7 @@
 tags:
   - Dados complementares
 summary: Excluir dado complementar
-operationId: api-dado_complementar-id
+operationId: api-dado_complementar-id-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml

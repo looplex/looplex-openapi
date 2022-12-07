@@ -3879,6 +3879,122 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/dado_complementar/{id}:
+    get:
+      tags:
+        - Dados complementares
+      summary: Obter dado complementar por identificador
+      operationId: api-dado_complementar-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+        - name: id
+          in: path
+          example: '1'
+          description: O identificador do dado complementar
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: O dado complementar
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOParametroDadoComplementar'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+    delete:
+      tags:
+        - Dados complementares
+      summary: Excluir dado complementar
+      operationId: api-dado_complementar-id-delete
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+        - name: id
+          in: path
+          example: '1'
+          description: O identificador do dado complementar
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: O dado complementar foi excluído
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/dado_complementar:
+    get:
+      tags:
+        - Dados complementares
+      summary: Dados Complementares Por Filtro
+      description: Obtem array de dados complementares pelo(s) parâmetro(s)
+      operationId: api-dado_complementar
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+        - name: clienteId
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: areaId
+          in: query
+          description: A área deve ser do caso
+          required: false
+          schema:
+            type: integer
+        - name: tipoCaso
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+        - name: obtemDadosComplementaresDeFuncionario
+          in: query
+          description: Decide se obtem ou não os dados complementares de funcionários
+          required: false
+          schema:
+            type: boolean
+        - name: obtemDadosComplementaresDeCaso
+          in: query
+          description: >-
+            Decide se obtem ou não dados complementares apenas do processo
+            (globais)
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: >-
+            Obtem um array de dados complementares conforme os parâmetros
+            passados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOParametroDadoComplementar'
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   /api/casos/{idCaso}/Decisoes:
     get:
       tags:
@@ -8689,6 +8805,8 @@ components:
         8: Eleitoral
 
         9: Militar da União
+
+        10: Consultivo contrato
     DTOAndamentoTemplate:
       title: DTOAndamentoTemplate
       type: object
@@ -10072,6 +10190,154 @@ components:
             type: string
         IdCaso:
           type: integer
+    TipoDadoComplementar:
+      type: TipoDadoComplementar
+      example: 1
+      description: |
+        1: CaixaTexto
+
+        2: NumericoDecimal
+
+        3: NumericoInteiro
+
+        4: DataHora
+
+        5: CaixaTextoMultiLinha
+
+        6: CaixaCombo
+
+        7: CaixaDeMarcacao
+
+        8: PagadorCombo
+
+        9: EmpresaCombo
+
+        10: ClienteCombo
+
+        11: GrupoClienteCombo
+
+        12: ContratoSelecao
+
+        13: ClienteSelecao
+
+        14: CasoSelecao
+
+        15: AreaCombo
+
+        16: ProfissionalCombo
+    TipoVinculoDadoComplementar:
+      type: TipoVinculoDadoComplementar
+      example: 1
+      description: |
+        1: Processo
+
+        2: Funcionario
+    DTOItemDadoComplementar:
+      title: DTOItemDadoComplementar
+      type: object
+      properties:
+        IDItemDadoComplementar:
+          description: ''
+          example: '1'
+          type: integer
+        Texto:
+          description: ''
+          example: Opção 1
+          type: string
+        Valor:
+          description: ''
+          example: Opção 1
+          type: string
+    DTOValorDadoComplementar:
+      title: DTOValorDadoComplementar
+      type: object
+      properties:
+        IDCaso:
+          description: O identificador do caso
+          example: '1'
+          type: integer
+        IDFuncionario:
+          description: O identificador do funcionário
+          example: '1'
+          type: integer
+        IDProcessoValorDadoComplementar:
+          description: ''
+          example: ''
+          type: integer
+        IDFuncionarioValorDadoComplementar:
+          description: ''
+          example: ''
+          type: integer
+        Valor:
+          description: ''
+          example: ''
+          type: string
+        DataDeAtualizacao:
+          description: ''
+          example: ''
+          type: string
+    DTOParametroDadoComplementar:
+      title: DTOParametroDadoComplementar
+      type: object
+      properties:
+        IDArea:
+          description: ''
+          example: '1'
+          type: integer
+        IDCliente:
+          description: ''
+          example: '1'
+          type: integer
+        IDContrato:
+          description: ''
+          example: '1'
+          type: integer
+        IDEscritorio:
+          description: ''
+          example: '1'
+          type: integer
+        IDCategoriaLancamento:
+          description: ''
+          example: '1'
+          type: integer
+        IDParametroDadoComplementar:
+          description: ''
+          example: '1'
+          type: integer
+        TipoProcesso:
+          $ref: '#/components/schemas/RamosJudicial'
+        TipoCampoDadoComplementar:
+          $ref: '#/components/schemas/TipoDadoComplementar'
+        TipoVinculo:
+          $ref: '#/components/schemas/TipoVinculoDadoComplementar'
+        TituloDadoComplementar:
+          description: ''
+          example: Nome completo
+          type: string
+        TipoCampoDadoComplementarText:
+          description: ''
+          example: ''
+          type: string
+        TamanhoCampo:
+          description: O tamanho do campo (se aplicável)
+          example: '200'
+          type: integer
+        OrdemDoCampo:
+          description: ''
+          example: '1'
+          type: integer
+        Obrigatorio:
+          description: ''
+          example: 'false'
+          type: boolean
+        Opcoes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOItemDadoComplementar'
+        Valores:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOValorDadoComplementar'
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object

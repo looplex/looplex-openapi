@@ -2,7 +2,7 @@
 tags:
   - Dados complementares
 summary: Obter dado complementar por identificador
-operationId: api-dado_complementar-id
+operationId: api-dado_complementar-id-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml

@@ -6434,6 +6434,190 @@
         }
       }
     },
+    "/api/dado_complementar/{id}": {
+      "get": {
+        "tags": [
+          "Dados complementares"
+        ],
+        "summary": "Obter dado complementar por identificador",
+        "operationId": "api-dado_complementar-id-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "example": "1",
+            "description": "O identificador do dado complementar",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "O dado complementar",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Dados complementares"
+        ],
+        "summary": "Excluir dado complementar",
+        "operationId": "api-dado_complementar-id-delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "example": "1",
+            "description": "O identificador do dado complementar",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "O dado complementar foi excluído"
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dado_complementar": {
+      "get": {
+        "tags": [
+          "Dados complementares"
+        ],
+        "summary": "Dados Complementares Por Filtro",
+        "description": "Obtem array de dados complementares pelo(s) parâmetro(s)",
+        "operationId": "api-dado_complementar",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "clienteId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "areaId",
+            "in": "query",
+            "description": "A área deve ser do caso",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "tipoCaso",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
+          },
+          {
+            "name": "obtemDadosComplementaresDeFuncionario",
+            "in": "query",
+            "description": "Decide se obtem ou não os dados complementares de funcionários",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "obtemDadosComplementaresDeCaso",
+            "in": "query",
+            "description": "Decide se obtem ou não dados complementares apenas do processo (globais)",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Obtem um array de dados complementares conforme os parâmetros passados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{idCaso}/Decisoes": {
       "get": {
         "tags": [
@@ -13876,7 +14060,7 @@
       "RamosJudicial": {
         "type": "integer",
         "example": 1,
-        "description": "1: Administrativo\n\n2: Interno\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n"
+        "description": "1: Administrativo\n\n2: Interno\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n"
       },
       "DTOAndamentoTemplate": {
         "title": "DTOAndamentoTemplate",
@@ -15665,6 +15849,155 @@
           },
           "IdCaso": {
             "type": "integer"
+          }
+        }
+      },
+      "TipoDadoComplementar": {
+        "type": "TipoDadoComplementar",
+        "example": 1,
+        "description": "1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
+      },
+      "TipoVinculoDadoComplementar": {
+        "type": "TipoVinculoDadoComplementar",
+        "example": 1,
+        "description": "1: Processo\n\n2: Funcionario\n"
+      },
+      "DTOItemDadoComplementar": {
+        "title": "DTOItemDadoComplementar",
+        "type": "object",
+        "properties": {
+          "IDItemDadoComplementar": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "Texto": {
+            "description": "",
+            "example": "Opção 1",
+            "type": "string"
+          },
+          "Valor": {
+            "description": "",
+            "example": "Opção 1",
+            "type": "string"
+          }
+        }
+      },
+      "DTOValorDadoComplementar": {
+        "title": "DTOValorDadoComplementar",
+        "type": "object",
+        "properties": {
+          "IDCaso": {
+            "description": "O identificador do caso",
+            "example": "1",
+            "type": "integer"
+          },
+          "IDFuncionario": {
+            "description": "O identificador do funcionário",
+            "example": "1",
+            "type": "integer"
+          },
+          "IDProcessoValorDadoComplementar": {
+            "description": "",
+            "example": "",
+            "type": "integer"
+          },
+          "IDFuncionarioValorDadoComplementar": {
+            "description": "",
+            "example": "",
+            "type": "integer"
+          },
+          "Valor": {
+            "description": "",
+            "example": "",
+            "type": "string"
+          },
+          "DataDeAtualizacao": {
+            "description": "",
+            "example": "",
+            "type": "string"
+          }
+        }
+      },
+      "DTOParametroDadoComplementar": {
+        "title": "DTOParametroDadoComplementar",
+        "type": "object",
+        "properties": {
+          "IDArea": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "IDCliente": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "IDContrato": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "IDEscritorio": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "IDCategoriaLancamento": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "IDParametroDadoComplementar": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "TipoProcesso": {
+            "$ref": "#/components/schemas/RamosJudicial"
+          },
+          "TipoCampoDadoComplementar": {
+            "$ref": "#/components/schemas/TipoDadoComplementar"
+          },
+          "TipoVinculo": {
+            "$ref": "#/components/schemas/TipoVinculoDadoComplementar"
+          },
+          "TituloDadoComplementar": {
+            "description": "",
+            "example": "Nome completo",
+            "type": "string"
+          },
+          "TipoCampoDadoComplementarText": {
+            "description": "",
+            "example": "",
+            "type": "string"
+          },
+          "TamanhoCampo": {
+            "description": "O tamanho do campo (se aplicável)",
+            "example": "200",
+            "type": "integer"
+          },
+          "OrdemDoCampo": {
+            "description": "",
+            "example": "1",
+            "type": "integer"
+          },
+          "Obrigatorio": {
+            "description": "",
+            "example": "false",
+            "type": "boolean"
+          },
+          "Opcoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOItemDadoComplementar"
+            }
+          },
+          "Valores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOValorDadoComplementar"
+            }
           }
         }
       },
