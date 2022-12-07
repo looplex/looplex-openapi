@@ -347,7 +347,9 @@ paths:
   /api/dado_complementar:
     get:
       $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-get.yaml
-
+  /api/dado_complementarRemover:
+    get:
+      $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-get.yaml
 
   # Decisões
   /api/casos/{idCaso}/Decisoes:
