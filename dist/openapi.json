@@ -6618,6 +6618,54 @@
         }
       }
     },
+    "/api/dado_complementar_por_tipo_processo": {
+      "get": {
+        "tags": [
+          "Dados complementares"
+        ],
+        "summary": "Inclui dado complementar por tipo",
+        "description": "Cadastra um dado complementar por tipo",
+        "operationId": "api-dado_complementar_por_tipo_processo",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "O dado complementar foi cadastrado."
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{idCaso}/Decisoes": {
       "get": {
         "tags": [
@@ -15953,9 +16001,6 @@
             "example": "1",
             "type": "integer"
           },
-          "TipoProcesso": {
-            "$ref": "#/components/schemas/RamosJudicial"
-          },
           "TipoCampoDadoComplementar": {
             "$ref": "#/components/schemas/TipoDadoComplementar"
           },
@@ -15998,6 +16043,10 @@
             "items": {
               "$ref": "#/components/schemas/DTOValorDadoComplementar"
             }
+          },
+          "TiposProcesso": {
+            "type": "array",
+            "items": "$ref enums/RamosJudicial.yaml"
           }
         }
       },
