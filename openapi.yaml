@@ -3996,7 +3996,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
   /api/dado_complementar_por_tipo_processo:
-    get:
+    post:
       tags:
         - Dados complementares
       summary: Inclui dado complementar por tipo

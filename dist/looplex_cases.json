@@ -5145,7 +5145,7 @@
       }
     },
     "/api/dado_complementar_por_tipo_processo": {
-      "get": {
+      "post": {
         "tags": [
           "Dados complementares"
         ],
