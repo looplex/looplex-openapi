@@ -10366,7 +10366,8 @@ components:
             $ref: '#/components/schemas/DTOValorDadoComplementar'
         TiposProcesso:
           type: array
-          items: $ref enums/RamosJudicial.yaml
+          items:
+            $ref: '#/components/schemas/RamosJudicial'
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object

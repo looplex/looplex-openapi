@@ -16046,7 +16046,9 @@
           },
           "TiposProcesso": {
             "type": "array",
-            "items": "$ref enums/RamosJudicial.yaml"
+            "items": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
           }
         }
       },
