@@ -60,4 +60,4 @@ properties:
   TiposProcesso:
     type: array
     items:
-      $ref: enums/RamosJudicial.yaml
+      $ref: DTOTipoProcesso.yaml

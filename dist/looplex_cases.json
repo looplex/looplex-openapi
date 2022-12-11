@@ -13093,6 +13093,14 @@
           }
         }
       },
+      "DTOTipoProcesso": {
+        "type": "object",
+        "properties": {
+          "Tipo": {
+            "$ref": "#/components/schemas/RamosJudicial"
+          }
+        }
+      },
       "DTOParametroDadoComplementar": {
         "title": "DTOParametroDadoComplementar",
         "type": "object",
@@ -13173,7 +13181,7 @@
           "TiposProcesso": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RamosJudicial"
+              "$ref": "#/components/schemas/DTOTipoProcesso"
             }
           }
         }

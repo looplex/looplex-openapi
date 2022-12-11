@@ -10304,6 +10304,11 @@ components:
           description: ''
           example: ''
           type: string
+    DTOTipoProcesso:
+      type: object
+      properties:
+        Tipo:
+          $ref: '#/components/schemas/RamosJudicial'
     DTOParametroDadoComplementar:
       title: DTOParametroDadoComplementar
       type: object
@@ -10367,7 +10372,7 @@ components:
         TiposProcesso:
           type: array
           items:
-            $ref: '#/components/schemas/RamosJudicial'
+            $ref: '#/components/schemas/DTOTipoProcesso'
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object
