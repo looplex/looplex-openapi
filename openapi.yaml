@@ -10324,14 +10324,14 @@ components:
           type: integer
         IDProcessoValorDadoComplementar:
           description: >-
-            O identificador do valor, se o valor informado for maior que 0
+            O identificador do valor. Se o valor informado for maior que 0
             atualiza o respectivo valor se for encontrado, senão, inclui o novo
             valor
           example: -2147483648
           type: integer
         IDFuncionarioValorDadoComplementar:
           description: >-
-            O identificador do valor de funcionário, se o valor informado for
+            O identificador do valor de funcionário. Se o valor informado for
             maior que 0 atualiza o respectivo valor se for encontrado, senão,
             inclui o novo valor
           example: -2147483648
