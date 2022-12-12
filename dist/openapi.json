@@ -16013,6 +16013,7 @@
             "$ref": "#/components/schemas/TipoDadoComplementar"
           },
           "TipoVinculo": {
+            "required": true,
             "$ref": "#/components/schemas/TipoVinculoDadoComplementar"
           },
           "TituloDadoComplementar": {

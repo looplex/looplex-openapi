@@ -28,6 +28,7 @@ properties:
   TipoCampoDadoComplementar:
     $ref: enums/TipoDadoComplementar.yaml
   TipoVinculo:
+    required: true
     $ref: enums/TipoVinculoDadoComplementar.yaml
   TituloDadoComplementar:
     description: ""
