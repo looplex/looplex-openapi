@@ -3,27 +3,27 @@ type: object
 properties:
   IDArea:
     description: ""
-    example: "1"
+    example: 1
     type: integer
   IDCliente:
     description: ""
-    example: "1"
+    example: 1
     type: integer
   IDContrato:
     description: ""
-    example: "1"
+    example: 1
     type: integer
   IDEscritorio:
     description: ""
-    example: "1"
+    example: 1
     type: integer
   IDCategoriaLancamento:
     description: ""
-    example: "1"
+    example: 1
     type: integer
   IDParametroDadoComplementar:
-    description: ""
-    example: "1"
+    example: 1
+    description: "O identificador do dado complementar"
     type: integer
   TipoCampoDadoComplementar:
     $ref: enums/TipoDadoComplementar.yaml
@@ -34,20 +34,20 @@ properties:
     example: "Nome completo"
     type: string
   TipoCampoDadoComplementarText:
-    description: ""
-    example: ""
+    description: "Tipo de campo do dado complementar"
+    example: "Texto"
     type: string
   TamanhoCampo:
     description: "O tamanho do campo (se aplicável)"
-    example: "200"
+    example: 200
     type: integer
   OrdemDoCampo:
     description: ""
-    example: "1"
+    example: 1
     type: integer
   Obrigatorio:
     description: ""
-    example: "false"
+    example: false
     type: boolean
   Opcoes:
     type: array

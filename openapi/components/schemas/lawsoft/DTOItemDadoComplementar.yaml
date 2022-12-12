@@ -3,7 +3,7 @@ type: object
 properties:
   IDItemDadoComplementar:
     description: ""
-    example: "1"
+    example: 1
     type: integer
   Texto:
     description: ""

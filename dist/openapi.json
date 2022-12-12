@@ -15916,7 +15916,7 @@
         "properties": {
           "IDItemDadoComplementar": {
             "description": "",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "Texto": {
@@ -15937,22 +15937,22 @@
         "properties": {
           "IDCaso": {
             "description": "O identificador do caso",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "IDFuncionario": {
             "description": "O identificador do funcionário",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "IDProcessoValorDadoComplementar": {
             "description": "",
-            "example": "",
+            "example": 1,
             "type": "integer"
           },
           "IDFuncionarioValorDadoComplementar": {
             "description": "",
-            "example": "",
+            "example": 5,
             "type": "integer"
           },
           "Valor": {
@@ -15962,7 +15962,7 @@
           },
           "DataDeAtualizacao": {
             "description": "",
-            "example": "",
+            "example": "2022-01-01T00:00:00.000",
             "type": "string"
           }
         }
@@ -15981,32 +15981,32 @@
         "properties": {
           "IDArea": {
             "description": "",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "IDCliente": {
             "description": "",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "IDContrato": {
             "description": "",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "IDEscritorio": {
             "description": "",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "IDCategoriaLancamento": {
             "description": "",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "IDParametroDadoComplementar": {
-            "description": "",
-            "example": "1",
+            "example": 1,
+            "description": "O identificador do dado complementar",
             "type": "integer"
           },
           "TipoCampoDadoComplementar": {
@@ -16021,23 +16021,23 @@
             "type": "string"
           },
           "TipoCampoDadoComplementarText": {
-            "description": "",
-            "example": "",
+            "description": "Tipo de campo do dado complementar",
+            "example": "Texto",
             "type": "string"
           },
           "TamanhoCampo": {
             "description": "O tamanho do campo (se aplicável)",
-            "example": "200",
+            "example": 200,
             "type": "integer"
           },
           "OrdemDoCampo": {
             "description": "",
-            "example": "1",
+            "example": 1,
             "type": "integer"
           },
           "Obrigatorio": {
             "description": "",
-            "example": "false",
+            "example": false,
             "type": "boolean"
           },
           "Opcoes": {

@@ -3,19 +3,19 @@ type: object
 properties:
   IDCaso:
     description: "O identificador do caso"
-    example: "1"
+    example: 1
     type: integer
   IDFuncionario:
     description: "O identificador do funcionário"
-    example: "1"
+    example: 1
     type: integer
   IDProcessoValorDadoComplementar:
     description: ""
-    example: ""
+    example: 1
     type: integer
   IDFuncionarioValorDadoComplementar:
     description: ""
-    example: ""
+    example: 5
     type: integer
   Valor:
     description: ""
@@ -23,5 +23,5 @@ properties:
     type: string
   DataDeAtualizacao:
     description: ""
-    example: ""
+    example: "2022-01-01T00:00:00.000"
     type: string
