@@ -4938,6 +4938,60 @@
         }
       }
     },
+    "/api/casos/subcasos/{cdProcessoPai}": {
+      "get": {
+        "tags": [
+          "Casos"
+        ],
+        "summary": "Obtem casos pelo caso pai",
+        "operationId": "api-casos-subcasos-cdProcessoPai",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "cdProcessoPai",
+            "in": "path",
+            "example": "143",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna um array com os casos filhos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCasoSimples"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco": {
       "get": {
         "tags": [

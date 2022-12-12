@@ -249,6 +249,9 @@ paths:
   /api/casos/listacasos:
     get:
       $ref: ./paths/lawsoft/casos/public@api@casos@listacasos-get.yaml
+  /api/casos/subcasos/{cdProcessoPai}:
+    get:
+      $ref: './paths/lawsoft/casos/public@api@casos@subcasos@cdProcessoPai-get.yaml'
 
   # Categoria
   /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
