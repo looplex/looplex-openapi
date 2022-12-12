@@ -3926,7 +3926,7 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        '204':
           description: O dado complementar foi excluído
         '401':
           description: Em caso de erro de timeout ou sessão expirada.
