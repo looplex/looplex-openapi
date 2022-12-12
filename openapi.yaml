@@ -9492,11 +9492,15 @@ components:
       type: object
       properties:
         IDCaso:
-          description: O identificador do caso
+          description: >-
+            O identificador do caso. Se o valor for maior que 0, o dado
+            complementar será de caso.
           example: 100
           type: integer
         IDFuncionario:
-          description: O identificador do funcionário
+          description: >-
+            O identificador do funcionário. Se o valor for maior que 0, o dado
+            complementar será de funcionário.
           example: 25
           type: integer
         IDProcessoValorDadoComplementar:
