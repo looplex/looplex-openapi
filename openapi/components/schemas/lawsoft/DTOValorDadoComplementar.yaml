@@ -3,19 +3,19 @@ type: object
 properties:
   IDCaso:
     description: "O identificador do caso"
-    example: 1
+    example: 100
     type: integer
   IDFuncionario:
     description: "O identificador do funcionário"
-    example: 1
+    example: 25
     type: integer
   IDProcessoValorDadoComplementar:
     description: ""
-    example: 1
+    example: -2147483648
     type: integer
   IDFuncionarioValorDadoComplementar:
     description: ""
-    example: 5
+    example: -2147483648
     type: integer
   Valor:
     description: ""

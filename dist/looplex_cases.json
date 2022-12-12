@@ -13042,7 +13042,7 @@
         "properties": {
           "IDItemDadoComplementar": {
             "description": "",
-            "example": 1,
+            "example": -2147483648,
             "type": "integer"
           },
           "Texto": {
@@ -13063,22 +13063,22 @@
         "properties": {
           "IDCaso": {
             "description": "O identificador do caso",
-            "example": 1,
+            "example": 100,
             "type": "integer"
           },
           "IDFuncionario": {
             "description": "O identificador do funcionário",
-            "example": 1,
+            "example": 25,
             "type": "integer"
           },
           "IDProcessoValorDadoComplementar": {
             "description": "",
-            "example": 1,
+            "example": -2147483648,
             "type": "integer"
           },
           "IDFuncionarioValorDadoComplementar": {
             "description": "",
-            "example": 5,
+            "example": -2147483648,
             "type": "integer"
           },
           "Valor": {
@@ -13107,17 +13107,17 @@
         "properties": {
           "IDArea": {
             "description": "",
-            "example": 1,
+            "example": -2147483648,
             "type": "integer"
           },
           "IDCliente": {
             "description": "",
-            "example": 1,
+            "example": -2147483648,
             "type": "integer"
           },
           "IDContrato": {
             "description": "",
-            "example": 1,
+            "example": -2147483648,
             "type": "integer"
           },
           "IDEscritorio": {
@@ -13127,11 +13127,11 @@
           },
           "IDCategoriaLancamento": {
             "description": "",
-            "example": 1,
+            "example": -2147483648,
             "type": "integer"
           },
           "IDParametroDadoComplementar": {
-            "example": 1,
+            "example": -2147483648,
             "description": "O identificador do dado complementar",
             "type": "integer"
           },
@@ -13158,7 +13158,7 @@
           },
           "OrdemDoCampo": {
             "description": "",
-            "example": 1,
+            "example": 4,
             "type": "integer"
           },
           "Obrigatorio": {
