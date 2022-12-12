@@ -5195,8 +5195,8 @@
         "tags": [
           "Dados complementares"
         ],
-        "summary": "Inclui valor no dado complementar",
-        "description": "Inclui valores nos dados complementares informados",
+        "summary": "Inclui ou atualiza valor no dado complementar",
+        "description": "Inclui ou atualiza valores nos dados complementares informados",
         "operationId": "api-dado_complementar-valor",
         "parameters": [
           {
@@ -13128,22 +13128,22 @@
             "type": "integer"
           },
           "IDProcessoValorDadoComplementar": {
-            "description": "",
+            "description": "O identificador do valor, se o valor informado for maior que 0 atualiza o respectivo valor se for encontrado, senão, inclui o novo valor",
             "example": -2147483648,
             "type": "integer"
           },
           "IDFuncionarioValorDadoComplementar": {
-            "description": "",
+            "description": "O identificador do valor de funcionário, se o valor informado for maior que 0 atualiza o respectivo valor se for encontrado, senão, inclui o novo valor",
             "example": -2147483648,
             "type": "integer"
           },
           "Valor": {
-            "description": "",
-            "example": "",
+            "description": "O valor a ser gravado/atualizado no dado complementar",
+            "example": "Valor para gravar",
             "type": "string"
           },
           "DataDeAtualizacao": {
-            "description": "",
+            "description": "A data de atualização do valor",
             "example": "2022-01-01T00:00:00.000",
             "type": "string"
           }

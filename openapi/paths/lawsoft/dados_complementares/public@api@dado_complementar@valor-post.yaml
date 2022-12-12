@@ -1,8 +1,8 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Dados complementares
-summary: Inclui valor no dado complementar
-description: Inclui valores nos dados complementares informados
+summary: Inclui ou atualiza valor no dado complementar
+description: Inclui ou atualiza valores nos dados complementares informados
 operationId: api-dado_complementar-valor
 # Parâmetros da requisição
 parameters:
