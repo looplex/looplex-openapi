@@ -4022,6 +4022,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
+  /api/dado_complementar/valor:
+    post:
+      tags:
+        - Dados complementares
+      summary: Inclui valor no dado complementar
+      description: Inclui valores nos dados complementares informados
+      operationId: api-dado_complementar-valor
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+        - name: IDParametroDadoComplementar
+          in: query
+          example: 10
+          description: O identificador do dado complementar
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOValorDadoComplementar'
+      responses:
+        '204':
+          description: Os valores foram incluídos.
+        '401':
+          description: Em caso de erro de timeout ou sessão expirada.
+        '500':
+          description: Em caso de erro diferente de timeout ou sessão expirada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorResponse'
   /api/casos/{idCaso}/Decisoes:
     get:
       tags:
