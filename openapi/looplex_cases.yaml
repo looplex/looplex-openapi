@@ -347,9 +347,8 @@ paths:
   /api/dado_complementar:
     get:
       $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-get.yaml
-  /api/dado_complementar_por_tipo_processo:
     post:
-      $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar_por_tipo_processo-post.yaml
+      $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-post.yaml
 
   # Decisões
   /api/casos/{idCaso}/Decisoes:

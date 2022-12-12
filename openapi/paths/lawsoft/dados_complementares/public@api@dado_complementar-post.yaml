@@ -3,7 +3,7 @@ tags:
   - Dados complementares
 summary: Inclui dado complementar por tipo
 description: Cadastra um dado complementar por tipo
-operationId: api-dado_complementar_por_tipo_processo
+operationId: api-dado_complementar-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
