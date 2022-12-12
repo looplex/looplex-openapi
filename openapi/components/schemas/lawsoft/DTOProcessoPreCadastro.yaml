@@ -122,6 +122,10 @@ properties:
     type: array
     items:
       $ref: DTOItemAgenda.yaml
+  valoresDadoComplementar:
+    type: array
+    items: 
+      $ref: DTOValorDadoComplementar.yaml
 required:
   - idCliente
   - envolvimentoCliente
