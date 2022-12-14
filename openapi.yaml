@@ -9600,6 +9600,43 @@ components:
           description: A data de atualização do valor
           example: '2022-01-01T00:00:00.000'
           type: string
+    Moeda:
+      type: integer
+      example: 1
+      description: |
+        1: Real
+
+        2: Dólar americano
+
+        3: Euro
+    DTOCasoPedidoSimples:
+      title: DTOCasoPedidoSimples
+      type: object
+      properties:
+        Risco:
+          type: integer
+        ValorPrevisto:
+          type: number
+        ValorContingencia:
+          type: number
+        Nome:
+          type: string
+        Situacao:
+          type: integer
+        IdProcessoExpectativaReivindicacao:
+          type: integer
+        IdPedidoCausa:
+          type: integer
+        Justificativa:
+          type: string
+        MoedaValorPrevisto:
+          $ref: '#/components/schemas/Moeda'
+        MoedaValorContingenciado:
+          $ref: '#/components/schemas/Moeda'
+        DataConstituicao:
+          type: string
+        DataVencimento:
+          type: string
     DTOProcessoPreCadastro:
       title: DTOProcessoPreCadastro
       type: object
@@ -9729,6 +9766,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOValorDadoComplementar'
+        pedidos:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCasoPedidoSimples'
       required:
         - idCliente
         - envolvimentoCliente
@@ -10539,15 +10580,6 @@ components:
           type: integer
         Nome:
           type: string
-    Moeda:
-      type: integer
-      example: 1
-      description: |
-        1: Real
-
-        2: Dólar americano
-
-        3: Euro
     DTOProcessoDecisaoValor:
       title: DTOProcessoDecisaoValor
       type: object
@@ -10895,30 +10927,6 @@ components:
           type: string
         ID:
           type: integer
-    DTOCasoPedidoSimples:
-      title: DTOCasoPedidoSimples
-      type: object
-      properties:
-        Risco:
-          type: integer
-        ValorPrevisto:
-          type: number
-        ValorContingencia:
-          type: number
-        Nome:
-          type: string
-        Situacao:
-          type: integer
-        IdProcessoExpectativaReivindicacao:
-          type: integer
-        IdPedidoCausa:
-          type: integer
-        Justificativa:
-          type: string
-        MoedaValorPrevisto:
-          $ref: '#/components/schemas/Moeda'
-        MoedaValorContingenciado:
-          $ref: '#/components/schemas/Moeda'
     DTOValoresDoCaso:
       title: DTOValoresDoCaso
       type: object

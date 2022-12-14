@@ -126,6 +126,10 @@ properties:
     type: array
     items: 
       $ref: DTOValorDadoComplementar.yaml
+  pedidos:
+    type: array
+    items:
+      $ref: DTOCasoPedidoSimples.yaml
 required:
   - idCliente
   - envolvimentoCliente

@@ -21,3 +21,7 @@ properties:
     $ref: enums/Moeda.yaml
   MoedaValorContingenciado:
     $ref: enums/Moeda.yaml
+  DataConstituicao:
+    type: string
+  DataVencimento:
+    type: string

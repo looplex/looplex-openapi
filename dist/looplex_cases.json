@@ -12144,6 +12144,53 @@
           }
         }
       },
+      "Moeda": {
+        "type": "integer",
+        "example": 1,
+        "description": "1: Real\n\n2: Dólar americano\n\n3: Euro\n"
+      },
+      "DTOCasoPedidoSimples": {
+        "title": "DTOCasoPedidoSimples",
+        "type": "object",
+        "properties": {
+          "Risco": {
+            "type": "integer"
+          },
+          "ValorPrevisto": {
+            "type": "number"
+          },
+          "ValorContingencia": {
+            "type": "number"
+          },
+          "Nome": {
+            "type": "string"
+          },
+          "Situacao": {
+            "type": "integer"
+          },
+          "IdProcessoExpectativaReivindicacao": {
+            "type": "integer"
+          },
+          "IdPedidoCausa": {
+            "type": "integer"
+          },
+          "Justificativa": {
+            "type": "string"
+          },
+          "MoedaValorPrevisto": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "MoedaValorContingenciado": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "DataConstituicao": {
+            "type": "string"
+          },
+          "DataVencimento": {
+            "type": "string"
+          }
+        }
+      },
       "DTOProcessoPreCadastro": {
         "title": "DTOProcessoPreCadastro",
         "type": "object",
@@ -12325,6 +12372,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DTOValorDadoComplementar"
+            }
+          },
+          "pedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOCasoPedidoSimples"
             }
           }
         },
@@ -13436,11 +13489,6 @@
           }
         }
       },
-      "Moeda": {
-        "type": "integer",
-        "example": 1,
-        "description": "1: Real\n\n2: Dólar americano\n\n3: Euro\n"
-      },
       "DTOProcessoDecisaoValor": {
         "title": "DTOProcessoDecisaoValor",
         "type": "object",
@@ -13912,42 +13960,6 @@
           },
           "ID": {
             "type": "integer"
-          }
-        }
-      },
-      "DTOCasoPedidoSimples": {
-        "title": "DTOCasoPedidoSimples",
-        "type": "object",
-        "properties": {
-          "Risco": {
-            "type": "integer"
-          },
-          "ValorPrevisto": {
-            "type": "number"
-          },
-          "ValorContingencia": {
-            "type": "number"
-          },
-          "Nome": {
-            "type": "string"
-          },
-          "Situacao": {
-            "type": "integer"
-          },
-          "IdProcessoExpectativaReivindicacao": {
-            "type": "integer"
-          },
-          "IdPedidoCausa": {
-            "type": "integer"
-          },
-          "Justificativa": {
-            "type": "string"
-          },
-          "MoedaValorPrevisto": {
-            "$ref": "#/components/schemas/Moeda"
-          },
-          "MoedaValorContingenciado": {
-            "$ref": "#/components/schemas/Moeda"
           }
         }
       },
