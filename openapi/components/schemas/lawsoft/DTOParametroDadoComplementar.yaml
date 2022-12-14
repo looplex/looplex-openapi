@@ -64,4 +64,3 @@ properties:
       $ref: DTOTipoProcesso.yaml
   Ativo:
     type: boolean
-    
