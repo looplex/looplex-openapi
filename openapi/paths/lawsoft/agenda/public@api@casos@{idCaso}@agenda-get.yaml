@@ -38,7 +38,7 @@ parameters:
     description: "Default: true"
     schema:
       type: boolean
-  - name: agendaWeb
+  - name: isPlatformWeb
     in: query
     required: false
     description: "Default: false"

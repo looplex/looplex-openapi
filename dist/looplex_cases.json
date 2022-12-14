@@ -326,7 +326,7 @@
             }
           },
           {
-            "name": "agendaWeb",
+            "name": "isPlatformWeb",
             "in": "query",
             "required": false,
             "description": "Default: false",
@@ -377,6 +377,15 @@
           },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "isPlatformWeb",
+            "in": "query",
+            "required": false,
+            "description": "Default: false",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "requestBody": {
@@ -427,6 +436,15 @@
           },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "isPlatformWeb",
+            "in": "query",
+            "required": false,
+            "description": "Default: false",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "requestBody": {
@@ -531,7 +549,7 @@
             }
           },
           {
-            "name": "agendaWeb",
+            "name": "isPlatformWeb",
             "in": "query",
             "required": false,
             "description": "Default: false",
@@ -9180,6 +9198,15 @@
             "description": "Default: 10",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "isPlatformWeb",
+            "in": "query",
+            "required": false,
+            "description": "Default: false",
+            "schema": {
+              "type": "boolean"
             }
           }
         ],

@@ -28,6 +28,12 @@ parameters:
     description: "Default: 10"
     schema:
       type: integer
+  - name: isPlatformWeb
+    in: query
+    required: false
+    description: "Default: false"
+    schema:
+      type: boolean
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
