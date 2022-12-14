@@ -5249,7 +5249,7 @@
         ],
         "summary": "Atualiza Dados Complementares",
         "description": "Atualizar os campos com os valores passados",
-        "operationId": "api-dado_complementar",
+        "operationId": "api-dado_complementar-put",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"

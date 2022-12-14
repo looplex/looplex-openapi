@@ -3,7 +3,7 @@ tags:
   - Dados complementares
 summary: Atualiza Dados Complementares
 description: Atualizar os campos com os valores passados
-operationId: api-dado_complementar
+operationId: api-dado_complementar-put
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml

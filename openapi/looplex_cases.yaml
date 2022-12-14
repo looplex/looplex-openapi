@@ -353,7 +353,7 @@ paths:
     post:
       $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-post.yaml
     put:
-      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar-put.yaml'
+      $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-put.yaml
   /api/dado_complementar/valor:
     post:
       $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar@valor-post.yaml'
