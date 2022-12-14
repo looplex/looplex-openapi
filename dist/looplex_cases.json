@@ -10952,7 +10952,7 @@
             "type": "string",
             "description": "O titulo do caso em que o item de agenda foi vinculado"
           },
-          "NumeroLawOffice": {
+          "NumeroDoCaso": {
             "description": "O numero do caso no LawOffice",
             "type": "integer"
           },
