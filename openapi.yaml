@@ -10454,6 +10454,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOTipoProcesso'
+        Ativo:
+          type: boolean
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object

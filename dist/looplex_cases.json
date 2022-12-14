@@ -5242,6 +5242,49 @@
             }
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Dados complementares"
+        ],
+        "summary": "Atualiza Dados Complementares",
+        "description": "Atualizar os campos com os valores passados",
+        "operationId": "api-dado_complementar",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "O dado complementar foi atualizado."
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/dado_complementar/valor": {
@@ -13300,6 +13343,9 @@
             "items": {
               "$ref": "#/components/schemas/DTOTipoProcesso"
             }
+          },
+          "Ativo": {
+            "type": "boolean"
           }
         }
       },

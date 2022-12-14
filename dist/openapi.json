@@ -16174,6 +16174,9 @@
             "items": {
               "$ref": "#/components/schemas/DTOTipoProcesso"
             }
+          },
+          "Ativo": {
+            "type": "boolean"
           }
         }
       },

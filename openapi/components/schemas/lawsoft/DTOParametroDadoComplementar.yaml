@@ -62,3 +62,6 @@ properties:
     type: array
     items:
       $ref: DTOTipoProcesso.yaml
+  Ativo:
+    type: boolean
+    
