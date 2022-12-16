@@ -31,10 +31,8 @@ properties:
     type: boolean
   TipoItemAgenda:
     $ref: enums/TipoItemAgenda.yaml
-  Titulo:
-    description: "O título do item de agenda"
-    type: string
   Assunto:
+    description: "O título do item de agenda"
     type: string
   Descricao:
     description: "A descrição do item de agenda"

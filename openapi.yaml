@@ -8834,10 +8834,8 @@ components:
           type: boolean
         TipoItemAgenda:
           $ref: '#/components/schemas/TipoItemAgenda'
-        Titulo:
-          description: O título do item de agenda
-          type: string
         Assunto:
+          description: O título do item de agenda
           type: string
         Descricao:
           description: A descrição do item de agenda
