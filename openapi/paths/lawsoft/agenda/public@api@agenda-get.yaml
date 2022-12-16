@@ -33,12 +33,6 @@ parameters:
     description: "Default: true"
     schema:
       type: boolean
-  - name: isPlatformWeb
-    in: query
-    required: false
-    description: "Default: false"
-    schema:
-      type: boolean
 responses:
   "200":
     description: Obtém um array com os compromissos de agenda de acordo com o filtro informado.

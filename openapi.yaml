@@ -1053,12 +1053,6 @@ paths:
           description: 'Default: true'
           schema:
             type: boolean
-        - name: isPlatformWeb
-          in: query
-          required: false
-          description: 'Default: false'
-          schema:
-            type: boolean
       responses:
         '200':
           description: >-
@@ -1087,12 +1081,6 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: isPlatformWeb
-          in: query
-          required: false
-          description: 'Default: false'
-          schema:
-            type: boolean
       requestBody:
         content:
           application/json:
@@ -1122,12 +1110,6 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: isPlatformWeb
-          in: query
-          required: false
-          description: 'Default: false'
-          schema:
-            type: boolean
       requestBody:
         content:
           application/json:
@@ -1190,12 +1172,6 @@ paths:
           in: query
           required: false
           description: 'Default: true'
-          schema:
-            type: boolean
-        - name: isPlatformWeb
-          in: query
-          required: false
-          description: 'Default: false'
           schema:
             type: boolean
       responses:
@@ -1557,12 +1533,6 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/TipoItemAgenda'
-        - name: isPlatformWeb
-          in: query
-          required: false
-          description: 'Default: false'
-          schema:
-            type: boolean
       responses:
         '200':
           description: Resposta
@@ -6438,12 +6408,6 @@ paths:
           description: 'Default: 10'
           schema:
             type: integer
-        - name: isPlatformWeb
-          in: query
-          required: false
-          description: 'Default: false'
-          schema:
-            type: boolean
       responses:
         '200':
           description: Compromissos

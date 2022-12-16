@@ -324,15 +324,6 @@
             "schema": {
               "type": "boolean"
             }
-          },
-          {
-            "name": "isPlatformWeb",
-            "in": "query",
-            "required": false,
-            "description": "Default: false",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "responses": {
@@ -377,15 +368,6 @@
           },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
-            "name": "isPlatformWeb",
-            "in": "query",
-            "required": false,
-            "description": "Default: false",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "requestBody": {
@@ -436,15 +418,6 @@
           },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
-            "name": "isPlatformWeb",
-            "in": "query",
-            "required": false,
-            "description": "Default: false",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "requestBody": {
@@ -544,15 +517,6 @@
             "in": "query",
             "required": false,
             "description": "Default: true",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "isPlatformWeb",
-            "in": "query",
-            "required": false,
-            "description": "Default: false",
             "schema": {
               "type": "boolean"
             }
@@ -1139,15 +1103,6 @@
             "required": true,
             "schema": {
               "$ref": "#/components/schemas/TipoItemAgenda"
-            }
-          },
-          {
-            "name": "isPlatformWeb",
-            "in": "query",
-            "required": false,
-            "description": "Default: false",
-            "schema": {
-              "type": "boolean"
             }
           }
         ],
@@ -9198,15 +9153,6 @@
             "description": "Default: 10",
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "isPlatformWeb",
-            "in": "query",
-            "required": false,
-            "description": "Default: false",
-            "schema": {
-              "type": "boolean"
             }
           }
         ],
