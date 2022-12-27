@@ -2,14 +2,14 @@ openapi: 3.0.2
 info:
   version: 1.0.0
   title: Assembler
-  termsOfService: https://docs.looplex.com.br/legal/termos-de-uso
+  termsOfService: 'https://docs.looplex.com.br/legal/termos-de-uso'
   contact:
     name: Developers Looplex
     email: developer@looplex.com.br
-    url: https://www.looplex.com.br
+    url: 'https://www.looplex.com.br'
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   x-logo:
     url: /assets/images/logo.png
     href: /
@@ -18,11 +18,6 @@ info:
 
     Assembler é o grupo de APIs consumidas pela interface web Looplex,
     relacionadas aos fluxos de documentos, templates e tarefas.
-
-
-    # Começando
-
-    ...
 tags:
   - name: Tasks
     description: Tasks operations
@@ -34,7 +29,7 @@ tags:
     description: Template operations
     x-displayName: Templates
   - name: Users
-    description: User operations, such as login and profile consulting
+    description: 'User operations, such as login and profile consulting'
     x-displayName: Users
   - name: Operations
     description: Actions operations
@@ -177,20 +172,20 @@ x-tagGroups:
 
       [OpenAPI/Swagger
       format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
-  - name: looplex_varas_foros
+  - name: varas_foros
     tags:
       - Varas e Foros
 servers:
-  - url: https://graph.looplex.com/api/v1/assembler
+  - url: 'https://graph.looplex.com/api/v1/assembler'
     description: Graph server
   - url: 'https://apim.looplex.com/actions/v1'
     description: Actions Server
   - url: 'https://graph.looplex.com/cases'
     description: Looplex Cases Server
-  - url: https://graph.looplex.com/varas_foros
+  - url: 'https://graph.looplex.com/varas_foros'
     description: Looplex Varas e Foros Server
 paths:
-  /documents/{docId}/answers:
+  '/documents/{docId}/answers':
     get:
       tags:
         - Documents
@@ -210,7 +205,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  /documents/{docId}/export:
+  '/documents/{docId}/export':
     get:
       tags:
         - Documents
@@ -233,7 +228,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  /documents/{docId}/import:
+  '/documents/{docId}/import':
     post:
       tags:
         - Documents
@@ -263,7 +258,7 @@ paths:
             multipart/form-data: {}
       security:
         - Subscription-Key: []
-  /documents/{docId}/json:
+  '/documents/{docId}/json':
     post:
       tags:
         - Documents
@@ -294,7 +289,7 @@ paths:
             multipart/form-data: {}
       security:
         - Subscription-Key: []
-  /documents/{docId}/revision-all-answers:
+  '/documents/{docId}/revision-all-answers':
     get:
       tags:
         - Documents
@@ -338,7 +333,7 @@ paths:
                 $ref: '#/components/schemas/DocumentDTORes'
       security:
         - Subscription-Key: []
-  /documents/{docId}/hide:
+  '/documents/{docId}/hide':
     post:
       tags:
         - Documents
@@ -354,7 +349,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  /documents/{docId}/unhide:
+  '/documents/{docId}/unhide':
     post:
       tags:
         - Documents
@@ -370,7 +365,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  /documents/template/{templateIdentifier}:
+  '/documents/template/{templateIdentifier}':
     get:
       tags:
         - Documents
@@ -386,7 +381,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  /documents/{docId}:
+  '/documents/{docId}':
     patch:
       tags:
         - Documents
@@ -436,7 +431,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  /documents/{docId}/rem:
+  '/documents/{docId}/rem':
     delete:
       tags:
         - Documents
@@ -452,7 +447,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  /documents/{docId}/s3:
+  '/documents/{docId}/s3':
     delete:
       tags:
         - Documents
@@ -535,7 +530,7 @@ paths:
                 $ref: '#/components/schemas/PageResponse'
       security:
         - Subscription-Key: []
-  /tasks/{taskId}:
+  '/tasks/{taskId}':
     patch:
       tags:
         - Tasks
@@ -641,7 +636,7 @@ paths:
                   value: null
       security:
         - Subscription-Key: []
-  /templates/{template}/persistent:
+  '/templates/{template}/persistent':
     post:
       tags:
         - Documents
@@ -671,7 +666,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  /templates/{template}/transient:
+  '/templates/{template}/transient':
     post:
       tags:
         - Documents
@@ -707,7 +702,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  /templates/{templateId}:
+  '/templates/{templateId}':
     get:
       tags:
         - Templates
@@ -1731,7 +1726,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/agenda:
+  '/api/casos/{idCaso}/agenda':
     get:
       tags:
         - Agenda
@@ -1794,7 +1789,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/agenda/{tipo}/{id}:
+  '/api/agenda/{tipo}/{id}':
     delete:
       tags:
         - Agenda
@@ -1912,7 +1907,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/audiencias:
+  '/api/casos/{idCaso}/audiencias':
     get:
       tags:
         - Agenda
@@ -1949,7 +1944,7 @@ paths:
       tags:
         - Agenda
       summary: Obtém audiências
-      description: Obtém audiências por numero interno, externo ou identificador do caso
+      description: 'Obtém audiências por numero interno, externo ou identificador do caso'
       operationId: api-casos-num-audiencias
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -1988,12 +1983,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/tabagenda:
+  '/api/casos/{idCaso}/tabagenda':
     get:
       tags:
         - Agenda
       summary: Obtém compromissos
-      description: Obtém compromissos, prazos e publicações por caso.
+      description: 'Obtém compromissos, prazos e publicações por caso.'
       operationId: api-casos-idCaso-tabagenda
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -2006,7 +2001,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Retorna um array com os compromissos, prazos e publicações por caso.
+          description: 'Retorna um array com os compromissos, prazos e publicações por caso.'
           content:
             application/json:
               schema:
@@ -2112,7 +2107,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/agenda/{id}/{tipo}:
+  '/api/agenda/{id}/{tipo}':
     get:
       tags:
         - Agenda
@@ -2270,7 +2265,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}:
+  '/api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}':
     get:
       tags:
         - Andamento
@@ -2323,7 +2318,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/andamentosimples:
+  '/api/casos/{idCaso}/andamentosimples':
     get:
       tags:
         - Andamento
@@ -2359,7 +2354,7 @@ paths:
     get:
       tags:
         - Andamento
-      summary: Andamentos simples por caso, numero interno ou numero externo
+      summary: 'Andamentos simples por caso, numero interno ou numero externo'
       description: >-
         Retorna um array de andamentos simples por caso, numero interno ou
         numero externo
@@ -2401,7 +2396,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/andamentos/{id}:
+  '/api/andamentos/{id}':
     get:
       tags:
         - Andamento
@@ -2461,7 +2456,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/andamentos/{idAndamento}:
+  '/api/andamentos/{idAndamento}':
     put:
       tags:
         - Andamento
@@ -2521,7 +2516,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/andamentos/update/{idAndamento}:
+  '/api/andamentos/update/{idAndamento}':
     put:
       tags:
         - Andamento
@@ -2599,7 +2594,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/areas/porDomain/{domain}:
+  '/api/areas/porDomain/{domain}':
     get:
       tags:
         - Area
@@ -2631,7 +2626,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/areas/{id}:
+  '/api/areas/{id}':
     get:
       tags:
         - Area
@@ -2709,7 +2704,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{cdProcesso}/CalculosMonetarios:
+  '/api/casos/{cdProcesso}/CalculosMonetarios':
     get:
       tags:
         - Calculo Monetário
@@ -2740,7 +2735,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/CalculoMonetario/{id}:
+  '/api/CalculoMonetario/{id}':
     get:
       tags:
         - Calculo Monetário
@@ -2793,7 +2788,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{id}/Calcula:
+  '/api/casos/{id}/Calcula':
     post:
       tags:
         - Calculo Monetário
@@ -2884,7 +2879,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/CalculoMonetario/Modelos/{id}:
+  '/api/CalculoMonetario/Modelos/{id}':
     get:
       tags:
         - Calculo Monetário
@@ -2913,7 +2908,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{id}/ValoresParaCalculo:
+  '/api/casos/{id}/ValoresParaCalculo':
     get:
       tags:
         - Calculo Monetário
@@ -2978,7 +2973,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/{idCliente}/casos:
+  '/api/clientes/{idCliente}/casos':
     get:
       tags:
         - Casos
@@ -3028,7 +3023,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/{idCliente}/pastas:
+  '/api/clientes/{idCliente}/pastas':
     get:
       tags:
         - Casos
@@ -3060,7 +3055,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCliente}/pastasDoCaso:
+  '/api/casos/{idCliente}/pastasDoCaso':
     get:
       tags:
         - Casos
@@ -3092,7 +3087,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{id}:
+  '/api/casos/{id}':
     get:
       tags:
         - Casos
@@ -3122,7 +3117,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{id}/ficha:
+  '/api/casos/{id}/ficha':
     get:
       tags:
         - Casos
@@ -3198,7 +3193,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/meuscasos/{cdResponsavel}:
+  '/api/casos/meuscasos/{cdResponsavel}':
     get:
       tags:
         - Casos
@@ -3301,7 +3296,7 @@ paths:
       tags:
         - Casos
       summary: Casos
-      description: Casos por identificador, numero interno ou numero externo
+      description: 'Casos por identificador, numero interno ou numero externo'
       operationId: api-casos-id-num
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -3323,7 +3318,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Obtém os casos por identificador, numero interno ou numero externo
+          description: 'Obtém os casos por identificador, numero interno ou numero externo'
           content:
             application/json:
               schema:
@@ -3338,7 +3333,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/porIds/{ids}:
+  '/api/casos/porIds/{ids}':
     get:
       tags:
         - Casos
@@ -3377,7 +3372,7 @@ paths:
     get:
       tags:
         - Casos
-      summary: Casos por identificador, numero interno ou numero externo
+      summary: 'Casos por identificador, numero interno ou numero externo'
       description: >-
         Obtém os casos obtidos pelo identificador, numero interno ou numero
         externo
@@ -3411,7 +3406,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Casos por identificador, numero interno ou numero externo
+          description: 'Casos por identificador, numero interno ou numero externo'
           content:
             application/json:
               schema:
@@ -3546,7 +3541,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/subcasos/{cdProcessoPai}:
+  '/api/casos/subcasos/{cdProcessoPai}':
     get:
       tags:
         - Casos
@@ -3578,7 +3573,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
+  '/api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco':
     get:
       tags:
         - Categoria
@@ -3619,7 +3614,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/escritorios/{IdEscritorio}/categoriaspreco:
+  '/api/escritorios/{IdEscritorio}/categoriaspreco':
     get:
       tags:
         - Categoria
@@ -3651,7 +3646,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/funcionarios/{IdsMin},{IdsMax}/categorias:
+  '/api/funcionarios/{IdsMin},{IdsMax}/categorias':
     get:
       tags:
         - Categoria
@@ -3793,7 +3788,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/porDomain/{domain}:
+  '/api/clientes/porDomain/{domain}':
     get:
       tags:
         - Cliente
@@ -3938,7 +3933,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/{id}:
+  '/api/clientes/{id}':
     get:
       tags:
         - Cliente
@@ -3970,7 +3965,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/porIds/{idsClientes}:
+  '/api/clientes/porIds/{idsClientes}':
     get:
       tags:
         - Cliente
@@ -4007,7 +4002,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/{idCliente}/pasta:
+  '/api/clientes/{idCliente}/pasta':
     get:
       tags:
         - Cliente
@@ -4036,7 +4031,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/contatos/{id}:
+  '/api/contatos/{id}':
     get:
       tags:
         - Contato
@@ -4093,7 +4088,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/{idCliente}/contatos:
+  '/api/clientes/{idCliente}/contatos':
     get:
       tags:
         - Contato
@@ -4264,7 +4259,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/contratosimples:
+  '/api/casos/{idCaso}/contratosimples':
     get:
       tags:
         - Contrato
@@ -4294,7 +4289,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/contratos/{idCliente}/contratosCliente:
+  '/api/contratos/{idCliente}/contratosCliente':
     get:
       tags:
         - Contrato
@@ -4338,7 +4333,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/clientes/{idCliente}/contratos:
+  '/api/clientes/{idCliente}/contratos':
     get:
       tags:
         - Contrato
@@ -4382,7 +4377,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/contratos/{id}:
+  '/api/contratos/{id}':
     get:
       tags:
         - Contrato
@@ -4412,7 +4407,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/dadoscomplementares:
+  '/api/casos/{idCaso}/dadoscomplementares':
     get:
       tags:
         - Dados complementares
@@ -4494,7 +4489,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/dado_complementar/{id}:
+  '/api/dado_complementar/{id}':
     get:
       tags:
         - Dados complementares
@@ -4697,7 +4692,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/Decisoes:
+  '/api/casos/{idCaso}/Decisoes':
     get:
       tags:
         - Decisões
@@ -4823,7 +4818,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/Decisoes/{id}:
+  '/api/Decisoes/{id}':
     get:
       tags:
         - Decisões
@@ -4881,7 +4876,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/DecisoesComValores:
+  '/api/casos/{idCaso}/DecisoesComValores':
     get:
       tags:
         - Decisões
@@ -4912,7 +4907,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/Decisoes/{idProcessoDecisao}:
+  '/api/Decisoes/{idProcessoDecisao}':
     delete:
       tags:
         - Decisões
@@ -5141,7 +5136,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/despesas/voucher/{idVoucher}/categorias:
+  '/api/despesas/voucher/{idVoucher}/categorias':
     get:
       tags:
         - Despesas
@@ -5170,7 +5165,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/despesas/voucher/{idVoucher}/fornecedores:
+  '/api/despesas/voucher/{idVoucher}/fornecedores':
     get:
       tags:
         - Despesas
@@ -5241,7 +5236,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/despesas/obtem/{id}:
+  '/api/despesas/obtem/{id}':
     get:
       tags:
         - Despesas
@@ -5340,7 +5335,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/despesas/exclui/{id}:
+  '/api/despesas/exclui/{id}':
     delete:
       tags:
         - Despesas
@@ -5388,7 +5383,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/Valores:
+  '/api/casos/{idCaso}/Valores':
     get:
       tags:
         - Expectativa reivindicação
@@ -5417,7 +5412,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/PedidosComHistorico:
+  '/api/casos/{idCaso}/PedidosComHistorico':
     get:
       tags:
         - Expectativa reivindicação
@@ -5446,7 +5441,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/expectativa/valores/{idCaso}:
+  '/api/expectativa/valores/{idCaso}':
     get:
       tags:
         - Expectativa reivindicação
@@ -5502,7 +5497,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/fase/{nrGrupo}:
+  '/api/casos/fase/{nrGrupo}':
     get:
       tags:
         - Fase caso
@@ -5534,7 +5529,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{nrSequencia}/fase:
+  '/api/casos/{nrSequencia}/fase':
     get:
       tags:
         - Fase caso
@@ -5610,7 +5605,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/funcionarios/porIds/{ids}:
+  '/api/funcionarios/porIds/{ids}':
     get:
       tags:
         - Funcionário
@@ -5649,7 +5644,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/funcionarios/porId/{id}:
+  '/api/funcionarios/porId/{id}':
     get:
       tags:
         - Funcionário
@@ -5727,7 +5722,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/areas/{idArea}/funcionarios:
+  '/api/areas/{idArea}/funcionarios':
     get:
       tags:
         - Funcionário
@@ -5775,7 +5770,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/funcionarios/{idFuncionario}/areas:
+  '/api/funcionarios/{idFuncionario}/areas':
     get:
       tags:
         - Funcionário
@@ -5807,7 +5802,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/escritorios/{IdEscritorio}/funcionarios:
+  '/api/escritorios/{IdEscritorio}/funcionarios':
     get:
       tags:
         - Funcionário
@@ -5870,7 +5865,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/Garantia/{idCasoGarantia}:
+  '/api/casos/Garantia/{idCasoGarantia}':
     get:
       tags:
         - Garantia
@@ -5901,7 +5896,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/Garantias:
+  '/api/casos/{idCaso}/Garantias':
     get:
       tags:
         - Garantia
@@ -6006,7 +6001,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/Garantia/Inclui/{idCaso}:
+  '/api/casos/Garantia/Inclui/{idCaso}':
     post:
       tags:
         - Garantia
@@ -6040,7 +6035,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/Garantia/Atualiza/{idCaso}:
+  '/api/casos/Garantia/Atualiza/{idCaso}':
     put:
       tags:
         - Garantia
@@ -6075,7 +6070,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
+  '/api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}':
     delete:
       tags:
         - Garantia
@@ -6108,7 +6103,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
+  '/api/casos/Garantia/IncluiMovimentacao/{idCaso}':
     post:
       tags:
         - Garantia
@@ -6313,7 +6308,7 @@ paths:
       tags:
         - Hierarquia
       summary: Grupos de foro
-      description: Obtém os grupos de foro por ramo de justiça, estado e grupo de família
+      description: 'Obtém os grupos de foro por ramo de justiça, estado e grupo de família'
       operationId: api-hierarquia-grupoforo
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -6492,7 +6487,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/natureza:
+  '/api/casos/{idCaso}/natureza':
     get:
       tags:
         - Natureza
@@ -6691,7 +6686,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/Partes:
+  '/api/casos/{idCaso}/Partes':
     get:
       tags:
         - Partes
@@ -6757,7 +6752,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/parte/{cdParte}:
+  '/api/parte/{cdParte}':
     delete:
       tags:
         - Partes
@@ -6916,7 +6911,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/escritorios/{idEscritorio}/tabelaspreco:
+  '/api/escritorios/{idEscritorio}/tabelaspreco':
     get:
       tags:
         - Tabela preço
@@ -6948,7 +6943,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/escritorios/{idEscritorio}/tabelasprecocategoria:
+  '/api/escritorios/{idEscritorio}/tabelasprecocategoria':
     get:
       tags:
         - Tabela preço categoria
@@ -6979,7 +6974,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
+  '/api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}':
     get:
       tags:
         - Tarefa
@@ -7354,7 +7349,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/timesheet/funcionarios/{idFuncionario}/areas:
+  '/api/timesheet/funcionarios/{idFuncionario}/areas':
     get:
       tags:
         - Timesheet
@@ -7385,7 +7380,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/timesheet/areas/{idArea}/titulos:
+  '/api/timesheet/areas/{idArea}/titulos':
     get:
       tags:
         - Timesheet
@@ -7442,7 +7437,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/timesheet/funcionarios/permissaolcto/{idFuncionario}:
+  '/api/timesheet/funcionarios/permissaolcto/{idFuncionario}':
     get:
       tags:
         - Timesheet
@@ -7499,7 +7494,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/timesheet:
+  '/api/casos/{idCaso}/timesheet':
     get:
       tags:
         - Timesheet
@@ -7540,7 +7535,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/timesheet/caso/{idCaso}:
+  '/api/timesheet/caso/{idCaso}':
     get:
       tags:
         - Timesheet
@@ -7571,7 +7566,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/timesheet/obtem/{id}:
+  '/api/timesheet/obtem/{id}':
     get:
       tags:
         - Timesheet
@@ -7716,7 +7711,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/timesheet/exclui/{id}:
+  '/api/timesheet/exclui/{id}':
     delete:
       tags:
         - Timesheet
@@ -7802,7 +7797,7 @@ paths:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idsFuncionarios
           in: query
-          example: 1,2
+          example: '1,2'
           description: Os ids de funcionarios separados por virgula
           required: true
           schema:
@@ -7843,7 +7838,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  /api/casos/{idCaso}/valoresapurados:
+  '/api/casos/{idCaso}/valoresapurados':
     get:
       tags:
         - Valores apurados
@@ -8595,7 +8590,7 @@ components:
         name:
           type: string
           description: Document's name
-          example: Documentos Financeiro (Lawsoft) 05-05-2022 20:19:38
+          example: 'Documentos Financeiro (Lawsoft) 05-05-2022 20:19:38'
         parentId:
           type: integer
           description: Id do documento pai
@@ -8638,8 +8633,8 @@ components:
               name: Jane Doe
               id: janedoe@looplex.com.br
             document:
-              name: Acordo de Confidencialidade/NDA 18/05/2022 09:41:52
-              url: https://graph.looplex.com/documents/1
+              name: 'Acordo de Confidencialidade/NDA 18/05/2022 09:41:52'
+              url: 'https://graph.looplex.com/documents/1'
             dueDate: '2019-08-24T14:15:22Z'
             endDate: '2019-08-24T14:15:22Z'
             id: 14
@@ -8748,11 +8743,11 @@ components:
         name:
           type: string
           description: The name that will be displayed in the tasks view.
-          example: Acordo de Confidencialidade/NDA 18/05/2022 09:41:52
+          example: 'Acordo de Confidencialidade/NDA 18/05/2022 09:41:52'
         url:
           type: string
           description: The document URL.
-          example: https://graph.looplex.com/documents/1
+          example: 'https://graph.looplex.com/documents/1'
     PageResponse:
       title: PageResponseDto
       type: object
@@ -8798,8 +8793,8 @@ components:
               name: Jane Doe
               id: janedoe@looplex.com.br
             document:
-              name: Acordo de Confidencialidade/NDA 18/05/2022 09:41:52
-              url: https://graph.looplex.com/documents/1
+              name: 'Acordo de Confidencialidade/NDA 18/05/2022 09:41:52'
+              url: 'https://graph.looplex.com/documents/1'
         dueDate:
           type: string
           description: When the task should end
@@ -65544,7 +65539,7 @@ components:
           description: Identificador do item de timeline
         DataFormatada:
           type: string
-          example: 01/07/2022 20:00
+          example: '01/07/2022 20:00'
           description: Data do item de timeline
         TipoItem:
           description: Tipo do item
@@ -66113,4 +66108,4 @@ components:
           $ref: '#/components/schemas/TipoRespostaRequisicao'
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
-  url: https://github.com/Rebilly/generator-openapi-repo
+  url: 'https://github.com/Rebilly/generator-openapi-repo'

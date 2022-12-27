@@ -17,7 +17,7 @@
       "url": "/assets/images/logo.png",
       "href": "/"
     },
-    "description": "# Assembler\nAssembler é o grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.\n\n# Começando\n...\n"
+    "description": "# Assembler\nAssembler é o grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.\n"
   },
   "servers": [
     {
