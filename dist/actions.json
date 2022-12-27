@@ -37,6 +37,10 @@
     {
       "name": "TinyURL",
       "description": "TinyURL Operations"
+    },
+    {
+      "name": "JWT",
+      "description": "JWT Operations"
     }
   ],
   "paths": {
@@ -1142,6 +1146,76 @@
           }
         }
       }
+    },
+    "/jwt/sign": {
+      "post": {
+        "tags": [
+          "JWT"
+        ],
+        "summary": "Sign",
+        "description": "...",
+        "operationId": "jwtSign",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/sign"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/jwt/verify": {
+      "post": {
+        "tags": [
+          "JWT"
+        ],
+        "summary": "Verify",
+        "description": "...",
+        "operationId": "jwtVerify",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/verify"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1253,6 +1327,18 @@
             "type": "object",
             "description": "The datasource",
             "example": {
+              "pasta": "0516.01704 - CP-Pro:0028-0008 - RT de Sandra Tavares Guimarães - 00668.2007.132.15.002\tEncerrado",
+              "titulo": "CP-Pro:0028-0008 - RT de Sandra Tavares Guimarães",
+              "cliente": "Shoebiz Calçados Ltda.",
+              "polo_ativo": [
+                "Sandra Tavares Guimarães"
+              ],
+              "polo_passivo": [
+                "Shoebiz Calçados Ltda."
+              ],
+              "rito": "Ordinário",
+              "numero_processo": "00668.2007.132.15.002",
+              "hierarquia": "",
               "data_distribuicao": "2007pç-06-01",
               "data_encerramento": "2008-02-13",
               "valor_da_causa": "29.000,00",
@@ -1299,6 +1385,48 @@
                   "descricao": "Multa do artigo 477 ca CLT",
                   "valor": "0,00",
                   "risco": "-"
+                },
+                {
+                  "descricao": "Integração pagamento 'por fora'",
+                  "valor": "0,00",
+                  "risco": "-"
+                },
+                {
+                  "descricao": "Pedido Total",
+                  "valor": "29.000,00",
+                  "risco": "-"
+                }
+              ],
+              "garantias": [
+                {
+                  "nome": "Acordo",
+                  "data": "25/07/2007 16:21:27",
+                  "valor": "3.000,00",
+                  "identificacao": "Pagamento 1ª parcela"
+                },
+                {
+                  "nome": "Acordo",
+                  "data": "25/08/2007 14:52:04",
+                  "valor": "3.000,00",
+                  "identificacao": "Pagamento 2ª parcela"
+                },
+                {
+                  "nome": "Acordo",
+                  "data": "25/09/2007 16:21:27",
+                  "valor": "3.000,00",
+                  "identificacao": "Pagamento 3ª parcela"
+                },
+                {
+                  "nome": "Acordo",
+                  "data": "25/10/2007 14:52:54",
+                  "valor": "3.000,00",
+                  "identificacao": "Pagamento 4ª parcela"
+                },
+                {
+                  "nome": "Recolhimento",
+                  "data": "31/08/2007 16:21:27",
+                  "valor": "1.670,40",
+                  "identificacao": "Recolhimentos Previdenciários"
                 }
               ]
             }
@@ -1306,7 +1434,7 @@
           "template": {
             "type": "string",
             "description": "The template",
-            "example": "https://looplex-ged.s3.us-east-1.amazonaws.com/lawsoft.com.br/shared/office-render/mala.docx"
+            "example": "https://looplex-ged.s3.us-east-1.amazonaws.com/lawsoft.com.br/shared/office-render/mala-direta-psg.docx"
           },
           "lambdas": {
             "type": "object",
@@ -1406,7 +1534,7 @@
           "template": {
             "type": "string",
             "description": "The template",
-            "example": "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores.js.mustache"
+            "example": "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores-busca-matricula.js.mustache"
           },
           "datasource": {
             "type": "object",
@@ -97868,6 +97996,64 @@
           }
         },
         "description": "TinyURL service"
+      },
+      "sign": {
+        "title": "JWT Sign",
+        "required": [
+          "payload",
+          "privateKey"
+        ],
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "object",
+            "description": "The payload.",
+            "example": {
+              "title": "Acordo de confidencialidade",
+              "headerImage": {
+                "src": "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/examples/nda/hero.png",
+                "alt": "Revisão inteligente do documento",
+                "width": 640,
+                "height": 342
+              },
+              "previewUrl": "https://www.cin.ufpe.br/~gamr/FAFICA/Desenvolvimento%20de%20sistemas/XP.pdf",
+              "state": {
+                "executionId": "01f11a9b-2a03-11ed-9095-028183ecc51f"
+              },
+              "rjsf": {
+                "uiSchema": {},
+                "formData": {}
+              }
+            }
+          },
+          "privateKey": {
+            "type": "string",
+            "description": "The private key.",
+            "example": "string"
+          }
+        },
+        "description": "JWT Sign"
+      },
+      "verify": {
+        "title": "JWT Verify",
+        "required": [
+          "token",
+          "publicKey"
+        ],
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "string",
+            "description": "The token.",
+            "example": "string"
+          },
+          "publicKey": {
+            "type": "string",
+            "description": "The public key.",
+            "example": "string"
+          }
+        },
+        "description": "JWT Verify"
       }
     }
   },
