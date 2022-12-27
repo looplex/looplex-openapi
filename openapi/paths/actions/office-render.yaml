@@ -1,12 +1,21 @@
 tags:
-  - Other
-summary: Office Render
+  - Operations
+summary: Office-render
 description: Generates DOCX Renders
 operationId: officeRender
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/actions/office-render.yaml
 responses:
   '200':
     description: OK
-    content:
-      "*/*":
-        schema:
-          $ref: ../../components/schemas/tasks-api/PageResponse.yaml
+  '401':
+    description: Access Denied
+  '404':
+    description: Not Found
+  '500':
+    description: Internal Server Error

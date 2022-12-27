@@ -1,18 +1,16 @@
 tags:
   - Operations
-summary: Aspose
-description: ...
-operationId: aspose
+summary: Keyvault
+description: keyvault
+operationId: keyvault
 parameters:
+  - $ref: ../../components/parameters/keyvaultId.yaml
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
-requestBody:
-  content:
-    application/json:
-      schema:
-        $ref: ../../components/schemas/actions/aspose.yaml
 responses:
   '200':
     description: OK
+  '401':
+    description: Access Denied
   '404':
     description: Not Found
   '500':

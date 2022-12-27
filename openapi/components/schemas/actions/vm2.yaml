@@ -1,0 +1,4 @@
+title: vm2
+type: string
+example: message.greet = 'Hello World'
+description: vm2

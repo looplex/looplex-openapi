@@ -1,18 +1,20 @@
 tags:
   - Operations
-summary: Aspose
-description: ...
-operationId: aspose
+summary: Looplex Text Variants
+description: Looplex Text Variants
+operationId: looplexTextVariants
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/aspose.yaml
+        $ref: ../../components/schemas/actions//looplex-text-variants.yaml
 responses:
   '200':
     description: OK
+  '401':
+    description: Access Denied
   '404':
     description: Not Found
   '500':
