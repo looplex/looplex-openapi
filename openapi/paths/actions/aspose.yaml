@@ -1,0 +1,17 @@
+tags:
+  - Actions
+summary: Aspose
+description: ...
+operationId: aspose
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/actions/aspose.yaml
+responses:
+  '200':
+    description: OK
+  '404':
+    description: Not Found

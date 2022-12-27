@@ -1,0 +1,122 @@
+title: Office-render
+required:
+  - datasource
+  - template
+type: object
+properties:
+  datasource:
+    type: object
+    description: The datasource
+    example: {
+      "pasta": "0516.01704 - CP-Pro:0028-0008 - RT de Sandra Tavares Guimarães - 00668.2007.132.15.002\tEncerrado",
+      "titulo": "CP-Pro:0028-0008 - RT de Sandra Tavares Guimarães",
+      "cliente": "Shoebiz Calçados Ltda.",
+      "polo_ativo": ["Sandra Tavares Guimarães"],
+      "polo_passivo": ["Shoebiz Calçados Ltda."],
+      "rito": "Ordinário",
+      "numero_processo": "00668.2007.132.15.002",
+      "hierarquia": "",
+      "data_distribuicao": "2007pç-06-01",
+      "data_encerramento": "2008-02-13",
+      "valor_da_causa": "29.000,00",
+      "valor_da_causa_atualizado": "-",
+      "valor_previsto": "0,00",
+      "valor_previsto_atualizado": "-",
+      "situacao": "exemplo",
+      "fase": "Arquivado",
+      "observacoes": "",
+      "andamentos": [
+        {
+          "data": "01/06/2007",
+          "texto": "Distribuição da ação. Designada audiência UNA para o dia 12/07/07, ás 9h20min."
+        },
+        {
+          "data": "12/07/2007",
+          "texto": "Realizada audiência. Celebrado acordo no valor de R$ 12.000,00, em 4 parcelas, para pagamento a partir de 25/07/07."
+        },
+        {
+          "data": "28/09/2007",
+          "texto": "Reclamada requer juntada de comprovante de recolhimentos previdenciários."
+        },
+        {
+          "data": "18/01/2008",
+          "texto": "Publicação: \"Comprove, em 5 dias, a entrega da GFIP vinculando os recolhimentos previdenciários à reclamante\"."
+        },
+        {
+          "data": "13/02/2008",
+          "texto": "Reclamada apresenta GFIP."
+        }
+      ],
+      "pedidos": [
+        {
+          "descricao": "Horas Extras",
+          "valor": "0,00",
+          "risco": "-"
+        },
+        {
+          "descricao": "Devolução de Descontos",
+          "valor": "0,00",
+          "risco": "-"
+        },
+        {
+          "descricao": "Multa do artigo 477 ca CLT",
+          "valor": "0,00",
+          "risco": "-"
+        },
+        {
+          "descricao": "Integração pagamento 'por fora'",
+          "valor": "0,00",
+          "risco": "-"
+        },
+        {
+          "descricao": "Pedido Total",
+          "valor": "29.000,00",
+          "risco": "-"
+        }
+      ],
+      "garantias": [
+        {
+          "nome": "Acordo",
+          "data": "25/07/2007 16:21:27",
+          "valor": "3.000,00",
+          "identificacao": "Pagamento 1ª parcela"
+        },
+        {
+          "nome": "Acordo",
+          "data": "25/08/2007 14:52:04",
+          "valor": "3.000,00",
+          "identificacao": "Pagamento 2ª parcela"
+        },
+        {
+          "nome": "Acordo",
+          "data": "25/09/2007 16:21:27",
+          "valor": "3.000,00",
+          "identificacao": "Pagamento 3ª parcela"
+        },
+        {
+          "nome": "Acordo",
+          "data": "25/10/2007 14:52:54",
+          "valor": "3.000,00",
+          "identificacao": "Pagamento 4ª parcela"
+        },
+        {
+          "nome": "Recolhimento",
+          "data": "31/08/2007 16:21:27",
+          "valor": "1.670,40",
+          "identificacao": "Recolhimentos Previdenciários"
+        }
+      ]
+    }
+  template:
+    type: string
+    description: The template
+    example: "https://looplex-ged.s3.us-east-1.amazonaws.com/lawsoft.com.br/shared/office-render/mala-direta-psg.docx"
+  lambdas:
+    type: object
+    description: Lambdas of the datasource
+    example:  {
+      "inspectScope": "return JSON.stringify(scope)",
+      "formataDataDistribuicao": "let date = new Date(Date.parse(scope.data_distribuicao)); return new Intl.DateTimeFormat('pt-BR').format(date)",
+      "formataDataEncerramento": "let date = new Date(Date.parse(scope.data_encerramento)); return new Intl.DateTimeFormat('pt-BR').format(date)"
+    }
+description: Office-render service

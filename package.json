@@ -13,7 +13,10 @@
     "prebuild": "rimraf public",
     "build": "openapi bundle -o public/openapi.yaml && redoc-cli bundle public/openapi.yaml -t docs/index.html --output public/index.html",
     "postbuild": "ncp docs/assets public/assets && ncp docs/favicon.ico public/favicon.ico",
-    "test": "openapi lint"
+    "test": "openapi lint",
+    "prebundle": "openapi join openapi/assembler.yaml openapi/actions.yaml openapi/looplex365.yaml openapi/cases.yaml openapi/varas_foros.yaml",
+    "bundle": "openapi bundle openapi.yaml --output dist/openapi.json",
+    "postbundle": "openapi bundle --output dist --ext json openapi/assembler.yaml openapi/actions.yaml openapi/looplex365.yaml openapi/cases.yaml openapi/varas_foros.yaml"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0"

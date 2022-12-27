@@ -1,0 +1,19 @@
+tags:
+  - Actions
+summary: Dictionary Lookup
+description: Dictionary Lookup
+operationId: dictionary-lookup
+parameters:
+  - $ref: ../../components/parameters/keyvaultId.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/actions/dictionary-lookup.yaml
+responses:
+  '200':
+    description: OK
+  '401':
+    description: Access Denied
+  '404':
+    description: Not Found
