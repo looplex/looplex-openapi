@@ -14,16 +14,23 @@ info:
     url: "/assets/images/logo.png"
     href: "/"
   description: >
+   Actions is the group of APIs consumed by the templates,
+   related to document flows.
+
 servers:
   - url: "https://apim.looplex.com/actions/v1"
     description: Actions Server
 tags:
   - name: Operations
-    description: Actions operations
+    description: 
+      Actions is the group of APIs consumed by the templates,
+      related to document flows.
   - name: Code
     description: Code operations
   - name: TinyURL
     description: TinyURL Operations
+  - name: JWT
+    description: JWT Operations
 paths:
   /aspose:
     post:
@@ -112,7 +119,12 @@ paths:
       $ref: ./paths/actions/tinyurl/tinyurl@{id}-get.yaml
     delete:
       $ref: ./paths/actions/tinyurl/tinyurl@{id}-delete.yaml            
-          
+  /jwt/sign:
+    post:
+      $ref: ./paths/actions/jwt/sign.yaml
+  /jwt/verify:
+    post:
+      $ref: ./paths/actions/jwt/verify.yaml         
       
       
       

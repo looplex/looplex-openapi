@@ -1,0 +1,1835 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "version": "1.0.0",
+    "title": "Assembler",
+    "termsOfService": "https://docs.looplex.com.br/legal/termos-de-uso",
+    "contact": {
+      "name": "Developers Looplex",
+      "email": "developer@looplex.com.br",
+      "url": "https://www.looplex.com.br"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-logo": {
+      "url": "/assets/images/logo.png",
+      "href": "/"
+    },
+    "description": "Assembler is the group of APIs consumed by the Looplex web interface, related to document flows, templates and tasks.\n"
+  },
+  "servers": [
+    {
+      "url": "https://graph.looplex.com/api/v1/assembler",
+      "description": "Graph server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Tasks",
+      "description": "Tasks operations"
+    },
+    {
+      "name": "Documents",
+      "description": "Documents operations"
+    },
+    {
+      "name": "Templates",
+      "description": "Template operations"
+    },
+    {
+      "name": "Users",
+      "description": "User operations, such as login and profile consulting"
+    }
+  ],
+  "paths": {
+    "/documents/{docId}/answers": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Export answers",
+        "description": "Exports a document answers in the file format chosen.",
+        "operationId": "exportAnswersUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentExportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/{docId}/export": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Export",
+        "description": "Exports a document in the file format chosen.",
+        "operationId": "exportFileUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/Lang"
+          },
+          {
+            "$ref": "#/components/parameters/Output"
+          },
+          {
+            "$ref": "#/components/parameters/Binary"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentExportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/{docId}/import": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Import answers",
+        "description": "Updates a document's answers with a json file.",
+        "operationId": "importAnswersUsingPOST",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/Force"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "files": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                },
+                "example": true
+              },
+              "multipart/form-data": {}
+            }
+          }
+        }
+      }
+    },
+    "/documents/{docId}/json": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Import answers in json",
+        "description": "Updates a document's answers with a json object.",
+        "operationId": "importAnswersJsonUsingPOST",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/Force"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "type": "string"
+                }
+              },
+              "example": "string"
+            },
+            "multipart/form-data": {}
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "True"
+              },
+              "multipart/form-data": {}
+            }
+          }
+        }
+      }
+    },
+    "/documents/{docId}/revision-all-answers": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Export a json review",
+        "description": "Export a json review.",
+        "operationId": "revisionAllAnswersUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentExportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Create document",
+        "description": "Require the account id.",
+        "operationId": "createDocumentUsingPOST",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentDTOReq"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentDTORes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/{docId}/hide": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Hide multiple documents",
+        "description": "Hides multiple documents",
+        "operationId": "hideMultipleDocumentsUsingPOST",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/Ids"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/documents/{docId}/unhide": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Restores multiple documents",
+        "description": "Restore multiple documents status",
+        "operationId": "restoreMultipleDocumentsStatusUsingPOST",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/Ids"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/documents/template/{templateIdentifier}": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Find all documents by template identifier",
+        "description": "Finds all documents created with a specific template by its id.",
+        "operationId": "findDocumentsByAccountAndTemplateUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/TemplateIdentifier"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/documents/{docId}": {
+      "patch": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Update",
+        "description": "Partially updates a document",
+        "operationId": "partialUpdateDocumentUsingPATCH",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Document"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Get by id",
+        "description": "Get a document by its id.",
+        "operationId": "findDocumentByIdUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Delete",
+        "description": "Deletes a document by the its id.",
+        "operationId": "deleteDocumentUsingDELETE",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/documents/{docId}/rem": {
+      "delete": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Delete document and generated files",
+        "description": "Deletes a document and its generated files by the the document's id.",
+        "operationId": "purgeDocumentUsingDELETE",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/documents/{docId}/s3": {
+      "delete": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Delete document and generated files on s3",
+        "description": "Deletes a document and its generated files on s3 by the the document's id.",
+        "operationId": "deleteS3DocumentLinksUsingDELETE",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/DocId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Get organization tasks",
+        "description": "Return all the user's organization tasks.",
+        "operationId": "getOrgTasksUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/SortBy"
+          },
+          {
+            "$ref": "#/components/parameters/SortOrder"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Create Tasks",
+        "description": "Add a new tree of tasks.",
+        "operationId": "addTasksUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/CreateTaskRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tasks/me": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Get tasks",
+        "description": "Return the user's tasks.",
+        "operationId": "getUserTasksUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/SortBy"
+          },
+          {
+            "$ref": "#/components/parameters/SortOrder"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tasks/{taskId}": {
+      "patch": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Update tasks",
+        "description": "Update task's fields.",
+        "operationId": "updateTaskUsingPATCH",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Get task by id",
+        "description": "Get a task tree by its root id.",
+        "operationId": "getTaskByIdUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Delete task",
+        "description": "Delete a task tree from its root id.",
+        "operationId": "deleteTaskUsingDELETE",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task succesfully deleted",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "Deleted task id",
+                  "example": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Replace",
+        "description": "Replace a task.",
+        "operationId": "putTaskUsingPUT",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/templates": {
+      "get": {
+        "tags": [
+          "Templates"
+        ],
+        "summary": "Find and return all templates",
+        "description": "Find and return all the templates an account has access to, by account id",
+        "operationId": "findTemplatesByAccountUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Template"
+                },
+                "examples": {
+                  "default": {
+                    "value": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/templates/{template}/persistent": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Export a document from JSON-answers and save the document",
+        "description": "Export a document from JSON-answers and the template in the file format chosen, and save the document at last.",
+        "operationId": "importAllOperandsInPersistentDocumentUsingPOST",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/Template"
+          },
+          {
+            "$ref": "#/components/parameters/Lang"
+          },
+          {
+            "$ref": "#/components/parameters/Output"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentExportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/templates/{template}/transient": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Export a document from JSON-answers and delete the document",
+        "description": "Export a document from JSON-answers and the template in the file format chosen, and delete the document at last.",
+        "operationId": "importAllOperandsInTransientDocumentUsingPOST",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/Template"
+          },
+          {
+            "$ref": "#/components/parameters/Lang"
+          },
+          {
+            "$ref": "#/components/parameters/Output"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentExportDTO"
+                },
+                "examples": {
+                  "default": {
+                    "value": null
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentExportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/templates/{templateId}": {
+      "get": {
+        "tags": [
+          "Templates"
+        ],
+        "summary": "Find a template by account and template ids",
+        "description": "Find a template associated to an account by their ids",
+        "operationId": "findTemplateByAccountAndIdUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/TemplateId"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Template"
+                },
+                "examples": {
+                  "default": {
+                    "value": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Login operation",
+        "description": "Basic login into our platform.\n",
+        "operationId": "loginUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "Example json": {
+                "examples": {
+                  "example-0": {
+                    "value": {
+                      "invalidField": "address"
+                    }
+                  }
+                }
+              },
+              "Example string": {
+                "examples": {
+                  "example-1": {
+                    "value": "The first name was invalid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Subscription-Key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Ocp_Apim_Subscription_Key",
+        "description": "Chave fornecida pelo time Looplex."
+      }
+    },
+    "parameters": {
+      "AccountId": {
+        "name": "accountId",
+        "in": "path",
+        "description": "The id associated to the account",
+        "required": true,
+        "schema": {
+          "exclusiveMaximum": true,
+          "minimum": 1,
+          "exclusiveMinimum": true,
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "DocId": {
+        "name": "docId",
+        "in": "path",
+        "description": "The id associated to the document",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header",
+        "description": "Subscription key provided by Looplex",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Lang": {
+        "name": "lang",
+        "in": "query",
+        "description": "The document language",
+        "schema": {
+          "enum": [
+            "pt_BR"
+          ],
+          "type": "string"
+        }
+      },
+      "Output": {
+        "name": "output",
+        "in": "query",
+        "description": "The output file extension",
+        "schema": {
+          "enum": [
+            "DOCX",
+            "PDF"
+          ],
+          "type": "string",
+          "default": "PDF"
+        }
+      },
+      "Binary": {
+        "name": "binary",
+        "in": "query",
+        "description": "<binary or url download>",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "Force": {
+        "name": "force",
+        "in": "query",
+        "description": "Force operands import",
+        "schema": {
+          "enum": [
+            false,
+            true
+          ],
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "Ids": {
+        "name": "ids",
+        "in": "query",
+        "description": "Format - int64. The id of the documents to be hidden",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "TemplateIdentifier": {
+        "name": "templateIdentifier",
+        "in": "path",
+        "description": "The template identifier",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Filter": {
+        "name": "filter",
+        "in": "query",
+        "description": "Search filters. The filters must follow the SCIM pattern, properly url encoded.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "assignee.name%20eq%20%22Jane%20Doe%22"
+        }
+      },
+      "PageSize": {
+        "name": "pageSize",
+        "in": "query",
+        "description": "The size of each content page.",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "default": 10
+        }
+      },
+      "Page": {
+        "name": "page",
+        "in": "query",
+        "description": "The page that will be served.",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "default": 0
+        }
+      },
+      "SortBy": {
+        "name": "sortBy",
+        "in": "query",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "due_date",
+            "end_date",
+            "id",
+            "name",
+            "start_date"
+          ],
+          "default": "id"
+        }
+      },
+      "SortOrder": {
+        "name": "sortOrder",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "asc",
+            "desc"
+          ],
+          "default": "asc"
+        }
+      },
+      "TaskId": {
+        "name": "taskId",
+        "in": "path",
+        "description": "The id associated to the task",
+        "required": true,
+        "schema": {
+          "exclusiveMaximum": true,
+          "minimum": 1,
+          "exclusiveMinimum": true,
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "Template": {
+        "name": "template",
+        "in": "path",
+        "description": "The string that represents the template",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "TemplateId": {
+        "name": "templateId",
+        "in": "path",
+        "description": "Format - int64. The numeric id associated to the template",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "schemas": {
+      "DocumentExportDTO": {
+        "title": "DocumentExportDTO",
+        "type": "object",
+        "properties": {
+          "docPath": {
+            "type": "string",
+            "description": "The URL to download the document",
+            "example": "https://s3.amazonaws.com/looplex-clients/<user-email>/-2140158082/<generated-document-name>.<doc-extension>"
+          },
+          "docSize": {
+            "type": "integer",
+            "description": "The document size",
+            "format": "int64",
+            "example": 2
+          },
+          "documentId": {
+            "type": "string",
+            "description": "The ID of the created document",
+            "example": 24
+          },
+          "documentName": {
+            "type": "string",
+            "description": "The document name",
+            "example": "Document name"
+          },
+          "userId": {
+            "type": "string",
+            "description": "The ID of the user that created the document",
+            "example": 65
+          }
+        },
+        "description": "Description of the exported document"
+      },
+      "DocumentDTOReq": {
+        "title": "DocumentDTOReq",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "The object with the answers to populate the document",
+            "example": {}
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the document",
+            "example": "string"
+          },
+          "shelfId": {
+            "type": "integer",
+            "description": "Shelf in which the document is located",
+            "format": "int64",
+            "example": 0
+          },
+          "status": {
+            "enum": [
+              "ALL"
+            ],
+            "type": "string",
+            "description": "Current status of the document",
+            "example": "ALL"
+          },
+          "tags": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The set of tags attributed to the document",
+            "example": [
+              "string"
+            ]
+          },
+          "templateId": {
+            "type": "integer",
+            "description": "The id of the template used to create the document",
+            "format": "int64",
+            "example": 0
+          },
+          "templateName": {
+            "type": "string",
+            "description": "The name of the template used to create the document",
+            "example": "string"
+          }
+        },
+        "description": "Document description"
+      },
+      "DocumentDTORes": {
+        "title": "DocumentDTORes",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "The object with the answers to populate the document",
+            "example": {}
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the document",
+            "example": "string"
+          },
+          "shelfId": {
+            "type": "integer",
+            "description": "Shelf in which the document is located",
+            "format": "int64",
+            "example": 0
+          },
+          "status": {
+            "enum": [
+              "ALL"
+            ],
+            "type": "string",
+            "description": "Current status of the document",
+            "example": "ALL"
+          },
+          "tags": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The set of tags attributed to the document",
+            "example": [
+              "string"
+            ]
+          },
+          "templateId": {
+            "type": "integer",
+            "description": "The id of the template used to create the document",
+            "format": "int64",
+            "example": 0
+          },
+          "templateName": {
+            "type": "string",
+            "description": "The name of the template used to create the document",
+            "example": "string"
+          }
+        },
+        "description": "Document description"
+      },
+      "Document": {
+        "title": "Document",
+        "type": "object",
+        "description": "Document's info",
+        "properties": {
+          "documentStatusEnum": {
+            "enum": [
+              "ALL"
+            ],
+            "type": "string",
+            "description": "O estado atual do documento"
+          },
+          "id": {
+            "type": "integer",
+            "description": "O id do documento",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Document's name",
+            "example": "Documentos Financeiro (Lawsoft) 05-05-2022 20:19:38"
+          },
+          "parentId": {
+            "type": "integer",
+            "description": "Id do documento pai",
+            "format": "int64"
+          },
+          "parentVersion": {
+            "type": "object"
+          },
+          "previousDocumentStatus": {
+            "enum": [
+              "ALL"
+            ],
+            "type": "string",
+            "description": "Status anterior do documento"
+          },
+          "shelfId": {
+            "type": "integer",
+            "description": "Document's shelf id",
+            "format": "int64"
+          },
+          "version": {
+            "type": "integer",
+            "description": "Versão do documento",
+            "format": "int32"
+          }
+        }
+      },
+      "Task": {
+        "title": "Task",
+        "description": "Tasks info",
+        "properties": {
+          "ancestry": {
+            "type": "string",
+            "description": "The path to the task in a tree. For example, a task with the ancestry 1.2 has the task 2 as parent and the task 1 as grandparent.",
+            "example": null
+          },
+          "children": {
+            "type": "array",
+            "description": "Associated sub-tasks.",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "example": {
+              "ancestry": "13",
+              "children": [],
+              "createdAt": "2019-08-24T14:15:22Z",
+              "assignee": {
+                "name": "Jane Doe",
+                "id": "janedoe@looplex.com.br"
+              },
+              "document": {
+                "name": "Acordo de Confidencialidade/NDA 18/05/2022 09:41:52",
+                "url": "https://graph.looplex.com/documents/1"
+              },
+              "dueDate": "2019-08-24T14:15:22Z",
+              "endDate": "2019-08-24T14:15:22Z",
+              "id": 14,
+              "lastUpdatedAt": "2019-08-24T14:15:22Z",
+              "name": "Validação Externa",
+              "orgPath": "looplex.com.br/janedoe",
+              "owner": "janedoe@looplex.com.br",
+              "slug": "validacao-externa-123e4567-e89b-12d3-a456-426614174000",
+              "startDate": "2019-08-24T14:15:22Z",
+              "status": "SOON",
+              "tags": "Bancária",
+              "uuid": "095be615-a8ad-4c33-8e9c-c7612fbf6c9f"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "description": "When the task was created."
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "When the task should be finished.",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "When the task actually finished.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "integer",
+            "description": "The task's identification.",
+            "format": "int64",
+            "example": 13,
+            "readOnly": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "When the task was last updated.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name displayed in the tasks table.",
+            "example": "Protocolar Documento"
+          },
+          "orgPath": {
+            "type": "string",
+            "readOnly": true,
+            "description": "The id of the organization used to control access.",
+            "example": "looplex.com.br/janedoe"
+          },
+          "owner": {
+            "type": "string",
+            "description": "The last user to update the task.",
+            "readOnly": true,
+            "example": "janedoe@looplex.com.br"
+          },
+          "slug": {
+            "type": "string",
+            "description": "A slug identifier.",
+            "example": "protocolar-documento-123e4567-e89b-12d3-a456-426614174000",
+            "readOnly": true
+          },
+          "startDate": {
+            "type": "string",
+            "description": "When the task should start.",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the task. It will determine the frame in which the task will appear if it is the root of a tree.",
+            "example": "EXECUTING",
+            "enum": [
+              "DONE",
+              "EXECUTING",
+              "SOON",
+              "WAITING_EXECUTION"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "description": "The array of tags associated to the task. Open field.",
+            "example": "Bancária",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true,
+            "description": "The task's universal unique id."
+          },
+          "assignee": {
+            "type": "object",
+            "$ref": "#/components/schemas/Assignee"
+          },
+          "document": {
+            "type": "object",
+            "$ref": "#/components/schemas/TaskDocument"
+          }
+        }
+      },
+      "Assignee": {
+        "title": "Assignee",
+        "type": "object",
+        "description": "The user who is responsible for the task.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "User email.",
+            "example": "Jane Doe"
+          },
+          "name": {
+            "type": "string",
+            "description": "User name.",
+            "example": "janedoe@looplex.com.br"
+          }
+        }
+      },
+      "TaskDocument": {
+        "title": "Document",
+        "type": "object",
+        "description": "The document associated to the task.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name that will be displayed in the tasks view.",
+            "example": "Acordo de Confidencialidade/NDA 18/05/2022 09:41:52"
+          },
+          "url": {
+            "type": "string",
+            "description": "The document URL.",
+            "example": "https://graph.looplex.com/documents/1"
+          }
+        }
+      },
+      "PageResponse": {
+        "title": "PageResponseDto",
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Which page will be served."
+          },
+          "sortDirection": {
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ]
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CreateTaskRequest": {
+        "title": "CreateTaskRequest",
+        "description": "Create a new task",
+        "type": "object",
+        "properties": {
+          "children": {
+            "type": "array",
+            "description": "Sub-tasks associated to the task",
+            "items": {
+              "$ref": "#/components/schemas/CreateTaskRequest"
+            },
+            "example": {
+              "children": [],
+              "dueDate": "2019-08-24T14:15:22Z",
+              "endDate": "2019-08-24T14:15:22Z",
+              "name": "Validação Externa",
+              "startDate": "2019-08-24T14:15:22Z",
+              "status": "SOON",
+              "tags": "Bancária",
+              "assignee": {
+                "name": "Jane Doe",
+                "id": "janedoe@looplex.com.br"
+              },
+              "document": {
+                "name": "Acordo de Confidencialidade/NDA 18/05/2022 09:41:52",
+                "url": "https://graph.looplex.com/documents/1"
+              }
+            }
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "When the task should end",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "When the task actually ended",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name that will be displayed in the tasks table",
+            "example": "Protocolar Documento"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "The task start date",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the task",
+            "example": "SOON",
+            "enum": [
+              "DONE",
+              "EXECUTING",
+              "SOON",
+              "WAITING_EXECUTION"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "description": "The tags associated to the task",
+            "example": "Bancária",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assignee": {
+            "type": "object",
+            "$ref": "#/components/schemas/Assignee"
+          },
+          "document": {
+            "type": "object",
+            "$ref": "#/components/schemas/TaskDocument"
+          }
+        },
+        "required": [
+          "dueDate",
+          "startDate",
+          "name",
+          "status",
+          "document",
+          "assignee"
+        ]
+      },
+      "UpdateTaskRequest": {
+        "title": "UpdateTaskRequest",
+        "description": "Update a task",
+        "type": "object",
+        "properties": {
+          "assignee": {
+            "type": "object",
+            "$ref": "#/components/schemas/Assignee"
+          },
+          "document": {
+            "type": "object",
+            "$ref": "#/components/schemas/TaskDocument"
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "When the task should end",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "When the task actually ended",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name that will be displayed in the tasks table",
+            "example": "Protocolar Documento"
+          },
+          "orgPath": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "The task start date",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the task",
+            "enum": [
+              "DONE",
+              "EXECUTING",
+              "SOON",
+              "WAITING_EXECUTION"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "description": "The tags associated to the task",
+            "example": "Bancária",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Template": {
+        "title": "Template",
+        "type": "object",
+        "description": "<Descrever Template>",
+        "properties": {
+          "author": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "The template's author",
+            "example": "Fabio Cápua"
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date the template was created",
+            "example": "02/05/2022"
+          },
+          "description": {
+            "type": "string",
+            "description": "The template description",
+            "example": "exemplo"
+          },
+          "id": {
+            "type": "integer",
+            "description": "The numeric id associated to the template",
+            "format": "int64",
+            "example": "1.0"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "The string identifier associated to the template",
+            "example": "TEMP_ACORDO_CONFIDENCIALIDADE_NDA"
+          },
+          "logo": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "The template name",
+            "example": "Acordo de Confidencialidade/NDA"
+          },
+          "price": {
+            "type": "number",
+            "description": "The price our system attributed to the template",
+            "format": "double"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "version": {
+            "type": "integer",
+            "description": "The template version",
+            "format": "int32",
+            "example": 1
+          }
+        }
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "description": "User email",
+            "type": "string",
+            "minLength": 4,
+            "example": "user@looplex.com.br"
+          },
+          "password": {
+            "description": "User password",
+            "type": "string",
+            "minLength": 1,
+            "example": "my_password"
+          }
+        }
+      },
+      "AccountDTO": {
+        "title": "AccountDTO",
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "description": "The account id",
+            "format": "int64",
+            "example": 65
+          },
+          "shelfId": {
+            "type": "integer",
+            "description": "The shelf in which the account is located",
+            "format": "int64",
+            "example": 8
+          }
+        },
+        "description": "Object that contains info about the account"
+      },
+      "LoginResponseDTO": {
+        "title": "LoginResponseDTO",
+        "type": "object",
+        "properties": {
+          "authenticationToken": {
+            "type": "string",
+            "description": "Authentication token",
+            "example": "authentication token example"
+          },
+          "accounts": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountDTO"
+            },
+            "description": "Object that contains info about the account"
+          }
+        },
+        "description": "Basic login response"
+      }
+    }
+  },
+  "security": [
+    {
+      "Subscription-Key": []
+    }
+  ]
+}
