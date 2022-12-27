@@ -1185,7 +1185,7 @@
     "/jwt/verify": {
       "post": {
         "tags": [
-          "Operations"
+          "JWT"
         ],
         "summary": "Verify",
         "description": "...",
