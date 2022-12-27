@@ -1,0 +1,26 @@
+tags:
+  - Documents
+summary: Import answers
+description: Updates a document's answers with a json file.
+operationId: importAnswersUsingPOST
+parameters:
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/DocId.yaml
+  - $ref: ../../components/parameters/Force.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        properties:
+          files:
+            type: array
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: boolean
+        example: true
+      multipart/form-data: { }

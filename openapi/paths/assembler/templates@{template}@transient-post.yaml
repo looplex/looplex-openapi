@@ -1,14 +1,14 @@
 tags:
-  - Document Assembler
-summary: Export a document from JSON-answers and delete the document.
+  - Documents
+summary: Export a document from JSON-answers and delete the document
 description: Export a document from JSON-answers and the template in the file format chosen, and delete the document at last.
 operationId: importAllOperandsInTransientDocumentUsingPOST
 parameters:
-  - $ref: ../components/parameters/AccountId.yaml
-  - $ref: ../components/parameters/Template.yaml
-  - $ref: ../components/parameters/Lang.yaml
-  - $ref: ../components/parameters/Output.yaml
-  - $ref: ../components/parameters/OcpApimSubscriptionKey.yaml
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/Template.yaml
+  - $ref: ../../components/parameters/Lang.yaml
+  - $ref: ../../components/parameters/Output.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
@@ -21,10 +21,10 @@ responses:
     content:
       application/octet-stream:
         schema:
-          $ref: ../components/schemas/DocumentExportDTO.yaml
+          $ref: ../../components/schemas/DocumentExportDTO.yaml
         examples:
           default:
             value: 
       application/json:
         schema:
-          $ref: ../components/schemas/DocumentExportDTO.yaml
+          $ref: ../../components/schemas/DocumentExportDTO.yaml
