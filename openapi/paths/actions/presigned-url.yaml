@@ -1,15 +1,12 @@
 tags:
   - Actions
-summary: Text-recognize
-description: Recognize text
-operationId: textRecognize
+summary: Presigned-url
+description: presigned-url
+operationId: presigned-url
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
-requestBody:
-  content:
-    application/json:
-      schema:
-        $ref: ../../components/schemas/actions/text-recognize.yaml
+  - $ref: ../../components/parameters/cmd.yaml
+  - $ref: ../../components/parameters/path.yaml
 responses:
   '200':
     description: OK

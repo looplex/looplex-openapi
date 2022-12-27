@@ -767,6 +767,369 @@ paths:
                   value: The first name was invalid
       security:
         - Subscription-Key: []
+  /aspose:
+    post:
+      tags:
+        - Actions
+      summary: Aspose
+      description: ...
+      operationId: aspose
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/aspose'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  '/code/:id':
+    post:
+      tags:
+        - Code
+      summary: Code
+      description: ...
+      operationId: postCodeOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/code'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+    put:
+      tags:
+        - Code
+      summary: Code
+      description: ...
+      operationId: putCodeOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/code'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+    get:
+      tags:
+        - Code
+      summary: Code
+      description: ...
+      operationId: getCodeOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+    delete:
+      tags:
+        - Code
+      summary: Code
+      description: ...
+      operationId: deleteCodeOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /office-render:
+    post:
+      tags:
+        - Actions
+      summary: Office-render
+      description: Generates DOCX Renders
+      operationId: officeRender
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/office-render'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /dictionary-lookup:
+    post:
+      tags:
+        - Actions
+      summary: Dictionary Lookup
+      description: Dictionary Lookup
+      operationId: dictionary-lookup
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/dictionary-lookup'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /echo:
+    post:
+      tags:
+        - Actions
+      summary: Echo
+      description: Echo
+      operationId: echo
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/echo'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /keyvault:
+    get:
+      tags:
+        - Actions
+      summary: Keyvault
+      description: keyvault
+      operationId: keyvault
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /oauth2-pkce-pair:
+    post:
+      tags:
+        - Actions
+      summary: Oauth2-pkce-pair
+      description: oauth2-pkce-pair
+      operationId: oauth2-pkce-pair
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /qrcode:
+    post:
+      tags:
+        - Actions
+      summary: Qrcode
+      description: qrcode
+      operationId: qrcode
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/qrcode'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /spellcheck:
+    post:
+      tags:
+        - Actions
+      summary: Spellcheck
+      description: spellcheck
+      operationId: spellcheck
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/spellcheck'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /mustache-render:
+    post:
+      tags:
+        - Actions
+      summary: Mustache-render
+      description: Generates DOCX Renders
+      operationId: mustacheRender
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mustache-render'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /text-recognize:
+    post:
+      tags:
+        - Actions
+      summary: Text-recognize
+      description: Recognize text
+      operationId: textRecognize
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/text-recognize'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /puppeteer:
+    post:
+      tags:
+        - Actions
+      summary: Puppeteer
+      description: Puppeteer
+      operationId: puppeteer
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/puppeteer'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /presigned-url:
+    get:
+      tags:
+        - Actions
+      summary: Presigned-url
+      description: presigned-url
+      operationId: presigned-url
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+        - $ref: '#/components/parameters/cmd'
+        - $ref: '#/components/parameters/path'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /plot:
+    post:
+      tags:
+        - Actions
+      summary: Plot
+      description: plot
+      operationId: plot
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/plot'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
   /looplex365/docass-render:
     post:
       tags:
@@ -7832,6 +8195,30 @@ components:
       schema:
         type: integer
         format: int64
+    keyvaultId:
+      name: id
+      in: query
+      description: Keyvault id
+      required: true
+      schema:
+        type: string
+        example: echo
+    cmd:
+      name: cmd
+      in: query
+      description: Command to be executed
+      required: true
+      schema:
+        type: string
+        example: GET
+    path:
+      name: path
+      in: query
+      description: Path
+      required: true
+      schema:
+        type: string
+        example: looplex.com.br/shared/code/examples/summer-style.jpg
     Profile:
       name: Profile
       in: header
@@ -8352,6 +8739,241 @@ components:
             $ref: '#/components/schemas/AccountDTO'
           description: Object that contains info about the account
       description: Basic login response
+    aspose:
+      title: Aspose
+      required:
+        - baseURL
+        - method
+        - url
+        - params
+      type: object
+      properties:
+        baseURL:
+          type: string
+          description: The request base URL
+          example: 'https://api.aspose.cloud/v4.0'
+        method:
+          enum:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+          type: string
+          description: method that will be performed in the baseURL
+          example: GET
+        url:
+          type: string
+          description: The request URL
+          example: /words/fonts/available
+        params:
+          type: object
+          description: params of the request
+          example:
+            fontsLocation: Fonts
+      description: Aspose service
+    code:
+      title: Code
+      type: object
+      description: Code service
+    office-render:
+      title: Office-render
+      required:
+        - datasource
+        - template
+      type: object
+      properties:
+        datasource:
+          type: object
+          description: The datasource
+          example:
+            data_distribuicao: 2007pç-06-01
+            data_encerramento: '2008-02-13'
+            valor_da_causa: '29.000,00'
+            valor_da_causa_atualizado: '-'
+            valor_previsto: '0,00'
+            valor_previsto_atualizado: '-'
+            situacao: exemplo
+            fase: Arquivado
+            observacoes: ''
+            andamentos:
+              - data: 01/06/2007
+                texto: >-
+                  Distribuição da ação. Designada audiência UNA para o dia
+                  12/07/07, ás 9h20min.
+              - data: 12/07/2007
+                texto: >-
+                  Realizada audiência. Celebrado acordo no valor de R$
+                  12.000,00, em 4 parcelas, para pagamento a partir de 25/07/07.
+              - data: 28/09/2007
+                texto: >-
+                  Reclamada requer juntada de comprovante de recolhimentos
+                  previdenciários.
+              - data: 18/01/2008
+                texto: >-
+                  Publicação: "Comprove, em 5 dias, a entrega da GFIP vinculando
+                  os recolhimentos previdenciários à reclamante".
+              - data: 13/02/2008
+                texto: Reclamada apresenta GFIP.
+            pedidos:
+              - descricao: Horas Extras
+                valor: '0,00'
+                risco: '-'
+              - descricao: Devolução de Descontos
+                valor: '0,00'
+                risco: '-'
+              - descricao: Multa do artigo 477 ca CLT
+                valor: '0,00'
+                risco: '-'
+        template:
+          type: string
+          description: The template
+          example: >-
+            https://looplex-ged.s3.us-east-1.amazonaws.com/lawsoft.com.br/shared/office-render/mala.docx
+        lambdas:
+          type: object
+          description: Lambdas of the datasource
+          example:
+            inspectScope: return JSON.stringify(scope)
+            formataDataDistribuicao: >-
+              let date = new Date(Date.parse(scope.data_distribuicao)); return
+              new Intl.DateTimeFormat('pt-BR').format(date)
+            formataDataEncerramento: >-
+              let date = new Date(Date.parse(scope.data_encerramento)); return
+              new Intl.DateTimeFormat('pt-BR').format(date)
+      description: Office-render service
+    dictionary-lookup:
+      title: Dictionary Lookup
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text to be looked up
+          example: sonora
+        from:
+          type: string
+          format: (ISO639)
+          description: the language of the text of the request
+          example: pt-BR
+        to:
+          type: string
+          format: (ISO639)
+          description: the language the text will be looked up
+          example: en-US
+      description: Dictionary Lookup
+    echo:
+      title: Echo
+      type: object
+      properties:
+        key:
+          type: string
+          description: Any value
+          example: value
+      description: Echo
+    qrcode:
+      title: Qrcode
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          type: string
+          description: A qrcode value
+          example: >-
+            https://evolved-functions.vercel.app/flows/D437291E-00FF-4BFB-A84A-D76693773BD4?payload=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3JtRGF0YSI6eyJpZCI6Ikxvb3BsZXgiLCJzdHJlZXRBZGRyZXNzIjoiUnVhIENhcmRlYWwgQXJjb3ZlcmRlLCAyMzU2IC0gM3JkIGFuZGFyIiwibG9jYWxpdHkiOiJTw6NvIFBhdWxvIiwicmVnaW9uIjoiU1AifSwiaWF0IjoxNjQ2OTA5MTk4fQ.vr8sXtv3gqjPuq8FKYRPlqV_GryGiWryomT6g4rCk3dm5kqs_kVb6kK-_q-KtANiivzE_1h9DgppQDgeCTgRq8iQGgvGlPpWZ02SFVd-nuQd_8K7nzIjfhUrTUljBuiHG0CRxWREzoY0uARkKPdCIbl64U0_rI_oBf53WvvEAQtjx7QDca0hriNjxwnnozopIxKhq3Mw-KETY_KN3f2SodnNzPjtjp7Z7SIY0Nx3evTHP49y2trDhRdYfG6YcdU_moKnvBpAo40tmrP6CjuzJKQLNQwEC58XT9xOgjuc5m_IInBc09ZgJmveLBTRF1jxFpehKFDnsYlsPn6g2bT3SadWL70tE9QSC1O5NW-2o92x2qs8MwItVCwmPc0WKCz_xj39RTNW6x8AqlfImOTZYUv4rU0fec056sPmzsa3FRuA_MP7XbrhTiMidTZUB96q-o2szwpAUeYvtoVhTkOdioMPH439IPrh9bnjo2J2AvZzpeaPaaQrBCnmQ508HPiKixrjFDo1fqJG9dDysYV2RyYYLece8s0Klxwyow63oIAKAQgvBvd9sqvdJkEXq9jIkmHjsH-CVhn4oVa83XdHu-lZqk7BVydBki4kX5qJtwk8Wvz80JWTB_ooIo8vNqU2SgmBXVpqUZyPTACZ-I3mPBnULPsjV2dB1QeFGP62auk
+      description: Qrcode
+    spellcheck:
+      title: spellcheck
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text to be checked
+          example: Today I saw an acteon move
+        from:
+          type: string
+          format: (ISO639)
+          description: the language of the text of the request
+          example: en-US
+      description: Spellcheck
+    mustache-render:
+      title: Mustache-render
+      required:
+        - template
+        - datasource
+      type: object
+      properties:
+        template:
+          type: string
+          description: The template
+          example: >-
+            https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores.js.mustache
+        datasource:
+          type: object
+          description: The datasource
+          example:
+            user: nagaozen
+      description: Mustache-render service
+    text-recognize:
+      title: Text-recognize
+      type: string
+      example: string
+      format: base64
+      description: Text-recognize service
+    puppeteer:
+      title: Puppeteer
+      required:
+        - template
+        - datasource
+      type: object
+      properties:
+        template:
+          type: string
+          description: The template
+          example: >-
+            https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores-busca.js.mustache
+        datasource:
+          type: object
+          description: The datasource
+          example:
+            matriculaURL: 'https://registradores.onr.org.br/VisualizarMatricula'
+      description: Puppeteer service
+    plot:
+      title: Plot
+      type: oject
+      example:
+        decorator:
+          type: main
+          attrs:
+            style:
+              width: 360
+              height: 360
+        component:
+          type: Pie
+          attrs:
+            appendPadding: 10
+            data:
+              - description: Kiwi Sun Gold
+                amount: 120
+                price: 40
+                subtotal: 4800
+              - description: Laranja
+                amount: 24
+                price: 12
+                subtotal: 288
+              - description: Maçã
+                amount: 1
+                price: 8
+                subtotal: 8
+            angleField: subtotal
+            colorField: description
+            radius: 1
+            innerRadius: 0.64
+            animation: false
+      description: Plot service
     DTOUser:
       title: DTOUser
       type: object

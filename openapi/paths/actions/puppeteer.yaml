@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Plot
-description: plot
-operationId: plot
+summary: Puppeteer
+description: Puppeteer
+operationId: puppeteer
 parameters:
-  - $ref: ../../components/parameters/keyvaultId.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/plot.yaml
+        $ref: ../../components/schemas/actions/puppeteer.yaml
 responses:
   '200':
     description: OK
