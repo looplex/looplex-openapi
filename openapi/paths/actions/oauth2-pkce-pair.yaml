@@ -1,0 +1,16 @@
+tags:
+  - Operations
+summary: Oauth2-pkce-pair
+description: oauth2-pkce-pair
+operationId: oauth2-pkce-pair
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK
+  '401':
+    description: Access Denied
+  '404':
+    description: Not Found
+  '500':
+    description: Internal Server Error
