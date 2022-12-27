@@ -1,15 +1,15 @@
 tags:
   - Operations
-summary: Qrcode
-description: qrcode
-operationId: qrcode
+summary: Looplex Text Variants
+description: Looplex Text Variants
+operationId: looplexTextVariants
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/qrcode.yaml
+        $ref: ../../components/schemas/actions//looplex-text-variants.yaml
 responses:
   '200':
     description: OK
