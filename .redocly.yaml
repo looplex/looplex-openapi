@@ -1,6 +1,7 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
-  main: openapi/openapi.yaml
+  main: openapi.yaml
+  # main: openapi/looplex_cases.yaml 
 lint:
   extends:
     - recommended

@@ -1,0 +1,18 @@
+tags:
+  - Operations
+summary: Presigned-url
+description: presigned-url
+operationId: presigned-url
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+  - $ref: ../../components/parameters/cmd.yaml
+  - $ref: ../../components/parameters/path.yaml
+responses:
+  '200':
+    description: OK
+  '401':
+    description: Access Denied
+  '404':
+    description: Not Found
+  '500':
+    description: Internal Server Error

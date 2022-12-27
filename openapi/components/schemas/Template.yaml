@@ -1,18 +1,21 @@
 title: Template
 type: object
+description: <Descrever Template>
 properties:
   author:
     type: object
     additionalProperties:
       type: string
     description: The template's author
+    example: Fabio Cápua
   creationDate:
     type: string
     description: The date the template was created
+    example: 02/05/2022 # TODO: verificar
   description:
     type: string
     description: The template description
-    example: <description>
+    example: exemplo # TODO: verificar
   id:
     type: integer
     description: The numeric id associated to the template
@@ -21,13 +24,13 @@ properties:
   identifier:
     type: string
     description: The string identifier associated to the template
-    example: Example_Lawsuit_Template
+    example: TEMP_ACORDO_CONFIDENCIALIDADE_NDA # TODO: verificar
   logo:
     type: string
   name:
     type: string
     description: The template name
-    example: Example Lawsuit Template
+    example: Acordo de Confidencialidade/NDA
   price:
     type: number
     description: The price our system attributed to the template
@@ -41,4 +44,3 @@ properties:
     description: The template version
     format: int32
     example: 1
-description: Template data transfer object

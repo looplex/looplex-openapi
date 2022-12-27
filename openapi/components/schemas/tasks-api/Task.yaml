@@ -1,0 +1,110 @@
+title: Task
+description: Tasks info
+properties:
+  ancestry:
+    type: string
+    description: The path to the task in a tree. For example, a task with the ancestry 1.2 has the task 2 as parent and the task 1 as grandparent. 
+    example: null
+  children:
+    type: array
+    description: Associated sub-tasks.
+    items:
+      $ref: "./Task.yaml"
+    example: {
+      "ancestry": "13",
+      "children": [],
+      "createdAt": "2019-08-24T14:15:22Z",
+      "assignee": {
+        "name": "Jane Doe",
+        "id": "janedoe@looplex.com.br"
+      },
+      "document": {
+        "name": "Acordo de Confidencialidade/NDA 18/05/2022 09:41:52",
+        "url": "https://graph.looplex.com/documents/1"
+      },
+      "dueDate": "2019-08-24T14:15:22Z",
+      "endDate": "2019-08-24T14:15:22Z",
+      "id": 14,
+      "lastUpdatedAt": "2019-08-24T14:15:22Z",
+      "name": "Validação Externa",
+      "orgPath": "looplex.com.br/janedoe",
+      "owner": "janedoe@looplex.com.br",
+      "slug": "validacao-externa-123e4567-e89b-12d3-a456-426614174000",
+      "startDate": "2019-08-24T14:15:22Z",
+      "status": "SOON",
+      "tags": "Bancária",
+      "uuid": "095be615-a8ad-4c33-8e9c-c7612fbf6c9f"
+    }
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+    description: When the task was created.
+  dueDate:
+    type: string
+    description: When the task should be finished.
+    format: date-time
+  endDate:
+    type: string
+    description: When the task actually finished.
+    format: date-time
+  id:
+    type: integer
+    description: The task's identification.
+    format: int64
+    example: 13
+    readOnly: true
+  updatedAt:
+    type: string
+    description: When the task was last updated.
+    format: date-time
+    readOnly: true
+  name:
+    type: string
+    description: The name displayed in the tasks table.
+    example: Protocolar Documento
+  orgPath:
+    type: string
+    readOnly: true
+    description: The id of the organization used to control access.
+    example: looplex.com.br/janedoe
+  owner:
+    type: string
+    description: The last user to update the task.
+    readOnly: true
+    example: janedoe@looplex.com.br
+  slug:
+    type: string
+    description: A slug identifier.
+    example: protocolar-documento-123e4567-e89b-12d3-a456-426614174000
+    readOnly: true
+  startDate:
+    type: string
+    description: When the task should start.
+    format: date-time
+  status:
+    type: string
+    description: The current status of the task. It will determine the frame in which the task will appear if it is the root of a tree.
+    example: EXECUTING
+    enum:
+    - DONE
+    - EXECUTING
+    - SOON
+    - WAITING_EXECUTION
+  tags:
+    type: array
+    description: The array of tags associated to the task. Open field.
+    example: Bancária
+    items:
+      type: string
+  uuid:
+    type: string
+    format: uuid
+    readOnly: true
+    description: The task's universal unique id.
+  assignee:
+    type: object
+    $ref: "./Assignee.yaml"
+  document:
+    type: object
+    $ref: "./TaskDocument.yaml"
