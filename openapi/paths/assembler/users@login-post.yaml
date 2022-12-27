@@ -1,23 +1,21 @@
 tags:
-  - User
+  - Users
 summary: Login operation
 description: |
   Basic login into our platform.
 operationId: loginUsingPOST
-security:
-  - auth_token: []
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../components/schemas/Login.yaml
+        $ref: ../../components/schemas/Login.yaml
 responses:
   '200':
     description: Ok
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/LoginResponseDTO.yaml
+          $ref: ../../components/schemas/LoginResponseDTO.yaml
   '400':
     description: Bad Request
   '404':

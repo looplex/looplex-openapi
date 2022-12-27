@@ -1,0 +1,4 @@
+type: apiKey
+in: header
+name: Ocp_Apim_Subscription_Key
+description: Chave fornecida pelo time Looplex.
