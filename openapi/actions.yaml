@@ -29,6 +29,8 @@ tags:
     description: Code operations
   - name: TinyURL
     description: TinyURL Operations
+  - name: JWT
+    description: JWT Operations
 paths:
   /aspose:
     post:
@@ -117,7 +119,12 @@ paths:
       $ref: ./paths/actions/tinyurl/tinyurl@{id}-get.yaml
     delete:
       $ref: ./paths/actions/tinyurl/tinyurl@{id}-delete.yaml            
-          
+  /jwt/sign:
+    post:
+      $ref: ./paths/actions/jwt/sign.yaml
+  /jwt/verify:
+    post:
+      $ref: ./paths/actions/jwt/verify.yaml         
       
       
       
