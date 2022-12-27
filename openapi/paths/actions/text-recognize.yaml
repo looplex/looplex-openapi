@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Office-render
-description: Generates DOCX Renders
-operationId: officeRender
+summary: Text-recognize
+description: Recognize text
+operationId: textRecognize
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/office-render.yaml
+        $ref: ../../components/schemas/actions/text-recognize.yaml
 responses:
   '200':
     description: OK

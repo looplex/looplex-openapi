@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Office-render
+summary: Mustache-render
 description: Generates DOCX Renders
-operationId: officeRender
+operationId: mustacheRender
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/office-render.yaml
+        $ref: ../../components/schemas/actions/mustache-render.yaml
 responses:
   '200':
     description: OK

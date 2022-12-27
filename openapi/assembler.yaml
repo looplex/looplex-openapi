@@ -19,10 +19,6 @@ info:
     
     Assembler é o grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.
 
-
-    # Começando
-
-    ...
 servers:
   - url: "https://graph.looplex.com/api/v1/assembler"
     description: Graph server
