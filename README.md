@@ -1,4 +1,4 @@
-# Looplex OpenAPI OpenAPI Definition
+# Looplex OpenAPI Definition
 
 ## Working on your OpenAPI Definition
 
