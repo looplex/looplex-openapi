@@ -1,5 +1,5 @@
 title: Plot
-type: oject
+type: object
 example: {
   "decorator": {
       "type": "main",
