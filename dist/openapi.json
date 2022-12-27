@@ -17,7 +17,7 @@
       "url": "/assets/images/logo.png",
       "href": "/"
     },
-    "description": "# Assembler\nAssembler é o grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.\n"
+    "description": "Assembler is the group of APIs consumed by the Looplex web interface, related to document flows, templates and tasks.\n"
   },
   "tags": [
     {
@@ -42,7 +42,7 @@
     },
     {
       "name": "Operations",
-      "description": "Actions operations",
+      "description": "Actions is the group of APIs consumed by the templates, related to document flows.",
       "x-displayName": "Operations"
     },
     {
@@ -54,6 +54,11 @@
       "name": "TinyURL",
       "description": "TinyURL Operations",
       "x-displayName": "TinyURL"
+    },
+    {
+      "name": "JWT",
+      "description": "JWT Operations",
+      "x-displayName": "JWT"
     },
     {
       "name": "Login",
@@ -202,15 +207,17 @@
         "Templates",
         "Users"
       ],
-      "description": "# Assembler\nAssembler é o grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.\n"
+      "description": "Assembler is the group of APIs consumed by the Looplex web interface, related to document flows, templates and tasks.\n"
     },
     {
       "name": "actions",
       "tags": [
         "Operations",
         "Code",
-        "TinyURL"
-      ]
+        "TinyURL",
+        "JWT"
+      ],
+      "description": "Actions is the group of APIs consumed by the templates, related to document flows.\n"
     },
     {
       "name": "cases",
@@ -2582,6 +2589,86 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Subscription-Key": []
+          }
+        ]
+      }
+    },
+    "/jwt/sign": {
+      "post": {
+        "tags": [
+          "JWT"
+        ],
+        "summary": "Sign",
+        "description": "...",
+        "operationId": "jwtSign",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/sign"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Subscription-Key": []
+          }
+        ]
+      }
+    },
+    "/jwt/verify": {
+      "post": {
+        "tags": [
+          "JWT"
+        ],
+        "summary": "Verify",
+        "description": "...",
+        "operationId": "jwtVerify",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/verify"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         },
         "security": [
@@ -111338,6 +111425,64 @@
           }
         },
         "description": "TinyURL service"
+      },
+      "sign": {
+        "title": "JWT Sign",
+        "required": [
+          "payload",
+          "privateKey"
+        ],
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "object",
+            "description": "The payload.",
+            "example": {
+              "title": "Acordo de confidencialidade",
+              "headerImage": {
+                "src": "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/examples/nda/hero.png",
+                "alt": "Revisão inteligente do documento",
+                "width": 640,
+                "height": 342
+              },
+              "previewUrl": "https://www.cin.ufpe.br/~gamr/FAFICA/Desenvolvimento%20de%20sistemas/XP.pdf",
+              "state": {
+                "executionId": "01f11a9b-2a03-11ed-9095-028183ecc51f"
+              },
+              "rjsf": {
+                "uiSchema": {},
+                "formData": {}
+              }
+            }
+          },
+          "privateKey": {
+            "type": "string",
+            "description": "The private key.",
+            "example": "string"
+          }
+        },
+        "description": "JWT Sign"
+      },
+      "verify": {
+        "title": "JWT Verify",
+        "required": [
+          "token",
+          "publicKey"
+        ],
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "string",
+            "description": "The token.",
+            "example": "string"
+          },
+          "publicKey": {
+            "type": "string",
+            "description": "The public key.",
+            "example": "string"
+          }
+        },
+        "description": "JWT Verify"
       },
       "DTOUser": {
         "title": "DTOUser",
