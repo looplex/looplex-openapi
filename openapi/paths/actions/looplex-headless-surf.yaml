@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Spellcheck
-description: spellcheck
-operationId: spellcheck
+summary: Looplex Headless-surf
+description: looplex/headless-surf
+operationId: looplex/headless-surf
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/spellcheck.yaml
+        $ref: ../../components/schemas/actions/looplex-headless-surf.yaml
 responses:
   '200':
     description: OK

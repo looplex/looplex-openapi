@@ -4,7 +4,7 @@ summary: Oauth2-pkce-pair
 description: oauth2-pkce-pair
 operationId: oauth2-pkce-pair
 parameters:
-  - $ref: ../../components/parameters/keyvaultId.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   '200':
     description: OK

@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Spellcheck
-description: spellcheck
-operationId: spellcheck
+summary: Mjml-render
+description: Mjml-render
+operationId: mjmlRender
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/spellcheck.yaml
+        $ref: ../../components/schemas/actions/mjml-render.yaml
 responses:
   '200':
     description: OK

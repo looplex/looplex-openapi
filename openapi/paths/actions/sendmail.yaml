@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Spellcheck
-description: spellcheck
-operationId: spellcheck
+summary: Sendmail
+description: Sendmail
+operationId: sendmail
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/spellcheck.yaml
+        $ref: ../../components/schemas/actions/sendmail.yaml
 responses:
   '200':
     description: OK
