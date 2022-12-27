@@ -18,10 +18,12 @@ servers:
   - url: "https://apim.looplex.com/actions/v1"
     description: Actions Server
 tags:
-  - name: Actions
+  - name: Operations
     description: Actions operations
   - name: Code
     description: Code operations
+  - name: TinyURL
+    description: TinyURL Operations
 paths:
   /aspose:
     post:
@@ -89,7 +91,27 @@ paths:
   /looplex/headless-surf:
     post:
      $ref: ./paths/actions/looplex-headless-surf.yaml
-            
+  /looplex/sendmail:
+    post:
+     $ref: ./paths/actions/looplex-sendmail.yaml 
+  /looplex/contextAwareSpellcheck:
+    post:
+     $ref: ./paths/actions/looplex-contextAwareSpellcheck.yaml
+  /looplex/text-variants:
+    post:
+      $ref: ./paths/actions/looplex-text-variants.yaml
+  /looplex/thumbnail:
+    post:
+      $ref: ./paths/actions/looplex-thumbnail.yaml
+  /tinyurl/:id:
+    post:
+      $ref: ./paths/actions/tinyurl/tinyurl-post.yaml
+    put:
+      $ref: ./paths/actions/tinyurl/tinyurl@{id}-put.yaml
+    get:
+      $ref: ./paths/actions/tinyurl/tinyurl@{id}-get.yaml
+    delete:
+      $ref: ./paths/actions/tinyurl/tinyurl@{id}-delete.yaml            
           
       
       

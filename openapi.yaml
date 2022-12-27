@@ -31,12 +31,15 @@ tags:
   - name: Users
     description: 'User operations, such as login and profile consulting'
     x-displayName: Users
-  - name: Actions
+  - name: Operations
     description: Actions operations
-    x-displayName: Actions
+    x-displayName: Operations
   - name: Code
     description: Code operations
     x-displayName: Code
+  - name: TinyURL
+    description: TinyURL Operations
+    x-displayName: TinyURL
   - name: Login
     description: Endpoints de login
     x-displayName: Login
@@ -120,8 +123,9 @@ x-tagGroups:
       relacionadas aos fluxos de documentos, templates e tarefas.
   - name: actions
     tags:
-      - Actions
+      - Operations
       - Code
+      - TinyURL
   - name: cases
     tags:
       - Login
@@ -757,7 +761,7 @@ paths:
   /aspose:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Aspose
       description: ...
       operationId: aspose
@@ -859,7 +863,7 @@ paths:
   /office-render:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Office-render
       description: Generates DOCX Renders
       operationId: officeRender
@@ -884,7 +888,7 @@ paths:
   /dictionary-lookup:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Dictionary Lookup
       description: Dictionary Lookup
       operationId: dictionary-lookup
@@ -909,7 +913,7 @@ paths:
   /echo:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Echo
       description: Echo
       operationId: echo
@@ -934,7 +938,7 @@ paths:
   /keyvault:
     get:
       tags:
-        - Actions
+        - Operations
       summary: Keyvault
       description: keyvault
       operationId: keyvault
@@ -955,7 +959,7 @@ paths:
   /oauth2-pkce-pair:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Oauth2-pkce-pair
       description: oauth2-pkce-pair
       operationId: oauth2-pkce-pair
@@ -975,7 +979,7 @@ paths:
   /qrcode:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Qrcode
       description: qrcode
       operationId: qrcode
@@ -1000,7 +1004,7 @@ paths:
   /spellcheck:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Spellcheck
       description: spellcheck
       operationId: spellcheck
@@ -1025,7 +1029,7 @@ paths:
   /mustache-render:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Mustache-render
       description: Generates DOCX Renders
       operationId: mustacheRender
@@ -1050,7 +1054,7 @@ paths:
   /text-recognize:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Text-recognize
       description: Recognize text
       operationId: textRecognize
@@ -1075,7 +1079,7 @@ paths:
   /puppeteer:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Puppeteer
       description: Puppeteer
       operationId: puppeteer
@@ -1100,7 +1104,7 @@ paths:
   /presigned-url:
     get:
       tags:
-        - Actions
+        - Operations
       summary: Presigned-url
       description: presigned-url
       operationId: presigned-url
@@ -1122,7 +1126,7 @@ paths:
   /plot:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Plot
       description: plot
       operationId: plot
@@ -1147,7 +1151,7 @@ paths:
   /matchAdobeAnnotationsWithMSFormRecognizerAnalysis:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Match Adobe Annotations With MS Form Recognizer Analysis
       description: Match Adobe Annotations With MS Form Recognizer Analysis
       operationId: matchAdobeAnnotationsWithMSFormRecognizerAnalysis
@@ -1173,7 +1177,7 @@ paths:
   /vm2:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Vm2
       description: vm2
       operationId: vm2
@@ -1198,7 +1202,7 @@ paths:
   /sendmail:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Sendmail
       description: Sendmail
       operationId: sendmail
@@ -1223,7 +1227,7 @@ paths:
   /mjml-render:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Mjml-render
       description: Mjml-render
       operationId: mjmlRender
@@ -1248,7 +1252,7 @@ paths:
   /mssql:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Mssql
       description: Mqqsl
       operationId: mssql
@@ -1273,7 +1277,7 @@ paths:
   /looplex/headless-surf:
     post:
       tags:
-        - Actions
+        - Operations
       summary: Looplex Headless-surf
       description: looplex/headless-surf
       operationId: looplex/headless-surf
@@ -1293,6 +1297,195 @@ paths:
           description: Not Found
         '500':
           description: Internal Server Error
+      security:
+        - Subscription-Key: []
+  /looplex/sendmail:
+    post:
+      tags:
+        - Operations
+      summary: Looplex Sendmail
+      description: Looplex Sendmail
+      operationId: looplexSendmail
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/looplex-sendmail'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      security:
+        - Subscription-Key: []
+  /looplex/contextAwareSpellcheck:
+    post:
+      tags:
+        - Operations
+      summary: Context Aware Spellcheck
+      description: Context Aware Spellcheck
+      operationId: contextAwareSpellcheck
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/looplex-contextAwareSpellcheck'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      security:
+        - Subscription-Key: []
+  /looplex/text-variants:
+    post:
+      tags:
+        - Operations
+      summary: Looplex Text Variants
+      description: Looplex Text Variants
+      operationId: looplexTextVariants
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/looplex-text-variants'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      security:
+        - Subscription-Key: []
+  /looplex/thumbnail:
+    post:
+      tags:
+        - Operations
+      summary: Looplex Thumbnail
+      description: Looplex Thumbnail
+      operationId: looplexThumbnail
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/looplex-thumbnail'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      security:
+        - Subscription-Key: []
+  '/tinyurl/:id':
+    post:
+      tags:
+        - TinyURL
+      summary: TinyURL
+      description: ...
+      operationId: postTinyURLOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tinyurl-post'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+    put:
+      tags:
+        - TinyURL
+      summary: TinyURL
+      description: ...
+      operationId: putTinyURLOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tinyurl@{id}-put'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+    get:
+      tags:
+        - TinyURL
+      summary: TinyURL
+      description: ...
+      operationId: getTinyURLOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tinyurl@{id}-get'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+    delete:
+      tags:
+        - TinyURL
+      summary: TinyURL
+      description: ...
+      operationId: deleteTinyURLOperation
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tinyurl@{id}-delete'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
       security:
         - Subscription-Key: []
   /api/logon:
@@ -61790,7 +61983,7 @@ components:
           description: the email config
           example:
             from: robot@looplex.com.br
-            to: nagaozen@gmail.com
+            to: robot@looplex.com.br
             subject: Email html (mais moderninhos)
             html: Testing <strong>AMP EMAIL</strong>
       description: sendmail
@@ -61839,6 +62032,128 @@ components:
           example: >-
             https://looplex-ged.s3.us-east-1.amazonaws.com/demarest/webseek_busca.js
       description: looplex/headless-surf
+    looplex-sendmail:
+      title: Looplex Sendmail
+      required:
+        - datasource
+        - email
+      type: object
+      properties:
+        datasource:
+          type: object
+          description: The datasource
+          example:
+            user:
+              first: Fábio
+              last: Nagao
+              dob: '1982-08-31'
+              email: fabio.nagao@looplex.com.br
+        email:
+          type: object
+          description: the email config
+          example:
+            from: robot@looplex.com.br
+            to: nagaozen@gmail.com
+            subject: nagaozen-jotform example
+            html: >-
+              <mjml><mj-body><mj-section><mj-column><mj-text>Hello
+              {{user.first}}</mj-text></mj-column></mj-section></mj-body></mjml>
+      description: sendmail
+    looplex-contextAwareSpellcheck:
+      title: looplex-contextAwareSpellcheck
+      required:
+        - word
+        - context
+      type: object
+      properties:
+        word:
+          type: string
+          description: The word to be checked
+          example: acteon
+        context:
+          type: string
+          description: The context of the word
+          example: Today I saw an acteon move
+        from:
+          type: string
+          format: (ISO639)
+          description: the language of the text of the request
+          example: en-US
+      description: looplex-contextAwareSpellcheck
+    looplex-text-variants:
+      title: Looplex Text Variants
+      required:
+        - inputs
+      type: object
+      properties:
+        inputs:
+          type: array
+          description: array of words to check variants
+          example:
+            - word: pop
+              from: pt-BR
+              to: en-US
+            - word: acteon
+              context: I saw an acteon move.
+              from: en-US
+              to: pt-BR
+      description: Looplex Text Variants
+    looplex-thumbnail:
+      title: Looplex Thumbnail
+      required:
+        - file
+      type: object
+      properties:
+        file:
+          type: string
+          format: (ISO639)
+          description: the file url
+          example: 'https://looplex-ged.s3.us-east-1.amazonaws.com/datatypes.docx'
+      description: Looplex Thumbnail
+    'tinyurl@{id}-get':
+      title: TinyURL
+      type: object
+      description: TinyURL service
+    'tinyurl@{id}-put':
+      title: TinyURL
+      type: object
+      example:
+        partitionKey: looplex.com.br
+        destination: 'https://www.google.com/search?q=Looplex'
+        permanent: false
+        id: HNpVoVkT0u3UdOXnBWU0E
+        createdAt: '2022-11-23T03:01:59.678Z'
+        visitsCount: 0
+        modifiedAt: '2022-11-23T04:20:06.247Z'
+        active: false
+        _rid: gXt1AKwaC88IAAAAAAAAAA==
+        _self: dbs/gXt1AA==/colls/gXt1AKwaC88=/docs/gXt1AKwaC88IAAAAAAAAAA==/
+        _etag: '"c30ae7a1-0000-0200-0000-637d9f770000"'
+        _attachments: attachments/
+        _ts: 1669177207
+      description: TinyURL service
+    tinyurl-post:
+      title: TinyURL
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          description: url to be short
+          example: 'https://www.google.com/search?q=Looplex'
+      description: TinyURL service
+    'tinyurl@{id}-delete':
+      title: TinyURL
+      type: object
+      required:
+        - partitionKey
+      properties:
+        partitionKey:
+          type: string
+          description: the partition key of the url
+          example: looplex.com.br
+      description: TinyURL service
     DTOUser:
       title: DTOUser
       type: object

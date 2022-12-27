@@ -21,7 +21,7 @@ properties:
     description: the email config
     example: {
       "from": "robot@looplex.com.br",
-      "to": "nagaozen@gmail.com",
+      "to": "robot@looplex.com.br",
       "subject": "Email html (mais moderninhos)",
       "html": "Testing <strong>AMP EMAIL</strong>"
   }

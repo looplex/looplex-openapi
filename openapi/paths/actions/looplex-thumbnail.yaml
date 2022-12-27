@@ -1,15 +1,15 @@
 tags:
   - Operations
-summary: Qrcode
-description: qrcode
-operationId: qrcode
+summary: Looplex Thumbnail
+description: Looplex Thumbnail
+operationId: looplexThumbnail
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/qrcode.yaml
+        $ref: ../../components/schemas/actions//looplex-thumbnail.yaml
 responses:
   '200':
     description: OK
