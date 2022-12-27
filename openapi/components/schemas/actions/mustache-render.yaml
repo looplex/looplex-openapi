@@ -7,7 +7,7 @@ properties:
   template:
     type: string
     description: The template
-    example: "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores.js.mustache"
+    example: "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores-busca-matricula.js.mustache"
   datasource:
     type: object
     description: The datasource
