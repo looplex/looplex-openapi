@@ -70,7 +70,27 @@ paths:
       $ref: ./paths/actions/presigned-url.yaml
   /plot:
     post: 
-      $ref: ./paths/actions/plot.yaml      
+      $ref: ./paths/actions/plot.yaml
+  /matchAdobeAnnotationsWithMSFormRecognizerAnalysis:
+    post:
+     $ref:  ./paths/actions/matchAdobeAnnotationsWithMSFormRecognizerAnalysis.yaml 
+  /vm2:
+    post:
+     $ref: ./paths/actions/vm2.yaml
+  /sendmail:
+    post: 
+      $ref: ./paths/actions/sendmail.yaml
+  /mjml-render:
+    post: 
+      $ref: ./paths/actions/mjml-render.yaml
+  /mssql:
+    post:
+     $ref: ./paths/actions/mssql.yaml
+  /looplex/headless-surf:
+    post:
+     $ref: ./paths/actions/looplex-headless-surf.yaml
+            
+          
       
       
       

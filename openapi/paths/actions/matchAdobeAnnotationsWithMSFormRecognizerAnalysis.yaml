@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Mssql
-description: Mqqsl
-operationId: mssql
+summary: Match Adobe Annotations With MS Form Recognizer Analysis
+description: Match Adobe Annotations With MS Form Recognizer Analysis
+operationId: matchAdobeAnnotationsWithMSFormRecognizerAnalysis
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/mssql.yaml
+        $ref: ../../components/schemas/actions/matchAdobeAnnotationsWithMSFormRecognizerAnalysis.yaml
 responses:
   '200':
     description: OK

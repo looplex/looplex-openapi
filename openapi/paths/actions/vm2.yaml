@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Mssql
-description: Mqqsl
-operationId: mssql
+summary: Vm2
+description: vm2
+operationId: vm2
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/mssql.yaml
+        $ref: ../../components/schemas/actions/vm2.yaml
 responses:
   '200':
     description: OK

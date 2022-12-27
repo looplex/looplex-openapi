@@ -1,0 +1,28 @@
+title: sendmail
+required:
+  - config
+  - email
+type: object
+properties:
+  config:
+    type: object
+    description: The configuration
+    example: {
+      "host": "smtp.office365.com",
+      "port": 587,
+      "secure": false,
+      "auth": {
+          "user": "robot@looplex.com.br",
+          "pass": "*******"
+      }
+  }
+  email:
+    type: object
+    description: the email config
+    example: {
+      "from": "robot@looplex.com.br",
+      "to": "nagaozen@gmail.com",
+      "subject": "Email html (mais moderninhos)",
+      "html": "Testing <strong>AMP EMAIL</strong>"
+  }
+description: sendmail

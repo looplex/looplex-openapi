@@ -4,7 +4,7 @@ summary: Qrcode
 description: qrcode
 operationId: qrcode
 parameters:
-  - $ref: ../../components/parameters/keyvaultId.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:

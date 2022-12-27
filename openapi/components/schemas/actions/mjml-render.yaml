@@ -1,0 +1,10 @@
+title: Mjml-render
+required: 
+  -  mjml
+type: object
+properties:
+  mjml:
+    type: string
+    description: Mjml url
+    example: "https://looplex-ged.s3.us-east-1.amazonaws.com/example.mjml"
+description: Mjml-render
