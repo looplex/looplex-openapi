@@ -17,7 +17,7 @@
       "url": "/assets/images/logo.png",
       "href": "/"
     },
-    "description": "# Assembler\nAssembler é o grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.\n"
+    "description": "Assembler is the group of APIs consumed by the Looplex web interface, related to document flows, templates and tasks.\n"
   },
   "tags": [
     {
@@ -42,7 +42,7 @@
     },
     {
       "name": "Operations",
-      "description": "Actions operations",
+      "description": "Actions is the group of APIs consumed by the templates, related to document flows.",
       "x-displayName": "Operations"
     },
     {
@@ -202,7 +202,7 @@
         "Templates",
         "Users"
       ],
-      "description": "# Assembler\nAssembler é o grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.\n"
+      "description": "Assembler is the group of APIs consumed by the Looplex web interface, related to document flows, templates and tasks.\n"
     },
     {
       "name": "actions",
@@ -210,7 +210,8 @@
         "Operations",
         "Code",
         "TinyURL"
-      ]
+      ],
+      "description": "Actions is the group of APIs consumed by the templates, related to document flows.\n"
     },
     {
       "name": "cases",

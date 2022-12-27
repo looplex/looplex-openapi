@@ -14,10 +14,8 @@ info:
     url: /assets/images/logo.png
     href: /
   description: >
-    # Assembler
-
-    Assembler é o grupo de APIs consumidas pela interface web Looplex,
-    relacionadas aos fluxos de documentos, templates e tarefas.
+    Assembler is the group of APIs consumed by the Looplex web interface,
+    related to document flows, templates and tasks.
 tags:
   - name: Tasks
     description: Tasks operations
@@ -32,7 +30,9 @@ tags:
     description: 'User operations, such as login and profile consulting'
     x-displayName: Users
   - name: Operations
-    description: Actions operations
+    description: >-
+      Actions is the group of APIs consumed by the templates, related to
+      document flows.
     x-displayName: Operations
   - name: Code
     description: Code operations
@@ -117,15 +117,16 @@ x-tagGroups:
       - Templates
       - Users
     description: >
-      # Assembler
-
-      Assembler é o grupo de APIs consumidas pela interface web Looplex,
-      relacionadas aos fluxos de documentos, templates e tarefas.
+      Assembler is the group of APIs consumed by the Looplex web interface,
+      related to document flows, templates and tasks.
   - name: actions
     tags:
       - Operations
       - Code
       - TinyURL
+    description: >
+      Actions is the group of APIs consumed by the templates, related to
+      document flows.
   - name: cases
     tags:
       - Login

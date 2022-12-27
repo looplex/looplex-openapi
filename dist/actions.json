@@ -17,7 +17,7 @@
       "url": "/assets/images/logo.png",
       "href": "/"
     },
-    "description": ""
+    "description": "Actions is the group of APIs consumed by the templates, related to document flows.\n"
   },
   "servers": [
     {
@@ -28,7 +28,7 @@
   "tags": [
     {
       "name": "Operations",
-      "description": "Actions operations"
+      "description": "Actions is the group of APIs consumed by the templates, related to document flows."
     },
     {
       "name": "Code",
