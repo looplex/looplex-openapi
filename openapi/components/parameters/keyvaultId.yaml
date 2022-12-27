@@ -1,4 +1,7 @@
-type: param
-in: query
 name: id
-description: Id.
+in: query
+description: Keyvault id
+required: true
+schema:
+  type: string
+  example: 'echo'

@@ -1063,6 +1063,72 @@ paths:
           description: Not Found
       security:
         - Subscription-Key: []
+  /puppeteer:
+    post:
+      tags:
+        - Actions
+      summary: Puppeteer
+      description: Puppeteer
+      operationId: puppeteer
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/puppeteer'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /presigned-url:
+    get:
+      tags:
+        - Actions
+      summary: Presigned-url
+      description: presigned-url
+      operationId: presigned-url
+      parameters:
+        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+        - $ref: '#/components/parameters/cmd'
+        - $ref: '#/components/parameters/path'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
+  /plot:
+    post:
+      tags:
+        - Actions
+      summary: Plot
+      description: plot
+      operationId: plot
+      parameters:
+        - $ref: '#/components/parameters/keyvaultId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/plot'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+        '404':
+          description: Not Found
+      security:
+        - Subscription-Key: []
   /looplex365/docass-render:
     post:
       tags:
@@ -8129,10 +8195,29 @@ components:
         type: integer
         format: int64
     keyvaultId:
-      type: param
-      in: query
       name: id
-      description: Id.
+      in: query
+      description: Keyvault id
+      required: true
+      schema:
+        type: string
+        example: echo
+    cmd:
+      name: cmd
+      in: query
+      description: Command to be executed
+      required: true
+      schema:
+        type: string
+        example: GET
+    path:
+      name: path
+      in: query
+      description: Path
+      required: true
+      schema:
+        type: string
+        example: looplex.com.br/shared/code/examples/summer-style.jpg
     Profile:
       name: Profile
       in: header
@@ -8700,16 +8785,6 @@ components:
           type: object
           description: The datasource
           example:
-            pasta: "0516.01704 - CP-Pro:0028-0008 - RT de Sandra Tavares Guimarães - 00668.2007.132.15.002\tEncerrado"
-            titulo: 'CP-Pro:0028-0008 - RT de Sandra Tavares Guimarães'
-            cliente: Shoebiz Calçados Ltda.
-            polo_ativo:
-              - Sandra Tavares Guimarães
-            polo_passivo:
-              - Shoebiz Calçados Ltda.
-            rito: Ordinário
-            numero_processo: 00668.2007.132.15.002
-            hierarquia: ''
             data_distribuicao: 2007pç-06-01
             data_encerramento: '2008-02-13'
             valor_da_causa: '29.000,00'
@@ -8748,38 +8823,11 @@ components:
               - descricao: Multa do artigo 477 ca CLT
                 valor: '0,00'
                 risco: '-'
-              - descricao: Integração pagamento 'por fora'
-                valor: '0,00'
-                risco: '-'
-              - descricao: Pedido Total
-                valor: '29.000,00'
-                risco: '-'
-            garantias:
-              - nome: Acordo
-                data: '25/07/2007 16:21:27'
-                valor: '3.000,00'
-                identificacao: Pagamento 1ª parcela
-              - nome: Acordo
-                data: '25/08/2007 14:52:04'
-                valor: '3.000,00'
-                identificacao: Pagamento 2ª parcela
-              - nome: Acordo
-                data: '25/09/2007 16:21:27'
-                valor: '3.000,00'
-                identificacao: Pagamento 3ª parcela
-              - nome: Acordo
-                data: '25/10/2007 14:52:54'
-                valor: '3.000,00'
-                identificacao: Pagamento 4ª parcela
-              - nome: Recolhimento
-                data: '31/08/2007 16:21:27'
-                valor: '1.670,40'
-                identificacao: Recolhimentos Previdenciários
         template:
           type: string
           description: The template
           example: >-
-            https://looplex-ged.s3.us-east-1.amazonaws.com/lawsoft.com.br/shared/office-render/mala-direta-psg.docx
+            https://looplex-ged.s3.us-east-1.amazonaws.com/lawsoft.com.br/shared/office-render/mala.docx
         lambdas:
           type: object
           description: Lambdas of the datasource
@@ -8861,7 +8909,7 @@ components:
           type: string
           description: The template
           example: >-
-            https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores-busca-matricula.js.mustache
+            https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores.js.mustache
         datasource:
           type: object
           description: The datasource
@@ -8874,6 +8922,57 @@ components:
       example: string
       format: base64
       description: Text-recognize service
+    puppeteer:
+      title: Puppeteer
+      required:
+        - template
+        - datasource
+      type: object
+      properties:
+        template:
+          type: string
+          description: The template
+          example: >-
+            https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/registradores-busca.js.mustache
+        datasource:
+          type: object
+          description: The datasource
+          example:
+            matriculaURL: 'https://registradores.onr.org.br/VisualizarMatricula'
+      description: Puppeteer service
+    plot:
+      title: Plot
+      type: oject
+      example:
+        decorator:
+          type: main
+          attrs:
+            style:
+              width: 360
+              height: 360
+        component:
+          type: Pie
+          attrs:
+            appendPadding: 10
+            data:
+              - description: Kiwi Sun Gold
+                amount: 120
+                price: 40
+                subtotal: 4800
+              - description: Laranja
+                amount: 24
+                price: 12
+                subtotal: 288
+              - description: Maçã
+                amount: 1
+                price: 8
+                subtotal: 8
+            angleField: subtotal
+            colorField: description
+            radius: 1
+            innerRadius: 0.64
+            animation: false
+      description: Plot service
     DTOUser:
       title: DTOUser
       type: object

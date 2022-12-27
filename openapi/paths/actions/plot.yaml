@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Echo
-description: Echo
-operationId: echo
+summary: Plot
+description: plot
+operationId: plot
 parameters:
   - $ref: ../../components/parameters/keyvaultId.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/echo.yaml
+        $ref: ../../components/schemas/actions/plot.yaml
 responses:
   '200':
     description: OK

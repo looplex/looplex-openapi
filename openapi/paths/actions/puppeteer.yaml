@@ -1,15 +1,15 @@
 tags:
   - Actions
-summary: Office-render
-description: Generates DOCX Renders
-operationId: officeRender
+summary: Puppeteer
+description: Puppeteer
+operationId: puppeteer
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/actions/office-render.yaml
+        $ref: ../../components/schemas/actions/puppeteer.yaml
 responses:
   '200':
     description: OK

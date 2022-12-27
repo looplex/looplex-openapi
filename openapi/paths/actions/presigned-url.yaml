@@ -1,15 +1,12 @@
 tags:
   - Actions
-summary: Office-render
-description: Generates DOCX Renders
-operationId: officeRender
+summary: Presigned-url
+description: presigned-url
+operationId: presigned-url
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
-requestBody:
-  content:
-    application/json:
-      schema:
-        $ref: ../../components/schemas/actions/office-render.yaml
+  - $ref: ../../components/parameters/cmd.yaml
+  - $ref: ../../components/parameters/path.yaml
 responses:
   '200':
     description: OK

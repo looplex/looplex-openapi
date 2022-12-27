@@ -62,6 +62,18 @@ paths:
   /text-recognize:
     post:
       $ref: ./paths/actions/text-recognize.yaml
+  /puppeteer:
+    post: 
+      $ref: ./paths/actions/puppeteer.yaml
+  /presigned-url:
+    get: 
+      $ref: ./paths/actions/presigned-url.yaml
+  /plot:
+    post: 
+      $ref: ./paths/actions/plot.yaml      
+      
+      
+      
            
 components:
   securitySchemes:
