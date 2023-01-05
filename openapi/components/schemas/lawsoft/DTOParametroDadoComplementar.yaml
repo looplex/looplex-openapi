@@ -57,7 +57,7 @@ properties:
   Valores:
     type: array
     items:
-      $ref: DTOValorDadoComplementar.yaml
+      $ref: DTOValorDadoComplementarCaso.yaml
   TiposProcesso:
     type: array
     items:

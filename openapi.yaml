@@ -4724,7 +4724,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/DTOValorDadoComplementar'
+                $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
       responses:
         '204':
           description: Os valores foram incluídos.
@@ -63413,8 +63413,8 @@ components:
           $ref: '#/components/schemas/PoloLawOffice'
         principal:
           type: boolean
-    DTOValorDadoComplementar:
-      title: DTOValorDadoComplementar
+    DTOValorDadoComplementarCaso:
+      title: DTOValorDadoComplementarCaso
       type: object
       properties:
         IDCaso:
@@ -63422,12 +63422,6 @@ components:
             O identificador do caso. Se o valor for maior que 0, o dado
             complementar será de caso.
           example: 100
-          type: integer
-        IDFuncionario:
-          description: >-
-            O identificador do funcionário. Se o valor for maior que 0, o dado
-            complementar será de funcionário.
-          example: 25
           type: integer
         IDParametroDadoComplementar:
           description: O identificador do dado complementar
@@ -63606,7 +63600,7 @@ components:
         valoresDadoComplementar:
           type: array
           items:
-            $ref: '#/components/schemas/DTOValorDadoComplementar'
+            $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
         pedidos:
           type: array
           items:
@@ -64374,7 +64368,7 @@ components:
         Valores:
           type: array
           items:
-            $ref: '#/components/schemas/DTOValorDadoComplementar'
+            $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
         TiposProcesso:
           type: array
           items:

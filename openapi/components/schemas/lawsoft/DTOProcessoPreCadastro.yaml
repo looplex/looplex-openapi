@@ -125,7 +125,7 @@ properties:
   valoresDadoComplementar:
     type: array
     items: 
-      $ref: DTOValorDadoComplementar.yaml
+      $ref: DTOValorDadoComplementarCaso.yaml
   pedidos:
     type: array
     items:

@@ -5282,7 +5282,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/DTOValorDadoComplementar"
+                  "$ref": "#/components/schemas/DTOValorDadoComplementarCaso"
                 }
               }
             }
@@ -12033,18 +12033,13 @@
           }
         }
       },
-      "DTOValorDadoComplementar": {
-        "title": "DTOValorDadoComplementar",
+      "DTOValorDadoComplementarCaso": {
+        "title": "DTOValorDadoComplementarCaso",
         "type": "object",
         "properties": {
           "IDCaso": {
             "description": "O identificador do caso. Se o valor for maior que 0, o dado complementar será de caso.",
             "example": 100,
-            "type": "integer"
-          },
-          "IDFuncionario": {
-            "description": "O identificador do funcionário. Se o valor for maior que 0, o dado complementar será de funcionário.",
-            "example": 25,
             "type": "integer"
           },
           "IDParametroDadoComplementar": {
@@ -12291,7 +12286,7 @@
           "valoresDadoComplementar": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DTOValorDadoComplementar"
+              "$ref": "#/components/schemas/DTOValorDadoComplementarCaso"
             }
           },
           "pedidos": {
@@ -13335,7 +13330,7 @@
           "Valores": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DTOValorDadoComplementar"
+              "$ref": "#/components/schemas/DTOValorDadoComplementarCaso"
             }
           },
           "TiposProcesso": {
