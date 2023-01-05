@@ -49,3 +49,13 @@ properties:
     type: string
   StatusCaso:
     type: string
+  Coresponsavel:
+    type: array
+    items:
+      $ref: DTOCoresponsavel.yaml
+  FaseDoCaso:
+    type: string
+  ProcessoPai:
+    $ref: DTOCasoSimples.yaml
+  QuantidadeCasosFilho:
+    type: integer

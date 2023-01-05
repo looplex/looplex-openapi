@@ -1,66 +1,32 @@
 title: DTOParametroDadoComplementar
 type: object
 properties:
-  IDArea:
-    description: ""
-    example: -2147483648
-    type: integer
-  IDCliente:
-    description: ""
-    example: -2147483648
-    type: integer
-  IDContrato:
-    description: ""
-    example: -2147483648
-    type: integer
-  IDEscritorio:
-    description: ""
-    example: 1
-    type: integer
-  IDCategoriaLancamento:
-    description: ""
-    example: -2147483648
-    type: integer
   IDParametroDadoComplementar:
     example: -2147483648
     description: "O identificador do dado complementar"
     type: integer
   TipoCampoDadoComplementar:
     $ref: enums/TipoDadoComplementar.yaml
-  TipoVinculo:
-    required: true
-    $ref: enums/TipoVinculoDadoComplementar.yaml
   TituloDadoComplementar:
-    description: ""
+    description: "O titulo do dado complementar"
     example: "Nome completo"
     type: string
-  TipoCampoDadoComplementarText:
-    description: "Tipo de campo do dado complementar"
-    example: "Texto"
-    type: string
   TamanhoCampo:
-    description: "O tamanho do campo (se aplicável)"
+    description: "O tamanho do campo (quando aplicável)"
     example: 200
-    type: integer
-  OrdemDoCampo:
-    description: ""
-    example: 4
     type: integer
   Obrigatorio:
     description: ""
     example: false
     type: boolean
-  Opcoes:
-    type: array
-    items:
-      $ref: DTOItemDadoComplementar.yaml
-  Valores:
-    type: array
-    items:
-      $ref: DTOValorDadoComplementarCaso.yaml
+  Ativo:
+    type: boolean
   TiposProcesso:
     type: array
     items:
       $ref: DTOTipoProcesso.yaml
-  Ativo:
-    type: boolean
+  Opcoes:
+    type: array
+    items:
+      $ref: DTOItemDadoComplementar.yaml
+  
