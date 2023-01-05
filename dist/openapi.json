@@ -7873,16 +7873,6 @@
           },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
-            "name": "IDParametroDadoComplementar",
-            "in": "query",
-            "example": 10,
-            "description": "O identificador do dado complementar",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
           }
         ],
         "requestBody": {
@@ -112826,14 +112816,9 @@
             "example": 25,
             "type": "integer"
           },
-          "IDProcessoValorDadoComplementar": {
-            "description": "O identificador do valor. Se o valor informado for maior que 0 atualiza o respectivo valor se for encontrado, senão, inclui o novo valor",
-            "example": -2147483648,
-            "type": "integer"
-          },
-          "IDFuncionarioValorDadoComplementar": {
-            "description": "O identificador do valor de funcionário. Se o valor informado for maior que 0 atualiza o respectivo valor se for encontrado, senão, inclui o novo valor",
-            "example": -2147483648,
+          "IDParametroDadoComplementar": {
+            "description": "O identificador do dado complementar",
+            "example": 50,
             "type": "integer"
           },
           "Valor": {
