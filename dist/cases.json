@@ -10741,19 +10741,11 @@
         "properties": {
           "Message": {
             "type": "string",
-            "description": "Mensagem do erro"
+            "description": "Mensagem de erro"
           },
           "ExceptionMessage": {
             "type": "string",
-            "description": "Não sei o que é isso"
-          },
-          "ExceptionType": {
-            "type": "string",
-            "description": "Também não sei o que é"
-          },
-          "StackTrace": {
-            "type": "string",
-            "description": "Local da exception"
+            "description": "Descrição do erro"
           }
         }
       },
