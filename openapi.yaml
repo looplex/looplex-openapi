@@ -2,14 +2,14 @@ openapi: 3.0.2
 info:
   version: 1.0.0
   title: Assembler
-  termsOfService: 'https://docs.looplex.com.br/legal/termos-de-uso'
+  termsOfService: https://docs.looplex.com.br/legal/termos-de-uso
   contact:
     name: Developers Looplex
     email: developer@looplex.com.br
-    url: 'https://www.looplex.com.br'
+    url: https://www.looplex.com.br
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
   x-logo:
     url: /assets/images/logo.png
     href: /
@@ -27,7 +27,7 @@ tags:
     description: Template operations
     x-displayName: Templates
   - name: Users
-    description: 'User operations, such as login and profile consulting'
+    description: User operations, such as login and profile consulting
     x-displayName: Users
   - name: Operations
     description: >-
@@ -181,16 +181,16 @@ x-tagGroups:
     tags:
       - Varas e Foros
 servers:
-  - url: 'https://graph.looplex.com/api/v1/assembler'
+  - url: https://graph.looplex.com/api/v1/assembler
     description: Graph server
-  - url: 'https://apim.looplex.com/actions/v1'
+  - url: https://apim.looplex.com/actions/v1
     description: Actions Server
-  - url: 'https://graph.looplex.com/cases'
+  - url: https://graph.looplex.com/cases
     description: Looplex Cases Server
-  - url: 'https://graph.looplex.com/varas_foros'
+  - url: https://graph.looplex.com/varas_foros
     description: Looplex Varas e Foros Server
 paths:
-  '/documents/{docId}/answers':
+  /documents/{docId}/answers:
     get:
       tags:
         - Documents
@@ -210,7 +210,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  '/documents/{docId}/export':
+  /documents/{docId}/export:
     get:
       tags:
         - Documents
@@ -233,7 +233,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  '/documents/{docId}/import':
+  /documents/{docId}/import:
     post:
       tags:
         - Documents
@@ -263,7 +263,7 @@ paths:
             multipart/form-data: {}
       security:
         - Subscription-Key: []
-  '/documents/{docId}/json':
+  /documents/{docId}/json:
     post:
       tags:
         - Documents
@@ -294,7 +294,7 @@ paths:
             multipart/form-data: {}
       security:
         - Subscription-Key: []
-  '/documents/{docId}/revision-all-answers':
+  /documents/{docId}/revision-all-answers:
     get:
       tags:
         - Documents
@@ -338,7 +338,7 @@ paths:
                 $ref: '#/components/schemas/DocumentDTORes'
       security:
         - Subscription-Key: []
-  '/documents/{docId}/hide':
+  /documents/{docId}/hide:
     post:
       tags:
         - Documents
@@ -354,7 +354,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  '/documents/{docId}/unhide':
+  /documents/{docId}/unhide:
     post:
       tags:
         - Documents
@@ -370,7 +370,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  '/documents/template/{templateIdentifier}':
+  /documents/template/{templateIdentifier}:
     get:
       tags:
         - Documents
@@ -386,7 +386,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  '/documents/{docId}':
+  /documents/{docId}:
     patch:
       tags:
         - Documents
@@ -436,7 +436,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  '/documents/{docId}/rem':
+  /documents/{docId}/rem:
     delete:
       tags:
         - Documents
@@ -452,7 +452,7 @@ paths:
           description: OK
       security:
         - Subscription-Key: []
-  '/documents/{docId}/s3':
+  /documents/{docId}/s3:
     delete:
       tags:
         - Documents
@@ -535,7 +535,7 @@ paths:
                 $ref: '#/components/schemas/PageResponse'
       security:
         - Subscription-Key: []
-  '/tasks/{taskId}':
+  /tasks/{taskId}:
     patch:
       tags:
         - Tasks
@@ -641,7 +641,7 @@ paths:
                   value: null
       security:
         - Subscription-Key: []
-  '/templates/{template}/persistent':
+  /templates/{template}/persistent:
     post:
       tags:
         - Documents
@@ -671,7 +671,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  '/templates/{template}/transient':
+  /templates/{template}/transient:
     post:
       tags:
         - Documents
@@ -707,7 +707,7 @@ paths:
                 $ref: '#/components/schemas/DocumentExportDTO'
       security:
         - Subscription-Key: []
-  '/templates/{templateId}':
+  /templates/{templateId}:
     get:
       tags:
         - Templates
@@ -789,7 +789,7 @@ paths:
           description: Internal Server Error
       security:
         - Subscription-Key: []
-  '/code/:id':
+  /code/:id:
     post:
       tags:
         - Code
@@ -1407,7 +1407,7 @@ paths:
           description: Internal Server Error
       security:
         - Subscription-Key: []
-  '/tinyurl/:id':
+  /tinyurl/:id:
     post:
       tags:
         - TinyURL
@@ -1777,7 +1777,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/agenda':
+  /api/casos/{idCaso}/agenda:
     get:
       tags:
         - Agenda
@@ -1840,7 +1840,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/agenda/{tipo}/{id}':
+  /api/agenda/{tipo}/{id}:
     delete:
       tags:
         - Agenda
@@ -1958,7 +1958,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/audiencias':
+  /api/casos/{idCaso}/audiencias:
     get:
       tags:
         - Agenda
@@ -1995,7 +1995,7 @@ paths:
       tags:
         - Agenda
       summary: Obtém audiências
-      description: 'Obtém audiências por numero interno, externo ou identificador do caso'
+      description: Obtém audiências por numero interno, externo ou identificador do caso
       operationId: api-casos-num-audiencias
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -2034,12 +2034,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/tabagenda':
+  /api/casos/{idCaso}/tabagenda:
     get:
       tags:
         - Agenda
       summary: Obtém compromissos
-      description: 'Obtém compromissos, prazos e publicações por caso.'
+      description: Obtém compromissos, prazos e publicações por caso.
       operationId: api-casos-idCaso-tabagenda
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -2052,7 +2052,7 @@ paths:
             type: string
       responses:
         '200':
-          description: 'Retorna um array com os compromissos, prazos e publicações por caso.'
+          description: Retorna um array com os compromissos, prazos e publicações por caso.
           content:
             application/json:
               schema:
@@ -2158,7 +2158,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/agenda/{id}/{tipo}':
+  /api/agenda/{id}/{tipo}:
     get:
       tags:
         - Agenda
@@ -2316,7 +2316,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}':
+  /api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}:
     get:
       tags:
         - Andamento
@@ -2369,7 +2369,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/andamentosimples':
+  /api/casos/{idCaso}/andamentosimples:
     get:
       tags:
         - Andamento
@@ -2405,7 +2405,7 @@ paths:
     get:
       tags:
         - Andamento
-      summary: 'Andamentos simples por caso, numero interno ou numero externo'
+      summary: Andamentos simples por caso, numero interno ou numero externo
       description: >-
         Retorna um array de andamentos simples por caso, numero interno ou
         numero externo
@@ -2447,7 +2447,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/andamentos/{id}':
+  /api/andamentos/{id}:
     get:
       tags:
         - Andamento
@@ -2507,7 +2507,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/andamentos/{idAndamento}':
+  /api/andamentos/{idAndamento}:
     put:
       tags:
         - Andamento
@@ -2567,7 +2567,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/andamentos/update/{idAndamento}':
+  /api/andamentos/update/{idAndamento}:
     put:
       tags:
         - Andamento
@@ -2645,7 +2645,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/areas/porDomain/{domain}':
+  /api/areas/porDomain/{domain}:
     get:
       tags:
         - Area
@@ -2677,7 +2677,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/areas/{id}':
+  /api/areas/{id}:
     get:
       tags:
         - Area
@@ -2755,7 +2755,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{cdProcesso}/CalculosMonetarios':
+  /api/casos/{cdProcesso}/CalculosMonetarios:
     get:
       tags:
         - Calculo Monetário
@@ -2786,7 +2786,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/CalculoMonetario/{id}':
+  /api/CalculoMonetario/{id}:
     get:
       tags:
         - Calculo Monetário
@@ -2839,7 +2839,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{id}/Calcula':
+  /api/casos/{id}/Calcula:
     post:
       tags:
         - Calculo Monetário
@@ -2930,7 +2930,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/CalculoMonetario/Modelos/{id}':
+  /api/CalculoMonetario/Modelos/{id}:
     get:
       tags:
         - Calculo Monetário
@@ -2959,7 +2959,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{id}/ValoresParaCalculo':
+  /api/casos/{id}/ValoresParaCalculo:
     get:
       tags:
         - Calculo Monetário
@@ -3024,7 +3024,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/{idCliente}/casos':
+  /api/clientes/{idCliente}/casos:
     get:
       tags:
         - Casos
@@ -3074,7 +3074,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/{idCliente}/pastas':
+  /api/clientes/{idCliente}/pastas:
     get:
       tags:
         - Casos
@@ -3106,7 +3106,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCliente}/pastasDoCaso':
+  /api/casos/{idCliente}/pastasDoCaso:
     get:
       tags:
         - Casos
@@ -3138,7 +3138,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{id}':
+  /api/casos/{id}:
     get:
       tags:
         - Casos
@@ -3168,7 +3168,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{id}/ficha':
+  /api/casos/{id}/ficha:
     get:
       tags:
         - Casos
@@ -3244,7 +3244,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/meuscasos/{cdResponsavel}':
+  /api/casos/meuscasos/{cdResponsavel}:
     get:
       tags:
         - Casos
@@ -3347,7 +3347,7 @@ paths:
       tags:
         - Casos
       summary: Casos
-      description: 'Casos por identificador, numero interno ou numero externo'
+      description: Casos por identificador, numero interno ou numero externo
       operationId: api-casos-id-num
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -3369,7 +3369,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: 'Obtém os casos por identificador, numero interno ou numero externo'
+          description: Obtém os casos por identificador, numero interno ou numero externo
           content:
             application/json:
               schema:
@@ -3384,7 +3384,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/porIds/{ids}':
+  /api/casos/porIds/{ids}:
     get:
       tags:
         - Casos
@@ -3423,7 +3423,7 @@ paths:
     get:
       tags:
         - Casos
-      summary: 'Casos por identificador, numero interno ou numero externo'
+      summary: Casos por identificador, numero interno ou numero externo
       description: >-
         Obtém os casos obtidos pelo identificador, numero interno ou numero
         externo
@@ -3457,7 +3457,7 @@ paths:
               type: string
       responses:
         '200':
-          description: 'Casos por identificador, numero interno ou numero externo'
+          description: Casos por identificador, numero interno ou numero externo
           content:
             application/json:
               schema:
@@ -3592,7 +3592,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/subcasos/{cdProcessoPai}':
+  /api/casos/subcasos/{cdProcessoPai}:
     get:
       tags:
         - Casos
@@ -3624,7 +3624,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco':
+  /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
     get:
       tags:
         - Categoria
@@ -3665,7 +3665,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/escritorios/{IdEscritorio}/categoriaspreco':
+  /api/escritorios/{IdEscritorio}/categoriaspreco:
     get:
       tags:
         - Categoria
@@ -3697,7 +3697,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/funcionarios/{IdsMin},{IdsMax}/categorias':
+  /api/funcionarios/{IdsMin},{IdsMax}/categorias:
     get:
       tags:
         - Categoria
@@ -3839,7 +3839,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/porDomain/{domain}':
+  /api/clientes/porDomain/{domain}:
     get:
       tags:
         - Cliente
@@ -3984,7 +3984,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/{id}':
+  /api/clientes/{id}:
     get:
       tags:
         - Cliente
@@ -4016,7 +4016,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/porIds/{idsClientes}':
+  /api/clientes/porIds/{idsClientes}:
     get:
       tags:
         - Cliente
@@ -4053,7 +4053,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/{idCliente}/pasta':
+  /api/clientes/{idCliente}/pasta:
     get:
       tags:
         - Cliente
@@ -4082,7 +4082,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/contatos/{id}':
+  /api/contatos/{id}:
     get:
       tags:
         - Contato
@@ -4139,7 +4139,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/{idCliente}/contatos':
+  /api/clientes/{idCliente}/contatos:
     get:
       tags:
         - Contato
@@ -4310,7 +4310,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/contratosimples':
+  /api/casos/{idCaso}/contratosimples:
     get:
       tags:
         - Contrato
@@ -4340,7 +4340,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/contratos/{idCliente}/contratosCliente':
+  /api/contratos/{idCliente}/contratosCliente:
     get:
       tags:
         - Contrato
@@ -4384,7 +4384,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/clientes/{idCliente}/contratos':
+  /api/clientes/{idCliente}/contratos:
     get:
       tags:
         - Contrato
@@ -4428,7 +4428,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/contratos/{id}':
+  /api/contratos/{id}:
     get:
       tags:
         - Contrato
@@ -4458,7 +4458,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/dadoscomplementares':
+  /api/casos/{idCaso}/dadoscomplementares:
     get:
       tags:
         - Dados complementares
@@ -4540,7 +4540,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/dado_complementar/{id}':
+  /api/dado_complementar/{id}:
     get:
       tags:
         - Dados complementares
@@ -4718,13 +4718,6 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Profile'
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: IDParametroDadoComplementar
-          in: query
-          example: 10
-          description: O identificador do dado complementar
-          required: true
-          schema:
-            type: integer
       requestBody:
         content:
           application/json:
@@ -4743,7 +4736,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/Decisoes':
+  /api/casos/{idCaso}/Decisoes:
     get:
       tags:
         - Decisões
@@ -4869,7 +4862,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/Decisoes/{id}':
+  /api/Decisoes/{id}:
     get:
       tags:
         - Decisões
@@ -4927,7 +4920,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/DecisoesComValores':
+  /api/casos/{idCaso}/DecisoesComValores:
     get:
       tags:
         - Decisões
@@ -4958,7 +4951,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/Decisoes/{idProcessoDecisao}':
+  /api/Decisoes/{idProcessoDecisao}:
     delete:
       tags:
         - Decisões
@@ -5187,7 +5180,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/despesas/voucher/{idVoucher}/categorias':
+  /api/despesas/voucher/{idVoucher}/categorias:
     get:
       tags:
         - Despesas
@@ -5216,7 +5209,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/despesas/voucher/{idVoucher}/fornecedores':
+  /api/despesas/voucher/{idVoucher}/fornecedores:
     get:
       tags:
         - Despesas
@@ -5287,7 +5280,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/despesas/obtem/{id}':
+  /api/despesas/obtem/{id}:
     get:
       tags:
         - Despesas
@@ -5386,7 +5379,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/despesas/exclui/{id}':
+  /api/despesas/exclui/{id}:
     delete:
       tags:
         - Despesas
@@ -5434,7 +5427,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/Valores':
+  /api/casos/{idCaso}/Valores:
     get:
       tags:
         - Expectativa reivindicação
@@ -5463,7 +5456,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/PedidosComHistorico':
+  /api/casos/{idCaso}/PedidosComHistorico:
     get:
       tags:
         - Expectativa reivindicação
@@ -5492,7 +5485,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/expectativa/valores/{idCaso}':
+  /api/expectativa/valores/{idCaso}:
     get:
       tags:
         - Expectativa reivindicação
@@ -5548,7 +5541,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/fase/{nrGrupo}':
+  /api/casos/fase/{nrGrupo}:
     get:
       tags:
         - Fase caso
@@ -5580,7 +5573,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{nrSequencia}/fase':
+  /api/casos/{nrSequencia}/fase:
     get:
       tags:
         - Fase caso
@@ -5656,7 +5649,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/funcionarios/porIds/{ids}':
+  /api/funcionarios/porIds/{ids}:
     get:
       tags:
         - Funcionário
@@ -5695,7 +5688,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/funcionarios/porId/{id}':
+  /api/funcionarios/porId/{id}:
     get:
       tags:
         - Funcionário
@@ -5773,7 +5766,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/areas/{idArea}/funcionarios':
+  /api/areas/{idArea}/funcionarios:
     get:
       tags:
         - Funcionário
@@ -5821,7 +5814,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/funcionarios/{idFuncionario}/areas':
+  /api/funcionarios/{idFuncionario}/areas:
     get:
       tags:
         - Funcionário
@@ -5853,7 +5846,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/escritorios/{IdEscritorio}/funcionarios':
+  /api/escritorios/{IdEscritorio}/funcionarios:
     get:
       tags:
         - Funcionário
@@ -5916,7 +5909,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/Garantia/{idCasoGarantia}':
+  /api/casos/Garantia/{idCasoGarantia}:
     get:
       tags:
         - Garantia
@@ -5947,7 +5940,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/Garantias':
+  /api/casos/{idCaso}/Garantias:
     get:
       tags:
         - Garantia
@@ -6052,7 +6045,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/Garantia/Inclui/{idCaso}':
+  /api/casos/Garantia/Inclui/{idCaso}:
     post:
       tags:
         - Garantia
@@ -6086,7 +6079,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/Garantia/Atualiza/{idCaso}':
+  /api/casos/Garantia/Atualiza/{idCaso}:
     put:
       tags:
         - Garantia
@@ -6121,7 +6114,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}':
+  /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
     delete:
       tags:
         - Garantia
@@ -6154,7 +6147,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/Garantia/IncluiMovimentacao/{idCaso}':
+  /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
     post:
       tags:
         - Garantia
@@ -6359,7 +6352,7 @@ paths:
       tags:
         - Hierarquia
       summary: Grupos de foro
-      description: 'Obtém os grupos de foro por ramo de justiça, estado e grupo de família'
+      description: Obtém os grupos de foro por ramo de justiça, estado e grupo de família
       operationId: api-hierarquia-grupoforo
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -6538,7 +6531,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/natureza':
+  /api/casos/{idCaso}/natureza:
     get:
       tags:
         - Natureza
@@ -6737,7 +6730,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/Partes':
+  /api/casos/{idCaso}/Partes:
     get:
       tags:
         - Partes
@@ -6803,7 +6796,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/parte/{cdParte}':
+  /api/parte/{cdParte}:
     delete:
       tags:
         - Partes
@@ -6962,7 +6955,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/escritorios/{idEscritorio}/tabelaspreco':
+  /api/escritorios/{idEscritorio}/tabelaspreco:
     get:
       tags:
         - Tabela preço
@@ -6994,7 +6987,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/escritorios/{idEscritorio}/tabelasprecocategoria':
+  /api/escritorios/{idEscritorio}/tabelasprecocategoria:
     get:
       tags:
         - Tabela preço categoria
@@ -7025,7 +7018,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}':
+  /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
     get:
       tags:
         - Tarefa
@@ -7400,7 +7393,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/timesheet/funcionarios/{idFuncionario}/areas':
+  /api/timesheet/funcionarios/{idFuncionario}/areas:
     get:
       tags:
         - Timesheet
@@ -7431,7 +7424,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/timesheet/areas/{idArea}/titulos':
+  /api/timesheet/areas/{idArea}/titulos:
     get:
       tags:
         - Timesheet
@@ -7488,7 +7481,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/timesheet/funcionarios/permissaolcto/{idFuncionario}':
+  /api/timesheet/funcionarios/permissaolcto/{idFuncionario}:
     get:
       tags:
         - Timesheet
@@ -7545,7 +7538,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/timesheet':
+  /api/casos/{idCaso}/timesheet:
     get:
       tags:
         - Timesheet
@@ -7586,7 +7579,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/timesheet/caso/{idCaso}':
+  /api/timesheet/caso/{idCaso}:
     get:
       tags:
         - Timesheet
@@ -7617,7 +7610,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/timesheet/obtem/{id}':
+  /api/timesheet/obtem/{id}:
     get:
       tags:
         - Timesheet
@@ -7762,7 +7755,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/timesheet/exclui/{id}':
+  /api/timesheet/exclui/{id}:
     delete:
       tags:
         - Timesheet
@@ -7848,7 +7841,7 @@ paths:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idsFuncionarios
           in: query
-          example: '1,2'
+          example: 1,2
           description: Os ids de funcionarios separados por virgula
           required: true
           schema:
@@ -7889,7 +7882,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-  '/api/casos/{idCaso}/valoresapurados':
+  /api/casos/{idCaso}/valoresapurados:
     get:
       tags:
         - Valores apurados
@@ -8641,7 +8634,7 @@ components:
         name:
           type: string
           description: Document's name
-          example: 'Documentos Financeiro (Lawsoft) 05-05-2022 20:19:38'
+          example: Documentos Financeiro (Lawsoft) 05-05-2022 20:19:38
         parentId:
           type: integer
           description: Id do documento pai
@@ -8684,8 +8677,8 @@ components:
               name: Jane Doe
               id: janedoe@looplex.com.br
             document:
-              name: 'Acordo de Confidencialidade/NDA 18/05/2022 09:41:52'
-              url: 'https://graph.looplex.com/documents/1'
+              name: Acordo de Confidencialidade/NDA 18/05/2022 09:41:52
+              url: https://graph.looplex.com/documents/1
             dueDate: '2019-08-24T14:15:22Z'
             endDate: '2019-08-24T14:15:22Z'
             id: 14
@@ -8794,11 +8787,11 @@ components:
         name:
           type: string
           description: The name that will be displayed in the tasks view.
-          example: 'Acordo de Confidencialidade/NDA 18/05/2022 09:41:52'
+          example: Acordo de Confidencialidade/NDA 18/05/2022 09:41:52
         url:
           type: string
           description: The document URL.
-          example: 'https://graph.looplex.com/documents/1'
+          example: https://graph.looplex.com/documents/1
     PageResponse:
       title: PageResponseDto
       type: object
@@ -8844,8 +8837,8 @@ components:
               name: Jane Doe
               id: janedoe@looplex.com.br
             document:
-              name: 'Acordo de Confidencialidade/NDA 18/05/2022 09:41:52'
-              url: 'https://graph.looplex.com/documents/1'
+              name: Acordo de Confidencialidade/NDA 18/05/2022 09:41:52
+              url: https://graph.looplex.com/documents/1
         dueDate:
           type: string
           description: When the task should end
@@ -9035,7 +9028,7 @@ components:
         baseURL:
           type: string
           description: The request base URL
-          example: 'https://api.aspose.cloud/v4.0'
+          example: https://api.aspose.cloud/v4.0
         method:
           enum:
             - GET
@@ -9072,9 +9065,9 @@ components:
           example:
             data_distribuicao: 2007pç-06-01
             data_encerramento: '2008-02-13'
-            valor_da_causa: '29.000,00'
+            valor_da_causa: 29.000,00
             valor_da_causa_atualizado: '-'
-            valor_previsto: '0,00'
+            valor_previsto: 0,00
             valor_previsto_atualizado: '-'
             situacao: exemplo
             fase: Arquivado
@@ -9100,13 +9093,13 @@ components:
                 texto: Reclamada apresenta GFIP.
             pedidos:
               - descricao: Horas Extras
-                valor: '0,00'
+                valor: 0,00
                 risco: '-'
               - descricao: Devolução de Descontos
-                valor: '0,00'
+                valor: 0,00
                 risco: '-'
               - descricao: Multa do artigo 477 ca CLT
-                valor: '0,00'
+                valor: 0,00
                 risco: '-'
         template:
           type: string
@@ -9223,7 +9216,7 @@ components:
           type: object
           description: The datasource
           example:
-            matriculaURL: 'https://registradores.onr.org.br/VisualizarMatricula'
+            matriculaURL: https://registradores.onr.org.br/VisualizarMatricula
       description: Puppeteer service
     plot:
       title: Plot
@@ -9874,7 +9867,7 @@ components:
                     'y': 1.8507
                 words:
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 1.1806
                         'y': 1.7225
@@ -10123,7 +10116,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 2.0701
                         'y': 1.8841
@@ -10162,7 +10155,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2017,'
+                    text: 2017,
                     boundingBox:
                       - x: 2.9825
                         'y': 1.8841
@@ -10649,7 +10642,7 @@ components:
                     'y': 2.4924
                 words:
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 1.1831
                         'y': 2.3594
@@ -10937,7 +10930,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 3.1795
                         'y': 2.5258
@@ -11331,7 +11324,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 1.4505
                         'y': 3.2096
@@ -11658,7 +11651,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'CPC,'
+                    text: CPC,
                     boundingBox:
                       - x: 5.4411
                         'y': 3.3649
@@ -11764,7 +11757,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'norma,'
+                    text: norma,
                     boundingBox:
                       - x: 2.7915
                         'y': 3.554
@@ -11883,7 +11876,7 @@ components:
                     'y': 3.8195
                 words:
                   - kind: word
-                    text: 'Consequentemente,'
+                    text: Consequentemente,
                     boundingBox:
                       - x: 1.1831
                         'y': 3.6865
@@ -12197,7 +12190,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'e,'
+                    text: e,
                     boundingBox:
                       - x: 4.7623
                         'y': 3.874
@@ -12223,7 +12216,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'isso,'
+                    text: isso,
                     boundingBox:
                       - x: 5.1723
                         'y': 3.8491
@@ -12407,7 +12400,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 4.104
                         'y': 4.0112
@@ -12539,7 +12532,7 @@ components:
                     'y': 4.3011
                 words:
                   - kind: word
-                    text: 'norma,'
+                    text: norma,
                     boundingBox:
                       - x: 1.186
                         'y': 4.1957
@@ -12840,7 +12833,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'arrendamento,'
+                    text: arrendamento,
                     boundingBox:
                       - x: 4.254
                         'y': 4.3308
@@ -12972,7 +12965,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'forma,'
+                    text: forma,
                     boundingBox:
                       - x: 2.5208
                         'y': 4.4894
@@ -13457,7 +13450,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'R$1,3'
+                    text: R$1,3
                     boundingBox:
                       - x: 2.1936
                         'y': 4.8046
@@ -13470,7 +13463,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'milhão,'
+                    text: milhão,
                     boundingBox:
                       - x: 2.6001
                         'y': 4.8119
@@ -13667,7 +13660,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'R$0,1'
+                    text: R$0,1
                     boundingBox:
                       - x: 2.1614
                         'y': 4.9646
@@ -13890,7 +13883,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'arrendamento,'
+                    text: arrendamento,
                     boundingBox:
                       - x: 3.0406
                         'y': 5.1325
@@ -14007,7 +14000,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '(R2),'
+                    text: (R2),
                     boundingBox:
                       - x: 7.0263
                         'y': 5.1304
@@ -14087,7 +14080,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'R$1,5'
+                    text: R$1,5
                     boundingBox:
                       - x: 2.8331
                         'y': 5.2846
@@ -14429,7 +14422,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'adotadas,'
+                    text: adotadas,
                     boundingBox:
                       - x: 1.7449
                         'y': 5.8178
@@ -14888,7 +14881,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'Vertical”,'
+                    text: Vertical”,
                     boundingBox:
                       - x: 4.4146
                         'y': 6.3389
@@ -15414,7 +15407,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'operações,'
+                    text: operações,
                     boundingBox:
                       - x: 2.1789
                         'y': 6.8222
@@ -15925,7 +15918,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 2.3991
                         'y': 7.7186
@@ -16042,7 +16035,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 5.9745
                         'y': 7.7165
@@ -16187,7 +16180,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'circulante,'
+                    text: circulante,
                     boundingBox:
                       - x: 2.7818
                         'y': 7.8765
@@ -16265,7 +16258,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 4.7914
                         'y': 7.8765
@@ -16488,7 +16481,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 4.753
                         'y': 8.0339
@@ -16672,7 +16665,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2,56.'
+                    text: 2,56.
                     boundingBox:
                       - x: 4.0741
                         'y': 8.2003
@@ -16750,7 +16743,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 5.8715
                         'y': 8.2003
@@ -16895,7 +16888,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 3.2595
                         'y': 8.3582
@@ -17025,7 +17018,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'Circulante,'
+                    text: Circulante,
                     boundingBox:
                       - x: 6.2072
                         'y': 8.3555
@@ -17118,7 +17111,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 2.0592
                         'y': 8.5182
@@ -17341,7 +17334,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 2.0792
                         'y': 8.6755
@@ -17525,7 +17518,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '1,80.'
+                    text: 1,80.
                     boundingBox:
                       - x: 1.3776
                         'y': 8.8419
@@ -17603,7 +17596,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2018,'
+                    text: 2018,
                     boundingBox:
                       - x: 3.1628
                         'y': 8.8419
@@ -17707,7 +17700,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '1,36'
+                    text: 1,36
                     boundingBox:
                       - x: 5.6694
                         'y': 8.8419
@@ -17720,7 +17713,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: 'e,'
+                    text: e,
                     boundingBox:
                       - x: 5.964
                         'y': 8.8647
@@ -17786,7 +17779,7 @@ components:
                     pageNumber: 1
               - kind: line
                 pageNumber: 1
-                text: 'de 2017, foi de 2,57.'
+                text: de 2017, foi de 2,57.
                 boundingBox:
                   - x: 1.1818
                     'y': 8.9985
@@ -17811,7 +17804,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2017,'
+                    text: 2017,
                     boundingBox:
                       - x: 1.3723
                         'y': 9.0019
@@ -17850,7 +17843,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2,57.'
+                    text: 2,57.
                     boundingBox:
                       - x: 2.1366
                         'y': 9.0019
@@ -17943,7 +17936,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 2.4076
                         'y': 9.3653
@@ -18008,7 +18001,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 4.0601
                         'y': 9.3653
@@ -18047,7 +18040,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '2017,'
+                    text: 2017,
                     boundingBox:
                       - x: 4.9259
                         'y': 9.3653
@@ -18376,7 +18369,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '0,46;'
+                    text: 0,46;
                     boundingBox:
                       - x: 2.1178
                         'y': 9.6869
@@ -18389,7 +18382,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '0,65;'
+                    text: 0,65;
                     boundingBox:
                       - x: 2.4724
                         'y': 9.6869
@@ -18402,7 +18395,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '1,66'
+                    text: 1,66
                     boundingBox:
                       - x: 2.8341
                         'y': 9.6869
@@ -18428,7 +18421,7 @@ components:
                     confidence: 1
                     pageNumber: 1
                   - kind: word
-                    text: '0,53;'
+                    text: 0,53;
                     boundingBox:
                       - x: 3.262
                         'y': 9.6869
@@ -19026,7 +19019,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'acima,'
+                    text: acima,
                     boundingBox:
                       - x: 2.8055
                         'y': 0.7935
@@ -19485,7 +19478,7 @@ components:
                     'y': 1.6066
                 words:
                   - kind: word
-                    text: 'Adicionalmente,'
+                    text: Adicionalmente,
                     boundingBox:
                       - x: 1.1723
                         'y': 1.4787
@@ -19537,7 +19530,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'que,'
+                    text: que,
                     boundingBox:
                       - x: 3.9207
                         'y': 1.5036
@@ -19615,7 +19608,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 5.6628
                         'y': 1.4808
@@ -19682,7 +19675,7 @@ components:
                     'y': 1.767
                 words:
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 1.1831
                         'y': 1.6361
@@ -19825,7 +19818,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'Giro,'
+                    text: Giro,
                     boundingBox:
                       - x: 5.6408
                         'y': 1.6361
@@ -19890,7 +19883,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'S.A.,'
+                    text: S.A.,
                     boundingBox:
                       - x: 7.0348
                         'y': 1.6361
@@ -19970,7 +19963,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'R$5,0'
+                    text: R$5,0
                     boundingBox:
                       - x: 2.2579
                         'y': 1.7908
@@ -19983,7 +19976,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'milhões,'
+                    text: milhões,
                     boundingBox:
                       - x: 2.6761
                         'y': 1.7982
@@ -20087,7 +20080,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '9,97%,'
+                    text: 9,97%,
                     boundingBox:
                       - x: 5.1475
                         'y': 1.8008
@@ -20193,7 +20186,7 @@ components:
                     'y': 2.0884
                 words:
                   - kind: word
-                    text: 'mensais,'
+                    text: mensais,
                     boundingBox:
                       - x: 1.186
                         'y': 1.9587
@@ -20310,7 +20303,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 4.3696
                         'y': 1.9608
@@ -20375,7 +20368,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'garantia,'
+                    text: garantia,
                     boundingBox:
                       - x: 5.9929
                         'y': 1.9587
@@ -20546,7 +20539,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'investimento,'
+                    text: investimento,
                     boundingBox:
                       - x: 4.5529
                         'y': 2.1187
@@ -20572,7 +20565,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '9.608,16'
+                    text: 9.608,16
                     boundingBox:
                       - x: 6.1877
                         'y': 2.1208
@@ -20639,7 +20632,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'DI,'
+                    text: DI,
                     boundingBox:
                       - x: 2.3228
                         'y': 2.2804
@@ -20704,7 +20697,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'S.A.,'
+                    text: S.A.,
                     boundingBox:
                       - x: 5.0388
                         'y': 2.2778
@@ -20756,7 +20749,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'total,'
+                    text: total,
                     boundingBox:
                       - x: 6.4993
                         'y': 2.2804
@@ -20823,7 +20816,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'contratação,'
+                    text: contratação,
                     boundingBox:
                       - x: 1.3709
                         'y': 2.4398
@@ -20862,7 +20855,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2,5'
+                    text: 2,5
                     boundingBox:
                       - x: 2.5731
                         'y': 2.4425
@@ -20888,7 +20881,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'Adicionalmente,'
+                    text: Adicionalmente,
                     boundingBox:
                       - x: 3.3525
                         'y': 2.4404
@@ -20966,7 +20959,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 5.5051
                         'y': 2.4425
@@ -21176,7 +21169,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'D,'
+                    text: D,
                     boundingBox:
                       - x: 5.1222
                         'y': 2.6004
@@ -21295,7 +21288,7 @@ components:
                     'y': 2.89
                 words:
                   - kind: word
-                    text: 0000000.
+                    text: '0000000.'
                     boundingBox:
                       - x: 1.1823
                         'y': 2.7625
@@ -21373,7 +21366,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'R$8,0'
+                    text: R$8,0
                     boundingBox:
                       - x: 3.2717
                         'y': 2.7525
@@ -21386,7 +21379,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'milhões,'
+                    text: milhões,
                     boundingBox:
                       - x: 3.6898
                         'y': 2.7598
@@ -21531,7 +21524,7 @@ components:
                     'y': 3.0524
                 words:
                   - kind: word
-                    text: 'sucessivas,'
+                    text: sucessivas,
                     boundingBox:
                       - x: 1.1814
                         'y': 2.9221
@@ -21635,7 +21628,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'total,'
+                    text: total,
                     boundingBox:
                       - x: 4.6811
                         'y': 2.9221
@@ -21754,7 +21747,7 @@ components:
                     'y': 3.2124
                 words:
                   - kind: word
-                    text: '0,38%'
+                    text: 0,38%
                     boundingBox:
                       - x: 1.1823
                         'y': 3.0841
@@ -21832,7 +21825,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'R$4,0'
+                    text: R$4,0
                     boundingBox:
                       - x: 3.575
                         'y': 3.0742
@@ -22094,7 +22087,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'celebrados,'
+                    text: celebrados,
                     boundingBox:
                       - x: 5.313
                         'y': 3.6058
@@ -22343,7 +22336,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'Bancos,'
+                    text: Bancos,
                     boundingBox:
                       - x: 6.061
                         'y': 3.7658
@@ -22436,7 +22429,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'adicionais,'
+                    text: adicionais,
                     boundingBox:
                       - x: 1.9078
                         'y': 3.9275
@@ -22607,7 +22600,7 @@ components:
                     'y': 4.2153
                 words:
                   - kind: word
-                    text: 'COVID-19,'
+                    text: COVID-19,
                     boundingBox:
                       - x: 1.1831
                         'y': 4.0849
@@ -22882,7 +22875,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'fato,'
+                    text: fato,
                     boundingBox:
                       - x: 4.1409
                         'y': 4.2461
@@ -22973,7 +22966,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'recursos,'
+                    text: recursos,
                     boundingBox:
                       - x: 6.7641
                         'y': 4.2724
@@ -23066,7 +23059,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'decisão,'
+                    text: decisão,
                     boundingBox:
                       - x: 3.5627
                         'y': 4.4069
@@ -23800,7 +23793,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'operações,'
+                    text: operações,
                     boundingBox:
                       - x: 2.7846
                         'y': 5.4622
@@ -23943,7 +23936,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'terceiros,'
+                    text: terceiros,
                     boundingBox:
                       - x: 1.4871
                         'y': 5.6228
@@ -24062,7 +24055,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'apresentou,'
+                    text: apresentou,
                     boundingBox:
                       - x: 2.0611
                         'y': 5.9929
@@ -24231,7 +24224,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 6.0005
                         'y': 5.9882
@@ -24270,7 +24263,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2017,'
+                    text: 2017,
                     boundingBox:
                       - x: 6.8593
                         'y': 5.9882
@@ -24505,7 +24498,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '(em R$ milhares, exceto %)'
+                text: (em R$ milhares, exceto %)
                 boundingBox:
                   - x: 1.2426
                     'y': 6.6889
@@ -24543,7 +24536,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'milhares,'
+                    text: milhares,
                     boundingBox:
                       - x: 1.6473
                         'y': 6.6945
@@ -25402,7 +25395,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '31,5%'
+                text: 31,5%
                 boundingBox:
                   - x: 3.6178
                     'y': 7.9507
@@ -25414,7 +25407,7 @@ components:
                     'y': 8.0455
                 words:
                   - kind: word
-                    text: '31,5%'
+                    text: 31,5%
                     boundingBox:
                       - x: 3.6178
                         'y': 7.9507
@@ -25428,7 +25421,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '39,5%'
+                text: 39,5%
                 boundingBox:
                   - x: 4.6548
                     'y': 7.9507
@@ -25440,7 +25433,7 @@ components:
                     'y': 8.0455
                 words:
                   - kind: word
-                    text: '39,5%'
+                    text: 39,5%
                     boundingBox:
                       - x: 4.6548
                         'y': 7.9507
@@ -25454,7 +25447,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '62,5%'
+                text: 62,5%
                 boundingBox:
                   - x: 5.6919
                     'y': 7.9507
@@ -25466,7 +25459,7 @@ components:
                     'y': 8.0455
                 words:
                   - kind: word
-                    text: '62,5%'
+                    text: 62,5%
                     boundingBox:
                       - x: 5.6919
                         'y': 7.9507
@@ -25480,7 +25473,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '34,6%'
+                text: 34,6%
                 boundingBox:
                   - x: 6.7319
                     'y': 7.9507
@@ -25492,7 +25485,7 @@ components:
                     'y': 8.0455
                 words:
                   - kind: word
-                    text: '34,6%'
+                    text: 34,6%
                     boundingBox:
                       - x: 6.7319
                         'y': 7.9507
@@ -25571,7 +25564,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '68,5%'
+                text: 68,5%
                 boundingBox:
                   - x: 3.6183
                     'y': 8.1273
@@ -25583,7 +25576,7 @@ components:
                     'y': 8.2221
                 words:
                   - kind: word
-                    text: '68,5%'
+                    text: 68,5%
                     boundingBox:
                       - x: 3.6183
                         'y': 8.1273
@@ -25597,7 +25590,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '60,5%'
+                text: 60,5%
                 boundingBox:
                   - x: 4.6552
                     'y': 8.1273
@@ -25609,7 +25602,7 @@ components:
                     'y': 8.2221
                 words:
                   - kind: word
-                    text: '60,5%'
+                    text: 60,5%
                     boundingBox:
                       - x: 4.6552
                         'y': 8.1273
@@ -25623,7 +25616,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '37,5%'
+                text: 37,5%
                 boundingBox:
                   - x: 5.6931
                     'y': 8.1273
@@ -25635,7 +25628,7 @@ components:
                     'y': 8.2221
                 words:
                   - kind: word
-                    text: '37,5%'
+                    text: 37,5%
                     boundingBox:
                       - x: 5.6931
                         'y': 8.1273
@@ -25649,7 +25642,7 @@ components:
                     pageNumber: 2
               - kind: line
                 pageNumber: 2
-                text: '65,4%'
+                text: 65,4%
                 boundingBox:
                   - x: 6.734
                     'y': 8.1273
@@ -25661,7 +25654,7 @@ components:
                     'y': 8.2221
                 words:
                   - kind: word
-                    text: '65,4%'
+                    text: 65,4%
                     boundingBox:
                       - x: 6.734
                         'y': 8.1273
@@ -25754,7 +25747,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 2.6737
                         'y': 8.4869
@@ -25884,7 +25877,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 6.4716
                         'y': 8.4848
@@ -26081,7 +26074,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'decorreu,'
+                    text: decorreu,
                     boundingBox:
                       - x: 4.8009
                         'y': 8.6465
@@ -26094,7 +26087,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'principalmente,'
+                    text: principalmente,
                     boundingBox:
                       - x: 5.4236
                         'y': 8.6465
@@ -26304,7 +26297,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 4.507
                         'y': 8.8086
@@ -26501,7 +26494,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'operacionais,'
+                    text: operacionais,
                     boundingBox:
                       - x: 4.0696
                         'y': 8.9665
@@ -26607,7 +26600,7 @@ components:
                     'y': 9.2561
                 words:
                   - kind: word
-                    text: 'proveniente,'
+                    text: proveniente,
                     boundingBox:
                       - x: 1.185
                         'y': 9.1265
@@ -26620,7 +26613,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'principalmente,'
+                    text: principalmente,
                     boundingBox:
                       - x: 1.9944
                         'y': 9.1265
@@ -26869,7 +26862,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2018,'
+                    text: 2018,
                     boundingBox:
                       - x: 2.716
                         'y': 9.6536
@@ -26986,7 +26979,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 6.4657
                         'y': 9.6515
@@ -27183,7 +27176,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'decorreu,'
+                    text: decorreu,
                     boundingBox:
                       - x: 5.5068
                         'y': 9.8118
@@ -27196,7 +27189,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'principalmente,'
+                    text: principalmente,
                     boundingBox:
                       - x: 6.1643
                         'y': 9.8118
@@ -27380,7 +27373,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: '2018,'
+                    text: 2018,
                     boundingBox:
                       - x: 6.3624
                         'y': 9.9739
@@ -27538,7 +27531,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'e,'
+                    text: e,
                     boundingBox:
                       - x: 4.731
                         'y': 10.1584
@@ -27551,7 +27544,7 @@ components:
                     confidence: 1
                     pageNumber: 2
                   - kind: word
-                    text: 'consequentemente,'
+                    text: consequentemente,
                     boundingBox:
                       - x: 4.8841
                         'y': 10.1402
@@ -27657,7 +27650,7 @@ components:
                         confidence: 1
                         pageNumber: 2
                       - kind: word
-                        text: 'milhares,'
+                        text: milhares,
                         boundingBox:
                           - x: 1.6473
                             'y': 6.6945
@@ -27701,7 +27694,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '(em R$ milhares, exceto %)'
+                    text: (em R$ milhares, exceto %)
                     pageNumber: 2
                   - boundingBox:
                       - x: 2.9382
@@ -28776,7 +28769,7 @@ components:
                     columnIndex: 1
                     fieldElements:
                       - kind: word
-                        text: '31,5%'
+                        text: 31,5%
                         boundingBox:
                           - x: 3.6178
                             'y': 7.9507
@@ -28794,7 +28787,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '31,5%'
+                    text: 31,5%
                     pageNumber: 2
                   - boundingBox:
                       - x: 3.9715
@@ -28808,7 +28801,7 @@ components:
                     columnIndex: 2
                     fieldElements:
                       - kind: word
-                        text: '39,5%'
+                        text: 39,5%
                         boundingBox:
                           - x: 4.6548
                             'y': 7.9507
@@ -28826,7 +28819,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '39,5%'
+                    text: 39,5%
                     pageNumber: 2
                   - boundingBox:
                       - x: 5.0151
@@ -28840,7 +28833,7 @@ components:
                     columnIndex: 3
                     fieldElements:
                       - kind: word
-                        text: '62,5%'
+                        text: 62,5%
                         boundingBox:
                           - x: 5.6919
                             'y': 7.9507
@@ -28858,7 +28851,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '62,5%'
+                    text: 62,5%
                     pageNumber: 2
                   - boundingBox:
                       - x: 6.0518
@@ -28872,7 +28865,7 @@ components:
                     columnIndex: 4
                     fieldElements:
                       - kind: word
-                        text: '34,6%'
+                        text: 34,6%
                         boundingBox:
                           - x: 6.7319
                             'y': 7.9507
@@ -28890,7 +28883,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '34,6%'
+                    text: 34,6%
                     pageNumber: 2
                   - boundingBox:
                       - x: 1.1895
@@ -28975,7 +28968,7 @@ components:
                     columnIndex: 1
                     fieldElements:
                       - kind: word
-                        text: '68,5%'
+                        text: 68,5%
                         boundingBox:
                           - x: 3.6183
                             'y': 8.1273
@@ -28993,7 +28986,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '68,5%'
+                    text: 68,5%
                     pageNumber: 2
                   - boundingBox:
                       - x: 3.9715
@@ -29007,7 +29000,7 @@ components:
                     columnIndex: 2
                     fieldElements:
                       - kind: word
-                        text: '60,5%'
+                        text: 60,5%
                         boundingBox:
                           - x: 4.6552
                             'y': 8.1273
@@ -29025,7 +29018,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '60,5%'
+                    text: 60,5%
                     pageNumber: 2
                   - boundingBox:
                       - x: 5.0151
@@ -29039,7 +29032,7 @@ components:
                     columnIndex: 3
                     fieldElements:
                       - kind: word
-                        text: '37,5%'
+                        text: 37,5%
                         boundingBox:
                           - x: 5.6931
                             'y': 8.1273
@@ -29057,7 +29050,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '37,5%'
+                    text: 37,5%
                     pageNumber: 2
                   - boundingBox:
                       - x: 6.0518
@@ -29071,7 +29064,7 @@ components:
                     columnIndex: 4
                     fieldElements:
                       - kind: word
-                        text: '65,4%'
+                        text: 65,4%
                         boundingBox:
                           - x: 6.734
                             'y': 8.1273
@@ -29089,7 +29082,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '65,4%'
+                    text: 65,4%
                     pageNumber: 2
                 pageNumber: 2
           - pageNumber: 3
@@ -29218,7 +29211,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 4.0402
                         'y': 0.6355
@@ -29480,7 +29473,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '2017,'
+                    text: 2017,
                     boundingBox:
                       - x: 2.6737
                         'y': 0.9572
@@ -29610,7 +29603,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 6.4716
                         'y': 0.9551
@@ -29872,7 +29865,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '48,9%'
+                    text: 48,9%
                     boundingBox:
                       - x: 6.3094
                         'y': 1.1191
@@ -29885,7 +29878,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'decorreu,'
+                    text: decorreu,
                     boundingBox:
                       - x: 6.739
                         'y': 1.1171
@@ -29913,7 +29906,7 @@ components:
                     'y': 1.4049
                 words:
                   - kind: word
-                    text: 'principalmente,'
+                    text: principalmente,
                     boundingBox:
                       - x: 1.185
                         'y': 1.2771
@@ -30136,7 +30129,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'futuras,'
+                    text: futuras,
                     boundingBox:
                       - x: 3.4721
                         'y': 1.4357
@@ -30398,7 +30391,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '2018,'
+                    text: 2018,
                     boundingBox:
                       - x: 6.9752
                         'y': 1.5991
@@ -30833,7 +30826,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 2.2203
                         'y': 2.6544
@@ -31056,7 +31049,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 2.6959
                         'y': 2.8144
@@ -31253,7 +31246,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'curto,'
+                    text: curto,
                     boundingBox:
                       - x: 2.2769
                         'y': 2.9838
@@ -31318,7 +31311,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'existentes,'
+                    text: existentes,
                     boundingBox:
                       - x: 3.9585
                         'y': 2.9771
@@ -32127,7 +32120,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 2.142
                         'y': 5.3919
@@ -32468,7 +32461,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'CPC,'
+                    text: CPC,
                     boundingBox:
                       - x: 2.4155
                         'y': 5.5441
@@ -32559,7 +32552,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'norma,'
+                    text: norma,
                     boundingBox:
                       - x: 4.6496
                         'y': 5.562
@@ -32679,7 +32672,7 @@ components:
                     'y': 5.7839
                 words:
                   - kind: word
-                    text: 'Consequentemente,'
+                    text: Consequentemente,
                     boundingBox:
                       - x: 1.181
                         'y': 5.6974
@@ -33007,7 +33000,7 @@ components:
                     'y': 5.9376
                 words:
                   - kind: word
-                    text: 'e,'
+                    text: e,
                     boundingBox:
                       - x: 1.1806
                         'y': 5.8703
@@ -33033,7 +33026,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'isto,'
+                    text: isto,
                     boundingBox:
                       - x: 1.4445
                         'y': 5.8541
@@ -33371,7 +33364,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 6.9783
                         'y': 5.8555
@@ -34196,7 +34189,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'financeiro,'
+                    text: financeiro,
                     boundingBox:
                       - x: 4.8863
                         'y': 7.1114
@@ -34341,7 +34334,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: 'IFRS,'
+                    text: IFRS,
                     boundingBox:
                       - x: 3.8721
                         'y': 7.2718
@@ -34891,7 +34884,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 6.6681
                         'y': 8.1903
@@ -35008,7 +35001,7 @@ components:
                     confidence: 1
                     pageNumber: 3
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 3.0233
                         'y': 8.3503
@@ -38999,7 +38992,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 2.142
                         'y': 1.5815
@@ -39340,7 +39333,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'CPC,'
+                    text: CPC,
                     boundingBox:
                       - x: 2.4155
                         'y': 1.7334
@@ -39431,7 +39424,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'norma,'
+                    text: norma,
                     boundingBox:
                       - x: 4.6497
                         'y': 1.7513
@@ -39551,7 +39544,7 @@ components:
                     'y': 1.9749
                 words:
                   - kind: word
-                    text: 'Consequentemente,'
+                    text: Consequentemente,
                     boundingBox:
                       - x: 1.181
                         'y': 1.8884
@@ -39879,7 +39872,7 @@ components:
                     'y': 2.1285
                 words:
                   - kind: word
-                    text: 'e,'
+                    text: e,
                     boundingBox:
                       - x: 1.1806
                         'y': 2.0613
@@ -39905,7 +39898,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'isto,'
+                    text: isto,
                     boundingBox:
                       - x: 1.4445
                         'y': 2.0451
@@ -40243,7 +40236,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 6.9783
                         'y': 2.0465
@@ -40401,7 +40394,7 @@ components:
                     'y': 2.6999
                 words:
                   - kind: word
-                    text: 'Assim,'
+                    text: Assim,
                     boundingBox:
                       - x: 1.1723
                         'y': 2.5721
@@ -40518,7 +40511,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'caixa,'
+                    text: caixa,
                     boundingBox:
                       - x: 5.3412
                         'y': 2.5721
@@ -40702,7 +40695,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'custos,'
+                    text: custos,
                     boundingBox:
                       - x: 5.2084
                         'y': 2.7388
@@ -40769,7 +40762,7 @@ components:
                     'y': 3.0217
                 words:
                   - kind: word
-                    text: 'financeiras,'
+                    text: financeiras,
                     boundingBox:
                       - x: 1.1789
                         'y': 2.8907
@@ -40860,7 +40853,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'meses,'
+                    text: meses,
                     boundingBox:
                       - x: 4.6256
                         'y': 2.917
@@ -41005,7 +40998,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'inalterada,'
+                    text: inalterada,
                     boundingBox:
                       - x: 3.1919
                         'y': 3.0537
@@ -41202,7 +41195,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'brasileira,'
+                    text: brasileira,
                     boundingBox:
                       - x: 4.4143
                         'y': 3.2141
@@ -41622,7 +41615,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'sociais,'
+                    text: sociais,
                     boundingBox:
                       - x: 2.8974
                         'y': 4.2725
@@ -41819,7 +41812,7 @@ components:
                     'y': 4.5638
                 words:
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 1.1806
                         'y': 4.4362
@@ -42185,7 +42178,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'operacionais,'
+                    text: operacionais,
                     boundingBox:
                       - x: 5.9583
                         'y': 4.5941
@@ -42356,7 +42349,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'terceiros,'
+                    text: terceiros,
                     boundingBox:
                       - x: 5.1463
                         'y': 4.7541
@@ -43014,7 +43007,7 @@ components:
                     'y': 6.1022
                 words:
                   - kind: word
-                    text: 'e,'
+                    text: e,
                     boundingBox:
                       - x: 1.1825
                         'y': 5.9993
@@ -43040,7 +43033,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'necessário,'
+                    text: necessário,
                     boundingBox:
                       - x: 1.6804
                         'y': 5.9722
@@ -43484,7 +43477,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'passado,'
+                    text: passado,
                     boundingBox:
                       - x: 6.7645
                         'y': 6.4994
@@ -43629,7 +43622,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'justificar,'
+                    text: justificar,
                     boundingBox:
                       - x: 5.7039
                         'y': 6.658
@@ -43787,7 +43780,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'pertinente,'
+                    text: pertinente,
                     boundingBox:
                       - x: 3.8293
                         'y': 6.8194
@@ -44287,7 +44280,7 @@ components:
                     'y': 7.4307
                 words:
                   - kind: word
-                    text: 'circulantes,'
+                    text: circulantes,
                     boundingBox:
                       - x: 1.1825
                         'y': 7.3011
@@ -44456,7 +44449,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'prazo,'
+                    text: prazo,
                     boundingBox:
                       - x: 6.9445
                         'y': 7.326
@@ -45058,7 +45051,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'financeiras,'
+                    text: financeiras,
                     boundingBox:
                       - x: 1.9146
                         'y': 8.9251
@@ -45255,7 +45248,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 2.2651
                         'y': 9.0839
@@ -45294,7 +45287,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: 'exemplo,'
+                    text: exemplo,
                     boundingBox:
                       - x: 3.6746
                         'y': 9.0865
@@ -45595,7 +45588,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 5.482
                         'y': 9.6119
@@ -45753,7 +45746,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 3.5458
                         'y': 9.7739
@@ -45792,7 +45785,7 @@ components:
                     confidence: 1
                     pageNumber: 4
                   - kind: word
-                    text: '2017,'
+                    text: 2017,
                     boundingBox:
                       - x: 4.4216
                         'y': 9.7739
@@ -47058,7 +47051,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'Giro,'
+                    text: Giro,
                     boundingBox:
                       - x: 3.6306
                         'y': 0.7908
@@ -47136,7 +47129,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'S.A.,'
+                    text: S.A.,
                     boundingBox:
                       - x: 6.0835
                         'y': 0.7908
@@ -47229,7 +47222,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 1.3904
                         'y': 0.9555
@@ -47307,7 +47300,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'mil,'
+                    text: mil,
                     boundingBox:
                       - x: 3.4722
                         'y': 0.9535
@@ -47411,7 +47404,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '9,77%,'
+                    text: 9,77%,
                     boundingBox:
                       - x: 5.6932
                         'y': 0.9555
@@ -47517,7 +47510,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'mensais,'
+                    text: mensais,
                     boundingBox:
                       - x: 1.762
                         'y': 1.1137
@@ -47647,7 +47640,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'empréstimo,'
+                    text: empréstimo,
                     boundingBox:
                       - x: 6.4326
                         'y': 1.1115
@@ -47857,7 +47850,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'investimento,'
+                    text: investimento,
                     boundingBox:
                       - x: 6.5152
                         'y': 1.2754
@@ -47898,7 +47891,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '9.608,16'
+                    text: 9.608,16
                     boundingBox:
                       - x: 1.9388
                         'y': 1.4375
@@ -47950,7 +47943,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'DI,'
+                    text: DI,
                     boundingBox:
                       - x: 4.3232
                         'y': 1.4354
@@ -48015,7 +48008,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'S.A.,'
+                    text: S.A.,
                     boundingBox:
                       - x: 7.0291
                         'y': 1.4328
@@ -48082,7 +48075,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'total,'
+                    text: total,
                     boundingBox:
                       - x: 2.265
                         'y': 1.5954
@@ -48134,7 +48127,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'contratação,'
+                    text: contratação,
                     boundingBox:
                       - x: 3.3032
                         'y': 1.5948
@@ -48305,7 +48298,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'destacado,'
+                    text: destacado,
                     boundingBox:
                       - x: 4.6118
                         'y': 1.9821
@@ -48331,7 +48324,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'celebrado,'
+                    text: celebrado,
                     boundingBox:
                       - x: 5.603
                         'y': 1.9821
@@ -48476,7 +48469,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'época,'
+                    text: época,
                     boundingBox:
                       - x: 4.2023
                         'y': 2.1399
@@ -48699,7 +48692,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'baixos,'
+                    text: baixos,
                     boundingBox:
                       - x: 3.7822
                         'y': 2.3021
@@ -48870,7 +48863,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 2.0919
                         'y': 2.4594
@@ -49184,7 +49177,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 5.5678
                         'y': 2.9891
@@ -49723,7 +49716,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'financeiras,'
+                    text: financeiras,
                     boundingBox:
                       - x: 2.0244
                         'y': 4.0394
@@ -49985,7 +49978,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 2.7082
                         'y': 4.2029
@@ -50325,7 +50318,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 2.3777
                         'y': 4.9379
@@ -50481,7 +50474,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'entanto,'
+                    text: entanto,
                     boundingBox:
                       - x: 6.8244
                         'y': 4.9426
@@ -50522,7 +50515,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'que,'
+                    text: que,
                     boundingBox:
                       - x: 2.007
                         'y': 5.1207
@@ -50600,7 +50593,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'credores,'
+                    text: credores,
                     boundingBox:
                       - x: 4.5023
                         'y': 5.0958
@@ -50862,7 +50855,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '11.101,'
+                    text: 11.101,
                     boundingBox:
                       - x: 6.2587
                         'y': 5.2579
@@ -50888,7 +50881,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 09
+                    text: '09'
                     boundingBox:
                       - x: 6.9708
                         'y': 5.2579
@@ -50955,7 +50948,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '2005,'
+                    text: 2005,
                     boundingBox:
                       - x: 1.9612
                         'y': 5.4182
@@ -51520,7 +51513,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'Companhia,'
+                    text: Companhia,
                     boundingBox:
                       - x: 2.9295
                         'y': 6.0985
@@ -51546,7 +51539,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'especial,'
+                    text: especial,
                     boundingBox:
                       - x: 4.0113
                         'y': 6.1001
@@ -51704,7 +51697,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'dívidas,'
+                    text: dívidas,
                     boundingBox:
                       - x: 2.6685
                         'y': 6.2617
@@ -51756,7 +51749,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'dividendos,'
+                    text: dividendos,
                     boundingBox:
                       - x: 4.3716
                         'y': 6.2651
@@ -51808,7 +51801,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'ativos,'
+                    text: ativos,
                     boundingBox:
                       - x: 6.1717
                         'y': 6.2651
@@ -51979,7 +51972,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'societário,'
+                    text: societário,
                     boundingBox:
                       - x: 4.9504
                         'y': 6.4283
@@ -52280,7 +52273,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'X,'
+                    text: X,
                     boundingBox:
                       - x: 5.2719
                         'y': 6.9678
@@ -52345,7 +52338,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'acima,'
+                    text: acima,
                     boundingBox:
                       - x: 6.9204
                         'y': 6.9678
@@ -52568,7 +52561,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'destacado,'
+                    text: destacado,
                     boundingBox:
                       - x: 6.0874
                         'y': 7.4911
@@ -52646,7 +52639,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'restrições,'
+                    text: restrições,
                     boundingBox:
                       - x: 2.6919
                         'y': 7.6526
@@ -52791,7 +52784,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: 'vender,'
+                    text: vender,
                     boundingBox:
                       - x: 4.2728
                         'y': 8.0165
@@ -53302,7 +53295,7 @@ components:
                     confidence: 1
                     pageNumber: 5
                   - kind: word
-                    text: '2020,'
+                    text: 2020,
                     boundingBox:
                       - x: 2.3582
                         'y': 9.0669
@@ -54727,7 +54720,7 @@ components:
                     confidence: 1
                     pageNumber: 6
                   - kind: word
-                    text: '2019,'
+                    text: 2019,
                     boundingBox:
                       - x: 6.6363
                         'y': 1.3258
@@ -54781,7 +54774,7 @@ components:
                     confidence: 1
                     pageNumber: 6
                   - kind: word
-                    text: '2017,'
+                    text: 2017,
                     boundingBox:
                       - x: 1.296
                         'y': 1.4858
@@ -54807,7 +54800,7 @@ components:
                     confidence: 1
                     pageNumber: 6
                   - kind: word
-                    text: 'e,'
+                    text: e,
                     boundingBox:
                       - x: 2.7404
                         'y': 1.5086
@@ -55278,7 +55271,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: 'R$ milhares, exceto percentuais'
+                text: R$ milhares, exceto percentuais
                 boundingBox:
                   - x: 1.2315
                     'y': 2.9399
@@ -55303,7 +55296,7 @@ components:
                     confidence: 1
                     pageNumber: 6
                   - kind: word
-                    text: 'milhares,'
+                    text: milhares,
                     boundingBox:
                       - x: 1.3758
                         'y': 2.9471
@@ -55538,7 +55531,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '100,0%'
+                text: 100,0%
                 boundingBox:
                   - x: 5.2938
                     'y': 3.1587
@@ -55550,7 +55543,7 @@ components:
                     'y': 3.2471
                 words:
                   - kind: word
-                    text: '100,0%'
+                    text: 100,0%
                     boundingBox:
                       - x: 5.2938
                         'y': 3.1587
@@ -55590,7 +55583,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '100,0%'
+                text: 100,0%
                 boundingBox:
                   - x: 6.9392
                     'y': 3.1587
@@ -55602,7 +55595,7 @@ components:
                     'y': 3.2471
                 words:
                   - kind: word
-                    text: '100,0%'
+                    text: 100,0%
                     boundingBox:
                       - x: 6.9392
                         'y': 3.1587
@@ -55616,7 +55609,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '61,1%'
+                text: 61,1%
                 boundingBox:
                   - x: 7.6572
                     'y': 3.1587
@@ -55628,7 +55621,7 @@ components:
                     'y': 3.2471
                 words:
                   - kind: word
-                    text: '61,1%'
+                    text: 61,1%
                     boundingBox:
                       - x: 7.6572
                         'y': 3.1587
@@ -55785,7 +55778,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '18,1%'
+                text: 18,1%
                 boundingBox:
                   - x: 7.6609
                     'y': 3.3191
@@ -55797,7 +55790,7 @@ components:
                     'y': 3.4076
                 words:
                   - kind: word
-                    text: '18,1%'
+                    text: 18,1%
                     boundingBox:
                       - x: 7.6609
                         'y': 3.3191
@@ -55967,7 +55960,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '39,8%'
+                text: 39,8%
                 boundingBox:
                   - x: 7.657
                     'y': 3.5274
@@ -55979,7 +55972,7 @@ components:
                     'y': 3.6159
                 words:
                   - kind: word
-                    text: '39,8%'
+                    text: 39,8%
                     boundingBox:
                       - x: 7.657
                         'y': 3.5274
@@ -56149,7 +56142,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '0,2%'
+                text: 0,2%
                 boundingBox:
                   - x: 7.7103
                     'y': 3.7358
@@ -56161,7 +56154,7 @@ components:
                     'y': 3.8242
                 words:
                   - kind: word
-                    text: '0,2%'
+                    text: 0,2%
                     boundingBox:
                       - x: 7.7103
                         'y': 3.7358
@@ -56539,7 +56532,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '68,0%'
+                text: 68,0%
                 boundingBox:
                   - x: 7.6572
                     'y': 4.1708
@@ -56551,7 +56544,7 @@ components:
                     'y': 4.2592
                 words:
                   - kind: word
-                    text: '68,0%'
+                    text: 68,0%
                     boundingBox:
                       - x: 7.6572
                         'y': 4.1708
@@ -56916,7 +56909,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '3,3%'
+                text: 3,3%
                 boundingBox:
                   - x: 7.712
                     'y': 4.5874
@@ -56928,7 +56921,7 @@ components:
                     'y': 4.6759
                 words:
                   - kind: word
-                    text: '3,3%'
+                    text: 3,3%
                     boundingBox:
                       - x: 7.712
                         'y': 4.5874
@@ -57098,7 +57091,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '22,5%'
+                text: 22,5%
                 boundingBox:
                   - x: 7.6576
                     'y': 4.7958
@@ -57110,7 +57103,7 @@ components:
                     'y': 4.8842
                 words:
                   - kind: word
-                    text: '22,5%'
+                    text: 22,5%
                     boundingBox:
                       - x: 7.6576
                         'y': 4.7958
@@ -57176,7 +57169,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '0,1%'
+                text: 0,1%
                 boundingBox:
                   - x: 5.3999
                     'y': 5.0041
@@ -57188,7 +57181,7 @@ components:
                     'y': 5.0926
                 words:
                   - kind: word
-                    text: '0,1%'
+                    text: 0,1%
                     boundingBox:
                       - x: 5.3999
                         'y': 5.0041
@@ -57410,7 +57403,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '32,7%'
+                text: 32,7%
                 boundingBox:
                   - x: 5.3423
                     'y': 5.2127
@@ -57422,7 +57415,7 @@ components:
                     'y': 5.301
                 words:
                   - kind: word
-                    text: '32,7%'
+                    text: 32,7%
                     boundingBox:
                       - x: 5.3423
                         'y': 5.2127
@@ -57462,7 +57455,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '8,2%'
+                text: 8,2%
                 boundingBox:
                   - x: 7.0431
                     'y': 5.2127
@@ -57474,7 +57467,7 @@ components:
                     'y': 5.301
                 words:
                   - kind: word
-                    text: '8,2%'
+                    text: 8,2%
                     boundingBox:
                       - x: 7.0431
                         'y': 5.2127
@@ -57488,7 +57481,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '542,1%'
+                text: 542,1%
                 boundingBox:
                   - x: 7.5966
                     'y': 5.2127
@@ -57500,7 +57493,7 @@ components:
                     'y': 5.301
                 words:
                   - kind: word
-                    text: '542,1%'
+                    text: 542,1%
                     boundingBox:
                       - x: 7.5966
                         'y': 5.2127
@@ -57657,7 +57650,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '315,0%'
+                text: 315,0%
                 boundingBox:
                   - x: 7.5986
                     'y': 5.4027
@@ -57669,7 +57662,7 @@ components:
                     'y': 5.4912
                 words:
                   - kind: word
-                    text: '315,0%'
+                    text: 315,0%
                     boundingBox:
                       - x: 7.5986
                         'y': 5.4027
@@ -57774,7 +57767,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '32,2%'
+                text: 32,2%
                 boundingBox:
                   - x: 5.3423
                     'y': 5.6113
@@ -57786,7 +57779,7 @@ components:
                     'y': 5.6996
                 words:
                   - kind: word
-                    text: '32,2%'
+                    text: 32,2%
                     boundingBox:
                       - x: 5.3423
                         'y': 5.6113
@@ -57826,7 +57819,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '8,0%'
+                text: 8,0%
                 boundingBox:
                   - x: 7.0431
                     'y': 5.6113
@@ -57838,7 +57831,7 @@ components:
                     'y': 5.6996
                 words:
                   - kind: word
-                    text: '8,0%'
+                    text: 8,0%
                     boundingBox:
                       - x: 7.0431
                         'y': 5.6113
@@ -57852,7 +57845,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '546,9%'
+                text: 546,9%
                 boundingBox:
                   - x: 7.5966
                     'y': 5.6113
@@ -57864,7 +57857,7 @@ components:
                     'y': 5.6996
                 words:
                   - kind: word
-                    text: '546,9%'
+                    text: 546,9%
                     boundingBox:
                       - x: 7.5966
                         'y': 5.6113
@@ -58112,7 +58105,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '371,8%'
+                text: 371,8%
                 boundingBox:
                   - x: 7.5986
                     'y': 5.8194
@@ -58124,7 +58117,7 @@ components:
                     'y': 5.9078
                 words:
                   - kind: word
-                    text: '371,8%'
+                    text: 371,8%
                     boundingBox:
                       - x: 7.5986
                         'y': 5.8194
@@ -58203,7 +58196,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '22,5%'
+                text: 22,5%
                 boundingBox:
                   - x: 5.3424
                     'y': 6.0279
@@ -58215,7 +58208,7 @@ components:
                     'y': 6.1163
                 words:
                   - kind: word
-                    text: '22,5%'
+                    text: 22,5%
                     boundingBox:
                       - x: 5.3424
                         'y': 6.0279
@@ -58255,7 +58248,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '4,7%'
+                text: 4,7%
                 boundingBox:
                   - x: 7.0417
                     'y': 6.0279
@@ -58267,7 +58260,7 @@ components:
                     'y': 6.1163
                 words:
                   - kind: word
-                    text: '4,7%'
+                    text: 4,7%
                     boundingBox:
                       - x: 7.0417
                         'y': 6.0279
@@ -58281,7 +58274,7 @@ components:
                     pageNumber: 6
               - kind: line
                 pageNumber: 6
-                text: '671,1%'
+                text: 671,1%
                 boundingBox:
                   - x: 7.596
                     'y': 6.0279
@@ -58293,7 +58286,7 @@ components:
                     'y': 6.1163
                 words:
                   - kind: word
-                    text: '671,1%'
+                    text: 671,1%
                     boundingBox:
                       - x: 7.596
                         'y': 6.0279
@@ -58398,7 +58391,7 @@ components:
                     columnIndex: 2
                     fieldElements:
                       - kind: word
-                        text: '100,0%'
+                        text: 100,0%
                         boundingBox:
                           - x: 5.2938
                             'y': 3.1587
@@ -58416,7 +58409,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '100,0%'
+                    text: 100,0%
                     pageNumber: 6
                   - boundingBox:
                       - x: 5.882
@@ -58462,7 +58455,7 @@ components:
                     columnIndex: 4
                     fieldElements:
                       - kind: word
-                        text: '100,0%'
+                        text: 100,0%
                         boundingBox:
                           - x: 6.9392
                             'y': 3.1587
@@ -58480,7 +58473,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '100,0%'
+                    text: 100,0%
                     pageNumber: 6
                   - boundingBox:
                       - x: 7.5635
@@ -58494,7 +58487,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '61,1%'
+                        text: 61,1%
                         boundingBox:
                           - x: 7.6572
                             'y': 3.1587
@@ -58512,7 +58505,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '61,1%'
+                    text: 61,1%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -58699,7 +58692,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '18,1%'
+                        text: 18,1%
                         boundingBox:
                           - x: 7.6609
                             'y': 3.3191
@@ -58717,7 +58710,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '18,1%'
+                    text: 18,1%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -58917,7 +58910,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '39,8%'
+                        text: 39,8%
                         boundingBox:
                           - x: 7.657
                             'y': 3.5274
@@ -58935,7 +58928,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '39,8%'
+                    text: 39,8%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -59135,7 +59128,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '0,2%'
+                        text: 0,2%
                         boundingBox:
                           - x: 7.7103
                             'y': 3.7358
@@ -59153,7 +59146,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '0,2%'
+                    text: 0,2%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -59597,7 +59590,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '68,0%'
+                        text: 68,0%
                         boundingBox:
                           - x: 7.6572
                             'y': 4.1708
@@ -59615,7 +59608,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '68,0%'
+                    text: 68,0%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -60046,7 +60039,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '3,3%'
+                        text: 3,3%
                         boundingBox:
                           - x: 7.712
                             'y': 4.5874
@@ -60064,7 +60057,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '3,3%'
+                    text: 3,3%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -60264,7 +60257,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '22,5%'
+                        text: 22,5%
                         boundingBox:
                           - x: 7.6576
                             'y': 4.7958
@@ -60282,7 +60275,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '22,5%'
+                    text: 22,5%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -60360,7 +60353,7 @@ components:
                     columnIndex: 2
                     fieldElements:
                       - kind: word
-                        text: '0,1%'
+                        text: 0,1%
                         boundingBox:
                           - x: 5.3999
                             'y': 5.0041
@@ -60378,7 +60371,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '0,1%'
+                    text: 0,1%
                     pageNumber: 6
                   - boundingBox:
                       - x: 5.882
@@ -60630,7 +60623,7 @@ components:
                     columnIndex: 2
                     fieldElements:
                       - kind: word
-                        text: '32,7%'
+                        text: 32,7%
                         boundingBox:
                           - x: 5.3423
                             'y': 5.2127
@@ -60648,7 +60641,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '32,7%'
+                    text: 32,7%
                     pageNumber: 6
                   - boundingBox:
                       - x: 5.882
@@ -60694,7 +60687,7 @@ components:
                     columnIndex: 4
                     fieldElements:
                       - kind: word
-                        text: '8,2%'
+                        text: 8,2%
                         boundingBox:
                           - x: 7.0431
                             'y': 5.2127
@@ -60712,7 +60705,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '8,2%'
+                    text: 8,2%
                     pageNumber: 6
                   - boundingBox:
                       - x: 7.5635
@@ -60726,7 +60719,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '542,1%'
+                        text: 542,1%
                         boundingBox:
                           - x: 7.5966
                             'y': 5.2127
@@ -60744,7 +60737,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '542,1%'
+                    text: 542,1%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -60931,7 +60924,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '315,0%'
+                        text: 315,0%
                         boundingBox:
                           - x: 7.5986
                             'y': 5.4027
@@ -60949,7 +60942,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '315,0%'
+                    text: 315,0%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -61066,7 +61059,7 @@ components:
                     columnIndex: 2
                     fieldElements:
                       - kind: word
-                        text: '32,2%'
+                        text: 32,2%
                         boundingBox:
                           - x: 5.3423
                             'y': 5.6113
@@ -61084,7 +61077,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '32,2%'
+                    text: 32,2%
                     pageNumber: 6
                   - boundingBox:
                       - x: 5.882
@@ -61130,7 +61123,7 @@ components:
                     columnIndex: 4
                     fieldElements:
                       - kind: word
-                        text: '8,0%'
+                        text: 8,0%
                         boundingBox:
                           - x: 7.0431
                             'y': 5.6113
@@ -61148,7 +61141,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '8,0%'
+                    text: 8,0%
                     pageNumber: 6
                   - boundingBox:
                       - x: 7.5635
@@ -61162,7 +61155,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '546,9%'
+                        text: 546,9%
                         boundingBox:
                           - x: 7.5966
                             'y': 5.6113
@@ -61180,7 +61173,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '546,9%'
+                    text: 546,9%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -61460,7 +61453,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '371,8%'
+                        text: 371,8%
                         boundingBox:
                           - x: 7.5986
                             'y': 5.8194
@@ -61478,7 +61471,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '371,8%'
+                    text: 371,8%
                     pageNumber: 6
                   - boundingBox:
                       - x: 1.2315
@@ -61569,7 +61562,7 @@ components:
                     columnIndex: 2
                     fieldElements:
                       - kind: word
-                        text: '22,5%'
+                        text: 22,5%
                         boundingBox:
                           - x: 5.3424
                             'y': 6.0279
@@ -61587,7 +61580,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '22,5%'
+                    text: 22,5%
                     pageNumber: 6
                   - boundingBox:
                       - x: 5.882
@@ -61633,7 +61626,7 @@ components:
                     columnIndex: 4
                     fieldElements:
                       - kind: word
-                        text: '4,7%'
+                        text: 4,7%
                         boundingBox:
                           - x: 7.0417
                             'y': 6.0279
@@ -61651,7 +61644,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '4,7%'
+                    text: 4,7%
                     pageNumber: 6
                   - boundingBox:
                       - x: 7.5635
@@ -61665,7 +61658,7 @@ components:
                     columnIndex: 5
                     fieldElements:
                       - kind: word
-                        text: '671,1%'
+                        text: 671,1%
                         boundingBox:
                           - x: 7.596
                             'y': 6.0279
@@ -61683,7 +61676,7 @@ components:
                     isHeader: false
                     isFooter: false
                     confidence: 1
-                    text: '671,1%'
+                    text: 671,1%
                     pageNumber: 6
                 pageNumber: 6
         annotations:
@@ -62050,7 +62043,7 @@ components:
         mjml:
           type: string
           description: Mjml url
-          example: 'https://looplex-ged.s3.us-east-1.amazonaws.com/example.mjml'
+          example: https://looplex-ged.s3.us-east-1.amazonaws.com/example.mjml
       description: Mjml-render
     mssql:
       title: Mssql
@@ -62162,18 +62155,18 @@ components:
           type: string
           format: (ISO639)
           description: the file url
-          example: 'https://looplex-ged.s3.us-east-1.amazonaws.com/datatypes.docx'
+          example: https://looplex-ged.s3.us-east-1.amazonaws.com/datatypes.docx
       description: Looplex Thumbnail
-    'tinyurl@{id}-get':
+    tinyurl@{id}-get:
       title: TinyURL
       type: object
       description: TinyURL service
-    'tinyurl@{id}-put':
+    tinyurl@{id}-put:
       title: TinyURL
       type: object
       example:
         partitionKey: looplex.com.br
-        destination: 'https://www.google.com/search?q=Looplex'
+        destination: https://www.google.com/search?q=Looplex
         permanent: false
         id: HNpVoVkT0u3UdOXnBWU0E
         createdAt: '2022-11-23T03:01:59.678Z'
@@ -62195,9 +62188,9 @@ components:
         url:
           type: string
           description: url to be short
-          example: 'https://www.google.com/search?q=Looplex'
+          example: https://www.google.com/search?q=Looplex
       description: TinyURL service
-    'tinyurl@{id}-delete':
+    tinyurl@{id}-delete:
       title: TinyURL
       type: object
       required:
@@ -63442,19 +63435,9 @@ components:
             complementar será de funcionário.
           example: 25
           type: integer
-        IDProcessoValorDadoComplementar:
-          description: >-
-            O identificador do valor. Se o valor informado for maior que 0
-            atualiza o respectivo valor se for encontrado, senão, inclui o novo
-            valor
-          example: -2147483648
-          type: integer
-        IDFuncionarioValorDadoComplementar:
-          description: >-
-            O identificador do valor de funcionário. Se o valor informado for
-            maior que 0 atualiza o respectivo valor se for encontrado, senão,
-            inclui o novo valor
-          example: -2147483648
+        IDParametroDadoComplementar:
+          description: O identificador do dado complementar
+          example: 50
           type: integer
         Valor:
           description: O valor a ser gravado/atualizado no dado complementar
@@ -65636,7 +65619,7 @@ components:
           description: Identificador do item de timeline
         DataFormatada:
           type: string
-          example: '01/07/2022 20:00'
+          example: 01/07/2022 20:00
           description: Data do item de timeline
         TipoItem:
           description: Tipo do item
@@ -66205,4 +66188,4 @@ components:
           $ref: '#/components/schemas/TipoRespostaRequisicao'
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
-  url: 'https://github.com/Rebilly/generator-openapi-repo'
+  url: https://github.com/Rebilly/generator-openapi-repo

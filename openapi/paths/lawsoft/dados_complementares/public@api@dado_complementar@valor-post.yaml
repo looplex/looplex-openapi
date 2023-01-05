@@ -8,13 +8,6 @@ operationId: api-dado_complementar-valor
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  - name: IDParametroDadoComplementar
-    in: query
-    example: 10
-    description: "O identificador do dado complementar"
-    required: true
-    schema:
-      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:
