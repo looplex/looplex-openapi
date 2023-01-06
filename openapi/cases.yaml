@@ -348,8 +348,6 @@ paths:
     delete:
       $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar@id-delete.yaml'
   /api/dado_complementar:
-    get:
-      $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-get.yaml
     post:
       $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-post.yaml
     put:
@@ -357,8 +355,14 @@ paths:
   /api/dado_complementar/valor:
     post:
       $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar@valor-post.yaml'
-      
-  # Decisões
+  /api/dado_complementar_caso:
+    get:
+      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar_caso-get.yaml'      
+  /api/dado_complementar_caso/{tipoCaso}:
+    get:
+      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar_caso@tipoCaso-get.yaml'
+  
+      # Decisões
   /api/casos/{idCaso}/Decisoes:
     get:
       $ref: './paths/lawsoft/decisoes/public@api@casos@idCaso@Decisoes-get.yaml'

@@ -1,47 +1,26 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Dados complementares
-summary: Dados Complementares Por Filtro
-description: Obtem array de dados complementares pelo(s) parâmetro(s)
-operationId: api-dado_complementar
+summary: Obtém os dados complementares do tipo de caso informado
+description: Obtém o dado complementar que pertence ao tipo de caso informado
+operationId: api-dado_complementar_caso-tipoCaso
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/lawsoft/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  - name: clienteId
-    in: query
-    required: false
-    schema:
-      type: integer
-  - name: areaId
-    in: query
-    description: "A área deve ser do caso"
-    required: false
-    schema:
-      type: integer
   - name: tipoCaso
-    in: query
-    required: false
+    in: path
+    example: 3
+    description: "O tipo do caso"
+    required: true
     schema:
       $ref: ../../../components/schemas/lawsoft/enums/RamosJudicial.yaml
-  - name: obtemDadosComplementaresDeFuncionario
-    in: query
-    description: "Decide se obtem ou não os dados complementares de funcionários"
-    required: false
-    schema:
-      type: boolean
-  - name: obtemDadosComplementaresDeCaso
-    in: query
-    description: "Decide se obtem ou não dados complementares apenas do processo (globais)"
-    required: false
-    schema:
-      type: boolean
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Obtem um array de dados complementares conforme os parâmetros passados"
+    description: "Os dados complementares"
     content:
       application/json:
         schema:
