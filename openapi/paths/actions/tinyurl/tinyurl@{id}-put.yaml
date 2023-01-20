@@ -1,7 +1,7 @@
 tags:
   - TinyURL
 summary: TinyURL
-description: ...
+description: Put your tinyURL based on a ID
 operationId: putTinyURLOperation
 parameters:
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml

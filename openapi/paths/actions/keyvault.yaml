@@ -1,7 +1,7 @@
 tags:
   - Operations
 summary: Keyvault
-description: keyvault
+description: Allows you to retrieve secrets that were securely stored in the Microsoft Azure Key Vault
 operationId: keyvault
 parameters:
   - $ref: ../../components/parameters/keyvaultId.yaml
@@ -9,9 +9,30 @@ parameters:
 responses:
   '200':
     description: OK
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "status": "SUCCESS",
+            "message": {
+                "CONNECTION_STRING": "string de conexão para o servidor",
+                "sendmail": {
+                    "service": "Outlook",
+                    "auth": {
+                        "user": "john.doe@looplex.com.br",
+                        "pass": "senha_super_segura"
+                    }
+                }
+            }
+          }
   '401':
     description: Access Denied
-  '404':
-    description: Not Found
-  '500':
-    description: Internal Server Error
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "statusCode": 401,
+            "message": "Access denied due to missing subscription key. Make sure to include subscription key when making requests to an API."
+          }
