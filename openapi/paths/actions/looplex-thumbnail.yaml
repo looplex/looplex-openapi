@@ -1,7 +1,7 @@
 tags:
   - Operations
 summary: Looplex Thumbnail
-description: Looplex Thumbnail
+description: Generates a thumbnail
 operationId: looplexThumbnail
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
@@ -13,9 +13,21 @@ requestBody:
 responses:
   '200':
     description: OK
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "status": "SUCCESS",
+            "message": (base64 file)
+          }
   '401':
     description: Access Denied
-  '404':
-    description: Not Found
-  '500':
-    description: Internal Server Error
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "statusCode": 401,
+            "message": "Access denied due to missing subscription key. Make sure to include subscription key when making requests to an API."
+          }

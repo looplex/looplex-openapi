@@ -1,7 +1,7 @@
 tags:
   - TinyURL
 summary: TinyURL
-description: ...
+description: Deletes your tinyURL based on a ID
 operationId: deleteTinyURLOperation
 parameters:
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
