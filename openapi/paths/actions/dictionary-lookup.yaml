@@ -1,7 +1,7 @@
 tags:
   - Operations
 summary: Dictionary Lookup
-description: Dictionary Lookup
+description: Allows you to quickly look up definitions of words and phrases
 operationId: dictionary-lookup
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
@@ -13,9 +13,171 @@ requestBody:
 responses:
   '200':
     description: OK
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example:  {
+            "status": "SUCCESS",
+            "message": {
+                "results": [
+                    {
+                        "normalizedSource": "sonora",
+                        "displaySource": "sonora",
+                        "translations": [
+                            {
+                                "normalizedTarget": "sound",
+                                "displayTarget": "sound",
+                                "posTag": "ADJ",
+                                "confidence": 0.3149,
+                                "prefixWord": "",
+                                "backTranslations": [
+                                    {
+                                        "normalizedText": "som",
+                                        "displayText": "som",
+                                        "numExamples": 15,
+                                        "frequencyCount": 28784
+                                    },
+                                    {
+                                        "normalizedText": "parecer",
+                                        "displayText": "parecer",
+                                        "numExamples": 15,
+                                        "frequencyCount": 3984
+                                    },
+                                    {
+                                        "normalizedText": "soar",
+                                        "displayText": "soar",
+                                        "numExamples": 15,
+                                        "frequencyCount": 2033
+                                    },
+                                    {
+                                        "normalizedText": "sonoros",
+                                        "displayText": "sonoros",
+                                        "numExamples": 0,
+                                        "frequencyCount": 1450
+                                    },
+                                    {
+                                        "normalizedText": "soa",
+                                        "displayText": "soa",
+                                        "numExamples": 15,
+                                        "frequencyCount": 1270
+                                    },
+                                    {
+                                        "normalizedText": "sadio",
+                                        "displayText": "sadio",
+                                        "numExamples": 3,
+                                        "frequencyCount": 1148
+                                    },
+                                    {
+                                        "normalizedText": "barulho",
+                                        "displayText": "barulho",
+                                        "numExamples": 15,
+                                        "frequencyCount": 632
+                                    },
+                                    {
+                                        "normalizedText": "sonora",
+                                        "displayText": "sonora",
+                                        "numExamples": 15,
+                                        "frequencyCount": 484
+                                    }
+                                ]
+                            },
+                            {
+                                "normalizedTarget": "sonorous",
+                                "displayTarget": "sonorous",
+                                "posTag": "ADJ",
+                                "confidence": 0.2442,
+                                "prefixWord": "",
+                                "backTranslations": [
+                                    {
+                                        "normalizedText": "sonora",
+                                        "displayText": "sonora",
+                                        "numExamples": 0,
+                                        "frequencyCount": 23
+                                    }
+                                ]
+                            },
+                            {
+                                "normalizedTarget": "sonic",
+                                "displayTarget": "sonic",
+                                "posTag": "NOUN",
+                                "confidence": 0.2112,
+                                "prefixWord": "",
+                                "backTranslations": [
+                                    {
+                                        "normalizedText": "sonic",
+                                        "displayText": "Sonic",
+                                        "numExamples": 5,
+                                        "frequencyCount": 1601
+                                    },
+                                    {
+                                        "normalizedText": "sonora",
+                                        "displayText": "sonora",
+                                        "numExamples": 1,
+                                        "frequencyCount": 135
+                                    }
+                                ]
+                            },
+                            {
+                                "normalizedTarget": "sonoran",
+                                "displayTarget": "Sonoran",
+                                "posTag": "NOUN",
+                                "confidence": 0.1337,
+                                "prefixWord": "",
+                                "backTranslations": [
+                                    {
+                                        "normalizedText": "sonoran",
+                                        "displayText": "Sonoran",
+                                        "numExamples": 0,
+                                        "frequencyCount": 10
+                                    },
+                                    {
+                                        "normalizedText": "sonora",
+                                        "displayText": "sonora",
+                                        "numExamples": 4,
+                                        "frequencyCount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "normalizedTarget": "audible",
+                                "displayTarget": "audible",
+                                "posTag": "ADJ",
+                                "confidence": 0.096,
+                                "prefixWord": "",
+                                "backTranslations": [
+                                    {
+                                        "normalizedText": "audível",
+                                        "displayText": "audível",
+                                        "numExamples": 5,
+                                        "frequencyCount": 311
+                                    },
+                                    {
+                                        "normalizedText": "sonoro",
+                                        "displayText": "sonoro",
+                                        "numExamples": 5,
+                                        "frequencyCount": 75
+                                    },
+                                    {
+                                        "normalizedText": "sonora",
+                                        "displayText": "sonora",
+                                        "numExamples": 0,
+                                        "frequencyCount": 13
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
   '401':
     description: Access Denied
-  '404':
-    description: Not Found
-  '500':
-    description: Internal Server Error
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "statusCode": 401,
+            "message": "Access denied due to missing subscription key. Make sure to include subscription key when making requests to an API."
+          }

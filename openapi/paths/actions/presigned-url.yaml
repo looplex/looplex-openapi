@@ -1,7 +1,7 @@
 tags:
   - Operations
 summary: Presigned-url
-description: presigned-url
+description: Get a presigned URL to download the object you passed the path
 operationId: presigned-url
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
