@@ -1,0 +1,15 @@
+title: DTODomain
+type: object
+properties:
+  Id:
+    type: integer
+  IdDominio:
+    type: integer
+  Nome:
+    type: string
+  Asp:
+    type: string
+  Server:
+    type: string
+  Ativo:
+    type: boolean

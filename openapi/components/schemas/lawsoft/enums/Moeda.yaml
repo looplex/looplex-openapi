@@ -1,0 +1,8 @@
+type: integer
+example: 1
+description: |
+  1: Real
+
+  2: Dólar americano
+
+  3: Euro

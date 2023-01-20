@@ -1,0 +1,16 @@
+type: integer
+example: 1
+description: |
+  1: Administração
+
+  2: Avisos
+
+  3: Clientes
+
+  4: Prazos
+
+  5: Processos
+
+  6: MensagemShutdown__
+
+  7: Finanças

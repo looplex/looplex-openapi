@@ -1,0 +1,10 @@
+type: integer
+example: 2
+description: |
+  1: Aprimoramento profissional
+
+  2: Horas debitáveis
+
+  3: Horas de relacionamento
+
+  4: Horas não debitáveis

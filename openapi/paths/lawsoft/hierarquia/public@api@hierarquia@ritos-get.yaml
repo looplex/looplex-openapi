@@ -1,0 +1,45 @@
+tags: 
+  - Hierarquia 
+summary: Ritos
+description: Obtém um array com os ritos de acordo com os filtros informados
+operationId: api-hierarquia-ritos
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: nrClasse
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: cdRitoDoProcessoPai
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: nrRamoJudicial
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: cdForo
+    in: query
+    required: false
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém um array com os ritos de acordo com os filtros informados"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOGrupoRito.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

@@ -1,0 +1,12 @@
+type: integer
+example: 1
+description: |
+  1: Por compromisso
+
+  2: Por prazo
+
+  3: Por atividade externa
+
+  4: Por publicação
+
+  5: Por audiência

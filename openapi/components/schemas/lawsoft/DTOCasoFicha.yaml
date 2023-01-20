@@ -1,0 +1,62 @@
+title: DTOCasoFicha
+type: object
+properties:
+  NomeCliente:
+    type: string
+  Titulo:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  Situacao:
+    type: string
+  ExpectativaDeExito:
+    type: string
+  NomeFilial:
+    type: string
+  DataDeEntrada:
+    type: string
+  DataDeEntradaFormatada:
+    type: string
+  DataDeCitacao:
+    type: string
+  DataDeCitacaoFormatada:
+    type: string
+  DataDeDistribuicao:
+    type: string
+  DataDeDistribuicaoFormatada:
+    type: string
+  DataPrevistaDeEncerramento:
+    type: string
+  DataPrevistaDeEncerramentoFormatada:
+    type: string
+  DataDeEncerramento:
+    type: string
+  DataDeEncerramentoFormatada:
+    type: string
+  Foro:
+    type: string
+  Rito:
+    type: string
+  ValorCausa:
+    type: number
+  ValorPrevistoCausa:
+    type: number
+  ValorContingencia:
+    type: number
+  IdCaso:
+    type: integer
+  IdFase:
+    type: integer
+  IdPasta:
+    type: integer
+  IdArea:
+    type: integer
+  IdResponsavel:
+    type: integer
+  IDsCoResponsaveis:
+    type: array
+    items:
+      type: integer
+      example: [10, 20]

@@ -1,0 +1,4 @@
+type: object
+properties:
+  Tipo:
+    $ref: enums/RamosJudicial.yaml

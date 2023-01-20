@@ -1,0 +1,13 @@
+title: DTOFaseProcesso
+type: object
+properties:
+  cdFaseProcesso:
+    type: integer
+  cdEscritorio:
+    type: integer
+  dsFaseProcesso:
+    type: string
+  nrGrupo:
+    $ref: enums/RamosJudicial.yaml
+  nrGrupoText:
+    type: string

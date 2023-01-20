@@ -1,0 +1,8 @@
+type: integer
+example: 1
+description: |
+  1: Mensal
+
+  2: Anual
+
+  3: Diário

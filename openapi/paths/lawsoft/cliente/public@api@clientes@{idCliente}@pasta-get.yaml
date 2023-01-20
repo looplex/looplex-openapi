@@ -1,0 +1,27 @@
+tags: 
+  - Cliente
+summary: Identificador pasta web
+description: Obtém identificador pasta da Web
+operationId: api-clientes-idCliente-pasta
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: idCliente
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém identificador pasta da Web"
+    content:
+      application/json:
+        example: 10
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

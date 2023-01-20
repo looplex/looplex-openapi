@@ -1,0 +1,28 @@
+tags: 
+  - Agenda 
+summary: Atualizar item de agenda
+description: Atualiza o compromisso de agenda.
+operationId: api-agenda-put
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+responses:
+  "200":
+    description: Retorna o item de agenda atualizado.
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+  "401":
+    description: Em caso de erro de timeout ou sessão expirada.
+  "500":
+    description: Em caso de erro diferente de timeout ou sessão expirada.
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

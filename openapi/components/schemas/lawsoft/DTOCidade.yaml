@@ -1,0 +1,12 @@
+title: DTOCidade
+type: object
+properties:
+  ID:
+    example: 80
+    type: integer
+  IDUF:
+    example: 13
+    type: integer
+  Cidade:
+    example: "Alvarães"
+    type: string

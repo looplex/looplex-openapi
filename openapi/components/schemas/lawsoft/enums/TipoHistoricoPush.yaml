@@ -1,0 +1,32 @@
+type: integer
+example: 17
+description: |
+  1: Insere escritório publicação
+
+  2: Insere escritório andamento
+
+  3: Desativa escritório publicação
+
+  4: Desativa escritório andamento
+
+  5: Ativa escritório publicação
+
+  6: Ativa escritório andamento
+
+  11: Cadastra termo
+
+  12: Remove termo
+
+  13: Cadastra variação
+
+  14: Remove variação
+
+  15: Cadastra termo bloqueio
+
+  16: Remove termo bloqueio
+
+  17: Atualiza termo
+
+  21: Cadastra processo
+
+  22: Remove processo

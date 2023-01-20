@@ -1,0 +1,1207 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "version": "1.0.0",
+    "title": "Looplex Varas e Foros",
+    "termsOfService": "https://docs.looplex.com.br/legal/termos-de-uso",
+    "contact": {
+      "name": "Developers Looplex",
+      "email": "developer@looplex.com.br",
+      "url": "https://www.looplex.com.br"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-logo": {
+      "url": "/assets/images/logo.png",
+      "href": "/"
+    },
+    "description": "This is an **example** API to demonstrate features of OpenAPI specification\n# Introduction\nThis API definition is intended to to be a good starting point for describing your API in \n[OpenAPI/Swagger format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).\n"
+  },
+  "externalDocs": {
+    "description": "Find out how to create a GitHub repo for your OpenAPI definition.",
+    "url": "https://github.com/Rebilly/generator-openapi-repo"
+  },
+  "x-tagGroups": [
+    {
+      "name": "Endpoints",
+      "tags": [
+        "Varas e Foros"
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://graph.looplex.com/varas_foros",
+      "description": "Looplex Varas e Foros Server"
+    }
+  ],
+  "paths": {
+    "/api/VF/ListaPorNivel": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Lista por nível",
+        "operationId": "api-VF-ListaPorNivel",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "nivel",
+            "in": "query",
+            "example": "1",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista os grupos por nível",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListaPorNivelResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ObtemFilhosPorPai": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém filhos por pai",
+        "operationId": "api-VF-ObtemFilhosPorPai",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "grupoId",
+            "in": "query",
+            "example": "10",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "somenteAtivos",
+            "in": "query",
+            "required": false,
+            "description": "Default: true",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista os grupos por pai",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObtemFilhosPorPaiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ObtemFilhosPorNomePai": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém itens filhos por nome pai",
+        "operationId": "api-VF-ObtemFilhosPorNomePai",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "nomeNo",
+            "in": "query",
+            "example": "Judicial Estadual",
+            "description": "Nome do nó",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "somenteAtivos",
+            "in": "query",
+            "description": "Default: true",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseObtemFilhosPorPai"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ObtemPorID": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém item por identificador",
+        "operationId": "api-VF-ObtemPorID",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "no",
+            "in": "query",
+            "description": "identificador do item",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseObtemPorID"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ListaHierarquia": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Lista hierarquia",
+        "description": "Obtém a hierarquia do item informado",
+        "operationId": "api-VF-ListaHierarquia",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "no",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseHierarquiaDoNo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/HierarquiaFormatadaDoNo": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Hierarquia formatada do item",
+        "operationId": "api-VF-HierarquiaFormatadaDoNo",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "no",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseHierarquiaFormatadaDoNo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ListaRitosGrupoRitos": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Lista ritos e grupos de ritos",
+        "operationId": "api-VF-ListaRitosGrupoRitos",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "tipoPesquisa",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/TipoPesquisaGrupoRito"
+            }
+          },
+          {
+            "name": "identificador",
+            "in": "query",
+            "example": 15,
+            "description": "o identificador do item",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseListaRitosGrupoRitos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ListaGruposRito": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Lista grupos de rito",
+        "operationId": "api-VF-ListaGruposRito",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "gruposPrincipais",
+            "in": "query",
+            "description": "Default: true",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseListaGruposRito"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ListaVinculoGrupoERito": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Vinculos de grupo e rito",
+        "operationId": "api-VF-ListaVinculoGrupoERito",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "idVara",
+            "in": "query",
+            "example": "3210",
+            "description": "O identificador",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseListaVinculoGrupoERito"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ritosDoNo": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Ritos do item",
+        "operationId": "api-VF-ritosDoNo",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "cdNo",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseRitosDoNo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/RitosDoGrupo": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Ritos do grupo",
+        "description": "Obtém os ritos do grupo informado",
+        "operationId": "api-VF-RitosDoGrupo",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "cdGrupoRito",
+            "in": "query",
+            "description": "O identificador do grupo de ritos",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseListaRitosDoGrupo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/cdNoPorNome": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém identificador por nome",
+        "operationId": "api-VF-cdNoPorNome",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "nome",
+            "in": "query",
+            "example": "Judicial Estadual",
+            "description": "O nome do item",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseObtemCdNoPorNome"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/ProximosNiveis": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém próximos níveis",
+        "description": "Obtém os próximos níveis depois do item informado (2 no máximo).",
+        "operationId": "api-VF-ProximosNiveis",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "cdNo",
+            "in": "query",
+            "description": "O identificado do item",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseObtemProximosNiveis"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/Categorias": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Categorias",
+        "operationId": "api-VF-Categorias",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseObtemCategorias"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/VF/Rito": {
+      "get": {
+        "tags": [
+          "Varas e Foros"
+        ],
+        "summary": "Obtém rito por identificador",
+        "description": "Obtém o rito de acordo com o identifcador informado",
+        "operationId": "api-VF-Rito",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "idRito",
+            "in": "query",
+            "example": "1",
+            "description": "O identificador do rito",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resposta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rito"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Em caso de erro de timeout ou sessão expirada."
+          },
+          "500": {
+            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "api_key"
+      },
+      "auth_token": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "auth_token"
+      },
+      "basic_auth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "parameters": {
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header",
+        "description": "Subscription key provided by Looplex",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "Foro": {
+        "name": "Foro",
+        "type": "object",
+        "properties": {
+          "grupoId": {
+            "type": "integer",
+            "example": 3
+          },
+          "idPai": {
+            "type": "integer",
+            "example": null
+          },
+          "nrOrdenacao": {
+            "type": "integer",
+            "example": 3
+          },
+          "dsNome": {
+            "type": "string",
+            "example": "Judicial Estadual"
+          },
+          "dsCategoriaFilhos": {
+            "type": "string",
+            "example": "Instância"
+          },
+          "dsHierarquiaCompleta": {
+            "type": "string",
+            "example": "3"
+          },
+          "nrNivel": {
+            "type": "integer",
+            "example": 1
+          },
+          "inAtivo": {
+            "type": "boolean",
+            "example": true
+          },
+          "dsCodigoOriginal": {
+            "type": "string",
+            "example": null
+          },
+          "isEditavel": {
+            "type": "boolean",
+            "example": false
+          },
+          "filhos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Foro"
+            }
+          },
+          "responsavelAlteracao": {
+            "type": "string",
+            "example": null
+          },
+          "labelProximosNiveis": {
+            "type": "string",
+            "example": null
+          }
+        }
+      },
+      "TipoRespostaRequisicao": {
+        "type": "integer",
+        "example": 3,
+        "description": "1: Exception\n\n2: Sem dados\n\n3: Com dados\n"
+      },
+      "ListaPorNivelResponse": {
+        "name": "ListaPorNivelResponse",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "grupos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Foro"
+                }
+              },
+              "categoriaFilhos": {
+                "type": "string"
+              },
+              "nivel": {
+                "type": "integer"
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ObtemFilhosPorPaiResponse": {
+        "name": "ObtemFilhosPorPaiResponse",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "grupos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Foro"
+                }
+              },
+              "nivelEditavel": {
+                "type": "boolean"
+              },
+              "categoriaFilhos": {
+                "type": "string"
+              },
+              "nivel": {
+                "type": "integer"
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseObtemFilhosPorPai": {
+        "name": "ResponseObtemFilhosPorPai",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "grupos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Foro"
+                }
+              },
+              "nivelEditavel": {
+                "type": "boolean",
+                "example": false
+              },
+              "categoriaFilhos": {
+                "type": "string",
+                "example": "Estados"
+              },
+              "nivel": {
+                "type": "integer",
+                "example": 2
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseObtemPorID": {
+        "name": "ResponseObtemPorID",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "$ref": "#/components/schemas/Foro"
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseHierarquiaDoNo": {
+        "name": "ResponseHierarquiaDoNo",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "hierarquia": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Foro"
+                }
+              },
+              "hierarquiaFormatada": {
+                "type": "string",
+                "example": "Judicial Estadual -> 1ª Instância"
+              },
+              "proximoNivel": {
+                "type": "string",
+                "example": "Estados"
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseHierarquiaFormatadaDoNo": {
+        "name": "ResponseHierarquiaFormatadaDoNo",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "hierarquiaCompleta": {
+                "type": "string",
+                "example": "3.10.38.60"
+              },
+              "hierarquiaFormatada": {
+                "type": "string",
+                "example": "SP -> Adamantina"
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "TipoPesquisaGrupoRito": {
+        "type": "integer",
+        "example": 2,
+        "description": "1: PesquisaPorForo (não disponível)\n\n2: PesquisaPorRito\n\n3: PesquisaPorGrupoRito\n\n4: PesquisaPorGrupoRitoPai\n"
+      },
+      "GrupoRito": {
+        "name": "GrupoRito",
+        "type": "object",
+        "properties": {
+          "cdGrupoRito": {
+            "type": "integer",
+            "example": 2
+          },
+          "dsNome": {
+            "type": "string",
+            "example": "Procedimentos"
+          },
+          "cdGrupoPai": {
+            "type": "integer",
+            "example": 1
+          },
+          "grupos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GrupoRito"
+            }
+          },
+          "ritos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rito"
+            }
+          },
+          "_hasRitos": {
+            "type": "boolean",
+            "example": false
+          },
+          "_hasGrupos": {
+            "type": "boolean",
+            "example": false
+          }
+        }
+      },
+      "Rito": {
+        "name": "Rito",
+        "type": "object",
+        "properties": {
+          "cdRito": {
+            "type": "integer",
+            "example": 1
+          },
+          "cdGrupoRito": {
+            "type": "integer",
+            "example": 2
+          },
+          "dsNome": {
+            "type": "string",
+            "example": "Arrecadação de Coisas Vagas"
+          },
+          "inEsperaPoloPassivo": {
+            "type": "boolean",
+            "example": false
+          },
+          "inAtivo": {
+            "type": "boolean",
+            "example": true
+          },
+          "dsPoloAtivo": {
+            "type": "string",
+            "example": null
+          },
+          "dsPoloPassivo": {
+            "type": "string",
+            "example": null
+          },
+          "dsPoloTerceiro": {
+            "type": "string",
+            "example": null
+          }
+        }
+      },
+      "ResponseListaRitosGrupoRitos": {
+        "name": "ResponseListaRitosGrupoRitos",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "tipoDePesquisa": {
+                "type": "string",
+                "description": "Indica onde foi feita a pesquisa",
+                "example": "Pesquisa por rito"
+              },
+              "rito": {
+                "type": "number",
+                "description": "Esse campo só será retornado se a pesquisa for por rito",
+                "example": 18000
+              },
+              "grupoRito": {
+                "type": "number",
+                "description": "Esse campo só será retornado se a pesquisa for por grupo rito",
+                "example": 18000
+              },
+              "grupoRitoPai": {
+                "type": "number",
+                "description": "Esse campo só será retornado se a pesquisa for por rito pai",
+                "example": 18000
+              },
+              "gruposRito": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GrupoRito"
+                }
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "GruposRitoCascader": {
+        "name": "GruposRitoCascader",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "example": 10
+          },
+          "label": {
+            "type": "string",
+            "example": "Incidentes"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GruposRitoCascader"
+            }
+          }
+        }
+      },
+      "ResponseListaGruposRito": {
+        "name": "ResponseListaGruposRito",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "responseGruposPrincipais": {
+            "description": "Esse campo só será retornado se o parâmetro gruposPrincipais for true. Nome do objeto de resposta: conteudo",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GrupoRito"
+            }
+          },
+          "responseGruposNaoPrincipais": {
+            "description": "Esse campo só será retornado se o parâmetro gruposPrincipais for false. Nome do objeto de resposta: conteudo",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GruposRitoCascader"
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseListaVinculoGrupoERito": {
+        "name": "ResponseListaVinculoGrupoERito",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "vara": {
+                "type": "integer"
+              },
+              "gruposDeRito": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "Recursos"
+                }
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseRitosDoNo": {
+        "name": "ResponseRitosDoNo",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GrupoRito"
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseListaRitosDoGrupo": {
+        "name": "ResponseListaRitosDoGrupo",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rito"
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseObtemCdNoPorNome": {
+        "name": "ResponseObtemCdNoPorNome",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "integer",
+            "example": 3,
+            "description": "0 é retornado caso o item não seja encontrado"
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseObtemProximosNiveis": {
+        "name": "ResponseObtemProximosNiveis",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Foro"
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "ResponseObtemCategorias": {
+        "name": "ResponseObtemCategorias",
+        "type": "object",
+        "properties": {
+          "respostaAPI": {
+            "type": "string",
+            "example": "",
+            "description": "Resposta da API (quando necessário)"
+          },
+          "conteudo": {
+            "type": "object",
+            "properties": {
+              "categorias": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "Estado"
+                }
+              }
+            }
+          },
+          "tipoResposta": {
+            "$ref": "#/components/schemas/TipoRespostaRequisicao"
+          }
+        }
+      },
+      "InternalServerErrorResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Mensagem do erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Não sei o que é isso"
+          },
+          "ExceptionType": {
+            "type": "string",
+            "description": "Também não sei o que é"
+          },
+          "StackTrace": {
+            "type": "string",
+            "description": "Local da exception"
+          }
+        }
+      }
+    }
+  }
+}

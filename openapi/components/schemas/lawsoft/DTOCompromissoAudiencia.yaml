@@ -1,0 +1,43 @@
+title: DTOCompromissoAudiencia
+type: object
+properties:
+  NomeClienteProcesso:
+    type: string
+  TituloProcesso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  idAudiencia:
+    type: integer
+  Assunto:
+    type: string
+  Area:
+    type: string
+  Hora:
+    type: string
+  Data:
+    type: string
+  DataFormatada:
+    type: string
+  Delegante:
+    type: string
+  Executor:
+    type: string
+  Participantes:
+    type: array
+    example: [10, 20]
+    items:
+      type: integer
+  Descricao:
+    type: string
+  Local:
+    type: string
+  Situacao:
+    type: string
+  IdCaso:
+    type: integer
+  IdAudienciaPai:
+    type: integer
+  

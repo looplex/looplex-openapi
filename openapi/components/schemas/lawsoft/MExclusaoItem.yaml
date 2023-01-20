@@ -1,0 +1,11 @@
+title: MExclusaoItem
+type: object
+properties:
+  Status:
+    type: boolean
+    description: "Indica se a operação foi bem sucedida"
+    example: false
+  Resposta:
+    type: string
+    description: "Resposta do serviço"
+    example: "Não é possível excluir o cliente."

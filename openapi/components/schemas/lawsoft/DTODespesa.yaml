@@ -1,0 +1,75 @@
+title: DTODespesa
+type: object
+properties:
+  ObservacaoAnexo:
+    type: string
+  Anexos:
+    type: array
+    items:
+      $ref: DTOAnexo.yaml
+  CategoriaLancamento:
+    type: string
+  DataDaDespesa:
+    type: string
+  DataDaDespesaFormatada:
+    type: string
+  ValorDaDespesa:
+    type: number
+  IDFuncionarioTransacao:
+    type: integer
+  DataTransacao:
+    type: string
+  DataTransacaoFormatada:
+    type: string
+  Moeda:
+    $ref: enums/Moeda.yaml
+  IDFuncionarioFavorecido:
+    type: integer
+  IDCategoriaLancamento:
+    type: integer
+  IDVoucher:
+    type: integer
+  IDLiberacao:
+    type: integer
+  IDFornecedor:
+    type: integer
+  Documento:
+    type: string
+  TipoDePagamento:
+    $ref: enums/TipoFormaLancamento.yaml
+  IDEscritorio:
+    type: integer
+  QtdKMRodado:
+    type: integer
+  TextoDaDespesa:
+    type: string
+  TemTextoModificado:
+    type: boolean
+  ValorKMRodado:
+    type: number
+  Situacao:
+    $ref: enums/SituacaoLancamentoDespesa.yaml
+  DataAprovacao:
+    type: string
+  DataAprovacaoFormatada:
+    type: string
+  ObservacaoAprovador:
+    type: string
+  IDFuncionarioAprovador:
+    type: integer
+  IDFuncionarioIndicado:
+    type: integer
+  IDTarifacao:
+    type: integer
+  IDSolicitacaoMaterialItem:
+    type: integer
+  IDGeracaoDespesa:
+    type: integer
+  IDDespesa:
+    type: integer
+  Alocacoes:
+    type: array
+    items:
+      $ref: DTOAlocacaoDeDespesa.yaml
+  IsEditable:
+    type: boolean 

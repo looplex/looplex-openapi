@@ -1,0 +1,702 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "version": "1.0.0",
+    "title": "Tasks",
+    "termsOfService": "https://docs.looplex.com.br/legal/termos-de-uso",
+    "contact": {
+      "name": "Developers Looplex",
+      "email": "developer@looplex.com.br",
+      "url": "https://www.looplex.com.br"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-logo": {
+      "url": "/assets/images/logo.png",
+      "href": "/"
+    },
+    "description": "# Graph\nLooplex Graph é grupo de APIs consumidas pela interface web Looplex, relacionadas aos fluxos de documentos, templates e tarefas.\n\n# Começando\n...\n"
+  },
+  "servers": [
+    {
+      "url": "https://graph.looplex.com/api/v1/tasks",
+      "description": "Graph server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Tasks",
+      "description": "Tasks operations"
+    }
+  ],
+  "paths": {
+    "/tasks": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Get organization tasks",
+        "description": "Return all the user's organization tasks.",
+        "operationId": "getOrgTasksUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/SortBy"
+          },
+          {
+            "$ref": "#/components/parameters/SortOrder"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Add task",
+        "description": "Add a new tree of tasks.",
+        "operationId": "addTasksUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/CreateTaskRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tasks/me": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Get tasks",
+        "description": "Return the user's tasks.",
+        "operationId": "getUserTasksUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/SortBy"
+          },
+          {
+            "$ref": "#/components/parameters/SortOrder"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tasks/{taskId}": {
+      "patch": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Update tasks",
+        "description": "Update task's fields.",
+        "operationId": "updateTaskUsingPATCH",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Get task",
+        "description": "Get a task tree by its root id.",
+        "operationId": "getTaskByIdUsingGET",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Delete task",
+        "description": "Delete a task tree from its root id.",
+        "operationId": "deleteTaskUsingDELETE",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task succesfully deleted",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "Deleted task id",
+                  "example": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Replace",
+        "description": "Replace a task.",
+        "operationId": "putTaskUsingPUT",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TaskId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Subscription-Key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Ocp_Apim_Subscription_Key",
+        "description": "Chave fornecida pelo time Looplex."
+      }
+    },
+    "parameters": {
+      "filter": {
+        "name": "filter",
+        "in": "query",
+        "description": "Search filters. The filters must follow the SCIM pattern, properly url encoded.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "assignee.name%20eq%20%22Jane%20Doe%22"
+        }
+      },
+      "PageSize": {
+        "name": "pageSize",
+        "in": "query",
+        "description": "The size of each content page.",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "default": 10
+        }
+      },
+      "Page": {
+        "name": "page",
+        "in": "query",
+        "description": "The page that will be served.",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "default": 0
+        }
+      },
+      "SortBy": {
+        "name": "sortBy",
+        "in": "query",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "due_date",
+            "end_date",
+            "id",
+            "name",
+            "start_date"
+          ],
+          "default": "id"
+        }
+      },
+      "SortOrder": {
+        "name": "sortOrder",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "asc",
+            "desc"
+          ],
+          "default": "asc"
+        }
+      },
+      "TaskId": {
+        "name": "taskId",
+        "in": "path",
+        "description": "The id associated to the task",
+        "required": true,
+        "schema": {
+          "exclusiveMaximum": true,
+          "minimum": 1,
+          "exclusiveMinimum": true,
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "schemas": {
+      "Task": {
+        "title": "Task",
+        "description": "Tasks info",
+        "properties": {
+          "ancestry": {
+            "type": "string",
+            "description": "The path to the task in a tree. For example, a task with the ancestry 1.2 has the task 2 as parent and the task 1 as grandparent.",
+            "example": null
+          },
+          "children": {
+            "type": "array",
+            "description": "Associated sub-tasks.",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "example": {
+              "ancestry": "13",
+              "children": [],
+              "createdAt": "2019-08-24T14:15:22Z",
+              "assignee": {
+                "name": "Jane Doe",
+                "id": "janedoe@looplex.com.br"
+              },
+              "document": {
+                "name": "Acordo de Confidencialidade/NDA 18/05/2022 09:41:52",
+                "url": "https://graph.looplex.com/documents/1"
+              },
+              "dueDate": "2019-08-24T14:15:22Z",
+              "endDate": "2019-08-24T14:15:22Z",
+              "id": 14,
+              "lastUpdatedAt": "2019-08-24T14:15:22Z",
+              "name": "Validação Externa",
+              "orgPath": "looplex.com.br/janedoe",
+              "owner": "janedoe@looplex.com.br",
+              "slug": "validacao-externa-123e4567-e89b-12d3-a456-426614174000",
+              "startDate": "2019-08-24T14:15:22Z",
+              "status": "SOON",
+              "tags": "Bancária",
+              "uuid": "095be615-a8ad-4c33-8e9c-c7612fbf6c9f"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "description": "When the task was created."
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "When the task should be finished.",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "When the task actually finished.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "integer",
+            "description": "The task's identification.",
+            "format": "int64",
+            "example": 13,
+            "readOnly": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "When the task was last updated.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name displayed in the tasks table.",
+            "example": "Protocolar Documento"
+          },
+          "orgPath": {
+            "type": "string",
+            "readOnly": true,
+            "description": "The id of the organization used to control access.",
+            "example": "looplex.com.br/janedoe"
+          },
+          "owner": {
+            "type": "string",
+            "description": "The last user to update the task.",
+            "readOnly": true,
+            "example": "janedoe@looplex.com.br"
+          },
+          "slug": {
+            "type": "string",
+            "description": "A slug identifier.",
+            "example": "protocolar-documento-123e4567-e89b-12d3-a456-426614174000",
+            "readOnly": true
+          },
+          "startDate": {
+            "type": "string",
+            "description": "When the task should start.",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the task. It will determine the frame in which the task will appear if it is the root of a tree.",
+            "example": "EXECUTING",
+            "enum": [
+              "DONE",
+              "EXECUTING",
+              "SOON",
+              "WAITING_EXECUTION"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "description": "The array of tags associated to the task. Open field.",
+            "example": "Bancária",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true,
+            "description": "The task's universal unique id."
+          },
+          "assignee": {
+            "type": "object",
+            "$ref": "#/components/schemas/Assignee"
+          },
+          "document": {
+            "type": "object",
+            "$ref": "#/components/schemas/TaskDocument"
+          }
+        }
+      },
+      "Assignee": {
+        "title": "Assignee",
+        "type": "object",
+        "description": "The user who is responsible for the task.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "User email.",
+            "example": "Jane Doe"
+          },
+          "name": {
+            "type": "string",
+            "description": "User name.",
+            "example": "janedoe@looplex.com.br"
+          }
+        }
+      },
+      "TaskDocument": {
+        "title": "Document",
+        "type": "object",
+        "description": "The document associated to the task.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name that will be displayed in the tasks view.",
+            "example": "Acordo de Confidencialidade/NDA 18/05/2022 09:41:52"
+          },
+          "url": {
+            "type": "string",
+            "description": "The document URL.",
+            "example": "https://graph.looplex.com/documents/1"
+          }
+        }
+      },
+      "PageResponse": {
+        "title": "PageResponseDto",
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Which page will be served."
+          },
+          "sortDirection": {
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ]
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CreateTaskRequest": {
+        "title": "CreateTaskRequest",
+        "description": "Create a new task",
+        "type": "object",
+        "properties": {
+          "children": {
+            "type": "array",
+            "description": "Sub-tasks associated to the task",
+            "items": {
+              "$ref": "#/components/schemas/CreateTaskRequest"
+            },
+            "example": {
+              "children": [],
+              "dueDate": "2019-08-24T14:15:22Z",
+              "endDate": "2019-08-24T14:15:22Z",
+              "name": "Validação Externa",
+              "startDate": "2019-08-24T14:15:22Z",
+              "status": "SOON",
+              "tags": "Bancária",
+              "assignee": {
+                "name": "Jane Doe",
+                "id": "janedoe@looplex.com.br"
+              },
+              "document": {
+                "name": "Acordo de Confidencialidade/NDA 18/05/2022 09:41:52",
+                "url": "https://graph.looplex.com/documents/1"
+              }
+            }
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "When the task should end",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "When the task actually ended",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name that will be displayed in the tasks table",
+            "example": "Protocolar Documento"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "The task start date",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the task",
+            "example": "SOON",
+            "enum": [
+              "DONE",
+              "EXECUTING",
+              "SOON",
+              "WAITING_EXECUTION"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "description": "The tags associated to the task",
+            "example": "Bancária",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assignee": {
+            "type": "object",
+            "$ref": "#/components/schemas/Assignee"
+          },
+          "document": {
+            "type": "object",
+            "$ref": "#/components/schemas/TaskDocument"
+          }
+        },
+        "required": [
+          "dueDate",
+          "startDate",
+          "name",
+          "status",
+          "document",
+          "assignee"
+        ]
+      },
+      "UpdateTaskRequest": {
+        "title": "UpdateTaskRequest",
+        "description": "Update a task",
+        "type": "object",
+        "properties": {
+          "assignee": {
+            "type": "object",
+            "$ref": "#/components/schemas/Assignee"
+          },
+          "document": {
+            "type": "object",
+            "$ref": "#/components/schemas/TaskDocument"
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "When the task should end",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "When the task actually ended",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name that will be displayed in the tasks table",
+            "example": "Protocolar Documento"
+          },
+          "orgPath": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "The task start date",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the task",
+            "enum": [
+              "DONE",
+              "EXECUTING",
+              "SOON",
+              "WAITING_EXECUTION"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "description": "The tags associated to the task",
+            "example": "Bancária",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "Subscription-Key": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+name: DTOValorCalculo
+type: object
+properties:
+  Valor:
+    type: number
+  Data:
+    type: string
+  DataJM:
+    type: string
+  DataJC:
+    type: string
+  Descricao:
+    type: string
+  cdIdentificador:
+    type: string
+  IsPedido:
+    type: boolean
