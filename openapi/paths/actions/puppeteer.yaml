@@ -17,7 +17,12 @@ responses:
       application/json: 
         schema: 
           type: object
-          example: 
+          example: {
+            "status": "SUCCESS",
+            "message": {
+                "screenshot": (base64 file)
+                }
+              }
   '401':
     description: Access Denied
     content: 

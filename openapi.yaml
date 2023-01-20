@@ -1673,7 +1673,9 @@ paths:
       tags:
         - Operations
       summary: Keyvault
-      description: keyvault
+      description: >-
+        Allows you to retrieve secrets that were securely stored in the
+        Microsoft Azure Key Vault
       operationId: keyvault
       parameters:
         - $ref: '#/components/parameters/keyvaultId'
@@ -1846,12 +1848,24 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message: 'const urls = []'
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /text-recognize:
@@ -19647,7 +19661,10 @@ paths:
             application/json:
               schema:
                 type: object
-                example: null
+                example:
+                  status: SUCCESS
+                  message:
+                    screenshot: (base64 file)
         '401':
           description: Access Denied
           content:
@@ -19675,12 +19692,25 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message: >-
+                    https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/examples/summer-style.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAVBKADHNBJ2X72NFH%2F20221205%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221205T140803Z&X-Amz-Expires=300&X-Amz-Signature=0378d83ed77389258115201f4a71f1f596c8da4376a8c9b4c2a87eae541f3fa5&X-Amz-SignedHeaders=host&x-id=GetObject
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /plot:
@@ -19688,7 +19718,9 @@ paths:
       tags:
         - Operations
       summary: Plot
-      description: plot
+      description: >-
+        Smart Action (Action) that allows you to quickly create data
+        visualizations in graphs.
       operationId: plot
       parameters:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
@@ -19700,12 +19732,24 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message: (base64 file)
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /matchAdobeAnnotationsWithMSFormRecognizerAnalysis:
@@ -19713,7 +19757,7 @@ paths:
       tags:
         - Operations
       summary: Match Adobe Annotations With MS Form Recognizer Analysis
-      description: Match Adobe Annotations With MS Form Recognizer Analysis
+      description: Allows you to match Adobe Annotations With MS Form Recognizer Analysis
       operationId: matchAdobeAnnotationsWithMSFormRecognizerAnalysis
       parameters:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
@@ -19726,12 +19770,2048 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message:
+                    - '@context':
+                        - 'https: //www.w3.org/ns/anno.jsonld'
+                        - 'https: //comments.acrobat.com/ns/anno.jsonld'
+                      id: da97b561-e59d-8426-9bh3-49191aaeaac
+                      type: Annotation
+                      motivation: commenting
+                      bodyValue: ''
+                      target:
+                        source: 6d07d124-ac85-43b3-a867-36930f502ac6
+                        selector:
+                          node:
+                            index: 0
+                          quadPoints:
+                            - 111.13156979983648
+                            - 768.8137498646608
+                            - 309.27312835768447
+                            - 768.8137498646608
+                            - 111.13156979983648
+                            - 757.6144443809563
+                            - 309.27312835768447
+                            - 757.6144443809563
+                          opacity: 0.4
+                          subtype: highlight
+                          boundingBox:
+                            - 111.13156979983648
+                            - 757.6144443809563
+                            - 309.27312835768447
+                            - 768.8137498646608
+                          strokeColor: '#fccb00'
+                          type: AdobeAnnoSelector
+                      creator:
+                        id: beatriz.patriota@looplex.com.br
+                        name: Beatriz Patriota
+                        type: Person
+                      created: '2021-04-23T16: 49: 10Z'
+                      modified: '2021-04-23T16: 49: 10Z'
+                      selectedText:
+                        content: ' Condições financeiras e patrimoniais ger'
+                        page: 1
+                      ai:
+                        raw:
+                          - kind: word
+                            text: Condições
+                            boundingBox:
+                              - x: 1.588
+                                'y': 1.0278
+                              - x: 2.2863
+                                'y': 1.0278
+                              - x: 2.2863
+                                'y': 1.1611
+                              - x: 1.588
+                                'y': 1.1611
+                            confidence: 1
+                            pageNumber: 1
+                          - kind: word
+                            text: financeiras
+                            boundingBox:
+                              - x: 2.3313
+                                'y': 1.0292
+                              - x: 3.058
+                                'y': 1.0292
+                              - x: 3.058
+                                'y': 1.1315
+                              - x: 2.3313
+                                'y': 1.1315
+                            confidence: 1
+                            pageNumber: 1
+                          - kind: word
+                            text: e
+                            boundingBox:
+                              - x: 3.1055
+                                'y': 1.0542
+                              - x: 3.1754
+                                'y': 1.0542
+                              - x: 3.1754
+                                'y': 1.1315
+                              - x: 3.1055
+                                'y': 1.1315
+                            confidence: 1
+                            pageNumber: 1
+                          - kind: word
+                            text: patrimoniais
+                            boundingBox:
+                              - x: 3.2263
+                                'y': 1.0294
+                              - x: 4.0372
+                                'y': 1.0294
+                              - x: 4.0372
+                                'y': 1.1582
+                              - x: 3.2263
+                                'y': 1.1582
+                            confidence: 1
+                            pageNumber: 1
+                        structured: Condições financeiras e patrimoniais
+                    - '@context':
+                        - 'https: //www.w3.org/ns/anno.jsonld'
+                        - 'https: //comments.acrobat.com/ns/anno.jsonld'
+                      id: 319d9477-6583-88ca-ddhe-fbf9e888a8b
+                      type: Annotation
+                      motivation: commenting
+                      bodyValue: teste
+                      target:
+                        source: 6d07d124-ac85-43b3-a867-36930f502ac6
+                        selector:
+                          node:
+                            index: 1
+                          opacity: 0.4
+                          subtype: shape
+                          boundingBox:
+                            - 80.46269721714306
+                            - 247.61530235379973
+                            - 512.0667008583684
+                            - 378.561028009421
+                          inkList:
+                            - - 506.8977906351203
+                              - 252.78421257704792
+                              - 506.03630559791225
+                              - 252.78421257704792
+                              - 502.59036544908014
+                              - 255.36866768867208
+                              - 497.4214552258319
+                              - 257.9531228002961
+                              - 487.9451198165435
+                              - 262.2605479863363
+                              - 477.6072993700471
+                              - 266.56797317237647
+                              - 463.82353877471854
+                              - 270.87539835841665
+                              - 450.901263216598
+                              - 274.3213385072488
+                              - 439.70195773289356
+                              - 276.90579361887296
+                              - 433.67156247243736
+                              - 278.628763693289
+                              - 427.6411672119811
+                              - 280.351733767705
+                              - 422.4722569887329
+                              - 282.93618887932917
+                              - 419.02631683990074
+                              - 284.6591589537452
+                              - 413.85740661665255
+                              - 287.24361406536934
+                              - 409.5499814306124
+                              - 288.96658413978537
+                              - 405.2425562445722
+                              - 291.5510392514095
+                              - 401.79661609574003
+                              - 294.13549436303356
+                              - 397.48919090969986
+                              - 295.8584644374497
+                              - 393.1817657236597
+                              - 297.5814345118657
+                              - 389.7358255748276
+                              - 300.1658896234899
+                              - 385.4284003887874
+                              - 303.61182977232204
+                              - 381.1209752027472
+                              - 305.33479984673806
+                              - 377.67503505391505
+                              - 307.9192549583622
+                              - 373.3676098678749
+                              - 310.50371006998625
+                              - 370.7831547562508
+                              - 311.36519510719427
+                              - 365.6142445330026
+                              - 313.9496502188184
+                              - 360.4453343097544
+                              - 316.53410533044257
+                              - 356.1379091237142
+                              - 318.2570754048586
+                              - 350.10751386325796
+                              - 320.84153051648275
+                              - 345.8000886772178
+                              - 323.4259856281068
+                              - 339.7696934167615
+                              - 325.1489557025228
+                              - 335.46226823072135
+                              - 327.73341081414696
+                              - 330.29335800747316
+                              - 330.31786592577106
+                              - 325.985932821433
+                              - 332.04083600018714
+                              - 320.8170225981848
+                              - 333.7638060746032
+                              - 315.64811237493655
+                              - 335.4867761490193
+                              - 312.20217222610444
+                              - 336.3482611862273
+                              - 308.7562320772723
+                              - 338.0712312606434
+                              - 305.31029192844017
+                              - 338.9327162978514
+                              - 301.864351779608
+                              - 339.7942013350595
+                              - 298.4184116307759
+                              - 341.5171714094755
+                              - 295.83395651915174
+                              - 341.5171714094755
+                              - 293.24950140752765
+                              - 342.3786564466836
+                              - 288.94207622148747
+                              - 342.3786564466836
+                              - 287.21910614707144
+                              - 342.3786564466836
+                              - 283.7731659982393
+                              - 342.3786564466836
+                              - 278.6042557749911
+                              - 344.1016265210996
+                              - 274.2968305889509
+                              - 344.9631115583077
+                              - 270.85089044011875
+                              - 345.8245965955157
+                              - 267.40495029128664
+                              - 345.8245965955157
+                              - 263.09752510524646
+                              - 346.68608163272376
+                              - 258.7900999192063
+                              - 347.54756666993177
+                              - 254.4826747331661
+                              - 348.4090517071398
+                              - 250.17524954712593
+                              - 349.27053674434785
+                              - 246.7293093982938
+                              - 349.27053674434785
+                              - 243.28336924946166
+                              - 350.99350681876393
+                              - 238.11445902621344
+                              - 351.85499185597195
+                              - 234.6685188773813
+                              - 351.85499185597195
+                              - 230.36109369134113
+                              - 352.71647689317996
+                              - 227.77663857971703
+                              - 352.71647689317996
+                              - 224.33069843088487
+                              - 352.71647689317996
+                              - 220.88475828205273
+                              - 353.577961930388
+                              - 217.4388181332206
+                              - 354.43944696759604
+                              - 213.99287798438846
+                              - 354.43944696759604
+                              - 209.68545279834828
+                              - 355.3009320048041
+                              - 205.3780276123081
+                              - 356.1624170420121
+                              - 201.93208746347597
+                              - 356.1624170420121
+                              - 197.6246622774358
+                              - 357.02390207922014
+                              - 193.3172370913956
+                              - 357.8853871164282
+                              - 188.14832686814742
+                              - 359.60835719084423
+                              - 184.70238671931529
+                              - 359.60835719084423
+                              - 180.3949615332751
+                              - 359.60835719084423
+                              - 176.08753634723493
+                              - 360.4698422280523
+                              - 171.78011116119475
+                              - 361.3313272652603
+                              - 166.61120093794653
+                              - 362.1928123024684
+                              - 163.1652607891144
+                              - 363.0542973396764
+                              - 157.9963505658662
+                              - 363.0542973396764
+                              - 154.55041041703407
+                              - 363.0542973396764
+                              - 151.1044702682019
+                              - 363.9157823768844
+                              - 146.79704508216176
+                              - 364.7772674140925
+                              - 143.3511049333296
+                              - 364.7772674140925
+                              - 140.7666498217055
+                              - 365.6387524513005
+                              - 138.1821947100814
+                              - 366.50023748850856
+                              - 136.45922463566532
+                              - 366.50023748850856
+                              - 134.73625456124927
+                              - 366.50023748850856
+                              - 133.0132844868332
+                              - 366.50023748850856
+                              - 133.0132844868332
+                              - 366.50023748850856
+                              - 131.29031441241713
+                              - 366.50023748850856
+                              - 128.705859300793
+                              - 368.2232075629246
+                              - 126.12140418916891
+                              - 368.2232075629246
+                              - 125.25991915196087
+                              - 368.2232075629246
+                              - 123.5369490775448
+                              - 368.2232075629246
+                              - 122.67546404033678
+                              - 368.2232075629246
+                              - 120.9524939659207
+                              - 368.2232075629246
+                              - 119.22952389150463
+                              - 368.2232075629246
+                              - 118.3680388542966
+                              - 368.2232075629246
+                              - 117.50655381708856
+                              - 368.2232075629246
+                              - 116.64506877988053
+                              - 368.2232075629246
+                              - 115.78358374267249
+                              - 368.2232075629246
+                              - 113.19912863104838
+                              - 368.2232075629246
+                              - 112.33764359384035
+                              - 368.2232075629246
+                              - 110.61467351942429
+                              - 368.2232075629246
+                              - 109.75318848221625
+                              - 368.2232075629246
+                              - 108.89170344500822
+                              - 367.3617225257166
+                              - 107.16873337059215
+                              - 367.3617225257166
+                              - 105.44576329617607
+                              - 367.3617225257166
+                              - 101.99982314734393
+                              - 367.3617225257166
+                              - 101.1383381101359
+                              - 367.3617225257166
+                              - 99.41536803571984
+                              - 368.2232075629246
+                              - 98.5538829985118
+                              - 368.2232075629246
+                              - 96.83091292409573
+                              - 369.08469260013266
+                              - 95.10794284967966
+                              - 369.08469260013266
+                              - 93.38497277526359
+                              - 369.08469260013266
+                              - 92.52348773805555
+                              - 369.94617763734067
+                              - 90.80051766363948
+                              - 369.94617763734067
+                              - 89.93903262643146
+                              - 369.94617763734067
+                              - 88.21606255201537
+                              - 369.94617763734067
+                              - 88.21606255201537
+                              - 369.94617763734067
+                              - 87.35457751480735
+                              - 369.94617763734067
+                              - 87.35457751480735
+                              - 369.94617763734067
+                              - 87.35457751480735
+                              - 370.80766267454874
+                              - 86.4930924775993
+                              - 371.66914771175675
+                              - 86.4930924775993
+                              - 372.53063274896476
+                              - 86.4930924775993
+                              - 373.39211778617283
+                              - 85.63160744039128
+                              - 373.39211778617283
+                          strokeColor: '#b80000'
+                          strokeWidth: 3
+                          type: AdobeAnnoSelector
+                      creator:
+                        id: beatriz.patriota@looplex.com.br
+                        name: Beatriz Patriota
+                        type: Person
+                      created: '2021-04-23T16: 49: 19Z'
+                      modified: '2021-04-23T16: 49: 19Z'
+                      selectedText:
+                        content: ''
+                        page: 2
+                      ai:
+                        raw:
+                          rowCount: 7
+                          columnCount: 5
+                          cells:
+                            - boundingBox:
+                                - x: 1.1895
+                                  'y': 6.4946
+                                - x: 2.9382
+                                  'y': 6.4946
+                                - x: 2.9382
+                                  'y': 6.9679
+                                - x: 1.1895
+                                  'y': 6.9679
+                              columnIndex: 0
+                              fieldElements:
+                                - kind: word
+                                  text: (em
+                                  boundingBox:
+                                    - x: 1.2426
+                                      'y': 6.6935
+                                    - x: 1.4292
+                                      'y': 6.6935
+                                    - x: 1.4292
+                                      'y': 6.7985
+                                    - x: 1.2426
+                                      'y': 6.7985
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: R$
+                                  boundingBox:
+                                    - x: 1.477
+                                      'y': 6.6889
+                                    - x: 1.6068
+                                      'y': 6.6889
+                                    - x: 1.6068
+                                      'y': 6.7881
+                                    - x: 1.477
+                                      'y': 6.7881
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: 'milhares,'
+                                  boundingBox:
+                                    - x: 1.6473
+                                      'y': 6.6945
+                                    - x: 2.1222
+                                      'y': 6.6945
+                                    - x: 2.1222
+                                      'y': 6.7941
+                                    - x: 1.6473
+                                      'y': 6.7941
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: exceto
+                                  boundingBox:
+                                    - x: 2.1625
+                                      'y': 6.6999
+                                    - x: 2.5076
+                                      'y': 6.6999
+                                    - x: 2.5076
+                                      'y': 6.7769
+                                    - x: 2.1625
+                                      'y': 6.7769
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: '%)'
+                                  boundingBox:
+                                    - x: 2.5462
+                                      'y': 6.6935
+                                    - x: 2.6747
+                                      'y': 6.6935
+                                    - x: 2.6747
+                                      'y': 6.7985
+                                    - x: 2.5462
+                                      'y': 6.7985
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 0
+                              columnSpan: 1
+                              rowSpan: 2
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '(em R$ milhares, exceto %)'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 2.9382
+                                  'y': 6.4946
+                                - x: 3.9715
+                                  'y': 6.4946
+                                - x: 3.9715
+                                  'y': 6.7921
+                                - x: 2.9382
+                                  'y': 6.7921
+                              columnIndex: 1
+                              fieldElements:
+                                - kind: word
+                                  text: Em
+                                  boundingBox:
+                                    - x: 3.0658
+                                      'y': 6.5369
+                                    - x: 3.2245
+                                      'y': 6.5369
+                                    - x: 3.2245
+                                      'y': 6.6171
+                                    - x: 3.0658
+                                      'y': 6.6171
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: '30'
+                                  boundingBox:
+                                    - x: 3.2653
+                                      'y': 6.5378
+                                    - x: 3.3824
+                                      'y': 6.5378
+                                    - x: 3.3824
+                                      'y': 6.6191
+                                    - x: 3.2653
+                                      'y': 6.6191
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 3.4209
+                                      'y': 6.5369
+                                    - x: 3.5443
+                                      'y': 6.5369
+                                    - x: 3.5443
+                                      'y': 6.6185
+                                    - x: 3.4209
+                                      'y': 6.6185
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: junho
+                                  boundingBox:
+                                    - x: 3.5775
+                                      'y': 6.5361
+                                    - x: 3.8763
+                                      'y': 6.5361
+                                    - x: 3.8763
+                                      'y': 6.6409
+                                    - x: 3.5775
+                                      'y': 6.6409
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 3.4062
+                                      'y': 6.6752
+                                    - x: 3.5297
+                                      'y': 6.6752
+                                    - x: 3.5297
+                                      'y': 6.7569
+                                    - x: 3.4062
+                                      'y': 6.7569
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 0
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: Em 30 de junho de
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 3.9715
+                                  'y': 6.4946
+                                - x: 6.0518
+                                  'y': 6.4946
+                                - x: 6.0518
+                                  'y': 6.7921
+                                - x: 3.9715
+                                  'y': 6.7921
+                              columnIndex: 2
+                              fieldElements:
+                                - kind: word
+                                  text: Em
+                                  boundingBox:
+                                    - x: 4.9345
+                                      'y': 6.5369
+                                    - x: 5.0931
+                                      'y': 6.5369
+                                    - x: 5.0931
+                                      'y': 6.6171
+                                    - x: 4.9345
+                                      'y': 6.6171
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: '31'
+                                  boundingBox:
+                                    - x: 5.1339
+                                      'y': 6.5378
+                                    - x: 5.2347
+                                      'y': 6.5378
+                                    - x: 5.2347
+                                      'y': 6.6191
+                                    - x: 5.1339
+                                      'y': 6.6191
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 5.2896
+                                      'y': 6.5369
+                                    - x: 5.413
+                                      'y': 6.5369
+                                    - x: 5.413
+                                      'y': 6.6185
+                                    - x: 5.2896
+                                      'y': 6.6185
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: dezembro
+                                  boundingBox:
+                                    - x: 5.4495
+                                      'y': 6.5369
+                                    - x: 5.9667
+                                      'y': 6.5369
+                                    - x: 5.9667
+                                      'y': 6.6185
+                                    - x: 5.4495
+                                      'y': 6.6185
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 0
+                              columnSpan: 2
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: Em 31 de dezembro
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 6.0518
+                                  'y': 6.4946
+                                - x: 7.0888
+                                  'y': 6.4946
+                                - x: 7.0888
+                                  'y': 6.7921
+                                - x: 6.0518
+                                  'y': 6.7921
+                              columnIndex: 4
+                              fieldElements:
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 6.0031
+                                      'y': 6.5369
+                                    - x: 6.1265
+                                      'y': 6.5369
+                                    - x: 6.1265
+                                      'y': 6.6185
+                                    - x: 6.0031
+                                      'y': 6.6185
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 0
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: de
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 2.9382
+                                  'y': 6.7921
+                                - x: 3.9715
+                                  'y': 6.7921
+                                - x: 3.9715
+                                  'y': 6.9679
+                                - x: 2.9382
+                                  'y': 6.9679
+                              columnIndex: 1
+                              fieldElements:
+                                - kind: word
+                                  text: '2020'
+                                  boundingBox:
+                                    - x: 3.3386
+                                      'y': 6.8461
+                                    - x: 3.5792
+                                      'y': 6.8461
+                                    - x: 3.5792
+                                      'y': 6.9274
+                                    - x: 3.3386
+                                      'y': 6.9274
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 1
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '2020'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 3.9715
+                                  'y': 6.7921
+                                - x: 5.0151
+                                  'y': 6.7921
+                                - x: 5.0151
+                                  'y': 6.9679
+                                - x: 3.9715
+                                  'y': 6.9679
+                              columnIndex: 2
+                              fieldElements:
+                                - kind: word
+                                  text: '2019'
+                                  boundingBox:
+                                    - x: 4.3753
+                                      'y': 6.8461
+                                    - x: 4.6157
+                                      'y': 6.8461
+                                    - x: 4.6157
+                                      'y': 6.9274
+                                    - x: 4.3753
+                                      'y': 6.9274
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 1
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '2019'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 5.0151
+                                  'y': 6.7921
+                                - x: 6.0518
+                                  'y': 6.7921
+                                - x: 6.0518
+                                  'y': 6.9679
+                                - x: 5.0151
+                                  'y': 6.9679
+                              columnIndex: 3
+                              fieldElements:
+                                - kind: word
+                                  text: '2018'
+                                  boundingBox:
+                                    - x: 5.4139
+                                      'y': 6.8461
+                                    - x: 5.6545
+                                      'y': 6.8461
+                                    - x: 5.6545
+                                      'y': 6.9274
+                                    - x: 5.4139
+                                      'y': 6.9274
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 1
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '2018'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 6.0518
+                                  'y': 6.7921
+                                - x: 7.0888
+                                  'y': 6.7921
+                                - x: 7.0888
+                                  'y': 6.9679
+                                - x: 6.0518
+                                  'y': 6.9679
+                              columnIndex: 4
+                              fieldElements:
+                                - kind: word
+                                  text: '2017'
+                                  boundingBox:
+                                    - x: 6.4526
+                                      'y': 6.8461
+                                    - x: 6.6937
+                                      'y': 6.8461
+                                    - x: 6.6937
+                                      'y': 6.9274
+                                    - x: 6.4526
+                                      'y': 6.9274
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 1
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '2017'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 1.1895
+                                  'y': 6.9679
+                                - x: 2.9382
+                                  'y': 6.9679
+                                - x: 2.9382
+                                  'y': 7.2771
+                                - x: 1.1895
+                                  'y': 7.2771
+                              columnIndex: 0
+                              fieldElements:
+                                - kind: word
+                                  text: Capital
+                                  boundingBox:
+                                    - x: 1.2436
+                                      'y': 7.0215
+                                    - x: 1.5774
+                                      'y': 7.0215
+                                    - x: 1.5774
+                                      'y': 7.1268
+                                    - x: 1.2436
+                                      'y': 7.1268
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 1.6205
+                                      'y': 7.0236
+                                    - x: 1.7358
+                                      'y': 7.0236
+                                    - x: 1.7358
+                                      'y': 7.1053
+                                    - x: 1.6205
+                                      'y': 7.1053
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: terceiros
+                                  boundingBox:
+                                    - x: 1.7714
+                                      'y': 7.0236
+                                    - x: 2.1914
+                                      'y': 7.0236
+                                    - x: 2.1914
+                                      'y': 7.1053
+                                    - x: 1.7714
+                                      'y': 7.1053
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: (passivo
+                                  boundingBox:
+                                    - x: 2.2353
+                                      'y': 7.0219
+                                    - x: 2.6372
+                                      'y': 7.0219
+                                    - x: 2.6372
+                                      'y': 7.1268
+                                    - x: 2.2353
+                                      'y': 7.1268
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: circulante
+                                  boundingBox:
+                                    - x: 1.2431
+                                      'y': 7.1602
+                                    - x: 1.7109
+                                      'y': 7.1602
+                                    - x: 1.7109
+                                      'y': 7.242
+                                    - x: 1.2431
+                                      'y': 7.242
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: e
+                                  boundingBox:
+                                    - x: 1.751
+                                      'y': 7.1803
+                                    - x: 1.8041
+                                      'y': 7.1803
+                                    - x: 1.8041
+                                      'y': 7.242
+                                    - x: 1.751
+                                      'y': 7.242
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: não
+                                  boundingBox:
+                                    - x: 1.8454
+                                      'y': 7.1598
+                                    - x: 2.0196
+                                      'y': 7.1598
+                                    - x: 2.0196
+                                      'y': 7.242
+                                    - x: 1.8454
+                                      'y': 7.242
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: circulante)
+                                  boundingBox:
+                                    - x: 2.0591
+                                      'y': 7.1586
+                                    - x: 2.559
+                                      'y': 7.1586
+                                    - x: 2.559
+                                      'y': 7.2634
+                                    - x: 2.0591
+                                      'y': 7.2634
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 2
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: >-
+                                Capital de terceiros (passivo circulante e não
+                                circulante)
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 2.9382
+                                  'y': 6.9679
+                                - x: 3.9715
+                                  'y': 6.9679
+                                - x: 3.9715
+                                  'y': 7.2771
+                                - x: 2.9382
+                                  'y': 7.2771
+                              columnIndex: 1
+                              fieldElements:
+                                - kind: word
+                                  text: '16.329'
+                                  boundingBox:
+                                    - x: 3.6003
+                                      'y': 7.0252
+                                    - x: 3.9246
+                                      'y': 7.0252
+                                    - x: 3.9246
+                                      'y': 7.1058
+                                    - x: 3.6003
+                                      'y': 7.1058
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 2
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '16.329'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 3.9715
+                                  'y': 6.9679
+                                - x: 5.0151
+                                  'y': 6.9679
+                                - x: 5.0151
+                                  'y': 7.2771
+                                - x: 3.9715
+                                  'y': 7.2771
+                              columnIndex: 2
+                              fieldElements:
+                                - kind: word
+                                  text: '14.918'
+                                  boundingBox:
+                                    - x: 4.6373
+                                      'y': 7.0252
+                                    - x: 4.9619
+                                      'y': 7.0252
+                                    - x: 4.9619
+                                      'y': 7.1058
+                                    - x: 4.6373
+                                      'y': 7.1058
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 2
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '14.918'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 5.0151
+                                  'y': 6.9679
+                                - x: 6.0518
+                                  'y': 6.9679
+                                - x: 6.0518
+                                  'y': 7.2771
+                                - x: 5.0151
+                                  'y': 7.2771
+                              columnIndex: 3
+                              fieldElements:
+                                - kind: word
+                                  text: '13.076'
+                                  boundingBox:
+                                    - x: 5.6756
+                                      'y': 7.0252
+                                    - x: 6.0003
+                                      'y': 7.0252
+                                    - x: 6.0003
+                                      'y': 7.1058
+                                    - x: 5.6756
+                                      'y': 7.1058
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 2
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '13.076'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 6.0518
+                                  'y': 6.9679
+                                - x: 7.0888
+                                  'y': 6.9679
+                                - x: 7.0888
+                                  'y': 7.2771
+                                - x: 6.0518
+                                  'y': 7.2771
+                              columnIndex: 4
+                              fieldElements:
+                                - kind: word
+                                  text: '8.137'
+                                  boundingBox:
+                                    - x: 6.769
+                                      'y': 7.0252
+                                    - x: 7.0396
+                                      'y': 7.0252
+                                    - x: 7.0396
+                                      'y': 7.1058
+                                    - x: 6.769
+                                      'y': 7.1058
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 2
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '8.137'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 1.1895
+                                  'y': 7.2771
+                                - x: 2.9382
+                                  'y': 7.2771
+                                - x: 2.9382
+                                  'y': 7.5854
+                                - x: 1.1895
+                                  'y': 7.5854
+                              columnIndex: 0
+                              fieldElements:
+                                - kind: word
+                                  text: Capital
+                                  boundingBox:
+                                    - x: 1.2436
+                                      'y': 7.3298
+                                    - x: 1.5774
+                                      'y': 7.3298
+                                    - x: 1.5774
+                                      'y': 7.4351
+                                    - x: 1.2436
+                                      'y': 7.4351
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: próprio
+                                  boundingBox:
+                                    - x: 1.623
+                                      'y': 7.3301
+                                    - x: 1.9577
+                                      'y': 7.3301
+                                    - x: 1.9577
+                                      'y': 7.4351
+                                    - x: 1.623
+                                      'y': 7.4351
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: (patrimônio
+                                  boundingBox:
+                                    - x: 2.0006
+                                      'y': 7.3301
+                                    - x: 2.5456
+                                      'y': 7.3301
+                                    - x: 2.5456
+                                      'y': 7.4351
+                                    - x: 2.0006
+                                      'y': 7.4351
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: líquido)
+                                  boundingBox:
+                                    - x: 1.2461
+                                      'y': 7.4668
+                                    - x: 1.5965
+                                      'y': 7.4668
+                                    - x: 1.5965
+                                      'y': 7.5718
+                                    - x: 1.2461
+                                      'y': 7.5718
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 3
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: Capital próprio (patrimônio líquido)
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 2.9382
+                                  'y': 7.2771
+                                - x: 3.9715
+                                  'y': 7.2771
+                                - x: 3.9715
+                                  'y': 7.5854
+                                - x: 2.9382
+                                  'y': 7.5854
+                              columnIndex: 1
+                              fieldElements:
+                                - kind: word
+                                  text: '35.586'
+                                  boundingBox:
+                                    - x: 3.5928
+                                      'y': 7.3336
+                                    - x: 3.925
+                                      'y': 7.3336
+                                    - x: 3.925
+                                      'y': 7.4141
+                                    - x: 3.5928
+                                      'y': 7.4141
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 3
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '35.586'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 3.9715
+                                  'y': 7.2771
+                                - x: 5.0151
+                                  'y': 7.2771
+                                - x: 5.0151
+                                  'y': 7.5854
+                                - x: 3.9715
+                                  'y': 7.5854
+                              columnIndex: 2
+                              fieldElements:
+                                - kind: word
+                                  text: '22.894'
+                                  boundingBox:
+                                    - x: 4.6289
+                                      'y': 7.3336
+                                    - x: 4.9625
+                                      'y': 7.3336
+                                    - x: 4.9625
+                                      'y': 7.4141
+                                    - x: 4.6289
+                                      'y': 7.4141
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 3
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '22.894'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 5.0151
+                                  'y': 7.2771
+                                - x: 6.0518
+                                  'y': 7.2771
+                                - x: 6.0518
+                                  'y': 7.5854
+                                - x: 5.0151
+                                  'y': 7.5854
+                              columnIndex: 3
+                              fieldElements:
+                                - kind: word
+                                  text: '7.860'
+                                  boundingBox:
+                                    - x: 5.7301
+                                      'y': 7.3336
+                                    - x: 6.0003
+                                      'y': 7.3336
+                                    - x: 6.0003
+                                      'y': 7.4141
+                                    - x: 5.7301
+                                      'y': 7.4141
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 3
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '7.860'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 6.0518
+                                  'y': 7.2771
+                                - x: 7.0888
+                                  'y': 7.2771
+                                - x: 7.0888
+                                  'y': 7.5854
+                                - x: 6.0518
+                                  'y': 7.5854
+                              columnIndex: 4
+                              fieldElements:
+                                - kind: word
+                                  text: '15.379'
+                                  boundingBox:
+                                    - x: 6.7143
+                                      'y': 7.3336
+                                    - x: 7.0386
+                                      'y': 7.3336
+                                    - x: 7.0386
+                                      'y': 7.4141
+                                    - x: 6.7143
+                                      'y': 7.4141
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 3
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '15.379'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 1.1895
+                                  'y': 7.5854
+                                - x: 2.9382
+                                  'y': 7.5854
+                                - x: 2.9382
+                                  'y': 7.8942
+                                - x: 1.1895
+                                  'y': 7.8942
+                              columnIndex: 0
+                              fieldElements:
+                                - kind: word
+                                  text: Capital
+                                  boundingBox:
+                                    - x: 1.2436
+                                      'y': 7.6385
+                                    - x: 1.6018
+                                      'y': 7.6385
+                                    - x: 1.6018
+                                      'y': 7.7438
+                                    - x: 1.2436
+                                      'y': 7.7438
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: total
+                                  boundingBox:
+                                    - x: 1.6428
+                                      'y': 7.6407
+                                    - x: 1.8682
+                                      'y': 7.6407
+                                    - x: 1.8682
+                                      'y': 7.7223
+                                    - x: 1.6428
+                                      'y': 7.7223
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: (terceiros
+                                  boundingBox:
+                                    - x: 1.9105
+                                      'y': 7.6389
+                                    - x: 2.4093
+                                      'y': 7.6389
+                                    - x: 2.4093
+                                      'y': 7.7439
+                                    - x: 1.9105
+                                      'y': 7.7439
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: +
+                                  boundingBox:
+                                    - x: 2.4473
+                                      'y': 7.6643
+                                    - x: 2.5036
+                                      'y': 7.6643
+                                    - x: 2.5036
+                                      'y': 7.7208
+                                    - x: 2.4473
+                                      'y': 7.7208
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: próprio)
+                                  boundingBox:
+                                    - x: 1.2456
+                                      'y': 7.7738
+                                    - x: 1.6619
+                                      'y': 7.7738
+                                    - x: 1.6619
+                                      'y': 7.8806
+                                    - x: 1.2456
+                                      'y': 7.8806
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 4
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: Capital total (terceiros + próprio)
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 2.9382
+                                  'y': 7.5854
+                                - x: 3.9715
+                                  'y': 7.5854
+                                - x: 3.9715
+                                  'y': 7.8942
+                                - x: 2.9382
+                                  'y': 7.8942
+                              columnIndex: 1
+                              fieldElements:
+                                - kind: word
+                                  text: '51.915'
+                                  boundingBox:
+                                    - x: 3.592
+                                      'y': 7.6407
+                                    - x: 3.9248
+                                      'y': 7.6407
+                                    - x: 3.9248
+                                      'y': 7.7228
+                                    - x: 3.592
+                                      'y': 7.7228
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 4
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '51.915'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 3.9715
+                                  'y': 7.5854
+                                - x: 5.0151
+                                  'y': 7.5854
+                                - x: 5.0151
+                                  'y': 7.8942
+                                - x: 3.9715
+                                  'y': 7.8942
+                              columnIndex: 2
+                              fieldElements:
+                                - kind: word
+                                  text: '37.812'
+                                  boundingBox:
+                                    - x: 4.629
+                                      'y': 7.6416
+                                    - x: 4.9612
+                                      'y': 7.6416
+                                    - x: 4.9612
+                                      'y': 7.7228
+                                    - x: 4.629
+                                      'y': 7.7228
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 4
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '37.812'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 5.0151
+                                  'y': 7.5854
+                                - x: 6.0518
+                                  'y': 7.5854
+                                - x: 6.0518
+                                  'y': 7.8942
+                                - x: 5.0151
+                                  'y': 7.8942
+                              columnIndex: 3
+                              fieldElements:
+                                - kind: word
+                                  text: '20.936'
+                                  boundingBox:
+                                    - x: 5.6672
+                                      'y': 7.6416
+                                    - x: 6.0005
+                                      'y': 7.6416
+                                    - x: 6.0005
+                                      'y': 7.7228
+                                    - x: 5.6672
+                                      'y': 7.7228
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 4
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '20.936'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 6.0518
+                                  'y': 7.5854
+                                - x: 7.0888
+                                  'y': 7.5854
+                                - x: 7.0888
+                                  'y': 7.8942
+                                - x: 6.0518
+                                  'y': 7.8942
+                              columnIndex: 4
+                              fieldElements:
+                                - kind: word
+                                  text: '23.516'
+                                  boundingBox:
+                                    - x: 6.706
+                                      'y': 7.6407
+                                    - x: 7.0393
+                                      'y': 7.6407
+                                    - x: 7.0393
+                                      'y': 7.7228
+                                    - x: 6.706
+                                      'y': 7.7228
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 4
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '23.516'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 1.1895
+                                  'y': 7.8942
+                                - x: 2.9382
+                                  'y': 7.8942
+                                - x: 2.9382
+                                  'y': 8.0725
+                                - x: 1.1895
+                                  'y': 8.0725
+                              columnIndex: 0
+                              fieldElements:
+                                - kind: word
+                                  text: Parcela
+                                  boundingBox:
+                                    - x: 1.3266
+                                      'y': 7.949
+                                    - x: 1.6923
+                                      'y': 7.949
+                                    - x: 1.6923
+                                      'y': 8.0307
+                                    - x: 1.3266
+                                      'y': 8.0307
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 1.7305
+                                      'y': 7.949
+                                    - x: 1.8459
+                                      'y': 7.949
+                                    - x: 1.8459
+                                      'y': 8.0307
+                                    - x: 1.7305
+                                      'y': 8.0307
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: capital
+                                  boundingBox:
+                                    - x: 1.8843
+                                      'y': 7.949
+                                    - x: 2.1935
+                                      'y': 7.949
+                                    - x: 2.1935
+                                      'y': 8.0522
+                                    - x: 1.8843
+                                      'y': 8.0522
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 2.2366
+                                      'y': 7.949
+                                    - x: 2.3519
+                                      'y': 7.949
+                                    - x: 2.3519
+                                      'y': 8.0307
+                                    - x: 2.2366
+                                      'y': 8.0307
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: terceiros
+                                  boundingBox:
+                                    - x: 2.3874
+                                      'y': 7.949
+                                    - x: 2.8073
+                                      'y': 7.949
+                                    - x: 2.8073
+                                      'y': 8.0307
+                                    - x: 2.3874
+                                      'y': 8.0307
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 5
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: Parcela de capital de terceiros
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 2.9382
+                                  'y': 7.8942
+                                - x: 3.9715
+                                  'y': 7.8942
+                                - x: 3.9715
+                                  'y': 8.0725
+                                - x: 2.9382
+                                  'y': 8.0725
+                              columnIndex: 1
+                              fieldElements:
+                                - kind: word
+                                  text: '31,5%'
+                                  boundingBox:
+                                    - x: 3.6178
+                                      'y': 7.9507
+                                    - x: 3.9255
+                                      'y': 7.9507
+                                    - x: 3.9255
+                                      'y': 8.0455
+                                    - x: 3.6178
+                                      'y': 8.0455
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 5
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '31,5%'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 3.9715
+                                  'y': 7.8942
+                                - x: 5.0151
+                                  'y': 7.8942
+                                - x: 5.0151
+                                  'y': 8.0725
+                                - x: 3.9715
+                                  'y': 8.0725
+                              columnIndex: 2
+                              fieldElements:
+                                - kind: word
+                                  text: '39,5%'
+                                  boundingBox:
+                                    - x: 4.6548
+                                      'y': 7.9507
+                                    - x: 4.9624
+                                      'y': 7.9507
+                                    - x: 4.9624
+                                      'y': 8.0455
+                                    - x: 4.6548
+                                      'y': 8.0455
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 5
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '39,5%'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 5.0151
+                                  'y': 7.8942
+                                - x: 6.0518
+                                  'y': 7.8942
+                                - x: 6.0518
+                                  'y': 8.0725
+                                - x: 5.0151
+                                  'y': 8.0725
+                              columnIndex: 3
+                              fieldElements:
+                                - kind: word
+                                  text: '62,5%'
+                                  boundingBox:
+                                    - x: 5.6919
+                                      'y': 7.9507
+                                    - x: 5.9991
+                                      'y': 7.9507
+                                    - x: 5.9991
+                                      'y': 8.0455
+                                    - x: 5.6919
+                                      'y': 8.0455
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 5
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '62,5%'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 6.0518
+                                  'y': 7.8942
+                                - x: 7.0888
+                                  'y': 7.8942
+                                - x: 7.0888
+                                  'y': 8.0725
+                                - x: 6.0518
+                                  'y': 8.0725
+                              columnIndex: 4
+                              fieldElements:
+                                - kind: word
+                                  text: '34,6%'
+                                  boundingBox:
+                                    - x: 6.7319
+                                      'y': 7.9507
+                                    - x: 7.0395
+                                      'y': 7.9507
+                                    - x: 7.0395
+                                      'y': 8.0455
+                                    - x: 6.7319
+                                      'y': 8.0455
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 5
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '34,6%'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 1.1895
+                                  'y': 8.0725
+                                - x: 2.9382
+                                  'y': 8.0725
+                                - x: 2.9382
+                                  'y': 8.2508
+                                - x: 1.1895
+                                  'y': 8.2508
+                              columnIndex: 0
+                              fieldElements:
+                                - kind: word
+                                  text: Parcela
+                                  boundingBox:
+                                    - x: 1.4432
+                                      'y': 8.1257
+                                    - x: 1.8089
+                                      'y': 8.1257
+                                    - x: 1.8089
+                                      'y': 8.2074
+                                    - x: 1.4432
+                                      'y': 8.2074
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: de
+                                  boundingBox:
+                                    - x: 1.8471
+                                      'y': 8.1257
+                                    - x: 1.9625
+                                      'y': 8.1257
+                                    - x: 1.9625
+                                      'y': 8.2074
+                                    - x: 1.8471
+                                      'y': 8.2074
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: capital
+                                  boundingBox:
+                                    - x: 2.0009
+                                      'y': 8.1257
+                                    - x: 2.3101
+                                      'y': 8.1257
+                                    - x: 2.3101
+                                      'y': 8.2288
+                                    - x: 2.0009
+                                      'y': 8.2288
+                                  confidence: 1
+                                  pageNumber: 2
+                                - kind: word
+                                  text: próprio
+                                  boundingBox:
+                                    - x: 2.3558
+                                      'y': 8.1239
+                                    - x: 2.6904
+                                      'y': 8.1239
+                                    - x: 2.6904
+                                      'y': 8.2288
+                                    - x: 2.3558
+                                      'y': 8.2288
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 6
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: Parcela de capital próprio
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 2.9382
+                                  'y': 8.0725
+                                - x: 3.9715
+                                  'y': 8.0725
+                                - x: 3.9715
+                                  'y': 8.2508
+                                - x: 2.9382
+                                  'y': 8.2508
+                              columnIndex: 1
+                              fieldElements:
+                                - kind: word
+                                  text: '68,5%'
+                                  boundingBox:
+                                    - x: 3.6183
+                                      'y': 8.1273
+                                    - x: 3.9255
+                                      'y': 8.1273
+                                    - x: 3.9255
+                                      'y': 8.2221
+                                    - x: 3.6183
+                                      'y': 8.2221
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 6
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '68,5%'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 3.9715
+                                  'y': 8.0725
+                                - x: 5.0151
+                                  'y': 8.0725
+                                - x: 5.0151
+                                  'y': 8.2508
+                                - x: 3.9715
+                                  'y': 8.2508
+                              columnIndex: 2
+                              fieldElements:
+                                - kind: word
+                                  text: '60,5%'
+                                  boundingBox:
+                                    - x: 4.6552
+                                      'y': 8.1273
+                                    - x: 4.9624
+                                      'y': 8.1273
+                                    - x: 4.9624
+                                      'y': 8.2221
+                                    - x: 4.6552
+                                      'y': 8.2221
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 6
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '60,5%'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 5.0151
+                                  'y': 8.0725
+                                - x: 6.0518
+                                  'y': 8.0725
+                                - x: 6.0518
+                                  'y': 8.2508
+                                - x: 5.0151
+                                  'y': 8.2508
+                              columnIndex: 3
+                              fieldElements:
+                                - kind: word
+                                  text: '37,5%'
+                                  boundingBox:
+                                    - x: 5.6931
+                                      'y': 8.1273
+                                    - x: 6.0007
+                                      'y': 8.1273
+                                    - x: 6.0007
+                                      'y': 8.2221
+                                    - x: 5.6931
+                                      'y': 8.2221
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 6
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '37,5%'
+                              pageNumber: 2
+                            - boundingBox:
+                                - x: 6.0518
+                                  'y': 8.0725
+                                - x: 7.0888
+                                  'y': 8.0725
+                                - x: 7.0888
+                                  'y': 8.2508
+                                - x: 6.0518
+                                  'y': 8.2508
+                              columnIndex: 4
+                              fieldElements:
+                                - kind: word
+                                  text: '65,4%'
+                                  boundingBox:
+                                    - x: 6.734
+                                      'y': 8.1273
+                                    - x: 7.0412
+                                      'y': 8.1273
+                                    - x: 7.0412
+                                      'y': 8.2221
+                                    - x: 6.734
+                                      'y': 8.2221
+                                  confidence: 1
+                                  pageNumber: 2
+                              rowIndex: 6
+                              columnSpan: 1
+                              rowSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              confidence: 1
+                              text: '65,4%'
+                              pageNumber: 2
+                          pageNumber: 2
+                        structured:
+                          - - rowSpan: 2
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '(em R$ milhares, exceto %)'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: Em 30 de junho de
+                            - rowSpan: 1
+                              colSpan: 2
+                              isHeader: false
+                              isFooter: false
+                              text: Em 31 de dezembro
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: de
+                          - - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '2020'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '2019'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '2018'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '2017'
+                          - - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: >-
+                                Capital de terceiros (passivo circulante e não
+                                circulante)
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '16.329'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '14.918'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '13.076'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '8.137'
+                          - - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: Capital próprio (patrimônio líquido)
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '35.586'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '22.894'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '7.860'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '15.379'
+                          - - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: Capital total (terceiros + próprio)
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '51.915'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '37.812'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '20.936'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '23.516'
+                          - - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: Parcela de capital de terceiros
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '31,5%'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '39,5%'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '62,5%'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '34,6%'
+                          - - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: Parcela de capital próprio
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '68,5%'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '60,5%'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '37,5%'
+                            - rowSpan: 1
+                              colSpan: 1
+                              isHeader: false
+                              isFooter: false
+                              text: '65,4%'
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /vm2:
@@ -19751,12 +21831,25 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message:
+                    greet: Hello World
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /sendmail:
@@ -19764,7 +21857,7 @@ paths:
       tags:
         - Operations
       summary: Sendmail
-      description: Sendmail
+      description: Allows you to send emails
       operationId: sendmail
       parameters:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
@@ -19776,12 +21869,39 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message:
+                    accepted:
+                      - robot@looplex.com.br
+                    rejected: []
+                    envelopeTime: 14
+                    messageTime: 1111
+                    messageSize: 344
+                    response: >-
+                      250 2.0.0 OK
+                      <611da793-60aa-3113-a407-df746ee9ae9d@looplex.com.br>
+                      [Hostname=CPUP152MB4449.LAMP152.PROD.OUTLOOK.COM]
+                    envelope:
+                      from: robot@looplex.com.br
+                      to:
+                        - robot@looplex.com.br
+                    messageId: <611da793-60aa-3113-a407-df746ee9ae9d@looplex.com.br>
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /mjml-render:
@@ -19864,7 +21984,7 @@ paths:
       tags:
         - Operations
       summary: Looplex Sendmail
-      description: Looplex Sendmail
+      description: Allows you to send emails using MJML and Mustache.js
       operationId: looplexSendmail
       parameters:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
@@ -19876,12 +21996,39 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message:
+                    accepted:
+                      - nagaozen@gmail.com
+                    rejected: []
+                    envelopeTime: 18
+                    messageTime: 183
+                    messageSize: 4652
+                    response: >-
+                      250 2.0.0 OK
+                      <3bc3989d-ed20-caf0-d645-817f8ef2975f@looplex.com.br>
+                      [Hostname=CPUP152MB4449.LAMP152.PROD.OUTLOOK.COM]
+                    envelope:
+                      from: robot@looplex.com.br
+                      to:
+                        - nagaozen@gmail.com
+                    messageId: <3bc3989d-ed20-caf0-d645-817f8ef2975f@looplex.com.br>
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /looplex/contextAwareSpellcheck:
@@ -19889,7 +22036,7 @@ paths:
       tags:
         - Operations
       summary: Context Aware Spellcheck
-      description: Context Aware Spellcheck
+      description: Searches for misspellings and suggests fixes based on a context
       operationId: contextAwareSpellcheck
       parameters:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
@@ -19901,12 +22048,27 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message:
+                    suggestions:
+                      - suggestion: action
+                        score: 0.7457185570229751
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /looplex/text-variants:
@@ -19914,7 +22076,7 @@ paths:
       tags:
         - Operations
       summary: Looplex Text Variants
-      description: Looplex Text Variants
+      description: Allows you to find text variants
       operationId: looplexTextVariants
       parameters:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
@@ -19926,12 +22088,62 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message:
+                    words:
+                      - variants:
+                          - pop
+                          - pai
+                          - papai
+                          - estalar
+                          - pnf
+                          - estourar
+                          - popup
+                          - emergente
+                      - variants:
+                          - acteon
+                          - action
+                          - ação
+                          - share
+                          - deed
+                          - stock
+                          - lawsuit
+                          - acção
+                          - medidas
+                          - measures
+                          - steps
+                          - measured
+                          - acções
+                          - actions
+                          - shares
+                          - stocks
+                          - equities
+                          - deeds
+                          - ações
+                          - recurso
+                          - resource
+                          - feature
+                          - appeal
+                          - resort
+                          - capability
+                          - recourse
+                          - asset
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
   /looplex/thumbnail:
@@ -19939,7 +22151,7 @@ paths:
       tags:
         - Operations
       summary: Looplex Thumbnail
-      description: Looplex Thumbnail
+      description: Generates a thumbnail
       operationId: looplexThumbnail
       parameters:
         - $ref: '#/components/parameters/OcpApimSubscriptionKey'
@@ -19951,15 +22163,27 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: SUCCESS
+                  message: (base64 file)
         '401':
           description: Access Denied
-        '404':
-          description: Not Found
-        '500':
-          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  statusCode: 401
+                  message: >-
+                    Access denied due to missing subscription key. Make sure to
+                    include subscription key when making requests to an API.
       security:
         - Subscription-Key: []
-  '/tinyurl/:id':
+  /tinyurl:
     post:
       tags:
         - TinyURL
@@ -19984,6 +22208,7 @@ paths:
           description: Not Found
       security:
         - Subscription-Key: []
+  '/tinyurl/:id':
     put:
       tags:
         - TinyURL
@@ -73972,6 +76197,17 @@ components:
           description: the file url
           example: 'https://looplex-ged.s3.us-east-1.amazonaws.com/datatypes.docx'
       description: Looplex Thumbnail
+    tinyurl-post:
+      title: TinyURL
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          description: url to be short
+          example: 'https://www.google.com/search?q=Looplex'
+      description: TinyURL service
     'tinyurl@{id}-get':
       title: TinyURL
       type: object
@@ -73993,17 +76229,6 @@ components:
         _etag: '"c30ae7a1-0000-0200-0000-637d9f770000"'
         _attachments: attachments/
         _ts: 1669177207
-      description: TinyURL service
-    tinyurl-post:
-      title: TinyURL
-      type: object
-      required:
-        - url
-      properties:
-        url:
-          type: string
-          description: url to be short
-          example: 'https://www.google.com/search?q=Looplex'
       description: TinyURL service
     'tinyurl@{id}-delete':
       title: TinyURL

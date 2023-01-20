@@ -110,9 +110,10 @@ paths:
   /looplex/thumbnail:
     post:
       $ref: ./paths/actions/looplex-thumbnail.yaml
-  /tinyurl/:id:
+  /tinyurl:
     post:
       $ref: ./paths/actions/tinyurl/tinyurl-post.yaml
+  /tinyurl/:id:
     put:
       $ref: ./paths/actions/tinyurl/tinyurl@{id}-put.yaml
     get:
