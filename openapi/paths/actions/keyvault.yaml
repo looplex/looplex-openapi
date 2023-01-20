@@ -1,7 +1,7 @@
 tags:
   - Operations
 summary: Keyvault
-description: keyvault
+description: Allows you to retrieve secrets that were securely stored in the Microsoft Azure Key Vault
 operationId: keyvault
 parameters:
   - $ref: ../../components/parameters/keyvaultId.yaml
