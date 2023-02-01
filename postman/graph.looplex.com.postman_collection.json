@@ -210,7 +210,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -270,7 +270,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -390,7 +390,257 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json()\r",
+											"console.log(pm.response)\r",
+											"\r",
+											"if (pm.response.code == 200) {\r",
+											"    pm.collectionVariables.set('Profile', response.Profile)\r",
+											"    pm.collectionVariables.set('X-ContextInf', response.Context)\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASEPATH}}/api/logon",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"logon"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Successful\": true\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/logon",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"logon"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								}
 							]
 						}
