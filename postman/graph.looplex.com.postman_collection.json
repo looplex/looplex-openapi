@@ -153,7 +153,7 @@
 									"body": "{\r\n    \"response\": \"200\"\r\n}"
 								},
 								{
-									"name": "500 Internal Server Error",
+									"name": "401 Unauthorized",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -197,8 +197,8 @@
 											]
 										}
 									},
-									"status": "Internal Server Error",
-									"code": 500,
+									"status": "Unauthorized",
+									"code": 401,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -273,66 +273,6 @@
 									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								},
 								{
-									"name": "401 Unauthorized",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "context",
-												"value": "valor_contexto",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"busca"
-											],
-											"query": [
-												{
-													"key": "termo",
-													"value": "Termo",
-													"description": "(string) Termo a pesquisar"
-												},
-												{
-													"key": "ativos",
-													"value": "true",
-													"description": "(bool) Buscar processos ativos?"
-												},
-												{
-													"key": "inativos",
-													"value": "false",
-													"description": "(bool) Buscar processos inativos?"
-												},
-												{
-													"key": "apenasMeusCasos",
-													"value": "false",
-													"description": "(bool) Buscar apenas meus casos?"
-												}
-											]
-										}
-									},
-									"status": "Unauthorized",
-									"code": 401,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								},
-								{
 									"name": "404 Not Found",
 									"originalRequest": {
 										"method": "GET",
@@ -391,6 +331,66 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"Message\": \"Não encontrado\",\n    \"ExceptionMessage\": \"Descrição do erro\"\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "context",
+												"value": "valor_contexto",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"busca"
+											],
+											"query": [
+												{
+													"key": "termo",
+													"value": "Termo",
+													"description": "(string) Termo a pesquisar"
+												},
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Buscar processos ativos?"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Buscar processos inativos?"
+												},
+												{
+													"key": "apenasMeusCasos",
+													"value": "false",
+													"description": "(bool) Buscar apenas meus casos?"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								}
 							]
 						}
