@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "411d0d65-ff08-4c4b-bde7-0ccbc34277ec",
+		"_postman_id": "09f6204b-a423-4937-9ca2-2172973b2e28",
 		"name": "graph.looplex.com",
 		"description": "Looplex Graph é uma plataforma de APIs que conectam múltipos serviços e dados jurídicos.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1674422"
+		"_exporter_id": "24728941"
 	},
 	"item": [
 		{
@@ -44,82 +44,276 @@
 			"name": "cases",
 			"item": [
 				{
-					"name": "login",
+					"name": "busca",
 					"item": [
 						{
-							"name": "Login",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
+							"name": "Pesquisa processos por termo",
 							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"User\": {\r\n        \"user\": \"string\",\r\n        \"pwd\": \"string\",\r\n        \"domain\": \"string\"\r\n    }\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-ContextInf",
+										"value": "valor_contexto",
+										"description": "O contexto da requisição",
+										"type": "text"
 									}
-								},
+								],
 								"url": {
-									"raw": "{{BASEPATH}}/cases/api/logon",
+									"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 									"host": [
 										"{{BASEPATH}}"
 									],
 									"path": [
-										"cases",
 										"api",
-										"logon"
+										"busca"
+									],
+									"query": [
+										{
+											"key": "termo",
+											"value": "Termo",
+											"description": "(string) Termo a pesquisar"
+										},
+										{
+											"key": "ativos",
+											"value": "true",
+											"description": "(bool) Buscar processos ativos?"
+										},
+										{
+											"key": "inativos",
+											"value": "false",
+											"description": "(bool) Buscar processos inativos?"
+										},
+										{
+											"key": "apenasMeusCasos",
+											"value": "false",
+											"description": "(bool) Buscar apenas meus casos?"
+										}
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "resultado_login",
+									"name": "200 OK",
 									"originalRequest": {
-										"method": "POST",
-										"header": [],
+										"method": "GET",
+										"header": [
+											{
+												"key": "context",
+												"value": "valor_contexto",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
 										"url": {
-											"raw": "{{BASEPATH}}/api/logon",
+											"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
-												"logon"
+												"busca"
+											],
+											"query": [
+												{
+													"key": "termo",
+													"value": "Termo",
+													"description": "(string) Termo a pesquisar"
+												},
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Buscar processos ativos?"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Buscar processos inativos?"
+												},
+												{
+													"key": "apenasMeusCasos",
+													"value": "false",
+													"description": "(bool) Buscar apenas meus casos?"
+												}
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
-									"body": "{\n    \"Profile\": \"string\",\n    \"Successful\": true\n}"
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
 								},
 								{
-									"name": "erro_timeout",
+									"name": "500 Internal Server Error",
 									"originalRequest": {
-										"method": "POST",
-										"header": [],
+										"method": "GET",
+										"header": [
+											{
+												"key": "context",
+												"value": "valor_contexto",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
 										"url": {
-											"raw": "{{BASEPATH}}/api/logon",
+											"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
-												"logon"
+												"busca"
+											],
+											"query": [
+												{
+													"key": "termo",
+													"value": "Termo",
+													"description": "(string) Termo a pesquisar"
+												},
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Buscar processos ativos?"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Buscar processos inativos?"
+												},
+												{
+													"key": "apenasMeusCasos",
+													"value": "false",
+													"description": "(bool) Buscar apenas meus casos?"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "context",
+												"value": "valor_contexto",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"busca"
+											],
+											"query": [
+												{
+													"key": "termo",
+													"value": "Termo",
+													"description": "(string) Termo a pesquisar"
+												},
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Buscar processos ativos?"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Buscar processos inativos?"
+												},
+												{
+													"key": "apenasMeusCasos",
+													"value": "false",
+													"description": "(bool) Buscar apenas meus casos?"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "context",
+												"value": "valor_contexto",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"busca"
+											],
+											"query": [
+												{
+													"key": "termo",
+													"value": "Termo",
+													"description": "(string) Termo a pesquisar"
+												},
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Buscar processos ativos?"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Buscar processos inativos?"
+												},
+												{
+													"key": "apenasMeusCasos",
+													"value": "false",
+													"description": "(bool) Buscar apenas meus casos?"
+												}
 											]
 										}
 									},
@@ -136,239 +330,67 @@
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								},
 								{
-									"name": "exception",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/logon",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"logon"
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": null,
-									"cookie": [],
-									"body": "{\n    \"Message\": \"Erro\",\n    \"ExceptionMessage\": \"Descrição do erro\"\n}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "dados_complementares",
-					"item": [
-						{
-							"name": "api-dado_complementar",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
-									"host": [
-										"{{BASEPATH}}"
-									],
-									"path": [
-										"cases",
-										"api",
-										"dado_complementar"
-									],
-									"query": [
-										{
-											"key": "areaId",
-											"value": null,
-											"description": "O identificador da área"
-										},
-										{
-											"key": "funcionarioId",
-											"value": null,
-											"description": "O identificador do funcionário"
-										},
-										{
-											"key": "casoId",
-											"value": null,
-											"description": "O identificador do caso"
-										},
-										{
-											"key": "tipoCaso",
-											"value": "3",
-											"description": "O tipo do caso"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Response",
+									"name": "404 Not Found",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
 											{
-												"key": "X-ContextInf",
-												"value": "",
-												"type": "default"
-											},
-											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"value": "application/json",
+												"key": "context",
+												"value": "valor_contexto",
+												"description": "O contexto da requisição",
 												"type": "text"
 											}
 										],
 										"url": {
-											"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
+											"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
-												"cases",
 												"api",
-												"dado_complementar"
+												"busca"
 											],
 											"query": [
 												{
-													"key": "areaId",
-													"value": null,
-													"description": "O identificador da área"
+													"key": "termo",
+													"value": "Termo",
+													"description": "(string) Termo a pesquisar"
 												},
 												{
-													"key": "funcionarioId",
-													"value": null,
-													"description": "O identificador do funcionário"
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Buscar processos ativos?"
 												},
 												{
-													"key": "casoId",
-													"value": null,
-													"description": "O identificador do caso"
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Buscar processos inativos?"
 												},
 												{
-													"key": "tipoCaso",
-													"value": "3",
-													"description": "O tipo do caso"
+													"key": "apenasMeusCasos",
+													"value": "false",
+													"description": "(bool) Buscar apenas meus casos?"
 												}
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Not Found",
+									"code": 404,
 									"_postman_previewlanguage": "json",
-									"header": null,
-									"cookie": [],
-									"body": "{\r\n    \"testeFabin\": \"response\"\r\n}"
-								},
-								{
-									"name": "erro_timeout",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"type": "default"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"cases",
-												"api",
-												"dado_complementar"
-											],
-											"query": [
-												{
-													"key": "areaId",
-													"value": null,
-													"description": "O identificador da área"
-												},
-												{
-													"key": "funcionarioId",
-													"value": null,
-													"description": "O identificador do funcionário"
-												},
-												{
-													"key": "casoId",
-													"value": null,
-													"description": "O identificador do caso"
-												},
-												{
-													"key": "tipoCaso",
-													"value": "3",
-													"description": "O tipo do caso"
-												}
-											]
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
 										}
-									},
-									"status": "Unauthorized",
-									"code": 401,
-									"_postman_previewlanguage": "json",
-									"header": null,
+									],
 									"cookie": [],
-									"body": ""
-								},
-								{
-									"name": "exception",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"type": "default"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/cases/api/dado_complementar?areaId&funcionarioId&casoId&tipoCaso=3",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"cases",
-												"api",
-												"dado_complementar"
-											],
-											"query": [
-												{
-													"key": "areaId",
-													"value": null,
-													"description": "O identificador da área"
-												},
-												{
-													"key": "funcionarioId",
-													"value": null,
-													"description": "O identificador do funcionário"
-												},
-												{
-													"key": "casoId",
-													"value": null,
-													"description": "O identificador do caso"
-												},
-												{
-													"key": "tipoCaso",
-													"value": "3",
-													"description": "O tipo do caso"
-												}
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": null,
-									"cookie": [],
-									"body": ""
+									"body": "{\n    \"Message\": \"Não encontrado\",\n    \"ExceptionMessage\": \"Descrição do erro\"\n}"
 								}
 							]
 						}
@@ -411,68 +433,7 @@
 		},
 		{
 			"name": "varas_foros",
-			"item": [
-				{
-					"name": "identificador-por-nome",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASEPATH}}/varas_foros/api/VF/cdNoPorNome?nome=Administrativo",
-							"host": [
-								"{{BASEPATH}}"
-							],
-							"path": [
-								"varas_foros",
-								"api",
-								"VF",
-								"cdNoPorNome"
-							],
-							"query": [
-								{
-									"key": "nome",
-									"value": "Administrativo",
-									"description": "O nome do item"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Response",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BASEPATH}}/varas_foros/api/VF/cdNoPorNome?nome=Judicial Estadual",
-									"host": [
-										"{{BASEPATH}}"
-									],
-									"path": [
-										"varas_foros",
-										"api",
-										"VF",
-										"cdNoPorNome"
-									],
-									"query": [
-										{
-											"key": "nome",
-											"value": "Judicial Estadual",
-											"description": "O nome do item"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\r\n  \"respostaAPI\": \"\",\r\n  \"conteudo\": 3,\r\n  \"tipoResposta\": 3\r\n}"
-						}
-					]
-				}
-			]
+			"item": []
 		}
 	],
 	"auth": {
@@ -509,7 +470,19 @@
 		{
 			"key": "BASEPATH",
 			"value": "https://graph.looplex.com",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "BASEPATH",
+			"value": "http://localhost",
 			"type": "string"
+		},
+		{
+			"key": "BASEPATH",
+			"value": "https://graph.looplex.com/cases",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
