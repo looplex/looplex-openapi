@@ -59,7 +59,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{BASEPATH}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+									"raw": "{{BASEPATH}}/api/busca?termo=&ativos=true&inativos=false&apenasMeusCasos=false",
 									"host": [
 										"{{BASEPATH}}"
 									],
@@ -70,23 +70,23 @@
 									"query": [
 										{
 											"key": "termo",
-											"value": "Termo",
-											"description": "(string) Termo a pesquisar"
+											"value": "",
+											"description": "(string) Termo a pesquisar (Required)"
 										},
 										{
 											"key": "ativos",
 											"value": "true",
-											"description": "(bool) Buscar processos ativos?"
+											"description": "(bool) Buscar processos ativos? (Optional. Default: true)"
 										},
 										{
 											"key": "inativos",
 											"value": "false",
-											"description": "(bool) Buscar processos inativos?"
+											"description": "(bool) Buscar processos inativos? (Optional. Default: false)"
 										},
 										{
 											"key": "apenasMeusCasos",
 											"value": "false",
-											"description": "(bool) Buscar apenas meus casos?"
+											"description": "(bool) Buscar apenas meus casos? (Optional. Default: false)"
 										}
 									]
 								}
@@ -452,7 +452,11 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					""
+					"pm.request.addHeader({key:'Profile', value: pm.collectionVariables.get('Profile')})",
+					"pm.request.addHeader({key:'X-ContextInf', value: pm.collectionVariables.get('X-ContextInf')})",
+					"pm.request.addHeader({key:'looplex-graph', value: pm.collectionVariables.get('looplex-graph')})",
+					"",
+					"console.log(pm.request)"
 				]
 			}
 		},
