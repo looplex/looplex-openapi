@@ -53,7 +53,7 @@
 								"header": [
 									{
 										"key": "X-ContextInf",
-										"value": "valor_contexto",
+										"value": "",
 										"description": "O contexto da requisição",
 										"type": "text"
 									}
@@ -624,6 +624,563 @@
 											"path": [
 												"api",
 												"logon"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "áreas",
+					"item": [
+						{
+							"name": "Lista áreas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-ContextInf",
+										"value": "",
+										"description": "O contexto da requisição",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"areas"
+									],
+									"query": [
+										{
+											"key": "ativos",
+											"value": "true",
+											"description": "(bool) Áreas ativas? (Optional. Default: true)"
+										},
+										{
+											"key": "inativos",
+											"value": "false",
+											"description": "(bool) Áreas inativas? (Optional. Default: false)"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas"
+											],
+											"query": [
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Áreas ativas? (Optional. Default: true)"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Áreas inativas? (Optional. Default: false)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas"
+											],
+											"query": [
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Áreas ativas? (Optional. Default: true)"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Áreas inativas? (Optional. Default: false)"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas"
+											],
+											"query": [
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Áreas ativas? (Optional. Default: true)"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Áreas inativas? (Optional. Default: false)"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas"
+											],
+											"query": [
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Áreas ativas? (Optional. Default: true)"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Áreas inativas? (Optional. Default: false)"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas"
+											],
+											"query": [
+												{
+													"key": "ativos",
+													"value": "true",
+													"description": "(bool) Áreas ativas? (Optional. Default: true)"
+												},
+												{
+													"key": "inativos",
+													"value": "false",
+													"description": "(bool) Áreas inativas? (Optional. Default: false)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Área por identificador",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-ContextInf",
+										"value": "",
+										"description": "O contexto da requisição",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASEPATH}}/api/areas/:id",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"areas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "(int) O identificador da área (Required)"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
 											]
 										}
 									},
