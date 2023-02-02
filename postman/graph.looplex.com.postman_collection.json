@@ -50,14 +50,7 @@
 							"name": "Pesquisa processos por termo",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "X-ContextInf",
-										"value": "",
-										"description": "O contexto da requisição",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{BASEPATH}}/api/busca?termo=&ativos=true&inativos=false&apenasMeusCasos=false",
 									"host": [
@@ -653,14 +646,7 @@
 							"name": "Lista áreas",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "X-ContextInf",
-										"value": "",
-										"description": "O contexto da requisição",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
 									"host": [
@@ -941,14 +927,7 @@
 							"name": "Área por identificador",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "X-ContextInf",
-										"value": "",
-										"description": "O contexto da requisição",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{BASEPATH}}/api/areas/:id",
 									"host": [
@@ -1210,14 +1189,7 @@
 							"name": "Lista países",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "X-ContextInf",
-										"value": "",
-										"description": "O contexto da requisição",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{BASEPATH}}/api/pais",
 									"host": [
@@ -1426,14 +1398,7 @@
 							"name": "Lista estados",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "X-ContextInf",
-										"value": "",
-										"description": "O contexto da requisição",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{BASEPATH}}/api/pais/uf",
 									"host": [
@@ -1648,14 +1613,7 @@
 							"name": "Lista as cidades do estado",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "X-ContextInf",
-										"value": "",
-										"description": "O contexto da requisição",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{BASEPATH}}/api/pais/cidades?uf",
 									"host": [
@@ -1968,7 +1926,6 @@
 				"exec": [
 					"pm.request.addHeader({key:'Profile', value: pm.collectionVariables.get('Profile')})",
 					"pm.request.addHeader({key:'X-ContextInf', value: pm.collectionVariables.get('X-ContextInf')})",
-					"pm.request.addHeader({key:'looplex-graph', value: pm.collectionVariables.get('looplex-graph')})",
 					"",
 					"console.log(pm.request)"
 				]
