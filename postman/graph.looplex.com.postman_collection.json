@@ -1202,6 +1202,713 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "país",
+					"item": [
+						{
+							"name": "Lista países",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-ContextInf",
+										"value": "",
+										"description": "O contexto da requisição",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASEPATH}}/api/pais",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"pais"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista estados",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-ContextInf",
+										"value": "",
+										"description": "O contexto da requisição",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASEPATH}}/api/pais/uf",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"pais",
+										"uf"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"uf"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"uf"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"uf"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"uf"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"uf"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista as cidades do estado",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-ContextInf",
+										"value": "",
+										"description": "O contexto da requisição",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASEPATH}}/api/pais/cidades?uf",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"pais",
+										"cidades"
+									],
+									"query": [
+										{
+											"key": "uf",
+											"value": null,
+											"description": "(string) O estado. (Required)"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/cidades?uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"cidades"
+											],
+											"query": [
+												{
+													"key": "uf",
+													"value": null,
+													"description": "(string) O estado. (Required)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"response\": \"200\"\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/cidades?uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"cidades"
+											],
+											"query": [
+												{
+													"key": "uf",
+													"value": null,
+													"description": "(string) O estado. (Required)"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/cidades?uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"cidades"
+											],
+											"query": [
+												{
+													"key": "uf",
+													"value": null,
+													"description": "(string) O estado. (Required)"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/cidades?uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"cidades"
+											],
+											"query": [
+												{
+													"key": "uf",
+													"value": null,
+													"description": "(string) O estado. (Required)"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/pais/cidades?uf",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"pais",
+												"cidades"
+											],
+											"query": [
+												{
+													"key": "uf",
+													"value": null,
+													"description": "(string) O estado. (Required)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
