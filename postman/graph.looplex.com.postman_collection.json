@@ -297,6 +297,263 @@
 					"name": "áreas",
 					"item": [
 						{
+							"name": "Área por identificador",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/areas/:id",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"areas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "(Required) (int) O identificador da área"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-ContextInf",
+												"value": "",
+												"description": "O contexto da requisição",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BASEPATH}}/api/areas/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"areas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(int) O identificador da área (Required)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
 							"name": "Lista áreas",
 							"request": {
 								"method": "GET",
@@ -556,263 +813,6 @@
 													"key": "inativos",
 													"value": "false",
 													"description": "(bool) Áreas inativas? (Optional. Default: false)"
-												}
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								}
-							]
-						},
-						{
-							"name": "Área por identificador",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BASEPATH}}/api/areas/:id",
-									"host": [
-										"{{BASEPATH}}"
-									],
-									"path": [
-										"api",
-										"areas",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "",
-											"description": "(Required) (int) O identificador da área"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "200 OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/api/areas/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"areas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
-								},
-								{
-									"name": "401 Unauthorized",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/api/areas/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"areas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
-												}
-											]
-										}
-									},
-									"status": "Unauthorized",
-									"code": 401,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
-								},
-								{
-									"name": "403 Forbidden",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/api/areas/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"areas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
-												}
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
-								},
-								{
-									"name": "404 Not Found",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/api/areas/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"areas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
-												}
-											]
-										}
-									},
-									"status": "Not Found",
-									"code": 404,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								},
-								{
-									"name": "500 Internal Server Error",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{BASEPATH}}/api/areas/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"areas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
 												}
 											]
 										}
@@ -2394,28 +2394,27 @@
 					"name": "processos",
 					"item": [
 						{
-							"name": "Cadastrar processos",
+							"name": "Obtém ficha do processo",
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/inclui",
+									"raw": "{{BASEPATH}}/api/casos/:id/ficha",
 									"host": [
 										"{{BASEPATH}}"
 									],
 									"path": [
 										"api",
 										"casos",
-										"inclui"
+										":id",
+										"ficha"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null,
+											"description": "(Required) (int) O identificador do caso"
+										}
 									]
 								}
 							},
@@ -2423,26 +2422,25 @@
 								{
 									"name": "200 OK",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/inclui",
+											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												"inclui"
+												":id",
+												"ficha"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
 											]
 										}
 									},
@@ -2464,26 +2462,25 @@
 								{
 									"name": "401 Unauthorized",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/inclui",
+											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												"inclui"
+												":id",
+												"ficha"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
 											]
 										}
 									},
@@ -2505,26 +2502,25 @@
 								{
 									"name": "403 Forbidden",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/inclui",
+											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												"inclui"
+												":id",
+												"ficha"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
 											]
 										}
 									},
@@ -2546,26 +2542,25 @@
 								{
 									"name": "404 Not Found",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/inclui",
+											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												"inclui"
+												":id",
+												"ficha"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
 											]
 										}
 									},
@@ -2587,26 +2582,25 @@
 								{
 									"name": "500 Internal Server Error",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/inclui",
+											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												"inclui"
+												":id",
+												"ficha"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
 											]
 										}
 									},
@@ -2628,7 +2622,229 @@
 							]
 						},
 						{
-							"name": "Listar os casos do cliente",
+							"name": "Obtém informações do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/casos/:id",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null,
+											"description": "(Required) (int) O identificador do caso."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista os casos do cliente",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -2966,228 +3182,6 @@
 													"key": "idCliente",
 													"value": null,
 													"description": "(Required) (int) O identificador do cliente"
-												}
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								}
-							]
-						},
-						{
-							"name": "Informações do caso",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BASEPATH}}/api/casos/:id",
-									"host": [
-										"{{BASEPATH}}"
-									],
-									"path": [
-										"api",
-										"casos",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": null,
-											"description": "(Required) (int) O identificador do caso."
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "200 OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso."
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
-								},
-								{
-									"name": "401 Unauthorized",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso."
-												}
-											]
-										}
-									},
-									"status": "Unauthorized",
-									"code": 401,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
-								},
-								{
-									"name": "403 Forbidden",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso."
-												}
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
-								},
-								{
-									"name": "404 Not Found",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso."
-												}
-											]
-										}
-									},
-									"status": "Not Found",
-									"code": 404,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								},
-								{
-									"name": "500 Internal Server Error",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso."
 												}
 											]
 										}
@@ -4653,6 +4647,186 @@
 							]
 						},
 						{
+							"name": "Lista ramos judiciais",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										"RamosJudiciais"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"RamosJudiciais"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"Valor\": \"texto\",\r\n        \"ID\": -2147483648,\r\n        \"Description\": \"texto\"\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"RamosJudiciais"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"RamosJudiciais"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"RamosJudiciais"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"RamosJudiciais"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
 							"name": "Pesquisa processos por termo",
 							"request": {
 								"method": "GET",
@@ -5276,19 +5450,28 @@
 							]
 						},
 						{
-							"name": "Lista ramos judiciais",
+							"name": "Cadastrar processos",
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+									"raw": "{{BASEPATH}}/api/casos/inclui",
 									"host": [
 										"{{BASEPATH}}"
 									],
 									"path": [
 										"api",
 										"casos",
-										"RamosJudiciais"
+										"inclui"
 									]
 								}
 							},
@@ -5296,213 +5479,26 @@
 								{
 									"name": "200 OK",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												"RamosJudiciais"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "[\r\n    {\r\n        \"Valor\": \"texto\",\r\n        \"ID\": -2147483648,\r\n        \"Description\": \"texto\"\r\n    }\r\n]"
-								},
-								{
-									"name": "401 Unauthorized",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												"RamosJudiciais"
-											]
-										}
-									},
-									"status": "Unauthorized",
-									"code": 401,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
-								},
-								{
-									"name": "403 Forbidden",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												"RamosJudiciais"
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
-								},
-								{
-									"name": "404 Not Found",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												"RamosJudiciais"
-											]
-										}
-									},
-									"status": "Not Found",
-									"code": 404,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								},
-								{
-									"name": "500 Internal Server Error",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												"RamosJudiciais"
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								}
-							]
-						},
-						{
-							"name": "Obtém ficha do processo",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BASEPATH}}/api/casos/:id/ficha",
-									"host": [
-										"{{BASEPATH}}"
-									],
-									"path": [
-										"api",
-										"casos",
-										":id",
-										"ficha"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": null,
-											"description": "(Required) (int) O identificador do caso"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "200 OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
-											"host": [
-												"{{BASEPATH}}"
-											],
-											"path": [
-												"api",
-												"casos",
-												":id",
-												"ficha"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso"
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
 												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/inclui",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"inclui"
 											]
 										}
 									},
@@ -5524,25 +5520,26 @@
 								{
 									"name": "401 Unauthorized",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
+											"raw": "{{BASEPATH}}/api/casos/inclui",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												":id",
-												"ficha"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso"
-												}
+												"inclui"
 											]
 										}
 									},
@@ -5564,25 +5561,26 @@
 								{
 									"name": "403 Forbidden",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
+											"raw": "{{BASEPATH}}/api/casos/inclui",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												":id",
-												"ficha"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso"
-												}
+												"inclui"
 											]
 										}
 									},
@@ -5604,25 +5602,26 @@
 								{
 									"name": "404 Not Found",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
+											"raw": "{{BASEPATH}}/api/casos/inclui",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												":id",
-												"ficha"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso"
-												}
+												"inclui"
 											]
 										}
 									},
@@ -5644,25 +5643,26 @@
 								{
 									"name": "500 Internal Server Error",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"idPreProcesso\": -2147483648,\r\n        \"idCliente\": -2147483648,\r\n        \"envolvimentoCliente\": -2147483648,\r\n        \"nrExito\": -2147483648,\r\n        \"nrTipoExito\": -2147483648,\r\n        \"nrMoedaInicialCausa\": -2147483648,\r\n        \"idResponsavel\": -2147483648,\r\n        \"idProcessoPai\": -2147483648,\r\n        \"idArea\": -2147483648,\r\n        \"idPasta\": -2147483648,\r\n        \"dsAssunto\": \"texto\",\r\n        \"idRito\": -2147483648,\r\n        \"idForo\": -2147483648,\r\n        \"cdNoForoVara\": -2147483648,\r\n        \"numeroSequencial\": -2147483648,\r\n        \"confidencial\": false,\r\n        \"dataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"dataUltimaAlteracao\": \"2022-01-01T00:00:00\",\r\n        \"classeDoProcesso\": -2147483648,\r\n        \"tipo\": -2147483648,\r\n        \"situacaoDoProcesso\": -2147483648,\r\n        \"tituloProcesso\": \"texto\",\r\n        \"observacao\": \"texto\",\r\n        \"numeroInterno\": \"texto\",\r\n        \"idContrato\": -2147483648,\r\n        \"idFase\": -2147483648,\r\n        \"nivel\": \"texto\",\r\n        \"numeroExterno\": \"texto\",\r\n        \"valorCausa\": 0,\r\n        \"valorExpectativaApuracao\": 0,\r\n        \"valorContingencia\": 0,\r\n        \"cnj\": \"texto\",\r\n        \"utilizaPedidosDoProcessoPai\": false,\r\n        \"foroTemporario\": \"texto\",\r\n        \"comentarioExpectativaDaCausa\": \"texto\",\r\n        \"segundoNumero\": \"texto\",\r\n        \"anotacoesSegundoNumero\": \"texto\",\r\n        \"dataEntrada\": \"2022-01-01T00:00:00\",\r\n        \"dataDistribuicao\": \"2022-01-01T00:00:00\",\r\n        \"dataCitacao\": \"2022-01-01T00:00:00\",\r\n        \"idProcessoNoFornecedorPush\": -2147483648,\r\n        \"nrFornecedorPush\": -2147483648,\r\n        \"coResponsaveis\": [\r\n            1\r\n        ],\r\n        \"hierarquia\": [\r\n            {\r\n                \"nomeItemHierarquia\": \"texto\",\r\n                \"grupoFamilia\": -2147483648\r\n            }\r\n        ],\r\n        \"partes\": [\r\n            {\r\n                \"IdParteNoLo\": -2147483648,\r\n                \"nomeParte\": \"texto\",\r\n                \"tipoPessoa\": -2147483648,\r\n                \"polo\": -2147483648,\r\n                \"principal\": false\r\n            }\r\n        ],\r\n        \"andamentos\": [\r\n            {\r\n                \"NrTipoClassificacaoAutomatica\": -2147483648,\r\n                \"NrClassificacaoAutomatica\": -2147483648,\r\n                \"ClassificacaoDoAndamento\": \"texto\",\r\n                \"LancamentoPeloTimeSheetDoMobile\": false,\r\n                \"IdAndamento\": -2147483648,\r\n                \"TextoAndamento\": \"texto\",\r\n                \"TextoAndamentoContinuacao\": \"texto\",\r\n                \"IdProcesso\": -2147483648,\r\n                \"DataCompetencia\": \"2022-01-01T00:00:00\",\r\n                \"DataInclusao\": \"2022-01-01T00:00:00\",\r\n                \"IdAutor\": -2147483648,\r\n                \"NomeAutor\": \"texto\",\r\n                \"InUsoInterno\": false,\r\n                \"DataRevisao\": \"2022-01-01T00:00:00\",\r\n                \"IdRevisor\": -2147483648,\r\n                \"NomeRevisor\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"InManual\": false,\r\n                \"IdAndamentoTemplate\": -2147483648,\r\n                \"NovoAndamentoParaRevisao\": -2147483648,\r\n                \"IdAndamentoClassificacao\": -2147483648,\r\n                \"IdPublicacaoAndamento\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"dsCodigoOriginal\": \"texto\",\r\n                \"IsEditable\": false\r\n            }\r\n        ],\r\n        \"itensDeAgenda\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDItemAgenda\": -2147483648,\r\n                \"IDItemAgendaPai\": -2147483648,\r\n                \"IDFuncionarioCriador\": -2147483648,\r\n                \"Tipo\": -2147483648,\r\n                \"Titulo\": \"texto\",\r\n                \"IDTitulocobranca\": -2147483648,\r\n                \"Data\": \"2022-01-01T00:00:00\",\r\n                \"Lembrete\": \"00:00:00\",\r\n                \"DataLimite\": \"2022-01-01T00:00:00\",\r\n                \"FuncionarioExecutor\": -2147483648,\r\n                \"FuncionarioResponsavel\": -2147483648,\r\n                \"FuncionariosParticipantes\": [\r\n                    1\r\n                ],\r\n                \"Observacao\": \"texto\",\r\n                \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n                \"ObservacaoRegistroRealizacao\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"DataFormatada\": \"texto\",\r\n                \"DataLimiteFormatada\": \"texto\",\r\n                \"IDForo\": -2147483648,\r\n                \"Local\": \"texto\",\r\n                \"NomeFuncionarioExecutor\": \"texto\",\r\n                \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n                \"DataCriacaoFormatada\": \"texto\",\r\n                \"DataRealizacaoFormatada\": \"texto\",\r\n                \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n                \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n                \"SituacaoLembrete\": -2147483648,\r\n                \"IsEditable\": false,\r\n                \"Concluido\": false,\r\n                \"StatusEncerramentoItemAgenda\": \"texto\",\r\n                \"NomeClienteFormatado\": \"texto\",\r\n                \"AreaFormatada\": \"texto\",\r\n                \"TituloCasoFormatado\": \"texto\",\r\n                \"NumeroDoCaso\": -2147483648,\r\n                \"TituloCaso\": \"texto\",\r\n                \"NumeroExternoCaso\": \"texto\",\r\n                \"Cliente\": \"texto\",\r\n                \"Executor\": \"texto\",\r\n                \"NumeroPasta\": -2147483648,\r\n                \"Assunto\": \"texto\",\r\n                \"NumeroInterno\": \"texto\",\r\n                \"Rito\": \"texto\",\r\n                \"Vencido\": \"texto\",\r\n                \"SituacaoString\": \"texto\",\r\n                \"PoloAtivo\": \"texto\",\r\n                \"PoloPassivo\": \"texto\",\r\n                \"Classificacao\": \"texto\",\r\n                \"CampoDataConclusaoPrazoBloqueado\": false,\r\n                \"EditarApenasCampoObservacoesPrazo\": false\r\n            }\r\n        ],\r\n        \"valoresDadoComplementar\": [\r\n            {\r\n                \"IDCaso\": -2147483648,\r\n                \"IDParametroDadoComplementar\": -2147483648,\r\n                \"Valor\": \"texto\",\r\n                \"DataDeAtualizacao\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ],\r\n        \"pedidos\": [\r\n            {\r\n                \"Risco\": -2147483648,\r\n                \"ValorPrevisto\": 0,\r\n                \"ValorContingencia\": 0,\r\n                \"Nome\": \"texto\",\r\n                \"Situacao\": -2147483648,\r\n                \"IdProcessoExpectativaReivindicacao\": -2147483648,\r\n                \"IdPedidoCausa\": -2147483648,\r\n                \"Justificativa\": \"texto\",\r\n                \"MoedaValorPrevisto\": -2147483648,\r\n                \"MoedaValorContingenciado\": -2147483648,\r\n                \"DataConstituicao\": \"2022-01-01T00:00:00\",\r\n                \"DataVencimento\": \"2022-01-01T00:00:00\"\r\n            }\r\n        ]\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:id/ficha",
+											"raw": "{{BASEPATH}}/api/casos/inclui",
 											"host": [
 												"{{BASEPATH}}"
 											],
 											"path": [
 												"api",
 												"casos",
-												":id",
-												"ficha"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null,
-													"description": "(Required) (int) O identificador do caso"
-												}
+												"inclui"
 											]
 										}
 									},
@@ -5689,7 +5689,7 @@
 					"name": "pastas",
 					"item": [
 						{
-							"name": "Listar pastas do cliente",
+							"name": "Lista pastas do cliente",
 							"request": {
 								"method": "GET",
 								"header": [],
