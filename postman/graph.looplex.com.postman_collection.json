@@ -3588,7 +3588,8 @@
 											"description": "(Optional. Default: 0) (int) O identificador do processo."
 										}
 									]
-								}
+								},
+								"description": "Lista os casos por filtro.\n\nÉ possível informar apenas 1 item para cada filtro.\n\nExemplo: 1 número interno, 1 número externo e 1 identificador de processo."
 							},
 							"response": [
 								{
@@ -4215,6 +4216,289 @@
 									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								}
 							]
+						},
+						{
+							"name": "Lista casos por filtro (array)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/casos/num?IdProcesso=&NumeroInterno&NumeroExterno=",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										"num"
+									],
+									"query": [
+										{
+											"key": "IdProcesso",
+											"value": "",
+											"description": "(Optional) (int[]) Os identificadores dos processos."
+										},
+										{
+											"key": "NumeroInterno",
+											"value": null,
+											"description": "(Optional) (int[]) Os números internos dos processos."
+										},
+										{
+											"key": "NumeroExterno",
+											"value": "",
+											"description": "(Optional) (string[]) Os números externos dos processos."
+										}
+									]
+								},
+								"description": "StartFragment\n\nLista os casos por filtro (array).\n\nÉ possível informar mais de 1 item para cada filtro.\n\nExemplo: 1 ou mais números internos, 1 ou mais números externos e 1 ou mais identificadores de processo."
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num"
+											],
+											"query": [
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional) (int[]) Os identificadores dos processos."
+												},
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional) (int[]) Os números internos dos processos."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional) (string[]) Os números externos dos processos."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num"
+											],
+											"query": [
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional) (int[]) Os identificadores dos processos."
+												},
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional) (int[]) Os números internos dos processos."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional) (string[]) Os números externos dos processos."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num"
+											],
+											"query": [
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional) (int[]) Os identificadores dos processos."
+												},
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional) (int[]) Os números internos dos processos."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional) (string[]) Os números externos dos processos."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num"
+											],
+											"query": [
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional) (int[]) Os identificadores dos processos."
+												},
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional) (int[]) Os números internos dos processos."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional) (string[]) Os números externos dos processos."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num"
+											],
+											"query": [
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional) (int[]) Os identificadores dos processos."
+												},
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional) (int[]) Os números internos dos processos."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional) (string[]) Os números externos dos processos."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
 						}
 					]
 				},
@@ -4541,6 +4825,14 @@
 			"value": "https://graph.looplex.com/cases",
 			"type": "string",
 			"disabled": true
+		},
+		{
+			"key": "Profile",
+			"value": ""
+		},
+		{
+			"key": "X-ContextInf",
+			"value": ""
 		}
 	]
 }
