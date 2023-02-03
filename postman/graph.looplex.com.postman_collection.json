@@ -6440,6 +6440,527 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "natureza",
+					"item": [
+						{
+							"name": "Lista naturezas do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										":idCaso",
+										"natureza"
+									],
+									"variable": [
+										{
+											"key": "idCaso",
+											"value": null,
+											"description": "(Required) (int) O identificador do processo."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"natureza"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"natureza"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"natureza"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"natureza"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"natureza"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista naturezas por filtro",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										"num",
+										"natureza"
+									],
+									"query": [
+										{
+											"key": "NumeroInterno",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O número interno do processo."
+										},
+										{
+											"key": "NumeroExterno",
+											"value": null,
+											"description": "(Optional. Default: \"\") (string) O número externo do processo."
+										},
+										{
+											"key": "IdProcesso",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O identificador do processo."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"natureza"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do processo."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do processo."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"natureza"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do processo."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do processo."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"natureza"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do processo."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do processo."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"natureza"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do processo."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do processo."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"natureza"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do processo."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do processo."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do processo."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
