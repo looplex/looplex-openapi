@@ -3332,6 +3332,461 @@
 									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								}
 							]
+						},
+						{
+							"name": "Informações do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/casos/:id",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null,
+											"description": "(Required) (int) O identificador do caso."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/:id",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "pastas",
+					"item": [
+						{
+							"name": "Listar pastas do cliente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"clientes",
+										":idCliente",
+										"pastas"
+									],
+									"variable": [
+										{
+											"key": "idCliente",
+											"value": null,
+											"description": "(Required) (int) O identificador do cliente."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												":idCliente",
+												"pastas"
+											],
+											"variable": [
+												{
+													"key": "idCliente",
+													"value": null,
+													"description": "(Required) (int) O identificador do cliente."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												":idCliente",
+												"pastas"
+											],
+											"variable": [
+												{
+													"key": "idCliente",
+													"value": null,
+													"description": "(Required) (int) O identificador do cliente."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												":idCliente",
+												"pastas"
+											],
+											"variable": [
+												{
+													"key": "idCliente",
+													"value": null,
+													"description": "(Required) (int) O identificador do cliente."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												":idCliente",
+												"pastas"
+											],
+											"variable": [
+												{
+													"key": "idCliente",
+													"value": null,
+													"description": "(Required) (int) O identificador do cliente."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												":idCliente",
+												"pastas"
+											],
+											"variable": [
+												{
+													"key": "idCliente",
+													"value": null,
+													"description": "(Required) (int) O identificador do cliente."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
 						}
 					]
 				}
