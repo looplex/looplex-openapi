@@ -3986,6 +3986,235 @@
 									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								}
 							]
+						},
+						{
+							"name": "Lista casos por identificadores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/casos/porIds/:ids",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										"porIds",
+										":ids"
+									],
+									"variable": [
+										{
+											"key": "ids",
+											"value": null,
+											"description": "(Required) (int[]) Os identificadores dos processos."
+										}
+									]
+								},
+								"description": "Lista os processos de acordo com os identificadores informados."
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/porIds/:ids",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"porIds",
+												":ids"
+											],
+											"variable": [
+												{
+													"key": "ids",
+													"value": null,
+													"description": "(Required) (int[]) Os identificadores dos processos."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/porIds/:ids",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"porIds",
+												":ids"
+											],
+											"variable": [
+												{
+													"key": "ids",
+													"value": null,
+													"description": "(Required) (int[]) Os identificadores dos processos."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/porIds/:ids",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"porIds",
+												":ids"
+											],
+											"variable": [
+												{
+													"key": "ids",
+													"value": null,
+													"description": "(Required) (int[]) Os identificadores dos processos."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/porIds/:ids",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"porIds",
+												":ids"
+											],
+											"variable": [
+												{
+													"key": "ids",
+													"value": null,
+													"description": "(Required) (int[]) Os identificadores dos processos."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/casos/porIds/:ids",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"porIds",
+												":ids"
+											],
+											"variable": [
+												{
+													"key": "ids",
+													"value": null,
+													"description": "(Required) (int[]) Os identificadores dos processos."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
 						}
 					]
 				},
