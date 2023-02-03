@@ -64,22 +64,22 @@
 										{
 											"key": "termo",
 											"value": "",
-											"description": "(string) Termo a pesquisar (Required)"
+											"description": "(Required) (string) Termo a pesquisar"
 										},
 										{
 											"key": "ativos",
 											"value": "true",
-											"description": "(bool) Buscar processos ativos? (Optional. Default: true)"
+											"description": "(Optional. Default: true) (bool) Buscar processos ativos?"
 										},
 										{
 											"key": "inativos",
 											"value": "false",
-											"description": "(bool) Buscar processos inativos? (Optional. Default: false)"
+											"description": "(Optional. Default: false) (bool) Buscar processos inativos?"
 										},
 										{
 											"key": "apenasMeusCasos",
 											"value": "false",
-											"description": "(bool) Buscar apenas meus casos? (Optional. Default: false)"
+											"description": "(Optional. Default: false) (bool) Buscar apenas meus casos?"
 										}
 									]
 								}
@@ -660,12 +660,12 @@
 										{
 											"key": "ativos",
 											"value": "true",
-											"description": "(bool) Áreas ativas? (Optional. Default: true)"
+											"description": "(Optional. Default: true) (bool) Áreas ativas?"
 										},
 										{
 											"key": "inativos",
 											"value": "false",
-											"description": "(bool) Áreas inativas? (Optional. Default: false)"
+											"description": "(Optional. Default: false) (bool) Áreas inativas?"
 										}
 									]
 								}
@@ -942,7 +942,7 @@
 										{
 											"key": "id",
 											"value": "",
-											"description": "(int) O identificador da área (Required)"
+											"description": "(Required) (int) O identificador da área"
 										}
 									]
 								}
@@ -1896,24 +1896,24 @@
 										{
 											"key": "numeroDeRecorrencias",
 											"value": null,
-											"description": "(Optional. Default: 10) A quantidade de recorrências da tarefa"
+											"description": "(Optional. Default: 10) (int) A quantidade de recorrências da tarefa"
 										}
 									],
 									"variable": [
 										{
 											"key": "cdProcesso",
 											"value": null,
-											"description": "(Required) (int) O identificador do processo "
+											"description": "(Required) (int) O identificador do processo"
 										},
 										{
 											"key": "ignoraIdFuncionario",
 											"value": null,
-											"description": "(Required) (bool) Ignorar identificador do funcionario? "
+											"description": "(Required) (bool) Ignorar identificador do funcionario?"
 										},
 										{
 											"key": "filtro",
 											"value": null,
-											"description": "(Required) (enum) 1: Todos | 2: Finalizados | 3: Em aberto "
+											"description": "(Required) (enum) 1: Todos | 2: Finalizados | 3: Em aberto"
 										}
 									]
 								}
