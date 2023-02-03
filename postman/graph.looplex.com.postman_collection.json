@@ -1630,7 +1630,7 @@
 										{
 											"key": "uf",
 											"value": null,
-											"description": "(string) O estado. (Required)"
+											"description": "(Required) (string) O estado."
 										}
 									]
 								}
