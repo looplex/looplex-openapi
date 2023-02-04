@@ -6243,9 +6243,10 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+											"raw": "http://localhost/api/clientes/:idCliente/pastas",
+											"protocol": "http",
 											"host": [
-												"{{BASEPATH}}"
+												"localhost"
 											],
 											"path": [
 												"api",
@@ -6476,9 +6477,10 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+											"raw": "http://localhost/api/casos/:idCaso/natureza",
+											"protocol": "http",
 											"host": [
-												"{{BASEPATH}}"
+												"localhost"
 											],
 											"path": [
 												"api",
@@ -6714,9 +6716,10 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "http://localhost/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"protocol": "http",
 											"host": [
-												"{{BASEPATH}}"
+												"localhost"
 											],
 											"path": [
 												"api",
@@ -6957,6 +6960,263 @@
 									],
 									"cookie": [],
 									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "timesheet",
+					"item": [
+						{
+							"name": "Lista timesheet por filtro",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH}}/api/timesheet/?idsFuncionarios&dataInicial",
+									"host": [
+										"{{BASEPATH}}"
+									],
+									"path": [
+										"api",
+										"timesheet",
+										""
+									],
+									"query": [
+										{
+											"key": "idsFuncionarios",
+											"value": null,
+											"description": "(Required) (string) Os identificadores dos funcionários separados por virgula"
+										},
+										{
+											"key": "dataInicial",
+											"value": null,
+											"description": "(Required) (string) A data inicial para pesquisa"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/timesheet/?idsFuncionarios&dataInicial",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												""
+											],
+											"query": [
+												{
+													"key": "idsFuncionarios",
+													"value": null,
+													"description": "(Required) (string) Os identificadores dos funcionários separados por virgula"
+												},
+												{
+													"key": "dataInicial",
+													"value": null,
+													"description": "(Required) (string) A data inicial para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/timesheet/?idsFuncionarios&dataInicial",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												""
+											],
+											"query": [
+												{
+													"key": "idsFuncionarios",
+													"value": null,
+													"description": "(Required) (string) Os identificadores dos funcionários separados por virgula"
+												},
+												{
+													"key": "dataInicial",
+													"value": null,
+													"description": "(Required) (string) A data inicial para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não autorizado\",\r\n    \"ExceptionMessage\": \"Necessário fazer login.\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/timesheet/?idsFuncionarios&dataInicial",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												""
+											],
+											"query": [
+												{
+													"key": "idsFuncionarios",
+													"value": null,
+													"description": "(Required) (string) Os identificadores dos funcionários separados por virgula"
+												},
+												{
+													"key": "dataInicial",
+													"value": null,
+													"description": "(Required) (string) A data inicial para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\r\n    \"ExceptionMessage\": \"Credenciais inválidas.\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/timesheet/?idsFuncionarios&dataInicial",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												""
+											],
+											"query": [
+												{
+													"key": "idsFuncionarios",
+													"value": null,
+													"description": "(Required) (string) Os identificadores dos funcionários separados por virgula"
+												},
+												{
+													"key": "dataInicial",
+													"value": null,
+													"description": "(Required) (string) A data inicial para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Não encontrado\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH}}/api/timesheet/?idsFuncionarios&dataInicial",
+											"host": [
+												"{{BASEPATH}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												""
+											],
+											"query": [
+												{
+													"key": "idsFuncionarios",
+													"value": null,
+													"description": "(Required) (string) Os identificadores dos funcionários separados por virgula"
+												},
+												{
+													"key": "dataInicial",
+													"value": null,
+													"description": "(Required) (string) A data inicial para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Message\": \"Erro interno no servidor. Tente novamente.\",\n    \"ExceptionMessage\": \"Descrição do erro\"\n}"
 								}
 							]
 						}
