@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "09f6204b-a423-4937-9ca2-2172973b2e28",
+		"_postman_id": "caa4cd7c-d109-4cfa-add8-000ead2706c1",
 		"name": "graph.looplex.com",
 		"description": "Looplex Graph é uma plataforma de APIs que conectam múltipos serviços e dados jurídicos.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -54,11 +54,9 @@
 									"script": {
 										"exec": [
 											"let response = pm.response.json()\r",
-											"console.log(pm.response)\r",
 											"\r",
 											"if (pm.response.code == 200) {\r",
 											"    pm.collectionVariables.set('Profile', response.Profile)\r",
-											"    pm.collectionVariables.set('X-ContextInf', response.Context)\r",
 											"}"
 										],
 										"type": "text/javascript"
@@ -78,12 +76,11 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASEPATH}}/api/logon",
+									"raw": "api/logon",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"logon"
 									]
 								}
@@ -302,12 +299,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/areas/:id",
+									"raw": "api/areas/:id",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"areas",
 										":id"
 									],
@@ -559,12 +555,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/areas?ativos=true&inativos=false",
+									"raw": "api/areas?ativos=true&inativos=false",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"areas"
 									],
 									"query": [
@@ -845,12 +840,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/pais",
+									"raw": "api/pais",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"pais"
 									]
 								}
@@ -1054,12 +1048,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/pais/uf",
+									"raw": "api/pais/uf",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"pais",
 										"uf"
 									]
@@ -1269,12 +1262,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/pais/cidades?uf",
+									"raw": "api/pais/cidades?uf",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"pais",
 										"cidades"
 									],
@@ -1531,12 +1523,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
+									"raw": "api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"tarefas",
 										":cdProcesso",
@@ -1878,12 +1869,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/:idCaso/produtos",
+									"raw": "api/casos/:idCaso/produtos",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										":idCaso",
 										"produtos"
@@ -2106,12 +2096,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
+									"raw": "api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"num",
 										"produtos"
@@ -2399,12 +2388,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/:id/ficha",
+									"raw": "api/casos/:id/ficha",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										":id",
 										"ficha"
@@ -2627,12 +2615,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/:id",
+									"raw": "api/casos/:id",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										":id"
 									],
@@ -2849,12 +2836,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
+									"raw": "api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"clientes",
 										":idCliente",
 										"casos"
@@ -3209,12 +3195,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/subcasos/:cdProcessoPai",
+									"raw": "api/casos/subcasos/:cdProcessoPai",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"subcasos",
 										":cdProcessoPai"
@@ -3438,12 +3423,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/porIds/:ids",
+									"raw": "api/casos/porIds/:ids",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"porIds",
 										":ids"
@@ -3667,12 +3651,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/meuscasos/:cdResponsavel",
+									"raw": "api/casos/meuscasos/:cdResponsavel",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"meuscasos",
 										":cdResponsavel"
@@ -3896,12 +3879,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/id/num?NumeroInterno&NumeroExterno&IdProcesso",
+									"raw": "api/casos/id/num?NumeroInterno&NumeroExterno&IdProcesso",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"id",
 										"num"
@@ -4100,12 +4082,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/num?IdProcesso=&NumeroInterno&NumeroExterno=",
+									"raw": "api/casos/num?IdProcesso=&NumeroInterno&NumeroExterno=",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"num"
 									],
@@ -4383,12 +4364,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos?ativos&inativos",
+									"raw": "api/casos?ativos&inativos",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos"
 									],
 									"query": [
@@ -4629,12 +4609,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/listacasos?ativos&inativos",
+									"raw": "api/casos/listacasos?ativos&inativos",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"listacasos"
 									],
@@ -4881,12 +4860,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/RamosJudiciais",
+									"raw": "api/casos/RamosJudiciais",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"RamosJudiciais"
 									]
@@ -5061,12 +5039,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
+									"raw": "api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"id",
 										"ficha",
@@ -5355,12 +5332,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/busca?termo=&ativos=true&inativos=false&apenasMeusCasos=false",
+									"raw": "api/busca?termo=&ativos=true&inativos=false&apenasMeusCasos=false",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"busca"
 									],
 									"query": [
@@ -5696,12 +5672,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/busca?termo&ativos&inativos",
+									"raw": "api/casos/busca?termo&ativos&inativos",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"busca"
 									],
@@ -5987,12 +5962,11 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/inclui",
+									"raw": "api/casos/inclui",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"inclui"
 									]
@@ -6217,12 +6191,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/clientes/:idCliente/pastas",
+									"raw": "api/clientes/:idCliente/pastas",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"clientes",
 										":idCliente",
 										"pastas"
@@ -6451,12 +6424,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/:idCaso/natureza",
+									"raw": "api/casos/:idCaso/natureza",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										":idCaso",
 										"natureza"
@@ -6680,12 +6652,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+									"raw": "api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"casos",
 										"num",
 										"natureza"
@@ -6974,12 +6945,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASEPATH}}/api/timesheet/?idsFuncionarios&dataInicial",
+									"raw": "api/timesheet/?idsFuncionarios&dataInicial",
 									"host": [
-										"{{BASEPATH}}"
+										"api"
 									],
 									"path": [
-										"api",
 										"timesheet",
 										""
 									],
@@ -7222,6 +7192,36 @@
 						}
 					]
 				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let prefixUrl = pm.collectionVariables.get('BASEPATH')",
+							"let module = 'cases'",
+							"let endpoint = pm.request.url",
+							"",
+							"pm.request.url = prefixUrl.concat('/').concat(module).concat('/').concat(endpoint)",
+							"",
+							"if (endpoint !== 'api/logon') {",
+							"    pm.request.addHeader({key:'Profile', value: pm.collectionVariables.get('Profile')})",
+							"}",
+							"",
+							"console.log(pm.request)"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -7278,10 +7278,7 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					"pm.request.addHeader({key:'Profile', value: pm.collectionVariables.get('Profile')})",
-					"pm.request.addHeader({key:'X-ContextInf', value: pm.collectionVariables.get('X-ContextInf')})",
-					"",
-					"console.log(pm.request)"
+					""
 				]
 			}
 		},
@@ -7299,26 +7296,10 @@
 		{
 			"key": "BASEPATH",
 			"value": "https://graph.looplex.com",
-			"type": "string",
-			"disabled": true
-		},
-		{
-			"key": "BASEPATH",
-			"value": "http://localhost",
 			"type": "string"
 		},
 		{
-			"key": "BASEPATH",
-			"value": "https://graph.looplex.com/cases",
-			"type": "string",
-			"disabled": true
-		},
-		{
 			"key": "Profile",
-			"value": ""
-		},
-		{
-			"key": "X-ContextInf",
 			"value": ""
 		}
 	]
