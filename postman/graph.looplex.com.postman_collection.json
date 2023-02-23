@@ -7947,6 +7947,515 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "valores_apurados",
+					"item": [
+						{
+							"name": "Lista valores apurados por caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/:idCaso/valoresapurados",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										":idCaso",
+										"valoresapurados"
+									],
+									"variable": [
+										{
+											"key": "idCaso",
+											"value": null,
+											"description": "(Required) (int) O identificador do caso."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/valoresapurados",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"valoresapurados"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/valoresapurados",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"valoresapurados"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/valoresapurados",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"valoresapurados"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/valoresapurados",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"valoresapurados"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/valoresapurados",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"valoresapurados"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista valores apurados por identificador, numero interno ou numero externo do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										"num",
+										"valoresapurados"
+									],
+									"query": [
+										{
+											"key": "NumeroInterno",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O numero interno do caso. "
+										},
+										{
+											"key": "NumeroExterno",
+											"value": null,
+											"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+										},
+										{
+											"key": "IdProcesso",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O identificador do caso."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"valoresapurados"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso. "
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"valoresapurados"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso. "
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"valoresapurados"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso. "
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"valoresapurados"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso. "
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"valoresapurados"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso. "
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
 				}
 			],
 			"event": [
