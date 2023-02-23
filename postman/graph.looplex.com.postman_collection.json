@@ -7048,6 +7048,905 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "fases",
+					"item": [
+						{
+							"name": "Lista fases",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/fase",
+									"host": [
+										"api"
+									],
+									"path": [
+										"fase"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"fase"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"fase"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"fase"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"fase"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"fase"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista fases por ramo judicial",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/fase/:nrGrupo",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										"fase",
+										":nrGrupo"
+									],
+									"variable": [
+										{
+											"key": "nrGrupo",
+											"value": null,
+											"description": "(Required) (int) O ramo judicial. 1: Administrativo. 2: Consultivo. 3: Judicial Estadual. 4: Judicial Federal. 5: Judicial Trabalhista. 6: Interno. 7: Militar Estadual. 8: Eleitoral. 9: Militar União. 10: Consultivo Contrato."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/fase/:nrGrupo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"fase",
+												":nrGrupo"
+											],
+											"variable": [
+												{
+													"key": "nrGrupo",
+													"value": null,
+													"description": "(Required) (int) O ramo judicial. 1: Administrativo. 2: Consultivo. 3: Judicial Estadual. 4: Judicial Federal. 5: Judicial Trabalhista. 6: Interno. 7: Militar Estadual. 8: Eleitoral. 9: Militar União. 10: Consultivo Contrato."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/fase/:nrGrupo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"fase",
+												":nrGrupo"
+											],
+											"variable": [
+												{
+													"key": "nrGrupo",
+													"value": null,
+													"description": "(Required) (int) O ramo judicial. 1: Administrativo. 2: Consultivo. 3: Judicial Estadual. 4: Judicial Federal. 5: Judicial Trabalhista. 6: Interno. 7: Militar Estadual. 8: Eleitoral. 9: Militar União. 10: Consultivo Contrato."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/fase/:nrGrupo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"fase",
+												":nrGrupo"
+											],
+											"variable": [
+												{
+													"key": "nrGrupo",
+													"value": null,
+													"description": "(Required) (int) O ramo judicial. 1: Administrativo. 2: Consultivo. 3: Judicial Estadual. 4: Judicial Federal. 5: Judicial Trabalhista. 6: Interno. 7: Militar Estadual. 8: Eleitoral. 9: Militar União. 10: Consultivo Contrato."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/fase/:nrGrupo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"fase",
+												":nrGrupo"
+											],
+											"variable": [
+												{
+													"key": "nrGrupo",
+													"value": null,
+													"description": "(Required) (int) O ramo judicial. 1: Administrativo. 2: Consultivo. 3: Judicial Estadual. 4: Judicial Federal. 5: Judicial Trabalhista. 6: Interno. 7: Militar Estadual. 8: Eleitoral. 9: Militar União. 10: Consultivo Contrato."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/fase/:nrGrupo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"fase",
+												":nrGrupo"
+											],
+											"variable": [
+												{
+													"key": "nrGrupo",
+													"value": null,
+													"description": "(Required) (int) O ramo judicial. 1: Administrativo. 2: Consultivo. 3: Judicial Estadual. 4: Judicial Federal. 5: Judicial Trabalhista. 6: Interno. 7: Militar Estadual. 8: Eleitoral. 9: Militar União. 10: Consultivo Contrato."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Obtém fase do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/:nrSequencia/fase",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										":nrSequencia",
+										"fase"
+									],
+									"variable": [
+										{
+											"key": "nrSequencia",
+											"value": null,
+											"description": "(Required) (int) O numero sequencial do caso."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:nrSequencia/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":nrSequencia",
+												"fase"
+											],
+											"variable": [
+												{
+													"key": "nrSequencia",
+													"value": null,
+													"description": "(Required) (int) O numero sequencial do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:nrSequencia/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":nrSequencia",
+												"fase"
+											],
+											"variable": [
+												{
+													"key": "nrSequencia",
+													"value": null,
+													"description": "(Required) (int) O numero sequencial do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:nrSequencia/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":nrSequencia",
+												"fase"
+											],
+											"variable": [
+												{
+													"key": "nrSequencia",
+													"value": null,
+													"description": "(Required) (int) O numero sequencial do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:nrSequencia/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":nrSequencia",
+												"fase"
+											],
+											"variable": [
+												{
+													"key": "nrSequencia",
+													"value": null,
+													"description": "(Required) (int) O numero sequencial do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:nrSequencia/fase",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":nrSequencia",
+												"fase"
+											],
+											"variable": [
+												{
+													"key": "nrSequencia",
+													"value": null,
+													"description": "(Required) (int) O numero sequencial do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista fases por identificador, numero interno ou numero externo do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										"num",
+										"fase"
+									],
+									"query": [
+										{
+											"key": "NumeroInterno",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O numero interno do caso."
+										},
+										{
+											"key": "NumeroExterno",
+											"value": null,
+											"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+										},
+										{
+											"key": "IdProcesso",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O identificador do caso."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"fase"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"fase"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"fase"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"fase"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"fase"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O numero interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O numero externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						}
+					]
 				}
 			],
 			"event": [
