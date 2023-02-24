@@ -8473,8 +8473,7 @@
 							"if (endpoint !== 'api/logon') {",
 							"    pm.request.addHeader({key:'Profile', value: pm.collectionVariables.get('Profile')})",
 							"}",
-							"",
-							"console.log(pm.request)"
+							""
 						]
 					}
 				},
@@ -8524,7 +8523,958 @@
 		},
 		{
 			"name": "varas_foros",
-			"item": []
+			"item": [
+				{
+					"name": "Lista por nível",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ListaPorNivel?nivel=1",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ListaPorNivel"
+							],
+							"query": [
+								{
+									"key": "nivel",
+									"value": "1",
+									"description": "(Required) (int) O nível para pesquisa. Observação: é sempre 1."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ListaPorNivel?nivel",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ListaPorNivel"
+									],
+									"query": [
+										{
+											"key": "nivel",
+											"value": null,
+											"description": "(Required) (int) O nível para pesquisa"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtém itens filhos por identificador do item pai",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ObtemFilhosPorPai?grupoId=1&somenteAtivos=true",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ObtemFilhosPorPai"
+							],
+							"query": [
+								{
+									"key": "grupoId",
+									"value": "1",
+									"description": "(Required) (int) O identificador do item"
+								},
+								{
+									"key": "somenteAtivos",
+									"value": "true",
+									"description": "(Optional. Default: true) (bool) Obter apenas itens ativos?"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ObtemFilhosPorPai?grupoId=1&somenteAtivos=true",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ObtemFilhosPorPai"
+									],
+									"query": [
+										{
+											"key": "grupoId",
+											"value": "1",
+											"description": "(Required) (int) O identificador do item"
+										},
+										{
+											"key": "somenteAtivos",
+											"value": "true",
+											"description": "(Optional. Default: true) (bool) Obter apenas itens ativos?"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtém itens filhos por nome do item pai",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ObtemFilhosPorNomePai?nomeNo=Administrativo&somenteAtivos=true",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ObtemFilhosPorNomePai"
+							],
+							"query": [
+								{
+									"key": "nomeNo",
+									"value": "Administrativo",
+									"description": "(Required) (string) O nome do item pai"
+								},
+								{
+									"key": "somenteAtivos",
+									"value": "true",
+									"description": "(Optional. Default: true) Obter apenas itens ativos?"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ObtemFilhosPorNomePai?nomeNo=Administrativo&somenteAtivos=true",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ObtemFilhosPorNomePai"
+									],
+									"query": [
+										{
+											"key": "nomeNo",
+											"value": "Administrativo",
+											"description": "(Required) (string) O nome do item pai"
+										},
+										{
+											"key": "somenteAtivos",
+											"value": "true",
+											"description": "(Optional. Default: true) Obter apenas itens ativos?"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtém item por identificador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ObtemPorID?no=1",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ObtemPorID"
+							],
+							"query": [
+								{
+									"key": "no",
+									"value": "1",
+									"description": "(Required) (int) O identificador do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ObtemPorID?no=1",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ObtemPorID"
+									],
+									"query": [
+										{
+											"key": "no",
+											"value": "1",
+											"description": "(Required) (int) O identificador do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtém a hierarquia do item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ListaHierarquia?no=1",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ListaHierarquia"
+							],
+							"query": [
+								{
+									"key": "no",
+									"value": "1",
+									"description": "(Required) (int) O identificador do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ListaHierarquia?no",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ListaHierarquia"
+									],
+									"query": [
+										{
+											"key": "no",
+											"value": null,
+											"description": "(Required) (int) O identificador do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtém a hierarquia formatada do item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/HierarquiaFormatadaDoNo?no=1",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"HierarquiaFormatadaDoNo"
+							],
+							"query": [
+								{
+									"key": "no",
+									"value": "1",
+									"description": "(Required) (int) O identificador do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/HierarquiaFormatadaDoNo?no=1",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"HierarquiaFormatadaDoNo"
+									],
+									"query": [
+										{
+											"key": "no",
+											"value": "1",
+											"description": "(Required) (int) O identificador do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Lista ritos e grupos de ritos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ListaRitosGrupoRitos?tipoPesquisa=2&identificador=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ListaRitosGrupoRitos"
+							],
+							"query": [
+								{
+									"key": "tipoPesquisa",
+									"value": "2",
+									"description": "(Required) (int) O tipo de pesquisa. 1: Pesquisa por foro. 2: Pesquisa por rito. 3: Pesquisa por grupo de rito. 4: Pesquisa por grupo rito pai"
+								},
+								{
+									"key": "identificador",
+									"value": "",
+									"description": "(Required) (int) O identificador do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ListaRitosGrupoRitos?tipoPesquisa=2&identificador=",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ListaRitosGrupoRitos"
+									],
+									"query": [
+										{
+											"key": "tipoPesquisa",
+											"value": "2",
+											"description": "(Required) (int) O tipo de pesquisa. 1: Pesquisa por foro. 2: Pesquisa por rito. 3: Pesquisa por grupo de rito. 4: Pesquisa por grupo rito pai"
+										},
+										{
+											"key": "identificador",
+											"value": "",
+											"description": "(Required) (int) O identificador do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Lista grupos de rito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ListaGruposRito?gruposPrincipais=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ListaGruposRito"
+							],
+							"query": [
+								{
+									"key": "gruposPrincipais",
+									"value": "",
+									"description": "(Optional. Default: true) (bool) Lista os grupos principais?"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ListaGruposRito?gruposPrincipais=",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ListaGruposRito"
+									],
+									"query": [
+										{
+											"key": "gruposPrincipais",
+											"value": "",
+											"description": "(Optional. Default: true) (bool) Lista os grupos principais?"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Lista vínculo entre grupo de rito e vara",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ListaVinculoGrupoERito?idVara=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ListaVinculoGrupoERito"
+							],
+							"query": [
+								{
+									"key": "idVara",
+									"value": "",
+									"description": "(Required) (int) O identificador da vara"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ListaVinculoGrupoERito?idVara=9797",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ListaVinculoGrupoERito"
+									],
+									"query": [
+										{
+											"key": "idVara",
+											"value": "9797",
+											"description": "(Required) (int) O identificador da vara"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Lista vínculo entre ritos e vara",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ritosDoNo?cdNo=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ritosDoNo"
+							],
+							"query": [
+								{
+									"key": "cdNo",
+									"value": "",
+									"description": "(Required) (int) O identificador do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ritosDoNo?cdNo=",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ritosDoNo"
+									],
+									"query": [
+										{
+											"key": "cdNo",
+											"value": "",
+											"description": "(Required) (int) O identificador do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Ritos do grupo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/RitosDoGrupo?cdGrupoRito=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"RitosDoGrupo"
+							],
+							"query": [
+								{
+									"key": "cdGrupoRito",
+									"value": "",
+									"description": "(Required) (int) O identificador do grupo de rito"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/RitosDoGrupo?cdGrupoRito=",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"RitosDoGrupo"
+									],
+									"query": [
+										{
+											"key": "cdGrupoRito",
+											"value": "",
+											"description": "(Required) (int) O identificador do grupo de rito"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Identificador por nome do item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/cdNoPorNome?nome=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"cdNoPorNome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "",
+									"description": "(Required) (string) O nome do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/cdNoPorNome?nome=",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"cdNoPorNome"
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "",
+											"description": "(Required) (string) O nome do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Próximos níveis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/ProximosNiveis?cdNo=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"ProximosNiveis"
+							],
+							"query": [
+								{
+									"key": "cdNo",
+									"value": "",
+									"description": "(Required) (int) O identificador do item"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/ProximosNiveis?cdNo=",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"ProximosNiveis"
+									],
+									"query": [
+										{
+											"key": "cdNo",
+											"value": "",
+											"description": "(Required) (int) O identificador do item"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtém rito por identificador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api/VF/Rito?idRito=",
+							"host": [
+								"api"
+							],
+							"path": [
+								"VF",
+								"Rito"
+							],
+							"query": [
+								{
+									"key": "idRito",
+									"value": "",
+									"description": "(Required) (int) O identificador do rito"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/VF/Rito?idRito=1",
+									"host": [
+										"api"
+									],
+									"path": [
+										"VF",
+										"Rito"
+									],
+									"query": [
+										{
+											"key": "idRito",
+											"value": "1",
+											"description": "a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"respostaAPI\": \"\",\r\n    \"conteudo\": {},\r\n    \"tipoResposta\": 3\r\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let prefixUrl = pm.collectionVariables.get('BASEPATH')",
+							"let module = 'varas_foros'",
+							"let endpoint = pm.request.url",
+							"",
+							"pm.request.url = prefixUrl.concat('/').concat(module).concat('/').concat(endpoint)"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	],
 	"auth": {
