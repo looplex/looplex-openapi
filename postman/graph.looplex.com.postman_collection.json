@@ -1822,6 +1822,258 @@
 									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								}
 							]
+						},
+						{
+							"name": "Obtém item de agenda por identificador",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/:id/:tipo",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										":id",
+										":tipo"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null,
+											"description": "(Required) (int) O identificador do item de agenda"
+										},
+										{
+											"key": "tipo",
+											"value": null,
+											"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/:id/:tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												":id",
+												":tipo"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/:id/:tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												":id",
+												":tipo"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/:id/:tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												":id",
+												":tipo"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/:id/:tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												":id",
+												":tipo"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/:id/:tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												":id",
+												":tipo"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
 						}
 					]
 				},
@@ -8806,7 +9058,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "api/VF/ListaHierarquia?no=1",
+							"raw": "api/VF/ListaHierarquia?no=",
 							"host": [
 								"api"
 							],
@@ -8817,7 +9069,7 @@
 							"query": [
 								{
 									"key": "no",
-									"value": "1",
+									"value": "",
 									"description": "(Required) (int) O identificador do item"
 								}
 							]
