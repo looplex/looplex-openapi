@@ -4469,7 +4469,7 @@
 										{
 											"key": "tipo",
 											"value": null,
-											"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+											"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
 										}
 									]
 								}
@@ -4664,6 +4664,1350 @@
 									],
 									"cookie": [],
 									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista as audiências do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/:idCaso/audiencias",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										":idCaso",
+										"audiencias"
+									],
+									"variable": [
+										{
+											"key": "idCaso",
+											"value": null,
+											"description": "(Required) (int) O identificador do caso"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/audiencias",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"audiencias"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"NomeClienteProcesso\": \"texto\",\r\n        \"TituloProcesso\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"NumeroExterno\": \"texto\",\r\n        \"idAudiencia\": -2147483648,\r\n        \"Assunto\": \"texto\",\r\n        \"Area\": \"texto\",\r\n        \"Hora\": \"texto\",\r\n        \"Data\": \"texto\",\r\n        \"DataFormatada\": \"texto\",\r\n        \"Delegante\": \"texto\",\r\n        \"Executor\": \"texto\",\r\n        \"Participantes\": [\r\n            1\r\n        ],\r\n        \"Descricao\": \"texto\",\r\n        \"Local\": \"texto\",\r\n        \"Situacao\": \"texto\",\r\n        \"IdCaso\": -2147483648,\r\n        \"IdAudienciaPai\": -2147483648,\r\n        \"IsEditable\": false\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/audiencias",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"audiencias"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/audiencias",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"audiencias"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/audiencias",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"audiencias"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/audiencias",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"audiencias"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista audiências por número interno, número externo ou identificador do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										"num",
+										"audiencias"
+									],
+									"query": [
+										{
+											"key": "NumeroInterno",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O número interno do caso"
+										},
+										{
+											"key": "NumeroExterno",
+											"value": null,
+											"description": "(Optional. Default: \"\") (string) O número externo do caso"
+										},
+										{
+											"key": "IdProcesso",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O identificador do caso"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"audiencias"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"NomeClienteProcesso\": \"texto\",\r\n        \"TituloProcesso\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"NumeroExterno\": \"texto\",\r\n        \"idAudiencia\": -2147483648,\r\n        \"Assunto\": \"texto\",\r\n        \"Area\": \"texto\",\r\n        \"Hora\": \"texto\",\r\n        \"Data\": \"texto\",\r\n        \"DataFormatada\": \"texto\",\r\n        \"Delegante\": \"texto\",\r\n        \"Executor\": \"texto\",\r\n        \"Participantes\": [\r\n            1\r\n        ],\r\n        \"Descricao\": \"texto\",\r\n        \"Local\": \"texto\",\r\n        \"Situacao\": \"texto\",\r\n        \"IdCaso\": -2147483648,\r\n        \"IdAudienciaPai\": -2147483648,\r\n        \"IsEditable\": false\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"audiencias"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"audiencias"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"audiencias"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"audiencias"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista compromissos por caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/:idCaso/tabagenda",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										":idCaso",
+										"tabagenda"
+									],
+									"variable": [
+										{
+											"key": "idCaso",
+											"value": "[142]",
+											"description": "(Required) (int[]) Os identificadores dos casos"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/tabagenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"tabagenda"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": "[142]",
+													"description": "(Required) (int[]) Os identificadores dos casos"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"NomeClienteProcesso\": \"texto\",\r\n        \"TituloProcesso\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"NumeroExterno\": \"texto\",\r\n        \"TipoDeItem\": \"texto\",\r\n        \"Data\": \"2022-01-01T00:00:00\",\r\n        \"DataFormatada\": \"texto\",\r\n        \"Assunto\": \"texto\",\r\n        \"IdCaso\": -2147483648,\r\n        \"idExecutor\": -2147483648,\r\n        \"Executor\": \"texto\",\r\n        \"Observacao\": \"texto\",\r\n        \"IdPai\": -2147483648,\r\n        \"IsEditable\": false\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/tabagenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"tabagenda"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": "[142]",
+													"description": "(Required) (int[]) Os identificadores dos casos"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/tabagenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"tabagenda"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": "[142]",
+													"description": "(Required) (int[]) Os identificadores dos casos"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/tabagenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"tabagenda"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": "[142]",
+													"description": "(Required) (int[]) Os identificadores dos casos"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/tabagenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"tabagenda"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": "[142]",
+													"description": "(Required) (int[]) Os identificadores dos casos"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista compromissos por número interno, número externo ou identificador do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										"num",
+										"tabagenda"
+									],
+									"query": [
+										{
+											"key": "NumeroInterno",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O número interno do caso"
+										},
+										{
+											"key": "NumeroExterno",
+											"value": null,
+											"description": "(Optional. Default: \"\") (string) O número externo do caso"
+										},
+										{
+											"key": "IdProcesso",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O identificador do caso"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"tabagenda"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"NomeClienteProcesso\": \"texto\",\r\n        \"TituloProcesso\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"NumeroExterno\": \"texto\",\r\n        \"TipoDeItem\": \"texto\",\r\n        \"Data\": \"2022-01-01T00:00:00\",\r\n        \"DataFormatada\": \"texto\",\r\n        \"Assunto\": \"texto\",\r\n        \"IdCaso\": -2147483648,\r\n        \"idExecutor\": -2147483648,\r\n        \"Executor\": \"texto\",\r\n        \"Observacao\": \"texto\",\r\n        \"IdPai\": -2147483648,\r\n        \"IsEditable\": false\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"tabagenda"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"tabagenda"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"tabagenda"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												"num",
+												"tabagenda"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O número interno do caso"
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso"
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista status de encerramento",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"status_encerramento"
+									],
+									"query": [
+										{
+											"key": "inCompromisso",
+											"value": null,
+											"description": "(Optional. Default: false) (bool) Status de compromisso"
+										},
+										{
+											"key": "inPrazo",
+											"value": null,
+											"description": "(Optional. Default: false) (bool) Status de prazo"
+										},
+										{
+											"key": "inAtividadeExterna",
+											"value": null,
+											"description": "(Optional. Defaut: false) (bool) Status de atividade externa"
+										},
+										{
+											"key": "inPublicacao",
+											"value": null,
+											"description": "(Optional. Default: false) (bool) Status de publicação"
+										},
+										{
+											"key": "inAudiencia",
+											"value": null,
+											"description": "(Optional. Default: false) (bool) Status de audiência"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"status_encerramento"
+											],
+											"query": [
+												{
+													"key": "inCompromisso",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de compromisso"
+												},
+												{
+													"key": "inPrazo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de prazo"
+												},
+												{
+													"key": "inAtividadeExterna",
+													"value": null,
+													"description": "(Optional. Defaut: false) (bool) Status de atividade externa"
+												},
+												{
+													"key": "inPublicacao",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de publicação"
+												},
+												{
+													"key": "inAudiencia",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de audiência"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"IDStatusEncerramento\": -2147483648,\r\n        \"Titulo\": \"texto\"\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"status_encerramento"
+											],
+											"query": [
+												{
+													"key": "inCompromisso",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de compromisso"
+												},
+												{
+													"key": "inPrazo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de prazo"
+												},
+												{
+													"key": "inAtividadeExterna",
+													"value": null,
+													"description": "(Optional. Defaut: false) (bool) Status de atividade externa"
+												},
+												{
+													"key": "inPublicacao",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de publicação"
+												},
+												{
+													"key": "inAudiencia",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de audiência"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"status_encerramento"
+											],
+											"query": [
+												{
+													"key": "inCompromisso",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de compromisso"
+												},
+												{
+													"key": "inPrazo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de prazo"
+												},
+												{
+													"key": "inAtividadeExterna",
+													"value": null,
+													"description": "(Optional. Defaut: false) (bool) Status de atividade externa"
+												},
+												{
+													"key": "inPublicacao",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de publicação"
+												},
+												{
+													"key": "inAudiencia",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de audiência"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"status_encerramento"
+											],
+											"query": [
+												{
+													"key": "inCompromisso",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de compromisso"
+												},
+												{
+													"key": "inPrazo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de prazo"
+												},
+												{
+													"key": "inAtividadeExterna",
+													"value": null,
+													"description": "(Optional. Defaut: false) (bool) Status de atividade externa"
+												},
+												{
+													"key": "inPublicacao",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de publicação"
+												},
+												{
+													"key": "inAudiencia",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de audiência"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"status_encerramento"
+											],
+											"query": [
+												{
+													"key": "inCompromisso",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de compromisso"
+												},
+												{
+													"key": "inPrazo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de prazo"
+												},
+												{
+													"key": "inAtividadeExterna",
+													"value": null,
+													"description": "(Optional. Defaut: false) (bool) Status de atividade externa"
+												},
+												{
+													"key": "inPublicacao",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de publicação"
+												},
+												{
+													"key": "inAudiencia",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Status de audiência"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
