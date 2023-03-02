@@ -2314,6 +2314,2358 @@
 									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
 								}
 							]
+						},
+						{
+							"name": "Editar informações de item de agenda",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"Nome\": \"\",\r\n        \"Valor\": \"\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"edit"
+									],
+									"query": [
+										{
+											"key": "IDItemAgenda",
+											"value": null,
+											"description": "(Required) (int) O identificador do item de agenda"
+										},
+										{
+											"key": "Tipo",
+											"value": null,
+											"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"Nome\": \"\",\r\n        \"Valor\": \"\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDItemAgenda",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "Tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"Nome\": \"\",\r\n        \"Valor\": \"\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDItemAgenda",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "Tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"Nome\": \"\",\r\n        \"Valor\": \"\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDItemAgenda",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "Tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"Nome\": \"\",\r\n        \"Valor\": \"\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDItemAgenda",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "Tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"Nome\": \"\",\r\n        \"Valor\": \"\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDItemAgenda",
+													"value": null,
+													"description": "(Required) (int) O identificador do item de agenda"
+												},
+												{
+													"key": "Tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Total de compromissos dos próximos 7 dias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/totaleventos",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"totaleventos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/totaleventos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"totaleventos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/totaleventos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"totaleventos"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/totaleventos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"totaleventos"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/totaleventos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"totaleventos"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/totaleventos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"totaleventos"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista próximos compromissos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"proximoslancamentos"
+									],
+									"query": [
+										{
+											"key": "data",
+											"value": null,
+											"description": "(Required) (DateTime) A data para pesquisa"
+										},
+										{
+											"key": "quantidadeEventosARetornar",
+											"value": null,
+											"description": "(Optional. Default: 4) (int) A quantidade de compromissos a retornar"
+										},
+										{
+											"key": "idCaso",
+											"value": null,
+											"description": "(Optional. Default: 0) (int) O identificador do caso. Se for informado o identificador do caso, retorna apenas os compromissos do caso informado."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"proximoslancamentos"
+											],
+											"query": [
+												{
+													"key": "data",
+													"value": null,
+													"description": "(Required) (DateTime) A data para pesquisa"
+												},
+												{
+													"key": "quantidadeEventosARetornar",
+													"value": null,
+													"description": "(Optional. Default: 4) (int) A quantidade de compromissos a retornar"
+												},
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso. Se for informado o identificador do caso, retorna apenas os compromissos do caso informado."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"proximoslancamentos"
+											],
+											"query": [
+												{
+													"key": "data",
+													"value": null,
+													"description": "(Required) (DateTime) A data para pesquisa"
+												},
+												{
+													"key": "quantidadeEventosARetornar",
+													"value": null,
+													"description": "(Optional. Default: 4) (int) A quantidade de compromissos a retornar"
+												},
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso. Se for informado o identificador do caso, retorna apenas os compromissos do caso informado."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"proximoslancamentos"
+											],
+											"query": [
+												{
+													"key": "data",
+													"value": null,
+													"description": "(Required) (DateTime) A data para pesquisa"
+												},
+												{
+													"key": "quantidadeEventosARetornar",
+													"value": null,
+													"description": "(Optional. Default: 4) (int) A quantidade de compromissos a retornar"
+												},
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso. Se for informado o identificador do caso, retorna apenas os compromissos do caso informado."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"proximoslancamentos"
+											],
+											"query": [
+												{
+													"key": "data",
+													"value": null,
+													"description": "(Required) (DateTime) A data para pesquisa"
+												},
+												{
+													"key": "quantidadeEventosARetornar",
+													"value": null,
+													"description": "(Optional. Default: 4) (int) A quantidade de compromissos a retornar"
+												},
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso. Se for informado o identificador do caso, retorna apenas os compromissos do caso informado."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"proximoslancamentos"
+											],
+											"query": [
+												{
+													"key": "data",
+													"value": null,
+													"description": "(Required) (DateTime) A data para pesquisa"
+												},
+												{
+													"key": "quantidadeEventosARetornar",
+													"value": null,
+													"description": "(Optional. Default: 4) (int) A quantidade de compromissos a retornar"
+												},
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Optional. Default: 0) (int) O identificador do caso. Se for informado o identificador do caso, retorna apenas os compromissos do caso informado."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista compromissos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda?ano&mes&dia",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda"
+									],
+									"query": [
+										{
+											"key": "ano",
+											"value": null,
+											"description": "(Required) (int) O ano para pesquisa"
+										},
+										{
+											"key": "mes",
+											"value": null,
+											"description": "(Required) (int) O mês para pesquisa"
+										},
+										{
+											"key": "dia",
+											"value": null,
+											"description": "(Optional) (int) O dia para pesquisa"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista os compromissos do caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+									"host": [
+										"api"
+									],
+									"path": [
+										"casos",
+										":idCaso",
+										"agenda"
+									],
+									"query": [
+										{
+											"key": "ano",
+											"value": null,
+											"description": "(Required) (int) O ano para pesquisa"
+										},
+										{
+											"key": "mes",
+											"value": null,
+											"description": "(Required) (int) O mês para pesquisa"
+										},
+										{
+											"key": "dia",
+											"value": null,
+											"description": "(Optional) (int) O dia para pesquisa"
+										}
+									],
+									"variable": [
+										{
+											"key": "idCaso",
+											"value": null,
+											"description": "(Required) (int) O identificador do caso"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"host": [
+												"api"
+											],
+											"path": [
+												"casos",
+												":idCaso",
+												"agenda"
+											],
+											"query": [
+												{
+													"key": "ano",
+													"value": null,
+													"description": "(Required) (int) O ano para pesquisa"
+												},
+												{
+													"key": "mes",
+													"value": null,
+													"description": "(Required) (int) O mês para pesquisa"
+												},
+												{
+													"key": "dia",
+													"value": null,
+													"description": "(Optional) (int) O dia para pesquisa"
+												}
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (int) O identificador do caso"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Inserir item de agenda",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "api/agenda",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Atualizar item de agenda",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "api/agenda",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista executores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/executores",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"executores"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/executores",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"executores"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/executores",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"executores"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/executores",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"executores"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/executores",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"executores"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/executores",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"executores"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista participantes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/participantes",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"participantes"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/participantes",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"participantes"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/participantes",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"participantes"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/participantes",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"participantes"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/participantes",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"participantes"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/participantes",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"participantes"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista títulos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/titulos?tipo",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"titulos"
+									],
+									"query": [
+										{
+											"key": "tipo",
+											"value": null,
+											"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
 						}
 					]
 				},
@@ -8962,6 +11314,8 @@
 							"",
 							"pm.request.url = prefixUrl.concat('/').concat(module).concat('/').concat(endpoint)",
 							"",
+							"pm.request.addHeader({key:'Server', value: pm.collectionVariables.get('Server') })",
+							"",
 							"if (endpoint !== 'api/logon') {",
 							"    pm.request.addHeader({key:'Profile', value: pm.collectionVariables.get('Profile')})",
 							"}",
@@ -10008,6 +12362,11 @@
 		{
 			"key": "Profile",
 			"value": ""
+		},
+		{
+			"key": "Server",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
