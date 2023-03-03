@@ -4452,222 +4452,6 @@
 							]
 						},
 						{
-							"name": "Lista títulos",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "api/agenda/titulos?tipo",
-									"host": [
-										"api"
-									],
-									"path": [
-										"agenda",
-										"titulos"
-									],
-									"query": [
-										{
-											"key": "tipo",
-											"value": null,
-											"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "200 OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "api/agenda/titulos?tipo",
-											"host": [
-												"api"
-											],
-											"path": [
-												"agenda",
-												"titulos"
-											],
-											"query": [
-												{
-													"key": "tipo",
-													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
-								},
-								{
-									"name": "401 Unauthorized",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "api/agenda/titulos?tipo",
-											"host": [
-												"api"
-											],
-											"path": [
-												"agenda",
-												"titulos"
-											],
-											"query": [
-												{
-													"key": "tipo",
-													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
-												}
-											]
-										}
-									},
-									"status": "Unauthorized",
-									"code": 401,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								},
-								{
-									"name": "403 Forbidden",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "api/agenda/titulos?tipo",
-											"host": [
-												"api"
-											],
-											"path": [
-												"agenda",
-												"titulos"
-											],
-											"query": [
-												{
-													"key": "tipo",
-													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
-												}
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								},
-								{
-									"name": "404 Not Found",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "api/agenda/titulos?tipo",
-											"host": [
-												"api"
-											],
-											"path": [
-												"agenda",
-												"titulos"
-											],
-											"query": [
-												{
-													"key": "tipo",
-													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
-												}
-											]
-										}
-									},
-									"status": "Not Found",
-									"code": 404,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								},
-								{
-									"name": "500 Internal Server Error",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "api/agenda/titulos?tipo",
-											"host": [
-												"api"
-											],
-											"path": [
-												"agenda",
-												"titulos"
-											],
-											"query": [
-												{
-													"key": "tipo",
-													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
-												}
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
-								}
-							]
-						},
-						{
 							"name": "Lista as audiências do caso",
 							"request": {
 								"method": "GET",
@@ -5991,6 +5775,678 @@
 													"value": null,
 													"description": "(Optional. Default: false) (bool) Status de audiência"
 												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Lista títulos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/agenda/titulos?tipo",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"titulos"
+									],
+									"query": [
+										{
+											"key": "tipo",
+											"value": null,
+											"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"response\": \"200\"\r\n}"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "api/agenda/titulos?tipo",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											],
+											"query": [
+												{
+													"key": "tipo",
+													"value": null,
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Cria títulos",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "api/agenda/titulos",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"titulos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"cdTituloCobranca\": -2147483648,\r\n        \"dtInativacao\": \"2022-01-01T00:00:00\",\r\n        \"cdArea\": -2147483648,\r\n        \"dsTitulo\": \"texto\",\r\n        \"nrTipoCobrancaEvento\": -2147483648,\r\n        \"nrTipoCobrancaEventoText\": \"texto\",\r\n        \"cdEscritorio\": -2147483648,\r\n        \"cdTituloCobrancaPai\": -2147483648,\r\n        \"nrPrecedenciaAoPaiEmDias\": -2147483648,\r\n        \"dsLinkEntrevistaTemplate\": \"texto\",\r\n        \"nrPrecedenciaAoPaiEmDiasText\": \"texto\",\r\n        \"SubTarefas\": [\r\n            {\r\n                \"cdTituloCobranca\": -2147483648,\r\n                \"dtInativacao\": \"2022-01-01T00:00:00\",\r\n                \"cdArea\": -2147483648,\r\n                \"dsTitulo\": \"texto\",\r\n                \"nrTipoCobrancaEvento\": -2147483648,\r\n                \"nrTipoCobrancaEventoText\": \"texto\",\r\n                \"cdEscritorio\": -2147483648,\r\n                \"cdTituloCobrancaPai\": -2147483648,\r\n                \"nrPrecedenciaAoPaiEmDias\": -2147483648,\r\n                \"dsLinkEntrevistaTemplate\": \"texto\",\r\n                \"nrPrecedenciaAoPaiEmDiasText\": \"texto\",\r\n                \"dsSituacaoText\": \"texto\"\r\n            }\r\n        ],\r\n        \"dsSituacaoText\": \"texto\"\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Edita títulos",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "api/agenda/titulos",
+									"host": [
+										"api"
+									],
+									"path": [
+										"agenda",
+										"titulos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\r\n    {\r\n        \"cdTituloCobranca\": -2147483648,\r\n        \"dtInativacao\": \"2022-01-01T00:00:00\",\r\n        \"cdArea\": -2147483648,\r\n        \"dsTitulo\": \"texto\",\r\n        \"nrTipoCobrancaEvento\": -2147483648,\r\n        \"nrTipoCobrancaEventoText\": \"texto\",\r\n        \"cdEscritorio\": -2147483648,\r\n        \"cdTituloCobrancaPai\": -2147483648,\r\n        \"nrPrecedenciaAoPaiEmDias\": -2147483648,\r\n        \"dsLinkEntrevistaTemplate\": \"texto\",\r\n        \"nrPrecedenciaAoPaiEmDiasText\": \"texto\",\r\n        \"SubTarefas\": [\r\n            {\r\n                \"cdTituloCobranca\": -2147483648,\r\n                \"dtInativacao\": \"2022-01-01T00:00:00\",\r\n                \"cdArea\": -2147483648,\r\n                \"dsTitulo\": \"texto\",\r\n                \"nrTipoCobrancaEvento\": -2147483648,\r\n                \"nrTipoCobrancaEventoText\": \"texto\",\r\n                \"cdEscritorio\": -2147483648,\r\n                \"cdTituloCobrancaPai\": -2147483648,\r\n                \"nrPrecedenciaAoPaiEmDias\": -2147483648,\r\n                \"dsLinkEntrevistaTemplate\": \"texto\",\r\n                \"nrPrecedenciaAoPaiEmDiasText\": \"texto\",\r\n                \"dsSituacaoText\": \"texto\"\r\n            }\r\n        ],\r\n        \"dsSituacaoText\": \"texto\"\r\n    }\r\n]"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "api/agenda/titulos",
+											"host": [
+												"api"
+											],
+											"path": [
+												"agenda",
+												"titulos"
 											]
 										}
 									},
