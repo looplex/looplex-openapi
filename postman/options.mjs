@@ -5,6 +5,14 @@ export default {
         {
             url: 'https://graph.looplex.com',
             description: 'Looplex Graph'
+        },
+        {
+            url: 'https://graph.looplex.com/cases/',
+            description: 'Looplex Cases'
+        },
+        {
+            url: 'https://graph.looplex.com/varas_foros/',
+            description: 'Looplex Varas e Foros'
         }
     ]
 }
