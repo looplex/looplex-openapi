@@ -163,7 +163,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -202,7 +202,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"Message\": \"Erro\",\n    \"ExceptionMessage\": \"Descrição do erro\"\n}"
+									"body": "{\n    \"Message\": \"texto\",\n    \"ExceptionMessage\": \"texto\"\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -241,7 +241,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -280,7 +280,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -402,7 +402,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -447,7 +447,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -492,7 +492,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -537,7 +537,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -666,7 +666,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -715,7 +715,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -764,7 +764,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -813,7 +813,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -911,7 +911,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -948,7 +948,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -985,7 +985,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -1022,7 +1022,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -1118,7 +1118,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -1156,7 +1156,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -1194,7 +1194,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -1232,7 +1232,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -1349,7 +1349,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -1394,7 +1394,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -1439,7 +1439,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -1484,7 +1484,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -1652,7 +1652,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -1710,7 +1710,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -1768,7 +1768,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -1826,7 +1826,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -1947,7 +1947,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -1991,7 +1991,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -2035,7 +2035,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -2079,7 +2079,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -2194,7 +2194,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -2236,7 +2236,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -2278,7 +2278,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -2320,7 +2320,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -2465,7 +2465,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -2517,7 +2517,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -2569,7 +2569,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -2621,7 +2621,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -2703,7 +2703,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -2734,7 +2734,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -2765,7 +2765,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -2796,7 +2796,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -2929,7 +2929,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -2977,7 +2977,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -3025,7 +3025,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -3073,7 +3073,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -3203,7 +3203,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -3250,7 +3250,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -3297,7 +3297,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -3344,7 +3344,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -3501,7 +3501,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -3557,7 +3557,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -3613,7 +3613,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -3669,7 +3669,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -3775,7 +3775,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -3814,7 +3814,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -3853,7 +3853,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -3892,7 +3892,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -3998,7 +3998,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -4037,7 +4037,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -4076,7 +4076,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -4115,7 +4115,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -4197,7 +4197,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -4228,7 +4228,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -4259,7 +4259,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -4290,7 +4290,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -4372,7 +4372,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -4403,7 +4403,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -4434,7 +4434,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -4465,7 +4465,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -5917,7 +5917,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -5955,7 +5955,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -5993,7 +5993,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -6031,7 +6031,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -6600,7 +6600,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -6639,7 +6639,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -6678,7 +6678,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -6717,7 +6717,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -6853,7 +6853,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -6902,7 +6902,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -6951,7 +6951,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -7000,7 +7000,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -7111,7 +7111,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -7150,7 +7150,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -7189,7 +7189,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -7228,7 +7228,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -7331,7 +7331,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -7369,7 +7369,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -7407,7 +7407,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -7445,7 +7445,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -7617,7 +7617,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -7678,7 +7678,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -7739,7 +7739,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -7800,7 +7800,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -7907,7 +7907,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -7946,7 +7946,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -7985,7 +7985,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -8024,7 +8024,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -8131,7 +8131,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -8170,7 +8170,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -8209,7 +8209,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -8248,7 +8248,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -8355,7 +8355,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -8394,7 +8394,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -8433,7 +8433,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -8472,7 +8472,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -8575,7 +8575,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -8607,7 +8607,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -8639,7 +8639,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -8671,7 +8671,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -8805,7 +8805,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -8853,7 +8853,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -8901,7 +8901,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -8949,7 +8949,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -9064,7 +9064,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -9106,7 +9106,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -9148,7 +9148,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -9190,7 +9190,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -9308,7 +9308,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -9351,7 +9351,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -9394,7 +9394,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -9437,7 +9437,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -9519,7 +9519,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -9550,7 +9550,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -9581,7 +9581,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -9612,7 +9612,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -9751,7 +9751,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -9801,7 +9801,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -9851,7 +9851,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -9859,11 +9859,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"ficha",
@@ -9901,7 +9902,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -10060,7 +10061,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -10119,7 +10120,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -10178,7 +10179,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"Message\": \"Erro\",\n    \"ExceptionMessage\": \"Descrição do erro\"\n}"
+									"body": "{\n    \"Message\": \"texto\",\n    \"ExceptionMessage\": \"texto\"\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -10237,7 +10238,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -10370,7 +10371,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -10418,7 +10419,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -10466,7 +10467,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -10514,7 +10515,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -10623,7 +10624,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -10663,7 +10664,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -10703,7 +10704,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -10743,7 +10744,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -10854,7 +10855,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -10893,7 +10894,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -10932,7 +10933,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -10971,7 +10972,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -11082,7 +11083,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -11121,7 +11122,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -11160,7 +11161,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -11199,7 +11200,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -11335,7 +11336,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -11384,7 +11385,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -11433,7 +11434,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -11482,7 +11483,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -11604,7 +11605,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -11647,7 +11648,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -11690,7 +11691,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -11733,7 +11734,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"Message\": \"Erro\",\n    \"ExceptionMessage\": \"Descrição do erro\"\n}"
+									"body": "{\n    \"Message\": \"texto\",\n    \"ExceptionMessage\": \"texto\"\n}"
 								}
 							]
 						}
@@ -11817,7 +11818,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -11847,7 +11848,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -11877,7 +11878,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -11907,7 +11908,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -12013,7 +12014,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -12052,7 +12053,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -12091,7 +12092,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -12130,7 +12131,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -12236,7 +12237,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -12275,7 +12276,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -12314,7 +12315,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -12353,7 +12354,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -12489,7 +12490,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -12538,7 +12539,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -12587,7 +12588,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -12636,7 +12637,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
@@ -12747,7 +12748,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -12786,7 +12787,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -12825,7 +12826,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -12864,7 +12865,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						},
@@ -13000,7 +13001,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "403 Forbidden",
@@ -13049,7 +13050,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -13098,7 +13099,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "500 Internal Server Error",
@@ -13147,7 +13148,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Message\": \"Erro\",\r\n    \"ExceptionMessage\": \"Descrição do erro\"\r\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								}
 							]
 						}
