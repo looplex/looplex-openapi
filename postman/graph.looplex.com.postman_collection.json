@@ -540,7 +540,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "",
+											"value": null,
 											"description": "(Required) (int) O identificador da área"
 										}
 									]
@@ -551,14 +551,7 @@
 									"name": "200 OK",
 									"originalRequest": {
 										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
+										"header": [],
 										"url": {
 											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
@@ -572,8 +565,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
+													"value": null,
+													"description": "(Required) (int) O identificador da área"
 												}
 											]
 										}
@@ -591,20 +584,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "{\r\n    \"ID\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"Ativa\": false\r\n}"
 								},
 								{
 									"name": "401 Unauthorized",
 									"originalRequest": {
 										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
+										"header": [],
 										"url": {
 											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
@@ -618,8 +604,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
+													"value": null,
+													"description": "(Required) (int) O identificador da área"
 												}
 											]
 										}
@@ -643,14 +629,7 @@
 									"name": "403 Forbidden",
 									"originalRequest": {
 										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
+										"header": [],
 										"url": {
 											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
@@ -664,14 +643,14 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
+													"value": null,
+													"description": "(Required) (int) O identificador da área"
 												}
 											]
 										}
 									},
-									"status": "Forbidden",
-									"code": 403,
+									"status": "Unauthorized",
+									"code": 401,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -689,14 +668,7 @@
 									"name": "404 Not Found",
 									"originalRequest": {
 										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
+										"header": [],
 										"url": {
 											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
@@ -710,8 +682,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
+													"value": null,
+													"description": "(Required) (int) O identificador da área"
 												}
 											]
 										}
@@ -735,14 +707,7 @@
 									"name": "500 Internal Server Error",
 									"originalRequest": {
 										"method": "GET",
-										"header": [
-											{
-												"key": "X-ContextInf",
-												"value": "",
-												"description": "O contexto da requisição",
-												"type": "text"
-											}
-										],
+										"header": [],
 										"url": {
 											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
@@ -756,8 +721,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "",
-													"description": "(int) O identificador da área (Required)"
+													"value": null,
+													"description": "(Required) (int) O identificador da área"
 												}
 											]
 										}
