@@ -821,7 +821,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"ID\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"Ativa\": false\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -1083,7 +1083,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"ID\": 0,\r\n        \"Pais\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -1294,7 +1294,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"ID\": \"texto\",\r\n        \"UF\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -1523,7 +1523,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"response\": \"200\"\n}"
+									"body": "[\n    {\n        \"ID\": -32768,\n        \"IDUF\": -32768,\n        \"Cidade\": \"texto\"\n    }\n]"
 								},
 								{
 									"name": "401 Unauthorized",
