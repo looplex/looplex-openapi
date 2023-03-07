@@ -1755,7 +1755,7 @@
 										{
 											"key": "filtro",
 											"value": "",
-											"description": "(Required) (enum) 1: Todos | 2: Finalizados | 3: Em aberto"
+											"description": "(Required) (enum) Situação do item de agenda\n\n1: Todos\n2: Finalizados\n3: EmAberto"
 										}
 									]
 								}
@@ -1800,7 +1800,7 @@
 												{
 													"key": "filtro",
 													"value": null,
-													"description": "(Required) (enum) 1: Todos | 2: Finalizados | 3: Em aberto "
+													"description": "(Required) (enum) Situação do item de agenda\n\n1: Todos\n2: Finalizados\n3: EmAberto"
 												}
 											]
 										}
@@ -1818,7 +1818,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDCaso\": -2147483648,\r\n        \"IDItemAgenda\": -2147483648,\r\n        \"IDItemAgendaPai\": -2147483648,\r\n        \"IDFuncionarioCriador\": -2147483648,\r\n        \"Tipo\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTitulocobranca\": -2147483648,\r\n        \"Data\": \"2022-01-01T00:00:00\",\r\n        \"Lembrete\": \"00:00:00\",\r\n        \"DataLimite\": \"2022-01-01T00:00:00\",\r\n        \"FuncionarioExecutor\": -2147483648,\r\n        \"FuncionarioResponsavel\": -2147483648,\r\n        \"FuncionariosParticipantes\": [\r\n            1\r\n        ],\r\n        \"Observacao\": \"texto\",\r\n        \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n        \"ObservacaoRegistroRealizacao\": \"texto\",\r\n        \"Situacao\": -2147483648,\r\n        \"DataFormatada\": \"texto\",\r\n        \"DataLimiteFormatada\": \"texto\",\r\n        \"IDForo\": -2147483648,\r\n        \"Local\": \"texto\",\r\n        \"NomeFuncionarioExecutor\": \"texto\",\r\n        \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"DataCriacaoFormatada\": \"texto\",\r\n        \"DataRealizacaoFormatada\": \"texto\",\r\n        \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n        \"SituacaoLembrete\": -2147483648,\r\n        \"IsEditable\": false,\r\n        \"Concluido\": false,\r\n        \"StatusEncerramentoItemAgenda\": \"texto\",\r\n        \"NomeClienteFormatado\": \"texto\",\r\n        \"AreaFormatada\": \"texto\",\r\n        \"TituloCasoFormatado\": \"texto\",\r\n        \"NumeroDoCaso\": -2147483648,\r\n        \"TituloCaso\": \"texto\",\r\n        \"NumeroExternoCaso\": \"texto\",\r\n        \"Cliente\": \"texto\",\r\n        \"Executor\": \"texto\",\r\n        \"NumeroPasta\": -2147483648,\r\n        \"Assunto\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"Rito\": \"texto\",\r\n        \"Vencido\": \"texto\",\r\n        \"SituacaoString\": \"texto\",\r\n        \"PoloAtivo\": \"texto\",\r\n        \"PoloPassivo\": \"texto\",\r\n        \"Classificacao\": \"texto\",\r\n        \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n        \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n        \"ExecutionID\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -2083,7 +2083,7 @@
 										{
 											"key": "tipo",
 											"value": null,
-											"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+											"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
 										}
 									]
 								}
@@ -2114,7 +2114,7 @@
 												{
 													"key": "tipo",
 													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2: Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso particular. 10: Compromisso. 11: Publicação."
+													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
 												}
 											]
 										}
@@ -2132,7 +2132,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -2386,7 +2386,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDCompromisso\": -2147483648,\r\n        \"IDPrazo\": -2147483648,\r\n        \"IDArea\": -2147483648,\r\n        \"IDDelegante\": -2147483648,\r\n        \"IDExecutor\": -2147483648,\r\n        \"IDResponsavelCaso\": -2147483648,\r\n        \"NumeroPasta\": -2147483648,\r\n        \"Data\": \"2022-01-01T00:00:00\",\r\n        \"HoraInicial\": \"2022-01-01T00:00:00\",\r\n        \"DataFinal\": \"2022-01-01T00:00:00\",\r\n        \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"Concluido\": false,\r\n        \"TipoItemAgenda\": -2147483648,\r\n        \"Assunto\": \"texto\",\r\n        \"Descricao\": \"texto\",\r\n        \"IDProcesso\": -2147483648,\r\n        \"TipoProcesso\": -2147483648,\r\n        \"NumeroDoCaso\": -2147483648,\r\n        \"TituloCaso\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"NumeroExternoCaso\": \"texto\",\r\n        \"Rito\": \"texto\",\r\n        \"Vencido\": \"texto\",\r\n        \"Cliente\": \"texto\",\r\n        \"Executor\": \"texto\",\r\n        \"Situacao\": -2147483648,\r\n        \"SituacaoString\": \"texto\",\r\n        \"PoloAtivo\": \"texto\",\r\n        \"PoloPassivo\": \"texto\",\r\n        \"Classificacao\": \"texto\",\r\n        \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n        \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n        \"IsEditable\": false\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -2569,7 +2569,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"Nome\": \"\",\r\n        \"Valor\": \"\"\r\n    }\r\n]",
+									"raw": "[\r\n    {\r\n        \"Nome\": \"texto\",\r\n        \"Valor\": \"texto\"\r\n    }\r\n]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2595,7 +2595,7 @@
 										{
 											"key": "Tipo",
 											"value": null,
-											"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+											"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
 										}
 									]
 								}
@@ -2634,7 +2634,7 @@
 												{
 													"key": "Tipo",
 													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna.\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicação"
+													"description": "(Required) (int) O tipo do item de agenda. \n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
 												}
 											]
 										}
@@ -2652,7 +2652,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -2916,7 +2916,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "1"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -3130,7 +3130,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDCaso\": -2147483648,\r\n        \"IDItemAgenda\": -2147483648,\r\n        \"IDItemAgendaPai\": -2147483648,\r\n        \"IDFuncionarioCriador\": -2147483648,\r\n        \"Tipo\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTitulocobranca\": -2147483648,\r\n        \"Data\": \"2022-01-01T00:00:00\",\r\n        \"Lembrete\": \"00:00:00\",\r\n        \"DataLimite\": \"2022-01-01T00:00:00\",\r\n        \"FuncionarioExecutor\": -2147483648,\r\n        \"FuncionarioResponsavel\": -2147483648,\r\n        \"FuncionariosParticipantes\": [\r\n            1\r\n        ],\r\n        \"Observacao\": \"texto\",\r\n        \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n        \"ObservacaoRegistroRealizacao\": \"texto\",\r\n        \"Situacao\": -2147483648,\r\n        \"DataFormatada\": \"texto\",\r\n        \"DataLimiteFormatada\": \"texto\",\r\n        \"IDForo\": -2147483648,\r\n        \"Local\": \"texto\",\r\n        \"NomeFuncionarioExecutor\": \"texto\",\r\n        \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"DataCriacaoFormatada\": \"texto\",\r\n        \"DataRealizacaoFormatada\": \"texto\",\r\n        \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n        \"SituacaoLembrete\": -2147483648,\r\n        \"IsEditable\": false,\r\n        \"Concluido\": false,\r\n        \"StatusEncerramentoItemAgenda\": \"texto\",\r\n        \"NomeClienteFormatado\": \"texto\",\r\n        \"AreaFormatada\": \"texto\",\r\n        \"TituloCasoFormatado\": \"texto\",\r\n        \"NumeroDoCaso\": -2147483648,\r\n        \"TituloCaso\": \"texto\",\r\n        \"NumeroExternoCaso\": \"texto\",\r\n        \"Cliente\": \"texto\",\r\n        \"Executor\": \"texto\",\r\n        \"NumeroPasta\": -2147483648,\r\n        \"Assunto\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"Rito\": \"texto\",\r\n        \"Vencido\": \"texto\",\r\n        \"SituacaoString\": \"texto\",\r\n        \"PoloAtivo\": \"texto\",\r\n        \"PoloPassivo\": \"texto\",\r\n        \"Classificacao\": \"texto\",\r\n        \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n        \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n        \"ExecutionID\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -3410,7 +3410,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDCaso\": -2147483648,\r\n        \"IDItemAgenda\": -2147483648,\r\n        \"IDItemAgendaPai\": -2147483648,\r\n        \"IDFuncionarioCriador\": -2147483648,\r\n        \"Tipo\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTitulocobranca\": -2147483648,\r\n        \"Data\": \"2022-01-01T00:00:00\",\r\n        \"Lembrete\": \"00:00:00\",\r\n        \"DataLimite\": \"2022-01-01T00:00:00\",\r\n        \"FuncionarioExecutor\": -2147483648,\r\n        \"FuncionarioResponsavel\": -2147483648,\r\n        \"FuncionariosParticipantes\": [\r\n            1\r\n        ],\r\n        \"Observacao\": \"texto\",\r\n        \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n        \"ObservacaoRegistroRealizacao\": \"texto\",\r\n        \"Situacao\": -2147483648,\r\n        \"DataFormatada\": \"texto\",\r\n        \"DataLimiteFormatada\": \"texto\",\r\n        \"IDForo\": -2147483648,\r\n        \"Local\": \"texto\",\r\n        \"NomeFuncionarioExecutor\": \"texto\",\r\n        \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"DataCriacaoFormatada\": \"texto\",\r\n        \"DataRealizacaoFormatada\": \"texto\",\r\n        \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n        \"SituacaoLembrete\": -2147483648,\r\n        \"IsEditable\": false,\r\n        \"Concluido\": false,\r\n        \"StatusEncerramentoItemAgenda\": \"texto\",\r\n        \"NomeClienteFormatado\": \"texto\",\r\n        \"AreaFormatada\": \"texto\",\r\n        \"TituloCasoFormatado\": \"texto\",\r\n        \"NumeroDoCaso\": -2147483648,\r\n        \"TituloCaso\": \"texto\",\r\n        \"NumeroExternoCaso\": \"texto\",\r\n        \"Cliente\": \"texto\",\r\n        \"Executor\": \"texto\",\r\n        \"NumeroPasta\": -2147483648,\r\n        \"Assunto\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"Rito\": \"texto\",\r\n        \"Vencido\": \"texto\",\r\n        \"SituacaoString\": \"texto\",\r\n        \"PoloAtivo\": \"texto\",\r\n        \"PoloPassivo\": \"texto\",\r\n        \"Classificacao\": \"texto\",\r\n        \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n        \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n        \"ExecutionID\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -3704,7 +3704,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDCaso\": -2147483648,\r\n        \"IDItemAgenda\": -2147483648,\r\n        \"IDItemAgendaPai\": -2147483648,\r\n        \"IDFuncionarioCriador\": -2147483648,\r\n        \"Tipo\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTitulocobranca\": -2147483648,\r\n        \"Data\": \"2022-01-01T00:00:00\",\r\n        \"Lembrete\": \"00:00:00\",\r\n        \"DataLimite\": \"2022-01-01T00:00:00\",\r\n        \"FuncionarioExecutor\": -2147483648,\r\n        \"FuncionarioResponsavel\": -2147483648,\r\n        \"FuncionariosParticipantes\": [\r\n            1\r\n        ],\r\n        \"Observacao\": \"texto\",\r\n        \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n        \"ObservacaoRegistroRealizacao\": \"texto\",\r\n        \"Situacao\": -2147483648,\r\n        \"DataFormatada\": \"texto\",\r\n        \"DataLimiteFormatada\": \"texto\",\r\n        \"IDForo\": -2147483648,\r\n        \"Local\": \"texto\",\r\n        \"NomeFuncionarioExecutor\": \"texto\",\r\n        \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n        \"DataCriacaoFormatada\": \"texto\",\r\n        \"DataRealizacaoFormatada\": \"texto\",\r\n        \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n        \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n        \"SituacaoLembrete\": -2147483648,\r\n        \"IsEditable\": false,\r\n        \"Concluido\": false,\r\n        \"StatusEncerramentoItemAgenda\": \"texto\",\r\n        \"NomeClienteFormatado\": \"texto\",\r\n        \"AreaFormatada\": \"texto\",\r\n        \"TituloCasoFormatado\": \"texto\",\r\n        \"NumeroDoCaso\": -2147483648,\r\n        \"TituloCaso\": \"texto\",\r\n        \"NumeroExternoCaso\": \"texto\",\r\n        \"Cliente\": \"texto\",\r\n        \"Executor\": \"texto\",\r\n        \"NumeroPasta\": -2147483648,\r\n        \"Assunto\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"Rito\": \"texto\",\r\n        \"Vencido\": \"texto\",\r\n        \"SituacaoString\": \"texto\",\r\n        \"PoloAtivo\": \"texto\",\r\n        \"PoloPassivo\": \"texto\",\r\n        \"Classificacao\": \"texto\",\r\n        \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n        \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n        \"ExecutionID\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -4000,7 +4000,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -4228,7 +4228,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "{\r\n    \"IDCaso\": -2147483648,\r\n    \"IDItemAgenda\": -2147483648,\r\n    \"IDItemAgendaPai\": -2147483648,\r\n    \"IDFuncionarioCriador\": -2147483648,\r\n    \"Tipo\": -2147483648,\r\n    \"Titulo\": \"texto\",\r\n    \"IDTitulocobranca\": -2147483648,\r\n    \"Data\": \"2022-01-01T00:00:00\",\r\n    \"Lembrete\": \"00:00:00\",\r\n    \"DataLimite\": \"2022-01-01T00:00:00\",\r\n    \"FuncionarioExecutor\": -2147483648,\r\n    \"FuncionarioResponsavel\": -2147483648,\r\n    \"FuncionariosParticipantes\": [\r\n        1\r\n    ],\r\n    \"Observacao\": \"texto\",\r\n    \"DataRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"IDStatusEncerramentoItemAgenda\": -2147483648,\r\n    \"ObservacaoRegistroRealizacao\": \"texto\",\r\n    \"Situacao\": -2147483648,\r\n    \"DataFormatada\": \"texto\",\r\n    \"DataLimiteFormatada\": \"texto\",\r\n    \"IDForo\": -2147483648,\r\n    \"Local\": \"texto\",\r\n    \"NomeFuncionarioExecutor\": \"texto\",\r\n    \"DataCriacao\": \"2022-01-01T00:00:00\",\r\n    \"DataCriacaoFormatada\": \"texto\",\r\n    \"DataRealizacaoFormatada\": \"texto\",\r\n    \"DataRegistroRealizacao\": \"2022-01-01T00:00:00\",\r\n    \"DataRegistroRealizacaoFormatada\": \"texto\",\r\n    \"SituacaoLembrete\": -2147483648,\r\n    \"IsEditable\": false,\r\n    \"Concluido\": false,\r\n    \"StatusEncerramentoItemAgenda\": \"texto\",\r\n    \"NomeClienteFormatado\": \"texto\",\r\n    \"AreaFormatada\": \"texto\",\r\n    \"TituloCasoFormatado\": \"texto\",\r\n    \"NumeroDoCaso\": -2147483648,\r\n    \"TituloCaso\": \"texto\",\r\n    \"NumeroExternoCaso\": \"texto\",\r\n    \"Cliente\": \"texto\",\r\n    \"Executor\": \"texto\",\r\n    \"NumeroPasta\": -2147483648,\r\n    \"Assunto\": \"texto\",\r\n    \"NumeroInterno\": \"texto\",\r\n    \"Rito\": \"texto\",\r\n    \"Vencido\": \"texto\",\r\n    \"SituacaoString\": \"texto\",\r\n    \"PoloAtivo\": \"texto\",\r\n    \"PoloPassivo\": \"texto\",\r\n    \"Classificacao\": \"texto\",\r\n    \"CampoDataConclusaoItemDeAgendaBloqueado\": false,\r\n    \"EditarApenasCampoObservacoesItemDeAgenda\": false,\r\n    \"ExecutionID\": \"texto\"\r\n}"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -4440,7 +4440,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDFuncionario\": -2147483648,\r\n        \"Nome\": \"texto\",\r\n        \"Apelido\": \"texto\",\r\n        \"Logradouro\": \"texto\",\r\n        \"NumeroLogradouro\": \"texto\",\r\n        \"Bairro\": \"texto\",\r\n        \"Cidade\": \"texto\",\r\n        \"Estado\": \"texto\",\r\n        \"Complemento\": \"texto\",\r\n        \"CEP\": \"texto\",\r\n        \"Email\": \"texto\",\r\n        \"CPF\": \"texto\",\r\n        \"RG\": \"texto\",\r\n        \"DataDeNascimento\": \"2022-01-01T00:00:00\",\r\n        \"DataDeNascimentoFormatada\": \"texto\",\r\n        \"Cargo\": \"texto\",\r\n        \"DataDeAdmissao\": \"2022-01-01T00:00:00\",\r\n        \"DataDeAdmissaoFormatada\": \"texto\",\r\n        \"DataDeDemissao\": \"2022-01-01T00:00:00\",\r\n        \"DataDeDemissaoFormatada\": \"texto\",\r\n        \"Oab\": \"texto\",\r\n        \"NumeroDeDependentes\": -2147483648,\r\n        \"Admin\": false,\r\n        \"Observacoes\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -4620,7 +4620,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDFuncionario\": -2147483648,\r\n        \"Nome\": \"texto\",\r\n        \"Apelido\": \"texto\",\r\n        \"Logradouro\": \"texto\",\r\n        \"NumeroLogradouro\": \"texto\",\r\n        \"Bairro\": \"texto\",\r\n        \"Cidade\": \"texto\",\r\n        \"Estado\": \"texto\",\r\n        \"Complemento\": \"texto\",\r\n        \"CEP\": \"texto\",\r\n        \"Email\": \"texto\",\r\n        \"CPF\": \"texto\",\r\n        \"RG\": \"texto\",\r\n        \"DataDeNascimento\": \"2022-01-01T00:00:00\",\r\n        \"DataDeNascimentoFormatada\": \"texto\",\r\n        \"Cargo\": \"texto\",\r\n        \"DataDeAdmissao\": \"2022-01-01T00:00:00\",\r\n        \"DataDeAdmissaoFormatada\": \"texto\",\r\n        \"DataDeDemissao\": \"2022-01-01T00:00:00\",\r\n        \"DataDeDemissaoFormatada\": \"texto\",\r\n        \"Oab\": \"texto\",\r\n        \"NumeroDeDependentes\": -2147483648,\r\n        \"Admin\": false,\r\n        \"Observacoes\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -6170,7 +6170,7 @@
 												{
 													"key": "tipo",
 													"value": null,
-													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao"
+													"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
 												}
 											]
 										}
@@ -6188,7 +6188,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"IDEscritorio\": -2147483648,\r\n        \"TipoCobrancaEvento\": -2147483648,\r\n        \"Titulo\": \"texto\",\r\n        \"IDTituloCobranca\": -2147483648,\r\n        \"LinkEntrevistaTemplate\": \"texto\"\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
