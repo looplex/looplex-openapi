@@ -102,11 +102,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/logon",
+											"raw": "{{BASEPATH_CASES}}/api/logon",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"logon"
 											]
 										}
@@ -124,7 +125,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"Successful\": true\r\n}"
+									"body": "{\r\n    \"Successful\": true,\r\n    \"Profile\": \"string\"\r\n}"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -141,11 +142,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/logon",
+											"raw": "{{BASEPATH_CASES}}/api/logon",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"logon"
 											]
 										}
@@ -180,11 +182,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/logon",
+											"raw": "{{BASEPATH_CASES}}/api/logon",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"logon"
 											]
 										}
@@ -219,11 +222,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/logon",
+											"raw": "{{BASEPATH_CASES}}/api/logon",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"logon"
 											]
 										}
@@ -258,11 +262,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/logon",
+											"raw": "{{BASEPATH_CASES}}/api/logon",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"logon"
 											]
 										}
@@ -327,11 +332,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas/:id",
+											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas",
 												":id"
 											],
@@ -372,11 +378,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas/:id",
+											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas",
 												":id"
 											],
@@ -417,11 +424,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas/:id",
+											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas",
 												":id"
 											],
@@ -462,11 +470,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas/:id",
+											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas",
 												":id"
 											],
@@ -507,11 +516,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas/:id",
+											"raw": "{{BASEPATH_CASES}}/api/areas/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas",
 												":id"
 											],
@@ -583,11 +593,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas?ativos=true&inativos=false",
+											"raw": "{{BASEPATH_CASES}}/api/areas?ativos=true&inativos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas"
 											],
 											"query": [
@@ -632,11 +643,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas?ativos=true&inativos=false",
+											"raw": "{{BASEPATH_CASES}}/api/areas?ativos=true&inativos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas"
 											],
 											"query": [
@@ -681,11 +693,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas?ativos=true&inativos=false",
+											"raw": "{{BASEPATH_CASES}}/api/areas?ativos=true&inativos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas"
 											],
 											"query": [
@@ -730,11 +743,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas?ativos=true&inativos=false",
+											"raw": "{{BASEPATH_CASES}}/api/areas?ativos=true&inativos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas"
 											],
 											"query": [
@@ -779,11 +793,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/areas?ativos=true&inativos=false",
+											"raw": "{{BASEPATH_CASES}}/api/areas?ativos=true&inativos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"areas"
 											],
 											"query": [
@@ -852,11 +867,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais",
+											"raw": "{{BASEPATH_CASES}}/api/pais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais"
 											]
 										}
@@ -889,11 +905,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais",
+											"raw": "{{BASEPATH_CASES}}/api/pais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais"
 											]
 										}
@@ -926,11 +943,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais",
+											"raw": "{{BASEPATH_CASES}}/api/pais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais"
 											]
 										}
@@ -963,11 +981,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais",
+											"raw": "{{BASEPATH_CASES}}/api/pais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais"
 											]
 										}
@@ -1000,11 +1019,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais",
+											"raw": "{{BASEPATH_CASES}}/api/pais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais"
 											]
 										}
@@ -1057,11 +1077,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"uf"
 											]
@@ -1095,11 +1116,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"uf"
 											]
@@ -1133,11 +1155,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"uf"
 											]
@@ -1171,11 +1194,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"uf"
 											]
@@ -1209,11 +1233,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"uf"
 											]
@@ -1274,11 +1299,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/cidades?uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/cidades?uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"cidades"
 											],
@@ -1319,11 +1345,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/cidades?uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/cidades?uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"cidades"
 											],
@@ -1364,11 +1391,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/cidades?uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/cidades?uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"cidades"
 											],
@@ -1409,11 +1437,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/cidades?uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/cidades?uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"cidades"
 											],
@@ -1454,11 +1483,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/pais/cidades?uf",
+											"raw": "{{BASEPATH_CASES}}/api/pais/cidades?uf",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"pais",
 												"cidades"
 											],
@@ -1544,11 +1574,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"tarefas",
 												":cdProcesso",
@@ -1602,11 +1633,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"tarefas",
 												":cdProcesso",
@@ -1660,11 +1692,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"tarefas",
 												":cdProcesso",
@@ -1718,11 +1751,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"tarefas",
 												":cdProcesso",
@@ -1776,11 +1810,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/tarefas/:cdProcesso/:ignoraIdFuncionario/:filtro?numeroDeRecorrencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"tarefas",
 												":cdProcesso",
@@ -1867,11 +1902,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/:id/:tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/:id/:tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												":id",
 												":tipo"
@@ -1911,11 +1947,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/:id/:tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/:id/:tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												":id",
 												":tipo"
@@ -1955,11 +1992,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/:id/:tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/:id/:tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												":id",
 												":tipo"
@@ -1999,11 +2037,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/:id/:tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/:id/:tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												":id",
 												":tipo"
@@ -2043,11 +2082,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/:id/:tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/:id/:tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												":id",
 												":tipo"
@@ -2118,11 +2158,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/compromissos?idsFuncionarios&data",
+											"raw": "{{BASEPATH_CASES}}/api/compromissos?idsFuncionarios&data",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"compromissos"
 											],
 											"query": [
@@ -2160,11 +2201,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/compromissos?idsFuncionarios&data",
+											"raw": "{{BASEPATH_CASES}}/api/compromissos?idsFuncionarios&data",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"compromissos"
 											],
 											"query": [
@@ -2202,11 +2244,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/compromissos?idsFuncionarios&data",
+											"raw": "{{BASEPATH_CASES}}/api/compromissos?idsFuncionarios&data",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"compromissos"
 											],
 											"query": [
@@ -2244,11 +2287,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/compromissos?idsFuncionarios&data",
+											"raw": "{{BASEPATH_CASES}}/api/compromissos?idsFuncionarios&data",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"compromissos"
 											],
 											"query": [
@@ -2286,11 +2330,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/compromissos?idsFuncionarios&data",
+											"raw": "{{BASEPATH_CASES}}/api/compromissos?idsFuncionarios&data",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"compromissos"
 											],
 											"query": [
@@ -2378,11 +2423,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/edit?IDItemAgenda&Tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"edit"
 											],
@@ -2430,11 +2476,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/edit?IDItemAgenda&Tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"edit"
 											],
@@ -2482,11 +2529,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/edit?IDItemAgenda&Tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"edit"
 											],
@@ -2534,11 +2582,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/edit?IDItemAgenda&Tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"edit"
 											],
@@ -2586,11 +2635,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/edit?IDItemAgenda&Tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/edit?IDItemAgenda&Tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"edit"
 											],
@@ -2649,11 +2699,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/totaleventos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/totaleventos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"totaleventos"
 											]
@@ -2680,11 +2731,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/totaleventos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/totaleventos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"totaleventos"
 											]
@@ -2711,11 +2763,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/totaleventos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/totaleventos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"totaleventos"
 											]
@@ -2742,11 +2795,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/totaleventos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/totaleventos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"totaleventos"
 											]
@@ -2773,11 +2827,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/totaleventos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/totaleventos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"totaleventos"
 											]
@@ -2841,11 +2896,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"proximoslancamentos"
 											],
@@ -2889,11 +2945,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"proximoslancamentos"
 											],
@@ -2937,11 +2994,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"proximoslancamentos"
 											],
@@ -2985,11 +3043,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"proximoslancamentos"
 											],
@@ -3033,11 +3092,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/proximoslancamentos?data&quantidadeEventosARetornar&idCaso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"proximoslancamentos"
 											],
@@ -3117,11 +3177,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											],
 											"query": [
@@ -3164,11 +3225,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											],
 											"query": [
@@ -3211,11 +3273,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											],
 											"query": [
@@ -3258,11 +3321,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											],
 											"query": [
@@ -3305,11 +3369,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											],
 											"query": [
@@ -3397,11 +3462,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"agenda"
@@ -3453,11 +3519,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"agenda"
@@ -3509,11 +3576,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"agenda"
@@ -3565,11 +3633,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"agenda"
@@ -3621,11 +3690,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/agenda?ano&mes&dia",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/agenda?ano&mes&dia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"agenda"
@@ -3714,11 +3784,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -3753,11 +3824,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -3792,11 +3864,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -3831,11 +3904,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -3870,11 +3944,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -3937,11 +4012,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -3976,11 +4052,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -4015,11 +4092,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -4054,11 +4132,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -4093,11 +4172,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda",
+											"raw": "{{BASEPATH_CASES}}/api/agenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda"
 											]
 										}
@@ -4143,11 +4223,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/executores",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/executores",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"executores"
 											]
@@ -4174,11 +4255,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/executores",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/executores",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"executores"
 											]
@@ -4205,11 +4287,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/executores",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/executores",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"executores"
 											]
@@ -4236,11 +4319,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/executores",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/executores",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"executores"
 											]
@@ -4267,11 +4351,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/executores",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/executores",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"executores"
 											]
@@ -4318,11 +4403,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/participantes",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/participantes",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"participantes"
 											]
@@ -4349,11 +4435,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/participantes",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/participantes",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"participantes"
 											]
@@ -4380,11 +4467,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/participantes",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/participantes",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"participantes"
 											]
@@ -4411,11 +4499,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/participantes",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/participantes",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"participantes"
 											]
@@ -4442,11 +4531,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/participantes",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/participantes",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"participantes"
 											]
@@ -4501,11 +4591,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/audiencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/audiencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"audiencias"
@@ -4540,11 +4631,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/audiencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/audiencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"audiencias"
@@ -4579,11 +4671,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/audiencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/audiencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"audiencias"
@@ -4618,11 +4711,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/audiencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/audiencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"audiencias"
@@ -4657,11 +4751,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/audiencias",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/audiencias",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"audiencias"
@@ -4734,11 +4829,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"audiencias"
@@ -4783,11 +4879,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"audiencias"
@@ -4832,11 +4929,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"audiencias"
@@ -4881,11 +4979,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"audiencias"
@@ -4930,11 +5029,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/audiencias?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"audiencias"
@@ -5007,11 +5107,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/tabagenda",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/tabagenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"tabagenda"
@@ -5046,11 +5147,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/tabagenda",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/tabagenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"tabagenda"
@@ -5085,11 +5187,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/tabagenda",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/tabagenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"tabagenda"
@@ -5124,11 +5227,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/tabagenda",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/tabagenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"tabagenda"
@@ -5163,11 +5267,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/tabagenda",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/tabagenda",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"tabagenda"
@@ -5240,11 +5345,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"tabagenda"
@@ -5289,11 +5395,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"tabagenda"
@@ -5338,11 +5445,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"tabagenda"
@@ -5387,11 +5495,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"tabagenda"
@@ -5436,11 +5545,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/tabagenda?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"tabagenda"
@@ -5532,11 +5642,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"status_encerramento"
 											],
@@ -5590,11 +5701,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"status_encerramento"
 											],
@@ -5648,11 +5760,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"status_encerramento"
 											],
@@ -5706,11 +5819,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"status_encerramento"
 											],
@@ -5764,11 +5878,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/status_encerramento?inCompromisso&inPrazo&inAtividadeExterna&inPublicacao&inAudiencia",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"status_encerramento"
 											],
@@ -5849,11 +5964,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/titulos?tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos?tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											],
@@ -5887,11 +6003,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/titulos?tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos?tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											],
@@ -5925,11 +6042,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/titulos?tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos?tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											],
@@ -5963,11 +6081,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/titulos?tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos?tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											],
@@ -6001,11 +6120,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/agenda/titulos?tipo",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos?tipo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											],
@@ -6077,11 +6197,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6117,11 +6238,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6157,11 +6279,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6197,11 +6320,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6237,11 +6361,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6306,11 +6431,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6346,11 +6472,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6386,11 +6513,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6426,11 +6554,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6466,11 +6595,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/agenda/titulos",
+											"raw": "{{BASEPATH_CASES}}/api/agenda/titulos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"agenda",
 												"titulos"
 											]
@@ -6530,11 +6660,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/produtos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/produtos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"produtos"
@@ -6569,11 +6700,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/produtos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/produtos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"produtos"
@@ -6608,11 +6740,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/produtos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/produtos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"produtos"
@@ -6647,11 +6780,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/produtos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/produtos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"produtos"
@@ -6686,11 +6820,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/produtos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/produtos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"produtos"
@@ -6812,11 +6947,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"produtos"
@@ -6861,11 +6997,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"produtos"
@@ -6910,11 +7047,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"produtos"
@@ -6959,11 +7097,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/produtos?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"produtos"
@@ -7041,11 +7180,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id/ficha",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id/ficha",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id",
 												"ficha"
@@ -7080,11 +7220,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id/ficha",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id/ficha",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id",
 												"ficha"
@@ -7119,11 +7260,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id/ficha",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id/ficha",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id",
 												"ficha"
@@ -7158,11 +7300,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id/ficha",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id/ficha",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id",
 												"ficha"
@@ -7197,11 +7340,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id/ficha",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id/ficha",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id",
 												"ficha"
@@ -7263,11 +7407,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id"
 											],
@@ -7301,11 +7446,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id"
 											],
@@ -7339,11 +7485,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id"
 											],
@@ -7377,11 +7524,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id"
 											],
@@ -7415,11 +7563,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:id",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:id",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":id"
 											],
@@ -7503,11 +7652,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"casos"
@@ -7564,11 +7714,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"casos"
@@ -7625,11 +7776,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"casos"
@@ -7686,11 +7838,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"casos"
@@ -7747,11 +7900,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/casos?ativos&inativos&apenasMeusCasos&apenasCasosPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"casos"
@@ -7837,11 +7991,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/subcasos/:cdProcessoPai",
+											"raw": "{{BASEPATH_CASES}}/api/casos/subcasos/:cdProcessoPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"subcasos",
 												":cdProcessoPai"
@@ -7876,11 +8031,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/subcasos/:cdProcessoPai",
+											"raw": "{{BASEPATH_CASES}}/api/casos/subcasos/:cdProcessoPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"subcasos",
 												":cdProcessoPai"
@@ -7954,11 +8110,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/subcasos/:cdProcessoPai",
+											"raw": "{{BASEPATH_CASES}}/api/casos/subcasos/:cdProcessoPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"subcasos",
 												":cdProcessoPai"
@@ -7993,11 +8150,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/subcasos/:cdProcessoPai",
+											"raw": "{{BASEPATH_CASES}}/api/casos/subcasos/:cdProcessoPai",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"subcasos",
 												":cdProcessoPai"
@@ -8061,11 +8219,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/porIds/:ids",
+											"raw": "{{BASEPATH_CASES}}/api/casos/porIds/:ids",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"porIds",
 												":ids"
@@ -8100,11 +8259,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/porIds/:ids",
+											"raw": "{{BASEPATH_CASES}}/api/casos/porIds/:ids",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"porIds",
 												":ids"
@@ -8139,11 +8299,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/porIds/:ids",
+											"raw": "{{BASEPATH_CASES}}/api/casos/porIds/:ids",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"porIds",
 												":ids"
@@ -8178,11 +8339,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/porIds/:ids",
+											"raw": "{{BASEPATH_CASES}}/api/casos/porIds/:ids",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"porIds",
 												":ids"
@@ -8217,11 +8379,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/porIds/:ids",
+											"raw": "{{BASEPATH_CASES}}/api/casos/porIds/:ids",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"porIds",
 												":ids"
@@ -8285,11 +8448,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/meuscasos/:cdResponsavel",
+											"raw": "{{BASEPATH_CASES}}/api/casos/meuscasos/:cdResponsavel",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"meuscasos",
 												":cdResponsavel"
@@ -8324,11 +8488,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/meuscasos/:cdResponsavel",
+											"raw": "{{BASEPATH_CASES}}/api/casos/meuscasos/:cdResponsavel",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"meuscasos",
 												":cdResponsavel"
@@ -8363,11 +8528,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/meuscasos/:cdResponsavel",
+											"raw": "{{BASEPATH_CASES}}/api/casos/meuscasos/:cdResponsavel",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"meuscasos",
 												":cdResponsavel"
@@ -8402,11 +8568,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/meuscasos/:cdResponsavel",
+											"raw": "{{BASEPATH_CASES}}/api/casos/meuscasos/:cdResponsavel",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"meuscasos",
 												":cdResponsavel"
@@ -8441,11 +8608,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/meuscasos/:cdResponsavel",
+											"raw": "{{BASEPATH_CASES}}/api/casos/meuscasos/:cdResponsavel",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"meuscasos",
 												":cdResponsavel"
@@ -8519,11 +8687,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/num",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/num",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"num"
@@ -8551,11 +8720,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/num",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/num",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"num"
@@ -8583,11 +8753,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/num",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/num",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"num"
@@ -8615,11 +8786,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/num",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/num",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"num"
@@ -8647,11 +8819,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/num",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/num",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"num"
@@ -8717,11 +8890,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num"
 											],
@@ -8765,11 +8939,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num"
 											],
@@ -8813,11 +8988,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num"
 											],
@@ -8861,11 +9037,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num"
 											],
@@ -8909,11 +9086,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num?IdProcesso&NumeroInterno&NumeroExterno",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num"
 											],
@@ -8988,11 +9166,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos"
 											],
 											"query": [
@@ -9030,11 +9209,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos"
 											],
 											"query": [
@@ -9072,11 +9252,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos"
 											],
 											"query": [
@@ -9114,11 +9295,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos"
 											],
 											"query": [
@@ -9156,11 +9338,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos"
 											],
 											"query": [
@@ -9230,11 +9413,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/listacasos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/listacasos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"listacasos"
 											],
@@ -9273,11 +9457,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/listacasos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/listacasos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"listacasos"
 											],
@@ -9316,11 +9501,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/listacasos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/listacasos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"listacasos"
 											],
@@ -9359,11 +9545,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/listacasos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/listacasos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"listacasos"
 											],
@@ -9402,11 +9589,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/listacasos?ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/listacasos?ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"listacasos"
 											],
@@ -9465,11 +9653,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/RamosJudiciais",
+											"raw": "{{BASEPATH_CASES}}/api/casos/RamosJudiciais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"RamosJudiciais"
 											]
@@ -9496,11 +9685,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/RamosJudiciais",
+											"raw": "{{BASEPATH_CASES}}/api/casos/RamosJudiciais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"RamosJudiciais"
 											]
@@ -9527,11 +9717,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/RamosJudiciais",
+											"raw": "{{BASEPATH_CASES}}/api/casos/RamosJudiciais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"RamosJudiciais"
 											]
@@ -9558,11 +9749,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/RamosJudiciais",
+											"raw": "{{BASEPATH_CASES}}/api/casos/RamosJudiciais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"RamosJudiciais"
 											]
@@ -9589,11 +9781,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/RamosJudiciais",
+											"raw": "{{BASEPATH_CASES}}/api/casos/RamosJudiciais",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"RamosJudiciais"
 											]
@@ -9659,11 +9852,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"ficha",
@@ -9709,11 +9903,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"ficha",
@@ -9759,11 +9954,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"ficha",
@@ -9809,11 +10005,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/id/ficha/num?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"id",
 												"ficha",
@@ -9958,11 +10155,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"raw": "{{BASEPATH_CASES}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"busca"
 											],
 											"query": [
@@ -10017,11 +10215,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"raw": "{{BASEPATH_CASES}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"busca"
 											],
 											"query": [
@@ -10076,11 +10275,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"raw": "{{BASEPATH_CASES}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"busca"
 											],
 											"query": [
@@ -10135,11 +10335,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"raw": "{{BASEPATH_CASES}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"busca"
 											],
 											"query": [
@@ -10194,11 +10395,12 @@
 											}
 										],
 										"url": {
-											"raw": "api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
+											"raw": "{{BASEPATH_CASES}}/api/busca?termo=Termo&ativos=true&inativos=false&apenasMeusCasos=false",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"busca"
 											],
 											"query": [
@@ -10283,11 +10485,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/busca?termo&ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/busca?termo&ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"busca"
 											],
@@ -10331,11 +10534,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/busca?termo&ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/busca?termo&ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"busca"
 											],
@@ -10379,11 +10583,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/busca?termo&ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/busca?termo&ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"busca"
 											],
@@ -10427,11 +10632,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/busca?termo&ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/busca?termo&ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"busca"
 											],
@@ -10475,11 +10681,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/busca?termo&ativos&inativos",
+											"raw": "{{BASEPATH_CASES}}/api/casos/busca?termo&ativos&inativos",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"busca"
 											],
@@ -10561,11 +10768,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/casos/inclui",
+											"raw": "{{BASEPATH_CASES}}/api/casos/inclui",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"inclui"
 											]
@@ -10601,11 +10809,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/casos/inclui",
+											"raw": "{{BASEPATH_CASES}}/api/casos/inclui",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"inclui"
 											]
@@ -10641,11 +10850,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/casos/inclui",
+											"raw": "{{BASEPATH_CASES}}/api/casos/inclui",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"inclui"
 											]
@@ -10681,11 +10891,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/casos/inclui",
+											"raw": "{{BASEPATH_CASES}}/api/casos/inclui",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"inclui"
 											]
@@ -10721,11 +10932,12 @@
 											}
 										},
 										"url": {
-											"raw": "api/casos/inclui",
+											"raw": "{{BASEPATH_CASES}}/api/casos/inclui",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"inclui"
 											]
@@ -10785,11 +10997,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/pastas",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/pastas",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"pastas"
@@ -10824,11 +11037,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/pastas",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/pastas",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"pastas"
@@ -10863,11 +11077,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/pastas",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/pastas",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"pastas"
@@ -10902,11 +11117,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/pastas",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/pastas",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"pastas"
@@ -10941,11 +11157,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/clientes/:idCliente/pastas",
+											"raw": "{{BASEPATH_CASES}}/api/clientes/:idCliente/pastas",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"clientes",
 												":idCliente",
 												"pastas"
@@ -11013,11 +11230,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/natureza",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/natureza",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"natureza"
@@ -11052,11 +11270,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/natureza",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/natureza",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"natureza"
@@ -11091,11 +11310,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/natureza",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/natureza",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"natureza"
@@ -11130,11 +11350,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/natureza",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/natureza",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"natureza"
@@ -11169,11 +11390,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/natureza",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/natureza",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"natureza"
@@ -11246,11 +11468,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"natureza"
@@ -11295,11 +11518,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"natureza"
@@ -11344,11 +11568,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"natureza"
@@ -11393,11 +11618,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"natureza"
@@ -11442,11 +11668,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/natureza?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"natureza"
@@ -11527,11 +11754,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/timesheet/?idsFuncionarios&dataInicial",
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/?idsFuncionarios&dataInicial",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"timesheet",
 												""
 											],
@@ -11570,11 +11798,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/timesheet/?idsFuncionarios&dataInicial",
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/?idsFuncionarios&dataInicial",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"timesheet",
 												""
 											],
@@ -11613,11 +11842,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/timesheet/?idsFuncionarios&dataInicial",
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/?idsFuncionarios&dataInicial",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"timesheet",
 												""
 											],
@@ -11656,11 +11886,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/timesheet/?idsFuncionarios&dataInicial",
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/?idsFuncionarios&dataInicial",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"timesheet",
 												""
 											],
@@ -11699,11 +11930,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/timesheet/?idsFuncionarios&dataInicial",
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/?idsFuncionarios&dataInicial",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"timesheet",
 												""
 											],
@@ -11766,11 +11998,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/fase",
+											"raw": "{{BASEPATH_CASES}}/api/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"fase"
 											]
 										}
@@ -11796,11 +12029,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/fase",
+											"raw": "{{BASEPATH_CASES}}/api/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"fase"
 											]
 										}
@@ -11826,11 +12060,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/fase",
+											"raw": "{{BASEPATH_CASES}}/api/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"fase"
 											]
 										}
@@ -11856,11 +12091,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/fase",
+											"raw": "{{BASEPATH_CASES}}/api/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"fase"
 											]
 										}
@@ -11886,11 +12122,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/fase",
+											"raw": "{{BASEPATH_CASES}}/api/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"fase"
 											]
 										}
@@ -11944,11 +12181,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/fase/:nrGrupo",
+											"raw": "{{BASEPATH_CASES}}/api/casos/fase/:nrGrupo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"fase",
 												":nrGrupo"
@@ -11983,11 +12221,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/fase/:nrGrupo",
+											"raw": "{{BASEPATH_CASES}}/api/casos/fase/:nrGrupo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"fase",
 												":nrGrupo"
@@ -12022,11 +12261,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/fase/:nrGrupo",
+											"raw": "{{BASEPATH_CASES}}/api/casos/fase/:nrGrupo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"fase",
 												":nrGrupo"
@@ -12061,11 +12301,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/fase/:nrGrupo",
+											"raw": "{{BASEPATH_CASES}}/api/casos/fase/:nrGrupo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"fase",
 												":nrGrupo"
@@ -12100,11 +12341,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/fase/:nrGrupo",
+											"raw": "{{BASEPATH_CASES}}/api/casos/fase/:nrGrupo",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"fase",
 												":nrGrupo"
@@ -12167,11 +12409,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:nrSequencia/fase",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:nrSequencia/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":nrSequencia",
 												"fase"
@@ -12206,11 +12449,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:nrSequencia/fase",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:nrSequencia/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":nrSequencia",
 												"fase"
@@ -12245,11 +12489,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:nrSequencia/fase",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:nrSequencia/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":nrSequencia",
 												"fase"
@@ -12284,11 +12529,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:nrSequencia/fase",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:nrSequencia/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":nrSequencia",
 												"fase"
@@ -12323,11 +12569,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:nrSequencia/fase",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:nrSequencia/fase",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":nrSequencia",
 												"fase"
@@ -12400,11 +12647,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"fase"
@@ -12449,11 +12697,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"fase"
@@ -12498,11 +12747,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"fase"
@@ -12547,11 +12797,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"fase"
@@ -12596,11 +12847,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/fase?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"fase"
@@ -12678,11 +12930,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/valoresapurados",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/valoresapurados",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"valoresapurados"
@@ -12717,11 +12970,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/valoresapurados",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/valoresapurados",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"valoresapurados"
@@ -12756,11 +13010,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/valoresapurados",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/valoresapurados",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"valoresapurados"
@@ -12795,11 +13050,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/valoresapurados",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/valoresapurados",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"valoresapurados"
@@ -12834,11 +13090,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/:idCaso/valoresapurados",
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/valoresapurados",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												":idCaso",
 												"valoresapurados"
@@ -12911,11 +13168,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"valoresapurados"
@@ -12960,11 +13218,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"valoresapurados"
@@ -13009,11 +13268,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"valoresapurados"
@@ -13058,11 +13318,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"valoresapurados"
@@ -13107,11 +13368,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/valoresapurados?NumeroInterno&NumeroExterno&IdProcesso",
 											"host": [
-												"api"
+												"{{BASEPATH_CASES}}"
 											],
 											"path": [
+												"api",
 												"casos",
 												"num",
 												"valoresapurados"
