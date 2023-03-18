@@ -57,6 +57,7 @@
 											"\r",
 											"if (pm.response.code == 200) {\r",
 											"    pm.collectionVariables.set('Profile', response.Profile)\r",
+											"    pm.collectionVariables.set('X-ContextInf', response.Context)\r",
 											"}"
 										],
 										"type": "text/javascript"
@@ -84,7 +85,8 @@
 										"api",
 										"logon"
 									]
-								}
+								},
+								"description": "> Body \n  \n\n``` json\n{\n    // Dados de acesso\n    \"User\": {\n        \"user\": \"string\", \n        \"pwd\": \"string\", \n        \"domain\": \"string\" \n    }\n}\n\n```"
 							},
 							"response": [
 								{
@@ -205,7 +207,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"Message\": \"texto\",\n    \"ExceptionMessage\": \"texto\"\n}"
+									"body": "{\r\n    \"Message\": \"texto\",\r\n    \"ExceptionMessage\": \"texto\"\r\n}"
 								},
 								{
 									"name": "404 Not Found",
@@ -2077,12 +2079,12 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": null,
+											"value": "",
 											"description": "(Required) (int) O identificador do item de agenda"
 										},
 										{
 											"key": "tipo",
-											"value": null,
+											"value": "",
 											"description": "(Required) (int) O tipo do item de agenda.\n\n1: AtividadeExterna\n2: Prazo\n4: Audiencia\n8: CompromissoTrabalho\n9: CompromissoParticular\n10: Compromisso\n11: Publicacao\n-2147483648: None"
 										}
 									]
@@ -13618,6 +13620,7 @@
 						"exec": [
 							"pm.request.addHeader({key:'Server', value: pm.collectionVariables.get('Server') })",
 							"pm.request.addHeader({key:'Profile', value: pm.collectionVariables.get('Profile')})",
+							"pm.request.addHeader({key:'X-ContextInf', value: pm.collectionVariables.get('X-ContextInf')})",
 							""
 						]
 					}
@@ -14671,6 +14674,12 @@
 		{
 			"key": "BASEPATH_CASES",
 			"value": "https://graph.looplex.com/cases",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "BASEPATH_CASES",
+			"value": "",
 			"type": "string"
 		},
 		{
@@ -14684,6 +14693,15 @@
 		},
 		{
 			"key": "Server",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "X-ContextInf",
+			"value": ""
+		},
+		{
+			"key": "ExceptionResponse",
 			"value": "",
 			"type": "string"
 		}
