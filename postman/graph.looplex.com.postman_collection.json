@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7fdfe77e-c1f8-4e4c-8bf2-b56c5c2c5e0c",
+		"_postman_id": "528ffac4-a1f5-44fc-98e4-e13cb4f451f7",
 		"name": "graph.looplex.com",
 		"description": "Looplex Graph é uma plataforma de APIs que conectam múltipos serviços e dados jurídicos.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -6887,7 +6887,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"NomeCliente\": \"texto\",\r\n        \"TituloCaso\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"NumeroExterno\": \"texto\",\r\n        \"dsProduto\": \"texto\",\r\n        \"IdCaso\": -2147483648\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -7134,7 +7134,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n    \"response\": \"200\"\r\n}"
+									"body": "[\r\n    {\r\n        \"NomeCliente\": \"texto\",\r\n        \"TituloCaso\": \"texto\",\r\n        \"NumeroInterno\": \"texto\",\r\n        \"NumeroExterno\": \"texto\",\r\n        \"dsProduto\": \"texto\",\r\n        \"IdCaso\": -2147483648\r\n    }\r\n]"
 								},
 								{
 									"name": "401 Unauthorized",
@@ -14679,7 +14679,7 @@
 		},
 		{
 			"key": "BASEPATH_CASES",
-			"value": "",
+			"value": "http://localhost",
 			"type": "string"
 		},
 		{
@@ -14699,11 +14699,6 @@
 		{
 			"key": "X-ContextInf",
 			"value": ""
-		},
-		{
-			"key": "ExceptionResponse",
-			"value": "",
-			"type": "string"
 		}
 	]
 }
