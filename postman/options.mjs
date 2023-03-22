@@ -14,5 +14,9 @@ export default {
             url: 'https://graph.looplex.com/varas_foros/',
             description: 'Looplex Varas e Foros'
         }
-    ]
+    ],
+    operationId: 'auto',
+    folders: {
+      concat: false
+    }
 }
