@@ -74,7 +74,7 @@ paths:
           application/json:
             schema:
               type: object
-              $ref: components\schemas\cases\DTOUser.yaml
+              $ref: components/schemas/cases/DTOUser.yaml
       responses:
         "200":
           description: OK
@@ -87,7 +87,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\CasesLogon.yaml
+                $ref: components/schemas/cases/CasesLogon.yaml
         "401":
           description: Unauthorized
           headers:
@@ -99,7 +99,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -111,7 +111,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -123,7 +123,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -135,7 +135,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/session:
     post:
       tags:
@@ -147,7 +147,7 @@ paths:
           application/json:
             schema:
               type: object
-              $ref: components\schemas\cases\DTOLoginAPI.yaml
+              example: "{{DTOLoginAPI}}"
       responses:
         "200":
           description: OK
@@ -160,7 +160,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\CasesLogon.yaml
+                $ref: components/schemas/cases/CasesLogon.yaml
         "401":
           description: Unauthorized
           headers:
@@ -172,7 +172,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -184,7 +184,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -196,7 +196,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -208,7 +208,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/areas/{id}":
     get:
       tags:
@@ -249,7 +249,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -261,7 +261,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -273,7 +273,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -285,7 +285,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/areas:
     get:
       tags:
@@ -332,7 +332,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -344,7 +344,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -356,7 +356,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -368,7 +368,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/pais:
     get:
       tags:
@@ -401,7 +401,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -413,7 +413,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -425,7 +425,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -437,7 +437,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/pais/uf:
     get:
       tags:
@@ -470,7 +470,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -482,7 +482,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -494,7 +494,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -506,7 +506,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/pais/cidades:
     get:
       tags:
@@ -546,7 +546,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -558,7 +558,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -570,7 +570,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -582,7 +582,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}":
     get:
       tags:
@@ -696,7 +696,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -708,7 +708,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -720,7 +720,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -732,7 +732,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/agenda/{id}/{tipo}":
     get:
       tags:
@@ -839,7 +839,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -851,7 +851,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -863,7 +863,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -875,7 +875,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/compromissos:
     get:
       tags:
@@ -951,7 +951,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -963,7 +963,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -975,7 +975,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -987,7 +987,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda/edit:
     put:
       tags:
@@ -1100,7 +1100,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -1112,7 +1112,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -1124,7 +1124,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -1136,7 +1136,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda/totaleventos:
     get:
       tags:
@@ -1167,7 +1167,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -1179,7 +1179,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -1191,7 +1191,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -1203,7 +1203,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda/proximoslancamentos:
     get:
       tags:
@@ -1306,7 +1306,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -1318,7 +1318,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -1330,7 +1330,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -1342,7 +1342,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda:
     get:
       tags:
@@ -1442,7 +1442,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -1454,7 +1454,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -1466,7 +1466,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -1478,7 +1478,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
     post:
       tags:
         - Agenda
@@ -1620,7 +1620,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -1632,7 +1632,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -1644,7 +1644,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -1656,7 +1656,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
     put:
       tags:
         - Agenda
@@ -1798,7 +1798,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -1810,7 +1810,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -1822,7 +1822,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -1834,7 +1834,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{idCaso}/agenda":
     get:
       tags:
@@ -1940,7 +1940,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -1952,7 +1952,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -1964,7 +1964,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -1976,7 +1976,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda/executores:
     get:
       tags:
@@ -2031,7 +2031,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2043,7 +2043,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2055,7 +2055,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2067,7 +2067,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda/participantes:
     get:
       tags:
@@ -2122,7 +2122,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2134,7 +2134,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2146,7 +2146,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2158,7 +2158,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{idCaso}/audiencias":
     get:
       tags:
@@ -2216,7 +2216,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2228,7 +2228,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2240,7 +2240,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2252,7 +2252,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/num/audiencias:
     get:
       tags:
@@ -2320,7 +2320,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2332,7 +2332,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2344,7 +2344,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2356,7 +2356,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{idCaso}/tabagenda":
     get:
       tags:
@@ -2409,7 +2409,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2421,7 +2421,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2433,7 +2433,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2445,7 +2445,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/num/tabagenda:
     get:
       tags:
@@ -2507,7 +2507,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2519,7 +2519,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2531,7 +2531,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2543,7 +2543,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda/status_encerramento:
     get:
       tags:
@@ -2602,7 +2602,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2614,7 +2614,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2626,7 +2626,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2638,7 +2638,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/agenda/titulos:
     get:
       tags:
@@ -2690,7 +2690,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2702,7 +2702,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2714,7 +2714,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2726,7 +2726,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
     post:
       tags:
         - Agenda
@@ -2792,7 +2792,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2804,7 +2804,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2816,7 +2816,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2828,7 +2828,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
     put:
       tags:
         - Agenda
@@ -2894,7 +2894,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2906,7 +2906,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2918,7 +2918,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -2930,7 +2930,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{idCaso}/produtos":
     get:
       tags:
@@ -2974,7 +2974,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -2986,7 +2986,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -2998,7 +2998,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3010,7 +3010,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/num/produtos:
     get:
       tags:
@@ -3063,7 +3063,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3075,7 +3075,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3087,7 +3087,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3099,7 +3099,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{id}/ficha":
     get:
       tags:
@@ -3138,7 +3138,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3150,7 +3150,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3162,7 +3162,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3174,7 +3174,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{id}":
     get:
       tags:
@@ -3213,7 +3213,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3225,7 +3225,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3237,7 +3237,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3249,7 +3249,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/clientes/{idCliente}/casos":
     get:
       tags:
@@ -3309,7 +3309,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3321,7 +3321,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3333,7 +3333,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3345,7 +3345,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/subcasos/{cdProcessoPai}":
     get:
       tags:
@@ -3385,7 +3385,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3397,7 +3397,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3409,7 +3409,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3421,7 +3421,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/porIds/{ids}":
     get:
       tags:
@@ -3461,7 +3461,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3473,7 +3473,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3485,7 +3485,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3497,7 +3497,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/meuscasos/{cdResponsavel}":
     get:
       tags:
@@ -3538,7 +3538,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3550,7 +3550,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3562,7 +3562,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3574,7 +3574,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/id/num:
     get:
       tags:
@@ -3630,7 +3630,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3642,7 +3642,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3654,7 +3654,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3666,7 +3666,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/num:
     get:
       tags:
@@ -3725,7 +3725,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3737,7 +3737,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3749,7 +3749,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3761,7 +3761,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos:
     get:
       tags:
@@ -3804,7 +3804,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3816,7 +3816,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3828,7 +3828,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3840,7 +3840,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/listacasos:
     get:
       tags:
@@ -3883,7 +3883,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3895,7 +3895,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3907,7 +3907,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3919,7 +3919,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/RamosJudiciais:
     get:
       tags:
@@ -3953,7 +3953,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -3965,7 +3965,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -3977,7 +3977,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -3989,7 +3989,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/id/ficha/num:
     get:
       tags:
@@ -4037,7 +4037,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4049,7 +4049,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4061,7 +4061,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4073,7 +4073,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/busca:
     get:
       tags:
@@ -4129,7 +4129,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4141,7 +4141,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4153,7 +4153,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4165,7 +4165,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/busca:
     get:
       tags:
@@ -4213,7 +4213,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4225,7 +4225,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4237,7 +4237,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4249,7 +4249,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/inclui:
     post:
       tags:
@@ -4437,7 +4437,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4449,7 +4449,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4461,7 +4461,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4473,7 +4473,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/clientes/{idCliente}/pastas":
     get:
       tags:
@@ -4512,7 +4512,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4524,7 +4524,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4536,7 +4536,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4548,7 +4548,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{idCaso}/natureza":
     get:
       tags:
@@ -4587,7 +4587,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4599,7 +4599,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4611,7 +4611,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4623,7 +4623,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/num/natureza:
     get:
       tags:
@@ -4671,7 +4671,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4683,7 +4683,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4695,7 +4695,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4707,7 +4707,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/timesheet:
     get:
       tags:
@@ -4751,7 +4751,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4763,7 +4763,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4775,7 +4775,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4787,7 +4787,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/fase:
     get:
       tags:
@@ -4819,7 +4819,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4831,7 +4831,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4843,7 +4843,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4855,7 +4855,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/fase/{nrGrupo}":
     get:
       tags:
@@ -4897,7 +4897,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4909,7 +4909,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4921,7 +4921,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -4933,7 +4933,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{nrSequencia}/fase":
     get:
       tags:
@@ -4972,7 +4972,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -4984,7 +4984,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -4996,7 +4996,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -5008,7 +5008,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/num/fase:
     get:
       tags:
@@ -5056,7 +5056,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -5068,7 +5068,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -5080,7 +5080,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -5092,7 +5092,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   "/api/casos/{idCaso}/valoresapurados":
     get:
       tags:
@@ -5131,7 +5131,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -5143,7 +5143,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -5155,7 +5155,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -5167,7 +5167,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/casos/num/valoresapurados:
     get:
       tags:
@@ -5216,7 +5216,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "403":
           description: Forbidden
           headers:
@@ -5228,7 +5228,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "404":
           description: Not Found
           headers:
@@ -5240,7 +5240,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
         "500":
           description: Internal Server Error
           headers:
@@ -5252,7 +5252,7 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: components\schemas\cases\Exception.yaml
+                $ref: components/schemas/cases/Exception.yaml
   /api/VF/ListaPorNivel:
     get:
       tags:
