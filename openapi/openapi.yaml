@@ -1,9 +1,8 @@
 openapi: 3.0.0
 info:
   title: graph.looplex.com
-  description: >-
-    Looplex Graph é uma plataforma de APIs que conectam múltipos serviços e
-    dados jurídicos.
+  description: Looplex Graph é uma plataforma de APIs que conectam múltipos
+    serviços e dados jurídicos.
   version: 1.0.0
 servers:
   - url: https://graph.looplex.com
@@ -22,23 +21,23 @@ security:
 tags:
   - name: actions
   - name: Looplex Cases
-  - name: Looplex Cases > Login
-  - name: Looplex Cases > Áreas
-  - name: Looplex Cases > País
-  - name: Looplex Cases > Agenda
-  - name: Looplex Cases > Produtos
-  - name: Looplex Cases > Processos
-  - name: Looplex Cases > Pastas
-  - name: Looplex Cases > Natureza
-  - name: Looplex Cases > Timesheet
-  - name: Looplex Cases > Fases
-  - name: Looplex Cases > Valores apurados
+  - name: Login
+  - name: Áreas
+  - name: País
+  - name: Agenda
+  - name: Produtos
+  - name: Processos
+  - name: Pastas
+  - name: Natureza
+  - name: Timesheet
+  - name: Fases
+  - name: Valores apurados
   - name: people
   - name: finances
   - name: assembler
-  - name: assembler > documents
-  - name: assembler > templates
-  - name: assembler > users
+  - name: documents
+  - name: templates
+  - name: users
   - name: flows
   - name: storage
   - name: Looplex Varas e Foros
@@ -48,38 +47,36 @@ paths:
       tags:
         - actions
       summary: office-render
+      operationId: officeRender
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example:
-                template: ''
+                template: ""
                 datasource: {}
                 partials: {}
                 lambdas: {}
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
   /api/logon:
     post:
       tags:
-        - Looplex Cases > Login
+        - Login
       summary: Login
+      operationId: login
       requestBody:
         content:
           application/json:
             schema:
               type: object
-              example:
-                User:
-                  user: ''
-                  pwd: ''
-                  domain: ''
+              $ref: components\schemas\cases\DTOUser.yaml
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -90,9 +87,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Successful: true
-        '401':
+                $ref: components\schemas\cases\CasesLogon.yaml
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -103,10 +99,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -117,10 +111,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -131,10 +123,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -145,14 +135,86 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/areas/{id}:
+                $ref: components\schemas\cases\Exception.yaml
+  /api/session:
+    post:
+      tags:
+        - Login
+      summary: Login por token de acesso
+      operationId: loginPorTokenDeAcesso
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: components\schemas\cases\DTOLoginAPI.yaml
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components\schemas\cases\CasesLogon.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/areas/{id}":
     get:
       tags:
-        - Looplex Cases > Áreas
+        - Áreas
       summary: Área por identificador
+      operationId: areaPorIdentificador
       parameters:
         - name: id
           in: path
@@ -161,7 +223,7 @@ paths:
           required: true
           description: (Required) (int) O identificador da área
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -173,8 +235,10 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                ID: -2147483648
+                Titulo: texto
+                Ativa: false
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -185,10 +249,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -199,10 +261,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -213,10 +273,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -227,29 +285,28 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/areas:
     get:
       tags:
-        - Looplex Cases > Áreas
+        - Áreas
       summary: Lista áreas
+      operationId: listaAreas
       parameters:
         - name: ativos
           in: query
           schema:
             type: boolean
-          description: '(Optional. Default: true) (bool) Áreas ativas?'
-          example: 'true'
+          description: "(Optional. Default: true) (bool) Áreas ativas?"
+          example: "true"
         - name: inativos
           in: query
           schema:
             type: boolean
-          description: '(Optional. Default: false) (bool) Áreas inativas?'
-          example: 'false'
+          description: "(Optional. Default: false) (bool) Áreas inativas?"
+          example: "false"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -261,8 +318,10 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - ID: -2147483648
+                  Titulo: texto
+                  Ativa: false
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -273,10 +332,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -287,10 +344,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -301,10 +356,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -315,16 +368,15 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/pais:
     get:
       tags:
-        - Looplex Cases > País
+        - País
       summary: Lista países
+      operationId: listaPaises
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -336,8 +388,9 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - ID: 0
+                  Pais: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -348,10 +401,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -362,10 +413,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -376,10 +425,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -390,16 +437,15 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/pais/uf:
     get:
       tags:
-        - Looplex Cases > País
+        - País
       summary: Lista estados
+      operationId: listaEstados
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -411,8 +457,9 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - ID: texto
+                  UF: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -423,10 +470,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -437,10 +482,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -451,10 +494,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -465,14 +506,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/pais/cidades:
     get:
       tags:
-        - Looplex Cases > País
+        - País
       summary: Lista as cidades do estado
+      operationId: listaAsCidadesDoEstado
       parameters:
         - name: uf
           in: query
@@ -480,7 +520,7 @@ paths:
             type: string
           description: (Required) (string) O estado.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -492,8 +532,10 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - ID: -32768
+                  IDUF: -32768
+                  Cidade: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -504,10 +546,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -518,10 +558,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -532,10 +570,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -546,20 +582,20 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}":
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista compromissos por filtro
+      operationId: listaCompromissosPorFiltro
       parameters:
         - name: numeroDeRecorrencias
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 10) (int) A quantidade de recorrências da tarefa'
+          description: "(Optional. Default: 10) (int) A quantidade de recorrências da
+            tarefa"
         - name: cdProcesso
           in: path
           schema:
@@ -577,9 +613,14 @@ paths:
           schema:
             type: string
           required: true
-          description: '(Required) (enum) 1: Todos | 2: Finalizados | 3: Em aberto'
+          description: |-
+            (Required) (enum) Situação do item de agenda
+
+            1: Todos
+            2: Finalizados
+            3: EmAberto
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -591,8 +632,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDCaso: -2147483648
+                  IDItemAgenda: -2147483648
+                  IDItemAgendaPai: -2147483648
+                  IDFuncionarioCriador: -2147483648
+                  Tipo: -2147483648
+                  Titulo: texto
+                  IDTitulocobranca: -2147483648
+                  Data: 2022-01-01T00:00:00
+                  Lembrete: 00:00:00
+                  DataLimite: 2022-01-01T00:00:00
+                  FuncionarioExecutor: -2147483648
+                  FuncionarioResponsavel: -2147483648
+                  FuncionariosParticipantes:
+                    - 1
+                  Observacao: texto
+                  DataRealizacao: 2022-01-01T00:00:00
+                  IDStatusEncerramentoItemAgenda: -2147483648
+                  ObservacaoRegistroRealizacao: texto
+                  Situacao: -2147483648
+                  DataFormatada: texto
+                  DataLimiteFormatada: texto
+                  IDForo: -2147483648
+                  Local: texto
+                  NomeFuncionarioExecutor: texto
+                  DataCriacao: 2022-01-01T00:00:00
+                  DataCriacaoFormatada: texto
+                  DataRealizacaoFormatada: texto
+                  DataRegistroRealizacao: 2022-01-01T00:00:00
+                  DataRegistroRealizacaoFormatada: texto
+                  SituacaoLembrete: -2147483648
+                  IsEditable: false
+                  Concluido: false
+                  StatusEncerramentoItemAgenda: texto
+                  NomeClienteFormatado: texto
+                  AreaFormatada: texto
+                  TituloCasoFormatado: texto
+                  NumeroDoCaso: -2147483648
+                  TituloCaso: texto
+                  NumeroExternoCaso: texto
+                  Cliente: texto
+                  Executor: texto
+                  NumeroPasta: -2147483648
+                  Assunto: texto
+                  NumeroInterno: texto
+                  Rito: texto
+                  Vencido: texto
+                  SituacaoString: texto
+                  PoloAtivo: texto
+                  PoloPassivo: texto
+                  Classificacao: texto
+                  CampoDataConclusaoItemDeAgendaBloqueado: false
+                  EditarApenasCampoObservacoesItemDeAgenda: false
+                  ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -603,10 +696,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -617,10 +708,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -631,10 +720,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -645,14 +732,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/agenda/{id}/{tipo}:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/agenda/{id}/{tipo}":
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Obtém item de agenda por identificador
+      operationId: obtemItemDeAgendaPorIdentificador
       parameters:
         - name: id
           in: path
@@ -665,12 +751,19 @@ paths:
           schema:
             type: string
           required: true
-          description: >-
-            (Required) (int) O tipo do item de agenda. 1: Atividade Externa. 2:
-            Prazo. 4: Audiência. 8: Compromisso de trabalho. 9: Compromisso
-            particular. 10: Compromisso. 11: Publicação.
+          description: |-
+            (Required) (int) O tipo do item de agenda.
+
+            1: AtividadeExterna
+            2: Prazo
+            4: Audiencia
+            8: CompromissoTrabalho
+            9: CompromissoParticular
+            10: Compromisso
+            11: Publicacao
+            -2147483648: None
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -682,8 +775,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                IDCaso: -2147483648
+                IDItemAgenda: -2147483648
+                IDItemAgendaPai: -2147483648
+                IDFuncionarioCriador: -2147483648
+                Tipo: -2147483648
+                Titulo: texto
+                IDTitulocobranca: -2147483648
+                Data: 2022-01-01T00:00:00
+                Lembrete: 00:00:00
+                DataLimite: 2022-01-01T00:00:00
+                FuncionarioExecutor: -2147483648
+                FuncionarioResponsavel: -2147483648
+                FuncionariosParticipantes:
+                  - 1
+                Observacao: texto
+                DataRealizacao: 2022-01-01T00:00:00
+                IDStatusEncerramentoItemAgenda: -2147483648
+                ObservacaoRegistroRealizacao: texto
+                Situacao: -2147483648
+                DataFormatada: texto
+                DataLimiteFormatada: texto
+                IDForo: -2147483648
+                Local: texto
+                NomeFuncionarioExecutor: texto
+                DataCriacao: 2022-01-01T00:00:00
+                DataCriacaoFormatada: texto
+                DataRealizacaoFormatada: texto
+                DataRegistroRealizacao: 2022-01-01T00:00:00
+                DataRegistroRealizacaoFormatada: texto
+                SituacaoLembrete: -2147483648
+                IsEditable: false
+                Concluido: false
+                StatusEncerramentoItemAgenda: texto
+                NomeClienteFormatado: texto
+                AreaFormatada: texto
+                TituloCasoFormatado: texto
+                NumeroDoCaso: -2147483648
+                TituloCaso: texto
+                NumeroExternoCaso: texto
+                Cliente: texto
+                Executor: texto
+                NumeroPasta: -2147483648
+                Assunto: texto
+                NumeroInterno: texto
+                Rito: texto
+                Vencido: texto
+                SituacaoString: texto
+                PoloAtivo: texto
+                PoloPassivo: texto
+                Classificacao: texto
+                CampoDataConclusaoItemDeAgendaBloqueado: false
+                EditarApenasCampoObservacoesItemDeAgenda: false
+                ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -694,10 +839,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -708,10 +851,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -722,10 +863,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -736,21 +875,19 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/compromissos:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Compromissos do funcionário
+      operationId: compromissosDoFuncionario
       parameters:
         - name: idsFuncionarios
           in: query
           schema:
             type: string
-          description: >-
-            (Required) (string) Identificadores dos funcionários separados por
+          description: (Required) (string) Identificadores dos funcionários separados por
             virgula
         - name: data
           in: query
@@ -758,7 +895,7 @@ paths:
             type: string
           description: (Required) (string) A data para considerar na pesquisa
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -770,8 +907,40 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDCompromisso: -2147483648
+                  IDPrazo: -2147483648
+                  IDArea: -2147483648
+                  IDDelegante: -2147483648
+                  IDExecutor: -2147483648
+                  IDResponsavelCaso: -2147483648
+                  NumeroPasta: -2147483648
+                  Data: 2022-01-01T00:00:00
+                  HoraInicial: 2022-01-01T00:00:00
+                  DataFinal: 2022-01-01T00:00:00
+                  DataRealizacao: 2022-01-01T00:00:00
+                  Concluido: false
+                  TipoItemAgenda: -2147483648
+                  Assunto: texto
+                  Descricao: texto
+                  IDProcesso: -2147483648
+                  TipoProcesso: -2147483648
+                  NumeroDoCaso: -2147483648
+                  TituloCaso: texto
+                  NumeroInterno: texto
+                  NumeroExternoCaso: texto
+                  Rito: texto
+                  Vencido: texto
+                  Cliente: texto
+                  Executor: texto
+                  Situacao: -2147483648
+                  SituacaoString: texto
+                  PoloAtivo: texto
+                  PoloPassivo: texto
+                  Classificacao: texto
+                  CampoDataConclusaoItemDeAgendaBloqueado: false
+                  EditarApenasCampoObservacoesItemDeAgenda: false
+                  IsEditable: false
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -782,10 +951,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -796,10 +963,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -810,10 +975,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -824,22 +987,21 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda/edit:
     put:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Editar informações de item de agenda
+      operationId: editarInformacoesDeItemDeAgenda
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example:
-                - Nome: ''
-                  Valor: ''
+                - Nome: texto
+                  Valor: texto
       parameters:
         - name: IDItemAgenda
           in: query
@@ -853,15 +1015,16 @@ paths:
           description: |-
             (Required) (int) O tipo do item de agenda. 
 
-            1: AtividadeExterna.
+            1: AtividadeExterna
             2: Prazo
             4: Audiencia
             8: CompromissoTrabalho
             9: CompromissoParticular
             10: Compromisso
-            11: Publicação
+            11: Publicacao
+            -2147483648: None
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -873,8 +1036,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                IDCaso: -2147483648
+                IDItemAgenda: -2147483648
+                IDItemAgendaPai: -2147483648
+                IDFuncionarioCriador: -2147483648
+                Tipo: -2147483648
+                Titulo: texto
+                IDTitulocobranca: -2147483648
+                Data: 2022-01-01T00:00:00
+                Lembrete: 00:00:00
+                DataLimite: 2022-01-01T00:00:00
+                FuncionarioExecutor: -2147483648
+                FuncionarioResponsavel: -2147483648
+                FuncionariosParticipantes:
+                  - 1
+                Observacao: texto
+                DataRealizacao: 2022-01-01T00:00:00
+                IDStatusEncerramentoItemAgenda: -2147483648
+                ObservacaoRegistroRealizacao: texto
+                Situacao: -2147483648
+                DataFormatada: texto
+                DataLimiteFormatada: texto
+                IDForo: -2147483648
+                Local: texto
+                NomeFuncionarioExecutor: texto
+                DataCriacao: 2022-01-01T00:00:00
+                DataCriacaoFormatada: texto
+                DataRealizacaoFormatada: texto
+                DataRegistroRealizacao: 2022-01-01T00:00:00
+                DataRegistroRealizacaoFormatada: texto
+                SituacaoLembrete: -2147483648
+                IsEditable: false
+                Concluido: false
+                StatusEncerramentoItemAgenda: texto
+                NomeClienteFormatado: texto
+                AreaFormatada: texto
+                TituloCasoFormatado: texto
+                NumeroDoCaso: -2147483648
+                TituloCaso: texto
+                NumeroExternoCaso: texto
+                Cliente: texto
+                Executor: texto
+                NumeroPasta: -2147483648
+                Assunto: texto
+                NumeroInterno: texto
+                Rito: texto
+                Vencido: texto
+                SituacaoString: texto
+                PoloAtivo: texto
+                PoloPassivo: texto
+                Classificacao: texto
+                CampoDataConclusaoItemDeAgendaBloqueado: false
+                EditarApenasCampoObservacoesItemDeAgenda: false
+                ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -885,10 +1100,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -899,10 +1112,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -913,10 +1124,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -927,16 +1136,15 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda/totaleventos:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Total de compromissos dos próximos 7 dias
+      operationId: totalDeCompromissosDosProximos7Dias
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -947,9 +1155,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                response: '200'
-        '401':
+              example: 1
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -960,10 +1167,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -974,10 +1179,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -988,10 +1191,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1002,14 +1203,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda/proximoslancamentos:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista próximos compromissos
+      operationId: listaProximosCompromissos
       parameters:
         - name: data
           in: query
@@ -1020,17 +1220,17 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 4) (int) A quantidade de compromissos a retornar'
+          description: "(Optional. Default: 4) (int) A quantidade de compromissos a
+            retornar"
         - name: idCaso
           in: query
           schema:
             type: string
-          description: >-
-            (Optional. Default: 0) (int) O identificador do caso. Se for
+          description: "(Optional. Default: 0) (int) O identificador do caso. Se for
             informado o identificador do caso, retorna apenas os compromissos do
-            caso informado.
+            caso informado."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1042,8 +1242,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDCaso: -2147483648
+                  IDItemAgenda: -2147483648
+                  IDItemAgendaPai: -2147483648
+                  IDFuncionarioCriador: -2147483648
+                  Tipo: -2147483648
+                  Titulo: texto
+                  IDTitulocobranca: -2147483648
+                  Data: 2022-01-01T00:00:00
+                  Lembrete: 00:00:00
+                  DataLimite: 2022-01-01T00:00:00
+                  FuncionarioExecutor: -2147483648
+                  FuncionarioResponsavel: -2147483648
+                  FuncionariosParticipantes:
+                    - 1
+                  Observacao: texto
+                  DataRealizacao: 2022-01-01T00:00:00
+                  IDStatusEncerramentoItemAgenda: -2147483648
+                  ObservacaoRegistroRealizacao: texto
+                  Situacao: -2147483648
+                  DataFormatada: texto
+                  DataLimiteFormatada: texto
+                  IDForo: -2147483648
+                  Local: texto
+                  NomeFuncionarioExecutor: texto
+                  DataCriacao: 2022-01-01T00:00:00
+                  DataCriacaoFormatada: texto
+                  DataRealizacaoFormatada: texto
+                  DataRegistroRealizacao: 2022-01-01T00:00:00
+                  DataRegistroRealizacaoFormatada: texto
+                  SituacaoLembrete: -2147483648
+                  IsEditable: false
+                  Concluido: false
+                  StatusEncerramentoItemAgenda: texto
+                  NomeClienteFormatado: texto
+                  AreaFormatada: texto
+                  TituloCasoFormatado: texto
+                  NumeroDoCaso: -2147483648
+                  TituloCaso: texto
+                  NumeroExternoCaso: texto
+                  Cliente: texto
+                  Executor: texto
+                  NumeroPasta: -2147483648
+                  Assunto: texto
+                  NumeroInterno: texto
+                  Rito: texto
+                  Vencido: texto
+                  SituacaoString: texto
+                  PoloAtivo: texto
+                  PoloPassivo: texto
+                  Classificacao: texto
+                  CampoDataConclusaoItemDeAgendaBloqueado: false
+                  EditarApenasCampoObservacoesItemDeAgenda: false
+                  ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1054,10 +1306,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1068,10 +1318,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1082,10 +1330,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1096,14 +1342,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista compromissos
+      operationId: listaCompromissos
       parameters:
         - name: ano
           in: query
@@ -1121,7 +1366,7 @@ paths:
             type: string
           description: (Optional) (int) O dia para pesquisa
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1133,8 +1378,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDCaso: -2147483648
+                  IDItemAgenda: -2147483648
+                  IDItemAgendaPai: -2147483648
+                  IDFuncionarioCriador: -2147483648
+                  Tipo: -2147483648
+                  Titulo: texto
+                  IDTitulocobranca: -2147483648
+                  Data: 2022-01-01T00:00:00
+                  Lembrete: 00:00:00
+                  DataLimite: 2022-01-01T00:00:00
+                  FuncionarioExecutor: -2147483648
+                  FuncionarioResponsavel: -2147483648
+                  FuncionariosParticipantes:
+                    - 1
+                  Observacao: texto
+                  DataRealizacao: 2022-01-01T00:00:00
+                  IDStatusEncerramentoItemAgenda: -2147483648
+                  ObservacaoRegistroRealizacao: texto
+                  Situacao: -2147483648
+                  DataFormatada: texto
+                  DataLimiteFormatada: texto
+                  IDForo: -2147483648
+                  Local: texto
+                  NomeFuncionarioExecutor: texto
+                  DataCriacao: 2022-01-01T00:00:00
+                  DataCriacaoFormatada: texto
+                  DataRealizacaoFormatada: texto
+                  DataRegistroRealizacao: 2022-01-01T00:00:00
+                  DataRegistroRealizacaoFormatada: texto
+                  SituacaoLembrete: -2147483648
+                  IsEditable: false
+                  Concluido: false
+                  StatusEncerramentoItemAgenda: texto
+                  NomeClienteFormatado: texto
+                  AreaFormatada: texto
+                  TituloCasoFormatado: texto
+                  NumeroDoCaso: -2147483648
+                  TituloCaso: texto
+                  NumeroExternoCaso: texto
+                  Cliente: texto
+                  Executor: texto
+                  NumeroPasta: -2147483648
+                  Assunto: texto
+                  NumeroInterno: texto
+                  Rito: texto
+                  Vencido: texto
+                  SituacaoString: texto
+                  PoloAtivo: texto
+                  PoloPassivo: texto
+                  Classificacao: texto
+                  CampoDataConclusaoItemDeAgendaBloqueado: false
+                  EditarApenasCampoObservacoesItemDeAgenda: false
+                  ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1145,10 +1442,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1159,10 +1454,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1173,10 +1466,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1187,13 +1478,12 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
     post:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Inserir item de agenda
+      operationId: inserirItemDeAgenda
       requestBody:
         content:
           application/json:
@@ -1207,15 +1497,15 @@ paths:
                 Tipo: -2147483648
                 Titulo: texto
                 IDTitulocobranca: -2147483648
-                Data: '2022-01-01T00:00:00'
-                Lembrete: '00:00:00'
-                DataLimite: '2022-01-01T00:00:00'
+                Data: 2022-01-01T00:00:00
+                Lembrete: 00:00:00
+                DataLimite: 2022-01-01T00:00:00
                 FuncionarioExecutor: -2147483648
                 FuncionarioResponsavel: -2147483648
                 FuncionariosParticipantes:
                   - 1
                 Observacao: texto
-                DataRealizacao: '2022-01-01T00:00:00'
+                DataRealizacao: 2022-01-01T00:00:00
                 IDStatusEncerramentoItemAgenda: -2147483648
                 ObservacaoRegistroRealizacao: texto
                 Situacao: -2147483648
@@ -1224,10 +1514,10 @@ paths:
                 IDForo: -2147483648
                 Local: texto
                 NomeFuncionarioExecutor: texto
-                DataCriacao: '2022-01-01T00:00:00'
+                DataCriacao: 2022-01-01T00:00:00
                 DataCriacaoFormatada: texto
                 DataRealizacaoFormatada: texto
-                DataRegistroRealizacao: '2022-01-01T00:00:00'
+                DataRegistroRealizacao: 2022-01-01T00:00:00
                 DataRegistroRealizacaoFormatada: texto
                 SituacaoLembrete: -2147483648
                 IsEditable: false
@@ -1254,7 +1544,7 @@ paths:
                 EditarApenasCampoObservacoesItemDeAgenda: false
                 ExecutionID: texto
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1266,8 +1556,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                IDCaso: -2147483648
+                IDItemAgenda: -2147483648
+                IDItemAgendaPai: -2147483648
+                IDFuncionarioCriador: -2147483648
+                Tipo: -2147483648
+                Titulo: texto
+                IDTitulocobranca: -2147483648
+                Data: 2022-01-01T00:00:00
+                Lembrete: 00:00:00
+                DataLimite: 2022-01-01T00:00:00
+                FuncionarioExecutor: -2147483648
+                FuncionarioResponsavel: -2147483648
+                FuncionariosParticipantes:
+                  - 1
+                Observacao: texto
+                DataRealizacao: 2022-01-01T00:00:00
+                IDStatusEncerramentoItemAgenda: -2147483648
+                ObservacaoRegistroRealizacao: texto
+                Situacao: -2147483648
+                DataFormatada: texto
+                DataLimiteFormatada: texto
+                IDForo: -2147483648
+                Local: texto
+                NomeFuncionarioExecutor: texto
+                DataCriacao: 2022-01-01T00:00:00
+                DataCriacaoFormatada: texto
+                DataRealizacaoFormatada: texto
+                DataRegistroRealizacao: 2022-01-01T00:00:00
+                DataRegistroRealizacaoFormatada: texto
+                SituacaoLembrete: -2147483648
+                IsEditable: false
+                Concluido: false
+                StatusEncerramentoItemAgenda: texto
+                NomeClienteFormatado: texto
+                AreaFormatada: texto
+                TituloCasoFormatado: texto
+                NumeroDoCaso: -2147483648
+                TituloCaso: texto
+                NumeroExternoCaso: texto
+                Cliente: texto
+                Executor: texto
+                NumeroPasta: -2147483648
+                Assunto: texto
+                NumeroInterno: texto
+                Rito: texto
+                Vencido: texto
+                SituacaoString: texto
+                PoloAtivo: texto
+                PoloPassivo: texto
+                Classificacao: texto
+                CampoDataConclusaoItemDeAgendaBloqueado: false
+                EditarApenasCampoObservacoesItemDeAgenda: false
+                ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1278,10 +1620,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1292,10 +1632,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1306,10 +1644,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1320,13 +1656,12 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
     put:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Atualizar item de agenda
+      operationId: atualizarItemDeAgenda
       requestBody:
         content:
           application/json:
@@ -1340,15 +1675,15 @@ paths:
                 Tipo: -2147483648
                 Titulo: texto
                 IDTitulocobranca: -2147483648
-                Data: '2022-01-01T00:00:00'
-                Lembrete: '00:00:00'
-                DataLimite: '2022-01-01T00:00:00'
+                Data: 2022-01-01T00:00:00
+                Lembrete: 00:00:00
+                DataLimite: 2022-01-01T00:00:00
                 FuncionarioExecutor: -2147483648
                 FuncionarioResponsavel: -2147483648
                 FuncionariosParticipantes:
                   - 1
                 Observacao: texto
-                DataRealizacao: '2022-01-01T00:00:00'
+                DataRealizacao: 2022-01-01T00:00:00
                 IDStatusEncerramentoItemAgenda: -2147483648
                 ObservacaoRegistroRealizacao: texto
                 Situacao: -2147483648
@@ -1357,10 +1692,10 @@ paths:
                 IDForo: -2147483648
                 Local: texto
                 NomeFuncionarioExecutor: texto
-                DataCriacao: '2022-01-01T00:00:00'
+                DataCriacao: 2022-01-01T00:00:00
                 DataCriacaoFormatada: texto
                 DataRealizacaoFormatada: texto
-                DataRegistroRealizacao: '2022-01-01T00:00:00'
+                DataRegistroRealizacao: 2022-01-01T00:00:00
                 DataRegistroRealizacaoFormatada: texto
                 SituacaoLembrete: -2147483648
                 IsEditable: false
@@ -1387,7 +1722,7 @@ paths:
                 EditarApenasCampoObservacoesItemDeAgenda: false
                 ExecutionID: texto
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1399,8 +1734,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                IDCaso: -2147483648
+                IDItemAgenda: -2147483648
+                IDItemAgendaPai: -2147483648
+                IDFuncionarioCriador: -2147483648
+                Tipo: -2147483648
+                Titulo: texto
+                IDTitulocobranca: -2147483648
+                Data: 2022-01-01T00:00:00
+                Lembrete: 00:00:00
+                DataLimite: 2022-01-01T00:00:00
+                FuncionarioExecutor: -2147483648
+                FuncionarioResponsavel: -2147483648
+                FuncionariosParticipantes:
+                  - 1
+                Observacao: texto
+                DataRealizacao: 2022-01-01T00:00:00
+                IDStatusEncerramentoItemAgenda: -2147483648
+                ObservacaoRegistroRealizacao: texto
+                Situacao: -2147483648
+                DataFormatada: texto
+                DataLimiteFormatada: texto
+                IDForo: -2147483648
+                Local: texto
+                NomeFuncionarioExecutor: texto
+                DataCriacao: 2022-01-01T00:00:00
+                DataCriacaoFormatada: texto
+                DataRealizacaoFormatada: texto
+                DataRegistroRealizacao: 2022-01-01T00:00:00
+                DataRegistroRealizacaoFormatada: texto
+                SituacaoLembrete: -2147483648
+                IsEditable: false
+                Concluido: false
+                StatusEncerramentoItemAgenda: texto
+                NomeClienteFormatado: texto
+                AreaFormatada: texto
+                TituloCasoFormatado: texto
+                NumeroDoCaso: -2147483648
+                TituloCaso: texto
+                NumeroExternoCaso: texto
+                Cliente: texto
+                Executor: texto
+                NumeroPasta: -2147483648
+                Assunto: texto
+                NumeroInterno: texto
+                Rito: texto
+                Vencido: texto
+                SituacaoString: texto
+                PoloAtivo: texto
+                PoloPassivo: texto
+                Classificacao: texto
+                CampoDataConclusaoItemDeAgendaBloqueado: false
+                EditarApenasCampoObservacoesItemDeAgenda: false
+                ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1411,10 +1798,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1425,10 +1810,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1439,10 +1822,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1453,14 +1834,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/{idCaso}/agenda:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{idCaso}/agenda":
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista os compromissos do caso
+      operationId: listaOsCompromissosDoCaso
       parameters:
         - name: ano
           in: query
@@ -1484,7 +1864,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do caso
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1496,8 +1876,60 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDCaso: -2147483648
+                  IDItemAgenda: -2147483648
+                  IDItemAgendaPai: -2147483648
+                  IDFuncionarioCriador: -2147483648
+                  Tipo: -2147483648
+                  Titulo: texto
+                  IDTitulocobranca: -2147483648
+                  Data: 2022-01-01T00:00:00
+                  Lembrete: 00:00:00
+                  DataLimite: 2022-01-01T00:00:00
+                  FuncionarioExecutor: -2147483648
+                  FuncionarioResponsavel: -2147483648
+                  FuncionariosParticipantes:
+                    - 1
+                  Observacao: texto
+                  DataRealizacao: 2022-01-01T00:00:00
+                  IDStatusEncerramentoItemAgenda: -2147483648
+                  ObservacaoRegistroRealizacao: texto
+                  Situacao: -2147483648
+                  DataFormatada: texto
+                  DataLimiteFormatada: texto
+                  IDForo: -2147483648
+                  Local: texto
+                  NomeFuncionarioExecutor: texto
+                  DataCriacao: 2022-01-01T00:00:00
+                  DataCriacaoFormatada: texto
+                  DataRealizacaoFormatada: texto
+                  DataRegistroRealizacao: 2022-01-01T00:00:00
+                  DataRegistroRealizacaoFormatada: texto
+                  SituacaoLembrete: -2147483648
+                  IsEditable: false
+                  Concluido: false
+                  StatusEncerramentoItemAgenda: texto
+                  NomeClienteFormatado: texto
+                  AreaFormatada: texto
+                  TituloCasoFormatado: texto
+                  NumeroDoCaso: -2147483648
+                  TituloCaso: texto
+                  NumeroExternoCaso: texto
+                  Cliente: texto
+                  Executor: texto
+                  NumeroPasta: -2147483648
+                  Assunto: texto
+                  NumeroInterno: texto
+                  Rito: texto
+                  Vencido: texto
+                  SituacaoString: texto
+                  PoloAtivo: texto
+                  PoloPassivo: texto
+                  Classificacao: texto
+                  CampoDataConclusaoItemDeAgendaBloqueado: false
+                  EditarApenasCampoObservacoesItemDeAgenda: false
+                  ExecutionID: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1508,10 +1940,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1522,10 +1952,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1536,10 +1964,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1550,16 +1976,15 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda/executores:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista executores
+      operationId: listaExecutores
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1571,8 +1996,31 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDFuncionario: -2147483648
+                  Nome: texto
+                  Apelido: texto
+                  Logradouro: texto
+                  NumeroLogradouro: texto
+                  Bairro: texto
+                  Cidade: texto
+                  Estado: texto
+                  Complemento: texto
+                  CEP: texto
+                  Email: texto
+                  CPF: texto
+                  RG: texto
+                  DataDeNascimento: 2022-01-01T00:00:00
+                  DataDeNascimentoFormatada: texto
+                  Cargo: texto
+                  DataDeAdmissao: 2022-01-01T00:00:00
+                  DataDeAdmissaoFormatada: texto
+                  DataDeDemissao: 2022-01-01T00:00:00
+                  DataDeDemissaoFormatada: texto
+                  Oab: texto
+                  NumeroDeDependentes: -2147483648
+                  Admin: false
+                  Observacoes: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1583,10 +2031,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1597,10 +2043,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1611,10 +2055,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1625,16 +2067,15 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda/participantes:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista participantes
+      operationId: listaParticipantes
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1646,8 +2087,31 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDFuncionario: -2147483648
+                  Nome: texto
+                  Apelido: texto
+                  Logradouro: texto
+                  NumeroLogradouro: texto
+                  Bairro: texto
+                  Cidade: texto
+                  Estado: texto
+                  Complemento: texto
+                  CEP: texto
+                  Email: texto
+                  CPF: texto
+                  RG: texto
+                  DataDeNascimento: 2022-01-01T00:00:00
+                  DataDeNascimentoFormatada: texto
+                  Cargo: texto
+                  DataDeAdmissao: 2022-01-01T00:00:00
+                  DataDeAdmissaoFormatada: texto
+                  DataDeDemissao: 2022-01-01T00:00:00
+                  DataDeDemissaoFormatada: texto
+                  Oab: texto
+                  NumeroDeDependentes: -2147483648
+                  Admin: false
+                  Observacoes: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1658,10 +2122,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1672,10 +2134,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1686,10 +2146,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1700,14 +2158,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/{idCaso}/audiencias:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{idCaso}/audiencias":
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista as audiências do caso
+      operationId: listaAsAudienciasDoCaso
       parameters:
         - name: idCaso
           in: path
@@ -1716,7 +2173,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do caso
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1748,7 +2205,7 @@ paths:
                   IdCaso: -2147483648
                   IdAudienciaPai: -2147483648
                   IsEditable: false
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1759,10 +2216,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1773,10 +2228,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1787,10 +2240,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1801,22 +2252,20 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/num/audiencias:
     get:
       tags:
-        - Looplex Cases > Agenda
-      summary: >-
-        Lista audiências por número interno, número externo ou identificador do
+        - Agenda
+      summary: Lista audiências por número interno, número externo ou identificador do
         caso
+      operationId: listaAudienciasPorNumeroInternoNumeroExternoOuIdentificadorDoCaso
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O número interno do caso'
+          description: "(Optional. Default: 0) (int) O número interno do caso"
         - name: NumeroExterno
           in: query
           schema:
@@ -1826,9 +2275,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do caso'
+          description: "(Optional. Default: 0) (int) O identificador do caso"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1860,7 +2309,7 @@ paths:
                   IdCaso: -2147483648
                   IdAudienciaPai: -2147483648
                   IsEditable: false
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1871,10 +2320,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1885,10 +2332,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1899,10 +2344,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -1913,14 +2356,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-  /api/casos/{idCaso}/tabagenda:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{idCaso}/tabagenda":
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista compromissos por caso
+      operationId: listaCompromissosPorCaso
       parameters:
         - name: idCaso
           in: path
@@ -1928,9 +2370,9 @@ paths:
             type: string
           required: true
           description: (Required) (int[]) Os identificadores dos casos
-          example: '[142]'
+          example: "[142]"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -1947,7 +2389,7 @@ paths:
                   NumeroInterno: texto
                   NumeroExterno: texto
                   TipoDeItem: texto
-                  Data: '2022-01-01T00:00:00'
+                  Data: 2022-01-01T00:00:00
                   DataFormatada: texto
                   Assunto: texto
                   IdCaso: -2147483648
@@ -1956,7 +2398,7 @@ paths:
                   Observacao: texto
                   IdPai: -2147483648
                   IsEditable: false
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -1967,10 +2409,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -1981,10 +2421,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -1995,10 +2433,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2009,22 +2445,20 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/num/tabagenda:
     get:
       tags:
-        - Looplex Cases > Agenda
-      summary: >-
-        Lista compromissos por número interno, número externo ou identificador
+        - Agenda
+      summary: Lista compromissos por número interno, número externo ou identificador
         do caso
+      operationId: listaCompromissosPorNumeroInternoNumeroExternoOuIdentificadorDoCaso
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O número interno do caso'
+          description: "(Optional. Default: 0) (int) O número interno do caso"
         - name: NumeroExterno
           in: query
           schema:
@@ -2034,9 +2468,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do caso'
+          description: "(Optional. Default: 0) (int) O identificador do caso"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2053,7 +2487,7 @@ paths:
                   NumeroInterno: texto
                   NumeroExterno: texto
                   TipoDeItem: texto
-                  Data: '2022-01-01T00:00:00'
+                  Data: 2022-01-01T00:00:00
                   DataFormatada: texto
                   Assunto: texto
                   IdCaso: -2147483648
@@ -2062,7 +2496,7 @@ paths:
                   Observacao: texto
                   IdPai: -2147483648
                   IsEditable: false
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2073,10 +2507,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2087,10 +2519,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2101,10 +2531,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2115,42 +2543,41 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda/status_encerramento:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista status de encerramento
+      operationId: listaStatusDeEncerramento
       parameters:
         - name: inCompromisso
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Status de compromisso'
+          description: "(Optional. Default: false) (bool) Status de compromisso"
         - name: inPrazo
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Status de prazo'
+          description: "(Optional. Default: false) (bool) Status de prazo"
         - name: inAtividadeExterna
           in: query
           schema:
             type: string
-          description: '(Optional. Defaut: false) (bool) Status de atividade externa'
+          description: "(Optional. Defaut: false) (bool) Status de atividade externa"
         - name: inPublicacao
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Status de publicação'
+          description: "(Optional. Default: false) (bool) Status de publicação"
         - name: inAudiencia
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Status de audiência'
+          description: "(Optional. Default: false) (bool) Status de audiência"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2164,7 +2591,7 @@ paths:
               example:
                 - IDStatusEncerramento: -2147483648
                   Titulo: texto
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2175,10 +2602,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2189,10 +2614,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2203,10 +2626,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2217,14 +2638,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
+                $ref: components\schemas\cases\Exception.yaml
   /api/agenda/titulos:
     get:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Lista títulos
+      operationId: listaTitulos
       parameters:
         - name: tipo
           in: query
@@ -2242,7 +2662,7 @@ paths:
             11: Publicacao
             -2147483648: None
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2254,8 +2674,12 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - IDEscritorio: -2147483648
+                  TipoCobrancaEvento: -2147483648
+                  Titulo: texto
+                  IDTituloCobranca: -2147483648
+                  LinkEntrevistaTemplate: texto
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2266,10 +2690,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2280,10 +2702,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2294,10 +2714,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2308,13 +2726,12 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
     post:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Cria títulos
+      operationId: criaTitulos
       requestBody:
         content:
           application/json:
@@ -2327,7 +2744,7 @@ paths:
                   IDTituloCobranca: -2147483648
                   LinkEntrevistaTemplate: texto
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2340,7 +2757,7 @@ paths:
                 type: object
               example:
                 - cdTituloCobranca: -2147483648
-                  dtInativacao: '2022-01-01T00:00:00'
+                  dtInativacao: 2022-01-01T00:00:00
                   cdArea: -2147483648
                   dsTitulo: texto
                   nrTipoCobrancaEvento: -2147483648
@@ -2352,7 +2769,7 @@ paths:
                   nrPrecedenciaAoPaiEmDiasText: texto
                   SubTarefas:
                     - cdTituloCobranca: -2147483648
-                      dtInativacao: '2022-01-01T00:00:00'
+                      dtInativacao: 2022-01-01T00:00:00
                       cdArea: -2147483648
                       dsTitulo: texto
                       nrTipoCobrancaEvento: -2147483648
@@ -2364,7 +2781,7 @@ paths:
                       nrPrecedenciaAoPaiEmDiasText: texto
                       dsSituacaoText: texto
                   dsSituacaoText: texto
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2375,10 +2792,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2389,10 +2804,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2403,10 +2816,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2417,13 +2828,12 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
+                $ref: components\schemas\cases\Exception.yaml
     put:
       tags:
-        - Looplex Cases > Agenda
+        - Agenda
       summary: Edita títulos
+      operationId: editaTitulos
       requestBody:
         content:
           application/json:
@@ -2436,7 +2846,7 @@ paths:
                   IDTituloCobranca: -2147483648
                   LinkEntrevistaTemplate: texto
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2449,7 +2859,7 @@ paths:
                 type: object
               example:
                 - cdTituloCobranca: -2147483648
-                  dtInativacao: '2022-01-01T00:00:00'
+                  dtInativacao: 2022-01-01T00:00:00
                   cdArea: -2147483648
                   dsTitulo: texto
                   nrTipoCobrancaEvento: -2147483648
@@ -2461,7 +2871,7 @@ paths:
                   nrPrecedenciaAoPaiEmDiasText: texto
                   SubTarefas:
                     - cdTituloCobranca: -2147483648
-                      dtInativacao: '2022-01-01T00:00:00'
+                      dtInativacao: 2022-01-01T00:00:00
                       cdArea: -2147483648
                       dsTitulo: texto
                       nrTipoCobrancaEvento: -2147483648
@@ -2473,7 +2883,7 @@ paths:
                       nrPrecedenciaAoPaiEmDiasText: texto
                       dsSituacaoText: texto
                   dsSituacaoText: texto
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2484,10 +2894,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2498,10 +2906,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2512,10 +2918,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2526,14 +2930,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: texto
-                ExceptionMessage: texto
-  /api/casos/{idCaso}/produtos:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{idCaso}/produtos":
     get:
       tags:
-        - Looplex Cases > Produtos
+        - Produtos
       summary: Lista produtos por caso
+      operationId: listaProdutosPorCaso
       parameters:
         - name: idCaso
           in: path
@@ -2542,7 +2945,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do caso
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2554,8 +2957,13 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - NomeCliente: texto
+                  TituloCaso: texto
+                  NumeroInterno: texto
+                  NumeroExterno: texto
+                  dsProduto: texto
+                  IdCaso: -2147483648
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2566,10 +2974,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2580,10 +2986,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2594,10 +2998,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2608,20 +3010,19 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/num/produtos:
     get:
       tags:
-        - Looplex Cases > Produtos
+        - Produtos
       summary: Lista produtos do caso por filtro
+      operationId: listaProdutosDoCasoPorFiltro
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O número interno do processo.'
+          description: "(Optional. Default: 0) (int) O número interno do processo."
         - name: NumeroExterno
           in: query
           schema:
@@ -2631,9 +3032,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do processo'
+          description: "(Optional. Default: 0) (int) O identificador do processo"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2645,8 +3046,13 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                - NomeCliente: texto
+                  TituloCaso: texto
+                  NumeroInterno: texto
+                  NumeroExterno: texto
+                  dsProduto: texto
+                  IdCaso: -2147483648
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2657,10 +3063,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2671,10 +3075,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2685,10 +3087,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2699,14 +3099,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/{id}/ficha:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{id}/ficha":
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Obtém ficha do processo
+      operationId: obtemFichaDoProcesso
       parameters:
         - name: id
           in: path
@@ -2715,7 +3114,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do caso
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2727,8 +3126,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2739,10 +3138,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2753,10 +3150,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2767,10 +3162,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2781,14 +3174,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/{id}:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{id}":
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Obtém informações do caso
+      operationId: obtemInformacoesDoCaso
       parameters:
         - name: id
           in: path
@@ -2797,7 +3189,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do caso.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2809,8 +3201,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2821,10 +3213,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2835,10 +3225,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2849,10 +3237,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2863,35 +3249,35 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/clientes/{idCliente}/casos:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/clientes/{idCliente}/casos":
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista os casos do cliente
+      operationId: listaOsCasosDoCliente
       parameters:
         - name: ativos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: true) (bool) Listar os casos ativos?'
+          description: "(Optional. Default: true) (bool) Listar os casos ativos?"
         - name: inativos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Listar os casos inativos?'
+          description: "(Optional. Default: false) (bool) Listar os casos inativos?"
         - name: apenasMeusCasos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) Listar apenas os casos desse funcionário?'
+          description: "(Optional. Default: false) Listar apenas os casos desse
+            funcionário?"
         - name: apenasCasosPai
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) Apenas os casos principais?'
+          description: "(Optional. Default: false) Apenas os casos principais?"
         - name: idCliente
           in: path
           schema:
@@ -2899,7 +3285,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do cliente
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2911,8 +3297,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -2923,10 +3309,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -2937,10 +3321,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -2951,10 +3333,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -2965,14 +3345,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/subcasos/{cdProcessoPai}:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/subcasos/{cdProcessoPai}":
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista subcasos
+      operationId: listaSubcasos
       description: Lista os processos através do identificador do processo pai.
       parameters:
         - name: cdProcessoPai
@@ -2982,7 +3361,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do processo pai.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -2994,8 +3373,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3006,10 +3385,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3020,10 +3397,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3034,10 +3409,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3048,14 +3421,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/porIds/{ids}:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/porIds/{ids}":
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista casos por identificadores
+      operationId: listaCasosPorIdentificadores
       description: Lista os processos de acordo com os identificadores informados.
       parameters:
         - name: ids
@@ -3065,7 +3437,7 @@ paths:
           required: true
           description: (Required) (int[]) Os identificadores dos processos.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3077,8 +3449,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3089,10 +3461,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3103,10 +3473,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3117,10 +3485,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3131,16 +3497,14 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/meuscasos/{cdResponsavel}:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/meuscasos/{cdResponsavel}":
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista os casos por responsável
-      description: >-
-        Lista os processos de acordo com o identificador do funcionário
+      operationId: listaOsCasosPorResponsavel
+      description: Lista os processos de acordo com o identificador do funcionário
         informado.
       parameters:
         - name: cdResponsavel
@@ -3150,7 +3514,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do funcionário responsável.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3162,8 +3526,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3174,10 +3538,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3188,10 +3550,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3202,10 +3562,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3216,14 +3574,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/id/num:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista casos por filtro
+      operationId: listaCasosPorFiltro
       description: >-
         Lista os casos por filtro.
 
@@ -3231,14 +3588,13 @@ paths:
         É possível informar apenas 1 item para cada filtro.
 
 
-        Exemplo: 1 número interno, 1 número externo e 1 identificador de
-        processo.
+        Exemplo: 1 número interno, 1 número externo e 1 identificador de processo.
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O número interno do processo.'
+          description: "(Optional. Default: 0) (int) O número interno do processo."
         - name: NumeroExterno
           in: query
           schema:
@@ -3248,9 +3604,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do processo.'
+          description: "(Optional. Default: 0) (int) O identificador do processo."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3262,8 +3618,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3274,10 +3630,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3288,10 +3642,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3302,10 +3654,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3316,14 +3666,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/num:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista casos por filtro (array)
+      operationId: listaCasosPorFiltroArray
       description: >-
         StartFragment
 
@@ -3334,8 +3683,7 @@ paths:
         É possível informar mais de 1 item para cada filtro.
 
 
-        Exemplo: 1 ou mais números internos, 1 ou mais números externos e 1 ou
-        mais identificadores de processo.
+        Exemplo: 1 ou mais números internos, 1 ou mais números externos e 1 ou mais identificadores de processo.
       parameters:
         - name: IdProcesso
           in: query
@@ -3353,7 +3701,7 @@ paths:
             type: string
           description: (Optional) (string[]) Os números externos dos processos.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3365,8 +3713,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3377,10 +3725,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3391,10 +3737,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3405,10 +3749,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3419,27 +3761,26 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista casos por situação
+      operationId: listaCasosPorSituacao
       parameters:
         - name: ativos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: true) (bool) Listar os casos ativos?'
+          description: "(Optional. Default: true) (bool) Listar os casos ativos?"
         - name: inativos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Listar os casos inativos?'
+          description: "(Optional. Default: false) (bool) Listar os casos inativos?"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3451,8 +3792,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3463,10 +3804,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3477,10 +3816,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3491,10 +3828,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3505,27 +3840,26 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/listacasos:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista casos por situação
+      operationId: listaCasosPorSituacao
       parameters:
         - name: ativos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: true) (bool) Listar os casos ativos?'
+          description: "(Optional. Default: true) (bool) Listar os casos ativos?"
         - name: inativos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Listar os casos inativos?'
+          description: "(Optional. Default: false) (bool) Listar os casos inativos?"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3537,8 +3871,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3549,10 +3883,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3563,10 +3895,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3577,10 +3907,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3591,16 +3919,15 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/RamosJudiciais:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista ramos judiciais
+      operationId: listaRamosJudiciais
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3615,7 +3942,7 @@ paths:
                 - Valor: texto
                   ID: -2147483648
                   Description: texto
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3626,10 +3953,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3640,10 +3965,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3654,10 +3977,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3668,20 +3989,19 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/id/ficha/num:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Lista fichas de processos por filtro
+      operationId: listaFichasDeProcessosPorFiltro
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O número interno do processo.'
+          description: "(Optional. Default: 0) (int) O número interno do processo."
         - name: NumeroExterno
           in: query
           schema:
@@ -3691,9 +4011,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do processo.'
+          description: "(Optional. Default: 0) (int) O identificador do processo."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3705,8 +4025,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3717,10 +4037,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3731,10 +4049,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3745,10 +4061,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3759,14 +4073,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/busca:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Pesquisa processos por termo
+      operationId: pesquisaProcessosPorTermo
       parameters:
         - name: termo
           in: query
@@ -3777,22 +4090,22 @@ paths:
           in: query
           schema:
             type: boolean
-          description: '(Optional. Default: true) (bool) Buscar processos ativos?'
-          example: 'true'
+          description: "(Optional. Default: true) (bool) Buscar processos ativos?"
+          example: "true"
         - name: inativos
           in: query
           schema:
             type: boolean
-          description: '(Optional. Default: false) (bool) Buscar processos inativos?'
-          example: 'false'
+          description: "(Optional. Default: false) (bool) Buscar processos inativos?"
+          example: "false"
         - name: apenasMeusCasos
           in: query
           schema:
             type: boolean
-          description: '(Optional. Default: false) (bool) Buscar apenas meus casos?'
-          example: 'false'
+          description: "(Optional. Default: false) (bool) Buscar apenas meus casos?"
+          example: "false"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3804,8 +4117,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3816,10 +4129,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3830,10 +4141,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3844,10 +4153,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3858,14 +4165,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/busca:
     get:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Pesquisa processos por termo
+      operationId: pesquisaProcessosPorTermo
       parameters:
         - name: termo
           in: query
@@ -3876,14 +4182,14 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: true) (bool) Listar os processos ativos?'
+          description: "(Optional. Default: true) (bool) Listar os processos ativos?"
         - name: inativos
           in: query
           schema:
             type: string
-          description: '(Optional. Default: false) (bool) Listar os processos inativos?'
+          description: "(Optional. Default: false) (bool) Listar os processos inativos?"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -3895,8 +4201,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -3907,10 +4213,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -3921,10 +4225,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -3935,10 +4237,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -3949,14 +4249,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/inclui:
     post:
       tags:
-        - Looplex Cases > Processos
+        - Processos
       summary: Cadastrar processos
+      operationId: cadastrarProcessos
       requestBody:
         content:
           application/json:
@@ -3979,8 +4278,8 @@ paths:
                   cdNoForoVara: -2147483648
                   numeroSequencial: -2147483648
                   confidencial: false
-                  dataCriacao: '2022-01-01T00:00:00'
-                  dataUltimaAlteracao: '2022-01-01T00:00:00'
+                  dataCriacao: 2022-01-01T00:00:00
+                  dataUltimaAlteracao: 2022-01-01T00:00:00
                   classeDoProcesso: -2147483648
                   tipo: -2147483648
                   situacaoDoProcesso: -2147483648
@@ -4000,9 +4299,9 @@ paths:
                   comentarioExpectativaDaCausa: texto
                   segundoNumero: texto
                   anotacoesSegundoNumero: texto
-                  dataEntrada: '2022-01-01T00:00:00'
-                  dataDistribuicao: '2022-01-01T00:00:00'
-                  dataCitacao: '2022-01-01T00:00:00'
+                  dataEntrada: 2022-01-01T00:00:00
+                  dataDistribuicao: 2022-01-01T00:00:00
+                  dataCitacao: 2022-01-01T00:00:00
                   idProcessoNoFornecedorPush: -2147483648
                   nrFornecedorPush: -2147483648
                   coResponsaveis:
@@ -4025,12 +4324,12 @@ paths:
                       TextoAndamento: texto
                       TextoAndamentoContinuacao: texto
                       IdProcesso: -2147483648
-                      DataCompetencia: '2022-01-01T00:00:00'
-                      DataInclusao: '2022-01-01T00:00:00'
+                      DataCompetencia: 2022-01-01T00:00:00
+                      DataInclusao: 2022-01-01T00:00:00
                       IdAutor: -2147483648
                       NomeAutor: texto
                       InUsoInterno: false
-                      DataRevisao: '2022-01-01T00:00:00'
+                      DataRevisao: 2022-01-01T00:00:00
                       IdRevisor: -2147483648
                       NomeRevisor: texto
                       Situacao: -2147483648
@@ -4050,15 +4349,15 @@ paths:
                       Tipo: -2147483648
                       Titulo: texto
                       IDTitulocobranca: -2147483648
-                      Data: '2022-01-01T00:00:00'
-                      Lembrete: '00:00:00'
-                      DataLimite: '2022-01-01T00:00:00'
+                      Data: 2022-01-01T00:00:00
+                      Lembrete: 00:00:00
+                      DataLimite: 2022-01-01T00:00:00
                       FuncionarioExecutor: -2147483648
                       FuncionarioResponsavel: -2147483648
                       FuncionariosParticipantes:
                         - 1
                       Observacao: texto
-                      DataRealizacao: '2022-01-01T00:00:00'
+                      DataRealizacao: 2022-01-01T00:00:00
                       IDStatusEncerramentoItemAgenda: -2147483648
                       ObservacaoRegistroRealizacao: texto
                       Situacao: -2147483648
@@ -4067,10 +4366,10 @@ paths:
                       IDForo: -2147483648
                       Local: texto
                       NomeFuncionarioExecutor: texto
-                      DataCriacao: '2022-01-01T00:00:00'
+                      DataCriacao: 2022-01-01T00:00:00
                       DataCriacaoFormatada: texto
                       DataRealizacaoFormatada: texto
-                      DataRegistroRealizacao: '2022-01-01T00:00:00'
+                      DataRegistroRealizacao: 2022-01-01T00:00:00
                       DataRegistroRealizacaoFormatada: texto
                       SituacaoLembrete: -2147483648
                       IsEditable: false
@@ -4099,7 +4398,7 @@ paths:
                     - IDCaso: -2147483648
                       IDParametroDadoComplementar: -2147483648
                       Valor: texto
-                      DataDeAtualizacao: '2022-01-01T00:00:00'
+                      DataDeAtualizacao: 2022-01-01T00:00:00
                   pedidos:
                     - Risco: -2147483648
                       ValorPrevisto: 0
@@ -4111,10 +4410,10 @@ paths:
                       Justificativa: texto
                       MoedaValorPrevisto: -2147483648
                       MoedaValorContingenciado: -2147483648
-                      DataConstituicao: '2022-01-01T00:00:00'
-                      DataVencimento: '2022-01-01T00:00:00'
+                      DataConstituicao: 2022-01-01T00:00:00
+                      DataVencimento: 2022-01-01T00:00:00
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4126,8 +4425,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4138,10 +4437,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4152,10 +4449,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4166,10 +4461,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4180,14 +4473,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/clientes/{idCliente}/pastas:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/clientes/{idCliente}/pastas":
     get:
       tags:
-        - Looplex Cases > Pastas
+        - Pastas
       summary: Lista pastas do cliente
+      operationId: listaPastasDoCliente
       parameters:
         - name: idCliente
           in: path
@@ -4196,7 +4488,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do cliente.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4208,8 +4500,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4220,10 +4512,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4234,10 +4524,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4248,10 +4536,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4262,14 +4548,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/{idCaso}/natureza:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{idCaso}/natureza":
     get:
       tags:
-        - Looplex Cases > Natureza
+        - Natureza
       summary: Lista naturezas do caso
+      operationId: listaNaturezasDoCaso
       parameters:
         - name: idCaso
           in: path
@@ -4278,7 +4563,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do processo.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4290,8 +4575,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4302,10 +4587,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4316,10 +4599,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4330,10 +4611,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4344,20 +4623,19 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/num/natureza:
     get:
       tags:
-        - Looplex Cases > Natureza
+        - Natureza
       summary: Lista naturezas por filtro
+      operationId: listaNaturezasPorFiltro
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O número interno do processo.'
+          description: "(Optional. Default: 0) (int) O número interno do processo."
         - name: NumeroExterno
           in: query
           schema:
@@ -4367,9 +4645,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do processo.'
+          description: "(Optional. Default: 0) (int) O identificador do processo."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4381,8 +4659,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4393,10 +4671,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4407,10 +4683,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4421,10 +4695,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4435,21 +4707,19 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/timesheet:
     get:
       tags:
-        - Looplex Cases > Timesheet
+        - Timesheet
       summary: Lista timesheet por filtro
+      operationId: listaTimesheetPorFiltro
       parameters:
         - name: idsFuncionarios
           in: query
           schema:
             type: string
-          description: >-
-            (Required) (string) Os identificadores dos funcionários separados
+          description: (Required) (string) Os identificadores dos funcionários separados
             por virgula
         - name: dataInicial
           in: query
@@ -4457,7 +4727,7 @@ paths:
             type: string
           description: (Required) (string) A data inicial para pesquisa
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4469,8 +4739,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4481,10 +4751,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4495,10 +4763,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4509,10 +4775,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4523,16 +4787,15 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/fase:
     get:
       tags:
-        - Looplex Cases > Fases
+        - Fases
       summary: Lista fases
+      operationId: listaFases
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4544,8 +4807,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4556,10 +4819,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4570,10 +4831,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4584,10 +4843,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4598,27 +4855,25 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/fase/{nrGrupo}:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/fase/{nrGrupo}":
     get:
       tags:
-        - Looplex Cases > Fases
+        - Fases
       summary: Lista fases por ramo judicial
+      operationId: listaFasesPorRamoJudicial
       parameters:
         - name: nrGrupo
           in: path
           schema:
             type: string
           required: true
-          description: >-
-            (Required) (int) O ramo judicial. 1: Administrativo. 2: Consultivo.
-            3: Judicial Estadual. 4: Judicial Federal. 5: Judicial Trabalhista.
-            6: Interno. 7: Militar Estadual. 8: Eleitoral. 9: Militar União. 10:
-            Consultivo Contrato.
+          description: "(Required) (int) O ramo judicial. 1: Administrativo. 2:
+            Consultivo. 3: Judicial Estadual. 4: Judicial Federal. 5: Judicial
+            Trabalhista. 6: Interno. 7: Militar Estadual. 8: Eleitoral. 9:
+            Militar União. 10: Consultivo Contrato."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4630,8 +4885,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4642,10 +4897,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4656,10 +4909,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4670,10 +4921,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4684,14 +4933,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/{nrSequencia}/fase:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{nrSequencia}/fase":
     get:
       tags:
-        - Looplex Cases > Fases
+        - Fases
       summary: Obtém fase do caso
+      operationId: obtemFaseDoCaso
       parameters:
         - name: nrSequencia
           in: path
@@ -4700,7 +4948,7 @@ paths:
           required: true
           description: (Required) (int) O numero sequencial do caso.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4712,8 +4960,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4724,10 +4972,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4738,10 +4984,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4752,10 +4996,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4766,20 +5008,19 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/num/fase:
     get:
       tags:
-        - Looplex Cases > Fases
+        - Fases
       summary: Lista fases por identificador, numero interno ou numero externo do caso
+      operationId: listaFasesPorIdentificadorNumeroInternoOuNumeroExternoDoCaso
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O numero interno do caso.'
+          description: "(Optional. Default: 0) (int) O numero interno do caso."
         - name: NumeroExterno
           in: query
           schema:
@@ -4789,9 +5030,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do caso.'
+          description: "(Optional. Default: 0) (int) O identificador do caso."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4803,8 +5044,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4815,10 +5056,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4829,10 +5068,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4843,10 +5080,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4857,14 +5092,13 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-  /api/casos/{idCaso}/valoresapurados:
+                $ref: components\schemas\cases\Exception.yaml
+  "/api/casos/{idCaso}/valoresapurados":
     get:
       tags:
-        - Looplex Cases > Valores apurados
+        - Valores apurados
       summary: Lista valores apurados por caso
+      operationId: listaValoresApuradosPorCaso
       parameters:
         - name: idCaso
           in: path
@@ -4873,7 +5107,7 @@ paths:
           required: true
           description: (Required) (int) O identificador do caso.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4885,8 +5119,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4897,10 +5131,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -4911,10 +5143,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -4925,10 +5155,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -4939,22 +5167,20 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/casos/num/valoresapurados:
     get:
       tags:
-        - Looplex Cases > Valores apurados
-      summary: >-
-        Lista valores apurados por identificador, numero interno ou numero
+        - Valores apurados
+      summary: Lista valores apurados por identificador, numero interno ou numero
         externo do caso
+      operationId: listaValoresApuradosPorIdentificadorNumeroInternoOuNumeroExternoDoCaso
       parameters:
         - name: NumeroInterno
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O numero interno do caso. '
+          description: "(Optional. Default: 0) (int) O numero interno do caso. "
         - name: NumeroExterno
           in: query
           schema:
@@ -4964,9 +5190,9 @@ paths:
           in: query
           schema:
             type: string
-          description: '(Optional. Default: 0) (int) O identificador do caso.'
+          description: "(Optional. Default: 0) (int) O identificador do caso."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -4978,8 +5204,8 @@ paths:
               schema:
                 type: object
               example:
-                response: '200'
-        '401':
+                response: "200"
+        "401":
           description: Unauthorized
           headers:
             Content-Type:
@@ -4990,10 +5216,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '403':
+                $ref: components\schemas\cases\Exception.yaml
+        "403":
           description: Forbidden
           headers:
             Content-Type:
@@ -5004,10 +5228,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '404':
+                $ref: components\schemas\cases\Exception.yaml
+        "404":
           description: Not Found
           headers:
             Content-Type:
@@ -5018,10 +5240,8 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
-        '500':
+                $ref: components\schemas\cases\Exception.yaml
+        "500":
           description: Internal Server Error
           headers:
             Content-Type:
@@ -5032,23 +5252,22 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                Message: Erro
-                ExceptionMessage: Descrição do erro
+                $ref: components\schemas\cases\Exception.yaml
   /api/VF/ListaPorNivel:
     get:
       tags:
         - Looplex Varas e Foros
       summary: Lista por nível
+      operationId: listaPorNivel
       parameters:
         - name: nivel
           in: query
           schema:
             type: integer
-          description: '(Required) (int) O nível para pesquisa. Observação: é sempre 1.'
-          example: '1'
+          description: "(Required) (int) O nível para pesquisa. Observação: é sempre 1."
+          example: "1"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5060,7 +5279,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ObtemFilhosPorPai:
@@ -5068,21 +5287,22 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Obtém itens filhos por identificador do item pai
+      operationId: obtemItensFilhosPorIdentificadorDoItemPai
       parameters:
         - name: grupoId
           in: query
           schema:
             type: integer
           description: (Required) (int) O identificador do item
-          example: '1'
+          example: "1"
         - name: somenteAtivos
           in: query
           schema:
             type: boolean
-          description: '(Optional. Default: true) (bool) Obter apenas itens ativos?'
-          example: 'true'
+          description: "(Optional. Default: true) (bool) Obter apenas itens ativos?"
+          example: "true"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5094,7 +5314,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ObtemFilhosPorNomePai:
@@ -5102,6 +5322,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Obtém itens filhos por nome do item pai
+      operationId: obtemItensFilhosPorNomeDoItemPai
       parameters:
         - name: nomeNo
           in: query
@@ -5113,10 +5334,10 @@ paths:
           in: query
           schema:
             type: boolean
-          description: '(Optional. Default: true) Obter apenas itens ativos?'
-          example: 'true'
+          description: "(Optional. Default: true) Obter apenas itens ativos?"
+          example: "true"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5128,7 +5349,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ObtemPorID:
@@ -5136,15 +5357,16 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Obtém item por identificador
+      operationId: obtemItemPorIdentificador
       parameters:
-        - name: 'no'
+        - name: no
           in: query
           schema:
             type: integer
           description: (Required) (int) O identificador do item
-          example: '1'
+          example: "1"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5156,7 +5378,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ListaHierarquia:
@@ -5164,14 +5386,15 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Obtém a hierarquia do item
+      operationId: obtemAHierarquiaDoItem
       parameters:
-        - name: 'no'
+        - name: no
           in: query
           schema:
             type: string
           description: (Required) (int) O identificador do item
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5183,7 +5406,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/HierarquiaFormatadaDoNo:
@@ -5191,15 +5414,16 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Obtém a hierarquia formatada do item
+      operationId: obtemAHierarquiaFormatadaDoItem
       parameters:
-        - name: 'no'
+        - name: no
           in: query
           schema:
             type: integer
           description: (Required) (int) O identificador do item
-          example: '1'
+          example: "1"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5211,7 +5435,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ListaRitosGrupoRitos:
@@ -5219,6 +5443,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Lista ritos e grupos de ritos
+      operationId: listaRitosEGruposDeRitos
       parameters:
         - name: tipoPesquisa
           in: query
@@ -5234,14 +5459,14 @@ paths:
             3: Pesquisa por grupo de rito. 
 
             4: Pesquisa por grupo rito pai
-          example: '2'
+          example: "2"
         - name: identificador
           in: query
           schema:
             type: string
           description: (Required) (int) O identificador do item
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5253,7 +5478,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ListaGruposRito:
@@ -5261,14 +5486,15 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Lista grupos de rito
+      operationId: listaGruposDeRito
       parameters:
         - name: gruposPrincipais
           in: query
           schema:
             type: string
-          description: '(Optional. Default: true) (bool) Lista os grupos principais?'
+          description: "(Optional. Default: true) (bool) Lista os grupos principais?"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5280,7 +5506,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ListaVinculoGrupoERito:
@@ -5288,6 +5514,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Lista vínculo entre grupo de rito e vara
+      operationId: listaVinculoEntreGrupoDeRitoEVara
       parameters:
         - name: idVara
           in: query
@@ -5295,7 +5522,7 @@ paths:
             type: string
           description: (Required) (int) O identificador da vara
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5307,7 +5534,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ritosDoNo:
@@ -5315,6 +5542,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Lista vínculo entre ritos e vara
+      operationId: listaVinculoEntreRitosEVara
       parameters:
         - name: cdNo
           in: query
@@ -5322,7 +5550,7 @@ paths:
             type: string
           description: (Required) (int) O identificador do item
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5334,7 +5562,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/RitosDoGrupo:
@@ -5342,6 +5570,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Ritos do grupo
+      operationId: ritosDoGrupo
       parameters:
         - name: cdGrupoRito
           in: query
@@ -5349,7 +5578,7 @@ paths:
             type: string
           description: (Required) (int) O identificador do grupo de rito
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5361,7 +5590,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/cdNoPorNome:
@@ -5369,6 +5598,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Identificador por nome do item
+      operationId: identificadorPorNomeDoItem
       parameters:
         - name: nome
           in: query
@@ -5376,7 +5606,7 @@ paths:
             type: string
           description: (Required) (string) O nome do item
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5388,7 +5618,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/ProximosNiveis:
@@ -5396,6 +5626,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Próximos níveis
+      operationId: proximosNiveis
       parameters:
         - name: cdNo
           in: query
@@ -5403,7 +5634,7 @@ paths:
             type: string
           description: (Required) (int) O identificador do item
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5415,7 +5646,7 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
   /api/VF/Rito:
@@ -5423,6 +5654,7 @@ paths:
       tags:
         - Looplex Varas e Foros
       summary: Obtém rito por identificador
+      operationId: obtemRitoPorIdentificador
       parameters:
         - name: idRito
           in: query
@@ -5430,7 +5662,7 @@ paths:
             type: string
           description: (Required) (int) O identificador do rito
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Content-Type:
@@ -5442,6 +5674,6 @@ paths:
               schema:
                 type: object
               example:
-                respostaAPI: ''
+                respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
