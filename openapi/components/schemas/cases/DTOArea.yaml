@@ -1,0 +1,15 @@
+title: DTOArea
+type: object
+properties:
+  ID:
+    description: ""
+    example: ""
+    type: integer
+  Titulo:
+    description: ""
+    example: ""
+    type: string
+  Ativa:
+    description: ""
+    example: ""
+    type: boolean

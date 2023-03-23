@@ -1,0 +1,27 @@
+type: TipoItemTimeline
+example: 1
+title: Enum - O tipo do item da timeline
+description: |
+  1: AndamentoManual
+
+  2: AndamentoAutomatico
+
+  3: Timesheet
+
+  4: Agenda
+
+  5: Tarefa
+
+  6: Decisao
+
+  7: Despesa
+
+  8: Garantia
+
+  9: PushAndamento
+
+  10: PushPublicacao
+
+  11: EncerramentoCaso
+
+  12: ReativacaoCaso

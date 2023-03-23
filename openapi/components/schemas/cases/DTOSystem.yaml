@@ -1,0 +1,11 @@
+title: DTOSystem
+type: object
+properties:
+  version:
+    description: ""
+    example: ""
+    type: string
+  workstation:
+    description: ""
+    example: ""
+    type: string

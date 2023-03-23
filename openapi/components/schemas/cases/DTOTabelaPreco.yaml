@@ -1,0 +1,15 @@
+title: DTOTabelaPreco
+type: object
+properties:
+  IdEscritorio:
+    description: ""
+    example: ""
+    type: integer
+  IdTabelaPreco:
+    description: ""
+    example: ""
+    type: integer
+  NomeTabela:
+    description: ""
+    example: ""
+    type: string

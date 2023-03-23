@@ -1,0 +1,29 @@
+title: DTOTimelineItem
+type: object
+properties:
+  IDItem:
+    description: ""
+    example: ""
+    type: integer
+  DataFormatada:
+    description: ""
+    example: ""
+    type: string
+  TipoItem:
+    $ref: enums/TipoItemTimeline.yaml
+  TipoItemString:
+    description: ""
+    example: ""
+    type: string
+  TextoItem:
+    description: ""
+    example: ""
+    type: string
+  TipoItemAgenda:
+    description: ""
+    example: ""
+    type: integer
+  Titulo:
+    description: ""
+    example: ""
+    type: string
