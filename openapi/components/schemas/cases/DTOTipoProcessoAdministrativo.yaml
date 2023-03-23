@@ -1,0 +1,11 @@
+title: DTOTipoProcessoAdministrativo
+type: object
+properties:
+  IdTipoProcessoAdministrativo:
+    description: ""
+    example: ""
+    type: integer
+  Nome:
+    description: ""
+    example: ""
+    type: string

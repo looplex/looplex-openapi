@@ -1,0 +1,7 @@
+title: DTOTotalGastoDespesas
+type: object
+properties:
+  Gastos:
+    type: array
+    items:
+      $ref: DTOGastoDespesa.yaml

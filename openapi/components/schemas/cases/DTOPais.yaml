@@ -1,0 +1,11 @@
+title: DTOPais
+type: object
+properties:
+  ID:
+    description: ""
+    example: ""
+    type: integer
+  Pais:
+    description: ""
+    example: ""
+    type: string

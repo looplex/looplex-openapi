@@ -1,0 +1,47 @@
+title: DTOValorApurado
+type: object
+properties:
+  NomeCliente:
+    description: ""
+    example: ""
+    type: string
+  TituloCaso:
+    description: ""
+    example: ""
+    type: string
+  NumeroInterno:
+    description: ""
+    example: ""
+    type: string
+  NumeroExterno:
+    description: ""
+    example: ""
+    type: string
+  Data:
+    description: ""
+    example: ""
+    type: string
+  DataFormatada:
+    description: ""
+    example: ""
+    type: string
+  NomePedido:
+    description: ""
+    example: ""
+    type: string
+  ValorApurado:
+    description: ""
+    example: ""
+    type: number
+  Moeda:
+    description: ""
+    example: ""
+    type: string
+  Observacao:
+    description: ""
+    example: ""
+    type: string
+  IdCaso:
+    description: ""
+    example: ""
+    type: integer

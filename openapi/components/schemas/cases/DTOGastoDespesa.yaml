@@ -1,0 +1,11 @@
+title: DTOGastoDespesa
+type: object
+properties:
+  TipoDespesa:
+    description: ""
+    example: ""
+    type: string
+  TotalGasto:
+    description: ""
+    example: ""
+    type: number

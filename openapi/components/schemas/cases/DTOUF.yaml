@@ -1,0 +1,11 @@
+title: DTOUF
+type: object
+properties:
+  ID:
+    description: ""
+    example: ""
+    type: string
+  UF:
+    description: ""
+    example: ""
+    type: string
