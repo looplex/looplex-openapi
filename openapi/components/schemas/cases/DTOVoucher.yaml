@@ -1,0 +1,19 @@
+title: DTOVoucher
+type: object
+properties:
+  Observacao:
+    description: ""
+    example: ""
+    type: string
+  IDFornecedor:
+    description: ""
+    example: ""
+    type: integer
+  Nome:
+    description: ""
+    example: ""
+    type: string
+  ID:
+    description: ""
+    example: ""
+    type: integer

@@ -1,0 +1,15 @@
+title: DTOGarantia
+type: object
+properties:
+  IdGarantia:
+    description: ""
+    example: ""
+    type: integer
+  IdEscritorio:
+    description: ""
+    example: ""
+    type: integer
+  DescricaoGarantia:
+    description: ""
+    example: ""
+    type: string
