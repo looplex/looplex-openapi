@@ -1,0 +1,25 @@
+type: RamosJudicial
+example: 1
+description: |
+  1: Administrativo
+
+  2: Consultivo
+
+  3: Judicial Estadual
+
+  4: Judicial Federal
+
+  5: Judicial Trabalhista
+
+  6: Interno Escritório
+
+  7: Militar Estadual
+
+  8: Eleitoral
+
+  9: Militar União
+
+  10: Consultivo Contrato
+
+  
+

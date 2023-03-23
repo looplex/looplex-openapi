@@ -1,0 +1,14 @@
+title: DTOUser
+type: object
+properties:
+  User:
+    type: object
+    properties:
+      user:
+        type: string
+      pwd:
+        type: string
+      domain:
+        type: string  
+required:
+  - User

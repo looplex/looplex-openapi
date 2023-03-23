@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
-    "postman-to-openapi": "^2.9.0"
+    "postman-to-openapi": "3.0.1"
   },
   "config": {
     "commitizen": {
