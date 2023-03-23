@@ -1,0 +1,14 @@
+title: DTOLoginAPI
+type: object
+properties:
+  escritorio:
+    description: "O escritório"
+    example: ""
+    type: string
+  token:
+    description: "O token de acesso criado no LawOffice"
+    example: ""
+    type: string
+required:
+  - escritorio
+  - token

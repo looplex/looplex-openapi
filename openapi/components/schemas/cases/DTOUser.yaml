@@ -10,5 +10,5 @@ properties:
         type: string
       domain:
         type: string  
-required:
+required: 
   - User

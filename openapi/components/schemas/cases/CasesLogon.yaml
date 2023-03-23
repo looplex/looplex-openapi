@@ -1,0 +1,11 @@
+title: CasesLogon
+type: object
+properties:
+  Successful:
+    description: "Indica se o login foi realizado com sucesso"
+    example: "true"
+    type: boolean
+  Profile:
+    description: "O contexto para utilizar nas demais requisições"
+    example: "string"
+    type: string

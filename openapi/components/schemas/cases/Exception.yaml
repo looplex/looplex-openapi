@@ -1,0 +1,11 @@
+title: Exception
+type: object
+properties:
+  Message:
+    description: "O tipo do erro"
+    example: ""
+    type: string
+  ExceptionMessage:
+    description: "A descrição do erro"
+    example: ""
+    type: string
