@@ -1,4 +1,5 @@
 type: RamosJudicial
+title: Enum - O tipo do processo
 example: 1
 description: |
   1: Administrativo

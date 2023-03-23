@@ -95,7 +95,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"raw": "\"{{DTOUser}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -135,7 +135,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"raw": "\"{{DTOUser}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -175,7 +175,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"raw": "\"{{DTOUser}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -215,7 +215,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"raw": "\"{{DTOUser}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -255,7 +255,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"User\": {\r\n        \"user\": \"\",\r\n        \"pwd\": \"\",\r\n        \"domain\": \"\"\r\n    }\r\n}",
+											"raw": "\"{{DTOUser}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -323,7 +323,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"escritorio\": \"\",\r\n    \"token\": \"\"\r\n}",
+											"raw": "\"{{DTOLoginAPI}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -363,7 +363,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"escritorio\": \"\",\r\n    \"token\": \"\"\r\n}",
+											"raw": "\"{{DTOLoginAPI}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -403,7 +403,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"escritorio\": \"\",\r\n    \"token\": \"\"\r\n}",
+											"raw": "\"{{DTOLoginAPI}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -443,7 +443,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"escritorio\": \"\",\r\n    \"token\": \"\"\r\n}",
+											"raw": "\"{{DTOLoginAPI}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -483,7 +483,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"escritorio\": \"\",\r\n    \"token\": \"\"\r\n}",
+											"raw": "\"{{DTOLoginAPI}}\"",
 											"options": {
 												"raw": {
 													"language": "json"
