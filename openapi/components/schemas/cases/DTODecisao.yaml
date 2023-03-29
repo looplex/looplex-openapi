@@ -1,0 +1,15 @@
+title: DTODecisao
+type: object
+properties:
+  IdDecisao:
+    description: ""
+    example: ""
+    type: integer
+  IdEscritorio:
+    description: ""
+    example: ""
+    type: integer
+  Nome:
+    description: ""
+    example: ""
+    type: string

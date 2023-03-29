@@ -1,0 +1,23 @@
+title: DTOPasta
+type: object
+properties:
+  IDPasta:
+    description: ""
+    example: ""
+    type: integer
+  IDEscritorio:
+    description: ""
+    example: ""
+    type: integer
+  IDCliente:
+    description: ""
+    example: ""
+    type: integer
+  NumeroDaPasta:
+    description: ""
+    example: ""
+    type: integer
+  Assunto:
+    description: ""
+    example: ""
+    type: string

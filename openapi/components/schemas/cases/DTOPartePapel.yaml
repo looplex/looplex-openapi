@@ -1,0 +1,11 @@
+title: DTOPartePapel
+type: object
+properties:
+  ID:
+    description: ""
+    example: ""
+    type: integer
+  Envolvimento:
+    description: ""
+    example: ""
+    type: string

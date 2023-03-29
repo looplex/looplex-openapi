@@ -1,0 +1,8 @@
+type: TipoAnexo
+example: 1
+description: |
+  0: None
+  
+  1: Anexo
+
+  2: AnexoCompromisso
