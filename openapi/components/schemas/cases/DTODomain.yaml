@@ -1,0 +1,31 @@
+title: DTODomain
+type: object
+properties:
+  Id:
+    description: ""
+    example: ""
+    type: integer
+  IdDominio:
+    description: ""
+    example: ""
+    type: integer
+  Base:
+    description: ""
+    example: ""
+    type: string
+  Asp:
+    description: ""
+    example: ""
+    type: string
+  Server:
+    description: ""
+    example: ""
+    type: string
+  Ativo:
+    description: ""
+    example: ""
+    type: boolean
+  Dominio:
+    description: ""
+    example: ""
+    type: string

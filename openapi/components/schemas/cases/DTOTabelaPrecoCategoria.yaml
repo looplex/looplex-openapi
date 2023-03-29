@@ -1,0 +1,51 @@
+title: DTOTabelaPrecoCategoria
+type: object
+properties:
+  IdCategoria:
+    description: ""
+    example: ""
+    type: integer
+  IdTabelaPreco:
+    description: ""
+    example: ""
+    type: integer
+  IdTabelaPrecoCategoria:
+    description: ""
+    example: ""
+    type: integer
+  NomeCategoria:
+    description: ""
+    example: ""
+    type: string
+  NomeTabelaPreco:
+    description: ""
+    example: ""
+    type: string
+  DataVigencia:
+    description: ""
+    example: ""
+    type: string
+  EhPadrao:
+    description: ""
+    example: ""
+    type: boolean
+  NumeroMoeda:
+    description: ""
+    example: "null"
+    type: integer
+  NumeroMoedaHoraPadrao:
+    description: ""
+    example: ""
+    type: integer
+  NumeroMoedaInt:
+    description: ""
+    example: ""
+    type: integer
+  ValorHora:
+    description: ""
+    example: ""
+    type: number
+  ValorHoraTrabalhadaPadrao:
+    description: ""
+    example: ""
+    type: number

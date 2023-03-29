@@ -1,0 +1,11 @@
+title: DTOSolicitante
+type: object
+properties:
+  DsNome:
+    description: ""
+    example: ""
+    type: string
+  CdSolicitante:
+    description: ""
+    example: ""
+    type: integer

@@ -1,0 +1,11 @@
+title: DTOStatusEncerramentoItemAgenda
+type: object
+properties:
+  IDStatusEncerramento:
+    description: ""
+    example: ""
+    type: integer
+  Titulo:
+    description: ""
+    example: ""
+    type: string
