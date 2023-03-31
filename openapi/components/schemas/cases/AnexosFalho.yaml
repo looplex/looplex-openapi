@@ -1,0 +1,27 @@
+title: AnexosFalho
+type: object
+properties:
+  dsNomeArquivo:
+    description: ""
+    example: ""
+    type: string
+  dsFilePath:
+    description: ""
+    example: ""
+    type: string
+  Tipo:
+    $ref: enums/TipoAnexo.yaml
+  dsKeyName:
+    description: ""
+    example: ""
+    type: string
+  Id:
+    description: ""
+    example: ""
+    type: integer
+  sizeInBytes:
+    description: ""
+    example: ""
+    type: integer
+required:
+  - Id

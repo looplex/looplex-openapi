@@ -1,0 +1,14 @@
+type: TipoEventoDeCobranca
+example: 1
+description: |
+  -2147483648: None
+
+  1: PorCompromisso
+
+  2: PorPrazo
+
+  3: PorAtividadeExterna
+
+  4: PorPublicacao
+
+  5: PorAudiencia

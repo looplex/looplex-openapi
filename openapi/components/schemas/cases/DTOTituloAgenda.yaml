@@ -1,0 +1,21 @@
+title: DTOTituloAgenda
+type: object
+properties:
+  IDEscritorio:
+    description: ""
+    example: ""
+    type: integer
+  TipoCobrancaEvento:
+    $ref: enums/TipoEventoDeCobranca.yaml
+  Titulo:
+    description: ""
+    example: ""
+    type: string
+  IDTituloCobranca:
+    description: ""
+    example: ""
+    type: integer
+  LinkEntrevistaTemplate:
+    description: ""
+    example: ""
+    type: string
