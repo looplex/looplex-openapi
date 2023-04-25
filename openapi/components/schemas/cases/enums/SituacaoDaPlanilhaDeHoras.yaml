@@ -1,0 +1,12 @@
+type: SituacaoDaPlanilhaDeHoras
+example: 2
+description: |
+  -2147483648: None
+
+  1: Aberta
+
+  2: AAprovar
+
+  3: Aprovada
+
+  4: NaoAprovada

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "68701229-574b-43b2-ade0-3cfc8942cf39",
+		"_postman_id": "7e0d2d4d-502e-4f7e-b82c-5475951b963f",
 		"name": "graph.looplex.com",
 		"description": "Looplex Graph é uma plataforma de APIs que conectam múltipos serviços e dados jurídicos.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -12144,6 +12144,366 @@
 													"value": null,
 													"description": "(Required) (string) A data inicial para pesquisa"
 												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Total de horas lançadas do profissional no mês",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/timesheet/totalhoras",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"timesheet",
+										"totalhoras"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/totalhoras",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"totalhoras"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "1"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/totalhoras",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"totalhoras"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/totalhoras",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"totalhoras"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/totalhoras",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"totalhoras"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/totalhoras",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"totalhoras"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Lista últimos lançamentos do profissional",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/timesheet/proximoslancamentos",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"timesheet",
+										"proximoslancamentos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/proximoslancamentos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"proximoslancamentos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOPlanilhaHoras[]}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/proximoslancamentos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"proximoslancamentos"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/proximoslancamentos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"proximoslancamentos"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/proximoslancamentos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"proximoslancamentos"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/timesheet/proximoslancamentos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"timesheet",
+												"proximoslancamentos"
 											]
 										}
 									},

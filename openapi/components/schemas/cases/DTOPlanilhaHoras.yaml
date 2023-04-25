@@ -1,0 +1,115 @@
+title: DTOPlanilhaHoras
+type: object
+properties:
+  NrLEDESTaskCode:
+    description: ""
+    example: ""
+    type: string
+  NrLEDESActivityCode:
+    description: ""
+    example: ""
+    type: string
+  DsSolicitante:
+    description: ""
+    example: ""
+    type: string
+  CdSolicitante:
+    description: ""
+    example: ""
+    type: integer
+  IDCliente:
+    description: ""
+    example: ""
+    type: integer
+  IDProcesso:
+    description: ""
+    example: ""
+    type: integer
+  IDFuncionario:
+    description: ""
+    example: ""
+    type: integer
+  NomeFuncionario:
+    description: ""
+    example: ""
+    type: string
+  Descricao:
+    description: ""
+    example: ""
+    type: string
+  DataExecucao:
+    description: ""
+    example: ""
+    type: string
+  TipoDeTarefa:
+    $ref: enums/TipoDeTarefa.yaml
+  QtdMinutos:
+    description: ""
+    example: ""
+    type: integer
+  IDFuncionarioResponsavel:
+    description: ""
+    example: ""
+    type: integer
+  IDFuncionarioBeneficiario:
+    description: ""
+    example: ""
+    type: integer
+  IDFechamentoPlanilhaHoras:
+    description: ""
+    example: ""
+    type: integer
+  IDRegistroFechamentoContaCliente:
+    description: ""
+    example: ""
+    type: integer
+  SituacaoDaPlanilha:
+    $ref: enums/SituacaoDaPlanilhaDeHoras.yaml
+  MotivoDaRecusa:
+    description: ""
+    example: ""
+    type: string
+  IDClassificacaoHorasDebitaveis:
+    description: ""
+    example: ""
+    type: integer
+  IDClassificacao:
+    description: ""
+    example: ""
+    type: integer
+  DsClassificacao:
+    description: ""
+    example: ""
+    type: string
+  Titulo:
+    description: ""
+    example: ""
+    type: string
+  IDAndamento:
+    description: ""
+    example: ""
+    type: integer
+  IDArea:
+    description: ""
+    example: ""
+    type: integer
+  IDContrato:
+    description: ""
+    example: ""
+    type: integer
+  DataLancamento:
+    description: ""
+    example: ""
+    type: string
+  InFaturadoPreVersao35:
+    description: ""
+    example: ""
+    type: boolean
+  IDLancamentoDeHoras:
+    description: ""
+    example: ""
+    type: integer
+  IsEditable:
+    description: ""
+    example: ""
+    type: boolean

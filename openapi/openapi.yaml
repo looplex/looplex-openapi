@@ -4788,6 +4788,140 @@ paths:
               schema:
                 type: object
                 $ref: components/schemas/cases/Exception.yaml
+  /api/timesheet/totalhoras:
+    get:
+      tags:
+        - Timesheet
+      summary: Total de horas lançadas do profissional no mês
+      operationId: totalDeHorasLancadasDoProfissionalNoMes
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example: 1
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  /api/timesheet/proximoslancamentos:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista últimos lançamentos do profissional
+      operationId: listaUltimosLancamentosDoProfissional
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example: "{{DTOPlanilhaHoras[]}}"
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
   /api/fase:
     get:
       tags:
