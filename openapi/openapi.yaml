@@ -7,9 +7,9 @@ info:
 servers:
   - url: https://graph.looplex.com
     description: Looplex Graph
-  - url: https://graph.looplex.com/cases/
+  - url: https://graph.looplex.com/cases
     description: Looplex Cases
-  - url: https://graph.looplex.com/varas_foros/
+  - url: https://graph.looplex.com/varas_foros
     description: Looplex Varas e Foros
 components:
   securitySchemes:
@@ -20,29 +20,52 @@ security:
   - apikeyAuth: []
 tags:
   - name: actions
+    description: actions
   - name: Looplex Cases
+    description: API do Looplex Cases
   - name: Login
+    description: Endpoints de login para a obtenção de um profile para utilização
+      nas demais requisições do Looplex Cases.
   - name: Áreas
+    description: Áreas
   - name: País
+    description: Endpoints de País, Estado e Cidade.
   - name: Agenda
+    description: Agenda
   - name: Produtos
+    description: Produtos
   - name: Processos
+    description: Processos
   - name: Pastas
+    description: Pasta
   - name: Natureza
+    description: Natureza
   - name: Timesheet
+    description: Timesheet
   - name: Fases
+    description: Fases
   - name: Valores apurados
+    description: Valores apurados
   - name: Informações adicionais
     description: Cadastro de novas informações adicionais (dados complementares)
   - name: people
+    description: people
   - name: finances
+    description: finances
   - name: assembler
+    description: assembler
   - name: documents
+    description: documents
   - name: templates
+    description: templates
   - name: users
+    description: users
   - name: flows
+    description: flows
   - name: storage
+    description: storage
   - name: Looplex Varas e Foros
+    description: API do Looplex Varas e Foros
 paths:
   /actions/v1/office-render:
     post:
@@ -5505,6 +5528,77 @@ paths:
               schema:
                 type: string
               example: ""
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  /api/dado_complementar/todos:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Lista todos as informações adicionais
+      operationId: listaTodosAsInformacoesAdicionais
+      description: |-
+        Lista todas as informações adicionais
+
+        #### 200 OK (Retorna um array)
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
         "401":
           description: Unauthorized
           headers:

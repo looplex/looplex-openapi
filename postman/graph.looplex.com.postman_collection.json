@@ -38,7 +38,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "actions"
 		},
 		{
 			"name": "Looplex Cases",
@@ -518,7 +519,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Endpoints de login para a obtenção de um profile para utilização nas demais requisições do Looplex Cases."
 				},
 				{
 					"name": "Áreas",
@@ -1026,7 +1028,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Áreas"
 				},
 				{
 					"name": "País",
@@ -1712,7 +1715,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Endpoints de País, Estado e Cidade."
 				},
 				{
 					"name": "Agenda",
@@ -6817,7 +6821,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Agenda"
 				},
 				{
 					"name": "Produtos",
@@ -7337,7 +7342,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Produtos"
 				},
 				{
 					"name": "Processos",
@@ -11154,7 +11160,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Processos"
 				},
 				{
 					"name": "Pastas",
@@ -11387,7 +11394,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Pasta"
 				},
 				{
 					"name": "Natureza",
@@ -11908,7 +11916,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Natureza"
 				},
 				{
 					"name": "Timesheet",
@@ -12524,7 +12533,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Timesheet"
 				},
 				{
 					"name": "Fases",
@@ -13447,7 +13457,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Fases"
 				},
 				{
 					"name": "Valores apurados",
@@ -13968,7 +13979,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Valores apurados"
 				},
 				{
 					"name": "Informações adicionais",
@@ -13980,7 +13992,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{{DTOObjetoNomeValor}}",
+									"raw": "\"{{DTOObjetoNomeValor}}\"",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -14471,11 +14483,193 @@
 									"body": "\"{{ExceptionResponse}}\""
 								}
 							]
+						},
+						{
+							"name": "Lista todos as informações adicionais",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar/todos",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar",
+										"todos"
+									]
+								},
+								"description": "Lista todas as informações adicionais\n\n#### 200 OK (Retorna um array)"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/todos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"todos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOInformacaoAdicionalResponse}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/todos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"todos"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/todos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"todos"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/todos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"todos"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/todos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"todos"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
 						}
 					],
 					"description": "Cadastro de novas informações adicionais (dados complementares)"
 				}
 			],
+			"description": "API do Looplex Cases",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -14502,36 +14696,44 @@
 		},
 		{
 			"name": "people",
-			"item": []
+			"item": [],
+			"description": "people"
 		},
 		{
 			"name": "finances",
-			"item": []
+			"item": [],
+			"description": "finances"
 		},
 		{
 			"name": "assembler",
 			"item": [
 				{
 					"name": "documents",
-					"item": []
+					"item": [],
+					"description": "documents"
 				},
 				{
 					"name": "templates",
-					"item": []
+					"item": [],
+					"description": "templates"
 				},
 				{
 					"name": "users",
-					"item": []
+					"item": [],
+					"description": "users"
 				}
-			]
+			],
+			"description": "assembler"
 		},
 		{
 			"name": "flows",
-			"item": []
+			"item": [],
+			"description": "flows"
 		},
 		{
 			"name": "storage",
-			"item": []
+			"item": [],
+			"description": "storage"
 		},
 		{
 			"name": "Looplex Varas e Foros",
@@ -15477,6 +15679,7 @@
 					]
 				}
 			],
+			"description": "API do Looplex Varas e Foros",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -15502,6 +15705,11 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": [
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			},
 			{
 				"key": "key",
 				"value": "Ocp-Apim-Subscription-Key",

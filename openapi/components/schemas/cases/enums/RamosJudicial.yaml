@@ -1,4 +1,4 @@
-type: RamosJudicial
+type: object
 title: Enum - O tipo do processo
 example: 1
 description: |
@@ -27,6 +27,3 @@ description: |
   12: GestaoDeAtivos
 
   13: Societario
-
-  
-

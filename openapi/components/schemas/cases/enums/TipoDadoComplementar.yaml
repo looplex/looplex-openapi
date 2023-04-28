@@ -1,4 +1,4 @@
-type: TipoDadoComplementar
+type: object
 example: 1
 description: |
   -2147483648: None
