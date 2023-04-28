@@ -1,0 +1,62 @@
+title: DTOInformacaoAdicional
+type: object
+properties:
+  IDParametroDadoComplementar:
+    description: "O identificador do dado complementar"
+    example: ""
+    type: integer
+  TipoCampoDadoComplementar:
+    $ref: enums/TipoDadoComplementar.yaml
+  TipoCampoDadoComplementarText:
+    description: "Um texto indicando o tipo do dado complçementar (somente leitura)."
+    example: ""
+    type: string
+  TituloDadoComplementar:
+    description: "O título do dado complementar"
+    example: ""
+    type: string
+  TamanhoCampo:
+    description: "O tamanho do dado complementar (quantidade de caracteres), apenas para os campos de texto."
+    example: ""
+    type: integer
+  Obrigatorio:
+    description: "Indica se o dado complementar é de preenchimento obrigatório."
+    example: ""
+    type: boolean
+  Ativo:
+    description: "Indica se o dado complementar está ativo (disponível para utilização)."
+    example: ""
+    type: boolean
+  Ordem:
+    description: "A ordem do dado complementar."
+    example: ""
+    type: integer
+  TipoDeVinculo:
+    description: "Indica qual o tipo de vinculo do dado complementar. Exemplo: \"Área 1\", \"Global\". (somente leitura)"
+    example: ""
+    type: string
+  Opcoes:
+    type: array
+    description: "As opções de seleção de um dado complementar de tipo \"Dropdown (Combo ou Selecao)\" ou \"Checkbox multiplo (CaixaDeMarcacao)\"."
+    items:
+      $ref: DTOItemDadoComplementar.yaml
+  VinculadoNosTiposDeProcesso:
+    type: array
+    description: "Indica os tipos de processo em que o dado complementar está vinculado."
+    items:
+      $ref: DTOTipoProcesso.yaml
+  VinculadoNasAreas:
+    type: array
+    description: "Indica as áreas em que o dado complementar está vinculado."
+    items:
+      $ref: DTOAreaInformacaoAdicional.yaml
+  ValoresProcessosCadastrados:
+    type: array
+    description: "Indica as informações que foram gravadas nos processos usando esse dado complementar."
+    items:
+      $ref: DTOValorDadoComplementarCaso.yaml
+  ValoresFuncionariosCadastrados:
+    type: array
+    description: "Indica as informações que foram cadastradas para funcionários usando esse dado complementar."
+    items:
+      $ref: DTOValorDadoComplementarFuncionario.yaml

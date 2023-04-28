@@ -32,6 +32,8 @@ tags:
   - name: Timesheet
   - name: Fases
   - name: Valores apurados
+  - name: Informações adicionais
+    description: Cadastro de novas informações adicionais (dados complementares)
   - name: people
   - name: finances
   - name: assembler
@@ -147,7 +149,7 @@ paths:
           application/json:
             schema:
               type: object
-              example: "{{DTOLoginAPI}}"
+              $ref: components/schemas/cases/DTOLoginAPI.yaml
       responses:
         "200":
           description: OK
@@ -5339,6 +5341,170 @@ paths:
                 type: object
               example:
                 response: "200"
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  /api/dado_complementar/edit:
+    put:
+      tags:
+        - Informações adicionais
+      summary: Editar informações adicionais
+      operationId: editarInformacoesAdicionais
+      description: |-
+        Esse método é utilizado para atualizar as informações adicionais.
+
+        #### Propriedades que podem ser alteradas
+
+        - TituloDadoComplementar
+        - TamanhoCampo
+        - Obrigatorio
+        - Ativo
+        - Ordem
+            
+
+        #### Body (Enviar um array)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: components/schemas/cases/DTOObjetoNomeValor.yaml
+      parameters:
+        - name: IDParametroDadoComplementar
+          in: query
+          schema:
+            type: integer
+          example: "5"
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  /api/dado_complementar:
+    post:
+      tags:
+        - Informações adicionais
+      summary: Cadastra nova Informação adicional
+      operationId: cadastraNovaInformacaoAdicional
+      description: |-
+        Utilizado para cadastrar novas informações adicionais.
+
+        #### Body (Enviar um array)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
+      responses:
+        "204":
+          description: No Content
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ""
         "401":
           description: Unauthorized
           headers:

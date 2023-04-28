@@ -1,0 +1,19 @@
+title: DTOItemDadoComplementar
+type: object
+properties:
+  IDItemDadoComplementar:
+    description: ""
+    example: ""
+    type: integer
+  IDParametroDadoComplementar:
+    description: "O identificador do dado complementar"
+    example: ""
+    type: integer
+  Texto:
+    description: "A informação a ser gravada"
+    example: ""
+    type: string
+  Valor:
+    description: "A informação a ser gravada"
+    example: ""
+    type: string

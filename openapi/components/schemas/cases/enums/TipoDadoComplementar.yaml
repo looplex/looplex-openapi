@@ -1,0 +1,37 @@
+type: TipoDadoComplementar
+example: 1
+description: |
+  -2147483648: None
+
+  1: CaixaTexto
+
+  2: NumericoDecimal
+
+  3: NumericoInteiro
+
+  4: DataHora
+
+  5: CaixaTextoMultiLinha
+
+  6: CaixaCombo
+
+  7: CaixaDeMarcacao
+
+  8: PagadorCombo
+
+  9: EmpresaCombo
+
+  10: ClienteCombo
+
+  11: GrupoClienteCombo
+
+  12: ContratoSelecao
+
+  13: ClienteSelecao
+
+  14: CasoSelecao
+
+  15: AreaCombo
+
+  16: ProfissionalCombo
+  

@@ -1,0 +1,19 @@
+title: DTOAreaInformacaoAdicional
+type: object
+properties:
+  IDAreaParametroDadoComplementar:
+    description: ""
+    example: ""
+    type: integer
+  IDParametroDadoComplementar:
+    description: "O identificador do dado complementar"
+    example: ""
+    type: integer
+  IDArea:
+    description: "O identificador da área"
+    example: ""
+    type: integer
+  Area:
+    description: "O nome da área (somente leitura)"
+    example: ""
+    type: string

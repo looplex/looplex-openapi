@@ -1,0 +1,23 @@
+title: DTOValorDadoComplementarFuncionario
+type: object
+properties:
+  IDFuncionarioValorDadoComplementar:
+    description: ""
+    example: ""
+    type: integer
+  IDFuncionario:
+    description: "O identificador do funcionário"
+    example: ""
+    type: integer
+  IDParametroDadoComplementar:
+    description: "O identificador do dado complementar"
+    example: ""
+    type: integer
+  Valor:
+    description: "O valor a ser gravado [POST, PUT] (ou atualmente gravado [GET]) para o funcionário"
+    example: ""
+    type: string
+  DataDeAtualizacao:
+    description: "A data de atualização (inserção) da informação"
+    example: ""
+    type: string

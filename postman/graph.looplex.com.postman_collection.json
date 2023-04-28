@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7e0d2d4d-502e-4f7e-b82c-5475951b963f",
+		"_postman_id": "a363d252-c7f4-4681-80b6-b4012e5ea1f0",
 		"name": "graph.looplex.com",
 		"description": "Looplex Graph é uma plataforma de APIs que conectam múltipos serviços e dados jurídicos.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -13969,6 +13969,511 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Informações adicionais",
+					"item": [
+						{
+							"name": "Editar informações adicionais",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{{DTOObjetoNomeValor}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar/edit?IDParametroDadoComplementar=5",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar",
+										"edit"
+									],
+									"query": [
+										{
+											"key": "IDParametroDadoComplementar",
+											"value": "5"
+										}
+									]
+								},
+								"description": "Esse método é utilizado para atualizar as informações adicionais.\n\n#### Propriedades que podem ser alteradas\n\n- TituloDadoComplementar\n- TamanhoCampo\n- Obrigatorio\n- Ativo\n- Ordem\n    \n\n#### Body (Enviar um array)"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOObjetoNomeValor}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/edit?IDParametroDadoComplementar=",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDParametroDadoComplementar",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOInformacaoAdicionalResponse}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{{DTOObjetoNomeValor}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/edit?IDParametroDadoComplementar=5",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDParametroDadoComplementar",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{{DTOObjetoNomeValor}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/edit?IDParametroDadoComplementar=5",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDParametroDadoComplementar",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{{DTOObjetoNomeValor}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/edit?IDParametroDadoComplementar=5",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDParametroDadoComplementar",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{{DTOObjetoNomeValor}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/edit?IDParametroDadoComplementar=5",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "IDParametroDadoComplementar",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Cadastra nova Informação adicional",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"{{DTOInformacaoAdicional}}\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar"
+									]
+								},
+								"description": "Utilizado para cadastrar novas informações adicionais.\n\n#### Body (Enviar um array)"
+							},
+							"response": [
+								{
+									"name": "204 NoContent",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOInformacaoAdicional}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": null,
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOInformacaoAdicional}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOInformacaoAdicional}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOInformacaoAdicional}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOInformacaoAdicional}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						}
+					],
+					"description": "Cadastro de novas informações adicionais (dados complementares)"
 				}
 			],
 			"event": [
@@ -15033,13 +15538,13 @@
 		{
 			"key": "BASEPATH_CASES",
 			"value": "https://graph.looplex.com/cases",
-			"type": "string",
-			"disabled": true
+			"type": "string"
 		},
 		{
 			"key": "BASEPATH_CASES",
-			"value": "http://localhost",
-			"type": "string"
+			"value": "http://localhost:46432",
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "BASEPATH_VARAS_FOROS",
@@ -15058,6 +15563,11 @@
 		{
 			"key": "X-ContextInf",
 			"value": ""
+		},
+		{
+			"key": "KEY",
+			"value": "",
+			"type": "string"
 		}
 	]
 }

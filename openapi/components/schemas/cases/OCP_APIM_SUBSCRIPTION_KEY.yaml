@@ -1,0 +1,9 @@
+title: OCP_APIM_SUBSCRIPTION_KEY
+type: object
+properties:
+  OCP_APIM_SUBSCRIPTION_KEY:
+    description: "Key provided by Looplex"
+    example: ""
+    type: string
+required:
+  - OCP_APIM_SUBSCRIPTION_KEY
