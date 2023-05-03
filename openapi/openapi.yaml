@@ -48,6 +48,8 @@ tags:
     description: Valores apurados
   - name: Informações adicionais
     description: Cadastro de novas informações adicionais (dados complementares)
+  - name: Informações adicionais (valor)
+    description: Endpoints para incluir valor em uma informação adicional.
   - name: people
     description: people
   - name: finances
@@ -5442,6 +5444,7 @@ paths:
           in: query
           schema:
             type: integer
+          description: (Required) (integer) O identificador da informação adicional.
           example: "5"
       responses:
         "200":
@@ -5508,8 +5511,8 @@ paths:
     post:
       tags:
         - Informações adicionais
-      summary: Cadastra nova Informação adicional
-      operationId: cadastraNovaInformacaoAdicional
+      summary: Cadastra novas Informações adicionais
+      operationId: cadastraNovasInformacoesAdicionais
       description: |-
         Utilizado para cadastrar novas informações adicionais.
 
@@ -5521,13 +5524,13 @@ paths:
               type: object
               $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
       responses:
-        "204":
-          description: No Content
+        "200":
+          description: OK
           content:
             text/plain:
               schema:
                 type: string
-              example: ""
+              example: As informações adicionais foram cadastradas.
         "401":
           description: Unauthorized
           headers:
@@ -5599,6 +5602,628 @@ paths:
               schema:
                 type: object
                 $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  "/api/dado_complementar/{id}":
+    delete:
+      tags:
+        - Informações adicionais
+      summary: Exclui informação adicional
+      operationId: excluiInformacaoAdicional
+      description: Esse endpoint exclui a informação adicional. **Portanto, depois da
+        exclusão não será mais possível utilizar essa informção adicional para
+        gravar valores nela.**
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: (Required) (integer) O identificador da informação adicional.
+      responses:
+        "204":
+          description: No Content
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+    get:
+      tags:
+        - Informações adicionais
+      summary: Obtém informação adicional por identificador
+      operationId: obtemInformacaoAdicionalPorIdentificador
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: (Required) (integer) O identificador da informação adicional.
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  /api/dado_complementar_caso:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Lista informações adicionais por filtro
+      operationId: listaInformacoesAdicionaisPorFiltro
+      description: "#### 200 OK (Retorna um array)"
+      parameters:
+        - name: clienteId
+          in: query
+          schema:
+            type: string
+          description: "(Optional) (integer) O identificador do cliente "
+        - name: areaId
+          in: query
+          schema:
+            type: string
+          description: (Optional) (integer) O identificador da área
+        - name: tipoCaso
+          in: query
+          schema:
+            type: string
+            $ref: components/schemas/cases/enums/RamosJudicial.yaml
+          required: false
+        - name: mostraInativo
+          in: query
+          schema:
+            type: string
+          description: "(Optional. Default: false) (bool) Mostrar inativos?"
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  "/api/dado_complementar_caso/{tipoCaso}":
+    get:
+      tags:
+        - Informações adicionais
+      summary: Lista informações adicionais por tipo de caso
+      operationId: listaInformacoesAdicionaisPorTipoDeCaso
+      description: "#### 200 OK (Retorna um array)"
+      parameters:
+        - name: mostraInativos
+          in: query
+          schema:
+            type: string
+          description: "(Optional. Default: false) (bool) Mostrar inativos?"
+        - name: tipoCaso
+          in: path
+          schema:
+            $ref: components/schemas/cases/enums/RamosJudicial.yaml
+
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  "/api/casos/{idCaso}/DadosComplementaresPorCaso":
+    get:
+      tags:
+        - Informações adicionais
+      summary: Lista informações adicionais por caso
+      operationId: listaInformacoesAdicionaisPorCaso
+      description: "#### 200 OK (Retorna um array)"
+      parameters:
+        - name: idCaso
+          in: path
+          schema:
+            type: string
+          required: true
+          description: (Required) (integer) O identificador do caso.
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/DTOInformacaoAdicional2.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  /api/casos/num/dadoscomplementares:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Lista informações adicionais por identicadores de caso
+      operationId: listaInformacoesAdicionaisPorIdenticadoresDeCaso
+      parameters:
+        - name: NumeroInterno
+          in: query
+          schema:
+            type: string
+          description: "(Optional. Default: 0) (integer) O número interno do caso."
+        - name: NumeroExterno
+          in: query
+          schema:
+            type: string
+          description: '(Optional. Default: "") (string) O número externo do caso.'
+        - name: IdProcesso
+          in: query
+          schema:
+            type: string
+          description: "(Optional. Default: 0) (integer) O identificador do caso."
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/DTOInformacaoAdicional2.yaml
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  "/api/casos/{idCaso}/CamposDadosComplementares":
+    post:
+      tags:
+        - Informações adicionais (valor)
+      summary: Incluir valor em informação adicional
+      operationId: incluirValorEmInformacaoAdicional
+      description: "#### Body (Enviar um array)"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: components/schemas/cases/DTOProcessoValorDadoComplementar.yaml
+      parameters:
+        - name: idCaso
+          in: path
+          schema:
+            type: string
+          required: true
+          description: (Required) (integer) O identificador do caso.
+      responses:
+        "200":
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example: true
+        "401":
+          description: Unauthorized
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "403":
+          description: Forbidden
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "404":
+          description: Not Found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+        "500":
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: components/schemas/cases/Exception.yaml
+  /api/dado_complementar/valor:
+    post:
+      tags:
+        - Informações adicionais (valor)
+      summary: Inclui / atualiza valor em informação adicional
+      operationId: incluiAtualizaValorEmInformacaoAdicional
+      description: "#### Body (Enviar um array)"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: components/schemas/cases/DTOValorDadoComplementarCaso.yaml
+      responses:
+        "204":
+          description: No Content
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
         "401":
           description: Unauthorized
           headers:

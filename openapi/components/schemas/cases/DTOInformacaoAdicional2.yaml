@@ -1,0 +1,35 @@
+title: DTOInformacaoAdicional2
+type: object
+properties:
+  NomeCliente:
+    description: ""
+    example: ""
+    type: string
+  TituloCaso:
+    description: ""
+    example: ""
+    type: string
+  NumeroInterno:
+    description: ""
+    example: ""
+    type: string
+  NumeroExterno:
+    description: ""
+    example: ""
+    type: string
+  Nome:
+    description: ""
+    example: ""
+    type: string
+  TipoCampo:
+    description: ""
+    example: ""
+    type: string
+  Valores:
+    type: array
+    items:
+      type: string
+  IdCaso:
+    description: ""
+    example: ""
+    type: integer

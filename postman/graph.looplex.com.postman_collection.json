@@ -14012,7 +14012,8 @@
 									"query": [
 										{
 											"key": "IDParametroDadoComplementar",
-											"value": "5"
+											"value": "5",
+											"description": "(Required) (integer) O identificador da informação adicional."
 										}
 									]
 								},
@@ -14264,7 +14265,7 @@
 							]
 						},
 						{
-							"name": "Cadastra nova Informação adicional",
+							"name": "Cadastra novas Informações adicionais",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -14291,7 +14292,7 @@
 							},
 							"response": [
 								{
-									"name": "204 NoContent",
+									"name": "200 OK",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
@@ -14315,12 +14316,12 @@
 											]
 										}
 									},
-									"status": "No Content",
-									"code": 204,
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": null,
 									"header": [],
 									"cookie": [],
-									"body": ""
+									"body": "As informações adicionais foram cadastradas."
 								},
 								{
 									"name": "401 Unauthorized",
@@ -14664,9 +14665,2051 @@
 									"body": "\"{{ExceptionResponse}}\""
 								}
 							]
+						},
+						{
+							"name": "Exclui informação adicional",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null,
+											"description": "(Required) (integer) O identificador da informação adicional."
+										}
+									]
+								},
+								"description": "Esse endpoint exclui a informação adicional. **Portanto, depois da exclusão não será mais possível utilizar essa informção adicional para gravar valores nela.**"
+							},
+							"response": [
+								{
+									"name": "204 No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Obtém informação adicional por identificador",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null,
+											"description": "(Required) (integer) O identificador da informação adicional."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOInformacaoAdicionalResponse}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/:id",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null,
+													"description": "(Required) (integer) O identificador da informação adicional."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Lista informações adicionais por filtro",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso?clienteId&areaId&tipoCaso&mostraInativo",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar_caso"
+									],
+									"query": [
+										{
+											"key": "clienteId",
+											"value": null,
+											"description": "(Optional) (integer) O identificador do cliente "
+										},
+										{
+											"key": "areaId",
+											"value": null,
+											"description": "(Optional) (integer) O identificador da área"
+										},
+										{
+											"key": "tipoCaso",
+											"value": null,
+											"description": "{{RamosJudicialEnum}}"
+										},
+										{
+											"key": "mostraInativo",
+											"value": null,
+											"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+										}
+									]
+								},
+								"description": "#### 200 OK (Retorna um array)"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso?clienteId&areaId&tipoCaso&mostraInativo",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso"
+											],
+											"query": [
+												{
+													"key": "clienteId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador do cliente "
+												},
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador da área"
+												},
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												},
+												{
+													"key": "mostraInativo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOInformacaoAdicionalResponse}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso?clienteId&areaId&tipoCaso&mostraInativo",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso"
+											],
+											"query": [
+												{
+													"key": "clienteId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador do cliente "
+												},
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador da área"
+												},
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												},
+												{
+													"key": "mostraInativo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso?clienteId&areaId&tipoCaso&mostraInativo",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso"
+											],
+											"query": [
+												{
+													"key": "clienteId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador do cliente "
+												},
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador da área"
+												},
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												},
+												{
+													"key": "mostraInativo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso?clienteId&areaId&tipoCaso&mostraInativo",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso"
+											],
+											"query": [
+												{
+													"key": "clienteId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador do cliente "
+												},
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador da área"
+												},
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												},
+												{
+													"key": "mostraInativo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso?clienteId&areaId&tipoCaso&mostraInativo",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso"
+											],
+											"query": [
+												{
+													"key": "clienteId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador do cliente "
+												},
+												{
+													"key": "areaId",
+													"value": null,
+													"description": "(Optional) (integer) O identificador da área"
+												},
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												},
+												{
+													"key": "mostraInativo",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Lista informações adicionais por tipo de caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso/:tipoCaso?mostraInativos",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar_caso",
+										":tipoCaso"
+									],
+									"query": [
+										{
+											"key": "mostraInativos",
+											"value": null,
+											"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+										}
+									],
+									"variable": [
+										{
+											"key": "tipoCaso",
+											"value": null,
+											"description": "{{RamosJudicialPathEnum}}"
+										}
+									]
+								},
+								"description": "#### 200 OK (Retorna um array)"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso/:tipoCaso?mostraInativos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso",
+												":tipoCaso"
+											],
+											"query": [
+												{
+													"key": "mostraInativos",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											],
+											"variable": [
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOInformacaoAdicionalResponse}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso/:tipoCaso?mostraInativos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso",
+												":tipoCaso"
+											],
+											"query": [
+												{
+													"key": "mostraInativos",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											],
+											"variable": [
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso/:tipoCaso?mostraInativos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso",
+												":tipoCaso"
+											],
+											"query": [
+												{
+													"key": "mostraInativos",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											],
+											"variable": [
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso/:tipoCaso?mostraInativos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso",
+												":tipoCaso"
+											],
+											"query": [
+												{
+													"key": "mostraInativos",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											],
+											"variable": [
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar_caso/:tipoCaso?mostraInativos",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar_caso",
+												":tipoCaso"
+											],
+											"query": [
+												{
+													"key": "mostraInativos",
+													"value": null,
+													"description": "(Optional. Default: false) (bool) Mostrar inativos?"
+												}
+											],
+											"variable": [
+												{
+													"key": "tipoCaso",
+													"value": null,
+													"description": "{{RamosJudicialEnum}}"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Lista informações adicionais por caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/DadosComplementaresPorCaso",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										":idCaso",
+										"DadosComplementaresPorCaso"
+									],
+									"variable": [
+										{
+											"key": "idCaso",
+											"value": null,
+											"description": "(Required) (integer) O identificador do caso."
+										}
+									]
+								},
+								"description": "#### 200 OK (Retorna um array)"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/DadosComplementaresPorCaso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"DadosComplementaresPorCaso"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOInformacaoAdicional2Response}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/DadosComplementaresPorCaso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"DadosComplementaresPorCaso"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/DadosComplementaresPorCaso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"DadosComplementaresPorCaso"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/DadosComplementaresPorCaso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"DadosComplementaresPorCaso"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/DadosComplementaresPorCaso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"DadosComplementaresPorCaso"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Lista informações adicionais por identicadores de caso",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/casos/num/dadoscomplementares?NumeroInterno&NumeroExterno&IdProcesso",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										"num",
+										"dadoscomplementares"
+									],
+									"query": [
+										{
+											"key": "NumeroInterno",
+											"value": null,
+											"description": "(Optional. Default: 0) (integer) O número interno do caso."
+										},
+										{
+											"key": "NumeroExterno",
+											"value": null,
+											"description": "(Optional. Default: \"\") (string) O número externo do caso."
+										},
+										{
+											"key": "IdProcesso",
+											"value": null,
+											"description": "(Optional. Default: 0) (integer) O identificador do caso."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/dadoscomplementares?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"dadoscomplementares"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O número interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{DTOInformacaoAdicional2Response}}\""
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/dadoscomplementares?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"dadoscomplementares"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O número interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/dadoscomplementares?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"dadoscomplementares"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O número interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/dadoscomplementares?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"dadoscomplementares"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O número interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/num/dadoscomplementares?NumeroInterno&NumeroExterno&IdProcesso",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												"num",
+												"dadoscomplementares"
+											],
+											"query": [
+												{
+													"key": "NumeroInterno",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O número interno do caso."
+												},
+												{
+													"key": "NumeroExterno",
+													"value": null,
+													"description": "(Optional. Default: \"\") (string) O número externo do caso."
+												},
+												{
+													"key": "IdProcesso",
+													"value": null,
+													"description": "(Optional. Default: 0) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
 						}
 					],
 					"description": "Cadastro de novas informações adicionais (dados complementares)"
+				},
+				{
+					"name": "Informações adicionais (valor)",
+					"item": [
+						{
+							"name": "Incluir valor em informação adicional",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"{{DTOProcessoValorDadoComplementar}}\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/CamposDadosComplementares",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"casos",
+										":idCaso",
+										"CamposDadosComplementares"
+									],
+									"variable": [
+										{
+											"key": "idCaso",
+											"value": null,
+											"description": "(Required) (integer) O identificador do caso."
+										}
+									]
+								},
+								"description": "#### Body (Enviar um array)"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOProcessoValorDadoComplementar}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/CamposDadosComplementares",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"CamposDadosComplementares"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "true"
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOProcessoValorDadoComplementar}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/CamposDadosComplementares",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"CamposDadosComplementares"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOProcessoValorDadoComplementar}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/CamposDadosComplementares",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"CamposDadosComplementares"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOProcessoValorDadoComplementar}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/CamposDadosComplementares",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"CamposDadosComplementares"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOProcessoValorDadoComplementar}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/casos/:idCaso/CamposDadosComplementares",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"casos",
+												":idCaso",
+												"CamposDadosComplementares"
+											],
+											"variable": [
+												{
+													"key": "idCaso",
+													"value": null,
+													"description": "(Required) (integer) O identificador do caso."
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						},
+						{
+							"name": "Inclui / atualiza valor em informação adicional",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"{{DTOValorDadoComplementarCaso}}\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASEPATH_CASES}}/api/dado_complementar/valor",
+									"host": [
+										"{{BASEPATH_CASES}}"
+									],
+									"path": [
+										"api",
+										"dado_complementar",
+										"valor"
+									]
+								},
+								"description": "#### Body (Enviar um array)"
+							},
+							"response": [
+								{
+									"name": "204 No Content",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOValorDadoComplementarCaso}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/valor",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"valor"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "401 Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOValorDadoComplementarCaso}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/valor",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"valor"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOValorDadoComplementarCaso}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/valor",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"valor"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOValorDadoComplementarCaso}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/valor",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"valor"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"{{DTOValorDadoComplementarCaso}}\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASEPATH_CASES}}/api/dado_complementar/valor",
+											"host": [
+												"{{BASEPATH_CASES}}"
+											],
+											"path": [
+												"api",
+												"dado_complementar",
+												"valor"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "\"{{ExceptionResponse}}\""
+								}
+							]
+						}
+					],
+					"description": "Endpoints para incluir valor em uma informação adicional."
 				}
 			],
 			"description": "API do Looplex Cases",

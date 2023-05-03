@@ -1,0 +1,33 @@
+title: DTOProcessoValorDadoComplementar
+type: object
+properties:
+  IDProcessoValorDadoComplementar:
+    description: ""
+    example: ""
+    type: integer
+  IDProcesso:
+    description: ""
+    example: ""
+    type: integer
+  IDParamDadoComplementar:
+    description: ""
+    example: ""
+    type: integer
+  Valor:
+    description: ""
+    example: ""
+    type: string
+  DtValor:
+    description: ""
+    example: ""
+    type: string
+  DataAtualizacao:
+    description: ""
+    example: ""
+    type: string
+  IDContaDeAcesso:
+    description: ""
+    example: ""
+    type: integer
+required:
+  - IDParamDadoComplementar
