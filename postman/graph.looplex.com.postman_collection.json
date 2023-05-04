@@ -306,7 +306,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									}
 								],
@@ -547,7 +547,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -782,7 +782,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -1082,7 +1082,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -1304,7 +1304,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -1532,7 +1532,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -1808,7 +1808,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -2163,7 +2163,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -2434,7 +2434,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -2693,7 +2693,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -3012,7 +3012,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -3205,7 +3205,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -3500,7 +3500,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -3789,7 +3789,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -4132,7 +4132,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -4373,7 +4373,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -4614,7 +4614,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -4807,7 +4807,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -5000,7 +5000,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -5241,7 +5241,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -5542,7 +5542,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -5783,7 +5783,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -6084,7 +6084,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -6439,7 +6439,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -6674,7 +6674,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -6921,7 +6921,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -7174,7 +7174,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -7415,7 +7415,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -7721,7 +7721,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -7962,7 +7962,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -8197,7 +8197,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -8570,7 +8570,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -8811,7 +8811,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -9053,7 +9053,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -9295,7 +9295,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -9512,7 +9512,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -9808,7 +9808,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -10067,7 +10067,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -10332,7 +10332,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -10525,7 +10525,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -10832,7 +10832,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -11186,7 +11186,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -11481,7 +11481,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -11734,7 +11734,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -11981,7 +11981,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -12222,7 +12222,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -12529,7 +12529,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -12793,7 +12793,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -12986,7 +12986,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -13185,7 +13185,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -13372,7 +13372,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -13613,7 +13613,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -13854,7 +13854,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -14161,7 +14161,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -14402,7 +14402,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -14709,7 +14709,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -15001,7 +15001,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -15235,7 +15235,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -15429,7 +15429,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -15657,7 +15657,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -15892,7 +15892,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -16212,7 +16212,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -16490,7 +16490,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -16731,7 +16731,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -17038,7 +17038,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
@@ -17334,7 +17334,7 @@
 									{
 										"key": "{{Ocp-Apim-Subscription-Key}}",
 										"value": "",
-										"description": "(Required)",
+										"description": "{{Ocp-Apim-Subscription-Key-Text}}",
 										"type": "text"
 									},
 									{
