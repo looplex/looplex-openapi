@@ -4,6 +4,13 @@ info:
   description: Looplex Graph é uma plataforma de APIs que conectam múltipos
     serviços e dados jurídicos.
   version: 1.0.0
+  contact:
+    name: Developers Looplex
+    url: https://www.looplex.com.br
+    email: developer@looplex.com.br
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
   - url: https://graph.looplex.com
     description: Looplex Graph
@@ -55,7 +62,8 @@ tags:
   - name: finances
     description: finances
   - name: assembler
-    description: assembler
+    description: Assembler é o grupo de APIs consumidas pela interface web Looplex,
+      relacionadas aos fluxos de documentos, templates e tarefas.
   - name: documents
     description: documents
   - name: templates
@@ -102,6 +110,12 @@ paths:
             schema:
               type: object
               $ref: components/schemas/cases/DTOUser.yaml
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required) Subscription key provided by Looplex
       responses:
         "200":
           description: OK
@@ -175,6 +189,12 @@ paths:
             schema:
               type: object
               $ref: components/schemas/cases/DTOLoginAPI.yaml
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -243,6 +263,16 @@ paths:
       summary: Área por identificador
       operationId: areaPorIdentificador
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: id
           in: path
           schema:
@@ -320,6 +350,16 @@ paths:
       summary: Lista áreas
       operationId: listaAreas
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: ativos
           in: query
           schema:
@@ -402,6 +442,17 @@ paths:
         - País
       summary: Lista países
       operationId: listaPaises
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -471,6 +522,17 @@ paths:
         - País
       summary: Lista estados
       operationId: listaEstados
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -541,6 +603,16 @@ paths:
       summary: Lista as cidades do estado
       operationId: listaAsCidadesDoEstado
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: uf
           in: query
           schema:
@@ -617,6 +689,16 @@ paths:
       summary: Lista compromissos por filtro
       operationId: listaCompromissosPorFiltro
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: numeroDeRecorrencias
           in: query
           schema:
@@ -767,6 +849,16 @@ paths:
       summary: Obtém item de agenda por identificador
       operationId: obtemItemDeAgendaPorIdentificador
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: id
           in: path
           schema:
@@ -910,6 +1002,16 @@ paths:
       summary: Compromissos do funcionário
       operationId: compromissosDoFuncionario
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idsFuncionarios
           in: query
           schema:
@@ -1030,6 +1132,16 @@ paths:
                 - Nome: texto
                   Valor: texto
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: IDItemAgenda
           in: query
           schema:
@@ -1170,6 +1282,17 @@ paths:
         - Agenda
       summary: Total de compromissos dos próximos 7 dias
       operationId: totalDeCompromissosDosProximos7Dias
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -1238,6 +1361,16 @@ paths:
       summary: Lista próximos compromissos
       operationId: listaProximosCompromissos
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: data
           in: query
           schema:
@@ -1377,6 +1510,16 @@ paths:
       summary: Lista compromissos
       operationId: listaCompromissos
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: ano
           in: query
           schema:
@@ -1570,6 +1713,17 @@ paths:
                 CampoDataConclusaoItemDeAgendaBloqueado: false
                 EditarApenasCampoObservacoesItemDeAgenda: false
                 ExecutionID: texto
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -1748,6 +1902,17 @@ paths:
                 CampoDataConclusaoItemDeAgendaBloqueado: false
                 EditarApenasCampoObservacoesItemDeAgenda: false
                 ExecutionID: texto
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -1869,6 +2034,16 @@ paths:
       summary: Lista os compromissos do caso
       operationId: listaOsCompromissosDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: ano
           in: query
           schema:
@@ -2010,6 +2185,17 @@ paths:
         - Agenda
       summary: Lista executores
       operationId: listaExecutores
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -2101,6 +2287,17 @@ paths:
         - Agenda
       summary: Lista participantes
       operationId: listaParticipantes
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -2193,6 +2390,16 @@ paths:
       summary: Lista as audiências do caso
       operationId: listaAsAudienciasDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCaso
           in: path
           schema:
@@ -2288,6 +2495,16 @@ paths:
         caso
       operationId: listaAudienciasPorNumeroInternoNumeroExternoOuIdentificadorDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -2391,6 +2608,16 @@ paths:
       summary: Lista compromissos por caso
       operationId: listaCompromissosPorCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCaso
           in: path
           schema:
@@ -2481,6 +2708,16 @@ paths:
         do caso
       operationId: listaCompromissosPorNumeroInternoNumeroExternoOuIdentificadorDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -2578,6 +2815,16 @@ paths:
       summary: Lista status de encerramento
       operationId: listaStatusDeEncerramento
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: inCompromisso
           in: query
           schema:
@@ -2673,6 +2920,16 @@ paths:
       summary: Lista títulos
       operationId: listaTitulos
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: tipo
           in: query
           schema:
@@ -2770,6 +3027,17 @@ paths:
                   Titulo: texto
                   IDTituloCobranca: -2147483648
                   LinkEntrevistaTemplate: texto
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -2872,6 +3140,17 @@ paths:
                   Titulo: texto
                   IDTituloCobranca: -2147483648
                   LinkEntrevistaTemplate: texto
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -2965,6 +3244,16 @@ paths:
       summary: Lista produtos por caso
       operationId: listaProdutosPorCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCaso
           in: path
           schema:
@@ -3045,6 +3334,16 @@ paths:
       summary: Lista produtos do caso por filtro
       operationId: listaProdutosDoCasoPorFiltro
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -3134,6 +3433,16 @@ paths:
       summary: Obtém ficha do processo
       operationId: obtemFichaDoProcesso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: id
           in: path
           schema:
@@ -3209,6 +3518,16 @@ paths:
       summary: Obtém informações do caso
       operationId: obtemInformacoesDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: id
           in: path
           schema:
@@ -3284,6 +3603,16 @@ paths:
       summary: Lista os casos do cliente
       operationId: listaOsCasosDoCliente
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: ativos
           in: query
           schema:
@@ -3381,6 +3710,16 @@ paths:
       operationId: listaSubcasos
       description: Lista os processos através do identificador do processo pai.
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: cdProcessoPai
           in: path
           schema:
@@ -3457,6 +3796,16 @@ paths:
       operationId: listaCasosPorIdentificadores
       description: Lista os processos de acordo com os identificadores informados.
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: ids
           in: path
           schema:
@@ -3534,6 +3883,16 @@ paths:
       description: Lista os processos de acordo com o identificador do funcionário
         informado.
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: cdResponsavel
           in: path
           schema:
@@ -3617,6 +3976,16 @@ paths:
 
         Exemplo: 1 número interno, 1 número externo e 1 identificador de processo.
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -3712,6 +4081,16 @@ paths:
 
         Exemplo: 1 ou mais números internos, 1 ou mais números externos e 1 ou mais identificadores de processo.
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: IdProcesso
           in: query
           schema:
@@ -3796,6 +4175,16 @@ paths:
       summary: Lista casos por situação
       operationId: listaCasosPorSituacao
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: ativos
           in: query
           schema:
@@ -3875,6 +4264,16 @@ paths:
       summary: Lista casos por situação
       operationId: listaCasosPorSituacao
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: ativos
           in: query
           schema:
@@ -3953,6 +4352,17 @@ paths:
         - Processos
       summary: Lista ramos judiciais
       operationId: listaRamosJudiciais
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -4024,6 +4434,16 @@ paths:
       summary: Lista fichas de processos por filtro
       operationId: listaFichasDeProcessosPorFiltro
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -4108,6 +4528,16 @@ paths:
       summary: Pesquisa processos por termo
       operationId: pesquisaProcessosPorTermo
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: termo
           in: query
           schema:
@@ -4200,6 +4630,16 @@ paths:
       summary: Pesquisa processos por termo
       operationId: pesquisaProcessosPorTermo
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: termo
           in: query
           schema:
@@ -4439,6 +4879,17 @@ paths:
                       MoedaValorContingenciado: -2147483648
                       DataConstituicao: 2022-01-01T00:00:00
                       DataVencimento: 2022-01-01T00:00:00
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -4508,6 +4959,16 @@ paths:
       summary: Lista pastas do cliente
       operationId: listaPastasDoCliente
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCliente
           in: path
           schema:
@@ -4583,6 +5044,16 @@ paths:
       summary: Lista naturezas do caso
       operationId: listaNaturezasDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCaso
           in: path
           schema:
@@ -4658,6 +5129,16 @@ paths:
       summary: Lista naturezas por filtro
       operationId: listaNaturezasPorFiltro
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -4742,6 +5223,16 @@ paths:
       summary: Lista timesheet por filtro
       operationId: listaTimesheetPorFiltro
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idsFuncionarios
           in: query
           schema:
@@ -4821,6 +5312,17 @@ paths:
         - Timesheet
       summary: Total de horas lançadas do profissional no mês
       operationId: totalDeHorasLancadasDoProfissionalNoMes
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -4888,6 +5390,17 @@ paths:
         - Timesheet
       summary: Lista últimos lançamentos do profissional
       operationId: listaUltimosLancamentosDoProfissional
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -4955,6 +5468,17 @@ paths:
         - Fases
       summary: Lista fases
       operationId: listaFases
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -5024,6 +5548,16 @@ paths:
       summary: Lista fases por ramo judicial
       operationId: listaFasesPorRamoJudicial
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: nrGrupo
           in: path
           schema:
@@ -5102,6 +5636,16 @@ paths:
       summary: Obtém fase do caso
       operationId: obtemFaseDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: nrSequencia
           in: path
           schema:
@@ -5177,6 +5721,16 @@ paths:
       summary: Lista fases por identificador, numero interno ou numero externo do caso
       operationId: listaFasesPorIdentificadorNumeroInternoOuNumeroExternoDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -5261,6 +5815,16 @@ paths:
       summary: Lista valores apurados por caso
       operationId: listaValoresApuradosPorCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCaso
           in: path
           schema:
@@ -5337,6 +5901,16 @@ paths:
         externo do caso
       operationId: listaValoresApuradosPorIdentificadorNumeroInternoOuNumeroExternoDoCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -5440,6 +6014,16 @@ paths:
               type: object
               $ref: components/schemas/cases/DTOObjetoNomeValor.yaml
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: IDParametroDadoComplementar
           in: query
           schema:
@@ -5523,6 +6107,17 @@ paths:
             schema:
               type: object
               $ref: components/schemas/cases/DTOInformacaoAdicional.yaml
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -5589,6 +6184,17 @@ paths:
         Lista todas as informações adicionais
 
         #### 200 OK (Retorna um array)
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "200":
           description: OK
@@ -5660,6 +6266,16 @@ paths:
         exclusão não será mais possível utilizar essa informção adicional para
         gravar valores nela.**
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: id
           in: path
           schema:
@@ -5728,6 +6344,16 @@ paths:
       summary: Obtém informação adicional por identificador
       operationId: obtemInformacaoAdicionalPorIdentificador
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: id
           in: path
           schema:
@@ -5803,6 +6429,16 @@ paths:
       operationId: listaInformacoesAdicionaisPorFiltro
       description: "#### 200 OK (Retorna um array)"
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: clienteId
           in: query
           schema:
@@ -5893,6 +6529,16 @@ paths:
       operationId: listaInformacoesAdicionaisPorTipoDeCaso
       description: "#### 200 OK (Retorna um array)"
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: mostraInativos
           in: query
           schema:
@@ -5972,12 +6618,23 @@ paths:
       operationId: listaInformacoesAdicionaisPorCaso
       description: "#### 200 OK (Retorna um array)"
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCaso
           in: path
           schema:
-            type: string
+            type: number
           required: true
-          description: (Required) (integer) O identificador do caso.
+          description: O identificador do caso
+          example: "5"
       responses:
         "200":
           description: OK
@@ -6046,6 +6703,16 @@ paths:
       summary: Lista informações adicionais por identicadores de caso
       operationId: listaInformacoesAdicionaisPorIdenticadoresDeCaso
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: NumeroInterno
           in: query
           schema:
@@ -6136,6 +6803,16 @@ paths:
               type: object
               $ref: components/schemas/cases/DTOProcessoValorDadoComplementar.yaml
       parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
         - name: idCaso
           in: path
           schema:
@@ -6216,6 +6893,17 @@ paths:
             schema:
               type: object
               $ref: components/schemas/cases/DTOValorDadoComplementarCaso.yaml
+      parameters:
+        - name: Ocp-Apim-Subscription-Key
+          in: header
+          schema:
+            type: string
+          description: (Required)
+        - name: Profile
+          in: header
+          schema:
+            type: string
+          description: (Required)
       responses:
         "204":
           description: No Content
@@ -6272,7 +6960,7 @@ paths:
               schema:
                 type: object
                 $ref: components/schemas/cases/Exception.yaml
-  /api/VF/ListaPorNivel:
+  /varas_foros/api/VF/ListaPorNivel:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6301,7 +6989,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ObtemFilhosPorPai:
+  /varas_foros/api/VF/ObtemFilhosPorPai:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6336,7 +7024,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ObtemFilhosPorNomePai:
+  /varas_foros/api/VF/ObtemFilhosPorNomePai:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6371,7 +7059,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ObtemPorID:
+  /varas_foros/api/VF/ObtemPorID:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6400,7 +7088,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ListaHierarquia:
+  /varas_foros/api/VF/ListaHierarquia:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6428,7 +7116,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/HierarquiaFormatadaDoNo:
+  /varas_foros/api/VF/HierarquiaFormatadaDoNo:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6457,7 +7145,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ListaRitosGrupoRitos:
+  /varas_foros/api/VF/ListaRitosGrupoRitos:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6500,7 +7188,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ListaGruposRito:
+  /varas_foros/api/VF/ListaGruposRito:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6528,7 +7216,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ListaVinculoGrupoERito:
+  /varas_foros/api/VF/ListaVinculoGrupoERito:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6556,7 +7244,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ritosDoNo:
+  /varas_foros/api/VF/ritosDoNo:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6584,7 +7272,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/RitosDoGrupo:
+  /varas_foros/api/VF/RitosDoGrupo:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6612,7 +7300,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/cdNoPorNome:
+  /varas_foros/api/VF/cdNoPorNome:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6640,7 +7328,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/ProximosNiveis:
+  /varas_foros/api/VF/ProximosNiveis:
     get:
       tags:
         - Looplex Varas e Foros
@@ -6668,7 +7356,7 @@ paths:
                 respostaAPI: ""
                 conteudo: {}
                 tipoResposta: 3
-  /api/VF/Rito:
+  /varas_foros/api/VF/Rito:
     get:
       tags:
         - Looplex Varas e Foros
