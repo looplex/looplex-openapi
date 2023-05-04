@@ -1,0 +1,9 @@
+title: DTOObjetoNomeValor
+type: object
+properties:
+  Nome:
+    type: string
+    description: "O nome da propriedade a editar"
+  Valor:
+    type: string
+    description: "O novo valor a gravar"

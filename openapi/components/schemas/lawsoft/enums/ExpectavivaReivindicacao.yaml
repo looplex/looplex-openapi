@@ -1,0 +1,8 @@
+type: integer
+example: 2
+description: |
+  1: Provável
+
+  2: Possível
+
+  3: Remoto

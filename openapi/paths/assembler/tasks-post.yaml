@@ -1,0 +1,18 @@
+tags:
+  - Tasks
+summary: Create Tasks
+description: Add a new tree of tasks.
+operationId: addTasksUsingPOST
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        $ref: ../../components/schemas/tasks-api/CreateTaskRequest.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/tasks-api/Task.yaml

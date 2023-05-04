@@ -1,0 +1,101 @@
+title: DTOCasoCompleto
+type: object
+properties:
+  CdNoForoVara:
+    type: integer
+  IDCaso:
+    type: integer
+  IDCliente:
+    type: integer
+  IDPasta:
+    type: integer
+  IDContrato:
+    type: integer
+  IDRito:
+    type: integer
+  IDFaseProcesso:
+    type: integer
+  IDCasoPai:
+    type: integer
+  IDArea:
+    type: integer
+  IDForo:
+    type: integer
+  IDsCoResponsaveis:
+    type: array
+    items:
+      type: integer
+  IDFuncionarioResponsavel:
+    type: integer
+  Titulo:
+    type: string
+  Foro:
+    type: string
+  Rito:
+    type: string
+  Observacao:
+    type: string
+  PolosAtivos:
+    type: string
+  PolosPassivos:
+    type: string
+  StatusCaso:
+    type: string
+  TipoProcesso:
+    type: string
+  FaseProcesso:
+    type: string
+  ComentarioExpectativaDaCausa:
+    type: string
+  NomeCliente:
+    type: string
+  NomePasta:
+    type: string
+  NomeArea:
+    type: string
+  NomeContrato:
+    type: string
+  NomeResponsavelCaso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  NumeroLawoffice:
+    type: integer
+  Classe:
+    $ref: enums/ClasseDoCaso.yaml
+  Situacao:
+    $ref: enums/SituacaoDoCaso.yaml
+  Tipo:
+    $ref: enums/RamosJudicial.yaml
+  ExpectativaDeExito:
+    $ref: enums/ExpectavivaReivindicacao.yaml
+  DataDeCriacao:
+    type: string
+  DataDeEntrada:
+    type: string
+  DataDeDistribuicao:
+    type: string
+  DataDeCitacao:
+    type: string
+  DataDeEncerramento:
+    type: string
+  DataPrevistaDeEncerramento:
+    type: string
+  DataDeCriacaoFormatada:
+    type: string
+  DataDeEntradaFormatada:
+    type: string
+  DataDeDistribuicaoFormatada:
+    type: string
+  DataDeCitacaoFormatada:
+    type: string
+  DataDeEncerramentoFormatada:
+    type: string
+  DataPrevistaDeEncerramentoFormatada:
+    type: string
+  DataUltimaAlteracao:
+    type: string
+  Confidencial:
+    type: boolean

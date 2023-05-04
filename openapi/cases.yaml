@@ -1,0 +1,700 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: Looplex Cases
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
+  contact:
+    name: Developers Looplex
+    email: developer@looplex.com.br
+    url: "https://www.looplex.com.br"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  x-logo:
+    url: "/assets/images/logo.png"
+    href: "/"
+  description: >
+    This is an **example** API to demonstrate features of OpenAPI specification
+
+    # Introduction
+
+    This API definition is intended to to be a good starting point for
+    describing your API in 
+
+    [OpenAPI/Swagger
+    format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
+externalDocs:
+  description: Find out how to create a GitHub repo for your OpenAPI definition.
+  url: "https://github.com/Rebilly/generator-openapi-repo"
+tags:
+  - name: Login 
+    description: Endpoints de login
+x-tagGroups:
+  - name: Endpoints
+    tags:
+      - Agenda 
+      - Andamento 
+      - Area 
+      - Busca 
+      - Casos 
+      - Calculo Monetário
+      - Categoria  
+      - Cliente 
+      - Conta de acesso 
+      - Contato 
+      - Contrato 
+      - Dados complementares 
+      - Decisões 
+      - Despesas 
+      - Expectativa reivindicação 
+      - Envolvimento das partes 
+      - Fase caso 
+      - Funcionário 
+      - Garantia 
+      - Hierarquia 
+      - Natureza 
+      - Partes 
+      - Pedidos 
+      - Permissão 
+      - Produtos 
+      - Push 
+      - Render 
+      - Session 
+      - Tabela preço categoria 
+      - Tabela preço 
+      - Tarefa 
+      - Timeline 
+      - Timesheet 
+      - Valores apurados
+      - Varas e Foros
+      - País 
+servers:
+  - url: "https://graph.looplex.com/cases"
+    description: "Looplex Cases Server"
+paths:
+  # Session
+  /api/logon:
+    post:
+      $ref: ./paths/lawsoft/session/public@api@logon-post.yaml
+
+  # Agenda
+  /api/agenda/totaleventos:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@totaleventos-get.yaml
+  /api/agenda/proximoslancamentos:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@proximos-lancamentos-get.yaml
+  /api/agenda:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda-get.yaml
+    post:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@post-post.yaml
+    put:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@put-put.yaml
+  /api/casos/{idCaso}/agenda:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@casos@{idCaso}@agenda-get.yaml
+  /api/agenda/{tipo}/{id}:
+    delete:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@{tipo}@{id}-delete.yaml
+  /api/agenda/executores:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@executores-get.yaml
+  /api/agenda/participantes:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@participantes-get.yaml
+  /api/agenda/titulos:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@agenda@titulos-get.yaml
+  /api/casos/{idCaso}/audiencias:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@casos@{idCaso}@audiencias-get.yaml
+  /api/casos/num/audiencias:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@casos@num@audiencias-get.yaml
+  /api/casos/{idCaso}/tabagenda:
+    get: 
+      $ref: ./paths/lawsoft/agenda/public@api@casos@{idCaso}@tabagenda-get.yaml
+  /api/casos/num/tabagenda:
+    get:
+      $ref: ./paths/lawsoft/agenda/public@api@casos@num@tabagenda-get.yaml
+  /api/compromissos:
+    get:
+      $ref: './paths/lawsoft/agenda/public@api@compromissos-get.yaml'
+  /api/agenda/{id}/{tipo}:
+    get:
+      $ref: './paths/lawsoft/agenda/public@api@agenda@id@tipo-get.yaml'
+  /api/agenda/status_encerramento:
+    get:
+      $ref: './paths/lawsoft/agenda/public@api@agenda@status_encerramento-get.yaml'
+
+  # Andamentos
+  /api/andamentos/templates:
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@templates-get.yaml
+  /api/andamentos/classificacoes:
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@classificacoes-get.yaml
+  /api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}:
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@casos@{idCaso}@andamentos@{data}@{primeiraLeitura}@{totalAndamentosLidosPeloMobile}-get.yaml
+  /api/casos/{idCaso}/andamentosimples:
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@casos@{idCaso}@andamentosimples-get.yaml
+  /api/casos/num/andamentosimples:
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@casos@num@andamentosimples-get.yaml
+  /api/andamentos/{id}:
+    get:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@{id}-get.yaml
+  /api/andamentos:
+    post:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@post-post.yaml
+  /api/andamentos/{idAndamento}:
+    put:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
+    delete:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
+  /api/andamentos/update/{idAndamento}:
+    put:
+      $ref: ./paths/lawsoft/andamento/public@api@andamentos@update@{idAndamento}-put.yaml
+
+  # Áreas
+  /api/areas:
+    get:
+      $ref: ./paths/lawsoft/area/public@api@areas@get-get.yaml
+  /api/areas/porDomain/{domain}:
+    get:
+      $ref: ./paths/lawsoft/area/public@api@areas@porDomain@{domain}-get.yaml
+  /api/areas/{id}:
+    get:
+      $ref: ./paths/lawsoft/area/public@api@areas@{id}@get-get.yaml
+
+  # Busca
+  /api/busca/mobilenovo:
+    get:
+      $ref: './paths/lawsoft/busca/public@api@busca@mobilenovo-get.yaml'
+
+  # Calculo Monetário
+  /api/casos/{cdProcesso}/CalculosMonetarios:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@casos@cdProcesso@CalculosMonetarios-get.yaml'
+  /api/CalculoMonetario/{id}:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@id-get.yaml'
+    delete:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@id-delete.yaml'
+  /api/casos/{id}/Calcula:
+    post:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@casos@id@Calcula-post.yaml'
+  /api/CalculoMonetario/Indices:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@Indices-get.yaml'
+  /api/CalculoMonetario/Modelos:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@Modelos-get.yaml'
+  /api/CalculoMonetario/Modelos/{id}:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@CalculoMonetario@Modelos@id-get.yaml'
+  /api/casos/{id}/ValoresParaCalculo:
+    get:
+      $ref: './paths/lawsoft/calculo_monetario/public@api@casos@id@ValoresParaCalculo-get.yaml'
+
+  # Casos
+  /api/casos/inclui:
+    post:
+      $ref: ./paths/lawsoft/casos/public@api@casos@inclui-post.yaml
+  /api/clientes/{idCliente}/casos:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@clientes@{idCliente}@casos-get.yaml
+  /api/clientes/{idCliente}/pastas:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@clientes@{idCliente}@pastas-get.yaml
+  /api/casos/{idCliente}/pastasDoCaso:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@{idCliente}@pastasDoCaso-get.yaml
+  /api/casos/{id}:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@{id}-get.yaml
+  /api/casos/{id}/ficha:
+    get: 
+      $ref: ./paths/lawsoft/casos/public@api@casos@{id}@ficha-get.yaml
+  /api/casos/id/ficha/num:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@id@ficha@num-get.yaml
+  /api/casos/meuscasos/{cdResponsavel}:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@meuscasos@{cdResponsavel}-get.yaml
+  /api/casos/RamosJudiciais:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@RamosJudiciais-get.yaml
+  /api/casos:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos-get.yaml
+  /api/casos/id/num:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@id@num-get.yaml
+  /api/casos/porIds/{ids}:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@porIds@{ids}-get.yaml
+  /api/casos/num:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@num-get.yaml
+  /api/casos/busca:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@busca-get.yaml
+  /api/casos/edit:
+    put:
+      $ref: ./paths/lawsoft/casos/public@api@casos@edit-put.yaml
+  /api/casos/listacasos:
+    get:
+      $ref: ./paths/lawsoft/casos/public@api@casos@listacasos-get.yaml
+  /api/casos/subcasos/{cdProcessoPai}:
+    get:
+      $ref: './paths/lawsoft/casos/public@api@casos@subcasos@cdProcessoPai-get.yaml'
+
+  # Categoria
+  /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
+    get:
+      $ref: ./paths/lawsoft/categoria/public@api@escritorios@{IdEscritorio}@{intfiltroCategoria}@categoriaspreco-get.yaml
+  /api/escritorios/{IdEscritorio}/categoriaspreco:
+    get:
+      $ref: ./paths/lawsoft/categoria/public@api@escritorios@{IdEscritorio}@categoriaspreco-get.yaml
+  /api/funcionarios/{IdsMin},{IdsMax}/categorias:
+    get:
+      $ref: ./paths/lawsoft/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
+
+  # Cliente
+  /api/clientes/todos:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@todos-get.yaml
+  /api/clientes:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes-get.yaml
+  /api/clientes/enderecos:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@enderecos-get.yaml
+  /api/clientes/porDomain/{domain}:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@porDomain@domain-get.yaml
+  /api/clientes/ficha:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@ficha-get.yaml
+  /api/clientes/ficha_mobile:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@ficha@mobile-get.yaml
+  /api/clientes/mobile:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@mobile-get.yaml
+  /api/clientes/{id}:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@{id}-get.yaml
+  /api/clientes/porIds/{idsClientes}:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@porIds@{idsClientes}-get.yaml
+  /api/clientes/{idCliente}/pasta:
+    get:
+      $ref: ./paths/lawsoft/cliente/public@api@clientes@{idCliente}@pasta-get.yaml
+
+  # Contatos
+  /api/contatos/{id}:
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@contatos@{id}-get.yaml
+  /api/contatos:
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@contatos-get.yaml
+  /api/clientes/{idCliente}/contatos:
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@clientes@{idCliente}@contatos-get.yaml
+  /api/contatos/solicitantes:
+    get:
+      $ref: ./paths/lawsoft/contato/public@api@contatos@solicitantes-get.yaml
+
+  # Conta de acesso
+  /api/ContaDeAcesso/ObtemContaDeAcesso:
+    get:
+      $ref: ./paths/lawsoft/conta_de_acesso/public@api@ContaDeAcesso@ObtemContaDeAcesso-get.yaml
+  /api/ContaDeAcesso/ObtemContaDeAcesso2:
+    get:
+      $ref: ./paths/lawsoft/conta_de_acesso/public@api@ContaDeAcesso@ObtemContaDeAcesso2-get.yaml
+
+  # Contrato
+  /api/contratos:
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@contratos-get.yaml
+  /api/casos/{idCaso}/contratosimples:
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@casos@{idCaso}@contratosimples-get.yaml
+  /api/contratos/{idCliente}/contratosCliente:
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@contratos@{idCliente}@contratosCliente-get.yaml
+  /api/clientes/{idCliente}/contratos:
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@clientes@{idCliente}@contratos-get.yaml
+  /api/contratos/{id}:
+    get:
+      $ref: ./paths/lawsoft/contrato/public@api@contratos@{id}-get.yaml
+
+  # Dados complementares
+  /api/casos/{idCaso}/dadoscomplementares:
+    get:
+      $ref: ./paths/lawsoft/dados_complementares/public@api@casos@{idCaso}@dadoscomplementares-get.yaml
+  /api/casos/num/dadoscomplementares:
+    get:
+      $ref: ./paths/lawsoft/dados_complementares/public@api@casos@num@dadoscomplementares-get.yaml
+  /api/dado_complementar/{id}:
+    get:
+      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar@id-get.yaml'
+    delete:
+      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar@id-delete.yaml'
+  /api/dado_complementar:
+    post:
+      $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-post.yaml
+    put:
+      $ref: ./paths/lawsoft/dados_complementares/public@api@dado_complementar-put.yaml
+  /api/dado_complementar/valor:
+    post:
+      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar@valor-post.yaml'
+  /api/dado_complementar_caso:
+    get:
+      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar_caso-get.yaml'      
+  /api/dado_complementar_caso/{tipoCaso}:
+    get:
+      $ref: './paths/lawsoft/dados_complementares/public@api@dado_complementar_caso@tipoCaso-get.yaml'
+  
+      # Decisões
+  /api/casos/{idCaso}/Decisoes:
+    get:
+      $ref: './paths/lawsoft/decisoes/public@api@casos@idCaso@Decisoes-get.yaml'
+  /api/casos/num/decisoes:
+    get:
+      $ref: './paths/lawsoft/decisoes/public@api@casos@num@decisoes-get.yaml'
+  /api/Decisoes/tipos:
+    get:
+      $ref: './paths/lawsoft/decisoes/public@api@Decisoes@tipos-get.yaml'
+  /api/Decisoes:
+    post:
+      $ref: './paths/lawsoft/decisoes/public@api@Decisoes-post.yaml'
+  /api/Decisoes/{id}:
+    get:
+      $ref: './paths/lawsoft/decisoes/public@api@Decisoes@id-get.yaml'
+    put:
+      $ref: './paths/lawsoft/decisoes/public@api@Decisoes@id-put.yaml'
+  /api/casos/{idCaso}/DecisoesComValores:
+    get:
+      $ref: './paths/lawsoft/decisoes/public@api@casos@idCaso@DecisoesComValores-get.yaml'
+  /api/Decisoes/{idProcessoDecisao}:
+    delete:
+      $ref: './paths/lawsoft/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
+
+  # Despesas
+  /api/despesas/totaldespesasmes:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@totaldespesasmes-get.yaml'
+  /api/despesas/proximoslancamentos:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@proximoslancamentos-get.yaml'
+  /api/despesas/adiantamentosliberados:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@adiantamentosliberados-get.yaml'
+  /api/despesas/adiantamentos/categorias:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@adiantamentos@categorias-get.yaml'
+  /api/despesas/adiantamentos/fornecedores:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@adiantamentos@fornecedores-get.yaml'
+  /api/despesas/reembolsos/categorias:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@reembolsos@categorias-get.yaml'
+  /api/despesas/reembolsos/fornecedores:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@reembolsos@fornecedores-get.yaml'
+  /api/despesas/voucher:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@voucher-get.yaml'
+  /api/despesas/voucher/{idVoucher}/categorias:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@voucher@idVoucher@categorias-get.yaml'
+  /api/despesas/voucher/{idVoucher}/fornecedores:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@voucher@idVoucher@fornecedores-get.yaml'
+  /api/despesas/obtem:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@obtem-get.yaml'
+  /api/despesas/obtem/{id}:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@obtem@id-get.yaml'
+  /api/despesas/inclui:
+    post:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@inclui-post.yaml'
+  /api/despesas/atualiza:
+    put:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@atualiza-put.yaml'
+  /api/despesas/exclui/{id}:
+    delete:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@exclui@id-delete.yaml'
+  /api/despesas/valorKMRodado:
+    get:
+      $ref: './paths/lawsoft/despesa/public@api@despesas@valorKMRodado-get.yaml'
+
+  # Expectativa reivindicação
+  /api/casos/{idCaso}/Valores:
+    get:
+      $ref: './paths/lawsoft/expectativa_reivindicacao/public@api@casos@idCaso@Valores-get.yaml'
+  /api/casos/{idCaso}/PedidosComHistorico:
+    get:
+      $ref: './paths/lawsoft/expectativa_reivindicacao/public@api@casos@idCaso@PedidosComHistorico-get.yaml'
+  /api/expectativa/valores/{idCaso}:
+    get:
+      $ref: './paths/lawsoft/expectativa_reivindicacao/public@api@expectativa@valores@idCaso-get.yaml'
+
+  # Fase
+  /api/fase:
+    get:
+      $ref: './paths/lawsoft/fase_caso/public@api@fase-get.yaml'
+  /api/casos/fase/{nrGrupo}:
+    get:
+      $ref: ./paths/lawsoft/fase_caso/public@api@casos@fase@{nrGrupo}-get.yaml
+  /api/casos/{nrSequencia}/fase:
+    get:
+      $ref: ./paths/lawsoft/fase_caso/public@api@casos@{nrSequencia}@fase-get.yaml
+  /api/casos/num/fase:
+    get:
+      $ref: ./paths/lawsoft/fase_caso/public@api@casos@num@fase-get.yaml
+
+  # Funcionários
+  /api/funcionarios/porIds/{ids}:
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios@porIds@{ids}-get.yaml
+  /api/funcionarios/porId/{id}:
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios@porId@{id}-get.yaml
+  /api/funcionarios:
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios-get.yaml
+  /api/areas/{idArea}/funcionarios:
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@areas@{idArea}@funcionarios-get.yaml
+  /api/funcionarios/{idFuncionario}/areas:
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@funcionarios@{idFuncionario}@areas-get.yaml
+  /api/escritorios/{IdEscritorio}/funcionarios:
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@escritorios@{IdEscritorio}@funcionarios-get.yaml
+  /api/escritorios/funcionarios:
+    get:
+      $ref: ./paths/lawsoft/funcionario/public@api@escritorios@funcionarios-get.yaml
+
+  # Garantia
+  /api/casos/Garantia/{idCasoGarantia}:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@idCasoGarantia-get.yaml'
+  /api/casos/{idCaso}/Garantias:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@casos@idCaso@Garantias-get.yaml'
+  /api/TiposGarantia:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@TiposGarantia-get.yaml'
+  /api/casos/num/garantias:
+    get:
+      $ref: './paths/lawsoft/garantia/public@api@casos@num@garantias-get.yaml'
+  /api/casos/Garantia/Inclui/{idCaso}:
+    post:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@Inclui@idCaso-post.yaml'
+  /api/casos/Garantia/Atualiza/{idCaso}:
+    put:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@Atualiza@idCaso-put.yaml'
+  /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
+    delete:
+      $ref: './paths/lawsoft/garantia/public@api@casos@GarantiaMovimentacao@Exclui@idGarantiaMovimentacao-delete.yaml'
+  /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
+    post:
+      $ref: './paths/lawsoft/garantia/public@api@casos@Garantia@IncluiMovimentacao-post.yaml'
+
+  # Hierarquia
+  /api/hierarquia/ritos:
+    get: 
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@ritos-get.yaml
+  /api/hierarquia/tipos:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@tipos-get.yaml
+  /api/hierarquia/regioes:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@regioes-get.yaml
+  /api/hierarquia/GrupoForoPorTipo:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforoportipo-get.yaml
+  /api/hierarquia/GrupoForo:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforo-get.yaml
+  /api/hierarquia/GrupoForoSuperiores:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
+  /api/hierarquia/GrupoForoDetalhado:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@GrupoForoDetalhado-get.yaml
+  /api/hierarquia/UFPorRegiao:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@UFPorRegiao-get.yaml
+  /api/hierarquia/fases:
+    get:
+      $ref: ./paths/lawsoft/hierarquia/public@api@hierarquia@fases-get.yaml
+
+  # Natureza
+  /api/casos/{idCaso}/natureza:
+    get:
+      $ref: './paths/lawsoft/natureza/public@api@casos@idCaso@natureza-get.yaml'
+  /api/casos/num/natureza:
+    get:
+      $ref: './paths/lawsoft/natureza/public@api@casos@num@natureza-get.yaml'
+
+  # País
+  /api/pais:
+    get:
+      $ref: ./paths/lawsoft/pais/public@api@pais-get.yaml
+  /api/pais/uf:
+    get:
+      $ref: ./paths/lawsoft/pais/public@api@pais@uf-get.yaml
+  /api/pais/cidades:
+    get:
+      $ref: ./paths/lawsoft/pais/public@api@pais@cidades-get.yaml
+
+  # Parte
+  /api/Partes:
+    get:
+      $ref: ./paths/lawsoft/partes/public@api@partes-get.yaml
+  /api/casos/{idCaso}/Partes:
+    get:
+      $ref: ./paths/lawsoft/partes/public@api@casos@idCaso@partes-get.yaml
+  /api/parte:
+    post:
+      $ref: ./paths/lawsoft/partes/public@api@parte@post-post.yaml
+  /api/parte/{cdParte}:
+    delete:
+      $ref: ./paths/lawsoft/partes/public@api@parte@delete-delete.yaml
+  /api/partes/desvincular:
+    post:
+      $ref: ./paths/lawsoft/partes/public@api@partes@desvincular-post.yaml
+
+  # Parte Papel (Envolvimento das partes)
+  /api/envolvimentos":
+    get:
+      $ref: ./paths/lawsoft/parte_papel/public@api@envolvimentos-get.yaml
+
+  # Push
+  /api/push/publicacoes:
+    get:
+      $ref: './paths/lawsoft/push/public@api@push@publicacoes-get.yaml'
+
+  # Tabela de preço
+  /api/escritorios/{idEscritorio}/tabelaspreco:
+    get:
+      $ref: './paths/lawsoft/tabela_preco/public@api@escritorios@idEscritorio@tabelaspreco-get.yaml'
+
+  # Tabela preço categoria
+  /api/escritorios/{idEscritorio}/tabelasprecocategoria:
+    get:
+      $ref: './paths/lawsoft/tabela_preco_categoria/public@api@escritorios@idEscritorio@tabelasprecocategoria-get.yaml'
+
+  # Tarefa
+  /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
+    get:
+      $ref: './paths/lawsoft/tarefa/public@api@casos@tarefas@cdProcesso@ignoraIdFuncionario@filtro-get.yaml'
+
+  # Timeline
+  /api/timeline/items:
+    get:
+      $ref: './paths/lawsoft/timeline/public@api@timeline@items-get.yaml'
+
+  # Timesheet
+  /api/timesheet/totalhoras:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@totalhoras-get.yaml'
+  /api/timesheet/proximoslancamentos:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@proximoslancamentos-get.yaml'
+  /api/timesheet/activitycodes:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@activitycodes-get.yaml'
+  /api/timesheet/taskcodes:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@taskcodes-get.yaml'
+  /api/timesheet/listaporperiodo:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@listaporperiodo-get.yaml'
+  /api/timesheet/obtemmaisrecente:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@obtemmaisrecente-get.yaml'
+  /api/timesheet/obtem:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@obtem-get.yaml'
+  /api/timesheet/funcionarios/{idFuncionario}/areas:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@funcionarios@idFuncionario@areas-get.yaml'
+  /api/timesheet/areas/{idArea}/titulos:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@areas@idArea@titulos-get.yaml'
+  /api/timesheet/funcionarios:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@funcionarios-get.yaml'
+  /api/timesheet/funcionarios/permissaolcto/{idFuncionario}:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@funcionarios@permissaolcto@idFuncionario-get.yaml'
+  /api/timesheet/classificacoes:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@classificacoes-get.yaml'
+  /api/casos/{idCaso}/timesheet:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@casos@idCaso@timesheet-get.yaml'
+  /api/timesheet/caso/{idCaso}:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@caso@idCaso-get.yaml'
+  /api/timesheet/obtem/{id}:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@obtem@id-get.yaml'
+  /api/timesheet/inclui:
+    post:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@inclui-post.yaml'
+  /api/timesheet/incluiWeb:
+    post:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@incluiWeb-post.yaml'
+  /api/timesheet/atualizaWeb:
+    put:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@atualizaWeb-put.yaml'
+  /api/timesheet/atualiza:
+    put:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@atualiza-put.yaml'
+  /api/timesheet/exclui/{id}:
+    delete:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@exclui@id-delete.yaml'
+  /api/timesheet/limiteMinimo:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@limiteMinimo-get.yaml'
+  /api/timesheet/arredondamento:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet@arredondamento-get.yaml'
+  /api/timesheet:
+    get:
+      $ref: './paths/lawsoft/timesheet/public@api@timesheet-get.yaml'
+
+  # Valores apurados
+  /api/casos/{idCaso}/valoresapurados:
+    get:
+      $ref: './paths/lawsoft/valores_apurados/public@api@casos@idCaso@valoresapurados-get.yaml'
+  /api/casos/num/valoresapurados:
+    get:
+      $ref: './paths/lawsoft/valores_apurados/public@api@casos@num@valoresapurados-get.yaml'
+
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: api_key
+    auth_token:
+      type: apiKey
+      in: header
+      name: auth_token
+    basic_auth:
+      type: http
+      scheme: basic

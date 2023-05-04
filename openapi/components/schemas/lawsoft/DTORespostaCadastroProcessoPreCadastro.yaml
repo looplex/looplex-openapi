@@ -1,0 +1,13 @@
+title: DTORespostaCadastroProcessoPreCadastro
+type: object
+properties:
+  HouveException:
+    type: boolean
+  ProcessosNaoCadastrados:
+    type: array
+    items:
+      $ref: ../../../components/schemas/lawsoft/DTOErroCadastroProcesso.yaml
+  ProcessosCadastrados:
+    type: array
+    items:
+      $ref: ../../../components/schemas/lawsoft/DTOProcessoJudicialAdministrativo.yaml

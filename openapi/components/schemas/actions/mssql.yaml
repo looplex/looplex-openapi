@@ -1,0 +1,18 @@
+title: Mssql
+required: 
+  -  config
+  -  request
+type: object
+properties:
+  config:
+    type: string
+    description: Config
+    example: "Data Source=datasource; Initial Catalog=catalogo; User Id=****; Password=**********"
+  request:
+    type: object
+    description: method and command
+    example: {
+      "method": "query",
+      "command": "SELECT * FROM [dbo].[empreendimentos] WHERE cnpj = '04.026.328/0001-38'"
+  }
+description: Mssql

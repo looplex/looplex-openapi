@@ -1,0 +1,29 @@
+tags: 
+  - Partes 
+summary: Exclusão de parte
+description: Exclui a parte se não for um cliente e não estiver vinculada a nenhum processo 
+operationId: deletePart
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: cdParte
+    in: path
+    description: "O identificador da parte"
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Resposta do serviço"
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/MExclusaoItem.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

@@ -1,0 +1,12 @@
+type: integer
+example: 1
+description: |
+  1: Atividade externa,
+
+  2: Prazo, 
+
+  4: Audiência, 
+
+  10: Compromisso
+
+  11: Publicação

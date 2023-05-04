@@ -1,0 +1,31 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Dados complementares
+summary: Inclui ou atualiza valor no dado complementar
+description: Inclui ou atualiza valores nos dados complementares informados
+operationId: api-dado_complementar-valor
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items: 
+          $ref: ../../../components/schemas/lawsoft/DTOValorDadoComplementarCaso.yaml
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "204":
+    description: Os valores foram incluídos.
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

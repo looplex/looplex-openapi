@@ -1,0 +1,49 @@
+tags: 
+  - Casos 
+summary: Casos por identificador, numero interno ou numero externo
+description: Obtém os casos obtidos pelo identificador, numero interno ou numero externo
+operationId: api-casos-num
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: IdProcesso
+    in: query
+    example: "[1, 10]"
+    required: false
+    schema:
+      type: array
+      items:
+        type: integer
+  - name: NumeroInterno
+    in: query
+    example: "[2, 20]"
+    required: false
+    schema:
+      type: array
+      items:
+        type: integer
+  - name: NumeroExterno
+    in: query
+    example: "[\"1.10.100\", \"2.20.200\"]"
+    required: false
+    schema:
+      type: array
+      items:
+        type: string
+responses:
+  "200":
+    description: "Casos por identificador, numero interno ou numero externo"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOCasoSimples.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

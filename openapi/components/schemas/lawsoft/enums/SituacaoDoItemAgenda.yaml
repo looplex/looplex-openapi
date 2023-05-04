@@ -1,0 +1,14 @@
+type: integer
+example: 1
+description: |
+  1: Em aberto,
+
+  2: Agendada, 
+
+  3: Realizada, 
+
+  4: Ocupado, 
+
+  5: A confirmar
+
+  6: Desmarcável

@@ -9,7 +9,7 @@ properties:
     type: integer
     description: The document size
     format: int64
-    example: 0
+    example: 2
   documentId:
     type: string
     description: The ID of the created document

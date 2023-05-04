@@ -1,0 +1,25 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Varas e Foros
+summary: Ritos do grupo
+description: Obtém os ritos do grupo informado
+operationId: api-VF-RitosDoGrupo
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: cdGrupoRito
+    in: query
+    description: "O identificador do grupo de ritos"
+    required: true
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Response"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ResponseListaRitosDoGrupo.yaml

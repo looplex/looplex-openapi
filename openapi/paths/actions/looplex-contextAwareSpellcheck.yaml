@@ -1,0 +1,40 @@
+tags:
+  - Operations
+summary: Context Aware Spellcheck
+description: Searches for misspellings and suggests fixes based on a context
+operationId: contextAwareSpellcheck
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/actions/looplex-contextAwareSpellcheck.yaml
+responses:
+  '200':
+    description: OK
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "status": "SUCCESS",
+            "message": {
+                "suggestions": [
+                    {
+                        "suggestion": "action",
+                        "score": 0.7457185570229751
+                    }
+                ]
+            }
+        }
+  '401':
+    description: Access Denied
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "statusCode": 401,
+            "message": "Access denied due to missing subscription key. Make sure to include subscription key when making requests to an API."
+          }

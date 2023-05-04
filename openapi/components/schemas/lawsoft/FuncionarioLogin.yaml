@@ -1,0 +1,9 @@
+title: FuncionarioLogin
+type: object
+properties:
+  ID:
+    type: integer
+  Nome:
+    type: string
+  Domain:
+    type: string

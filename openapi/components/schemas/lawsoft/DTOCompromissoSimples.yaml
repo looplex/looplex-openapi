@@ -1,0 +1,70 @@
+name: DTOCompromissoSimples
+type: object
+properties:
+  IDCompromisso:
+    description: "O identificador do compromisso"
+    type: integer
+  IDArea:
+    description: "O identificador da área"
+    type: integer
+  IDFuncionario:
+    description: "Funcionário que criou o item de agenda"
+    type: integer
+  IDFuncionarioResponsavel:
+    description: "Funcionário responsável pelo item de agenda"
+    type: integer
+  NumeroPasta:
+    type: integer
+  Data:
+    description: "A data do item de agenda"
+    type: string
+  HoraInicial:
+    type: string
+  DataFinal:
+    description: "A data limite do item de agenda"
+    type: string
+  DataRealizacao:
+    description: "A data em que foi concluido o item"
+    type: string
+  Concluido:
+    description: "Indica se o item está concluído"
+    type: boolean
+  TipoItemAgenda:
+    $ref: enums/TipoItemAgenda.yaml
+  Assunto:
+    description: "O título do item de agenda"
+    type: string
+  Descricao:
+    description: "A descrição do item de agenda"
+    type: string
+  IDProcesso:
+    type: integer
+  NumeroDoCaso:
+    description: "O numero do caso no LawOffice"
+    type: integer
+  TituloCaso:
+    description: "O titulo do caso"
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExternoCaso:
+    description: "O numero externo do caso"
+    type: string
+  Rito:
+    type: string
+  Vencido:
+    type: string
+  Cliente:
+    description: "O nome do cliente do caso"
+    type: string
+  Executor:
+    description: "O nome do executor do item de agenda"
+    type: string
+  Situacao:
+    type: string
+  PoloAtivo:
+    type: string
+  PoloPassivo:
+    type: string
+  Classificacao:
+    type: string

@@ -1,0 +1,15 @@
+title: DTOAcaoPush
+type: object
+properties:
+  IDAcaoPush:
+    type: integer
+  IDFuncionario:
+    type: integer
+  Tipo:
+    $ref: enums/TipoDeAcao.yaml
+  DataCriacao:
+    type: string
+  IDVinculo:
+    type: integer
+  IDPublicacaoAndamento:
+    type: integer

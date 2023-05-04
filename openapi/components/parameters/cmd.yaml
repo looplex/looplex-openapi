@@ -1,0 +1,7 @@
+name: cmd
+in: query
+description: Command to be executed
+required: true
+schema:
+  type: string
+  example: 'GET'

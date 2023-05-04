@@ -1,0 +1,7 @@
+title: HierarquiaParaLO
+type: object
+properties:
+  nomeItemHierarquia:
+    type: string
+  grupoFamilia:
+    $ref: enums/TipoDeInstancia.yaml

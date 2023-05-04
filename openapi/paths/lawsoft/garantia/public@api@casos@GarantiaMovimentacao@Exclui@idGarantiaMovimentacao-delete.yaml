@@ -1,0 +1,36 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Garantia
+summary: Deleção de movimentação de garantia
+description: Deleção de movimentação garantia por id 
+operationId: api-casos-GarantiaMovimentacao-Exclui-idGarantiaMovimentacao
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: idGarantiaMovimentacao
+    in: path
+    example: "1"
+    description: "Identificador da movimentação de garantia"
+    required: true
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Deleção realizada com sucesso"
+    content:
+      application/json:
+        schema:
+          type: boolean
+          example: true 
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml

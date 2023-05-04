@@ -1,0 +1,30 @@
+tags: 
+  - Casos 
+summary: Inclui casos
+description: Inclui casos.
+operationId: api-casos-inclui
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: ../../../components/schemas/lawsoft/DTOProcessoPreCadastro.yaml
+responses:
+  "200":
+    description: "Retorna um objeto contendo os processos cadastrados e os processos com erro (caso haja)."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/DTORespostaCadastroProcessoPreCadastro.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/InternalServerErrorResponse.yaml
