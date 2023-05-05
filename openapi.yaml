@@ -23460,9 +23460,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOAndamentoTemplate'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23487,9 +23503,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOAndamentoClassificacao'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23540,9 +23572,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOAndamento'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23572,9 +23620,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOAndamentoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23618,9 +23682,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOAndamentoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23648,9 +23728,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOAndamento'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23678,9 +23774,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOAndamento'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23713,9 +23825,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOAndamento'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23738,9 +23866,25 @@ paths:
         '204':
           description: O andamento foi excluído.
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23773,9 +23917,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/EncapsuladorDeResposta'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23816,9 +23976,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOArea'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23848,9 +24024,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOArea'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23878,9 +24070,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOArea'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23926,9 +24134,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOBuscaMobileNovo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23957,9 +24181,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOProcessoPedidoCalculo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -23986,9 +24226,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOProcessoPedidoCalculo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24010,9 +24266,25 @@ paths:
         '204':
           description: O cálculo monetário foi excluído
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24049,9 +24321,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOResultadoTabelaCalculo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24075,9 +24363,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOIndiceMonetario'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24101,9 +24405,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOModeloCalculo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24130,9 +24450,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOModeloCalculo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24161,9 +24497,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOValorCalculo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24195,9 +24547,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTORespostaCadastroProcessoPreCadastro'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24245,9 +24613,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24277,9 +24661,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOPasta'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24309,9 +24709,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOPasta'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24339,9 +24755,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCasoCompleto'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24369,9 +24801,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCasoFicha'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24415,9 +24863,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoFicha'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24447,9 +24911,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24474,9 +24954,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOEnum'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24513,9 +25009,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24555,9 +25067,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoCompleto'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24590,9 +25118,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24643,9 +25187,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24687,9 +25247,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24724,9 +25300,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCasoCompleto'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24763,9 +25355,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24795,9 +25403,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24836,9 +25460,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCategoriaPreco'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24868,9 +25508,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCategoriaPreco'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24905,9 +25561,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCategoriaFuncionario'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24932,9 +25604,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCliente'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -24983,9 +25671,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCliente'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25010,9 +25714,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOEnderecoCliente'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25042,9 +25762,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCliente'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25072,9 +25808,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCliente'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25102,9 +25854,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOClienteMobile'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25155,9 +25923,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOClienteMobile'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25187,9 +25971,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCliente'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25224,9 +26024,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCliente'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25253,9 +26069,25 @@ paths:
             application/json:
               example: 10
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25283,9 +26115,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOContato'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25310,9 +26158,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOContato'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25342,9 +26206,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOContato'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25374,9 +26254,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOSolicitante'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25408,9 +26304,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOContaDeAcesso'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25442,9 +26354,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOContaDeAcesso'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25481,9 +26409,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOContrato'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25511,9 +26455,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOContratoSimples'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25555,9 +26515,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOContrato'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25599,9 +26575,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOContrato'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25629,9 +26621,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOContrato'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25665,9 +26673,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTODadoComplementar'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25711,9 +26735,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTODadoComplementar'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25742,9 +26782,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOParametroDadoComplementar'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25768,9 +26824,25 @@ paths:
         '204':
           description: O dado complementar foi excluído
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25796,9 +26868,25 @@ paths:
         '204':
           description: O dado complementar foi cadastrado.
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25821,9 +26909,25 @@ paths:
         '204':
           description: O dado complementar foi atualizado.
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25849,9 +26953,25 @@ paths:
         '204':
           description: Os valores foram incluídos.
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25876,9 +26996,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOParametroDadoComplementar'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25910,9 +27046,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOParametroDadoComplementar'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25943,9 +27095,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoDecisao'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -25985,9 +27153,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoDecisao'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26011,9 +27195,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTODecisao'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26036,9 +27236,25 @@ paths:
         '204':
           description: A decisão foi incluída
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26065,9 +27281,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOProcessoDecisao'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26094,9 +27326,25 @@ paths:
         '204':
           description: A decisão foi atualizada
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26125,9 +27373,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOProcessoDecisao'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26150,9 +27414,25 @@ paths:
         '204':
           description: A decisão foi excluída.
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26175,9 +27455,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOTotalGastoDespesas'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26205,9 +27501,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTODespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26230,9 +27542,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOLiberacao'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26255,9 +27583,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCategoriaDespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26280,9 +27624,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOFornecedor'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26305,9 +27665,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCategoriaDespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26330,9 +27706,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOFornecedor'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26354,9 +27746,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOVoucher'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26383,9 +27791,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCategoriaDespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26412,9 +27836,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOFornecedor'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26454,9 +27894,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTODespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26483,9 +27939,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTODespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26518,9 +27990,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTODespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26553,9 +28041,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTODespesa'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26578,9 +28082,25 @@ paths:
         '204':
           description: A despesa foi excluída.
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26601,9 +28121,25 @@ paths:
             application/json:
               example: 10
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26630,9 +28166,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOValoresDoCaso'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26659,9 +28211,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOValoresComPedidosAtualizados'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26688,9 +28256,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOValoresDoCasoAntigo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26715,9 +28299,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFase'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26747,9 +28347,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFaseCaso'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26777,9 +28393,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOFaseCaso'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26823,9 +28455,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFaseCaso'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26862,9 +28510,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFuncionario'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26897,9 +28561,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOFuncionario'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26940,9 +28620,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFuncionario'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -26988,9 +28684,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFuncionario'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27020,9 +28732,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOAreaFuncionario'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27056,9 +28784,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFuncionarioBase'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27083,9 +28827,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFuncionarioBase'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27114,9 +28874,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCasoGarantia'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27146,9 +28922,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoGarantia'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27172,9 +28964,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOGarantia'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27219,9 +29027,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCasoGarantia'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27253,9 +29077,25 @@ paths:
             application/json:
               example: 10
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27288,9 +29128,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOCasoGarantia'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27321,9 +29177,25 @@ paths:
                 type: boolean
                 example: true
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27359,9 +29231,25 @@ paths:
                 type: integer
                 example: 1
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27406,9 +29294,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOGrupoRito'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27433,9 +29337,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOTipoProcessoAdministrativo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27465,9 +29385,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTORegiaoRamoJudicial'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27521,9 +29457,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOGrupoForo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27570,9 +29522,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOGrupoForo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27602,9 +29570,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOGrupoForo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27637,9 +29621,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/DTOGrupoForo'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27673,9 +29673,25 @@ paths:
                 - SP
                 - RJ
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27705,9 +29721,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOFaseProcesso'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27736,9 +29768,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTONatureza'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27783,9 +29831,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTONatureza'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27810,9 +29874,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOPais'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27837,9 +29917,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOUF'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27871,9 +29967,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOCidade'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27904,9 +30016,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOParte'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27936,9 +30064,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOParte'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -27970,9 +30114,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOParte'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -28003,9 +30163,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/MExclusaoItem'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -28034,9 +30210,25 @@ paths:
         '204':
           description: A parte foi desvinculada do processo
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -28076,9 +30268,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/DTOPartePapel'
         '401':
-          description: Em caso de erro de timeout ou sessão expirada.
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
         '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
+          description: Internal Server Error
           content:
             application/json:
               schema:
@@ -83929,7 +86137,7 @@ components:
       properties:
         Message:
           type: string
-          description: Mensagem de erro
+          description: Tipo do Erro
         ExceptionMessage:
           type: string
           description: Descrição do erro

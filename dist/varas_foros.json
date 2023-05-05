@@ -1186,7 +1186,7 @@
         "properties": {
           "Message": {
             "type": "string",
-            "description": "Mensagem de erro"
+            "description": "Tipo do Erro"
           },
           "ExceptionMessage": {
             "type": "string",

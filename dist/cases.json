@@ -1737,10 +1737,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1783,10 +1810,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1862,10 +1916,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1916,10 +1997,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1986,10 +2094,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2037,10 +2172,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2089,10 +2251,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2149,10 +2338,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2191,10 +2407,37 @@
             "description": "O andamento foi excluído."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2251,10 +2494,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2315,10 +2585,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2369,10 +2666,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2420,10 +2744,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2498,10 +2849,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2551,10 +2929,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2601,10 +3006,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2642,10 +3074,37 @@
             "description": "O cálculo monetário foi excluído"
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2709,10 +3168,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2754,10 +3240,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2799,10 +3312,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2849,10 +3389,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2902,10 +3469,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2957,10 +3551,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3038,10 +3659,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3092,10 +3740,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3146,10 +3821,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3197,10 +3899,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3248,10 +3977,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3318,10 +4074,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3372,10 +4155,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3418,10 +4228,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3482,10 +4319,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3552,10 +4416,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3610,10 +4501,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3692,10 +4610,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3764,10 +4709,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3827,10 +4799,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3891,10 +4890,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3945,10 +4971,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4007,10 +5060,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4061,10 +5141,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4123,10 +5230,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4169,10 +5303,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4251,10 +5412,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4297,10 +5485,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4351,10 +5566,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4402,10 +5644,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4453,10 +5722,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4535,10 +5831,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4586,10 +5909,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4641,10 +5991,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4690,10 +6067,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4741,10 +6145,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4787,10 +6218,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4841,10 +6299,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4895,10 +6380,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4951,10 +6463,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5007,10 +6546,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5071,10 +6637,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5122,10 +6715,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5194,10 +6814,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5266,10 +6913,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5317,10 +6991,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5371,10 +7072,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5441,10 +7169,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5493,10 +7248,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5536,10 +7318,37 @@
             "description": "O dado complementar foi excluído"
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5584,10 +7393,37 @@
             "description": "O dado complementar foi cadastrado."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5627,10 +7463,37 @@
             "description": "O dado complementar foi atualizado."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5675,10 +7538,37 @@
             "description": "Os valores foram incluídos."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5721,10 +7611,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5777,10 +7694,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5832,10 +7776,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5902,10 +7873,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5947,10 +7945,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5991,10 +8016,37 @@
             "description": "A decisão foi incluída"
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6041,10 +8093,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6091,10 +8170,37 @@
             "description": "A decisão foi atualizada"
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6144,10 +8250,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6187,10 +8320,37 @@
             "description": "A decisão foi excluída."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6230,10 +8390,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6281,10 +8468,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6324,10 +8538,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6367,10 +8608,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6410,10 +8678,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6453,10 +8748,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6496,10 +8818,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6538,10 +8887,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6588,10 +8964,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6638,10 +9041,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6707,10 +9137,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6757,10 +9214,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6817,10 +9301,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6877,10 +9388,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6920,10 +9458,37 @@
             "description": "A despesa foi excluída."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6960,10 +9525,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7010,10 +9602,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7060,10 +9679,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7110,10 +9756,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7156,10 +9829,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7210,10 +9910,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7261,10 +9988,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7331,10 +10085,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7389,10 +10170,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7441,10 +10249,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7505,10 +10340,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7577,10 +10439,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7631,10 +10520,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7685,10 +10601,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7731,10 +10674,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7783,10 +10753,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7837,10 +10834,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7882,10 +10906,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7955,10 +11006,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8013,10 +11091,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8073,10 +11178,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8127,10 +11259,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8190,10 +11349,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8268,10 +11454,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8314,10 +11527,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8368,10 +11608,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8454,10 +11721,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8532,10 +11826,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8586,10 +11907,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8645,10 +11993,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8705,10 +12080,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8759,10 +12161,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8812,10 +12241,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8885,10 +12341,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8931,10 +12414,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8977,10 +12487,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9033,10 +12570,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9088,10 +12652,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9142,10 +12733,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9200,10 +12818,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9252,10 +12897,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9304,10 +12976,37 @@
             "description": "A parte foi desvinculada do processo"
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9374,10 +13073,37 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12035,7 +15761,7 @@
         "properties": {
           "Message": {
             "type": "string",
-            "description": "Mensagem de erro"
+            "description": "Tipo do Erro"
           },
           "ExceptionMessage": {
             "type": "string",
