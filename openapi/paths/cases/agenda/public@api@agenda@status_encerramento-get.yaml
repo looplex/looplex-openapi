@@ -1,0 +1,65 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Agenda
+summary: Status de encerramento (Agenda)
+description: Lista os possíveis status de encerramento para um item de agenda
+operationId: api-agenda-status_encerramento
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: inCompromisso
+    in: query
+    example: "true"
+    description: "Status para Compromissos?"
+    required: false
+    schema:
+      type: boolean
+  - name: inPrazo
+    in: query
+    example: "false"
+    description: "Status para prazos?"
+    required: false
+    schema:
+      type: boolean
+  - name: inAtividadeExterna
+    in: query
+    example: "false"
+    description: "Status para atividade externa?"
+    required: false
+    schema:
+      type: boolean
+  - name: inPublicacao
+    in: query
+    example: "false"
+    description: "Status para publicação?"
+    required: false
+    schema:
+      type: boolean
+  - name: inAudiencia
+    in: query
+    example: "false"
+    description: "Status para audiência?"
+    required: false
+    schema:
+      type: boolean
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Possíveis status de encerramento de item de agenda"
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOStatusEncerramentoItemAgenda.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

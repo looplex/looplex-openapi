@@ -1,0 +1,30 @@
+tags: 
+  - Andamento 
+summary: Andamentos simples do caso
+description: Retorna um array de andamentos simples do caso informado.
+operationId: api-casos-idCaso-andamentosimples
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: idCaso
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Retorna um array de andamentos simples do caso informado."
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOAndamentoSimples.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

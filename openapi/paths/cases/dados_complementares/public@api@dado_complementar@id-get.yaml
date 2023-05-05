@@ -1,0 +1,34 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Dados complementares
+summary: Obter dado complementar por identificador
+operationId: api-dado_complementar-id-get
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: id
+    in: path
+    example: "1"
+    description: "O identificador do dado complementar"
+    required: true
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "O dado complementar"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/DTOParametroDadoComplementar.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

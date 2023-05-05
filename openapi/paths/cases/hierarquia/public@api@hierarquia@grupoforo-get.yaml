@@ -1,0 +1,45 @@
+tags: 
+  - Hierarquia 
+summary: Grupos de foro
+description: Obtém os grupos de foro por ramo de justiça, estado e grupo de família
+operationId: api-hierarquia-grupoforo
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: nrRamoJudicial
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: dsUF
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: nrGrupoFamilia
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: cdRegiao
+    in: query
+    required: false
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém os grupos de foro por ramo de justiça, estado e grupo de família"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOGrupoForo.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

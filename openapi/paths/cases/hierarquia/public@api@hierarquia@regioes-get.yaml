@@ -1,0 +1,30 @@
+tags: 
+  - Hierarquia 
+summary: Regiões
+description: Obtém as regiões de acordo com o filtro informado
+operationId: api-hierarquia-regioes
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: nrRamoJudicial
+    in: query
+    required: false
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém as regiões de acordo com o filtro informado"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTORegiaoRamoJudicial.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

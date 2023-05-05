@@ -1,0 +1,37 @@
+tags: 
+  - Casos 
+summary: Casos
+description: Casos por filtro
+operationId: api-casos
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: ativos
+    in: query
+    description: "Default: true"
+    required: false
+    schema:
+      type: boolean
+  - name: inativos
+    in: query
+    description: "Default: false"
+    required: false
+    schema:
+      type: boolean
+responses:
+  "200":
+    description: "Retorna um array com todos os casos de acordo com o filtro informado"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOCasoSimples.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

@@ -1,0 +1,24 @@
+tags:
+  - Decisões
+summary: Tipos de decisões
+operationId: api-Decisoes-tipos
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  "200":
+    description: Obtém um array com os tipos de decisões
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTODecisao.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

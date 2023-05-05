@@ -1,0 +1,36 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Timesheet
+summary: Obtém mais recente
+operationId: api-timesheet-obtemmaisrecente
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: nrAplicabilidade
+    in: query
+    required: true
+    example: 1
+    schema:
+      $ref: ../../../components/schemas/lawsoft/enums/PeriodoLancamentoAplicabilidade.yaml
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Resposta"
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+            example: "2022-06-01T12:00:00"
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

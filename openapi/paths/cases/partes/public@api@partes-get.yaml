@@ -1,0 +1,31 @@
+tags: 
+  - Partes 
+summary: Pesquisa de Partes
+description: Obtém uma lista de partes de acordo com o termo informado.
+operationId: getPartsByTerm
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: nome
+    in: query
+    description: "Termo de pesquisa. Mínimo de 4 caracteres"
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: "Obtém uma lista de partes de acordo com o termo informado"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOParte.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

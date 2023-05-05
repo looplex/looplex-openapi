@@ -1,0 +1,40 @@
+tags: 
+  - Agenda 
+summary: Obtém compromissos
+description: Obtém compromissos, prazos e publicações por numero interno, externo ou identificador do caso.
+operationId: api-casos-num-tabagenda
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: NumeroInterno
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: NumeroExterno
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: IdProcesso
+    in: query
+    required: false
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Retorna um array com os compromissos, prazos e publicações encontrados de acordo com o numero interno, externo ou identificador do caso."
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTOItemAgendaSimples.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml

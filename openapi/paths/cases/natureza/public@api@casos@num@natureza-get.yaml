@@ -1,0 +1,48 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Natureza
+summary: Natureza dos casos
+description: Obtém as naturezas dos casos encontrados de acordo com o identificador do caso, numero interno ou numero externo
+operationId: api-casos-num-natureza
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: NumeroInterno
+    in: query
+    description: "Default: 0"
+    required: false
+    schema:
+      type: integer
+  - name: NumeroExterno
+    in: query
+    description: "Default: empty string"
+    required: false
+    schema:
+      type: string
+  - name: IdProcesso
+    in: query
+    description: "Default: 0"
+    required: false
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Natureza dos casos"
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/lawsoft/DTONatureza.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
