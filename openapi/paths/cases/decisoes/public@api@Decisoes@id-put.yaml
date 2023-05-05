@@ -19,10 +19,27 @@ responses:
   "204":
     description: A decisão foi atualizada
   "401":
-    description: "Em caso de erro de timeout ou sessão expirada."
-  "500":
-    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    description: "Unauthorized"
     content:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+    
