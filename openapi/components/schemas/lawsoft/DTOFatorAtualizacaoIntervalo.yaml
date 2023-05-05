@@ -1,4 +1,4 @@
-name: DTOFatorAtualizacaoIntervalo
+title: DTOFatorAtualizacaoIntervalo
 type: object
 properties:
   fatorAlto:

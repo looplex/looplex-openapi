@@ -1,4 +1,4 @@
-name: DTOResultadoItemJuros
+title: DTOResultadoItemJuros
 type: object
 properties:
   Valor:

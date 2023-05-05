@@ -1,4 +1,4 @@
-name: DTOMultaEHonorarios
+title: DTOMultaEHonorarios
 type: object
 properties:
   ValorMulta:

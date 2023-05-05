@@ -1,4 +1,4 @@
-name: DTOItemJuros
+title: DTOItemJuros
 type: object
 properties:
   Taxa:

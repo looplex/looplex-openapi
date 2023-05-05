@@ -1,4 +1,4 @@
-name: DTOValorCalculo
+title: DTOValorCalculo
 type: object
 properties:
   Valor:

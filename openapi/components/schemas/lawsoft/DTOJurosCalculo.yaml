@@ -1,4 +1,4 @@
-name: DTOJurosCalculo
+title: DTOJurosCalculo
 type: object
 properties:
   JurosCompensatorios:

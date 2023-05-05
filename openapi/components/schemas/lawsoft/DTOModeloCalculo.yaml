@@ -1,4 +1,4 @@
-name: DTOModeloCalculo
+title: DTOModeloCalculo
 type: object
 properties:
   IdModeloCalculo:

@@ -1,4 +1,4 @@
-name: DTOResultadoTabelaCalculo
+title: DTOResultadoTabelaCalculo
 type: object
 properties:
   ValorTotal:

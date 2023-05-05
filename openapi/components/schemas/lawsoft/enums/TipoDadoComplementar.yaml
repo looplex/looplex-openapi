@@ -1,4 +1,5 @@
-type: TipoDadoComplementar
+type: object
+title: TipoDadoComplementar
 example: 1
 description: |
   1: CaixaTexto

@@ -1,4 +1,4 @@
-name: DTOIndiceMonetarioDados
+title: DTOIndiceMonetarioDados
 type: object
 properties:
   Id:

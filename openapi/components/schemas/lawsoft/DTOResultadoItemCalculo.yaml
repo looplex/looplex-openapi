@@ -1,4 +1,4 @@
-name: DTOResultadoItemCalculo
+title: DTOResultadoItemCalculo
 type: object
 properties:
   ValorOriginal:

@@ -1,4 +1,4 @@
-name: DTOTabelaCalculoParametros
+title: DTOTabelaCalculoParametros
 type: object
 properties:
   DataIndicePedidos:

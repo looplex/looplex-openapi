@@ -1,4 +1,4 @@
-name: DTOCompromissoSimples
+title: DTOCompromissoSimples
 type: object
 properties:
   IDCompromisso:
