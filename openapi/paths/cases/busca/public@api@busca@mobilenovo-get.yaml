@@ -5,7 +5,7 @@ summary: Busca
 description: Obtém os clientes e casos que correspondem ao termo informado
 operationId: api-busca-mobilenovo
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: termo
     in: query
@@ -36,7 +36,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/DTOBuscaMobileNovo.yaml
+          $ref: ../../../components/schemas/cases/DTOBuscaMobileNovo.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -44,4 +44,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

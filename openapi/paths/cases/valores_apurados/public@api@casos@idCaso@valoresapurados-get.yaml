@@ -5,7 +5,7 @@ summary: Valores apurados por caso
 operationId: api-casos-idCaso-valoresapurados
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
@@ -23,7 +23,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOValorApurado.yaml
+            $ref: ../../../components/schemas/cases/DTOValorApurado.yaml
   "401":
     description: "Unauthorized"
     content:

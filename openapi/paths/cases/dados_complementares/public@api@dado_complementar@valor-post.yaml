@@ -6,7 +6,7 @@ description: Inclui ou atualiza valores nos dados complementares informados
 operationId: api-dado_complementar-valor
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
@@ -15,7 +15,7 @@ requestBody:
       schema:
         type: array
         items: 
-          $ref: ../../../components/schemas/lawsoft/DTOValorDadoComplementarCaso.yaml
+          $ref: ../../../components/schemas/cases/DTOValorDadoComplementarCaso.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
@@ -28,4 +28,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

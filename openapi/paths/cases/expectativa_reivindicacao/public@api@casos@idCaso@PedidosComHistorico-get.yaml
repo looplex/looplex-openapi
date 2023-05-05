@@ -5,7 +5,7 @@ summary: Pedidos com histórico
 operationId: api-casos-idCaso-PedidosComHistorico
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
@@ -21,7 +21,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/DTOValoresComPedidosAtualizados.yaml
+          $ref: ../../../components/schemas/cases/DTOValoresComPedidosAtualizados.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -29,4 +29,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

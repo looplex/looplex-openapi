@@ -28,4 +28,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ResponseObtemFilhosPorPai.yaml
+          $ref: ../../../components/schemas/cases/ResponseObtemFilhosPorPai.yaml

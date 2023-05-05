@@ -5,14 +5,14 @@ summary: Exceções de período de lançamento
 operationId: api-timesheet-listaporperiodo
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nrAplicabilidade
     in: query
     example: "1"
     required: true
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/PeriodoLancamentoAplicabilidade.yaml
+      $ref: ../../../components/schemas/cases/enums/PeriodoLancamentoAplicabilidade.yaml
   - name: idFuncionario
     in: query
     required: true

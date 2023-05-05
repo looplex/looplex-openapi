@@ -122,31 +122,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "403": {
-            "description": "Não autorizado",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "Message": {
-                      "description": "Descrição do erro",
-                      "type": "string",
-                      "example": "Credenciais inválidas"
-                    }
-                  }
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
           },
           "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -180,14 +190,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -253,14 +290,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -341,14 +405,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -391,14 +482,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -441,14 +559,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -537,14 +682,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -590,14 +762,41 @@
             "description": "O item de agenda foi excluído."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -636,14 +835,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -682,14 +908,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -736,14 +989,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -790,14 +1070,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -860,14 +1167,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -915,14 +1249,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -985,14 +1346,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1057,14 +1445,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1118,14 +1533,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1214,14 +1656,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1275,7 +1744,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1321,7 +1790,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1400,7 +1869,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1454,7 +1923,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1524,7 +1993,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1575,7 +2044,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1627,7 +2096,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1687,7 +2156,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1729,7 +2198,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1789,7 +2258,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1853,7 +2322,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1907,7 +2376,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1958,7 +2427,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2036,7 +2505,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2089,7 +2558,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2139,7 +2608,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2180,7 +2649,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2247,7 +2716,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2292,7 +2761,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2337,7 +2806,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2387,7 +2856,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2440,7 +2909,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2495,7 +2964,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2576,7 +3045,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2630,7 +3099,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2684,7 +3153,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2735,7 +3204,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2786,7 +3255,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2856,7 +3325,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2910,7 +3379,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -2956,7 +3425,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3020,7 +3489,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3090,7 +3559,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3148,7 +3617,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3230,7 +3699,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3302,7 +3771,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3365,7 +3834,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3429,7 +3898,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3483,7 +3952,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3545,7 +4014,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3599,7 +4068,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3661,7 +4130,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3707,7 +4176,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3789,7 +4258,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3835,7 +4304,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3889,7 +4358,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3940,7 +4409,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -3991,7 +4460,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4073,7 +4542,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4124,7 +4593,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4179,7 +4648,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4228,7 +4697,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4279,7 +4748,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4325,7 +4794,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4379,7 +4848,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4433,7 +4902,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4489,7 +4958,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4545,7 +5014,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4609,7 +5078,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4660,7 +5129,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4732,7 +5201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4804,7 +5273,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4855,7 +5324,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4909,7 +5378,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -4979,7 +5448,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5031,7 +5500,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5074,7 +5543,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5122,7 +5591,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5165,7 +5634,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5213,7 +5682,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5259,7 +5728,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5315,7 +5784,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5370,7 +5839,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5440,7 +5909,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5485,7 +5954,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5529,7 +5998,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5579,7 +6048,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5629,7 +6098,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5682,7 +6151,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5725,7 +6194,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5768,7 +6237,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5819,7 +6288,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5862,7 +6331,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5905,7 +6374,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5948,7 +6417,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -5991,7 +6460,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6034,7 +6503,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6076,7 +6545,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6126,7 +6595,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6176,7 +6645,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6245,7 +6714,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6295,7 +6764,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6355,7 +6824,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6415,7 +6884,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6458,7 +6927,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6498,7 +6967,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6548,7 +7017,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6598,7 +7067,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6648,7 +7117,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6694,7 +7163,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6748,7 +7217,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6799,7 +7268,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6869,7 +7338,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6927,7 +7396,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -6979,7 +7448,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7043,7 +7512,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7115,7 +7584,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7169,7 +7638,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7223,7 +7692,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7269,7 +7738,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7321,7 +7790,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7375,7 +7844,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7420,7 +7889,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7493,7 +7962,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7551,7 +8020,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7611,7 +8080,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7665,7 +8134,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7728,7 +8197,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7806,7 +8275,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7852,7 +8321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7906,7 +8375,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -7992,7 +8461,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8070,7 +8539,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8124,7 +8593,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8183,7 +8652,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8243,7 +8712,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8297,7 +8766,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8350,7 +8819,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8423,7 +8892,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8469,7 +8938,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8515,7 +8984,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8571,7 +9040,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8626,7 +9095,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8680,7 +9149,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8738,7 +9207,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8790,7 +9259,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8842,7 +9311,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8912,7 +9381,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -8991,14 +9460,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9045,14 +9541,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9098,14 +9621,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9176,14 +9726,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9348,14 +9925,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9388,14 +9992,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9433,14 +10064,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9479,14 +10137,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9525,14 +10210,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9597,14 +10309,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9652,14 +10391,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9713,14 +10479,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9766,14 +10559,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9819,14 +10639,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9864,14 +10711,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9917,14 +10791,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -9962,14 +10863,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10031,14 +10959,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10084,14 +11039,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10134,14 +11116,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10185,14 +11194,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10236,14 +11272,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10287,14 +11350,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10338,14 +11428,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10382,14 +11499,41 @@
             "description": "O lançamento de hora foi excluído."
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10423,14 +11567,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10464,14 +11635,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10548,14 +11746,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10601,14 +11826,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10674,14 +11926,41 @@
             }
           },
           "401": {
-            "description": "Em caso de erro de timeout ou sessão expirada."
-          },
-          "500": {
-            "description": "Em caso de erro diferente de timeout ou sessão expirada.",
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -10751,7 +12030,7 @@
           }
         }
       },
-      "InternalServerErrorResponse": {
+      "ExceptionResponse": {
         "type": "object",
         "properties": {
           "Message": {
@@ -11237,7 +12516,7 @@
         "description": "1: dayGridMonth\n\n2: timeGridWeek\n\n3: timeGridDay\n\n4: listWeek\n\n5: interval\n"
       },
       "DTOCompromissoSimples": {
-        "name": "DTOCompromissoSimples",
+        "title": "DTOCompromissoSimples",
         "type": "object",
         "properties": {
           "IDCompromisso": {
@@ -11602,7 +12881,7 @@
         }
       },
       "DTOMultaEHonorarios": {
-        "name": "DTOMultaEHonorarios",
+        "title": "DTOMultaEHonorarios",
         "type": "object",
         "properties": {
           "ValorMulta": {
@@ -11633,7 +12912,7 @@
         "description": "1: Simples\n\n2: Composta\n"
       },
       "DTOItemJuros": {
-        "name": "DTOItemJuros",
+        "title": "DTOItemJuros",
         "type": "object",
         "properties": {
           "Taxa": {
@@ -11658,7 +12937,7 @@
         }
       },
       "DTOJurosCalculo": {
-        "name": "DTOJurosCalculo",
+        "title": "DTOJurosCalculo",
         "type": "object",
         "properties": {
           "JurosCompensatorios": {
@@ -11673,7 +12952,7 @@
         }
       },
       "DTOValorCalculo": {
-        "name": "DTOValorCalculo",
+        "title": "DTOValorCalculo",
         "type": "object",
         "properties": {
           "Valor": {
@@ -11700,7 +12979,7 @@
         }
       },
       "DTOTabelaCalculoParametros": {
-        "name": "DTOTabelaCalculoParametros",
+        "title": "DTOTabelaCalculoParametros",
         "type": "object",
         "properties": {
           "DataIndicePedidos": {
@@ -11783,7 +13062,7 @@
         "description": "-2147483648: None\n\n1: Ativa\n\n2: Inativa\n"
       },
       "DTOProcessoPedidoCalculo": {
-        "name": "DTOProcessoPedidoCalculo",
+        "title": "DTOProcessoPedidoCalculo",
         "type": "object",
         "properties": {
           "Id": {
@@ -11830,7 +13109,7 @@
         }
       },
       "DTOResultadoItemJuros": {
-        "name": "DTOResultadoItemJuros",
+        "title": "DTOResultadoItemJuros",
         "type": "object",
         "properties": {
           "Valor": {
@@ -11850,7 +13129,7 @@
         }
       },
       "DTOFatorAtualizacaoIntervalo": {
-        "name": "DTOFatorAtualizacaoIntervalo",
+        "title": "DTOFatorAtualizacaoIntervalo",
         "type": "object",
         "properties": {
           "fatorAlto": {
@@ -11862,7 +13141,7 @@
         }
       },
       "DTOResultadoItemCalculo": {
-        "name": "DTOResultadoItemCalculo",
+        "title": "DTOResultadoItemCalculo",
         "type": "object",
         "properties": {
           "ValorOriginal": {
@@ -11907,7 +13186,7 @@
         "description": "-2147483648: None\n\n1: Fator\n\n2: Divisor\n"
       },
       "DTOResultadoTabelaCalculo": {
-        "name": "DTOResultadoTabelaCalculo",
+        "title": "DTOResultadoTabelaCalculo",
         "type": "object",
         "properties": {
           "ValorTotal": {
@@ -11935,7 +13214,7 @@
         }
       },
       "DTOIndiceMonetarioDados": {
-        "name": "DTOIndiceMonetarioDados",
+        "title": "DTOIndiceMonetarioDados",
         "type": "object",
         "properties": {
           "Id": {
@@ -11954,7 +13233,7 @@
         }
       },
       "DTOIndiceMonetario": {
-        "name": "DTOIndiceMonetario",
+        "title": "DTOIndiceMonetario",
         "type": "object",
         "properties": {
           "Id": {
@@ -11975,7 +13254,7 @@
         }
       },
       "DTOModeloCalculo": {
-        "name": "DTOModeloCalculo",
+        "title": "DTOModeloCalculo",
         "type": "object",
         "properties": {
           "IdModeloCalculo": {
@@ -13263,7 +14542,8 @@
         }
       },
       "TipoDadoComplementar": {
-        "type": "TipoDadoComplementar",
+        "type": "object",
+        "title": "TipoDadoComplementar",
         "example": 1,
         "description": "1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
       },

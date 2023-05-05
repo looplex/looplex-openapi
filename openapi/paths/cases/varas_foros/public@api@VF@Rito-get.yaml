@@ -23,7 +23,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/Rito.yaml
+          $ref: ../../../components/schemas/cases/Rito.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -31,4 +31,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

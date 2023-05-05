@@ -4,7 +4,7 @@ summary: Identificador pasta web
 description: Obtém identificador pasta da Web
 operationId: api-clientes-idCliente-pasta
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCliente
     in: path
@@ -24,4 +24,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

@@ -5,7 +5,7 @@ summary: Funcionários com permissão de lançamento
 operationId: api-timesheet-funcionarios-permissaolcto-idFuncionario
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idFuncionario
     in: path
@@ -23,7 +23,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOFuncionario.yaml
+            $ref: ../../../components/schemas/cases/DTOFuncionario.yaml
   "401":
     description: "Unauthorized"
     content:

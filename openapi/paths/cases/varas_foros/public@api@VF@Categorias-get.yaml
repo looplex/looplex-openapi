@@ -15,4 +15,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ResponseObtemCategorias.yaml
+          $ref: ../../../components/schemas/cases/ResponseObtemCategorias.yaml

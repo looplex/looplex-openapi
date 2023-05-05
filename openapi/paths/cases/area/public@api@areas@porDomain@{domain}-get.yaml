@@ -4,7 +4,7 @@ summary: Obtém as áreas do escritório
 description: Retorna um array com as áreas de acordo com o escritório informado.
 operationId: api-areas-porDomain-domain
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: domain
     in: path
@@ -19,7 +19,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOArea.yaml
+            $ref: ../../../components/schemas/cases/DTOArea.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -27,4 +27,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

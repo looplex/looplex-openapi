@@ -5,7 +5,7 @@ summary: Timeline
 operationId: api-timeline-items
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: paginaAtual
     in: query
@@ -104,7 +104,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/DTOTimelineItem.yaml
+          $ref: ../../../components/schemas/cases/DTOTimelineItem.yaml
   "401":
     description: "Unauthorized"
     content:

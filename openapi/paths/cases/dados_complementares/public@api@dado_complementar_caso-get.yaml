@@ -6,7 +6,7 @@ description: Obtém os dados complementares de caso
 operationId: api-dado_complementar_caso
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
@@ -19,7 +19,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOParametroDadoComplementar.yaml
+            $ref: ../../../components/schemas/cases/DTOParametroDadoComplementar.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -27,4 +27,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

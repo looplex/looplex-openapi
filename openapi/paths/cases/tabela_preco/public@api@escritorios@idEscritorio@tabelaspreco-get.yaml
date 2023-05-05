@@ -6,7 +6,7 @@ description: Lista as tabelas de preço
 operationId: api-escritorios-idEscritorio-tabelaspreco
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idEscritorio
     in: path
@@ -24,7 +24,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOTabelaPreco.yaml
+            $ref: ../../../components/schemas/cases/DTOTabelaPreco.yaml
   "401":
     description: "Unauthorized"
     content:

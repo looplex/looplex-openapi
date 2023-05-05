@@ -4,7 +4,7 @@ summary: Executores
 description: "Retorna um array com os executores"
 operationId: api-agenda-executores
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   "200":
@@ -14,7 +14,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOFuncionario.yaml
+            $ref: ../../../components/schemas/cases/DTOFuncionario.yaml
   "401":
     description: "Unauthorized"
     content:

@@ -4,7 +4,7 @@ summary: Solicitantes
 description: Obtém uma lista de solicitantes do cliente
 operationId: api-contatos-solicitantes
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: codCliente
     in: query
@@ -19,7 +19,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOSolicitante.yaml
+            $ref: ../../../components/schemas/cases/DTOSolicitante.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -27,4 +27,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

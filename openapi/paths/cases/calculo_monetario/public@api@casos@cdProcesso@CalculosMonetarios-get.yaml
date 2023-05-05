@@ -5,7 +5,7 @@ summary: Lista cálculo monetário
 operationId: api-casos-cdProcesso-CalculosMonetarios
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: cdProcesso
     in: path
@@ -23,7 +23,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOProcessoPedidoCalculo.yaml
+            $ref: ../../../components/schemas/cases/DTOProcessoPedidoCalculo.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -31,4 +31,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

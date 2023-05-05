@@ -4,7 +4,7 @@ summary: Pastas do cliente (Capa)
 description: Retorna um array com as pastas do cliente (Capa).
 operationId: api-casos-idCliente-pastasDoCaso
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCliente
     in: path
@@ -19,7 +19,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOPasta.yaml
+            $ref: ../../../components/schemas/cases/DTOPasta.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -27,4 +27,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

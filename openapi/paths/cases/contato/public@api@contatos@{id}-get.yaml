@@ -4,7 +4,7 @@ summary: Contato
 description: Obtém informações do contato
 operationId: api-contatos-id
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: id
     in: path
@@ -17,7 +17,7 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/DTOContato.yaml
+          $ref: ../../../components/schemas/cases/DTOContato.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -25,4 +25,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

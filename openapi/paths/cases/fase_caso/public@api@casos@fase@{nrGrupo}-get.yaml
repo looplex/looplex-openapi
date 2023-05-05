@@ -4,13 +4,13 @@ summary: Obtém as fases do caso
 description: Obtém um array com as fases do caso de acordo com o tipo de processo
 operationId: api-casos-fase-nrGrupo
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nrGrupo
     in: path
     required: true
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/RamosJudicial.yaml
+      $ref: ../../../components/schemas/cases/enums/RamosJudicial.yaml
 responses:
   "200":
     description: "Obtém um array com as fases do caso de acordo com o tipo de processo"
@@ -19,7 +19,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOFaseCaso.yaml
+            $ref: ../../../components/schemas/cases/DTOFaseCaso.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -27,4 +27,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

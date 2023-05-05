@@ -4,7 +4,7 @@ summary: Produtos por caso
 description: Obtém um array com os produtos por caso.
 operationId: caseProductsByCaseIndentifier
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
@@ -19,7 +19,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOProduto.yaml
+            $ref: ../../../components/schemas/cases/DTOProduto.yaml
   "401":
     description: "Unauthorized"
     content:

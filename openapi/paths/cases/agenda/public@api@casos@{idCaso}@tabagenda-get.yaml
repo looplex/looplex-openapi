@@ -4,7 +4,7 @@ summary: Obtém compromissos
 description: Obtém compromissos, prazos e publicações por caso.
 operationId: api-casos-idCaso-tabagenda
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
@@ -20,7 +20,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOItemAgendaSimples.yaml
+            $ref: ../../../components/schemas/cases/DTOItemAgendaSimples.yaml
   "401":
     description: "Unauthorized"
     content:

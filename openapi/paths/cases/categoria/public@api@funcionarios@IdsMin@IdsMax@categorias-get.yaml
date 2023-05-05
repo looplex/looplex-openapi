@@ -4,7 +4,7 @@ summary: Categorias de funcionário
 description: Obtém as categorias de funcionário de acordo com o filtro informado
 operationId: api-funcionarios-IdsMin-IdsMax-categorias
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IdsMin
     in: path
@@ -24,7 +24,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOCategoriaFuncionario.yaml
+            $ref: ../../../components/schemas/cases/DTOCategoriaFuncionario.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -32,4 +32,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

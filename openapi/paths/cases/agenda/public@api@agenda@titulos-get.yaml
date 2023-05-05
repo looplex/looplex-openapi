@@ -4,13 +4,13 @@ summary: Títulos de agenda
 description: Obtém os títulos de agenda.
 operationId: api-agenda-titulos
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: tipo
     in: query
     required: true
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/TipoItemAgenda.yaml
+      $ref: ../../../components/schemas/cases/enums/TipoItemAgenda.yaml
 responses:
   "200":
     description: "Retorna um array com os títulos de agenda."
@@ -19,7 +19,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOTituloAgenda.yaml
+            $ref: ../../../components/schemas/cases/DTOTituloAgenda.yaml
   "401":
     description: "Unauthorized"
     content:

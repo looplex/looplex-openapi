@@ -4,7 +4,7 @@ summary: Verifica permissão
 description: Retorna um booleano indicando se possui determinada permissão.
 operationId: apiPermission
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idFuncionalidade
     in: path

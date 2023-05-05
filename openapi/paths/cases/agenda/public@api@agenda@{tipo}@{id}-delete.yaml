@@ -4,13 +4,13 @@ summary: Exclui item de agenda
 description: Excluir o item de agenda.
 operationId: api-agenda-tipo-id
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: tipo
     in: path
     required: true
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/TipoItemAgenda.yaml
+      $ref: ../../../components/schemas/cases/enums/TipoItemAgenda.yaml
   - name: id
     in: path
     required: true

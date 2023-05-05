@@ -6,7 +6,7 @@ description: Lista os próximos lançamentos por profissional
 operationId: api-despesas-proximoslancamentos
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: dataDespesaString
     in: query
@@ -22,7 +22,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/DTODespesa.yaml
+          $ref: ../../../components/schemas/cases/DTODespesa.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -30,4 +30,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

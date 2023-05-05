@@ -22,4 +22,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ResponseObtemProximosNiveis.yaml
+          $ref: ../../../components/schemas/cases/ResponseObtemProximosNiveis.yaml

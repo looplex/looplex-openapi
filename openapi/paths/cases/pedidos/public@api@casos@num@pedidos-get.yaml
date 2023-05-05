@@ -4,7 +4,7 @@ summary: Pedidos do caso
 description: Obtém os pedidos dos casos informados
 operationId: api-casos-num-pedidos
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: NumeroInterno
     in: query
@@ -29,7 +29,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOCasoPedido.yaml
+            $ref: ../../../components/schemas/cases/DTOCasoPedido.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -37,4 +37,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

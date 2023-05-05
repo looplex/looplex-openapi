@@ -5,14 +5,14 @@ summary: Obtém mais recente
 operationId: api-timesheet-obtemmaisrecente
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nrAplicabilidade
     in: query
     required: true
     example: 1
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/PeriodoLancamentoAplicabilidade.yaml
+      $ref: ../../../components/schemas/cases/enums/PeriodoLancamentoAplicabilidade.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

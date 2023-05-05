@@ -4,13 +4,13 @@ summary: Templates de andamento
 description: Obtém um array com os templates de andamentos
 operationId: api-andamentos-templates
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: tipoCaso
     in: query
     required: true
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/RamosJudicial.yaml
+      $ref: ../../../components/schemas/cases/enums/RamosJudicial.yaml
 responses:
   "200":
     description: "Retorna um array com os templates de andamentos."
@@ -19,7 +19,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOAndamentoTemplate.yaml
+            $ref: ../../../components/schemas/cases/DTOAndamentoTemplate.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -27,4 +27,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

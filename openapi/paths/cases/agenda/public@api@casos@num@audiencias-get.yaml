@@ -4,7 +4,7 @@ summary: Obtém audiências
 description: Obtém audiências por numero interno, externo ou identificador do caso
 operationId: api-casos-num-audiencias
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: NumeroInterno
     in: query
@@ -29,7 +29,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOCompromissoAudiencia.yaml
+            $ref: ../../../components/schemas/cases/DTOCompromissoAudiencia.yaml
   "401":
     description: "Unauthorized"
     content:

@@ -6,8 +6,8 @@ properties:
   ProcessosNaoCadastrados:
     type: array
     items:
-      $ref: ../../../components/schemas/lawsoft/DTOErroCadastroProcesso.yaml
+      $ref: ../../../components/schemas/cases/DTOErroCadastroProcesso.yaml
   ProcessosCadastrados:
     type: array
     items:
-      $ref: ../../../components/schemas/lawsoft/DTOProcessoJudicialAdministrativo.yaml
+      $ref: ../../../components/schemas/cases/DTOProcessoJudicialAdministrativo.yaml

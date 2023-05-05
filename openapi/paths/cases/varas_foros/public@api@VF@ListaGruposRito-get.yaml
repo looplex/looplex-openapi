@@ -21,4 +21,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ResponseListaGruposRito.yaml
+          $ref: ../../../components/schemas/cases/ResponseListaGruposRito.yaml

@@ -5,7 +5,7 @@ summary: Despesas em aberto
 operationId: api-despesas-obtem
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: ano
     in: query
@@ -24,7 +24,7 @@ parameters:
     example: "2"
     required: false
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/TipoFormaLancamento.yaml
+      $ref: ../../../components/schemas/cases/enums/TipoFormaLancamento.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -34,7 +34,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/DTODespesa.yaml
+          $ref: ../../../components/schemas/cases/DTODespesa.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -42,4 +42,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

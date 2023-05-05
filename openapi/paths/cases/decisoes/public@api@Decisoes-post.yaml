@@ -4,14 +4,14 @@ tags:
 summary: Incluir decisão
 operationId: api-Decisoes
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   # Adicione aqui os parâmetros da requisição. Verificar menu "Adicionar parâmetro" 
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/lawsoft/DTOProcessoDecisao.yaml
+        $ref: ../../../components/schemas/cases/DTOProcessoDecisao.yaml
 responses:
   "204":
     description: A decisão foi incluída
@@ -22,4 +22,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

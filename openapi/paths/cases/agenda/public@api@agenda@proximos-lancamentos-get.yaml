@@ -4,7 +4,7 @@ summary: Próximos lançamentos
 description: Retorna um array com os próximos compromissos de agenda do profissional.
 operationId: api-agenda-proximos-lancamentos  
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: data
     in: query
@@ -32,7 +32,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+            $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
   "401":
     description: "Unauthorized"
     content:

@@ -4,7 +4,7 @@ summary: Contrato do caso
 description: Obtém o contrato simples do caso informado
 operationId: api-casos-idCaso-contratosimples
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
@@ -17,7 +17,7 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/DTOContratoSimples.yaml
+          $ref: ../../../components/schemas/cases/DTOContratoSimples.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -25,4 +25,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

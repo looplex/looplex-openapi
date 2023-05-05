@@ -4,20 +4,20 @@ summary: Atualizar item de agenda
 description: Atualiza o compromisso de agenda.
 operationId: api-agenda-put
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+        $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
 responses:
   "200":
     description: Retorna o item de agenda atualizado.
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+          $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
   "401":
     description: "Unauthorized"
     content:

@@ -4,7 +4,7 @@ summary: Atualizar andamento Web
 description: Atualiza o andamento
 operationId: api-andamentos-update-idAndamento
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idAndamento
     in: path
@@ -15,14 +15,14 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/lawsoft/DTOAndamento.yaml
+        $ref: ../../../components/schemas/cases/DTOAndamento.yaml
 responses:
   "200":
     description: "Atualiza o andamento"
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/EncapsuladorDeResposta.yaml
+          $ref: ../../../components/schemas/cases/EncapsuladorDeResposta.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -30,4 +30,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

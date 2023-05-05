@@ -10,7 +10,7 @@ parameters:
     in: query
     required: true
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/TipoPesquisaGrupoRito.yaml
+      $ref: ../../../components/schemas/cases/enums/TipoPesquisaGrupoRito.yaml
   - name: identificador
     in: query
     example: 15
@@ -27,4 +27,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ResponseListaRitosGrupoRitos.yaml
+          $ref: ../../../components/schemas/cases/ResponseListaRitosGrupoRitos.yaml

@@ -4,7 +4,7 @@ summary: Ficha de caso por casos
 description: Retorna um array de fichas de casos encontrados de acordo com o identificador, numero interno ou numero externo.
 operationId: api-casos-id-ficha-num
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: NumeroInterno
     in: query
@@ -29,7 +29,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOCasoFicha.yaml
+            $ref: ../../../components/schemas/cases/DTOCasoFicha.yaml
   "401":
     description: "Em caso de erro de timeout ou sessão expirada."
   "500":
@@ -37,4 +37,4 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/lawsoft/ExceptionResponse.yaml
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

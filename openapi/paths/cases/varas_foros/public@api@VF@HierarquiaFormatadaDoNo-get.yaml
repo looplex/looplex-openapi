@@ -20,4 +20,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ResponseHierarquiaFormatadaDoNo.yaml
+          $ref: ../../../components/schemas/cases/ResponseHierarquiaFormatadaDoNo.yaml

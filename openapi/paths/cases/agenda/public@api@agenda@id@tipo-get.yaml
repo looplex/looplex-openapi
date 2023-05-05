@@ -6,7 +6,7 @@ description: Obtem as informações do item de agenda
 operationId: api-agenda-id-tipo
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: id
     in: path
@@ -19,7 +19,7 @@ parameters:
     description: "Tipo do item de agenda"
     required: true
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/TipoItemAgenda.yaml
+      $ref: ../../../components/schemas/cases/enums/TipoItemAgenda.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -29,7 +29,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/DTOItemAgenda.yaml
+          $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
   "401":
     description: "Unauthorized"
     content:

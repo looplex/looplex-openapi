@@ -21,4 +21,4 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/lawsoft/ListaPorNivelResponse.yaml
+          $ref: ../../../components/schemas/cases/ListaPorNivelResponse.yaml

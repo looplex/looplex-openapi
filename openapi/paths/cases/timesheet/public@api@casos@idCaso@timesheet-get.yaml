@@ -5,7 +5,7 @@ summary: Horas lançadas do caso
 operationId: api-casos-idCaso-timesheet
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
@@ -33,7 +33,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOPlanilhaHoras.yaml
+            $ref: ../../../components/schemas/cases/DTOPlanilhaHoras.yaml
   "401":
     description: "Unauthorized"
     content:

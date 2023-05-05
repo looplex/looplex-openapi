@@ -6,7 +6,7 @@ description: Lista os lançamentos de hora por filtro
 operationId: api-timesheet
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idsFuncionarios
     in: query
@@ -33,7 +33,7 @@ parameters:
     in: query
     required: false
     schema:
-      $ref: ../../../components/schemas/lawsoft/enums/TipoDeConsultaCalendario.yaml
+      $ref: ../../../components/schemas/cases/enums/TipoDeConsultaCalendario.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -45,7 +45,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOPlanilhaHoras.yaml
+            $ref: ../../../components/schemas/cases/DTOPlanilhaHoras.yaml
   "401":
     description: "Unauthorized"
     content:

@@ -5,7 +5,7 @@ summary: Classificações para lançamento de horas
 operationId: api-timesheet-classificacoes
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/lawsoft/Profile.yaml
+  - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
@@ -18,7 +18,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/lawsoft/DTOClassificacao.yaml
+            $ref: ../../../components/schemas/cases/DTOClassificacao.yaml
   "401":
     description: "Unauthorized"
     content:
