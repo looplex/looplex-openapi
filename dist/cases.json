@@ -15772,7 +15772,7 @@
       "TipoItemAgenda": {
         "type": "integer",
         "example": 1,
-        "description": "1: Atividade externa,\n\n2: Prazo, \n\n4: Audiência, \n\n10: Compromisso\n\n11: Publicação\n"
+        "description": "-2147483648: None\n\n1: Atividade externa,\n\n2: Prazo, \n\n4: Audiência, \n\n8: Compromisso de trabalho\n\n9: Compromisso particular\n\n10: Compromisso (Compromisso de trabalho e Compromisso particular)\n\n11: Publicação\n"
       },
       "SituacaoDoItemAgenda": {
         "type": "integer",
@@ -15957,7 +15957,7 @@
       "VinculoEmpregaticio": {
         "type": "integer",
         "example": 2,
-        "description": "1: Estagiário\n\n2: CLT\n\n3: Autônomo\n\n4: Terceirizado\n\n5: Outro\n\n6: Sócio\n\n7: Correspondente\n\n8: Advogado\n\n9: Aprendiz\n"
+        "description": "-2147483648: None\n\n1: Estagiário\n\n2: CLT\n\n3: Autônomo\n\n4: Terceirizado\n\n5: Outro\n\n6: Sócio\n\n7: Correspondente\n\n8: Advogado\n\n9: Aprendiz\n"
       },
       "DTOFuncionario": {
         "title": "DTOFuncionario",
@@ -16421,7 +16421,7 @@
       "CaixaDeMensagem": {
         "type": "integer",
         "example": 1,
-        "description": "1: Administração\n\n2: Avisos\n\n3: Clientes\n\n4: Prazos\n\n5: Processos\n\n6: MensagemShutdown__\n\n7: Finanças\n"
+        "description": "-2147483648: None\n\n1: Administração\n\n2: Avisos\n\n3: Clientes\n\n4: Prazos\n\n5: Processos\n\n6: MensagemShutdown__\n\n7: Finanças\n"
       },
       "TipoDePush": {
         "type": "integer",
@@ -17002,7 +17002,7 @@
       "ClasseDoCaso": {
         "type": "integer",
         "example": 1,
-        "description": "1: Processo\n\n2: Subprocesso\n\n3: Recurso\n\n4: Incidente\n"
+        "description": "-2147483648: None\n \n1: Processo\n\n2: Subprocesso\n\n3: Recurso\n\n4: Incidente\n"
       },
       "SituacaoDoCaso": {
         "type": "integer",
@@ -17029,7 +17029,7 @@
       "TipoPessoa": {
         "type": "integer",
         "example": 1,
-        "description": "1: Pessoa física\n\n2: Pessoa jurídica\n"
+        "description": "0: None\n\n1: Pessoa física\n\n2: Pessoa jurídica\n"
       },
       "ParteParaLO": {
         "title": "ParteParaLO",
@@ -20016,7 +20016,7 @@
       "TipoItemTimeline": {
         "type": "integer",
         "example": 1,
-        "description": "1: Andamento manual\n\n2: Andamento automático\n\n3: Timesheet\n\n4: Agenda\n\n5: Tarefa\n\n6: Decisão\n\n7: Despesa\n\n8: Garantia\n\n9: Push de andamento\n\n10: Push de publicação\n"
+        "description": "1: Andamento manual\n\n2: Andamento automático\n\n3: Timesheet\n\n4: Agenda\n\n5: Tarefa\n\n6: Decisão\n\n7: Despesa\n\n8: Garantia\n\n9: Push de andamento\n\n10: Push de publicação\n\n11: Encerramento de Caso\n\n12: Reativacao de Caso\n"
       },
       "DTOTimelineItem": {
         "title": "DTOTimelineItem",

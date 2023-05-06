@@ -1,6 +1,8 @@
 type: integer
 example: 1
 description: |
+  0: None
+  
   1: Pessoa física
 
   2: Pessoa jurídica

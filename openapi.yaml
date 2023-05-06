@@ -86145,13 +86145,19 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Atividade externa,
 
         2: Prazo, 
 
         4: Audiência, 
 
-        10: Compromisso
+        8: Compromisso de trabalho
+
+        9: Compromisso particular
+
+        10: Compromisso (Compromisso de trabalho e Compromisso particular)
 
         11: Publicação
     SituacaoDoItemAgenda:
@@ -86325,6 +86331,8 @@ components:
       type: integer
       example: 2
       description: |
+        -2147483648: None
+
         1: Estagiário
 
         2: CLT
@@ -86775,6 +86783,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Administração
 
         2: Avisos
@@ -87217,6 +87227,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+         
         1: Processo
 
         2: Subprocesso
@@ -87264,6 +87276,8 @@ components:
       type: integer
       example: 1
       description: |
+        0: None
+
         1: Pessoa física
 
         2: Pessoa jurídica
@@ -89447,6 +89461,10 @@ components:
         9: Push de andamento
 
         10: Push de publicação
+
+        11: Encerramento de Caso
+
+        12: Reativacao de Caso
     DTOTimelineItem:
       title: DTOTimelineItem
       type: object
