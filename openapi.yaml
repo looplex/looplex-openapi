@@ -86435,6 +86435,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Por compromisso
 
         2: Por prazo
@@ -88391,6 +88393,8 @@ components:
       type: integer
       example: 2
       description: |
+        -2147483648: None
+
         1: Fundo fixo (Adiantamento)
 
         2: Voucher
@@ -89169,6 +89173,8 @@ components:
       type: integer
       example: 3
       description: |
+        -2147483648: None
+
         1: Residencial
 
         2: Comercial

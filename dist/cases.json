@@ -16071,7 +16071,7 @@
       "TipoEventoDeCobranca": {
         "type": "integer",
         "example": 1,
-        "description": "1: Por compromisso\n\n2: Por prazo\n\n3: Por atividade externa\n\n4: Por publicação\n\n5: Por audiência\n"
+        "description": "-2147483648: None\n\n1: Por compromisso\n\n2: Por prazo\n\n3: Por atividade externa\n\n4: Por publicação\n\n5: Por audiência\n"
       },
       "DTOTituloAgenda": {
         "title": "DTOTituloAgenda",
@@ -18565,7 +18565,7 @@
       "TipoFormaLancamento": {
         "type": "integer",
         "example": 2,
-        "description": "1: Fundo fixo (Adiantamento)\n\n2: Voucher\n\n3: Reembolso\n\n4: Contas a pagar\n\n5: Estorno\n"
+        "description": "-2147483648: None\n\n1: Fundo fixo (Adiantamento)\n\n2: Voucher\n\n3: Reembolso\n\n4: Contas a pagar\n\n5: Estorno\n"
       },
       "SituacaoLancamentoDespesa": {
         "type": "integer",
@@ -19672,7 +19672,7 @@
       "TipoDeTelefone": {
         "type": "integer",
         "example": 3,
-        "description": "1: Residencial\n\n2: Comercial\n\n3: Celular\n\n4: Fax\n"
+        "description": "-2147483648: None\n\n1: Residencial\n\n2: Comercial\n\n3: Celular\n\n4: Fax\n"
       },
       "DTOTelefoneParte": {
         "title": "DTOTelefoneParte",
