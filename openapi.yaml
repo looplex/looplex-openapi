@@ -86804,6 +86804,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Publicação
 
         2: Andamento
@@ -87253,6 +87255,8 @@ components:
       type: integer
       example: 1
       description: |
+        0: None
+
         1: Tribunal
 
         2: Comarca
@@ -87877,6 +87881,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Pessoa física
 
         2: Pessoa jurídica
@@ -88157,6 +88163,8 @@ components:
       title: TipoDadoComplementar
       example: 1
       description: |
+        -2147483648: None
+
         1: CaixaTexto
 
         2: NumericoDecimal
@@ -88870,6 +88878,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Transferência
 
         2: Recuperação
@@ -88877,6 +88887,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Aguardando expedição alvará
 
         2: Alvará retirado
@@ -89505,6 +89517,8 @@ components:
       type: integer
       example: 2
       description: |
+        -2147483648: None
+
         1: Aprimoramento profissional
 
         2: Horas debitáveis

@@ -16426,7 +16426,7 @@
       "TipoDePush": {
         "type": "integer",
         "example": 1,
-        "description": "1: Publicação\n\n2: Andamento\n"
+        "description": "-2147483648: None\n\n1: Publicação\n\n2: Andamento\n"
       },
       "DTOAndamento": {
         "title": "DTOAndamento",
@@ -17012,7 +17012,7 @@
       "TipoDeInstancia": {
         "type": "integer",
         "example": 1,
-        "description": "1: Tribunal\n\n2: Comarca\n\n3: Fórum\n\n4: Seção\n\n5: Natureza\n\n6: Município\n\n9: Nível\n"
+        "description": "0: None\n\n1: Tribunal\n\n2: Comarca\n\n3: Fórum\n\n4: Seção\n\n5: Natureza\n\n6: Município\n\n9: Nível\n"
       },
       "HierarquiaParaLO": {
         "title": "HierarquiaParaLO",
@@ -17880,7 +17880,7 @@
       "TipoCliente": {
         "type": "integer",
         "example": 1,
-        "description": "1: Pessoa física\n\n2: Pessoa jurídica\n"
+        "description": "-2147483648: None\n\n1: Pessoa física\n\n2: Pessoa jurídica\n"
       },
       "SituacaoDeCliente": {
         "type": "integer",
@@ -18271,7 +18271,7 @@
         "type": "object",
         "title": "TipoDadoComplementar",
         "example": 1,
-        "description": "1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
+        "description": "-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
       },
       "DTOTipoProcesso": {
         "type": "object",
@@ -19235,12 +19235,12 @@
       "TipoDeMovimentacao": {
         "type": "integer",
         "example": 1,
-        "description": "1: Transferência\n\n2: Recuperação\n"
+        "description": "-2147483648: None\n\n1: Transferência\n\n2: Recuperação\n"
       },
       "StatusAlvara": {
         "type": "integer",
         "example": 1,
-        "description": "1: Aguardando expedição alvará\n\n2: Alvará retirado\n\n3: Alvará recuperado\n"
+        "description": "-2147483648: None\n\n1: Aguardando expedição alvará\n\n2: Alvará retirado\n\n3: Alvará recuperado\n"
       },
       "DTOMovimentacao": {
         "title": "DTOMovimentacao",
@@ -20060,7 +20060,7 @@
       "TipoDeTarefa": {
         "type": "integer",
         "example": 2,
-        "description": "1: Aprimoramento profissional\n\n2: Horas debitáveis\n\n3: Horas de relacionamento\n\n4: Horas não debitáveis\n"
+        "description": "-2147483648: None\n\n1: Aprimoramento profissional\n\n2: Horas debitáveis\n\n3: Horas de relacionamento\n\n4: Horas não debitáveis\n"
       },
       "SituacaoDaPlanilhaDeHoras": {
         "type": "integer",
