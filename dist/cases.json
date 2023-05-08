@@ -15777,12 +15777,12 @@
       "SituacaoDoItemAgenda": {
         "type": "integer",
         "example": 1,
-        "description": "1: Em aberto,\n\n2: Agendada, \n\n3: Realizada, \n\n4: Ocupado, \n\n5: A confirmar\n\n6: Desmarcável\n"
+        "description": "-2147483648: None\n\n1: Em aberto,\n\n2: Agendada, \n\n3: Realizada, \n\n4: Ocupado, \n\n5: A confirmar\n\n6: Desmarcável\n"
       },
       "SituacaoLembrete": {
         "type": "integer",
         "example": 1,
-        "description": "1: A notificar\n\n2: Descartado por ambos\n\n3: Notificado\n\n4: Descartado pelo executor\n\n5: Descartado pelo responsável\n"
+        "description": "-2147483648: None\n\n1: A notificar\n\n2: Descartado por ambos\n\n3: Notificado\n\n4: Descartado pelo executor\n\n5: Descartado pelo responsável\n"
       },
       "DTOItemAgenda": {
         "title": "DTOItemAgenda",
@@ -15952,7 +15952,7 @@
       "EstadoCivil": {
         "type": "integer",
         "example": 1,
-        "description": "1: Solteiro\n\n2: Casado\n\n3: Viúvo\n\n4: Desquitado\n\n5: Divorciado\n\n6: Outros\n"
+        "description": "-2147483648: None\n\n1: Solteiro\n\n2: Casado\n\n3: Viúvo\n\n4: Desquitado\n\n5: Divorciado\n\n6: Outros\n"
       },
       "VinculoEmpregaticio": {
         "type": "integer",
@@ -16359,7 +16359,7 @@
       "RamosJudicial": {
         "type": "integer",
         "example": 1,
-        "description": "1: Administrativo\n\n2: Interno\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n"
+        "description": "-2147483648: None\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
       },
       "DTOAndamentoTemplate": {
         "title": "DTOAndamentoTemplate",
@@ -16406,17 +16406,17 @@
       "eTipoClassificacaoAutomatica": {
         "type": "integer",
         "example": 1,
-        "description": "1: Planilha de horas\n\n2: Push de publicação\n\n3: Push de andamento\n\n4: Outlook\n\n5: Automático\n\n6: Manual\n"
+        "description": "-2147483648: None\n\n1: Planilha de horas\n\n2: Push de publicação\n\n3: Push de andamento\n\n4: Outlook\n\n5: Automático\n\n6: Manual\n"
       },
       "eClassificacaoAutomaticaDeAndamento": {
         "type": "integer",
         "example": 4,
-        "description": "1: Prazo\n\n2: Compromisso\n\n3: Audiência\n\n4: Atividade externa\n\n5: Publicação\n\n6: Decisão\n\n7: Exclusão\n\n8: Arquivo morto\n\n9: Encerramento\n\n10: Planilha de horas\n\n11: Push de publicação\n\n12: Push de andamento\n\n13: Outlook\n\n14: Movimentação processual\n\n15: Publicação processual\n\n16: Publicação geral\n\n17: Nova distribuição\n\n18: Cadastro agendado\n\n19: Status pedido\n\n20: Mudanças processo\n\n21: Falha monitoramento\n\n22: Nova CIPPROC\n\n23: Mudança de conteúdo\n\n24: Nova intimação\n\n25: Retorno solicitação\n\n26: Relatório concluído\n"
+        "description": "-2147483648: None\n\n1: Prazo\n\n2: Compromisso\n\n3: Audiência\n\n4: Atividade externa\n\n5: Publicação\n\n6: Decisão\n\n7: Exclusão\n\n8: Arquivo morto\n\n9: Encerramento\n\n10: Planilha de horas\n\n11: Push de publicação\n\n12: Push de andamento\n\n13: Outlook\n\n14: Movimentação processual\n\n15: Publicação processual\n\n16: Publicação geral\n\n17: Nova distribuição\n\n18: Cadastro agendado\n\n19: Status pedido\n\n20: Mudanças processo\n\n21: Falha monitoramento\n\n22: Nova CIPPROC\n\n23: Mudança de conteúdo\n\n24: Nova intimação\n\n25: Retorno solicitação\n\n26: Relatório concluído\n"
       },
       "SituacaoDeAndamento": {
         "type": "integer",
         "example": 2,
-        "description": "1: A aprovar\n\n2: Aprovado\n\n3: Publicado\n"
+        "description": "-2147483648: None\n\n1: A aprovar\n\n2: Aprovado\n\n3: Publicado\n"
       },
       "CaixaDeMensagem": {
         "type": "integer",
@@ -16997,7 +16997,7 @@
       "PoloLawOffice": {
         "type": "integer",
         "example": 1,
-        "description": "1: Ativo\n\n2: Passivo\n\n3: Terceiro\n\n4: Nenhum\n\n5: Outro envolvido\n"
+        "description": "0: None\n\n1: Ativo\n\n2: Passivo\n\n3: Terceiro\n\n4: Nenhum\n\n5: Outro envolvido\n"
       },
       "ClasseDoCaso": {
         "type": "integer",
@@ -17007,7 +17007,7 @@
       "SituacaoDoCaso": {
         "type": "integer",
         "example": 1,
-        "description": "1: Ativo\n\n2: Arquivo morto\n\n3: Encerrado\n\n99: Excluído\n"
+        "description": "-2147483648: None\n\n1: Ativo\n\n2: Arquivo morto\n\n3: Encerrado\n\n99: Excluído\n"
       },
       "TipoDeInstancia": {
         "type": "integer",
@@ -17082,7 +17082,7 @@
       "Moeda": {
         "type": "integer",
         "example": 1,
-        "description": "1: Real\n\n2: Dólar americano\n\n3: Euro\n"
+        "description": "-2147483648: None\n\n1: Real\n\n2: Dólar americano\n\n3: Euro\n"
       },
       "DTOCasoPedidoSimples": {
         "title": "DTOCasoPedidoSimples",
@@ -17885,12 +17885,12 @@
       "SituacaoDeCliente": {
         "type": "integer",
         "example": 1,
-        "description": "1: Ativa\n\n2: Inativa\n"
+        "description": "-2147483648: None\n\n1: Ativa\n\n2: Inativa\n"
       },
       "TipoDeEndereco": {
         "type": "integer",
         "example": 1,
-        "description": "1: Residencial\n\n2: Comercial\n\n3: Outros\n"
+        "description": "-2147483648: None\n\n1: Residencial\n\n2: Comercial\n\n3: Outros\n"
       },
       "DTOCliente": {
         "title": "DTOCliente",
@@ -18184,7 +18184,7 @@
       "ContratoSituacao": {
         "type": "integer",
         "example": 1,
-        "description": "1: Ativo\n\n3: Encerrado\n"
+        "description": "-2147483648: None\n\n1: Ativo\n\n3: Encerrado\n"
       },
       "DTOContrato": {
         "title": "DTOContrato",
@@ -18570,7 +18570,7 @@
       "SituacaoLancamentoDespesa": {
         "type": "integer",
         "example": 2,
-        "description": "1: Aprovado\n\n2: Aguardando aprovação\n\n3: Pré aprovado\n\n4: Não aprovado\n\n5: Aprovado e pré aprovado\n"
+        "description": "-2147483648: None\n\n1: Aprovado\n\n2: Aguardando aprovação\n\n3: Pré aprovado\n\n4: Não aprovado\n\n5: Aprovado e pré aprovado\n"
       },
       "DTOAlocacaoDeDespesa": {
         "title": "DTOAlocacaoDeDespesa",
@@ -18725,7 +18725,7 @@
       "SituacaoLiberacao": {
         "type": "integer",
         "example": -2147483646,
-        "description": "-2147483647: Aberto\n\n-2147483646: Fechado\n\n-2147483645: Programado\n\n-2147483644: Liberado para fechamento\n"
+        "description": "-2147483648: None\n\n-2147483647: Aberto\n\n-2147483646: Fechado\n\n-2147483645: Programado\n\n-2147483644: Liberado para fechamento\n"
       },
       "DTOLiberacao": {
         "title": "DTOLiberacao",
@@ -19881,12 +19881,12 @@
       "PartePapelAplicabilidade": {
         "type": "integer",
         "example": 1,
-        "description": "1: Processo\n\n2: Contrato\n"
+        "description": "-2147483648: None\n\n1: Processo\n\n2: Contrato\n"
       },
       "Polo": {
         "type": "integer",
         "example": 1,
-        "description": "1: Ativo\n\n2: Passivo\n\n3: Terceiro\n\n4: Nenhum\n\n5: Outro envolvido\n"
+        "description": "-2147483648: None\n\n1: Ativo\n\n2: Passivo\n\n3: Terceiro\n\n4: Nenhum\n\n5: Outro envolvido\n"
       },
       "DTOPartePapel": {
         "title": "DTOPartePapel",
@@ -19910,7 +19910,7 @@
       "SituacaoDeAndamentoPublicacao": {
         "type": "integer",
         "example": 2,
-        "description": "1: A aprovar\n\n2: Aprovado\n\n3: Publicado\n"
+        "description": "-2147483648: None\n\n1: A aprovar\n\n2: Aprovado\n\n3: Publicado\n"
       },
       "DTOItemPublicacao": {
         "title": "DTOItemPublicacao",
@@ -20065,7 +20065,7 @@
       "SituacaoDaPlanilhaDeHoras": {
         "type": "integer",
         "example": 1,
-        "description": "1: Aberta\n\n2: A aprovar\n\n3: Aprovada\n\n4: Não aprovada\n"
+        "description": "-2147483648: None\n\n1: Aberta\n\n2: A aprovar\n\n3: Aprovada\n\n4: Não aprovada\n"
       },
       "DTOPlanilhaHoras": {
         "title": "DTOPlanilhaHoras",
@@ -20181,7 +20181,7 @@
       "PeriodoLancamentoAplicabilidade": {
         "title": "PeriodoLancamentoAplicabilidade",
         "type": "integer",
-        "description": "1: Timesheet\n\n2: Despesa\n"
+        "description": "-2147483648: None\n\n1: Timesheet\n\n2: Despesa\n"
       },
       "DTOClassificacao": {
         "title": "DTOClassificacao",

@@ -86164,6 +86164,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Em aberto,
 
         2: Agendada, 
@@ -86179,6 +86181,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: A notificar
 
         2: Descartado por ambos
@@ -86316,6 +86320,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Solteiro
 
         2: Casado
@@ -86655,9 +86661,11 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Administrativo
 
-        2: Interno
+        2: Interno (Consultivo)
 
         3: Judicial Estadual
 
@@ -86674,6 +86682,12 @@ components:
         9: Militar da União
 
         10: Consultivo contrato
+
+        11: Análise Documental
+
+        12: Gestão de Ativos
+
+        13: Societário
     DTOAndamentoTemplate:
       title: DTOAndamentoTemplate
       type: object
@@ -86706,6 +86720,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Planilha de horas
 
         2: Push de publicação
@@ -86721,6 +86737,8 @@ components:
       type: integer
       example: 4
       description: |
+        -2147483648: None
+
         1: Prazo
 
         2: Compromisso
@@ -86776,6 +86794,8 @@ components:
       type: integer
       example: 2
       description: |
+        -2147483648: None
+
         1: A aprovar
 
         2: Aprovado
@@ -87218,6 +87238,8 @@ components:
       type: integer
       example: 1
       description: |
+        0: None
+
         1: Ativo
 
         2: Passivo
@@ -87244,6 +87266,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Ativo
 
         2: Arquivo morto
@@ -87328,6 +87352,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Real
 
         2: Dólar americano
@@ -87890,6 +87916,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Ativa
 
         2: Inativa
@@ -87897,6 +87925,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Residencial
 
         2: Comercial
@@ -88101,6 +88131,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Ativo
 
         3: Encerrado
@@ -88416,6 +88448,8 @@ components:
       type: integer
       example: 2
       description: |
+        -2147483648: None
+
         1: Aprovado
 
         2: Aguardando aprovação
@@ -88529,6 +88563,8 @@ components:
       type: integer
       example: -2147483646
       description: |
+        -2147483648: None
+
         -2147483647: Aberto
 
         -2147483646: Fechado
@@ -89339,6 +89375,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Processo
 
         2: Contrato
@@ -89346,6 +89384,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Ativo
 
         2: Passivo
@@ -89378,6 +89418,8 @@ components:
       type: integer
       example: 2
       description: |
+        -2147483648: None
+
         1: A aprovar
 
         2: Aprovado
@@ -89530,6 +89572,8 @@ components:
       type: integer
       example: 1
       description: |
+        -2147483648: None
+
         1: Aberta
 
         2: A aprovar
@@ -89615,6 +89659,8 @@ components:
       title: PeriodoLancamentoAplicabilidade
       type: integer
       description: |
+        -2147483648: None
+
         1: Timesheet
 
         2: Despesa
