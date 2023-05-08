@@ -1,0 +1,64 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Timesheet
+summary: Exceções de período de lançamento
+operationId: api-timesheet-listaporperiodo
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: nrAplicabilidade
+    in: query
+    example: "1"
+    required: true
+    schema:
+      $ref: ../../../components/schemas/cases/enums/PeriodoLancamentoAplicabilidade.yaml
+  - name: idFuncionario
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: dataDeHoje
+    in: query
+    example: "2022-06-01T12:00:00"
+    required: true
+    schema:
+      type: string
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Período"
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+            example: "2022-06-01T12:00:00"
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+            

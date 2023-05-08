@@ -1,0 +1,42 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Despesas
+summary: Total de despesas por tipo
+description: Conta o total de despesa do funcionário por tipo no mês 
+operationId: api-despesas-totaldespesasmes
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  # Adicione aqui o body da requisição (se houver). Verificar menu "Copiar Body da requisição" 
+responses:
+  "200":
+    description: Total de despesas por tipo
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/DTOTotalGastoDespesas.yaml
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          

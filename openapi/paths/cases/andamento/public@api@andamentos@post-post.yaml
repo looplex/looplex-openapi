@@ -1,0 +1,45 @@
+tags: 
+  - Andamento 
+summary: Incluir andamento
+description: Inclui o andamento
+operationId: api-andamentos-post
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../../components/schemas/cases/DTOAndamento.yaml
+responses:
+  "200":
+    description: "Retorna o andamento inserido."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/cases/DTOAndamento.yaml
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          

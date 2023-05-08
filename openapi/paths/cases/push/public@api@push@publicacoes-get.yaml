@@ -1,0 +1,70 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Push
+summary: Publicações
+description: Obtém as publicações
+operationId: api-push-publicacoes
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: ano
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: mes
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: novos
+    in: query
+    description: "Default: true"
+    required: false
+    schema:
+      type: boolean
+  - name: visualizados
+    in: query
+    description: "Default: true"
+    required: false
+    schema:
+      type: boolean
+  - name: finalizados
+    in: query
+    description: "Default: false"
+    required: false
+    schema:
+      type: boolean
+  # Adicione aqui o body da requisição (se houver). Verificar menu "Copiar Body da requisição" 
+responses:
+  "200":
+    description: Obtém as publicações
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/DTOItemPublicacao.yaml
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          

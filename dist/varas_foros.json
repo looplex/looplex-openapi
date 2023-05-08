@@ -591,7 +591,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                  "$ref": "#/components/schemas/ExceptionResponse"
                 }
               }
             }
@@ -1181,12 +1181,12 @@
           }
         }
       },
-      "InternalServerErrorResponse": {
+      "ExceptionResponse": {
         "type": "object",
         "properties": {
           "Message": {
             "type": "string",
-            "description": "Mensagem de erro"
+            "description": "Tipo do Erro"
           },
           "ExceptionMessage": {
             "type": "string",

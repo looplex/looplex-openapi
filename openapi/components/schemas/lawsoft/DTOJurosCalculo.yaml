@@ -1,9 +1,0 @@
-name: DTOJurosCalculo
-type: object
-properties:
-  JurosCompensatorios:
-    $ref: DTOItemJuros.yaml
-  JurosMoratorios:
-    $ref: DTOItemJuros.yaml
-  isJurosMoratoriosSobreCompensatorios:
-    type: boolean

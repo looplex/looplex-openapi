@@ -1,0 +1,45 @@
+tags: 
+  - Casos 
+summary: Obtém caso
+description: Obtém o caso
+operationId: api-casos-id
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: integer
+responses:
+  "200":
+    description: "Obtém caso."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/cases/DTOCasoCompleto.yaml
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          

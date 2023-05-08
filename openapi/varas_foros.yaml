@@ -37,49 +37,49 @@ paths:
   # Varas e Foros (Somente métodos GET)
   /api/VF/ListaPorNivel:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaPorNivel-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ListaPorNivel-get.yaml'
   /api/VF/ObtemFilhosPorPai:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ObtemFilhosPorPai-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ObtemFilhosPorPai-get.yaml'
   /api/VF/ObtemFilhosPorNomePai:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ObtemFilhosPorNomePai-get.yaml'  
+      $ref: './paths/cases/varas_foros/public@api@VF@ObtemFilhosPorNomePai-get.yaml'  
   /api/VF/ObtemPorID:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ObtemPorID-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ObtemPorID-get.yaml'
   /api/VF/ListaHierarquia:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaHierarquia-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ListaHierarquia-get.yaml'
   /api/VF/HierarquiaFormatadaDoNo:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@HierarquiaFormatadaDoNo-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@HierarquiaFormatadaDoNo-get.yaml'
   /api/VF/ListaRitosGrupoRitos:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaRitosGrupoRitos-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ListaRitosGrupoRitos-get.yaml'
   /api/VF/ListaGruposRito:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaGruposRito-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ListaGruposRito-get.yaml'
   /api/VF/ListaVinculoGrupoERito:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ListaVinculoGrupoERito-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ListaVinculoGrupoERito-get.yaml'
   /api/VF/ritosDoNo:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ritosDoNo-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ritosDoNo-get.yaml'
   /api/VF/RitosDoGrupo:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@RitosDoGrupo-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@RitosDoGrupo-get.yaml'
   /api/VF/cdNoPorNome:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@cdNoPorNome-get.yaml'  
+      $ref: './paths/cases/varas_foros/public@api@VF@cdNoPorNome-get.yaml'  
   /api/VF/ProximosNiveis:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@ProximosNiveis-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@ProximosNiveis-get.yaml'
   /api/VF/Categorias:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@Categorias-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@Categorias-get.yaml'
   /api/VF/Rito:
     get:
-      $ref: './paths/lawsoft/varas_foros/public@api@VF@Rito-get.yaml'
+      $ref: './paths/cases/varas_foros/public@api@VF@Rito-get.yaml'
 
 components:
   securitySchemes:

@@ -1,0 +1,48 @@
+tags: 
+  - Cliente
+summary: Informações dos clientes
+description: Obtém um array com as informações do clientes de acordo com os identificadores informados
+operationId: api-clientes-porIds-idsClientes
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: idsClientes
+    in: path
+    example: "[1, 15]"
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: "Obtém um array com as informações do clientes de acordo com os identificadores informados"
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/cases/DTOCliente.yaml
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+            

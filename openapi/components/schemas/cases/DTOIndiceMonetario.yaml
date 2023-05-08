@@ -1,0 +1,13 @@
+title: DTOIndiceMonetario
+type: object
+properties:
+  Id:
+    type: integer
+  Nome:
+    type: string
+  TipoCalculo:
+    type: integer
+  TipoCalculoText:
+    type: string
+  UltimoDado:
+    $ref: DTOIndiceMonetarioDados.yaml

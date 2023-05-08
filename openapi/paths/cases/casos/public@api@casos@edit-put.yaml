@@ -1,0 +1,52 @@
+tags: 
+  - Casos
+summary: Edita caso
+description: Edita propriedades específicas do caso
+operationId: api-casos-edit
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: id
+    in: query
+    required: true
+    schema:
+      type: integer
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: ../../../components/schemas/cases/DTOObjetoNomeValor.yaml
+responses:
+  "200":
+    description: "Retorna o caso atualizado após a atualização das propriedades"
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/cases/DTOCasoCompleto.yaml
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          

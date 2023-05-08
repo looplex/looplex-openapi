@@ -1,0 +1,47 @@
+tags: 
+  - Casos 
+summary: Inclui casos
+description: Inclui casos.
+operationId: api-casos-inclui
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: ../../../components/schemas/cases/DTOProcessoPreCadastro.yaml
+responses:
+  "200":
+    description: "Retorna um objeto contendo os processos cadastrados e os processos com erro (caso haja)."
+    content:
+      application/json:
+        schema: 
+          $ref: ../../../components/schemas/cases/DTORespostaCadastroProcessoPreCadastro.yaml
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          

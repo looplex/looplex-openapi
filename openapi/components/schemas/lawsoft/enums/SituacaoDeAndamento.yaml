@@ -1,8 +1,0 @@
-type: integer
-example: 2
-description: |
-  1: A aprovar
-
-  2: Aprovado
-
-  3: Publicado

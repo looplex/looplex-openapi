@@ -1,8 +1,0 @@
-type: integer
-example: 1
-description: |
-  1: Residencial
-
-  2: Comercial
-
-  3: Outros

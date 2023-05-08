@@ -1,0 +1,39 @@
+tags: 
+  - Agenda 
+summary: Quantidade de eventos de agenda
+description: Quantidade de eventos de agenda do profissional para os próximos 7 dias.
+operationId: api-agenda-totaleventos
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  "200":
+    description: Retorna a quantidade de eventos de agenda do profissional para os próximos 7 dias.
+    content:
+      application/json:
+        example: "1"
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+        

@@ -1,0 +1,34 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Varas e Foros
+summary: Obtém rito por identificador
+description: Obtém o rito de acordo com o identifcador informado
+operationId: api-VF-Rito
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: idRito
+    in: query
+    example: "1"
+    description: "O identificador do rito"
+    required: true
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Resposta"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/Rito.yaml
+  "401":
+    description: "Em caso de erro de timeout ou sessão expirada."
+  "500":
+    description: "Em caso de erro diferente de timeout ou sessão expirada."
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
