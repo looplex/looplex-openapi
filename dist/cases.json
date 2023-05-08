@@ -17019,6 +17019,7 @@
         "type": "object",
         "properties": {
           "nomeItemHierarquia": {
+            "description": "O item da hierarquia",
             "type": "string"
           },
           "grupoFamilia": {
@@ -18867,15 +18868,19 @@
         "type": "object",
         "properties": {
           "Observacao": {
+            "description": "Observação do voucher",
             "type": "string"
           },
           "IDFornecedor": {
+            "description": "O identificador do fornecedor do voucher",
             "type": "integer"
           },
           "Nome": {
+            "description": "O nome do VOucher",
             "type": "string"
           },
           "ID": {
+            "description": "O identificador do voucher",
             "type": "integer"
           }
         }

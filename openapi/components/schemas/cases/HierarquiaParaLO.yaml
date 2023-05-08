@@ -2,6 +2,7 @@ title: HierarquiaParaLO
 type: object
 properties:
   nomeItemHierarquia:
+    description: "O item da hierarquia"
     type: string
   grupoFamilia:
     $ref: enums/TipoDeInstancia.yaml
