@@ -12,6 +12,6 @@ properties:
   Descricao:
     type: string
   cdIdentificador:
-    type: string
+    type: integer
   IsPedido:
     type: boolean

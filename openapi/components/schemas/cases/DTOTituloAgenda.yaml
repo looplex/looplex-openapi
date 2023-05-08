@@ -2,10 +2,14 @@ title: DTOTituloAgenda
 type: object
 properties:
   IDEscritorio:
+    description: "O identificador do escritório"
     type: integer
   TipoCobrancaEvento:
     $ref: enums/TipoEventoDeCobranca.yaml
   Titulo:
     type: string
   IDTituloCobranca:
+    description: "O identificador do titulo de cobrança"
     type: integer
+  LinkEntrevistaTemplate:
+    type: string

@@ -86457,13 +86457,17 @@ components:
       type: object
       properties:
         IDEscritorio:
+          description: O identificador do escritório
           type: integer
         TipoCobrancaEvento:
           $ref: '#/components/schemas/TipoEventoDeCobranca'
         Titulo:
           type: string
         IDTituloCobranca:
+          description: O identificador do titulo de cobrança
           type: integer
+        LinkEntrevistaTemplate:
+          type: string
     DTOCompromissoAudiencia:
       title: DTOCompromissoAudiencia
       type: object
@@ -87022,7 +87026,7 @@ components:
         Descricao:
           type: string
         cdIdentificador:
-          type: string
+          type: integer
         IsPedido:
           type: boolean
     DTOTabelaCalculoParametros:
@@ -87331,6 +87335,11 @@ components:
       title: DTOValorDadoComplementarCaso
       type: object
       properties:
+        IDProcessoValorDadoComplementar:
+          description: >-
+            O identificador do valor gravado na informação adicional (dado
+            complementar)
+          type: integer
         IDCaso:
           description: >-
             O identificador do caso. Se o valor for maior que 0, o dado
@@ -87338,11 +87347,13 @@ components:
           example: 100
           type: integer
         IDParametroDadoComplementar:
-          description: O identificador do dado complementar
+          description: O identificador da informação adicional (dado complementar)
           example: 50
           type: integer
         Valor:
-          description: O valor a ser gravado/atualizado no dado complementar
+          description: >-
+            O valor a ser gravado/atualizado na informação adicional (dado
+            complementar)
           example: Valor para gravar
           type: string
         DataDeAtualizacao:
@@ -88395,7 +88406,7 @@ components:
       type: object
       properties:
         Gastos:
-          description: Array de DTOGastoDespesa
+          description: Os gastos de cada despesa (Fundo Fixo, Reembolso, Voucher)
           type: array
           items:
             $ref: '#/components/schemas/DTOGastoDespesa'
@@ -89174,9 +89185,11 @@ components:
       type: object
       properties:
         ID:
+          description: O identificador da UF
           example: AL
           type: string
         UF:
+          description: O nome da UF
           example: Alagoas
           type: string
     DTOCidade:
