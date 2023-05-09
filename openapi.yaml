@@ -30155,55 +30155,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/parte/{cdParte}:
-    delete:
-      tags:
-        - Partes
-      summary: Exclusão de parte
-      description: >-
-        Exclui a parte se não for um cliente e não estiver vinculada a nenhum
-        processo
-      operationId: deletePart
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: cdParte
-          in: path
-          description: O identificador da parte
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Resposta do serviço
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MExclusaoItem'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
   /api/partes/desvincular:
     post:
       tags:
@@ -86672,8 +86623,8 @@ components:
       type: object
       properties:
         IDStatusEncerramento:
-          description: Identificador do status
-          example: '10'
+          description: O identificador do status de encerramento
+          example: 10
           type: integer
         Titulo:
           description: O status de encerramento
@@ -88259,8 +88210,12 @@ components:
 
         16: ProfissionalCombo
     DTOTipoProcesso:
+      title: DTOTipoProcesso
       type: object
       properties:
+        IDParametroDadoComplementar:
+          description: O identificador da informação adicional (dado complementar)
+          type: integer
         Tipo:
           $ref: '#/components/schemas/RamosJudicial'
     DTOItemDadoComplementar:
@@ -88732,10 +88687,14 @@ components:
           type: number
         ValorContingenciaAtualizado:
           type: number
+        EditarCamposValoresEObrigacoes:
+          type: boolean
         MoedaValorContingencia:
           type: integer
         Pedidos:
-          $ref: '#/components/schemas/DTOCasoPedidoSimples'
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCasoPedidoSimples'
     DTOPedidoHistorico:
       title: DTOPedidoHistorico
       type: object
@@ -89271,28 +89230,36 @@ components:
       properties:
         IDTelefone:
           type: integer
+          description: O identificador do telefone
         TipoTelefone:
           $ref: '#/components/schemas/TipoDeTelefone'
         DDD:
           type: string
+          description: O DDD do telefone
         Telefone:
           type: string
+          description: O numero de telefone
         Extensao:
           type: string
+          description: A extensão do telefone
     DTOTelefoneAdvogado:
       title: DTOTelefoneAdvogado
       type: object
       properties:
         IDTelefone:
           type: integer
+          description: O identificador do telefone
         TipoTelefone:
           $ref: '#/components/schemas/TipoDeTelefone'
         DDD:
           type: string
+          description: O DDD do telefone
         Telefone:
           type: string
+          description: O numero de telefone
         Extensao:
           type: string
+          description: A extensão do telefone
     DTODadosAdvogado:
       title: DTODadosAdvogado
       type: object
@@ -89394,18 +89361,6 @@ components:
         NumeroExterno:
           type: string
           description: Preenchido apenas na pesquisa de partes do caso
-    MExclusaoItem:
-      title: MExclusaoItem
-      type: object
-      properties:
-        Status:
-          type: boolean
-          description: Indica se a operação foi bem sucedida
-          example: false
-        Resposta:
-          type: string
-          description: Resposta do serviço
-          example: Não é possível excluir o cliente.
     PartePapelAplicabilidade:
       type: integer
       example: 1
@@ -89590,6 +89545,18 @@ components:
           type: string
           description: O titulo do item
           example: Atividade externa - 01/07/2022
+        IDCaso:
+          type: integer
+          description: O identificador do processo
+        TituloCaso:
+          type: string
+          description: O título do processo
+        NumeroExterno:
+          type: string
+          description: O número externo do processo
+        ClasseCaso:
+          type: string
+          description: A classe do processo
     TipoDeTarefa:
       type: integer
       example: 2
@@ -89679,7 +89646,7 @@ components:
         IsEditable:
           type: boolean
     LEDESCodes:
-      title: LEDES Code
+      title: LEDESCodes
       type: object
       properties:
         Code:

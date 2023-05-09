@@ -569,9 +569,6 @@ paths:
   /api/parte:
     post:
       $ref: ./paths/cases/partes/public@api@parte@post-post.yaml
-  /api/parte/{cdParte}:
-    delete:
-      $ref: ./paths/cases/partes/public@api@parte@delete-delete.yaml
   /api/partes/desvincular:
     post:
       $ref: ./paths/cases/partes/public@api@partes@desvincular-post.yaml

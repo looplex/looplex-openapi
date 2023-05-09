@@ -27,3 +27,15 @@ properties:
     type: string
     description: "O titulo do item"
     example: "Atividade externa - 01/07/2022"
+  IDCaso:
+    type: integer
+    description: "O identificador do processo"
+  TituloCaso:
+    type: string
+    description: "O título do processo"
+  NumeroExterno:
+    type: string
+    description: "O número externo do processo"
+  ClasseCaso:
+    type: string
+    description: "A classe do processo"
