@@ -24,5 +24,4 @@ properties:
   MoedaValorContingencia:
     type: integer
   Pedidos:
-    description: "Array de DTOCasoPedidoSimples"
     $ref: DTOCasoPedidoSimples.yaml

@@ -1,9 +1,8 @@
-type: FiltroTipoProfissionalAgenda
-example: 1
+title: FiltroTipoProfissionalAgenda
+# example: 1
 description: |
   1: Executor
 
   2: Participante
 
   3: Delegante
- 

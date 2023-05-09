@@ -23266,18 +23266,29 @@ paths:
           required: true
           schema:
             type: string
+        - name: listaPorExecutor
+          in: query
+          description: 'Listar compromissos por executor (Default: false)'
+          required: false
+          schema:
+            type: boolean
+        - name: listaPorParticipante
+          in: query
+          description: 'Listar compromissos por participante (Default: false)'
+          required: false
+          schema:
+            type: boolean
+        - name: listaPorDelegante
+          in: query
+          description: 'Listar compromissos por delegante. (Default: false)'
+          required: false
+          schema:
+            type: boolean
         - name: typeMode
           in: query
           required: false
           schema:
             $ref: '#/components/schemas/TipoDeConsultaCalendario'
-        - name: filtro
-          in: query
-          required: true
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/FiltroTipoProfissionalAgenda'
       responses:
         '200':
           description: Os compromissos
@@ -86585,15 +86596,6 @@ components:
         4: listWeek
 
         5: interval
-    FiltroTipoProfissionalAgenda:
-      type: FiltroTipoProfissionalAgenda
-      example: 1
-      description: |
-        1: Executor
-
-        2: Participante
-
-        3: Delegante
     DTOCompromissoSimples:
       title: DTOCompromissoSimples
       type: object
@@ -88733,7 +88735,6 @@ components:
         MoedaValorContingencia:
           type: integer
         Pedidos:
-          description: Array de DTOCasoPedidoSimples
           $ref: '#/components/schemas/DTOCasoPedidoSimples'
     DTOPedidoHistorico:
       title: DTOPedidoHistorico

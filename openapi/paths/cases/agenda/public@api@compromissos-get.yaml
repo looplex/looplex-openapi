@@ -20,19 +20,29 @@ parameters:
     required: true
     schema:
       type: string
+  - name: listaPorExecutor
+    in: query
+    description: "Listar compromissos por executor (Default: false)"
+    required: false
+    schema:
+      type: boolean
+  - name: listaPorParticipante
+    in: query
+    description: "Listar compromissos por participante (Default: false)"
+    required: false
+    schema:
+      type: boolean
+  - name: listaPorDelegante
+    in: query
+    description: "Listar compromissos por delegante. (Default: false)"
+    required: false
+    schema:
+      type: boolean
   - name: typeMode
     in: query
     required: false
     schema:
       $ref: ../../../components/schemas/cases/enums/TipoDeConsultaCalendario.yaml
-  - name: filtro
-    in: query
-    required: true
-    schema:
-      type: array
-      items: 
-        $ref: ../../../components/schemas/cases/enums/FiltroTipoProfissionalAgenda.yaml
-    
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
