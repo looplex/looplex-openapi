@@ -23271,6 +23271,13 @@ paths:
           required: false
           schema:
             $ref: '#/components/schemas/TipoDeConsultaCalendario'
+        - name: filtro
+          in: query
+          required: true
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/FiltroTipoProfissionalAgenda'
       responses:
         '200':
           description: Os compromissos
@@ -86578,6 +86585,15 @@ components:
         4: listWeek
 
         5: interval
+    FiltroTipoProfissionalAgenda:
+      type: FiltroTipoProfissionalAgenda
+      example: 1
+      description: |
+        1: Executor
+
+        2: Participante
+
+        3: Delegante
     DTOCompromissoSimples:
       title: DTOCompromissoSimples
       type: object

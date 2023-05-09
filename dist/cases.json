@@ -1428,6 +1428,17 @@
             "schema": {
               "$ref": "#/components/schemas/TipoDeConsultaCalendario"
             }
+          },
+          {
+            "name": "filtro",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FiltroTipoProfissionalAgenda"
+              }
+            }
           }
         ],
         "responses": {
@@ -16245,6 +16256,11 @@
         "type": "integer",
         "example": 1,
         "description": "1: dayGridMonth\n\n2: timeGridWeek\n\n3: timeGridDay\n\n4: listWeek\n\n5: interval\n"
+      },
+      "FiltroTipoProfissionalAgenda": {
+        "type": "FiltroTipoProfissionalAgenda",
+        "example": 1,
+        "description": "1: Executor\n\n2: Participante\n\n3: Delegante\n"
       },
       "DTOCompromissoSimples": {
         "title": "DTOCompromissoSimples",
