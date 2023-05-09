@@ -19,7 +19,7 @@ responses:
     content:
       application/json:
         schema: 
-          $ref: ../../../components/schemas/cases/DTORespostaCadastroProcessoPreCadastro.yaml
+          $ref: ../../../components/schemas/cases/RetornoCadastroDeCaso.yaml
   "401":
     description: "Unauthorized"
     content:

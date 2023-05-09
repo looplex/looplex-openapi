@@ -3573,7 +3573,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DTORespostaCadastroProcessoPreCadastro"
+                  "$ref": "#/components/schemas/RetornoCadastroDeCaso"
                 }
               }
             }
@@ -17225,6 +17225,18 @@
           "dataCitacao": {
             "type": "string"
           },
+          "UF": {
+            "type": "string"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "IBGECode": {
+            "type": "string"
+          },
+          "nrUF": {
+            "type": "integer"
+          },
           "hierarquia": {
             "type": "array",
             "items": {
@@ -17236,6 +17248,12 @@
             "items": {
               "type": "integer"
             }
+          },
+          "executionID": {
+            "type": "string"
+          },
+          "idFornecedor": {
+            "type": "integer"
           },
           "idProcessoNoFornecedorPush": {
             "example": -2147483648,
@@ -17308,8 +17326,8 @@
           }
         }
       },
-      "DTOProcessoJudicialAdministrativo": {
-        "title": "DTOProcessoJudicialAdministrativo",
+      "ProcessosCadastradosResposta": {
+        "title": "ProcessosCadastradosResposta",
         "type": "object",
         "properties": {
           "idPreProcesso": {
@@ -17344,23 +17362,26 @@
           }
         }
       },
-      "DTORespostaCadastroProcessoPreCadastro": {
-        "title": "DTORespostaCadastroProcessoPreCadastro",
+      "RetornoCadastroDeCaso": {
+        "title": "RetornoCadastroDeCaso",
         "type": "object",
         "properties": {
           "HouveException": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indica se aconteceu pelo menos uma exception"
           },
           "ProcessosNaoCadastrados": {
             "type": "array",
+            "description": "Os processos que não puderam ser cadastrados",
             "items": {
               "$ref": "#/components/schemas/DTOErroCadastroProcesso"
             }
           },
           "ProcessosCadastrados": {
             "type": "array",
+            "description": "Os processos que foram cadastrados",
             "items": {
-              "$ref": "#/components/schemas/DTOProcessoJudicialAdministrativo"
+              "$ref": "#/components/schemas/ProcessosCadastradosResposta"
             }
           }
         }
@@ -18115,10 +18136,12 @@
         "type": "object",
         "properties": {
           "DsNome": {
-            "type": "string"
+            "type": "string",
+            "description": "O nome do solicitante"
           },
           "CdSolicitante": {
-            "type": "integer"
+            "type": "integer",
+            "description": "O identificador do solicitante"
           }
         }
       },

@@ -363,7 +363,7 @@ paths:
     get:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar_caso@tipoCaso-get.yaml'
   
-      # Decisões
+  # Decisões
   /api/casos/{idCaso}/Decisoes:
     get:
       $ref: './paths/cases/decisoes/public@api@casos@idCaso@Decisoes-get.yaml'

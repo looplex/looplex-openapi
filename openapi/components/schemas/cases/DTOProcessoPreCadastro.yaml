@@ -97,6 +97,14 @@ properties:
     type: string
   dataCitacao:
     type: string
+  UF:
+    type: string
+  cidade:
+    type: string
+  IBGECode:
+    type: string
+  nrUF:
+    type: integer
   hierarquia:
     type: array
     items:
@@ -105,6 +113,10 @@ properties:
     type: array
     items:
       type: integer
+  executionID:
+    type: string
+  idFornecedor:
+    type: integer
   idProcessoNoFornecedorPush:
     example: -2147483648
     type: integer
