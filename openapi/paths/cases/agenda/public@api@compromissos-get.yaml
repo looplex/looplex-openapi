@@ -25,6 +25,14 @@ parameters:
     required: false
     schema:
       $ref: ../../../components/schemas/cases/enums/TipoDeConsultaCalendario.yaml
+  - name: filtro
+    in: query
+    required: true
+    schema:
+      type: array
+      items: 
+        $ref: ../../../components/schemas/cases/enums/FiltroTipoProfissionalAgenda.yaml
+    
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
