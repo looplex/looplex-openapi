@@ -70,8 +70,10 @@ tags:
     x-displayName: Conta de acesso
   - name: Contrato
     x-displayName: Contrato
-  - name: Dados complementares
-    x-displayName: Dados complementares
+  - name: Informações adicionais
+    x-displayName: Informações adicionais
+  - name: Informações adicionais (valor)
+    x-displayName: Informações adicionais (valor)
   - name: Decisões
     x-displayName: Decisões
   - name: Despesas
@@ -146,7 +148,8 @@ x-tagGroups:
       - Contato
       - Conta de acesso
       - Contrato
-      - Dados complementares
+      - Informações adicionais
+      - Informações adicionais (valor)
       - Decisões
       - Despesas
       - Expectativa reivindicação
@@ -26665,7 +26668,7 @@ paths:
   /api/casos/{idCaso}/dadoscomplementares:
     get:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Dados complementares do caso
       description: >-
         Obtém um array com os dados complementares de acordo com o identificador
@@ -26717,7 +26720,7 @@ paths:
   /api/casos/num/dadoscomplementares:
     get:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Dados complementares dos casos
       description: >-
         Obtém um array com os dados complementares pelo numero interno, numero
@@ -26779,7 +26782,7 @@ paths:
   /api/dado_complementar/{id}:
     get:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Obter dado complementar por identificador
       operationId: api-dado_complementar-id-get
       parameters:
@@ -26825,7 +26828,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
     delete:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Excluir dado complementar
       operationId: api-dado_complementar-id-delete
       parameters:
@@ -26868,7 +26871,7 @@ paths:
   /api/dado_complementar:
     post:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Inclui dado complementar por tipo
       description: Cadastra um dado complementar por tipo
       operationId: api-dado_complementar-post
@@ -26911,7 +26914,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
     put:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Atualiza Dados Complementares
       description: Atualizar os campos com os valores passados
       operationId: api-dado_complementar-put
@@ -26953,7 +26956,7 @@ paths:
   /api/dado_complementar/valor:
     post:
       tags:
-        - Dados complementares
+        - Informações adicionais (valor)
       summary: Inclui ou atualiza valor no dado complementar
       description: Inclui ou atualiza valores nos dados complementares informados
       operationId: api-dado_complementar-valor
@@ -26997,7 +27000,7 @@ paths:
   /api/dado_complementar_caso:
     get:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Obtém dados complementares de caso
       description: Obtém os dados complementares de caso
       operationId: api-dado_complementar_caso
@@ -27040,7 +27043,7 @@ paths:
   /api/dado_complementar_caso/{tipoCaso}:
     get:
       tags:
-        - Dados complementares
+        - Informações adicionais
       summary: Obtém os dados complementares do tipo de caso informado
       description: Obtém o dado complementar que pertence ao tipo de caso informado
       operationId: api-dado_complementar_caso-tipoCaso

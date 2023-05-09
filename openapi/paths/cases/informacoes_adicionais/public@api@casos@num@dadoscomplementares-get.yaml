@@ -1,19 +1,29 @@
 tags: 
-  - Dados complementares 
-summary: Dados complementares do caso
-description: Obtém um array com os dados complementares de acordo com o identificador do caso.
-operationId: api-casos-idCaso-dadoscomplementares
+  - Informações adicionais 
+summary: Dados complementares dos casos
+description: Obtém um array com os dados complementares pelo numero interno, numero externo ou identificador do caso.
+operationId: api-casos-num-dadoscomplementares
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  - name: idCaso
-    in: path
-    required: true
+  - name: NumeroInterno
+    in: query
+    required: false
+    schema:
+      type: integer
+  - name: NumeroExterno
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: IdProcesso
+    in: query
+    required: false
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém um array com os dados complementares de acordo com o identificador do caso."
+    description: "Obtém um array com os dados complementares pelo numero interno, numero externo ou identificador do caso."
     content:
       application/json:
         schema: 

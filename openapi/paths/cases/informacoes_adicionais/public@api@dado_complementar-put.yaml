@@ -1,6 +1,6 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Dados complementares
+  - Informações adicionais
 summary: Atualiza Dados Complementares
 description: Atualizar os campos com os valores passados
 operationId: api-dado_complementar-put

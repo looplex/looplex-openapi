@@ -1,25 +1,25 @@
-# Linhas com # são comentários e podem ser removidas.
-tags:
-  - Dados complementares
-summary: Excluir dado complementar
-operationId: api-dado_complementar-id-delete
-# Parâmetros da requisição
+tags: 
+  - Informações adicionais 
+summary: Dados complementares do caso
+description: Obtém um array com os dados complementares de acordo com o identificador do caso.
+operationId: api-casos-idCaso-dadoscomplementares
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  - name: id
+  - name: idCaso
     in: path
-    example: "1"
-    description: "O identificador do dado complementar"
     required: true
     schema:
       type: integer
-# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
-# Responses
 responses:
-  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
-  "204":
-    description: "O dado complementar foi excluído"
+  "200":
+    description: "Obtém um array com os dados complementares de acordo com o identificador do caso."
+    content:
+      application/json:
+        schema: 
+          type: array
+          items:
+            $ref: ../../../components/schemas/cases/DTODadoComplementar.yaml
   "401":
     description: "Unauthorized"
     content:
@@ -44,4 +44,4 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-    
+            

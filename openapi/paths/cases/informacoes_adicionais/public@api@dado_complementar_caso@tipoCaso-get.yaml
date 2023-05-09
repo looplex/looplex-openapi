@@ -1,26 +1,32 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Dados complementares
-summary: Inclui dado complementar por tipo
-description: Cadastra um dado complementar por tipo
-operationId: api-dado_complementar-post
+  - Informações adicionais
+summary: Obtém os dados complementares do tipo de caso informado
+description: Obtém o dado complementar que pertence ao tipo de caso informado
+operationId: api-dado_complementar_caso-tipoCaso
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: tipoCaso
+    in: path
+    example: 3
+    description: "O tipo do caso"
+    required: true
+    schema:
+      $ref: ../../../components/schemas/cases/enums/RamosJudicial.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
-requestBody:
-  content:
-    application/json:
-      schema:
-        type: array
-        items:
-          $ref: ../../../components/schemas/cases/DTOParametroDadoComplementar.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
-  "204":
-    description: O dado complementar foi cadastrado.
+  "200":
+    description: "Os dados complementares"
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/cases/DTOParametroDadoComplementar.yaml
   "401":
     description: "Unauthorized"
     content:
@@ -45,4 +51,4 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-    
+            

@@ -1,29 +1,26 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Dados complementares
-summary: Obter dado complementar por identificador
-operationId: api-dado_complementar-id-get
+  - Informações adicionais
+summary: Inclui dado complementar por tipo
+description: Cadastra um dado complementar por tipo
+operationId: api-dado_complementar-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  - name: id
-    in: path
-    example: "1"
-    description: "O identificador do dado complementar"
-    required: true
-    schema:
-      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: ../../../components/schemas/cases/DTOParametroDadoComplementar.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
-  "200":
-    description: "O dado complementar"
-    content:
-      application/json:
-        schema:
-          $ref: ../../../components/schemas/cases/DTOParametroDadoComplementar.yaml
+  "204":
+    description: O dado complementar foi cadastrado.
   "401":
     description: "Unauthorized"
     content:
@@ -48,4 +45,4 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-          
+    
