@@ -40,4 +40,5 @@ properties:
     type: integer
   IdAudienciaPai:
     type: integer
-  
+  IsEditable:
+    type: boolean

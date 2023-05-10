@@ -86454,6 +86454,8 @@ components:
           type: integer
         IdAudienciaPai:
           type: integer
+        IsEditable:
+          type: boolean
     DTORecorrenciaDeItemAgenda:
       title: DTORecorrenciaDeItemAgenda
       type: object
@@ -86885,6 +86887,9 @@ components:
           type: integer
         IDCasos:
           type: array
+          example:
+            - 1
+            - 2
           items:
             type: integer
     DTOBuscaMobileNovo:
@@ -89216,13 +89221,12 @@ components:
       type: object
       properties:
         ID:
-          example: 80
           type: integer
         IDUF:
-          example: 13
+          description: O identificador da UF
           type: integer
         Cidade:
-          example: Alvarães
+          description: O nome da cidade
           type: string
     DTOEnderecoParte:
       title: DTOEnderecoParte
@@ -89237,7 +89241,7 @@ components:
         Logradouro:
           type: string
         Numero:
-          type: integer
+          type: string
         Complemento:
           type: string
         Bairro:

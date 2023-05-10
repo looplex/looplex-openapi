@@ -16089,6 +16089,9 @@
           },
           "IdAudienciaPai": {
             "type": "integer"
+          },
+          "IsEditable": {
+            "type": "boolean"
           }
         }
       },
@@ -16522,6 +16525,10 @@
           },
           "IDCasos": {
             "type": "array",
+            "example": [
+              1,
+              2
+            ],
             "items": {
               "type": "integer"
             }
@@ -19676,15 +19683,14 @@
         "type": "object",
         "properties": {
           "ID": {
-            "example": 80,
             "type": "integer"
           },
           "IDUF": {
-            "example": 13,
+            "description": "O identificador da UF",
             "type": "integer"
           },
           "Cidade": {
-            "example": "Alvarães",
+            "description": "O nome da cidade",
             "type": "string"
           }
         }
@@ -19706,7 +19712,7 @@
             "type": "string"
           },
           "Numero": {
-            "type": "integer"
+            "type": "string"
           },
           "Complemento": {
             "type": "string"
