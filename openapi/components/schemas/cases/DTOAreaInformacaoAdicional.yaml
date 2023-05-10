@@ -1,0 +1,11 @@
+title: DTOAreaInformacaoAdicional
+type: object
+properties:
+  IDAreaParametroDadoComplementar:    
+    type: integer
+  IDParametroDadoComplementar:    
+    type: integer
+  IDArea:    
+    type: integer
+  Area:    
+    type: string

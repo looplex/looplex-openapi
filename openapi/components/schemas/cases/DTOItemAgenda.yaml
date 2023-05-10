@@ -2,57 +2,45 @@ title: DTOItemAgenda
 type: object
 properties:
   IDCaso: 
-    type: integer
-    example: 10
+    type: integer    
   IDItemAgenda: 
-    type: integer
-    example: 15
+    type: integer    
   IDItemAgendaPai: 
     type: integer
-    description: Se for uma subtarefa, esse valor é o identificador da tarefa pai, senão será null
-    example: null
+    description: "Se for uma subtarefa, esse valor é o identificador da tarefa pai, senão o valor será nulo"    
   IDFuncionarioCriador: 
-    type: integer
-    example: 30
-  Tipo: 
-    type: enum
-    $ref: ./enums/TipoItemAgenda.yaml
+    type: integer    
+  Tipo:     
+    $ref: enums/TipoItemAgenda.yaml
   Titulo: 
-    type: string
-    example: "Item de agenda"
+    type: string    
   IDTitulocobranca: 
-    type: integer
-    example: null
+    type: integer    
   Data: 
-    type: string
-    example: "2022-01-01T12:00:00"
+    type: string    
   Lembrete: 
-    type: string
-    example: null
+    type: string    
   DataLimite: 
-    type: string
-    example: "2022-01-01T12:00:00"
+    type: string    
   FuncionarioExecutor: 
-    type: integer
-    example: 30
+    type: integer 
+  FuncionarioResponsavel:
+    typ: integer     
   FuncionariosParticipantes: 
     example: [10, 20]
     type: array
     items: 
       type: integer
   Observacao: 
-    type: string
-    example: "Observação do item de agenda"
+    type: string    
   DataRealizacao: 
     type: string
   IDStatusEncerramentoItemAgenda:
     type: integer
   ObservacaoRegistroRealizacao: 
-    type: string
-    example: "Observação da realização"
-  Situacao:  
-    type: integer
-    $ref: ./enums/SituacaoDoItemAgenda.yaml
+    type: string    
+  Situacao:      
+    $ref: enums/SituacaoDoItemAgenda.yaml
   DataFormatada: 
     type: string
     example: "01/01/2022"
@@ -61,13 +49,10 @@ properties:
     example: "01/01/2022"
   IDForo: 
     type: integer
-    example: 140
   Local: 
-    type: string
-    example: "São Paulo"
+    type: string    
   NomeFuncionarioExecutor: 
-    type: string
-    example: "Nome do funcionário executor"
+    type: string    
   DataCriacao: 
     type: string
     example: "2022-01-01T12:00:00"
@@ -75,45 +60,54 @@ properties:
     type: string
     example: "01/01/2022"
   DataRealizacaoFormatada: 
-    type: string
-    example: null
+    type: string    
   DataRegistroRealizacao: 
     type: string
-    example: null
   DataRegistroRealizacaoFormatada: 
     type: string
-    example: null
   SituacaoLembrete: 
-    $ref: ./enums/SituacaoLembrete.yaml
+    $ref: enums/SituacaoLembrete.yaml
   IsEditable: 
     type: boolean
   Concluido:
     type: boolean
     description: "Indica se o item está concluído"
   StatusEncerramentoItemAgenda:
-    type: string
-    example: ""
+    type: string    
   NomeClienteFormatado:
-    type: string
-    description: "O nome do cliente do caso em que o item de agenda foi vinculado"
+    type: string  
   AreaFormatada:
-    type: string
-    description: "O nome da área do caso em que o item de agenda foi vinculado"
+    type: string    
   TituloCasoFormatado:
     type: string
-    description: "O titulo do caso em que o item de agenda foi vinculado"
   NumeroDoCaso:
-    description: "O numero do caso no LawOffice"
     type: integer
   TituloCaso:
-    description: "O titulo do caso"
     type: string
   NumeroExternoCaso:
-    description: "O numero externo do caso"
     type: string
   Cliente:
-    description: "O nome do cliente do caso"
     type: string
   Executor:
-    description: "O nome do executor do item de agenda"
     type: string
+  NumeroPasta:
+    type: integer
+  Assunto:
+    type: string
+  NumeroInterno:
+    type: string
+  Rito:
+    type: string
+  Vencido:
+    type: string
+  SituacaoString:
+    type: string
+  PoloAtivo:
+    type: string
+  PoloPassivo:
+    type: string
+  Classificacao:
+    type: string
+  ExecutionID:
+    type: string
+    

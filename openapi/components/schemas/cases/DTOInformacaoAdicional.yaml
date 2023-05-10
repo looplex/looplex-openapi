@@ -1,0 +1,52 @@
+title: DTOInformacaoAdicional
+type: object
+properties:
+  IDParametroDadoComplementar:
+    example: -2147483648
+    description: "O identificador do dado complementar"
+    type: integer
+  IDCliente:
+    type: integer  
+  TipoCampoDadoComplementar:
+    $ref: enums/TipoDadoComplementar.yaml
+  TipoCampoDadoComplementarText:
+    type: string  
+  TituloDadoComplementar:
+    description: "O titulo do dado complementar"
+    example: "Nome completo"
+    type: string
+  TamanhoCampo:
+    description: "O tamanho do campo (quando aplicável)"
+    example: 200
+    type: integer
+  Obrigatorio:
+    description: ""
+    example: false
+    type: boolean
+  Ativo:
+    type: boolean
+  Ordem:
+    type: integer
+  TipoDeVinculo:
+    type: string  
+  Opcoes:
+    type: array
+    items:
+      $ref: DTOItemDadoComplementar.yaml
+  VinculadoNosTiposDeProcesso:
+    type: array
+    items:
+      $ref: DTOTipoProcesso.yaml
+  VinculadoNasAreas:
+    type: array
+    items: 
+      $ref: DTOAreaInformacaoAdicional.yaml
+  ValoresProcessosCadastrados:
+    type: array
+    items:
+      $ref: DTOValorDadoComplementarCaso.yaml
+  ValoresFuncionariosCadastrados:
+    type: array
+    items:
+      $ref: DTOValorDadoComplementarFuncionario.yaml            
+  

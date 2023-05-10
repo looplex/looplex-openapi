@@ -26,7 +26,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/cases/DTOParametroDadoComplementar.yaml
+            $ref: ../../../components/schemas/cases/DTOInformacaoAdicional.yaml
   "401":
     description: "Unauthorized"
     content:

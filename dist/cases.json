@@ -7270,7 +7270,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                  "$ref": "#/components/schemas/DTOInformacaoAdicional"
                 }
               }
             }
@@ -7410,7 +7410,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                  "$ref": "#/components/schemas/DTOInformacaoAdicional"
                 }
               }
             }
@@ -7481,7 +7481,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                "$ref": "#/components/schemas/DTOInformacaoAdicional"
               }
             }
           }
@@ -7632,7 +7632,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                    "$ref": "#/components/schemas/DTOInformacaoAdicional"
                   }
                 }
               }
@@ -7715,7 +7715,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTOParametroDadoComplementar"
+                    "$ref": "#/components/schemas/DTOInformacaoAdicional"
                   }
                 }
               }
@@ -15738,49 +15738,41 @@
         "type": "object",
         "properties": {
           "IDCaso": {
-            "type": "integer",
-            "example": 10
+            "type": "integer"
           },
           "IDItemAgenda": {
-            "type": "integer",
-            "example": 15
+            "type": "integer"
           },
           "IDItemAgendaPai": {
             "type": "integer",
-            "description": "Se for uma subtarefa, esse valor é o identificador da tarefa pai, senão será null",
-            "example": null
+            "description": "Se for uma subtarefa, esse valor é o identificador da tarefa pai, senão o valor será nulo"
           },
           "IDFuncionarioCriador": {
-            "type": "integer",
-            "example": 30
+            "type": "integer"
           },
           "Tipo": {
-            "type": "enum",
             "$ref": "#/components/schemas/TipoItemAgenda"
           },
           "Titulo": {
-            "type": "string",
-            "example": "Item de agenda"
+            "type": "string"
           },
           "IDTitulocobranca": {
-            "type": "integer",
-            "example": null
+            "type": "integer"
           },
           "Data": {
-            "type": "string",
-            "example": "2022-01-01T12:00:00"
+            "type": "string"
           },
           "Lembrete": {
-            "type": "string",
-            "example": null
+            "type": "string"
           },
           "DataLimite": {
-            "type": "string",
-            "example": "2022-01-01T12:00:00"
+            "type": "string"
           },
           "FuncionarioExecutor": {
-            "type": "integer",
-            "example": 30
+            "type": "integer"
+          },
+          "FuncionarioResponsavel": {
+            "typ": "integer"
           },
           "FuncionariosParticipantes": {
             "example": [
@@ -15793,8 +15785,7 @@
             }
           },
           "Observacao": {
-            "type": "string",
-            "example": "Observação do item de agenda"
+            "type": "string"
           },
           "DataRealizacao": {
             "type": "string"
@@ -15803,11 +15794,9 @@
             "type": "integer"
           },
           "ObservacaoRegistroRealizacao": {
-            "type": "string",
-            "example": "Observação da realização"
+            "type": "string"
           },
           "Situacao": {
-            "type": "integer",
             "$ref": "#/components/schemas/SituacaoDoItemAgenda"
           },
           "DataFormatada": {
@@ -15819,16 +15808,13 @@
             "example": "01/01/2022"
           },
           "IDForo": {
-            "type": "integer",
-            "example": 140
+            "type": "integer"
           },
           "Local": {
-            "type": "string",
-            "example": "São Paulo"
+            "type": "string"
           },
           "NomeFuncionarioExecutor": {
-            "type": "string",
-            "example": "Nome do funcionário executor"
+            "type": "string"
           },
           "DataCriacao": {
             "type": "string",
@@ -15839,16 +15825,13 @@
             "example": "01/01/2022"
           },
           "DataRealizacaoFormatada": {
-            "type": "string",
-            "example": null
+            "type": "string"
           },
           "DataRegistroRealizacao": {
-            "type": "string",
-            "example": null
+            "type": "string"
           },
           "DataRegistroRealizacaoFormatada": {
-            "type": "string",
-            "example": null
+            "type": "string"
           },
           "SituacaoLembrete": {
             "$ref": "#/components/schemas/SituacaoLembrete"
@@ -15861,39 +15844,60 @@
             "description": "Indica se o item está concluído"
           },
           "StatusEncerramentoItemAgenda": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "NomeClienteFormatado": {
-            "type": "string",
-            "description": "O nome do cliente do caso em que o item de agenda foi vinculado"
+            "type": "string"
           },
           "AreaFormatada": {
-            "type": "string",
-            "description": "O nome da área do caso em que o item de agenda foi vinculado"
+            "type": "string"
           },
           "TituloCasoFormatado": {
-            "type": "string",
-            "description": "O titulo do caso em que o item de agenda foi vinculado"
+            "type": "string"
           },
           "NumeroDoCaso": {
-            "description": "O numero do caso no LawOffice",
             "type": "integer"
           },
           "TituloCaso": {
-            "description": "O titulo do caso",
             "type": "string"
           },
           "NumeroExternoCaso": {
-            "description": "O numero externo do caso",
             "type": "string"
           },
           "Cliente": {
-            "description": "O nome do cliente do caso",
             "type": "string"
           },
           "Executor": {
-            "description": "O nome do executor do item de agenda",
+            "type": "string"
+          },
+          "NumeroPasta": {
+            "type": "integer"
+          },
+          "Assunto": {
+            "type": "string"
+          },
+          "NumeroInterno": {
+            "type": "string"
+          },
+          "Rito": {
+            "type": "string"
+          },
+          "Vencido": {
+            "type": "string"
+          },
+          "SituacaoString": {
+            "type": "string"
+          },
+          "PoloAtivo": {
+            "type": "string"
+          },
+          "PoloPassivo": {
+            "type": "string"
+          },
+          "Classificacao": {
+            "type": "string"
+          },
+          "ExecutionID": {
             "type": "string"
           }
         }
@@ -15913,104 +15917,80 @@
         "type": "object",
         "properties": {
           "IDFuncionario": {
-            "type": "integer",
-            "example": 10
+            "type": "integer"
           },
           "Nome": {
-            "type": "string",
-            "example": "Funcionário",
-            "description": "Nome do funcionário"
+            "type": "string"
           },
           "Apelido": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Logradouro": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "NumeroLogradouro": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Bairro": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Cidade": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Estado": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Complemento": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "CEP": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Email": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "CPF": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "RG": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "EstadoCivil": {
             "$ref": "#/components/schemas/EstadoCivil"
           },
           "DataDeNascimento": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "DataDeNascimentoFormatada": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Cargo": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "DataDeAdmissao": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "DataDeAdmissaoFormatada": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "DataDeDemissao": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "DataDeDemissaoFormatada": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "Oab": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "NumeroDeDependentes": {
-            "type": "integer",
-            "example": 0
+            "type": "integer"
           },
           "Admin": {
             "type": "boolean",
-            "example": false
+            "example": "true or false"
           },
           "Observacoes": {
-            "type": "string",
-            "example": ""
+            "type": "string"
           },
           "VinculoEmpregaticio": {
             "$ref": "#/components/schemas/VinculoEmpregaticio"
@@ -16184,6 +16164,9 @@
           },
           "IdPai": {
             "type": "integer"
+          },
+          "IsEditable": {
+            "type": "boolean"
           },
           "Recorrencia": {
             "$ref": "#/components/schemas/DTORecorrenciaDeItemAgenda"
@@ -16904,8 +16887,7 @@
             "type": "integer"
           },
           "DataCorrecao": {
-            "type": "string",
-            "example": "2022-06-01T12:00:00"
+            "type": "string"
           },
           "ValorCorrecao": {
             "type": "number"
@@ -18255,6 +18237,24 @@
         "example": 1,
         "description": "-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
       },
+      "DTOItemDadoComplementar": {
+        "title": "DTOItemDadoComplementar",
+        "type": "object",
+        "properties": {
+          "IDItemDadoComplementar": {
+            "type": "integer"
+          },
+          "IDParametroDadoComplementar": {
+            "type": "integer"
+          },
+          "Texto": {
+            "type": "string"
+          },
+          "Valor": {
+            "type": "string"
+          }
+        }
+      },
       "DTOTipoProcesso": {
         "title": "DTOTipoProcesso",
         "type": "object",
@@ -18268,29 +18268,47 @@
           }
         }
       },
-      "DTOItemDadoComplementar": {
-        "title": "DTOItemDadoComplementar",
+      "DTOAreaInformacaoAdicional": {
+        "title": "DTOAreaInformacaoAdicional",
         "type": "object",
         "properties": {
-          "IDItemDadoComplementar": {
-            "description": "",
-            "example": -2147483648,
+          "IDAreaParametroDadoComplementar": {
             "type": "integer"
           },
-          "Texto": {
-            "description": "",
-            "example": "Opção 1",
-            "type": "string"
+          "IDParametroDadoComplementar": {
+            "type": "integer"
           },
-          "Valor": {
-            "description": "",
-            "example": "Opção 1",
+          "IDArea": {
+            "type": "integer"
+          },
+          "Area": {
             "type": "string"
           }
         }
       },
-      "DTOParametroDadoComplementar": {
-        "title": "DTOParametroDadoComplementar",
+      "DTOValorDadoComplementarFuncionario": {
+        "title": "DTOValorDadoComplementarFuncionario",
+        "type": "object",
+        "properties": {
+          "IDFuncionarioValorDadoComplementar": {
+            "type": "integer"
+          },
+          "IDFuncionario": {
+            "type": "integer"
+          },
+          "IDParametroDadoComplementar": {
+            "type": "integer"
+          },
+          "Valor": {
+            "type": "string"
+          },
+          "DataDeAtualizacao": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOInformacaoAdicional": {
+        "title": "DTOInformacaoAdicional",
         "type": "object",
         "properties": {
           "IDParametroDadoComplementar": {
@@ -18298,8 +18316,14 @@
             "description": "O identificador do dado complementar",
             "type": "integer"
           },
+          "IDCliente": {
+            "type": "integer"
+          },
           "TipoCampoDadoComplementar": {
             "$ref": "#/components/schemas/TipoDadoComplementar"
+          },
+          "TipoCampoDadoComplementarText": {
+            "type": "string"
           },
           "TituloDadoComplementar": {
             "description": "O titulo do dado complementar",
@@ -18319,16 +18343,40 @@
           "Ativo": {
             "type": "boolean"
           },
-          "TiposProcesso": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOTipoProcesso"
-            }
+          "Ordem": {
+            "type": "integer"
+          },
+          "TipoDeVinculo": {
+            "type": "string"
           },
           "Opcoes": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DTOItemDadoComplementar"
+            }
+          },
+          "VinculadoNosTiposDeProcesso": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTipoProcesso"
+            }
+          },
+          "VinculadoNasAreas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOAreaInformacaoAdicional"
+            }
+          },
+          "ValoresProcessosCadastrados": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOValorDadoComplementarCaso"
+            }
+          },
+          "ValoresFuncionariosCadastrados": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOValorDadoComplementarFuncionario"
             }
           }
         }
@@ -18846,6 +18894,9 @@
           },
           "IDFuncionarioVinculado": {
             "type": "integer"
+          },
+          "Ativo": {
+            "type": "boolean"
           }
         }
       },
@@ -19007,6 +19058,12 @@
           "ValorContingenciadoPai": {
             "type": "number"
           },
+          "ValorContingenciadoAtualizado": {
+            "type": "number"
+          },
+          "ValorPrevistoAtualizado": {
+            "type": "number"
+          },
           "ValorDeferidoPelaUltimaDecisao": {
             "type": "number"
           },
@@ -19032,6 +19089,12 @@
             "type": "string"
           },
           "SituacaoUltimaDecisao": {
+            "type": "string"
+          },
+          "DataConstituicao": {
+            "type": "string"
+          },
+          "DataVencimento": {
             "type": "string"
           }
         }
@@ -19083,19 +19146,22 @@
         "type": "object",
         "properties": {
           "IDFase": {
-            "type": "integer",
-            "example": 1
+            "type": "integer"
           },
           "NomeFase": {
-            "type": "string",
-            "example": "Fase 1"
+            "type": "string"
           },
           "TipoProcesso": {
             "$ref": "#/components/schemas/RamosJudicial"
           },
           "TipoProcessoText": {
-            "type": "string",
-            "example": "Judicial Estadual"
+            "type": "string"
+          },
+          "Ativo": {
+            "type": "boolean"
+          },
+          "IDEscritorio": {
+            "type": "integer"
           }
         }
       },
@@ -19547,6 +19613,9 @@
           },
           "nrGrupoText": {
             "type": "string"
+          },
+          "isAtivo": {
+            "type": "boolean"
           }
         }
       },

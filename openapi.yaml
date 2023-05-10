@@ -26801,7 +26801,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DTOParametroDadoComplementar'
+                $ref: '#/components/schemas/DTOInformacaoAdicional'
         '401':
           description: Unauthorized
           content:
@@ -26884,7 +26884,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/DTOParametroDadoComplementar'
+                $ref: '#/components/schemas/DTOInformacaoAdicional'
       responses:
         '204':
           description: O dado complementar foi cadastrado.
@@ -26925,7 +26925,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DTOParametroDadoComplementar'
+              $ref: '#/components/schemas/DTOInformacaoAdicional'
       responses:
         '204':
           description: O dado complementar foi atualizado.
@@ -27015,7 +27015,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DTOParametroDadoComplementar'
+                  $ref: '#/components/schemas/DTOInformacaoAdicional'
         '401':
           description: Unauthorized
           content:
@@ -27065,7 +27065,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DTOParametroDadoComplementar'
+                  $ref: '#/components/schemas/DTOInformacaoAdicional'
         '401':
           description: Unauthorized
           content:
@@ -86170,40 +86170,31 @@ components:
       properties:
         IDCaso:
           type: integer
-          example: 10
         IDItemAgenda:
           type: integer
-          example: 15
         IDItemAgendaPai:
           type: integer
           description: >-
             Se for uma subtarefa, esse valor é o identificador da tarefa pai,
-            senão será null
-          example: null
+            senão o valor será nulo
         IDFuncionarioCriador:
           type: integer
-          example: 30
         Tipo:
-          type: enum
           $ref: '#/components/schemas/TipoItemAgenda'
         Titulo:
           type: string
-          example: Item de agenda
         IDTitulocobranca:
           type: integer
-          example: null
         Data:
           type: string
-          example: '2022-01-01T12:00:00'
         Lembrete:
           type: string
-          example: null
         DataLimite:
           type: string
-          example: '2022-01-01T12:00:00'
         FuncionarioExecutor:
           type: integer
-          example: 30
+        FuncionarioResponsavel:
+          typ: integer
         FuncionariosParticipantes:
           example:
             - 10
@@ -86213,16 +86204,13 @@ components:
             type: integer
         Observacao:
           type: string
-          example: Observação do item de agenda
         DataRealizacao:
           type: string
         IDStatusEncerramentoItemAgenda:
           type: integer
         ObservacaoRegistroRealizacao:
           type: string
-          example: Observação da realização
         Situacao:
-          type: integer
           $ref: '#/components/schemas/SituacaoDoItemAgenda'
         DataFormatada:
           type: string
@@ -86232,13 +86220,10 @@ components:
           example: 01/01/2022
         IDForo:
           type: integer
-          example: 140
         Local:
           type: string
-          example: São Paulo
         NomeFuncionarioExecutor:
           type: string
-          example: Nome do funcionário executor
         DataCriacao:
           type: string
           example: '2022-01-01T12:00:00'
@@ -86247,13 +86232,10 @@ components:
           example: 01/01/2022
         DataRealizacaoFormatada:
           type: string
-          example: null
         DataRegistroRealizacao:
           type: string
-          example: null
         DataRegistroRealizacaoFormatada:
           type: string
-          example: null
         SituacaoLembrete:
           $ref: '#/components/schemas/SituacaoLembrete'
         IsEditable:
@@ -86263,30 +86245,41 @@ components:
           description: Indica se o item está concluído
         StatusEncerramentoItemAgenda:
           type: string
-          example: ''
         NomeClienteFormatado:
           type: string
-          description: O nome do cliente do caso em que o item de agenda foi vinculado
         AreaFormatada:
           type: string
-          description: O nome da área do caso em que o item de agenda foi vinculado
         TituloCasoFormatado:
           type: string
-          description: O titulo do caso em que o item de agenda foi vinculado
         NumeroDoCaso:
-          description: O numero do caso no LawOffice
           type: integer
         TituloCaso:
-          description: O titulo do caso
           type: string
         NumeroExternoCaso:
-          description: O numero externo do caso
           type: string
         Cliente:
-          description: O nome do cliente do caso
           type: string
         Executor:
-          description: O nome do executor do item de agenda
+          type: string
+        NumeroPasta:
+          type: integer
+        Assunto:
+          type: string
+        NumeroInterno:
+          type: string
+        Rito:
+          type: string
+        Vencido:
+          type: string
+        SituacaoString:
+          type: string
+        PoloAtivo:
+          type: string
+        PoloPassivo:
+          type: string
+        Classificacao:
+          type: string
+        ExecutionID:
           type: string
     EstadoCivil:
       type: integer
@@ -86334,79 +86327,55 @@ components:
       properties:
         IDFuncionario:
           type: integer
-          example: 10
         Nome:
           type: string
-          example: Funcionário
-          description: Nome do funcionário
         Apelido:
           type: string
-          example: ''
         Logradouro:
           type: string
-          example: ''
         NumeroLogradouro:
           type: string
-          example: ''
         Bairro:
           type: string
-          example: ''
         Cidade:
           type: string
-          example: ''
         Estado:
           type: string
-          example: ''
         Complemento:
           type: string
-          example: ''
         CEP:
           type: string
-          example: ''
         Email:
           type: string
-          example: ''
         CPF:
           type: string
-          example: ''
         RG:
           type: string
-          example: ''
         EstadoCivil:
           $ref: '#/components/schemas/EstadoCivil'
         DataDeNascimento:
           type: string
-          example: ''
         DataDeNascimentoFormatada:
           type: string
-          example: ''
         Cargo:
           type: string
-          example: ''
         DataDeAdmissao:
           type: string
-          example: ''
         DataDeAdmissaoFormatada:
           type: string
-          example: ''
         DataDeDemissao:
           type: string
-          example: ''
         DataDeDemissaoFormatada:
           type: string
-          example: ''
         Oab:
           type: string
-          example: ''
         NumeroDeDependentes:
           type: integer
-          example: 0
         Admin:
           type: boolean
-          example: false
+          example: true or false
         Observacoes:
           type: string
-          example: ''
         VinculoEmpregaticio:
           $ref: '#/components/schemas/VinculoEmpregaticio'
     TipoEventoDeCobranca:
@@ -86535,6 +86504,8 @@ components:
           type: string
         IdPai:
           type: integer
+        IsEditable:
+          type: boolean
         Recorrencia:
           $ref: '#/components/schemas/DTORecorrenciaDeItemAgenda'
     TipoDeConsultaCalendario:
@@ -87183,7 +87154,6 @@ components:
           type: integer
         DataCorrecao:
           type: string
-          example: '2022-06-01T12:00:00'
         ValorCorrecao:
           type: number
     DTOIndiceMonetario:
@@ -88229,6 +88199,18 @@ components:
         15: AreaCombo
 
         16: ProfissionalCombo
+    DTOItemDadoComplementar:
+      title: DTOItemDadoComplementar
+      type: object
+      properties:
+        IDItemDadoComplementar:
+          type: integer
+        IDParametroDadoComplementar:
+          type: integer
+        Texto:
+          type: string
+        Valor:
+          type: string
     DTOTipoProcesso:
       title: DTOTipoProcesso
       type: object
@@ -88238,32 +88220,46 @@ components:
           type: integer
         Tipo:
           $ref: '#/components/schemas/RamosJudicial'
-    DTOItemDadoComplementar:
-      title: DTOItemDadoComplementar
+    DTOAreaInformacaoAdicional:
+      title: DTOAreaInformacaoAdicional
       type: object
       properties:
-        IDItemDadoComplementar:
-          description: ''
-          example: -2147483648
+        IDAreaParametroDadoComplementar:
           type: integer
-        Texto:
-          description: ''
-          example: Opção 1
+        IDParametroDadoComplementar:
+          type: integer
+        IDArea:
+          type: integer
+        Area:
           type: string
+    DTOValorDadoComplementarFuncionario:
+      title: DTOValorDadoComplementarFuncionario
+      type: object
+      properties:
+        IDFuncionarioValorDadoComplementar:
+          type: integer
+        IDFuncionario:
+          type: integer
+        IDParametroDadoComplementar:
+          type: integer
         Valor:
-          description: ''
-          example: Opção 1
           type: string
-    DTOParametroDadoComplementar:
-      title: DTOParametroDadoComplementar
+        DataDeAtualizacao:
+          type: string
+    DTOInformacaoAdicional:
+      title: DTOInformacaoAdicional
       type: object
       properties:
         IDParametroDadoComplementar:
           example: -2147483648
           description: O identificador do dado complementar
           type: integer
+        IDCliente:
+          type: integer
         TipoCampoDadoComplementar:
           $ref: '#/components/schemas/TipoDadoComplementar'
+        TipoCampoDadoComplementarText:
+          type: string
         TituloDadoComplementar:
           description: O titulo do dado complementar
           example: Nome completo
@@ -88278,14 +88274,30 @@ components:
           type: boolean
         Ativo:
           type: boolean
-        TiposProcesso:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOTipoProcesso'
+        Ordem:
+          type: integer
+        TipoDeVinculo:
+          type: string
         Opcoes:
           type: array
           items:
             $ref: '#/components/schemas/DTOItemDadoComplementar'
+        VinculadoNosTiposDeProcesso:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOTipoProcesso'
+        VinculadoNasAreas:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOAreaInformacaoAdicional'
+        ValoresProcessosCadastrados:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
+        ValoresFuncionariosCadastrados:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOValorDadoComplementarFuncionario'
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object
@@ -88667,6 +88679,8 @@ components:
           type: string
         IDFuncionarioVinculado:
           type: integer
+        Ativo:
+          type: boolean
     DTOVoucher:
       title: DTOVoucher
       type: object
@@ -88775,6 +88789,10 @@ components:
           type: string
         ValorContingenciadoPai:
           type: number
+        ValorContingenciadoAtualizado:
+          type: number
+        ValorPrevistoAtualizado:
+          type: number
         ValorDeferidoPelaUltimaDecisao:
           type: number
         MoedaDeferidoPelaUltimaDecisao:
@@ -88792,6 +88810,10 @@ components:
         RiscoUltimaDecisaoText:
           type: string
         SituacaoUltimaDecisao:
+          type: string
+        DataConstituicao:
+          type: string
+        DataVencimento:
           type: string
     DTOValoresComPedidosAtualizados:
       title: DTOValoresComPedidosAtualizados
@@ -88827,15 +88849,16 @@ components:
       properties:
         IDFase:
           type: integer
-          example: 1
         NomeFase:
           type: string
-          example: Fase 1
         TipoProcesso:
           $ref: '#/components/schemas/RamosJudicial'
         TipoProcessoText:
           type: string
-          example: Judicial Estadual
+        Ativo:
+          type: boolean
+        IDEscritorio:
+          type: integer
     DTOFaseCaso:
       title: DTOFaseCaso
       type: object
@@ -89150,6 +89173,8 @@ components:
           $ref: '#/components/schemas/RamosJudicial'
         nrGrupoText:
           type: string
+        isAtivo:
+          type: boolean
     DTONatureza:
       title: DTONatureza
       type: object
