@@ -86523,89 +86523,6 @@ components:
         4: listWeek
 
         5: interval
-    DTOCompromissoSimples:
-      title: DTOCompromissoSimples
-      type: object
-      properties:
-        IDCompromisso:
-          description: O identificador do compromisso
-          type: integer
-        IDArea:
-          description: O identificador da área
-          type: integer
-        IDFuncionario:
-          description: Funcionário que criou o item de agenda
-          type: integer
-        IDFuncionarioResponsavel:
-          description: Funcionário responsável pelo item de agenda
-          type: integer
-        NumeroPasta:
-          type: integer
-        Data:
-          description: A data do item de agenda
-          type: string
-        HoraInicial:
-          type: string
-        DataFinal:
-          description: A data limite do item de agenda
-          type: string
-        DataRealizacao:
-          description: A data em que foi concluido o item
-          type: string
-        Concluido:
-          description: Indica se o item está concluído
-          type: boolean
-        TipoItemAgenda:
-          $ref: '#/components/schemas/TipoItemAgenda'
-        Assunto:
-          description: O título do item de agenda
-          type: string
-        Descricao:
-          description: A descrição do item de agenda
-          type: string
-        IDProcesso:
-          type: integer
-        NumeroDoCaso:
-          description: O numero do caso no LawOffice
-          type: integer
-        TituloCaso:
-          description: O titulo do caso
-          type: string
-        NumeroInterno:
-          type: string
-        NumeroExternoCaso:
-          description: O numero externo do caso
-          type: string
-        Rito:
-          type: string
-        Vencido:
-          type: string
-        Cliente:
-          description: O nome do cliente do caso
-          type: string
-        Executor:
-          description: O nome do executor do item de agenda
-          type: string
-        Situacao:
-          type: string
-        PoloAtivo:
-          type: string
-        PoloPassivo:
-          type: string
-        Classificacao:
-          type: string
-    DTOStatusEncerramentoItemAgenda:
-      title: DTOStatusEncerramentoItemAgenda
-      type: object
-      properties:
-        IDStatusEncerramento:
-          description: O identificador do status de encerramento
-          example: 10
-          type: integer
-        Titulo:
-          description: O status de encerramento
-          example: Item concluído
-          type: string
     RamosJudicial:
       type: integer
       example: 1
@@ -86637,6 +86554,97 @@ components:
         12: Gestão de Ativos
 
         13: Societário
+    DTOCompromissoSimples:
+      title: DTOCompromissoSimples
+      type: object
+      properties:
+        IDCompromisso:
+          description: O identificador do compromisso
+          type: integer
+        IDPrazo:
+          type: integer
+        IDArea:
+          description: O identificador da área
+          type: integer
+        IDDelegante:
+          type: integer
+        IDExecutor:
+          type: integer
+        IDResponsavelCaso:
+          type: integer
+        NumeroPasta:
+          type: integer
+        Data:
+          description: A data do item de agenda
+          type: string
+        HoraInicial:
+          type: string
+        DataFinal:
+          description: A data limite do item de agenda
+          type: string
+        DataRealizacao:
+          description: A data em que foi concluido o item
+          type: string
+        Concluido:
+          description: Indica se o item está concluído
+          type: boolean
+        TipoItemAgenda:
+          $ref: '#/components/schemas/TipoItemAgenda'
+        Assunto:
+          description: O título do item de agenda
+          type: string
+        Descricao:
+          description: A descrição do item de agenda
+          type: string
+        IDProcesso:
+          type: integer
+        TipoProcesso:
+          $ref: '#/components/schemas/RamosJudicial'
+        NumeroDoCaso:
+          description: O numero do caso no LawOffice
+          type: integer
+        TituloCaso:
+          description: O titulo do caso
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExternoCaso:
+          description: O numero externo do caso
+          type: string
+        Rito:
+          type: string
+        Vencido:
+          type: string
+        Cliente:
+          description: O nome do cliente do caso
+          type: string
+        Executor:
+          description: O nome do executor do item de agenda
+          type: string
+        Situacao:
+          type: integer
+        SituacaoString:
+          type: string
+        PoloAtivo:
+          type: string
+        PoloPassivo:
+          type: string
+        Classificacao:
+          type: string
+        IsEditable:
+          type: boolean
+    DTOStatusEncerramentoItemAgenda:
+      title: DTOStatusEncerramentoItemAgenda
+      type: object
+      properties:
+        IDStatusEncerramento:
+          description: O identificador do status de encerramento
+          example: 10
+          type: integer
+        Titulo:
+          description: O status de encerramento
+          example: Item concluído
+          type: string
     DTOAndamentoTemplate:
       title: DTOAndamentoTemplate
       type: object
@@ -87625,6 +87633,14 @@ components:
           $ref: '#/components/schemas/DTOCasoSimples'
         QuantidadeCasosFilho:
           type: integer
+        IDFornecedor:
+          type: integer
+        PrimeiroPoloAtivo:
+          type: string
+        PrimeiroPoloPassivo:
+          type: string
+        NomeFornecedor:
+          type: string
     DTOPasta:
       title: DTOPasta
       type: object
@@ -87714,6 +87730,14 @@ components:
           type: string
         NumeroLawoffice:
           type: integer
+        UF:
+          type: string
+        cidade:
+          type: string
+        IBGECode:
+          type: string
+        nrUF:
+          type: integer
         Classe:
           $ref: '#/components/schemas/ClasseDoCaso'
         Situacao:
@@ -87748,8 +87772,16 @@ components:
           type: string
         DataUltimaAlteracao:
           type: string
+        DsProcessFlowableId:
+          type: string
+        ExecutionID:
+          type: string
         Confidencial:
           type: boolean
+        IDFornecedor:
+          type: integer
+        QuantidadeCasosFilho:
+          type: integer
     DTOCasoFicha:
       title: DTOCasoFicha
       type: object
@@ -87815,6 +87847,8 @@ components:
             example:
               - 10
               - 20
+        IDFornecedor:
+          type: integer
     DTOEnum:
       title: DTOEnum
       type: object
@@ -89040,6 +89074,14 @@ components:
           type: string
         ValorSaldoRemanescente:
           type: number
+        AlteraPedidos:
+          type: boolean
+        IdsPedidos:
+          type: array
+          items:
+            type: integer
+        NrForma:
+          type: integer
     DTOGarantia:
       title: DTOGarantia
       type: object

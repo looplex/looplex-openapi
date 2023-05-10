@@ -4,14 +4,16 @@ properties:
   IDCompromisso:
     description: "O identificador do compromisso"
     type: integer
+  IDPrazo:
+    type: integer
   IDArea:
     description: "O identificador da área"
     type: integer
-  IDFuncionario:
-    description: "Funcionário que criou o item de agenda"
+  IDDelegante:
     type: integer
-  IDFuncionarioResponsavel:
-    description: "Funcionário responsável pelo item de agenda"
+  IDExecutor:
+    type: integer
+  IDResponsavelCaso:
     type: integer
   NumeroPasta:
     type: integer
@@ -39,6 +41,8 @@ properties:
     type: string
   IDProcesso:
     type: integer
+  TipoProcesso:
+    $ref: enums/RamosJudicial.yaml
   NumeroDoCaso:
     description: "O numero do caso no LawOffice"
     type: integer
@@ -61,6 +65,8 @@ properties:
     description: "O nome do executor do item de agenda"
     type: string
   Situacao:
+    type: integer
+  SituacaoString:
     type: string
   PoloAtivo:
     type: string
@@ -68,3 +74,5 @@ properties:
     type: string
   Classificacao:
     type: string
+  IsEditable:
+    type: boolean

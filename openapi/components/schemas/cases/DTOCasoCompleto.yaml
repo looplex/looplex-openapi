@@ -63,6 +63,14 @@ properties:
     type: string
   NumeroLawoffice:
     type: integer
+  UF:
+    type: string
+  cidade:
+    type: string
+  IBGECode:
+    type: string
+  nrUF:
+    type: integer
   Classe:
     $ref: enums/ClasseDoCaso.yaml
   Situacao:
@@ -97,5 +105,13 @@ properties:
     type: string
   DataUltimaAlteracao:
     type: string
+  DsProcessFlowableId:
+    type: string
+  ExecutionID:
+    type: string
   Confidencial:
     type: boolean
+  IDFornecedor:
+    type: integer
+  QuantidadeCasosFilho:
+    type: integer

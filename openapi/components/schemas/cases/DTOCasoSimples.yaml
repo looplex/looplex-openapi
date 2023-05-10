@@ -59,3 +59,11 @@ properties:
     $ref: DTOCasoSimples.yaml
   QuantidadeCasosFilho:
     type: integer
+  IDFornecedor:
+    type: integer
+  PrimeiroPoloAtivo:
+    type: string
+  PrimeiroPoloPassivo:
+    type: string
+  NomeFornecedor:
+    type: string

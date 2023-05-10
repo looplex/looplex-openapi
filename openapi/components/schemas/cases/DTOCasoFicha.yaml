@@ -60,3 +60,5 @@ properties:
     items:
       type: integer
       example: [10, 20]
+  IDFornecedor:
+    type: integer

@@ -16181,6 +16181,11 @@
         "example": 1,
         "description": "1: dayGridMonth\n\n2: timeGridWeek\n\n3: timeGridDay\n\n4: listWeek\n\n5: interval\n"
       },
+      "RamosJudicial": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
+      },
       "DTOCompromissoSimples": {
         "title": "DTOCompromissoSimples",
         "type": "object",
@@ -16189,16 +16194,20 @@
             "description": "O identificador do compromisso",
             "type": "integer"
           },
+          "IDPrazo": {
+            "type": "integer"
+          },
           "IDArea": {
             "description": "O identificador da área",
             "type": "integer"
           },
-          "IDFuncionario": {
-            "description": "Funcionário que criou o item de agenda",
+          "IDDelegante": {
             "type": "integer"
           },
-          "IDFuncionarioResponsavel": {
-            "description": "Funcionário responsável pelo item de agenda",
+          "IDExecutor": {
+            "type": "integer"
+          },
+          "IDResponsavelCaso": {
             "type": "integer"
           },
           "NumeroPasta": {
@@ -16237,6 +16246,9 @@
           "IDProcesso": {
             "type": "integer"
           },
+          "TipoProcesso": {
+            "$ref": "#/components/schemas/RamosJudicial"
+          },
           "NumeroDoCaso": {
             "description": "O numero do caso no LawOffice",
             "type": "integer"
@@ -16267,6 +16279,9 @@
             "type": "string"
           },
           "Situacao": {
+            "type": "integer"
+          },
+          "SituacaoString": {
             "type": "string"
           },
           "PoloAtivo": {
@@ -16277,6 +16292,9 @@
           },
           "Classificacao": {
             "type": "string"
+          },
+          "IsEditable": {
+            "type": "boolean"
           }
         }
       },
@@ -16295,11 +16313,6 @@
             "type": "string"
           }
         }
-      },
-      "RamosJudicial": {
-        "type": "integer",
-        "example": 1,
-        "description": "-2147483648: None\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
       },
       "DTOAndamentoTemplate": {
         "title": "DTOAndamentoTemplate",
@@ -17477,6 +17490,18 @@
           },
           "QuantidadeCasosFilho": {
             "type": "integer"
+          },
+          "IDFornecedor": {
+            "type": "integer"
+          },
+          "PrimeiroPoloAtivo": {
+            "type": "string"
+          },
+          "PrimeiroPoloPassivo": {
+            "type": "string"
+          },
+          "NomeFornecedor": {
+            "type": "string"
           }
         }
       },
@@ -17603,6 +17628,18 @@
           "NumeroLawoffice": {
             "type": "integer"
           },
+          "UF": {
+            "type": "string"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "IBGECode": {
+            "type": "string"
+          },
+          "nrUF": {
+            "type": "integer"
+          },
           "Classe": {
             "$ref": "#/components/schemas/ClasseDoCaso"
           },
@@ -17654,8 +17691,20 @@
           "DataUltimaAlteracao": {
             "type": "string"
           },
+          "DsProcessFlowableId": {
+            "type": "string"
+          },
+          "ExecutionID": {
+            "type": "string"
+          },
           "Confidencial": {
             "type": "boolean"
+          },
+          "IDFornecedor": {
+            "type": "integer"
+          },
+          "QuantidadeCasosFilho": {
+            "type": "integer"
           }
         }
       },
@@ -17753,6 +17802,9 @@
                 20
               ]
             }
+          },
+          "IDFornecedor": {
+            "type": "integer"
           }
         }
       },
@@ -19415,6 +19467,18 @@
           },
           "ValorSaldoRemanescente": {
             "type": "number"
+          },
+          "AlteraPedidos": {
+            "type": "boolean"
+          },
+          "IdsPedidos": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "NrForma": {
+            "type": "integer"
           }
         }
       },
