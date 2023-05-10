@@ -19579,10 +19579,12 @@
         "type": "object",
         "properties": {
           "ID": {
+            "description": "O código identificador do país",
             "example": 26,
             "type": "integer"
           },
           "Pais": {
+            "description": "O nome do país",
             "example": "Brasil",
             "type": "string"
           }
