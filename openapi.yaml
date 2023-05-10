@@ -26692,7 +26692,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DTODadoComplementar'
+                  $ref: '#/components/schemas/DTOInformacaoAdicionalSimples'
         '401':
           description: Unauthorized
           content:
@@ -26754,7 +26754,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DTODadoComplementar'
+                  $ref: '#/components/schemas/DTOInformacaoAdicionalSimples'
         '401':
           description: Unauthorized
           content:
@@ -88135,8 +88135,8 @@ components:
           type: integer
         Descricao:
           type: string
-    DTODadoComplementar:
-      title: DTODadoComplementar
+    DTOInformacaoAdicionalSimples:
+      title: DTOInformacaoAdicionalSimples
       type: object
       properties:
         NomeCliente:

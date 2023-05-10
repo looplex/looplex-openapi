@@ -1,4 +1,4 @@
-title: DTODadoComplementar
+title: DTOInformacaoAdicionalSimples
 type: object
 properties:
   NomeCliente:

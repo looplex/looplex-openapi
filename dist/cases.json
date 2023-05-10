@@ -7093,7 +7093,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTODadoComplementar"
+                    "$ref": "#/components/schemas/DTOInformacaoAdicionalSimples"
                   }
                 }
               }
@@ -7190,7 +7190,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTODadoComplementar"
+                    "$ref": "#/components/schemas/DTOInformacaoAdicionalSimples"
                   }
                 }
               }
@@ -18194,8 +18194,8 @@
           }
         }
       },
-      "DTODadoComplementar": {
-        "title": "DTODadoComplementar",
+      "DTOInformacaoAdicionalSimples": {
+        "title": "DTOInformacaoAdicionalSimples",
         "type": "object",
         "properties": {
           "NomeCliente": {
