@@ -12,4 +12,4 @@ properties:
   Ativo:
     type: boolean
   IDEscritorio:
-    type: integer  
+    type: integer

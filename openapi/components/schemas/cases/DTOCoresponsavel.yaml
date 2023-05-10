@@ -2,10 +2,6 @@ title: DTOCoresponsavel
 type: object
 properties:
   IDCoresponsavel:
-    description: ""
-    example: ""
     type: integer
   NomeCorresponsavel:
-    description: ""
-    example: ""
     type: string
