@@ -44,4 +44,4 @@ properties:
   cdTabela:
     type: integer
   inUsaValoresExpectativaProcesso:
-    type: integer
+    type: boolean

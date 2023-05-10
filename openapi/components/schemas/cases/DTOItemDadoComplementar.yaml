@@ -1,15 +1,11 @@
 title: DTOItemDadoComplementar
 type: object
 properties:
-  IDItemDadoComplementar:
-    description: ""
-    example: -2147483648
+  IDItemDadoComplementar:    
     type: integer
-  Texto:
-    description: ""
-    example: "Opção 1"
+  IDParametroDadoComplementar:
+    type: integer
+  Texto:    
     type: string
-  Valor:
-    description: ""
-    example: "Opção 1"
+  Valor:    
     type: string

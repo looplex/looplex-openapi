@@ -26,22 +26,22 @@ properties:
   OABAdvogado:
     type: string
   RegimeDeContratacao:
-  type: string
-DataAdmissao:
-  type: string
-DataAdmissaoFormatada:
-  type: striing
-DataDemissao:
-  type: string
-DataDemissaoFormatada:
-  type: string
-Cargo:
-  type: string
-CentroDeCusto:
-  type: string
-Area:
-  type: string
-Departamento:
-  type: string
-TipoDeEnvolvimento:
-  type: string
+    type: string
+  DataAdmissao:
+    type: string
+  DataAdmissaoFormatada:
+    type: striing
+  DataDemissao:
+    type: string
+  DataDemissaoFormatada:
+    type: string
+  Cargo:
+    type: string
+  CentroDeCusto:
+    type: string
+  Area:
+    type: string
+  Departamento:
+    type: string
+  TipoDeEnvolvimento:
+    type: string

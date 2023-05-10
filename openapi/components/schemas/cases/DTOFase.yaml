@@ -3,12 +3,13 @@ type: object
 properties:
   IDFase:
     type: integer
-    example: 1
   NomeFase:
     type: string
-    example: "Fase 1"
   TipoProcesso:
     $ref: enums/RamosJudicial.yaml
   TipoProcessoText:
     type: string
-    example: "Judicial Estadual"
+  Ativo:
+    type: boolean
+  IDEscritorio:
+    type: integer

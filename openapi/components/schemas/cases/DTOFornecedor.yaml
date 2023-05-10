@@ -53,3 +53,5 @@ properties:
     type: string
   IDFuncionarioVinculado:
     type: integer
+  Ativo:
+    type: boolean  

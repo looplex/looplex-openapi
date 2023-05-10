@@ -1,0 +1,13 @@
+title: DTOValorDadoComplementarFuncionario
+type: object
+properties:
+  IDFuncionarioValorDadoComplementar:    
+    type: integer
+  IDFuncionario:    
+    type: integer
+  IDParametroDadoComplementar:
+    type: integer
+  Valor:
+    type: string
+  DataDeAtualizacao:
+    type: string

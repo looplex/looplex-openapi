@@ -5,7 +5,7 @@ properties:
     type: integer
   IdDominio:
     type: integer
-  Nome:
+  Base:
     type: string
   Asp:
     type: string
@@ -13,3 +13,5 @@ properties:
     type: string
   Ativo:
     type: boolean
+  Dominio:
+    type: string

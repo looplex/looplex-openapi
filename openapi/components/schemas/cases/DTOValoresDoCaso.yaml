@@ -21,7 +21,11 @@ properties:
     type: number
   ValorContingenciaAtualizado:
     type: number
+  EditarCamposValoresEObrigacoes:
+    type: boolean
   MoedaValorContingencia:
     type: integer
   Pedidos:
-    $ref: DTOCasoPedidoSimples.yaml
+    type: array
+    items:
+      $ref: DTOCasoPedidoSimples.yaml

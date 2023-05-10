@@ -10,7 +10,7 @@ properties:
   Logradouro:
     type: string
   Numero:
-    type: integer
+    type: string
   Complemento:
     type: string
   Bairro:

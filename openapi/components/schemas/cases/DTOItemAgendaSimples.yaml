@@ -27,5 +27,7 @@ properties:
     type: string
   IdPai:
     type: integer
+  IsEditable:
+    type: boolean  
   Recorrencia:
     $ref: DTORecorrenciaDeItemAgenda.yaml

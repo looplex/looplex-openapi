@@ -1,0 +1,23 @@
+title: ProcessosCadastradosResposta
+type: object
+properties:
+  idPreProcesso:  
+    type: integer
+  dsNumeroExterno:  
+    type: string
+  nrSequencia:
+    type: integer
+  nrInterno:  
+    type: string
+  dsTitulo:
+    type: string
+  dtCriacao:
+    type: string
+  IDFuncionario:
+    type: integer
+  Nome:
+    type: string
+  cdProcesso:
+    type: integer
+  Domain:
+    type: string

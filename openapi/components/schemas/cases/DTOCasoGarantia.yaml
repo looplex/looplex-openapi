@@ -39,3 +39,11 @@ properties:
     type: string
   ValorSaldoRemanescente:
     type: number
+  AlteraPedidos:
+    type: boolean
+  IdsPedidos:
+    type: array
+    items:
+      type: integer
+  NrForma:
+    type: integer

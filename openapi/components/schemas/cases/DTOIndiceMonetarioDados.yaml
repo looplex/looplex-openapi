@@ -6,7 +6,6 @@ properties:
   IdIndiceMonetario:
     type: integer
   DataCorrecao:
-    type: string
-    example: "2022-06-01T12:00:00"
+    type: string    
   ValorCorrecao:
     type: number
