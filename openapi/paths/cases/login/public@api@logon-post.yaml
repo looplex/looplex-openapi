@@ -1,6 +1,6 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Session
+  - Autenticação
 summary: Login
 operationId: api-logon
 # Parâmetros da requisição

@@ -32,18 +32,172 @@
     {
       "name": "Login",
       "description": "Endpoints de login"
+    },
+    {
+      "name": "Agenda",
+      "description": "Endpoints de Agenda"
+    },
+    {
+      "name": "Andamento",
+      "description": "Endpoints de Andamento"
+    },
+    {
+      "name": "Area",
+      "description": "Endpoints de Area"
+    },
+    {
+      "name": "Busca",
+      "description": "Endpoints de Busca"
+    },
+    {
+      "name": "Casos",
+      "description": "Endpoints de Casos"
+    },
+    {
+      "name": "Calculo Monetário",
+      "description": "Endpoints de Calculo Monetário"
+    },
+    {
+      "name": "Categoria",
+      "description": "Endpoints de Categoria"
+    },
+    {
+      "name": "Cliente",
+      "description": "Endpoints de Cliente"
+    },
+    {
+      "name": "Conta de acesso",
+      "description": "Endpoints de Conta de acesso"
+    },
+    {
+      "name": "Contato",
+      "description": "Endpoints de Contato"
+    },
+    {
+      "name": "Contrato",
+      "description": "Endpoints de Contrato"
+    },
+    {
+      "name": "Informações adicionais",
+      "description": "Endpoints de Informações adicionais"
+    },
+    {
+      "name": "Informações adicionais (valor)",
+      "description": "Endpoints de Informações adicionais (valor)"
+    },
+    {
+      "name": "Decisões",
+      "description": "Endpoints de Decisões"
+    },
+    {
+      "name": "Despesas",
+      "description": "Endpoints de Despesas"
+    },
+    {
+      "name": "Expectativa reivindicação",
+      "description": "Endpoints de Expectativa reivindicação"
+    },
+    {
+      "name": "Envolvimento das partes",
+      "description": "Endpoints de Envolvimento das partes"
+    },
+    {
+      "name": "Fase caso",
+      "description": "Endpoints de Fase caso"
+    },
+    {
+      "name": "Funcionário",
+      "description": "Endpoints de Funcionário"
+    },
+    {
+      "name": "Garantia",
+      "description": "Endpoints de Garantia"
+    },
+    {
+      "name": "Hierarquia",
+      "description": "Endpoints de Hierarquia"
+    },
+    {
+      "name": "Natureza",
+      "description": "Endpoints de Natureza"
+    },
+    {
+      "name": "Partes",
+      "description": "Endpoints de Partes"
+    },
+    {
+      "name": "Pedidos",
+      "description": "Endpoints de Pedidos"
+    },
+    {
+      "name": "Permissão",
+      "description": "Endpoints de Permissão"
+    },
+    {
+      "name": "Produtos",
+      "description": "Endpoints de Produtos"
+    },
+    {
+      "name": "Push",
+      "description": "Endpoints de Push"
+    },
+    {
+      "name": "Render",
+      "description": "Endpoints de Render"
+    },
+    {
+      "name": "Session",
+      "description": "Endpoints de Session"
+    },
+    {
+      "name": "Tabela preço categoria",
+      "description": "Endpoints de login"
+    },
+    {
+      "name": "Tabela preço",
+      "description": "Endpoints de Tabela preço"
+    },
+    {
+      "name": "Tarefa",
+      "description": "Endpoints de Tarefa"
+    },
+    {
+      "name": "Timeline",
+      "description": "Endpoints de Timeline"
+    },
+    {
+      "name": "Timesheet",
+      "description": "Endpoints de Timesheet"
+    },
+    {
+      "name": "Valores apurados",
+      "description": "Endpoints de Valores apurados"
+    },
+    {
+      "name": "País",
+      "description": "Endpoints de País"
+    },
+    {
+      "name": "Varas e Foros",
+      "description": "Endpoints de Varas e Foros"
     }
   ],
   "x-tagGroups": [
     {
-      "name": "Endpoints",
+      "name": "Autenticação Looplex Cases",
+      "tags": [
+        "Autenticação"
+      ]
+    },
+    {
+      "name": "Endpoints Looplex Cases",
       "tags": [
         "Agenda",
         "Andamento",
         "Area",
         "Busca",
-        "Casos",
         "Calculo Monetário",
+        "Casos",
         "Categoria",
         "Cliente",
         "Conta de acesso",
@@ -53,28 +207,27 @@
         "Informações adicionais (valor)",
         "Decisões",
         "Despesas",
-        "Expectativa reivindicação",
         "Envolvimento das partes",
+        "Expectativa reivindicação",
         "Fase caso",
         "Funcionário",
         "Garantia",
         "Hierarquia",
         "Natureza",
+        "País",
         "Partes",
         "Pedidos",
         "Permissão",
         "Produtos",
         "Push",
         "Render",
-        "Session",
-        "Tabela preço categoria",
         "Tabela preço",
+        "Tabela preço categoria",
         "Tarefa",
         "Timeline",
         "Timesheet",
         "Valores apurados",
-        "Varas e Foros",
-        "País"
+        "Varas e Foros"
       ]
     }
   ],
@@ -88,7 +241,7 @@
     "/api/logon": {
       "post": {
         "tags": [
-          "Session"
+          "Autenticação"
         ],
         "summary": "Login",
         "operationId": "api-logon",
@@ -1470,91 +1623,6 @@
         }
       }
     },
-    "/api/agenda/{id}/{tipo}": {
-      "get": {
-        "tags": [
-          "Agenda"
-        ],
-        "summary": "Obtem item de agenda",
-        "description": "Obtem as informações do item de agenda",
-        "operationId": "api-agenda-id-tipo",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Identificador do caso",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "tipo",
-            "in": "path",
-            "description": "Tipo do item de agenda",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/TipoItemAgenda"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Resposta",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DTOItemAgenda"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/agenda/status_encerramento": {
       "get": {
         "tags": [
@@ -2205,156 +2273,6 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/andamentos/{idAndamento}": {
-      "put": {
-        "tags": [
-          "Andamento"
-        ],
-        "summary": "Atualizar andamento",
-        "description": "Atualiza o andamento.",
-        "operationId": "api-andamentos-idAndamento-put",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "idAndamento",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DTOAndamento"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Retorna o andamento atualizado.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DTOAndamento"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Andamento"
-        ],
-        "summary": "Apagar andamento",
-        "description": "Apaga o andamento",
-        "operationId": "api-andamentos-idAndamento-delete",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "idAndamento",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "O andamento foi excluído."
           },
           "401": {
             "description": "Unauthorized",
@@ -7988,73 +7906,6 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Decisoes/{idProcessoDecisao}": {
-      "delete": {
-        "tags": [
-          "Decisões"
-        ],
-        "summary": "Exclui decisão",
-        "operationId": "api-Decisoes-idProcessoDecisao",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "idProcessoDecisao",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "A decisão foi excluída."
           },
           "401": {
             "description": "Unauthorized",
