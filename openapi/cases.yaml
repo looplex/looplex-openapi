@@ -1,3 +1,4 @@
+# https://redocly.com/docs/openapi-visual-reference/info/
 openapi: 3.0.2
 security: 
   - Ocp-Apim-Subscription-Key: []
@@ -32,7 +33,7 @@ servers:
   - url: "https://graph.looplex.com/cases"
     description: "Looplex Cases Server"
 paths:
-  # Session
+  # Autenticação
   /api/logon:
     post:
       $ref: ./paths/cases/login/public@api@logon-post.yaml
@@ -295,33 +296,14 @@ paths:
     get:
       $ref: ./paths/cases/contrato/public@api@contratos@{id}-get.yaml
 
-  # Dados complementares
-  /api/casos/{idCaso}/dadoscomplementares:
-    get:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@casos@{idCaso}@dadoscomplementares-get.yaml
-  /api/casos/num/dadoscomplementares:
-    get:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@casos@num@dadoscomplementares-get.yaml
-  /api/dado_complementar/{id}:
-    get:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-get.yaml'
-    delete:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
-  /api/dado_complementar:
+  # Informações adicionais (Valor)
+  /api/casos/{idCaso}/CamposDadosComplementares:
     post:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@dado_complementar-post.yaml
-    put:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@dado_complementar-put.yaml
+      $ref: './paths/cases/informacoes_adicionais_valor/public@api@casos@idCaso@CamposDadosComplementares-post.yaml'
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
-  /api/dado_complementar_caso:
-    get:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar_caso-get.yaml'      
-  /api/dado_complementar_caso/{tipoCaso}:
-    get:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar_caso@tipoCaso-get.yaml'
-  
+      
   # Decisões
   /api/casos/{idCaso}/Decisoes:
     get:

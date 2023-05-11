@@ -6536,14 +6536,14 @@
         }
       }
     },
-    "/api/casos/{idCaso}/dadoscomplementares": {
-      "get": {
+    "/api/casos/{idCaso}/CamposDadosComplementares": {
+      "post": {
         "tags": [
-          "Informações adicionais"
+          "Informações adicionais (valor)"
         ],
-        "summary": "Dados complementares do caso",
-        "description": "Obtém um array com os dados complementares de acordo com o identificador do caso.",
-        "operationId": "api-casos-idCaso-dadoscomplementares",
+        "summary": "Incluir valor de Informação adicional",
+        "description": "Utilizado para incluir um valor em um processo utilizando uma informação adicional",
+        "operationId": "api-casos-idCaso-CamposDadosComplementares",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -6551,317 +6551,11 @@
           {
             "name": "idCaso",
             "in": "path",
+            "description": "O identificador do processo",
             "required": true,
             "schema": {
               "type": "integer"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Obtém um array com os dados complementares de acordo com o identificador do caso.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOInformacaoAdicionalSimples"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/casos/num/dadoscomplementares": {
-      "get": {
-        "tags": [
-          "Informações adicionais"
-        ],
-        "summary": "Dados complementares dos casos",
-        "description": "Obtém um array com os dados complementares pelo numero interno, numero externo ou identificador do caso.",
-        "operationId": "api-casos-num-dadoscomplementares",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "NumeroInterno",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "NumeroExterno",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "IdProcesso",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Obtém um array com os dados complementares pelo numero interno, numero externo ou identificador do caso.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOInformacaoAdicionalSimples"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/dado_complementar/{id}": {
-      "get": {
-        "tags": [
-          "Informações adicionais"
-        ],
-        "summary": "Obter dado complementar por identificador",
-        "operationId": "api-dado_complementar-id-get",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "example": "1",
-            "description": "O identificador do dado complementar",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "O dado complementar",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DTOInformacaoAdicional"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Informações adicionais"
-        ],
-        "summary": "Excluir dado complementar",
-        "operationId": "api-dado_complementar-id-delete",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "example": "1",
-            "description": "O identificador do dado complementar",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "O dado complementar foi excluído"
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/dado_complementar": {
-      "post": {
-        "tags": [
-          "Informações adicionais"
-        ],
-        "summary": "Inclui dado complementar por tipo",
-        "description": "Cadastra um dado complementar por tipo",
-        "operationId": "api-dado_complementar-post",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
           }
         ],
         "requestBody": {
@@ -6870,302 +6564,18 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/DTOInformacaoAdicional"
+                  "$ref": "#/components/schemas/DTOProcessoValorDadoComplementar"
                 }
               }
             }
           }
         },
-        "responses": {
-          "204": {
-            "description": "O dado complementar foi cadastrado."
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Informações adicionais"
-        ],
-        "summary": "Atualiza Dados Complementares",
-        "description": "Atualizar os campos com os valores passados",
-        "operationId": "api-dado_complementar-put",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DTOInformacaoAdicional"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "O dado complementar foi atualizado."
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/dado_complementar/valor": {
-      "post": {
-        "tags": [
-          "Informações adicionais (valor)"
-        ],
-        "summary": "Inclui ou atualiza valor no dado complementar",
-        "description": "Inclui ou atualiza valores nos dados complementares informados",
-        "operationId": "api-dado_complementar-valor",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/DTOValorDadoComplementarCaso"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "Os valores foram incluídos."
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/dado_complementar_caso": {
-      "get": {
-        "tags": [
-          "Informações adicionais"
-        ],
-        "summary": "Obtém dados complementares de caso",
-        "description": "Obtém os dados complementares de caso",
-        "operationId": "api-dado_complementar_caso",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          }
-        ],
         "responses": {
           "200": {
-            "description": "Os dados complementares",
+            "description": "200 OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOInformacaoAdicional"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/dado_complementar_caso/{tipoCaso}": {
-      "get": {
-        "tags": [
-          "Informações adicionais"
-        ],
-        "summary": "Obtém os dados complementares do tipo de caso informado",
-        "description": "Obtém o dado complementar que pertence ao tipo de caso informado",
-        "operationId": "api-dado_complementar_caso-tipoCaso",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "tipoCaso",
-            "in": "path",
-            "example": 3,
-            "description": "O tipo do caso",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/RamosJudicial"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Os dados complementares",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOInformacaoAdicional"
-                  }
-                }
+                "example": true
               }
             }
           },
@@ -17335,188 +16745,43 @@
           }
         }
       },
-      "DTOInformacaoAdicionalSimples": {
-        "title": "DTOInformacaoAdicionalSimples",
+      "DTOProcessoValorDadoComplementar": {
+        "title": "DTOProcessoValorDadoComplementar",
         "type": "object",
         "properties": {
-          "NomeCliente": {
-            "type": "string"
-          },
-          "TituloCaso": {
-            "type": "string"
-          },
-          "NumeroInterno": {
-            "type": "string"
-          },
-          "NumeroExterno": {
-            "type": "string"
-          },
-          "Nome": {
-            "type": "string"
-          },
-          "TipoCampo": {
-            "type": "string"
-          },
-          "Valores": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "IdCaso": {
-            "type": "integer"
-          }
-        }
-      },
-      "TipoDadoComplementar": {
-        "type": "object",
-        "title": "TipoDadoComplementar",
-        "example": 1,
-        "description": "-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
-      },
-      "DTOItemDadoComplementar": {
-        "title": "DTOItemDadoComplementar",
-        "type": "object",
-        "properties": {
-          "IDItemDadoComplementar": {
+          "IDProcessoValorDadoComplementar": {
+            "description": "O identificador do valor gravado no processo",
             "type": "integer"
           },
-          "IDParametroDadoComplementar": {
+          "IDProcesso": {
+            "description": "O identificador do processo em que o valor foi ou será gravado",
             "type": "integer"
           },
-          "Texto": {
-            "type": "string"
-          },
-          "Valor": {
-            "type": "string"
-          }
-        }
-      },
-      "DTOTipoProcesso": {
-        "title": "DTOTipoProcesso",
-        "type": "object",
-        "properties": {
-          "IDParametroDadoComplementar": {
-            "description": "O identificador da informação adicional (dado complementar)",
-            "type": "integer"
-          },
-          "Tipo": {
-            "$ref": "#/components/schemas/RamosJudicial"
-          }
-        }
-      },
-      "DTOAreaInformacaoAdicional": {
-        "title": "DTOAreaInformacaoAdicional",
-        "type": "object",
-        "properties": {
-          "IDAreaParametroDadoComplementar": {
-            "type": "integer"
-          },
-          "IDParametroDadoComplementar": {
-            "type": "integer"
-          },
-          "IDArea": {
-            "type": "integer"
-          },
-          "Area": {
-            "type": "string"
-          }
-        }
-      },
-      "DTOValorDadoComplementarFuncionario": {
-        "title": "DTOValorDadoComplementarFuncionario",
-        "type": "object",
-        "properties": {
-          "IDFuncionarioValorDadoComplementar": {
-            "type": "integer"
-          },
-          "IDFuncionario": {
-            "type": "integer"
-          },
-          "IDParametroDadoComplementar": {
+          "IDParamDadoComplementar": {
+            "description": "O identificador da Informação adicional que será utilizada para gravar o valor",
             "type": "integer"
           },
           "Valor": {
+            "description": "O valor a ser gravado",
             "type": "string"
           },
-          "DataDeAtualizacao": {
+          "DtValor": {
             "type": "string"
+          },
+          "DataAtualizacao": {
+            "type": "string"
+          },
+          "IDContaDeAcesso": {
+            "type": "integer"
           }
-        }
-      },
-      "DTOInformacaoAdicional": {
-        "title": "DTOInformacaoAdicional",
-        "type": "object",
-        "properties": {
-          "IDParametroDadoComplementar": {
-            "example": -2147483648,
-            "description": "O identificador do dado complementar",
-            "type": "integer"
-          },
-          "IDCliente": {
-            "type": "integer"
-          },
-          "TipoCampoDadoComplementar": {
-            "$ref": "#/components/schemas/TipoDadoComplementar"
-          },
-          "TipoCampoDadoComplementarText": {
-            "type": "string"
-          },
-          "TituloDadoComplementar": {
-            "description": "O titulo do dado complementar",
-            "example": "Nome completo",
-            "type": "string"
-          },
-          "TamanhoCampo": {
-            "description": "O tamanho do campo (quando aplicável)",
-            "example": 200,
-            "type": "integer"
-          },
-          "Obrigatorio": {
-            "description": "",
-            "example": false,
-            "type": "boolean"
-          },
-          "Ativo": {
-            "type": "boolean"
-          },
-          "Ordem": {
-            "type": "integer"
-          },
-          "TipoDeVinculo": {
-            "type": "string"
-          },
-          "Opcoes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOItemDadoComplementar"
-            }
-          },
-          "VinculadoNosTiposDeProcesso": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOTipoProcesso"
-            }
-          },
-          "VinculadoNasAreas": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOAreaInformacaoAdicional"
-            }
-          },
-          "ValoresProcessosCadastrados": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOValorDadoComplementarCaso"
-            }
-          },
-          "ValoresFuncionariosCadastrados": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOValorDadoComplementarFuncionario"
-            }
-          }
-        }
+        },
+        "required": [
+          "IDProcesso",
+          "IDParamDadoComplementar",
+          "Valor",
+          "DtValor",
+          "DataAtualizacao"
+        ]
       },
       "DTOCasoDecisao": {
         "title": "DTOCasoDecisao",
