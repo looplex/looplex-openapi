@@ -3,7 +3,7 @@ tags:
   - Informações adicionais
 summary: Excluir informação adicional
 description: Exclui a informação adicional. Essa informação não poderá mais ser utilizada para gravar valores em processos depois de excluída.
-operationId: api-dado_complementar-id
+operationId: api-dado_complementar-id-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

@@ -1,34 +1,34 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Informações adicionais (valor)
-summary: Incluir valor
-description: Utilizado para incluir um valor em um processo utilizando uma informação adicional
-operationId: api-casos-idCaso-CamposDadosComplementares
+  - Informações adicionais
+summary: Lista Informações adicionais por tipo de caso
+operationId: api-dado_complementar_caso-tipoCaso
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: idCaso
+  - name: tipoCaso
     in: path
-    description: "O identificador do processo"
     required: true
     schema:
-      type: integer
+      $ref: ../../../components/schemas/cases/enums/RamosJudicial.yaml
+  - name: mostraInativos
+    in: query
+    description: "Listar as Informações adicionais inativas? (Default: false)"
+    required: false
+    schema:
+      type: boolean
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
-requestBody:
-  content:
-    application/json:
-      schema:
-        type: array
-        items: 
-          $ref: ../../../components/schemas/cases/DTOProcessoValorDadoComplementar.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "200 OK"
+    description: "OK"
     content:
       application/json:
-        example: true
+        schema:
+          type: array
+          items:
+            $ref: ../../../components/schemas/cases/DTOInformacaoAdicional.yaml
   "401":
     description: "Unauthorized"
     content:

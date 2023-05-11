@@ -1,15 +1,15 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Informações adicionais (valor)
-summary: Incluir valor
-description: Utilizado para incluir um valor em um processo utilizando uma informação adicional
-operationId: api-casos-idCaso-CamposDadosComplementares
+  - Informações adicionais
+summary: Editar Informação adicional
+description: Editar propriedades de Informações adicionais
+operationId: api-dado_complementar-edit
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: idCaso
-    in: path
-    description: "O identificador do processo"
+  - name: IDParametroDadoComplementar
+    in: query
+    description: "O identificador da Informação adicional"
     required: true
     schema:
       type: integer
@@ -20,15 +20,16 @@ requestBody:
       schema:
         type: array
         items: 
-          $ref: ../../../components/schemas/cases/DTOProcessoValorDadoComplementar.yaml
+          $ref: ../../../components/schemas/cases/DTOObjetoNomeValor.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "200 OK"
+    description: "OK"
     content:
       application/json:
-        example: true
+        schema:
+          $ref: ../../../components/schemas/cases/DTOInformacaoAdicional.yaml
   "401":
     description: "Unauthorized"
     content:
