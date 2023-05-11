@@ -296,6 +296,11 @@ paths:
     get:
       $ref: ./paths/cases/contrato/public@api@contratos@{id}-get.yaml
 
+  # Informações adicionais
+  /api/dado_complementar/{id}:
+    delete:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
+  
   # Informações adicionais (Valor)
   /api/casos/{idCaso}/CamposDadosComplementares:
     post:
@@ -303,7 +308,7 @@ paths:
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
-      
+
   # Decisões
   /api/casos/{idCaso}/Decisoes:
     get:
