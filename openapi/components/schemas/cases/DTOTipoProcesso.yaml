@@ -2,7 +2,7 @@ title: DTOTipoProcesso
 type: object
 properties:
   IDParametroDadoComplementar:
-    description: "O identificador da informação adicional (dado complementar)"
+    description: "O identificador da informação adicional"
     type: integer
   Tipo:
     $ref: enums/RamosJudicial.yaml

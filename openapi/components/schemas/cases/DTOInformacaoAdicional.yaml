@@ -3,16 +3,18 @@ type: object
 properties:
   IDParametroDadoComplementar:
     example: -2147483648
-    description: "O identificador do dado complementar"
+    description: "O identificador da Informação adicional"
     type: integer
   IDCliente:
-    type: integer  
+    type: integer
+    description: "O identificador do cliente. Se o valor for maior que 0, a Informação adicional será vinculada ao cliente."
   TipoCampoDadoComplementar:
     $ref: enums/TipoDadoComplementar.yaml
   TipoCampoDadoComplementarText:
-    type: string  
+    type: string
+    description: "O tipo de campo da Informação adicional formatado"
   TituloDadoComplementar:
-    description: "O titulo do dado complementar"
+    description: "O titulo da Informação adicional"
     example: "Nome completo"
     type: string
   TamanhoCampo:
@@ -20,15 +22,18 @@ properties:
     example: 200
     type: integer
   Obrigatorio:
-    description: ""
+    description: "Indica se o preenchimento dessa Informação adicional é obrigatória"
     example: false
     type: boolean
   Ativo:
     type: boolean
+    description: "Indica se essa Informação adicional está ativa ou inativa"
   Ordem:
     type: integer
+    description: "A ordem de exibição dessa Informação adicional"
   TipoDeVinculo:
-    type: string  
+    type: string
+    description: "Indica quais os tipos de vínculo dessa Informação adicional"  
   Opcoes:
     type: array
     items:

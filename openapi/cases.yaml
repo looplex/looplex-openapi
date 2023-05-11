@@ -300,7 +300,32 @@ paths:
   /api/dado_complementar/{id}:
     delete:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
-  
+    get:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-get.yaml'
+  /api/dado_complementar/todos:
+    get:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@todos-get.yaml'
+  /api/dado_complementar_caso:
+    get:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar_caso-get.yaml'
+  /api/dado_complementar_caso/{tipoCaso}:
+    get:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar_caso@tipoCaso-get.yaml'
+  /api/casos/{idCaso}/DadosComplementaresPorCaso:
+    get:
+      $ref: './paths/cases/informacoes_adicionais/public@api@casos@idCaso@DadosComplementaresPorCaso-get.yaml'
+  /api/casos/num/dadoscomplementares:
+    get:
+      $ref: './paths/cases/informacoes_adicionais/public@api@casos@num@dadoscomplementares-get.yaml'
+  /api/dado_complementar:
+    post:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar-post.yaml'
+    put:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar-put.yaml'
+  /api/dado_complementar/edit:
+    put:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@edit-put.yaml'
+
   # Informações adicionais (Valor)
   /api/casos/{idCaso}/CamposDadosComplementares:
     post:

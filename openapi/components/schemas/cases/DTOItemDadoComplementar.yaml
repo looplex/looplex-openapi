@@ -3,9 +3,13 @@ type: object
 properties:
   IDItemDadoComplementar:    
     type: integer
+    description: "O identificador da opção da Informação adicional"
   IDParametroDadoComplementar:
     type: integer
+    description: "O identificador da Informação adicional"
   Texto:    
     type: string
+    description: "O texto da opção"
   Valor:    
     type: string
+    description: "O texto da opção"

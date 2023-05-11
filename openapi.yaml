@@ -26583,7 +26583,7 @@ paths:
       description: >-
         Exclui a informação adicional. Essa informação não poderá mais ser
         utilizada para gravar valores em processos depois de excluída.
-      operationId: api-dado_complementar-id
+      operationId: api-dado_complementar-id-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
         - name: id
@@ -26624,11 +26624,491 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+    get:
+      tags:
+        - Informações adicionais
+      summary: Obter Informação adicional por identificador
+      description: >-
+        Obtém os dados de uma Informação adicional de acordo com o identificador
+        informado
+      operationId: api-dado_complementar-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da Informação adicional
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOInformacaoAdicional'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/dado_complementar/todos:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Listar todas as Informações adicionais
+      description: Lista todas as informações adicionais
+      operationId: api-dado_complementar-todos
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOInformacaoAdicional'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/dado_complementar_caso:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Lista Informações adicionais por filtro
+      description: Lista as Informações adicionais de acordo com o filtro informado
+      operationId: api-dado_complementar_caso
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: clienteId
+          in: query
+          description: O identificador do cliente
+          required: false
+          schema:
+            type: integer
+        - name: areaId
+          in: query
+          description: O identificador da área
+          required: false
+          schema:
+            type: integer
+        - name: tipoCaso
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+        - name: mostraInativo
+          in: query
+          description: 'Listar as Informações adicionais inativas? (Default: false)'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOInformacaoAdicional'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/dado_complementar_caso/{tipoCaso}:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Lista Informações adicionais por tipo de caso
+      operationId: api-dado_complementar_caso-tipoCaso
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: tipoCaso
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+        - name: mostraInativos
+          in: query
+          description: 'Listar as Informações adicionais inativas? (Default: false)'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOInformacaoAdicional'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/DadosComplementaresPorCaso:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Informações adicionais por processo
+      operationId: api-casos-idCaso-DadosComplementaresPorCaso
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do processo
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOInformacaoAdicionalSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/dadoscomplementares:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Listar Informações adicionais
+      description: >-
+        Listar as Informações adicionais por identificador do processo, numero
+        interno ou numero externo
+      operationId: api-casos-num-dadoscomplementares
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do processo. (Default: 0)'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do processo. (Default: empty string)'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do processo. (Default: 0)'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOInformacaoAdicionalSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/dado_complementar:
+    post:
+      tags:
+        - Informações adicionais
+      summary: Cadastra Informação adicional
+      description: Cadastrar uma nova Informação adicional
+      operationId: api-dado_complementar-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOInformacaoAdicional'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOInformacaoAdicional'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+    put:
+      tags:
+        - Informações adicionais
+      summary: Atualiza Informações adicionais
+      description: Atualiza as Informações adicionais informadas
+      operationId: api-dado_complementar-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOInformacaoAdicional'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: As Informações adicionais foram atualizadas corretamente.
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/dado_complementar/edit:
+    put:
+      tags:
+        - Informações adicionais
+      summary: Editar Informação adicional
+      description: Editar propriedades de Informações adicionais
+      operationId: api-dado_complementar-edit
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDParametroDadoComplementar
+          in: query
+          description: O identificador da Informação adicional
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOObjetoNomeValor'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOInformacaoAdicional'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/CamposDadosComplementares:
     post:
       tags:
         - Informações adicionais (valor)
-      summary: Incluir valor de Informação adicional
+      summary: Incluir valor
       description: >-
         Utilizado para incluir um valor em um processo utilizando uma informação
         adicional
@@ -85881,7 +86361,6 @@ components:
         5: interval
     RamosJudicial:
       type: integer
-      example: 1
       description: |
         -2147483648: None
 
@@ -86648,23 +87127,21 @@ components:
       properties:
         IDProcessoValorDadoComplementar:
           description: >-
-            O identificador do valor gravado na informação adicional (dado
-            complementar)
+            O identificador do valor gravado no processo utilizando a Informação
+            adicional
           type: integer
         IDCaso:
           description: >-
             O identificador do caso. Se o valor for maior que 0, o dado
-            complementar será de caso.
+            complementar será vinculada ao caso.
           example: 100
           type: integer
         IDParametroDadoComplementar:
-          description: O identificador da informação adicional (dado complementar)
+          description: O identificador da Informação adicional
           example: 50
           type: integer
         Valor:
-          description: >-
-            O valor a ser gravado/atualizado na informação adicional (dado
-            complementar)
+          description: O valor a ser gravado/atualizado na Informação adicional
           example: Valor para gravar
           type: string
         DataDeAtualizacao:
@@ -87530,6 +88007,189 @@ components:
           type: integer
         Descricao:
           type: string
+    TipoDadoComplementar:
+      type: object
+      title: TipoDadoComplementar
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: CaixaTexto
+
+        2: NumericoDecimal
+
+        3: NumericoInteiro
+
+        4: DataHora
+
+        5: CaixaTextoMultiLinha
+
+        6: CaixaCombo
+
+        7: CaixaDeMarcacao
+
+        8: PagadorCombo
+
+        9: EmpresaCombo
+
+        10: ClienteCombo
+
+        11: GrupoClienteCombo
+
+        12: ContratoSelecao
+
+        13: ClienteSelecao
+
+        14: CasoSelecao
+
+        15: AreaCombo
+
+        16: ProfissionalCombo
+    DTOItemDadoComplementar:
+      title: DTOItemDadoComplementar
+      type: object
+      properties:
+        IDItemDadoComplementar:
+          type: integer
+          description: O identificador da opção da Informação adicional
+        IDParametroDadoComplementar:
+          type: integer
+          description: O identificador da Informação adicional
+        Texto:
+          type: string
+          description: O texto da opção
+        Valor:
+          type: string
+          description: O texto da opção
+    DTOTipoProcesso:
+      title: DTOTipoProcesso
+      type: object
+      properties:
+        IDParametroDadoComplementar:
+          description: O identificador da informação adicional
+          type: integer
+        Tipo:
+          $ref: '#/components/schemas/RamosJudicial'
+    DTOAreaInformacaoAdicional:
+      title: DTOAreaInformacaoAdicional
+      type: object
+      properties:
+        IDAreaParametroDadoComplementar:
+          type: integer
+          description: O identificador do vinculo da area
+        IDParametroDadoComplementar:
+          type: integer
+          description: O identificador da Informação adicional
+        IDArea:
+          type: integer
+          description: O identificador da área em que a Informação adicional está vinculada
+        Area:
+          type: string
+          description: O nome da área em que a Informação adicional está vinculada
+    DTOValorDadoComplementarFuncionario:
+      title: DTOValorDadoComplementarFuncionario
+      type: object
+      properties:
+        IDFuncionarioValorDadoComplementar:
+          type: integer
+          description: >-
+            O identificador do valor gravado para o funcionário utilizando a
+            Informação adicional
+        IDFuncionario:
+          type: integer
+          description: O identificador do funcionário
+        IDParametroDadoComplementar:
+          type: integer
+          description: O identificador da Informação adicional
+        Valor:
+          type: string
+          description: O valor a ser gravado/atualizado na Informação adicional
+          example: Valor para gravar
+        DataDeAtualizacao:
+          description: A data de atualização do valor
+          example: '2022-01-01T00:00:00.000'
+          type: string
+    DTOInformacaoAdicional:
+      title: DTOInformacaoAdicional
+      type: object
+      properties:
+        IDParametroDadoComplementar:
+          example: -2147483648
+          description: O identificador da Informação adicional
+          type: integer
+        IDCliente:
+          type: integer
+          description: >-
+            O identificador do cliente. Se o valor for maior que 0, a Informação
+            adicional será vinculada ao cliente.
+        TipoCampoDadoComplementar:
+          $ref: '#/components/schemas/TipoDadoComplementar'
+        TipoCampoDadoComplementarText:
+          type: string
+          description: O tipo de campo da Informação adicional formatado
+        TituloDadoComplementar:
+          description: O titulo da Informação adicional
+          example: Nome completo
+          type: string
+        TamanhoCampo:
+          description: O tamanho do campo (quando aplicável)
+          example: 200
+          type: integer
+        Obrigatorio:
+          description: Indica se o preenchimento dessa Informação adicional é obrigatória
+          example: false
+          type: boolean
+        Ativo:
+          type: boolean
+          description: Indica se essa Informação adicional está ativa ou inativa
+        Ordem:
+          type: integer
+          description: A ordem de exibição dessa Informação adicional
+        TipoDeVinculo:
+          type: string
+          description: Indica quais os tipos de vínculo dessa Informação adicional
+        Opcoes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOItemDadoComplementar'
+        VinculadoNosTiposDeProcesso:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOTipoProcesso'
+        VinculadoNasAreas:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOAreaInformacaoAdicional'
+        ValoresProcessosCadastrados:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
+        ValoresFuncionariosCadastrados:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOValorDadoComplementarFuncionario'
+    DTOInformacaoAdicionalSimples:
+      title: DTOInformacaoAdicionalSimples
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        Nome:
+          type: string
+        TipoCampo:
+          type: string
+        Valores:
+          type: array
+          items:
+            type: string
+        IdCaso:
+          type: integer
     DTOProcessoValorDadoComplementar:
       title: DTOProcessoValorDadoComplementar
       type: object

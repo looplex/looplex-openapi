@@ -2,18 +2,18 @@ title: DTOValorDadoComplementarCaso
 type: object
 properties:
   IDProcessoValorDadoComplementar:
-    description: "O identificador do valor gravado na informação adicional (dado complementar)"
+    description: "O identificador do valor gravado no processo utilizando a Informação adicional"
     type: integer
   IDCaso:
-    description: "O identificador do caso. Se o valor for maior que 0, o dado complementar será de caso."
+    description: "O identificador do caso. Se o valor for maior que 0, o dado complementar será vinculada ao caso."
     example: 100
     type: integer
   IDParametroDadoComplementar:
-    description: "O identificador da informação adicional (dado complementar)"
+    description: "O identificador da Informação adicional"
     example: 50
     type: integer
   Valor:
-    description: "O valor a ser gravado/atualizado na informação adicional (dado complementar)"
+    description: "O valor a ser gravado/atualizado na Informação adicional"
     example: "Valor para gravar"
     type: string
   DataDeAtualizacao:
