@@ -1,8 +1,8 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apis:
   looplex_graph@v1:
-    # root: openapi.yaml
-    root: openapi/cases.yaml 
+    root: openapi.yaml
+    # root: openapi/cases.yaml 
 extends:
   - recommended
 rules:
