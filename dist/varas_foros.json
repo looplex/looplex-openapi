@@ -47,9 +47,6 @@
         "operationId": "api-VF-ListaPorNivel",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "nivel",
             "in": "query",
             "example": "1",
@@ -81,9 +78,6 @@
         "summary": "Obtém filhos por pai",
         "operationId": "api-VF-ObtemFilhosPorPai",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
           {
             "name": "grupoId",
             "in": "query",
@@ -125,9 +119,6 @@
         "summary": "Obtém itens filhos por nome pai",
         "operationId": "api-VF-ObtemFilhosPorNomePai",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
           {
             "name": "nomeNo",
             "in": "query",
@@ -171,9 +162,6 @@
         "operationId": "api-VF-ObtemPorID",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "no",
             "in": "query",
             "description": "identificador do item",
@@ -207,9 +195,6 @@
         "operationId": "api-VF-ListaHierarquia",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "no",
             "in": "query",
             "required": true,
@@ -241,9 +226,6 @@
         "operationId": "api-VF-HierarquiaFormatadaDoNo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "no",
             "in": "query",
             "required": true,
@@ -274,9 +256,6 @@
         "summary": "Lista ritos e grupos de ritos",
         "operationId": "api-VF-ListaRitosGrupoRitos",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
           {
             "name": "tipoPesquisa",
             "in": "query",
@@ -319,9 +298,6 @@
         "operationId": "api-VF-ListaGruposRito",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "gruposPrincipais",
             "in": "query",
             "description": "Default: true",
@@ -353,9 +329,6 @@
         "summary": "Vinculos de grupo e rito",
         "operationId": "api-VF-ListaVinculoGrupoERito",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
           {
             "name": "idVara",
             "in": "query",
@@ -390,9 +363,6 @@
         "operationId": "api-VF-ritosDoNo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "cdNo",
             "in": "query",
             "required": true,
@@ -425,9 +395,6 @@
         "operationId": "api-VF-RitosDoGrupo",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "cdGrupoRito",
             "in": "query",
             "description": "O identificador do grupo de ritos",
@@ -459,9 +426,6 @@
         "summary": "Obtém identificador por nome",
         "operationId": "api-VF-cdNoPorNome",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
           {
             "name": "nome",
             "in": "query",
@@ -497,9 +461,6 @@
         "operationId": "api-VF-ProximosNiveis",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
-          {
             "name": "cdNo",
             "in": "query",
             "description": "O identificado do item",
@@ -530,11 +491,7 @@
         ],
         "summary": "Categorias",
         "operationId": "api-VF-Categorias",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          }
-        ],
+        "parameters": null,
         "responses": {
           "200": {
             "description": "Response",
@@ -558,9 +515,6 @@
         "description": "Obtém o rito de acordo com o identifcador informado",
         "operationId": "api-VF-Rito",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
-          },
           {
             "name": "idRito",
             "in": "query",
@@ -615,17 +569,6 @@
       "basic_auth": {
         "type": "http",
         "scheme": "basic"
-      }
-    },
-    "parameters": {
-      "OcpApimSubscriptionKey": {
-        "name": "Ocp-Apim-Subscription-Key",
-        "in": "header",
-        "description": "Subscription key provided by Looplex",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
       }
     },
     "schemas": {
