@@ -5,7 +5,7 @@ description: Obtém as UFs de acordo com a região e ramo judicial
 operationId: statesByRegion
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: regiao
     in: query
     required: true

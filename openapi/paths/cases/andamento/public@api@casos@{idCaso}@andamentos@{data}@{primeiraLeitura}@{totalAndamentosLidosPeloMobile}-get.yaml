@@ -5,7 +5,7 @@ description: Retorna um array com os andamentos do caso de acordo com o filtro i
 operationId: api-casos-idCaso-andamentos-data-primeiraLeitura-totalAndamentosLidosPeloMobile
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idCaso
     in: path
     required: true

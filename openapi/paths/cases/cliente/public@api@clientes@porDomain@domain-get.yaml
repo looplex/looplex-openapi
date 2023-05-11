@@ -5,7 +5,7 @@ description: Obtém a lista de clientes do escritório informado
 operationId: api-clientes-porDomain-domain
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: domain
     in: path
     required: true

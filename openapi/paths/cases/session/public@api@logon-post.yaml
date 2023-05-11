@@ -4,8 +4,6 @@ tags:
 summary: Login
 operationId: api-logon
 # Parâmetros da requisição
-parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:

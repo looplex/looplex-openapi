@@ -5,7 +5,7 @@ summary: Vinculos de grupo e rito
 operationId: api-VF-ListaVinculoGrupoERito
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idVara
     in: query
     example: "3210"

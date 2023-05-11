@@ -5,7 +5,7 @@ description: Retorna um array com as pastas do cliente (Capa).
 operationId: api-casos-idCliente-pastasDoCaso
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idCliente
     in: path
     required: true

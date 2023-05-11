@@ -6,7 +6,6 @@ operationId: api-timesheet-funcionarios-idFuncionario-areas
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idFuncionario
     in: path
     required: true

@@ -7,7 +7,7 @@ operationId: api-dado_complementar_caso-tipoCaso
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: tipoCaso
     in: path
     example: 3

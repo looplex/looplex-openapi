@@ -5,7 +5,7 @@ description: Retorna um array de andamentos simples por caso, numero interno ou 
 operationId: api-casos-num-andamentosimples
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: NumeroInterno
     in: query
     required: false

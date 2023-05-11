@@ -6,7 +6,7 @@ description: Obtém os ritos do grupo informado
 operationId: api-VF-RitosDoGrupo
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: cdGrupoRito
     in: query
     description: "O identificador do grupo de ritos"

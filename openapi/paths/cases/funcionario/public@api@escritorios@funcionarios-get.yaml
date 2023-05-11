@@ -5,7 +5,7 @@ description: Obtém uma lista de informações dos funcionários ativos do escri
 operationId: api-escritorios-funcionarios
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
 responses:
   "200":
     description: "Obtém uma lista de informações dos funcionários ativos do escritório"

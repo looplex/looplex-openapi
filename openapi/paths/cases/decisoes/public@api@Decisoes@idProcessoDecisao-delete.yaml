@@ -5,7 +5,7 @@ summary: Exclui decisão
 operationId: api-Decisoes-idProcessoDecisao
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idProcessoDecisao
     in: path
     required: true

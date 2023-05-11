@@ -5,7 +5,7 @@ description: Atualiza o andamento
 operationId: api-andamentos-update-idAndamento
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idAndamento
     in: path
     required: true

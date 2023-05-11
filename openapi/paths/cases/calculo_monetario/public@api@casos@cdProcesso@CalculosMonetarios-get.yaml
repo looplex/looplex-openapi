@@ -6,7 +6,7 @@ operationId: api-casos-cdProcesso-CalculosMonetarios
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: cdProcesso
     in: path
     required: true

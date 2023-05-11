@@ -6,7 +6,6 @@ operationId: api-casos-idCaso-valoresapurados
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
     required: true

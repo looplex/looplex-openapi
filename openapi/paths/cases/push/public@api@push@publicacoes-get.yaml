@@ -6,7 +6,7 @@ description: Obtém as publicações
 operationId: api-push-publicacoes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: ano
     in: query
     required: true

@@ -5,7 +5,7 @@ description: Retorna um array com as categorias de preço do escritório de acor
 operationId: api-escritorios-IdEscritorio-intfiltroCategoria-categoriaspreco
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: IdEscritorio
     in: path
     required: true

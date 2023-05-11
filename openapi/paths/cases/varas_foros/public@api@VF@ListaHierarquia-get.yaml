@@ -6,7 +6,7 @@ description: Obtém a hierarquia do item informado
 operationId: api-VF-ListaHierarquia
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: no
     in: query
     required: true

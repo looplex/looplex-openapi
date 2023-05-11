@@ -5,7 +5,7 @@ summary: Obtém item por identificador
 operationId: api-VF-ObtemPorID
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: no
     in: query
     description: "identificador do item"

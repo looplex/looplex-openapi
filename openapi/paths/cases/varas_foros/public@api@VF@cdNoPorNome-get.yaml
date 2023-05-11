@@ -5,7 +5,7 @@ summary: Obtém identificador por nome
 operationId: api-VF-cdNoPorNome
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: nome
     in: query
     example: "Judicial Estadual"

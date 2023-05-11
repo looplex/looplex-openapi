@@ -6,7 +6,7 @@ operationId: api-dado_complementar-id-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: id
     in: path
     example: "1"
