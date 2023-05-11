@@ -4,7 +4,7 @@ summary: Conta de acesso por nome
 description: Obtém a conta de acesso por nome
 operationId: api-ContaDeAcesso-ObtemContaDeAcesso
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: nomeUsuario
     in: query
     required: true

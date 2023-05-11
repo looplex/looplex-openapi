@@ -6,7 +6,7 @@ operationId: api-CalculoMonetario-Modelos-id
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: id
     in: path
     required: true

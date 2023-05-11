@@ -5,7 +5,7 @@ description: Atualiza pedidos do caso
 operationId: api-casos-idCaso-pedidos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idCaso
     in: path
     required: true

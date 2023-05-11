@@ -5,7 +5,7 @@ description: Obtém os possíveis status do pedido
 operationId: api-Pedidos-possiveisStatus
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
 responses:
   "200":
     description: "Obtém os possíveis status do pedido"

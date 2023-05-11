@@ -5,7 +5,7 @@ description: Obtém as informações do grupo foro
 operationId: api-hierarquia-GrupoForoDetalhado
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: cdGrupoForo
     in: query
     required: true

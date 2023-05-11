@@ -4,7 +4,7 @@ summary: Decisões do caso por identificadores
 operationId: api-casos-num-decisoes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: NumeroInterno
     in: query
     example: "10"

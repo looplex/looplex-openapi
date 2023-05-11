@@ -5,7 +5,7 @@ summary: Obtém filhos por pai
 operationId: api-VF-ObtemFilhosPorPai
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: grupoId
     in: query
     example: "10"

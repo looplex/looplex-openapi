@@ -1,11 +1,11 @@
 tags: 
-  - Agenda 
+  - Agenda
 summary: Obtém agenda
 description: Obtém um array com os compromissos de agenda de acordo com o filtro informado.
 operationId: api-agenda-get
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: ano
     in: query
     required: true
@@ -66,4 +66,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

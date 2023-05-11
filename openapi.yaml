@@ -43,11 +43,8 @@ tags:
   - name: JWT
     description: JWT Operations
     x-displayName: JWT
-  - name: Login
-    description: Endpoints de login
-    x-displayName: Login
-  - name: Session
-    x-displayName: Session
+  - name: Autenticação
+    x-displayName: Autenticação
   - name: Agenda
     x-displayName: Agenda
   - name: Andamento
@@ -112,8 +109,6 @@ tags:
     x-displayName: Timesheet
   - name: Valores apurados
     x-displayName: Valores apurados
-  - name: Varas e Foros
-    x-displayName: Varas e Foros
 x-tagGroups:
   - name: assembler
     tags:
@@ -135,8 +130,7 @@ x-tagGroups:
       document flows.
   - name: cases
     tags:
-      - Login
-      - Session
+      - Autenticação
       - Agenda
       - Andamento
       - Area
@@ -169,20 +163,6 @@ x-tagGroups:
       - Timeline
       - Timesheet
       - Valores apurados
-    description: >
-      This is an **example** API to demonstrate features of OpenAPI
-      specification
-
-      # Introduction
-
-      This API definition is intended to to be a good starting point for
-      describing your API in 
-
-      [OpenAPI/Swagger
-      format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
-  - name: varas_foros
-    tags:
-      - Varas e Foros
 servers:
   - url: https://graph.looplex.com/api/v1/assembler
     description: Graph server
@@ -190,8 +170,6 @@ servers:
     description: Actions Server
   - url: https://graph.looplex.com/cases
     description: Looplex Cases Server
-  - url: https://graph.looplex.com/varas_foros
-    description: Looplex Varas e Foros Server
 paths:
   /documents/{docId}/answers:
     get:
@@ -22449,11 +22427,9 @@ paths:
   /api/logon:
     post:
       tags:
-        - Session
+        - Autenticação
       summary: Login
       operationId: api-logon
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -22497,6 +22473,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda/totaleventos:
     get:
       tags:
@@ -22506,7 +22484,6 @@ paths:
       operationId: api-agenda-totaleventos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: >-
@@ -22539,6 +22516,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda/proximoslancamentos:
     get:
       tags:
@@ -22548,7 +22527,6 @@ paths:
       operationId: api-agenda-proximos-lancamentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: data
           in: query
           description: A data
@@ -22602,6 +22580,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda:
     get:
       tags:
@@ -22613,7 +22593,6 @@ paths:
       operationId: api-agenda-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           required: true
@@ -22676,6 +22655,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
     post:
       tags:
         - Agenda
@@ -22684,7 +22665,6 @@ paths:
       operationId: api-agenda-post
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -22721,6 +22701,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
     put:
       tags:
         - Agenda
@@ -22729,7 +22711,6 @@ paths:
       operationId: api-agenda-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -22766,6 +22747,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/agenda:
     get:
       tags:
@@ -22777,7 +22760,6 @@ paths:
       operationId: api-casos-idCaso-agenda
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -22845,6 +22827,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda/{tipo}/{id}:
     delete:
       tags:
@@ -22854,7 +22838,6 @@ paths:
       operationId: api-agenda-tipo-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipo
           in: path
           required: true
@@ -22893,6 +22876,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda/executores:
     get:
       tags:
@@ -22902,7 +22887,6 @@ paths:
       operationId: api-agenda-executores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Retorna um array com os executores.
@@ -22936,6 +22920,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda/participantes:
     get:
       tags:
@@ -22945,7 +22931,6 @@ paths:
       operationId: api-agenda-participantes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Retorna um array com os participantes.
@@ -22979,6 +22964,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda/titulos:
     get:
       tags:
@@ -22988,7 +22975,6 @@ paths:
       operationId: api-agenda-titulos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipo
           in: query
           required: true
@@ -23027,6 +23013,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/audiencias:
     get:
       tags:
@@ -23036,7 +23024,6 @@ paths:
       operationId: api-casos-idCaso-audiencias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -23075,6 +23062,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/audiencias:
     get:
       tags:
@@ -23084,7 +23073,6 @@ paths:
       operationId: api-casos-num-audiencias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -23135,6 +23123,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/tabagenda:
     get:
       tags:
@@ -23144,7 +23134,6 @@ paths:
       operationId: api-casos-idCaso-tabagenda
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           example: 'Exemplo: [1, 10]'
@@ -23184,6 +23173,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/tabagenda:
     get:
       tags:
@@ -23195,7 +23186,6 @@ paths:
       operationId: api-casos-num-tabagenda
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -23247,6 +23237,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/compromissos:
     get:
       tags:
@@ -23256,7 +23248,6 @@ paths:
       operationId: api-compromissos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idsFuncionarios
           in: query
           description: Os identificadores dos funcionários
@@ -23325,59 +23316,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/agenda/{id}/{tipo}:
-    get:
-      tags:
-        - Agenda
-      summary: Obtem item de agenda
-      description: Obtem as informações do item de agenda
-      operationId: api-agenda-id-tipo
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: id
-          in: path
-          description: Identificador do caso
-          required: true
-          schema:
-            type: integer
-        - name: tipo
-          in: path
-          description: Tipo do item de agenda
-          required: true
-          schema:
-            $ref: '#/components/schemas/TipoItemAgenda'
-      responses:
-        '200':
-          description: Resposta
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DTOItemAgenda'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/agenda/status_encerramento:
     get:
       tags:
@@ -23387,7 +23327,6 @@ paths:
       operationId: api-agenda-status_encerramento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: inCompromisso
           in: query
           example: 'true'
@@ -23456,6 +23395,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/andamentos/templates:
     get:
       tags:
@@ -23465,7 +23406,6 @@ paths:
       operationId: api-andamentos-templates
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipoCaso
           in: query
           required: true
@@ -23504,6 +23444,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/andamentos/classificacoes:
     get:
       tags:
@@ -23513,7 +23455,6 @@ paths:
       operationId: api-andamentos-classificacoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Retorna um array com as classificações de andamento do escritório.
@@ -23547,6 +23488,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}:
     get:
       tags:
@@ -23559,7 +23502,6 @@ paths:
         api-casos-idCaso-andamentos-data-primeiraLeitura-totalAndamentosLidosPeloMobile
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -23616,6 +23558,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/andamentosimples:
     get:
       tags:
@@ -23625,7 +23569,6 @@ paths:
       operationId: api-casos-idCaso-andamentosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -23664,6 +23607,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/andamentosimples:
     get:
       tags:
@@ -23675,7 +23620,6 @@ paths:
       operationId: api-casos-num-andamentosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -23726,6 +23670,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/andamentos/{id}:
     get:
       tags:
@@ -23735,7 +23681,6 @@ paths:
       operationId: api-andamentos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -23772,6 +23717,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/andamentos:
     post:
       tags:
@@ -23781,7 +23728,6 @@ paths:
       operationId: api-andamentos-post
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -23818,98 +23764,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/andamentos/{idAndamento}:
-    put:
-      tags:
-        - Andamento
-      summary: Atualizar andamento
-      description: Atualiza o andamento.
-      operationId: api-andamentos-idAndamento-put
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: idAndamento
-          in: path
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DTOAndamento'
-      responses:
-        '200':
-          description: Retorna o andamento atualizado.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DTOAndamento'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-    delete:
-      tags:
-        - Andamento
-      summary: Apagar andamento
-      description: Apaga o andamento
-      operationId: api-andamentos-idAndamento-delete
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: idAndamento
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: O andamento foi excluído.
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/andamentos/update/{idAndamento}:
     put:
       tags:
@@ -23919,7 +23775,6 @@ paths:
       operationId: api-andamentos-update-idAndamento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idAndamento
           in: path
           required: true
@@ -23961,6 +23816,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/areas:
     get:
       tags:
@@ -23972,7 +23829,6 @@ paths:
       operationId: api-areas-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -24020,6 +23876,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/areas/porDomain/{domain}:
     get:
       tags:
@@ -24029,7 +23887,6 @@ paths:
       operationId: api-areas-porDomain-domain
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: domain
           in: path
           required: true
@@ -24068,6 +23925,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/areas/{id}:
     get:
       tags:
@@ -24077,7 +23936,6 @@ paths:
       operationId: api-areas-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24114,6 +23972,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/busca/mobilenovo:
     get:
       tags:
@@ -24123,7 +23983,6 @@ paths:
       operationId: api-busca-mobilenovo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: termo
           in: query
           required: true
@@ -24178,6 +24037,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{cdProcesso}/CalculosMonetarios:
     get:
       tags:
@@ -24186,7 +24047,6 @@ paths:
       operationId: api-casos-cdProcesso-CalculosMonetarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdProcesso
           in: path
           required: true
@@ -24225,6 +24085,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/CalculoMonetario/{id}:
     get:
       tags:
@@ -24233,7 +24095,6 @@ paths:
       operationId: api-CalculoMonetario-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24270,6 +24131,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
     delete:
       tags:
         - Calculo Monetário
@@ -24277,7 +24140,6 @@ paths:
       operationId: api-CalculoMonetario-id-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24310,6 +24172,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{id}/Calcula:
     post:
       tags:
@@ -24318,7 +24182,6 @@ paths:
       operationId: api-casos-id-Calcula
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24365,6 +24228,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/CalculoMonetario/Indices:
     get:
       tags:
@@ -24373,7 +24238,6 @@ paths:
       operationId: api-CalculoMonetario-Indices
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Indices monetários
@@ -24407,6 +24271,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/CalculoMonetario/Modelos:
     get:
       tags:
@@ -24415,7 +24281,6 @@ paths:
       operationId: api-CalculoMonetario-Modelos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Modelos de cálculo
@@ -24449,6 +24314,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/CalculoMonetario/Modelos/{id}:
     get:
       tags:
@@ -24457,7 +24324,6 @@ paths:
       operationId: api-CalculoMonetario-Modelos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24494,6 +24360,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{id}/ValoresParaCalculo:
     get:
       tags:
@@ -24502,7 +24370,6 @@ paths:
       operationId: api-casos-id-ValoresParaCalculo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24541,6 +24408,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/inclui:
     post:
       tags:
@@ -24550,7 +24419,6 @@ paths:
       operationId: api-casos-inclui
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -24591,6 +24459,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/{idCliente}/casos:
     get:
       tags:
@@ -24600,7 +24470,6 @@ paths:
       operationId: api-clientes-idCliente-casos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -24657,6 +24526,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/{idCliente}/pastas:
     get:
       tags:
@@ -24666,7 +24537,6 @@ paths:
       operationId: api-clientes-idCliente-pastas
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -24705,6 +24575,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCliente}/pastasDoCaso:
     get:
       tags:
@@ -24714,7 +24586,6 @@ paths:
       operationId: api-casos-idCliente-pastasDoCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -24753,6 +24624,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{id}:
     get:
       tags:
@@ -24762,7 +24635,6 @@ paths:
       operationId: api-casos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24799,6 +24671,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{id}/ficha:
     get:
       tags:
@@ -24808,7 +24682,6 @@ paths:
       operationId: api-casos-id-ficha
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -24845,6 +24718,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/id/ficha/num:
     get:
       tags:
@@ -24856,7 +24731,6 @@ paths:
       operationId: api-casos-id-ficha-num
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -24907,6 +24781,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/meuscasos/{cdResponsavel}:
     get:
       tags:
@@ -24916,7 +24792,6 @@ paths:
       operationId: api-casos-meuscasos-cdResponsavel
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdResponsavel
           in: path
           required: true
@@ -24955,6 +24830,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/RamosJudiciais:
     get:
       tags:
@@ -24964,7 +24841,6 @@ paths:
       operationId: api-casos-RamosJudiciais
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os ramos judiciais
@@ -24998,6 +24874,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos:
     get:
       tags:
@@ -25007,7 +24885,6 @@ paths:
       operationId: api-casos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -25053,6 +24930,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/id/num:
     get:
       tags:
@@ -25062,7 +24941,6 @@ paths:
       operationId: api-casos-id-num
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -25111,6 +24989,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/porIds/{ids}:
     get:
       tags:
@@ -25120,7 +25000,6 @@ paths:
       operationId: api-casos-porIds-ids
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ids
           in: path
           example: '[1, 10]'
@@ -25162,6 +25041,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num:
     get:
       tags:
@@ -25173,7 +25054,6 @@ paths:
       operationId: api-casos-num
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdProcesso
           in: query
           example: '[1, 10]'
@@ -25231,6 +25111,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/busca:
     get:
       tags:
@@ -25240,7 +25122,6 @@ paths:
       operationId: api-casos-busca
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: termo
           in: query
           required: true
@@ -25291,6 +25172,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/edit:
     put:
       tags:
@@ -25300,7 +25183,6 @@ paths:
       operationId: api-casos-edit
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: query
           required: true
@@ -25344,6 +25226,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/listacasos:
     get:
       tags:
@@ -25353,7 +25237,6 @@ paths:
       operationId: api-casos-listacasos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           required: false
@@ -25399,6 +25282,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/subcasos/{cdProcessoPai}:
     get:
       tags:
@@ -25407,7 +25292,6 @@ paths:
       operationId: api-casos-subcasos-cdProcessoPai
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdProcessoPai
           in: path
           example: '143'
@@ -25447,6 +25331,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
     get:
       tags:
@@ -25458,7 +25344,6 @@ paths:
       operationId: api-escritorios-IdEscritorio-intfiltroCategoria-categoriaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdEscritorio
           in: path
           required: true
@@ -25504,6 +25389,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/escritorios/{IdEscritorio}/categoriaspreco:
     get:
       tags:
@@ -25513,7 +25400,6 @@ paths:
       operationId: api-escritorios-IdEscritorio-categoriaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdEscritorio
           in: path
           required: true
@@ -25552,6 +25438,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/funcionarios/{IdsMin},{IdsMax}/categorias:
     get:
       tags:
@@ -25561,7 +25449,6 @@ paths:
       operationId: api-funcionarios-IdsMin-IdsMax-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdsMin
           in: path
           required: true
@@ -25605,6 +25492,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/todos:
     get:
       tags:
@@ -25614,7 +25503,6 @@ paths:
       operationId: api-clientes-todos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém uma lista com todos os clientes
@@ -25648,6 +25536,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes:
     get:
       tags:
@@ -25657,7 +25547,6 @@ paths:
       operationId: api-clientes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -25715,6 +25604,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/enderecos:
     get:
       tags:
@@ -25724,7 +25615,6 @@ paths:
       operationId: api-clientes-enderecos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém um array com os endereços dos clientes
@@ -25758,6 +25648,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/porDomain/{domain}:
     get:
       tags:
@@ -25767,7 +25659,6 @@ paths:
       operationId: api-clientes-porDomain-domain
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: domain
           in: path
           required: true
@@ -25806,6 +25697,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/ficha:
     get:
       tags:
@@ -25815,7 +25708,6 @@ paths:
       operationId: api-clientes-ficha
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: query
           required: true
@@ -25852,6 +25744,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/ficha_mobile:
     get:
       tags:
@@ -25861,7 +25755,6 @@ paths:
       operationId: api-clientes-ficha-mobile
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: query
           required: true
@@ -25898,6 +25791,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/mobile:
     get:
       tags:
@@ -25907,7 +25802,6 @@ paths:
       operationId: api-clientes-mobile
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -25967,6 +25861,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/{id}:
     get:
       tags:
@@ -25976,7 +25872,6 @@ paths:
       operationId: api-clientes-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -26015,6 +25910,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/porIds/{idsClientes}:
     get:
       tags:
@@ -26026,7 +25923,6 @@ paths:
       operationId: api-clientes-porIds-idsClientes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idsClientes
           in: path
           example: '[1, 15]'
@@ -26068,6 +25964,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/{idCliente}/pasta:
     get:
       tags:
@@ -26077,7 +25975,6 @@ paths:
       operationId: api-clientes-idCliente-pasta
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -26113,6 +26010,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/contatos/{id}:
     get:
       tags:
@@ -26122,7 +26021,6 @@ paths:
       operationId: api-contatos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -26159,6 +26057,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/contatos:
     get:
       tags:
@@ -26168,7 +26068,6 @@ paths:
       operationId: api-contatos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém uma lista de contatos
@@ -26202,6 +26101,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/{idCliente}/contatos:
     get:
       tags:
@@ -26211,7 +26112,6 @@ paths:
       operationId: api-clientes-idCliente-contatos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -26250,6 +26150,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/contatos/solicitantes:
     get:
       tags:
@@ -26259,7 +26161,6 @@ paths:
       operationId: api-contatos-solicitantes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: codCliente
           in: query
           required: true
@@ -26298,6 +26199,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/ContaDeAcesso/ObtemContaDeAcesso:
     get:
       tags:
@@ -26306,7 +26209,6 @@ paths:
       description: Obtém a conta de acesso por nome
       operationId: api-ContaDeAcesso-ObtemContaDeAcesso
       parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nomeUsuario
           in: query
           required: true
@@ -26348,6 +26250,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/ContaDeAcesso/ObtemContaDeAcesso2:
     get:
       tags:
@@ -26356,7 +26260,6 @@ paths:
       description: Obtém a conta de acesso por nome
       operationId: api-ContaDeAcesso-ObtemContaDeAcesso2
       parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nomeUsuario
           in: query
           required: false
@@ -26398,6 +26301,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/contratos:
     get:
       tags:
@@ -26407,7 +26312,6 @@ paths:
       operationId: api-contratos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           description: 'Default: true'
@@ -26453,6 +26357,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/contratosimples:
     get:
       tags:
@@ -26462,7 +26368,6 @@ paths:
       operationId: api-casos-idCaso-contratosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -26499,6 +26404,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/contratos/{idCliente}/contratosCliente:
     get:
       tags:
@@ -26508,7 +26415,6 @@ paths:
       operationId: api-contratos-idCliente-contratosCliente
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -26559,6 +26465,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/clientes/{idCliente}/contratos:
     get:
       tags:
@@ -26568,7 +26476,6 @@ paths:
       operationId: api-clientes-idCliente-contratos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCliente
           in: path
           required: true
@@ -26619,6 +26526,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/contratos/{id}:
     get:
       tags:
@@ -26628,7 +26537,6 @@ paths:
       operationId: api-contratos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -26665,185 +26573,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/casos/{idCaso}/dadoscomplementares:
-    get:
-      tags:
-        - Informações adicionais
-      summary: Dados complementares do caso
-      description: >-
-        Obtém um array com os dados complementares de acordo com o identificador
-        do caso.
-      operationId: api-casos-idCaso-dadoscomplementares
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: idCaso
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: >-
-            Obtém um array com os dados complementares de acordo com o
-            identificador do caso.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOInformacaoAdicionalSimples'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-  /api/casos/num/dadoscomplementares:
-    get:
-      tags:
-        - Informações adicionais
-      summary: Dados complementares dos casos
-      description: >-
-        Obtém um array com os dados complementares pelo numero interno, numero
-        externo ou identificador do caso.
-      operationId: api-casos-num-dadoscomplementares
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: NumeroInterno
-          in: query
-          required: false
-          schema:
-            type: integer
-        - name: NumeroExterno
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: IdProcesso
-          in: query
-          required: false
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: >-
-            Obtém um array com os dados complementares pelo numero interno,
-            numero externo ou identificador do caso.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOInformacaoAdicionalSimples'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/dado_complementar/{id}:
-    get:
-      tags:
-        - Informações adicionais
-      summary: Obter dado complementar por identificador
-      operationId: api-dado_complementar-id-get
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: id
-          in: path
-          example: '1'
-          description: O identificador do dado complementar
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: O dado complementar
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DTOInformacaoAdicional'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
     delete:
       tags:
         - Informações adicionais
-      summary: Excluir dado complementar
-      operationId: api-dado_complementar-id-delete
+      summary: Excluir informação adicional
+      description: >-
+        Exclui a informação adicional. Essa informação não poderá mais ser
+        utilizada para gravar valores em processos depois de excluída.
+      operationId: api-dado_complementar-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
-          example: '1'
-          description: O identificador do dado complementar
+          description: O identificador da Informação adicional
           required: true
           schema:
             type: integer
       responses:
-        '204':
-          description: O dado complementar foi excluído
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: A informação adicional foi excluída.
         '401':
           description: Unauthorized
           content:
@@ -26868,26 +26622,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/dado_complementar:
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/CamposDadosComplementares:
     post:
       tags:
-        - Informações adicionais
-      summary: Inclui dado complementar por tipo
-      description: Cadastra um dado complementar por tipo
-      operationId: api-dado_complementar-post
+        - Informações adicionais (valor)
+      summary: Incluir valor de Informação adicional
+      description: >-
+        Utilizado para incluir um valor em um processo utilizando uma informação
+        adicional
+      operationId: api-casos-idCaso-CamposDadosComplementares
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
+        - name: idCaso
+          in: path
+          description: O identificador do processo
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/DTOInformacaoAdicional'
+                $ref: '#/components/schemas/DTOProcessoValorDadoComplementar'
       responses:
-        '204':
-          description: O dado complementar foi cadastrado.
+        '200':
+          description: 200 OK
+          content:
+            application/json:
+              example: true
         '401':
           description: Unauthorized
           content:
@@ -26912,57 +26678,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-    put:
-      tags:
-        - Informações adicionais
-      summary: Atualiza Dados Complementares
-      description: Atualizar os campos com os valores passados
-      operationId: api-dado_complementar-put
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DTOInformacaoAdicional'
-      responses:
-        '204':
-          description: O dado complementar foi atualizado.
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/dado_complementar/valor:
     post:
       tags:
         - Informações adicionais (valor)
-      summary: Inclui ou atualiza valor no dado complementar
-      description: Inclui ou atualiza valores nos dados complementares informados
+      summary: Incluir valor
+      description: Inclui valores em processos utilizando Informação adicional
       operationId: api-dado_complementar-valor
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -26971,51 +26697,11 @@ paths:
               items:
                 $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
       responses:
-        '204':
-          description: Os valores foram incluídos.
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-  /api/dado_complementar_caso:
-    get:
-      tags:
-        - Informações adicionais
-      summary: Obtém dados complementares de caso
-      description: Obtém os dados complementares de caso
-      operationId: api-dado_complementar_caso
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-      responses:
         '200':
-          description: Os dados complementares
+          description: OK
           content:
             application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOInformacaoAdicional'
+              example: Os valores foram incluídos corretamente.
         '401':
           description: Unauthorized
           content:
@@ -27040,56 +26726,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/dado_complementar_caso/{tipoCaso}:
-    get:
-      tags:
-        - Informações adicionais
-      summary: Obtém os dados complementares do tipo de caso informado
-      description: Obtém o dado complementar que pertence ao tipo de caso informado
-      operationId: api-dado_complementar_caso-tipoCaso
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: tipoCaso
-          in: path
-          example: 3
-          description: O tipo do caso
-          required: true
-          schema:
-            $ref: '#/components/schemas/RamosJudicial'
-      responses:
-        '200':
-          description: Os dados complementares
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOInformacaoAdicional'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/Decisoes:
     get:
       tags:
@@ -27099,7 +26737,6 @@ paths:
       operationId: api-casos-idCaso-Decisoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           example: '100'
@@ -27139,6 +26776,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/decisoes:
     get:
       tags:
@@ -27147,7 +26786,6 @@ paths:
       operationId: api-casos-num-decisoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           example: '10'
@@ -27197,6 +26835,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/Decisoes/tipos:
     get:
       tags:
@@ -27205,7 +26845,6 @@ paths:
       operationId: api-Decisoes-tipos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém um array com os tipos de decisões
@@ -27239,6 +26878,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/Decisoes:
     post:
       tags:
@@ -27247,7 +26888,6 @@ paths:
       operationId: api-Decisoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -27280,6 +26920,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/Decisoes/{id}:
     get:
       tags:
@@ -27288,7 +26930,6 @@ paths:
       operationId: api-Decisoes-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -27325,6 +26966,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
     put:
       tags:
         - Decisões
@@ -27332,7 +26975,6 @@ paths:
       operationId: api-Decisoes-id-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -27370,6 +27012,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/DecisoesComValores:
     get:
       tags:
@@ -27378,7 +27022,6 @@ paths:
       operationId: api-casos-idCaso-DecisoesComValores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -27417,47 +27060,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/Decisoes/{idProcessoDecisao}:
-    delete:
-      tags:
-        - Decisões
-      summary: Exclui decisão
-      operationId: api-Decisoes-idProcessoDecisao
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: idProcessoDecisao
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: A decisão foi excluída.
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/totaldespesasmes:
     get:
       tags:
@@ -27467,7 +27071,6 @@ paths:
       operationId: api-despesas-totaldespesasmes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Total de despesas por tipo
@@ -27499,6 +27102,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/proximoslancamentos:
     get:
       tags:
@@ -27508,7 +27113,6 @@ paths:
       operationId: api-despesas-proximoslancamentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: dataDespesaString
           in: query
           required: true
@@ -27545,6 +27149,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/adiantamentosliberados:
     get:
       tags:
@@ -27554,7 +27160,6 @@ paths:
       operationId: api-despesas-adiantamentosliberados
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os adiantamentos em aberto
@@ -27586,6 +27191,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/adiantamentos/categorias:
     get:
       tags:
@@ -27595,7 +27202,6 @@ paths:
       operationId: api-despesas-adiantamentos-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém as categorias de adiantamento
@@ -27627,6 +27233,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/adiantamentos/fornecedores:
     get:
       tags:
@@ -27636,7 +27244,6 @@ paths:
       operationId: api-despesas-adiantamentos-fornecedores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os fornecedores de adiantamento
@@ -27668,6 +27275,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/reembolsos/categorias:
     get:
       tags:
@@ -27677,7 +27286,6 @@ paths:
       operationId: api-despesas-reembolsos-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém as categorias de reembolso
@@ -27709,6 +27317,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/reembolsos/fornecedores:
     get:
       tags:
@@ -27718,7 +27328,6 @@ paths:
       operationId: api-despesas-reembolsos-fornecedores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os fornecedores de reembolso
@@ -27750,6 +27359,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/voucher:
     get:
       tags:
@@ -27758,7 +27369,6 @@ paths:
       operationId: api-despesas-voucher
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os vouchers permitidos ao funcionário
@@ -27790,6 +27400,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/voucher/{idVoucher}/categorias:
     get:
       tags:
@@ -27798,7 +27410,6 @@ paths:
       operationId: api-despesas-voucher-idVoucher-categorias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idVoucher
           in: path
           required: true
@@ -27835,6 +27446,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/voucher/{idVoucher}/fornecedores:
     get:
       tags:
@@ -27843,7 +27456,6 @@ paths:
       operationId: api-despesas-voucher-idVoucher-fornecedores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idVoucher
           in: path
           required: true
@@ -27880,6 +27492,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/obtem:
     get:
       tags:
@@ -27888,7 +27502,6 @@ paths:
       operationId: api-despesas-obtem
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           example: '2022'
@@ -27938,6 +27551,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/obtem/{id}:
     get:
       tags:
@@ -27946,7 +27561,6 @@ paths:
       operationId: api-despesas-obtem-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -27983,6 +27597,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/inclui:
     post:
       tags:
@@ -27991,7 +27607,6 @@ paths:
       operationId: api-despesas-inclui
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: selecionaAprovador
           in: query
           required: false
@@ -28034,6 +27649,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/atualiza:
     put:
       tags:
@@ -28042,7 +27659,6 @@ paths:
       operationId: api-despesas-atualiza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: selecionaAprovador
           in: query
           description: 'Default: false'
@@ -28085,6 +27701,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/exclui/{id}:
     delete:
       tags:
@@ -28093,7 +27711,6 @@ paths:
       operationId: api-despesas-exclui-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -28126,6 +27743,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/despesas/valorKMRodado:
     get:
       tags:
@@ -28134,7 +27753,6 @@ paths:
       operationId: api-despesas-valorKMRodado
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Valor do KM rodado
@@ -28165,6 +27783,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/Valores:
     get:
       tags:
@@ -28173,7 +27793,6 @@ paths:
       operationId: api-casos-idCaso-Valores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -28210,6 +27829,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/PedidosComHistorico:
     get:
       tags:
@@ -28218,7 +27839,6 @@ paths:
       operationId: api-casos-idCaso-PedidosComHistorico
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -28255,6 +27875,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/expectativa/valores/{idCaso}:
     get:
       tags:
@@ -28263,7 +27885,6 @@ paths:
       operationId: api-expectativa-valores-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -28300,6 +27921,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/fase:
     get:
       tags:
@@ -28309,7 +27932,6 @@ paths:
       operationId: api-fase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Fases
@@ -28343,6 +27965,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/fase/{nrGrupo}:
     get:
       tags:
@@ -28352,7 +27976,6 @@ paths:
       operationId: api-casos-fase-nrGrupo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrGrupo
           in: path
           required: true
@@ -28391,6 +28014,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{nrSequencia}/fase:
     get:
       tags:
@@ -28400,7 +28025,6 @@ paths:
       operationId: api-casos-nrSequencia-fase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrSequencia
           in: path
           required: true
@@ -28437,6 +28061,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/fase:
     get:
       tags:
@@ -28448,7 +28074,6 @@ paths:
       operationId: api-casos-num-fase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           required: false
@@ -28499,6 +28124,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/funcionarios/porIds/{ids}:
     get:
       tags:
@@ -28510,7 +28137,6 @@ paths:
       operationId: employeesByIdentifiers
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ids
           in: path
           example: '[10,20]'
@@ -28554,6 +28180,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/funcionarios/porId/{id}:
     get:
       tags:
@@ -28565,7 +28193,6 @@ paths:
       operationId: employeeByIdentifier
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           example: '10'
@@ -28605,6 +28232,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/funcionarios:
     get:
       tags:
@@ -28616,7 +28245,6 @@ paths:
       operationId: employees
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ativos
           in: query
           required: false
@@ -28664,6 +28292,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/areas/{idArea}/funcionarios:
     get:
       tags:
@@ -28675,7 +28305,6 @@ paths:
       operationId: employeesByAreaIdentifier
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idArea
           in: path
           required: true
@@ -28728,6 +28357,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/funcionarios/{idFuncionario}/areas:
     get:
       tags:
@@ -28737,7 +28368,6 @@ paths:
       operationId: employeeAreas
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idFuncionario
           in: path
           required: true
@@ -28776,6 +28406,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/escritorios/{IdEscritorio}/funcionarios:
     get:
       tags:
@@ -28787,7 +28419,6 @@ paths:
       operationId: api-escritorios-IdEscritorio-funcionarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: IdEscritorio
           in: path
           required: true
@@ -28828,6 +28459,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/escritorios/funcionarios:
     get:
       tags:
@@ -28837,7 +28470,6 @@ paths:
       operationId: api-escritorios-funcionarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém uma lista de informações dos funcionários ativos do escritório
@@ -28871,6 +28503,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/Garantia/{idCasoGarantia}:
     get:
       tags:
@@ -28880,7 +28514,6 @@ paths:
       operationId: api-casos-Garantia-idCasoGarantia
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCasoGarantia
           in: path
           description: O identificador da garantia
@@ -28918,6 +28551,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/Garantias:
     get:
       tags:
@@ -28927,7 +28562,6 @@ paths:
       operationId: api-casos-idCaso-Garantias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -28966,6 +28600,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/TiposGarantia:
     get:
       tags:
@@ -28974,7 +28610,6 @@ paths:
       operationId: api-TiposGarantia
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Tipos de garantia
@@ -29008,6 +28643,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/garantias:
     get:
       tags:
@@ -29019,7 +28656,6 @@ paths:
       operationId: api-casos-num-garantias
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           description: 'Default: 0'
@@ -29071,6 +28707,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/Garantia/Inclui/{idCaso}:
     post:
       tags:
@@ -29079,7 +28717,6 @@ paths:
       operationId: api-casos-Garantia-Inclui-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           description: O identificador do caso
@@ -29121,6 +28758,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/Garantia/Atualiza/{idCaso}:
     put:
       tags:
@@ -29129,7 +28768,6 @@ paths:
       operationId: api-casos-Garantia-Atualiza-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           description: O identificador do caso
@@ -29172,6 +28810,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
     delete:
       tags:
@@ -29181,7 +28821,6 @@ paths:
       operationId: api-casos-GarantiaMovimentacao-Exclui-idGarantiaMovimentacao
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idGarantiaMovimentacao
           in: path
           example: '1'
@@ -29221,6 +28860,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
     post:
       tags:
@@ -29230,7 +28871,6 @@ paths:
       operationId: api-casos-Garantia-IncluiMovimentacao
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           example: 1
@@ -29275,6 +28915,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/ritos:
     get:
       tags:
@@ -29284,7 +28926,6 @@ paths:
       operationId: api-hierarquia-ritos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrClasse
           in: query
           required: false
@@ -29338,6 +28979,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/tipos:
     get:
       tags:
@@ -29347,7 +28990,6 @@ paths:
       operationId: api-hierarquia-tipos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém os tipos de processos administrativos
@@ -29381,6 +29023,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/regioes:
     get:
       tags:
@@ -29390,7 +29034,6 @@ paths:
       operationId: api-hierarquia-regioes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -29429,6 +29072,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/GrupoForoPorTipo:
     get:
       tags:
@@ -29440,7 +29085,6 @@ paths:
       operationId: api-hierarquia-grupoforoportipo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -29501,6 +29145,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/GrupoForo:
     get:
       tags:
@@ -29510,7 +29156,6 @@ paths:
       operationId: api-hierarquia-grupoforo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -29566,6 +29211,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/GrupoForoSuperiores:
     get:
       tags:
@@ -29575,7 +29222,6 @@ paths:
       operationId: api-hierarquia-grupoforosuperiores
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: true
@@ -29614,6 +29260,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/GrupoForoDetalhado:
     get:
       tags:
@@ -29623,7 +29271,6 @@ paths:
       operationId: api-hierarquia-GrupoForoDetalhado
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdGrupoForo
           in: query
           required: true
@@ -29665,6 +29312,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/UFPorRegiao:
     get:
       tags:
@@ -29674,7 +29323,6 @@ paths:
       operationId: statesByRegion
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: regiao
           in: query
           required: true
@@ -29717,6 +29365,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/hierarquia/fases:
     get:
       tags:
@@ -29726,7 +29376,6 @@ paths:
       operationId: api-hierarquia-fases
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrRamoJudicial
           in: query
           required: false
@@ -29765,6 +29414,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/natureza:
     get:
       tags:
@@ -29773,7 +29424,6 @@ paths:
       operationId: api-casos-idCaso-natureza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -29812,6 +29462,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/natureza:
     get:
       tags:
@@ -29823,7 +29475,6 @@ paths:
       operationId: api-casos-num-natureza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           description: 'Default: 0'
@@ -29875,6 +29526,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/pais:
     get:
       tags:
@@ -29884,7 +29537,6 @@ paths:
       operationId: countries
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém a lista de países
@@ -29918,6 +29570,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/pais/uf:
     get:
       tags:
@@ -29927,7 +29581,6 @@ paths:
       operationId: statesOfBrazil
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Obtém a lista de estados do Brasil
@@ -29961,6 +29614,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/pais/cidades:
     get:
       tags:
@@ -29970,7 +29625,6 @@ paths:
       operationId: citiesByState
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: uf
           in: query
           description: UF para obter as cidades
@@ -30011,6 +29665,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/Partes:
     get:
       tags:
@@ -30020,7 +29676,6 @@ paths:
       operationId: getPartsByTerm
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nome
           in: query
           description: Termo de pesquisa. Mínimo de 4 caracteres
@@ -30060,6 +29715,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/Partes:
     get:
       tags:
@@ -30069,7 +29726,6 @@ paths:
       operationId: linkedPartsByCase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -30108,6 +29764,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/parte:
     post:
       tags:
@@ -30117,7 +29775,6 @@ paths:
       operationId: postOrUpdateParts
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -30158,6 +29815,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/partes/desvincular:
     post:
       tags:
@@ -30167,7 +29826,6 @@ paths:
       operationId: unlinkPartFromCase
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: processo
           in: query
           required: true
@@ -30205,6 +29863,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/envolvimentos":
     get:
       tags:
@@ -30214,7 +29874,6 @@ paths:
       operationId: apiEnvolvimentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: tipoProcesso
           in: query
           required: true
@@ -30263,6 +29922,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/push/publicacoes:
     get:
       tags:
@@ -30272,7 +29933,6 @@ paths:
       operationId: api-push-publicacoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           required: true
@@ -30332,6 +29992,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/escritorios/{idEscritorio}/tabelaspreco:
     get:
       tags:
@@ -30341,7 +30003,6 @@ paths:
       operationId: api-escritorios-idEscritorio-tabelaspreco
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idEscritorio
           in: path
           required: true
@@ -30380,6 +30041,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/escritorios/{idEscritorio}/tabelasprecocategoria:
     get:
       tags:
@@ -30388,7 +30051,6 @@ paths:
       operationId: api-escritorios-idEscritorio-tabelasprecocategoria
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idEscritorio
           in: path
           required: true
@@ -30427,6 +30089,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
     get:
       tags:
@@ -30435,7 +30099,6 @@ paths:
       operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: cdProcesso
           in: path
           required: true
@@ -30490,6 +30153,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timeline/items:
     get:
       tags:
@@ -30498,7 +30163,6 @@ paths:
       operationId: api-timeline-items
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: paginaAtual
           in: query
           example: 1
@@ -30618,6 +30282,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/totalhoras:
     get:
       tags:
@@ -30626,7 +30292,6 @@ paths:
       operationId: api-timesheet-totalhoras
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Total de horas lançadas
@@ -30657,6 +30322,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/proximoslancamentos:
     get:
       tags:
@@ -30665,7 +30332,6 @@ paths:
       operationId: api-timesheet-proximoslancamentos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Lançamentos
@@ -30699,6 +30365,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/activitycodes:
     get:
       tags:
@@ -30708,7 +30376,6 @@ paths:
       operationId: api-timesheet-activitycodes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Activity Codes
@@ -30742,6 +30409,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/taskcodes:
     get:
       tags:
@@ -30751,7 +30420,6 @@ paths:
       operationId: api-timesheet-taskcodes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Task Codes
@@ -30785,6 +30453,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/listaporperiodo:
     get:
       tags:
@@ -30793,7 +30463,6 @@ paths:
       operationId: api-timesheet-listaporperiodo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrAplicabilidade
           in: query
           example: '1'
@@ -30845,6 +30514,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/obtemmaisrecente:
     get:
       tags:
@@ -30853,7 +30524,6 @@ paths:
       operationId: api-timesheet-obtemmaisrecente
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: nrAplicabilidade
           in: query
           required: true
@@ -30894,6 +30564,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/obtem:
     get:
       tags:
@@ -30902,7 +30574,6 @@ paths:
       operationId: api-timesheet-obtem
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: ano
           in: query
           required: true
@@ -30946,6 +30617,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/funcionarios/{idFuncionario}/areas:
     get:
       tags:
@@ -30954,7 +30627,6 @@ paths:
       operationId: api-timesheet-funcionarios-idFuncionario-areas
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idFuncionario
           in: path
           required: true
@@ -30993,6 +30665,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/areas/{idArea}/titulos:
     get:
       tags:
@@ -31001,7 +30675,6 @@ paths:
       operationId: api-timesheet-areas-idArea-titulos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idArea
           in: path
           required: true
@@ -31040,6 +30713,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/funcionarios:
     get:
       tags:
@@ -31048,7 +30723,6 @@ paths:
       operationId: api-timesheet-funcionarios
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Funcionários para lançamento de horas
@@ -31082,6 +30756,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/funcionarios/permissaolcto/{idFuncionario}:
     get:
       tags:
@@ -31090,7 +30766,6 @@ paths:
       operationId: api-timesheet-funcionarios-permissaolcto-idFuncionario
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idFuncionario
           in: path
           required: true
@@ -31129,6 +30804,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/classificacoes:
     get:
       tags:
@@ -31137,7 +30814,6 @@ paths:
       operationId: api-timesheet-classificacoes
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Classificações
@@ -31171,6 +30847,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/timesheet:
     get:
       tags:
@@ -31179,7 +30857,6 @@ paths:
       operationId: api-casos-idCaso-timesheet
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -31228,6 +30905,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/caso/{idCaso}:
     get:
       tags:
@@ -31236,7 +30915,6 @@ paths:
       operationId: api-timesheet-caso-idCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -31275,6 +30953,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/obtem/{id}:
     get:
       tags:
@@ -31283,7 +30963,6 @@ paths:
       operationId: api-timesheet-obtem-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           required: true
@@ -31320,6 +30999,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/inclui:
     post:
       tags:
@@ -31328,7 +31009,6 @@ paths:
       operationId: api-timesheet-inclui
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -31365,6 +31045,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/incluiWeb:
     post:
       tags:
@@ -31373,7 +31055,6 @@ paths:
       operationId: api-timesheet-incluiWeb
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -31410,6 +31091,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/atualizaWeb:
     put:
       tags:
@@ -31418,7 +31101,6 @@ paths:
       operationId: api-timesheet-atualizaWeb
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -31455,6 +31137,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/atualiza:
     put:
       tags:
@@ -31463,7 +31147,6 @@ paths:
       operationId: api-timesheet-atualiza
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       requestBody:
         content:
           application/json:
@@ -31500,6 +31183,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/exclui/{id}:
     delete:
       tags:
@@ -31508,7 +31193,6 @@ paths:
       operationId: api-timesheet-exclui-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: id
           in: path
           description: O identificador do lançamento de hora
@@ -31542,6 +31226,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/limiteMinimo:
     get:
       tags:
@@ -31551,7 +31237,6 @@ paths:
       operationId: api-timesheet-limiteMinimo
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Limite mínimo
@@ -31582,6 +31267,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet/arredondamento:
     get:
       tags:
@@ -31591,7 +31278,6 @@ paths:
       operationId: api-timesheet-arredondamento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
       responses:
         '200':
           description: Arredondamento
@@ -31622,6 +31308,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timesheet:
     get:
       tags:
@@ -31631,7 +31319,6 @@ paths:
       operationId: api-timesheet
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idsFuncionarios
           in: query
           example: 1,2
@@ -31691,6 +31378,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{idCaso}/valoresapurados:
     get:
       tags:
@@ -31699,7 +31388,6 @@ paths:
       operationId: api-casos-idCaso-valoresapurados
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: idCaso
           in: path
           required: true
@@ -31738,6 +31426,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/num/valoresapurados:
     get:
       tags:
@@ -31749,7 +31439,6 @@ paths:
       operationId: api-casos-num-valoresapurados
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
         - name: NumeroInterno
           in: query
           description: 'Default: 0'
@@ -31801,346 +31490,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
-  /api/VF/ListaPorNivel:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Lista por nível
-      operationId: api-VF-ListaPorNivel
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: nivel
-          in: query
-          example: '1'
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Lista os grupos por nível
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListaPorNivelResponse'
-  /api/VF/ObtemFilhosPorPai:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Obtém filhos por pai
-      operationId: api-VF-ObtemFilhosPorPai
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: grupoId
-          in: query
-          example: '10'
-          required: true
-          schema:
-            type: integer
-        - name: somenteAtivos
-          in: query
-          required: false
-          description: 'Default: true'
-          schema:
-            type: boolean
-      responses:
-        '200':
-          description: Lista os grupos por pai
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ObtemFilhosPorPaiResponse'
-  /api/VF/ObtemFilhosPorNomePai:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Obtém itens filhos por nome pai
-      operationId: api-VF-ObtemFilhosPorNomePai
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: nomeNo
-          in: query
-          example: Judicial Estadual
-          description: Nome do nó
-          required: true
-          schema:
-            type: string
-        - name: somenteAtivos
-          in: query
-          description: 'Default: true'
-          required: false
-          schema:
-            type: boolean
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseObtemFilhosPorPai'
-  /api/VF/ObtemPorID:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Obtém item por identificador
-      operationId: api-VF-ObtemPorID
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: 'no'
-          in: query
-          description: identificador do item
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseObtemPorID'
-  /api/VF/ListaHierarquia:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Lista hierarquia
-      description: Obtém a hierarquia do item informado
-      operationId: api-VF-ListaHierarquia
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: 'no'
-          in: query
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseHierarquiaDoNo'
-  /api/VF/HierarquiaFormatadaDoNo:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Hierarquia formatada do item
-      operationId: api-VF-HierarquiaFormatadaDoNo
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: 'no'
-          in: query
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseHierarquiaFormatadaDoNo'
-  /api/VF/ListaRitosGrupoRitos:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Lista ritos e grupos de ritos
-      operationId: api-VF-ListaRitosGrupoRitos
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: tipoPesquisa
-          in: query
-          required: true
-          schema:
-            $ref: '#/components/schemas/TipoPesquisaGrupoRito'
-        - name: identificador
-          in: query
-          example: 15
-          description: o identificador do item
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseListaRitosGrupoRitos'
-  /api/VF/ListaGruposRito:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Lista grupos de rito
-      operationId: api-VF-ListaGruposRito
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: gruposPrincipais
-          in: query
-          description: 'Default: true'
-          required: false
-          schema:
-            type: boolean
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseListaGruposRito'
-  /api/VF/ListaVinculoGrupoERito:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Vinculos de grupo e rito
-      operationId: api-VF-ListaVinculoGrupoERito
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: idVara
-          in: query
-          example: '3210'
-          description: O identificador
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseListaVinculoGrupoERito'
-  /api/VF/ritosDoNo:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Ritos do item
-      operationId: api-VF-ritosDoNo
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: cdNo
-          in: query
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseRitosDoNo'
-  /api/VF/RitosDoGrupo:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Ritos do grupo
-      description: Obtém os ritos do grupo informado
-      operationId: api-VF-RitosDoGrupo
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: cdGrupoRito
-          in: query
-          description: O identificador do grupo de ritos
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseListaRitosDoGrupo'
-  /api/VF/cdNoPorNome:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Obtém identificador por nome
-      operationId: api-VF-cdNoPorNome
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: nome
-          in: query
-          example: Judicial Estadual
-          description: O nome do item
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseObtemCdNoPorNome'
-  /api/VF/ProximosNiveis:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Obtém próximos níveis
-      description: Obtém os próximos níveis depois do item informado (2 no máximo).
-      operationId: api-VF-ProximosNiveis
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: cdNo
-          in: query
-          description: O identificado do item
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseObtemProximosNiveis'
-  /api/VF/Categorias:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Categorias
-      operationId: api-VF-Categorias
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-      responses:
-        '200':
-          description: Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseObtemCategorias'
-  /api/VF/Rito:
-    get:
-      tags:
-        - Varas e Foros
-      summary: Obtém rito por identificador
-      description: Obtém o rito de acordo com o identifcador informado
-      operationId: api-VF-Rito
-      parameters:
-        - $ref: '#/components/parameters/OcpApimSubscriptionKey'
-        - name: idRito
-          in: query
-          example: '1'
-          description: O identificador do rito
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Resposta
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Rito'
-        '401':
-          description: Em caso de erro de timeout ou sessão expirada.
-        '500':
-          description: Em caso de erro diferente de timeout ou sessão expirada.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
 components:
   securitySchemes:
     Subscription-Key:
@@ -32152,6 +31503,11 @@ components:
       type: apiKey
       in: header
       name: api_key
+    Ocp-Apim-Subscription-Key:
+      type: apiKey
+      in: header
+      description: Subscription key provided by Looplex
+      name: Ocp-Apim-Subscription-Key
     auth_token:
       type: apiKey
       in: header
@@ -88174,165 +87530,36 @@ components:
           type: integer
         Descricao:
           type: string
-    DTOInformacaoAdicionalSimples:
-      title: DTOInformacaoAdicionalSimples
+    DTOProcessoValorDadoComplementar:
+      title: DTOProcessoValorDadoComplementar
       type: object
       properties:
-        NomeCliente:
-          type: string
-        TituloCaso:
-          type: string
-        NumeroInterno:
-          type: string
-        NumeroExterno:
-          type: string
-        Nome:
-          type: string
-        TipoCampo:
-          type: string
-        Valores:
-          type: array
-          items:
-            type: string
-        IdCaso:
+        IDProcessoValorDadoComplementar:
+          description: O identificador do valor gravado no processo
           type: integer
-    TipoDadoComplementar:
-      type: object
-      title: TipoDadoComplementar
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: CaixaTexto
-
-        2: NumericoDecimal
-
-        3: NumericoInteiro
-
-        4: DataHora
-
-        5: CaixaTextoMultiLinha
-
-        6: CaixaCombo
-
-        7: CaixaDeMarcacao
-
-        8: PagadorCombo
-
-        9: EmpresaCombo
-
-        10: ClienteCombo
-
-        11: GrupoClienteCombo
-
-        12: ContratoSelecao
-
-        13: ClienteSelecao
-
-        14: CasoSelecao
-
-        15: AreaCombo
-
-        16: ProfissionalCombo
-    DTOItemDadoComplementar:
-      title: DTOItemDadoComplementar
-      type: object
-      properties:
-        IDItemDadoComplementar:
+        IDProcesso:
+          description: O identificador do processo em que o valor foi ou será gravado
           type: integer
-        IDParametroDadoComplementar:
-          type: integer
-        Texto:
-          type: string
-        Valor:
-          type: string
-    DTOTipoProcesso:
-      title: DTOTipoProcesso
-      type: object
-      properties:
-        IDParametroDadoComplementar:
-          description: O identificador da informação adicional (dado complementar)
-          type: integer
-        Tipo:
-          $ref: '#/components/schemas/RamosJudicial'
-    DTOAreaInformacaoAdicional:
-      title: DTOAreaInformacaoAdicional
-      type: object
-      properties:
-        IDAreaParametroDadoComplementar:
-          type: integer
-        IDParametroDadoComplementar:
-          type: integer
-        IDArea:
-          type: integer
-        Area:
-          type: string
-    DTOValorDadoComplementarFuncionario:
-      title: DTOValorDadoComplementarFuncionario
-      type: object
-      properties:
-        IDFuncionarioValorDadoComplementar:
-          type: integer
-        IDFuncionario:
-          type: integer
-        IDParametroDadoComplementar:
+        IDParamDadoComplementar:
+          description: >-
+            O identificador da Informação adicional que será utilizada para
+            gravar o valor
           type: integer
         Valor:
+          description: O valor a ser gravado
           type: string
-        DataDeAtualizacao:
+        DtValor:
           type: string
-    DTOInformacaoAdicional:
-      title: DTOInformacaoAdicional
-      type: object
-      properties:
-        IDParametroDadoComplementar:
-          example: -2147483648
-          description: O identificador do dado complementar
+        DataAtualizacao:
+          type: string
+        IDContaDeAcesso:
           type: integer
-        IDCliente:
-          type: integer
-        TipoCampoDadoComplementar:
-          $ref: '#/components/schemas/TipoDadoComplementar'
-        TipoCampoDadoComplementarText:
-          type: string
-        TituloDadoComplementar:
-          description: O titulo do dado complementar
-          example: Nome completo
-          type: string
-        TamanhoCampo:
-          description: O tamanho do campo (quando aplicável)
-          example: 200
-          type: integer
-        Obrigatorio:
-          description: ''
-          example: false
-          type: boolean
-        Ativo:
-          type: boolean
-        Ordem:
-          type: integer
-        TipoDeVinculo:
-          type: string
-        Opcoes:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOItemDadoComplementar'
-        VinculadoNosTiposDeProcesso:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOTipoProcesso'
-        VinculadoNasAreas:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOAreaInformacaoAdicional'
-        ValoresProcessosCadastrados:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
-        ValoresFuncionariosCadastrados:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOValorDadoComplementarFuncionario'
+      required:
+        - IDProcesso
+        - IDParamDadoComplementar
+        - Valor
+        - DtValor
+        - DataAtualizacao
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object
@@ -89791,414 +89018,6 @@ components:
           type: string
         IdCaso:
           type: integer
-    Foro:
-      name: Foro
-      type: object
-      properties:
-        grupoId:
-          type: integer
-          example: 3
-        idPai:
-          type: integer
-          example: null
-        nrOrdenacao:
-          type: integer
-          example: 3
-        dsNome:
-          type: string
-          example: Judicial Estadual
-        dsCategoriaFilhos:
-          type: string
-          example: Instância
-        dsHierarquiaCompleta:
-          type: string
-          example: '3'
-        nrNivel:
-          type: integer
-          example: 1
-        inAtivo:
-          type: boolean
-          example: true
-        dsCodigoOriginal:
-          type: string
-          example: null
-        isEditavel:
-          type: boolean
-          example: false
-        filhos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Foro'
-        responsavelAlteracao:
-          type: string
-          example: null
-        labelProximosNiveis:
-          type: string
-          example: null
-    TipoRespostaRequisicao:
-      type: integer
-      example: 3
-      description: |
-        1: Exception
-
-        2: Sem dados
-
-        3: Com dados
-    ListaPorNivelResponse:
-      name: ListaPorNivelResponse
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            grupos:
-              type: array
-              items:
-                $ref: '#/components/schemas/Foro'
-            categoriaFilhos:
-              type: string
-            nivel:
-              type: integer
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ObtemFilhosPorPaiResponse:
-      name: ObtemFilhosPorPaiResponse
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            grupos:
-              type: array
-              items:
-                $ref: '#/components/schemas/Foro'
-            nivelEditavel:
-              type: boolean
-            categoriaFilhos:
-              type: string
-            nivel:
-              type: integer
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseObtemFilhosPorPai:
-      name: ResponseObtemFilhosPorPai
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            grupos:
-              type: array
-              items:
-                $ref: '#/components/schemas/Foro'
-            nivelEditavel:
-              type: boolean
-              example: false
-            categoriaFilhos:
-              type: string
-              example: Estados
-            nivel:
-              type: integer
-              example: 2
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseObtemPorID:
-      name: ResponseObtemPorID
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          $ref: '#/components/schemas/Foro'
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseHierarquiaDoNo:
-      name: ResponseHierarquiaDoNo
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            hierarquia:
-              type: array
-              items:
-                $ref: '#/components/schemas/Foro'
-            hierarquiaFormatada:
-              type: string
-              example: Judicial Estadual -> 1ª Instância
-            proximoNivel:
-              type: string
-              example: Estados
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseHierarquiaFormatadaDoNo:
-      name: ResponseHierarquiaFormatadaDoNo
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            hierarquiaCompleta:
-              type: string
-              example: 3.10.38.60
-            hierarquiaFormatada:
-              type: string
-              example: SP -> Adamantina
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    TipoPesquisaGrupoRito:
-      type: integer
-      example: 2
-      description: |
-        1: PesquisaPorForo (não disponível)
-
-        2: PesquisaPorRito
-
-        3: PesquisaPorGrupoRito
-
-        4: PesquisaPorGrupoRitoPai
-    GrupoRito:
-      name: GrupoRito
-      type: object
-      properties:
-        cdGrupoRito:
-          type: integer
-          example: 2
-        dsNome:
-          type: string
-          example: Procedimentos
-        cdGrupoPai:
-          type: integer
-          example: 1
-        grupos:
-          type: array
-          items:
-            $ref: '#/components/schemas/GrupoRito'
-        ritos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Rito'
-        _hasRitos:
-          type: boolean
-          example: false
-        _hasGrupos:
-          type: boolean
-          example: false
-    Rito:
-      name: Rito
-      type: object
-      properties:
-        cdRito:
-          type: integer
-          example: 1
-        cdGrupoRito:
-          type: integer
-          example: 2
-        dsNome:
-          type: string
-          example: Arrecadação de Coisas Vagas
-        inEsperaPoloPassivo:
-          type: boolean
-          example: false
-        inAtivo:
-          type: boolean
-          example: true
-        dsPoloAtivo:
-          type: string
-          example: null
-        dsPoloPassivo:
-          type: string
-          example: null
-        dsPoloTerceiro:
-          type: string
-          example: null
-    ResponseListaRitosGrupoRitos:
-      name: ResponseListaRitosGrupoRitos
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            tipoDePesquisa:
-              type: string
-              description: Indica onde foi feita a pesquisa
-              example: Pesquisa por rito
-            rito:
-              type: number
-              description: Esse campo só será retornado se a pesquisa for por rito
-              example: 18000
-            grupoRito:
-              type: number
-              description: Esse campo só será retornado se a pesquisa for por grupo rito
-              example: 18000
-            grupoRitoPai:
-              type: number
-              description: Esse campo só será retornado se a pesquisa for por rito pai
-              example: 18000
-            gruposRito:
-              type: array
-              items:
-                $ref: '#/components/schemas/GrupoRito'
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    GruposRitoCascader:
-      name: GruposRitoCascader
-      type: object
-      properties:
-        value:
-          type: integer
-          example: 10
-        label:
-          type: string
-          example: Incidentes
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/GruposRitoCascader'
-    ResponseListaGruposRito:
-      name: ResponseListaGruposRito
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        responseGruposPrincipais:
-          description: >-
-            Esse campo só será retornado se o parâmetro gruposPrincipais for
-            true. Nome do objeto de resposta: conteudo
-          type: array
-          items:
-            $ref: '#/components/schemas/GrupoRito'
-        responseGruposNaoPrincipais:
-          description: >-
-            Esse campo só será retornado se o parâmetro gruposPrincipais for
-            false. Nome do objeto de resposta: conteudo
-          type: array
-          items:
-            $ref: '#/components/schemas/GruposRitoCascader'
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseListaVinculoGrupoERito:
-      name: ResponseListaVinculoGrupoERito
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            vara:
-              type: integer
-            gruposDeRito:
-              type: array
-              items:
-                type: string
-                example: Recursos
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseRitosDoNo:
-      name: ResponseRitosDoNo
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: array
-          items:
-            $ref: '#/components/schemas/GrupoRito'
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseListaRitosDoGrupo:
-      name: ResponseListaRitosDoGrupo
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Rito'
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseObtemCdNoPorNome:
-      name: ResponseObtemCdNoPorNome
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: integer
-          example: 3
-          description: 0 é retornado caso o item não seja encontrado
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseObtemProximosNiveis:
-      name: ResponseObtemProximosNiveis
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Foro'
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
-    ResponseObtemCategorias:
-      name: ResponseObtemCategorias
-      type: object
-      properties:
-        respostaAPI:
-          type: string
-          example: ''
-          description: Resposta da API (quando necessário)
-        conteudo:
-          type: object
-          properties:
-            categorias:
-              type: array
-              items:
-                type: string
-                example: Estado
-        tipoResposta:
-          $ref: '#/components/schemas/TipoRespostaRequisicao'
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: https://github.com/Rebilly/generator-openapi-repo

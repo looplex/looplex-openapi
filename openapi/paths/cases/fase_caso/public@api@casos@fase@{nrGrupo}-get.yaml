@@ -5,7 +5,7 @@ description: Obtém um array com as fases do caso de acordo com o tipo de proces
 operationId: api-casos-fase-nrGrupo
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: nrGrupo
     in: path
     required: true

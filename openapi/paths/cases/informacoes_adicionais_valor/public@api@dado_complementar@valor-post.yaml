@@ -1,13 +1,12 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Informações adicionais (valor)
-summary: Inclui ou atualiza valor no dado complementar
-description: Inclui ou atualiza valores nos dados complementares informados
+summary: Incluir valor
+description: Inclui valores em processos utilizando Informação adicional
 operationId: api-dado_complementar-valor
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:
@@ -19,8 +18,11 @@ requestBody:
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
-  "204":
-    description: Os valores foram incluídos.
+  "200":
+    description: "OK"
+    content:
+      application/json:
+        example: "Os valores foram incluídos corretamente."
   "401":
     description: "Unauthorized"
     content:
@@ -45,4 +47,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-    

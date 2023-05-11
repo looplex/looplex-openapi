@@ -6,7 +6,7 @@ description: Obtém o rito de acordo com o identifcador informado
 operationId: api-VF-Rito
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idRito
     in: query
     example: "1"

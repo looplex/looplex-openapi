@@ -1,4 +1,7 @@
+# https://redocly.com/docs/openapi-visual-reference/info/
 openapi: 3.0.2
+security: 
+  - Ocp-Apim-Subscription-Key: []
 info:
   version: 1.0.0
   title: Looplex Cases
@@ -26,57 +29,14 @@ info:
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: "https://github.com/Rebilly/generator-openapi-repo"
-tags:
-  - name: Login 
-    description: Endpoints de login
-x-tagGroups:
-  - name: Endpoints
-    tags:
-      - Agenda
-      - Andamento
-      - Area
-      - Busca
-      - Casos
-      - Calculo Monetário
-      - Categoria
-      - Cliente
-      - Conta de acesso
-      - Contato
-      - Contrato
-      - Informações adicionais
-      - Informações adicionais (valor)
-      - Decisões
-      - Despesas
-      - Expectativa reivindicação
-      - Envolvimento das partes
-      - Fase caso
-      - Funcionário
-      - Garantia
-      - Hierarquia
-      - Natureza
-      - Partes
-      - Pedidos
-      - Permissão
-      - Produtos
-      - Push
-      - Render
-      - Session
-      - Tabela preço categoria
-      - Tabela preço
-      - Tarefa
-      - Timeline
-      - Timesheet
-      - Valores apurados
-      - Varas e Foros
-      - País
 servers:
   - url: "https://graph.looplex.com/cases"
     description: "Looplex Cases Server"
 paths:
-  # Session
+  # Autenticação
   /api/logon:
     post:
-      $ref: ./paths/cases/session/public@api@logon-post.yaml
+      $ref: ./paths/cases/login/public@api@logon-post.yaml
 
   # Agenda
   /api/agenda/totaleventos:
@@ -122,9 +82,9 @@ paths:
   /api/compromissos:
     get:
       $ref: './paths/cases/agenda/public@api@compromissos-get.yaml'
-  /api/agenda/{id}/{tipo}:
-    get:
-      $ref: './paths/cases/agenda/public@api@agenda@id@tipo-get.yaml'
+  # /api/agenda/{id}/{tipo}:
+  #   get:
+  #     $ref: './paths/cases/agenda/public@api@agenda@id@tipo-get.yaml'
   /api/agenda/status_encerramento:
     get:
       $ref: './paths/cases/agenda/public@api@agenda@status_encerramento-get.yaml'
@@ -151,11 +111,11 @@ paths:
   /api/andamentos:
     post:
       $ref: ./paths/cases/andamento/public@api@andamentos@post-post.yaml
-  /api/andamentos/{idAndamento}:
-    put:
-      $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
-    delete:
-      $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
+  # /api/andamentos/{idAndamento}:
+  #   put:
+  #     $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
+  #   delete:
+  #     $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
   /api/andamentos/update/{idAndamento}:
     put:
       $ref: ./paths/cases/andamento/public@api@andamentos@update@{idAndamento}-put.yaml
@@ -336,33 +296,19 @@ paths:
     get:
       $ref: ./paths/cases/contrato/public@api@contratos@{id}-get.yaml
 
-  # Dados complementares
-  /api/casos/{idCaso}/dadoscomplementares:
-    get:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@casos@{idCaso}@dadoscomplementares-get.yaml
-  /api/casos/num/dadoscomplementares:
-    get:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@casos@num@dadoscomplementares-get.yaml
+  # Informações adicionais
   /api/dado_complementar/{id}:
-    get:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-get.yaml'
     delete:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
-  /api/dado_complementar:
+  
+  # Informações adicionais (Valor)
+  /api/casos/{idCaso}/CamposDadosComplementares:
     post:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@dado_complementar-post.yaml
-    put:
-      $ref: ./paths/cases/informacoes_adicionais/public@api@dado_complementar-put.yaml
+      $ref: './paths/cases/informacoes_adicionais_valor/public@api@casos@idCaso@CamposDadosComplementares-post.yaml'
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
-  /api/dado_complementar_caso:
-    get:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar_caso-get.yaml'      
-  /api/dado_complementar_caso/{tipoCaso}:
-    get:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar_caso@tipoCaso-get.yaml'
-  
+
   # Decisões
   /api/casos/{idCaso}/Decisoes:
     get:
@@ -384,9 +330,9 @@ paths:
   /api/casos/{idCaso}/DecisoesComValores:
     get:
       $ref: './paths/cases/decisoes/public@api@casos@idCaso@DecisoesComValores-get.yaml'
-  /api/Decisoes/{idProcessoDecisao}:
-    delete:
-      $ref: './paths/cases/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
+  # /api/Decisoes/{idProcessoDecisao}:
+  #   delete:
+  #     $ref: './paths/cases/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
 
   # Despesas
   /api/despesas/totaldespesasmes:
@@ -689,6 +635,11 @@ components:
       type: apiKey
       in: header
       name: api_key
+    Ocp-Apim-Subscription-Key:
+      type: apiKey
+      in: header
+      description: "Subscription key provided by Looplex"
+      name: Ocp-Apim-Subscription-Key
     auth_token:
       type: apiKey
       in: header
@@ -696,3 +647,4 @@ components:
     basic_auth:
       type: http
       scheme: basic
+    

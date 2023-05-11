@@ -5,7 +5,7 @@ description: Obtém audiências por numero interno, externo ou identificador do 
 operationId: api-casos-num-audiencias
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: NumeroInterno
     in: query
     required: false

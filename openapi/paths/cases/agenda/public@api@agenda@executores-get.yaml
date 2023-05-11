@@ -5,7 +5,7 @@ description: "Retorna um array com os executores"
 operationId: api-agenda-executores
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
 responses:
   "200":
     description: Retorna um array com os executores.

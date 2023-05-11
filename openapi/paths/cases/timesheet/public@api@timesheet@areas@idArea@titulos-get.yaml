@@ -6,7 +6,7 @@ operationId: api-timesheet-areas-idArea-titulos
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: idArea
     in: path
     required: true

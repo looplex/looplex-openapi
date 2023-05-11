@@ -5,7 +5,7 @@ description: Obtém o caso
 operationId: api-casos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: id
     in: path
     required: true

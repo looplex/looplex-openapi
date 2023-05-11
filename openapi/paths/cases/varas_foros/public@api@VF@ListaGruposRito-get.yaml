@@ -5,7 +5,7 @@ summary: Lista grupos de rito
 operationId: api-VF-ListaGruposRito
 # Parâmetros da requisição
 parameters:
-  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  
   - name: gruposPrincipais
     in: query
     description: "Default: true"
