@@ -22441,14 +22441,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  Profile:
-                    description: Contexto a ser usado nas requisições
-                    type: string
-                  Successful:
-                    description: Se o login foi feito corretamente
-                    type: boolean
+                $ref: '#/components/schemas/DTOLoginResult'
         '401':
           description: Unauthorized
           content:
@@ -30827,13 +30820,21 @@ paths:
           required: false
           schema:
             type: boolean
+        - name: subCasos
+          in: query
+          description: 'Subcasos? (Default: false)'
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
-          description: Itens da timeline
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DTOTimelineItem'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOTimelineItem'
         '401':
           description: Unauthorized
           content:
@@ -86036,6 +86037,21 @@ components:
             domain:
               type: string
               description: Escritório
+      required:
+        - User
+    DTOLoginResult:
+      title: DTOLoginResult
+      type: object
+      properties:
+        Profile:
+          description: Profile para utilização nas demais requisições
+          type: string
+        Successful:
+          description: Indica se o login foi feito corretamente
+          type: boolean
+      required:
+        - Profile
+        - Successful
     ExceptionResponse:
       type: object
       properties:
@@ -87244,6 +87260,11 @@ components:
           description: A data de atualização do valor
           example: '2022-01-01T00:00:00.000'
           type: string
+      required:
+        - IDCaso
+        - IDParametroDadoComplementar
+        - Valor
+        - DataDeAtualizacao
     Moeda:
       type: integer
       example: 1
