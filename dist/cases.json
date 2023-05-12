@@ -1963,7 +1963,83 @@
         }
       }
     },
-    "/api/andamentos/{id}": {
+    "/api/andamentos": {
+      "post": {
+        "tags": [
+          "Andamento"
+        ],
+        "summary": "Incluir andamento",
+        "description": "Inclui o andamento",
+        "operationId": "api-andamentos-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOAndamento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Retorna o andamento inserido.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOAndamento"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/andamentos/{ID}": {
       "get": {
         "tags": [
           "Andamento"
@@ -2036,19 +2112,25 @@
             }
           }
         }
-      }
-    },
-    "/api/andamentos": {
-      "post": {
+      },
+      "put": {
         "tags": [
           "Andamento"
         ],
-        "summary": "Incluir andamento",
-        "description": "Inclui o andamento",
-        "operationId": "api-andamentos-post",
+        "summary": "Atualizar andamento",
+        "description": "Atualiza o andamento.",
+        "operationId": "api-andamentos-idAndamento-put",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idAndamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -2062,7 +2144,7 @@
         },
         "responses": {
           "200": {
-            "description": "Retorna o andamento inserido.",
+            "description": "Retorna o andamento atualizado.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2070,6 +2152,72 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Andamento"
+        ],
+        "summary": "Apagar andamento",
+        "description": "Apaga o andamento",
+        "operationId": "api-andamentos-idAndamento-delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idAndamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "O andamento foi excluído."
           },
           "401": {
             "description": "Unauthorized",
@@ -7283,7 +7431,7 @@
           "Informações adicionais"
         ],
         "summary": "Editar Informação adicional",
-        "description": "Editar propriedades de Informações adicionais",
+        "description": "Editar propriedades de Informações adicionais. <p>**Para editar as opções de uma Informação adicional (em caso de dropdown) utilize o endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do dropdown na propriedade `Opcoes`.</p><p>Opções disponíveis para edição `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>**",
         "operationId": "api-dado_complementar-edit",
         "parameters": [
           {
@@ -7303,10 +7451,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/DTOObjetoNomeValor"
-                }
+                "$ref": "#/components/schemas/DTOObjetoNomeValor"
               }
             }
           }
