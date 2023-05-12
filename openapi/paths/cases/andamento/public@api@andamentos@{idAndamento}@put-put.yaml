@@ -5,8 +5,7 @@ description: Atualiza o andamento.
 operationId: api-andamentos-idAndamento-put
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: idAndamento
+  - name: ID
     in: path
     required: true
     schema:

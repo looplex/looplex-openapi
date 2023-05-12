@@ -5,8 +5,7 @@ description: Obtém o andamento de acordo com o identificador informado.
 operationId: api-andamentos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: id
+  - name: ID
     in: path
     required: true
     schema:

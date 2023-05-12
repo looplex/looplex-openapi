@@ -5,7 +5,6 @@ description: Lista as cidades de acordo com o estado informado
 operationId: citiesByState
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: uf
     in: query
     description: "UF para obter as cidades"
@@ -15,7 +14,7 @@ parameters:
       type: string
 responses:
   "200":
-    description: "Lista as cidades de acordo com o estado informado"
+    description: "OK"
     content:
       application/json:
         schema: 

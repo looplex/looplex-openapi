@@ -2042,7 +2042,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -2115,7 +2115,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idAndamento",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -2197,7 +2197,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idAndamento",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -12087,7 +12087,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém a lista de países",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -12157,7 +12157,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém a lista de estados do Brasil",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -12237,7 +12237,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Lista as cidades de acordo com o estado informado",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -12814,7 +12814,7 @@
     "/api/escritorios/{idEscritorio}/tabelaspreco": {
       "get": {
         "tags": [
-          "Tabela preço"
+          "Tabela de preço"
         ],
         "summary": "Tabelas de preço",
         "description": "Lista as tabelas de preço",
@@ -12827,6 +12827,7 @@
             "name": "idEscritorio",
             "in": "path",
             "required": true,
+            "description": "O identificador do escritório",
             "schema": {
               "type": "integer"
             }
@@ -12834,7 +12835,7 @@
         ],
         "responses": {
           "200": {
-            "description": "tabelas de preço",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -12894,7 +12895,7 @@
         "tags": [
           "Tabela preço categoria"
         ],
-        "summary": "Lista tabelas de preço categoria",
+        "summary": "Lista categorias de tabela de preço",
         "operationId": "api-escritorios-idEscritorio-tabelasprecocategoria",
         "parameters": [
           {
@@ -12911,7 +12912,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Tabelas de preço categoria",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -12981,6 +12982,7 @@
             "name": "cdProcesso",
             "in": "path",
             "required": true,
+            "description": "O identificador do processo",
             "schema": {
               "type": "integer"
             }
@@ -13009,11 +13011,20 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "name": "subcasos",
+            "in": "query",
+            "required": false,
+            "description": "Default: false",
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Compromissos",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {

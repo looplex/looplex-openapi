@@ -5,8 +5,7 @@ description: Apaga o andamento
 operationId: api-andamentos-idAndamento-delete
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: idAndamento
+  - name: ID
     in: path
     required: true
     schema:
