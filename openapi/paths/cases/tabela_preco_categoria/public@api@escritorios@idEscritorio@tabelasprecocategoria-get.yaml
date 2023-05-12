@@ -1,12 +1,11 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tabela preço categoria
-summary: Lista tabelas de preço categoria
+summary: Lista categorias de tabela de preço
 operationId: api-escritorios-idEscritorio-tabelasprecocategoria
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: idEscritorio
     in: path
     required: true
@@ -17,7 +16,7 @@ parameters:
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Tabelas de preço categoria"
+    description: "OK"
     content:
       application/json:
         schema:

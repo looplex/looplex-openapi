@@ -97,8 +97,8 @@ tags:
     x-displayName: Envolvimento das partes
   - name: Push
     x-displayName: Push
-  - name: Tabela preço
-    x-displayName: Tabela preço
+  - name: Tabela de preço
+    x-displayName: Tabela de preço
   - name: Tabela preço categoria
     x-displayName: Tabela preço categoria
   - name: Tarefa
@@ -157,7 +157,7 @@ x-tagGroups:
       - Partes
       - Envolvimento das partes
       - Push
-      - Tabela preço
+      - Tabela de preço
       - Tabela preço categoria
       - Tarefa
       - Timeline
@@ -30108,7 +30108,7 @@ paths:
         - $ref: '#/components/parameters/Profile'
       responses:
         '200':
-          description: Obtém a lista de países
+          description: OK
           content:
             application/json:
               schema:
@@ -30152,7 +30152,7 @@ paths:
         - $ref: '#/components/parameters/Profile'
       responses:
         '200':
-          description: Obtém a lista de estados do Brasil
+          description: OK
           content:
             application/json:
               schema:
@@ -30203,7 +30203,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Lista as cidades de acordo com o estado informado
+          description: OK
           content:
             application/json:
               schema:
@@ -30566,7 +30566,7 @@ paths:
   /api/escritorios/{idEscritorio}/tabelaspreco:
     get:
       tags:
-        - Tabela preço
+        - Tabela de preço
       summary: Tabelas de preço
       description: Lista as tabelas de preço
       operationId: api-escritorios-idEscritorio-tabelaspreco
@@ -30575,11 +30575,12 @@ paths:
         - name: idEscritorio
           in: path
           required: true
+          description: O identificador do escritório
           schema:
             type: integer
       responses:
         '200':
-          description: tabelas de preço
+          description: OK
           content:
             application/json:
               schema:
@@ -30616,7 +30617,7 @@ paths:
     get:
       tags:
         - Tabela preço categoria
-      summary: Lista tabelas de preço categoria
+      summary: Lista categorias de tabela de preço
       operationId: api-escritorios-idEscritorio-tabelasprecocategoria
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -30627,7 +30628,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Tabelas de preço categoria
+          description: OK
           content:
             application/json:
               schema:
@@ -30671,6 +30672,7 @@ paths:
         - name: cdProcesso
           in: path
           required: true
+          description: O identificador do processo
           schema:
             type: integer
         - name: ignoraIdFuncionario
@@ -30689,9 +30691,15 @@ paths:
           description: 'Default: 10'
           schema:
             type: integer
+        - name: subcasos
+          in: query
+          required: false
+          description: 'Default: false'
+          schema:
+            type: integer
       responses:
         '200':
-          description: Compromissos
+          description: OK
           content:
             application/json:
               schema:

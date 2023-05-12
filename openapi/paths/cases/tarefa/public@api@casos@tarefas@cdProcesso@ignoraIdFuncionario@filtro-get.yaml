@@ -6,10 +6,10 @@ operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: cdProcesso
     in: path
     required: true
+    description: "O identificador do processo"
     schema:
       type: integer
   - name: ignoraIdFuncionario
@@ -28,12 +28,18 @@ parameters:
     description: "Default: 10"
     schema:
       type: integer
+  - name: subcasos
+    in: query
+    required: false
+    description: "Default: false"
+    schema: 
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Compromissos"
+    description: "OK"
     content:
       application/json:
         schema:

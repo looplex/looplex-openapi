@@ -1,16 +1,16 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Tabela preço
+  - Tabela de preço
 summary: Tabelas de preço
 description: Lista as tabelas de preço
 operationId: api-escritorios-idEscritorio-tabelaspreco
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: idEscritorio
     in: path
     required: true
+    description: "O identificador do escritório"
     schema:
       type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
@@ -18,7 +18,7 @@ parameters:
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "tabelas de preço"
+    description: "OK"
     content:
       application/json:
         schema:

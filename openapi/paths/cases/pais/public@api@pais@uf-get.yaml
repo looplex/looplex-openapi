@@ -5,10 +5,9 @@ description: Obtém a lista de estados do Brasil
 operationId: statesOfBrazil
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
 responses:
   "200":
-    description: "Obtém a lista de estados do Brasil"
+    description: "OK"
     content:
       application/json:
         schema: 

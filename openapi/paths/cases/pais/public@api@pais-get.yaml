@@ -5,10 +5,9 @@ description: Obtém a lista de países
 operationId: countries
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
 responses:
   "200":
-    description: "Obtém a lista de países"
+    description: "OK"
     content:
       application/json:
         schema: 
