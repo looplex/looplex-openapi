@@ -23721,7 +23721,7 @@ paths:
       operationId: api-andamentos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: id
+        - name: ID
           in: path
           required: true
           schema:
@@ -23767,7 +23767,7 @@ paths:
       operationId: api-andamentos-idAndamento-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: idAndamento
+        - name: ID
           in: path
           required: true
           schema:
@@ -23818,7 +23818,7 @@ paths:
       operationId: api-andamentos-idAndamento-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: idAndamento
+        - name: ID
           in: path
           required: true
           schema:

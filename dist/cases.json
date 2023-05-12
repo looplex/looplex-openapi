@@ -2042,7 +2042,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -2115,7 +2115,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idAndamento",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -2197,7 +2197,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idAndamento",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
