@@ -1,20 +1,20 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Autenticação
-summary: Login
-operationId: api-logon
-# Parâmetros da requisição
+summary: Login Token
+description: Login com token de acesso
+operationId: api-session
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/cases/DTOUser.yaml
+        $ref: ../../../components/schemas/cases/DTOLoginToken.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Resultado do login"
+    description: "OK"
     content:
       application/json:
         schema:
@@ -43,4 +43,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-              

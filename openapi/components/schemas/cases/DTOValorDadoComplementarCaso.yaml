@@ -20,3 +20,8 @@ properties:
     description: "A data de atualização do valor"
     example: "2022-01-01T00:00:00.000"
     type: string
+required: 
+  - IDCaso
+  - IDParametroDadoComplementar
+  - Valor
+  - DataDeAtualizacao

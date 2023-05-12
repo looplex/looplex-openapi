@@ -37,7 +37,10 @@ paths:
   /api/logon:
     post:
       $ref: ./paths/cases/login/public@api@logon-post.yaml
-
+  # /api/session:
+  #   post:
+  #     $ref: ./paths/cases/login/public@api@session-post.yaml
+      
   # Agenda
   /api/agenda/totaleventos:
     get:
