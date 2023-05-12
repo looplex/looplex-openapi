@@ -18,14 +18,7 @@ responses:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            Profile: 
-              description: "Contexto a ser usado nas requisições"
-              type: string
-            Successful:
-              description: "Se o login foi feito corretamente"
-              type: boolean
+          $ref: ../../../components/schemas/cases/DTOLoginResult.yaml
   "401":
     description: "Unauthorized"
     content:

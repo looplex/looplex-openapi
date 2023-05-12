@@ -37,7 +37,10 @@ paths:
   /api/logon:
     post:
       $ref: ./paths/cases/login/public@api@logon-post.yaml
-
+  # /api/session:
+  #   post:
+  #     $ref: ./paths/cases/login/public@api@session-post.yaml
+      
   # Agenda
   /api/agenda/totaleventos:
     get:
@@ -105,17 +108,16 @@ paths:
   /api/casos/num/andamentosimples:
     get:
       $ref: ./paths/cases/andamento/public@api@casos@num@andamentosimples-get.yaml
-  /api/andamentos/{id}:
-    get:
-      $ref: ./paths/cases/andamento/public@api@andamentos@{id}-get.yaml
   /api/andamentos:
     post:
       $ref: ./paths/cases/andamento/public@api@andamentos@post-post.yaml
-  # /api/andamentos/{idAndamento}:
-  #   put:
-  #     $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
-  #   delete:
-  #     $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
+  /api/andamentos/{ID}:
+    get:
+      $ref: ./paths/cases/andamento/public@api@andamentos@{id}-get.yaml
+    put:
+      $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
+    delete:
+      $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
   /api/andamentos/update/{idAndamento}:
     put:
       $ref: ./paths/cases/andamento/public@api@andamentos@update@{idAndamento}-put.yaml

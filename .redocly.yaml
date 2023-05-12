@@ -7,7 +7,7 @@ extends:
   - recommended
 rules:
   no-unused-components: warn
-features.openapi: 
+features.openapi:
   theme: 
     colors:
       primary:

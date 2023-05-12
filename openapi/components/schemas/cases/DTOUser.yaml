@@ -13,3 +13,5 @@ properties:
       domain:
         type: string
         description: "Escritório"
+required: 
+  - User
