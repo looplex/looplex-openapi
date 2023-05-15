@@ -6,7 +6,6 @@ description: Obtém os clientes e casos que correspondem ao termo informado
 operationId: api-busca-mobilenovo
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: termo
     in: query
     required: true
@@ -32,7 +31,7 @@ parameters:
       type: boolean
 responses:
   "200":
-    description: Obtém os clientes e casos que correspondem ao termo informado
+    description: "OK"
     content:
       application/json:
         schema:
@@ -61,4 +60,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-          

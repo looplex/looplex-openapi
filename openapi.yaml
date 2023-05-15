@@ -23920,67 +23920,16 @@ paths:
           description: 'Default: true'
           required: false
           schema:
-            type: string
+            type: boolean
         - name: inativos
           in: query
           description: 'Default: false'
           required: false
           schema:
-            type: string
+            type: boolean
       responses:
         '200':
-          description: >-
-            Retorna um array com as áreas encontradas de acordo com o filtro
-            informado.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DTOArea'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
-  /api/areas/porDomain/{domain}:
-    get:
-      tags:
-        - Area
-      summary: Obtém as áreas do escritório
-      description: Retorna um array com as áreas de acordo com o escritório informado.
-      operationId: api-areas-porDomain-domain
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - name: domain
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Retorna um array com as áreas de acordo com o escritório informado.
+          description: OK
           content:
             application/json:
               schema:
@@ -24029,7 +23978,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Retorna a área de acordo com o identificador informado.
+          description: OK
           content:
             application/json:
               schema:
@@ -24094,7 +24043,7 @@ paths:
             type: boolean
       responses:
         '200':
-          description: Obtém os clientes e casos que correspondem ao termo informado
+          description: OK
           content:
             application/json:
               schema:
@@ -26665,8 +26614,10 @@ paths:
         - Informações adicionais
       summary: Excluir informação adicional
       description: >-
-        Exclui a informação adicional. Essa informação não poderá mais ser
-        utilizada para gravar valores em processos depois de excluída.
+        Exclui a informação adicional. <br />**Essa informação não poderá mais
+        ser utilizada para gravar valores em processos depois de excluída.**<br
+        />**A exclusão de uma informação adicional só é possível se não estiver
+        sendo utilizada.**
       operationId: api-dado_complementar-id-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -27157,7 +27108,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DTOObjetoNomeValor'
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOObjetoNomeValor'
       responses:
         '200':
           description: OK

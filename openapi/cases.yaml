@@ -126,9 +126,6 @@ paths:
   /api/areas:
     get:
       $ref: ./paths/cases/area/public@api@areas@get-get.yaml
-  /api/areas/porDomain/{domain}:
-    get:
-      $ref: ./paths/cases/area/public@api@areas@porDomain@{domain}-get.yaml
   /api/areas/{id}:
     get:
       $ref: ./paths/cases/area/public@api@areas@{id}@get-get.yaml
