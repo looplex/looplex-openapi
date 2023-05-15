@@ -5,7 +5,6 @@ description: Inclui casos.
 operationId: api-casos-inclui
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
 requestBody:
   content:
     application/json:

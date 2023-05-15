@@ -5,7 +5,6 @@ description: Obtém as categorias de funcionário de acordo com o filtro informa
 operationId: api-funcionarios-IdsMin-IdsMax-categorias
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: IdsMin
     in: path
     required: true
@@ -18,7 +17,7 @@ parameters:
       type: integer
 responses:
   "200":
-    description: "Obtém as categorias de funcionário de acordo com o filtro informado"
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -49,4 +48,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            
