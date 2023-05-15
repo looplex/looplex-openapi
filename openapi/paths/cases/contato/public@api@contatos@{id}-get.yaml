@@ -5,15 +5,14 @@ description: Obtém informações do contato
 operationId: api-contatos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: id
+  - name: IDContato
     in: path
     required: true
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém informações do contato"
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -42,4 +41,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-          

@@ -63,8 +63,6 @@ tags:
     x-displayName: Cliente
   - name: Contato
     x-displayName: Contato
-  - name: Conta de acesso
-    x-displayName: Conta de acesso
   - name: Contrato
     x-displayName: Contrato
   - name: Informações adicionais
@@ -140,7 +138,6 @@ x-tagGroups:
       - Categoria
       - Cliente
       - Contato
-      - Conta de acesso
       - Contrato
       - Informações adicionais
       - Informações adicionais (valor)
@@ -25987,7 +25984,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/contatos/{id}:
+  /api/contatos/{IDContato}:
     get:
       tags:
         - Contato
@@ -25996,14 +25993,14 @@ paths:
       operationId: api-contatos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: id
+        - name: IDContato
           in: path
           required: true
           schema:
             type: integer
       responses:
         '200':
-          description: Obtém informações do contato
+          description: OK
           content:
             application/json:
               schema:
@@ -26045,7 +26042,7 @@ paths:
         - $ref: '#/components/parameters/Profile'
       responses:
         '200':
-          description: Obtém uma lista de contatos
+          description: OK
           content:
             application/json:
               schema:
@@ -26078,7 +26075,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/clientes/{idCliente}/contatos:
+  /api/clientes/{IDCliente}/contatos:
     get:
       tags:
         - Contato
@@ -26087,14 +26084,14 @@ paths:
       operationId: api-clientes-idCliente-contatos
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: idCliente
+        - name: IDCliente
           in: path
           required: true
           schema:
             type: integer
       responses:
         '200':
-          description: Obtém uma lista com os contatos do cliente
+          description: OK
           content:
             application/json:
               schema:
@@ -26143,115 +26140,13 @@ paths:
             type: integer
       responses:
         '200':
-          description: Obtém uma lista de solicitantes do cliente
+          description: OK
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOSolicitante'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
-  /api/ContaDeAcesso/ObtemContaDeAcesso:
-    get:
-      tags:
-        - Conta de acesso
-      summary: Conta de acesso por nome
-      description: Obtém a conta de acesso por nome
-      operationId: api-ContaDeAcesso-ObtemContaDeAcesso
-      parameters:
-        - name: nomeUsuario
-          in: query
-          required: true
-          schema:
-            type: string
-        - name: domain
-          in: query
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Obtém a conta de acesso por nome
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DTOContaDeAcesso'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
-  /api/ContaDeAcesso/ObtemContaDeAcesso2:
-    get:
-      tags:
-        - Conta de acesso
-      summary: Conta de acesso por nome
-      description: Obtém a conta de acesso por nome
-      operationId: api-ContaDeAcesso-ObtemContaDeAcesso2
-      parameters:
-        - name: nomeUsuario
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: domain
-          in: query
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Obtém a conta de acesso por nome
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DTOContaDeAcesso'
         '401':
           description: Unauthorized
           content:
@@ -87974,18 +87869,6 @@ components:
         CdSolicitante:
           type: integer
           description: O identificador do solicitante
-    DTOContaDeAcesso:
-      title: DTOContaDeAcesso
-      type: object
-      properties:
-        IDFuncionario:
-          type: integer
-        Conta:
-          type: string
-        IsPrimeiroAcesso:
-          type: boolean
-        IsOldPassword:
-          type: boolean
     ContratoSituacao:
       type: integer
       example: 1

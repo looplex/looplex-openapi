@@ -254,13 +254,13 @@ paths:
       $ref: ./paths/cases/cliente/public@api@clientes@{idCliente}@pasta-get.yaml
 
   # Contatos
-  /api/contatos/{id}:
+  /api/contatos/{IDContato}:
     get:
       $ref: ./paths/cases/contato/public@api@contatos@{id}-get.yaml
   /api/contatos:
     get:
       $ref: ./paths/cases/contato/public@api@contatos-get.yaml
-  /api/clientes/{idCliente}/contatos:
+  /api/clientes/{IDCliente}/contatos:
     get:
       $ref: ./paths/cases/contato/public@api@clientes@{idCliente}@contatos-get.yaml
   /api/contatos/solicitantes:

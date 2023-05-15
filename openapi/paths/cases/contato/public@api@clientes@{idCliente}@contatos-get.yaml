@@ -5,15 +5,14 @@ description: Obtém uma lista com os contatos do cliente
 operationId: api-clientes-idCliente-contatos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: idCliente
+  - name: IDCliente
     in: path
     required: true
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém uma lista com os contatos do cliente"
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -44,4 +43,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

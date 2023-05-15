@@ -5,7 +5,6 @@ description: Obtém uma lista de solicitantes do cliente
 operationId: api-contatos-solicitantes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: codCliente
     in: query
     required: true
@@ -13,7 +12,7 @@ parameters:
       type: integer
 responses:
   "200":
-    description: "Obtém uma lista de solicitantes do cliente"
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -44,4 +43,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            
