@@ -268,12 +268,6 @@ paths:
       $ref: ./paths/cases/contato/public@api@contatos@solicitantes-get.yaml
 
   # Conta de acesso
-  /api/ContaDeAcesso/ObtemContaDeAcesso:
-    get:
-      $ref: ./paths/cases/conta_de_acesso/public@api@ContaDeAcesso@ObtemContaDeAcesso-get.yaml
-  /api/ContaDeAcesso/ObtemContaDeAcesso2:
-    get:
-      $ref: ./paths/cases/conta_de_acesso/public@api@ContaDeAcesso@ObtemContaDeAcesso2-get.yaml
 
   # Contrato
   /api/contratos:
