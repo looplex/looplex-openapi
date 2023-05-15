@@ -1,11 +1,10 @@
 tags: 
   - Andamento 
 summary: Templates de andamento
-description: Obtém um array com os templates de andamentos
+description: Retorna um array com os templates de andamento
 operationId: api-andamentos-templates
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: tipoCaso
     in: query
     required: true
@@ -13,7 +12,7 @@ parameters:
       $ref: ../../../components/schemas/cases/enums/RamosJudicial.yaml
 responses:
   "200":
-    description: "Retorna um array com os templates de andamentos."
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -44,4 +43,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

@@ -1,14 +1,13 @@
 tags: 
   - Andamento 
 summary: Classificações de andamento
-description: Retorna um array com as classificações de andamento do escritório.
+description: Retorna um array com as classificações de andamento do escritório
 operationId: api-andamentos-classificacoes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
 responses:
   "200":
-    description: "Retorna um array com as classificações de andamento do escritório."
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -39,4 +38,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

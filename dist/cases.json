@@ -1536,7 +1536,7 @@
           "Andamento"
         ],
         "summary": "Templates de andamento",
-        "description": "Obtém um array com os templates de andamentos",
+        "description": "Retorna um array com os templates de andamento",
         "operationId": "api-andamentos-templates",
         "parameters": [
           {
@@ -1553,7 +1553,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna um array com os templates de andamentos.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -1614,7 +1614,7 @@
           "Andamento"
         ],
         "summary": "Classificações de andamento",
-        "description": "Retorna um array com as classificações de andamento do escritório.",
+        "description": "Retorna um array com as classificações de andamento do escritório",
         "operationId": "api-andamentos-classificacoes",
         "parameters": [
           {
@@ -1623,116 +1623,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna um array com as classificações de andamento do escritório.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/DTOAndamentoClassificacao"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}": {
-      "get": {
-        "tags": [
-          "Andamento"
-        ],
-        "summary": "Andamentos do caso",
-        "description": "Retorna um array com os andamentos do caso de acordo com o filtro informado.",
-        "operationId": "api-casos-idCaso-andamentos-data-primeiraLeitura-totalAndamentosLidosPeloMobile",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "idCaso",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "data",
-            "in": "path",
-            "example": "2021-08-18T12:00:00",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "primeiraLeitura",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "totalAndamentosLidosPeloMobile",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Retorna um array com os andamentos do caso de acordo com o filtro informado.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOAndamento"
                   }
                 }
               }
@@ -1804,7 +1701,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna um array de andamentos simples do caso informado.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -1865,7 +1762,7 @@
           "Andamento"
         ],
         "summary": "Andamentos simples por caso, numero interno ou numero externo",
-        "description": "Retorna um array de andamentos simples por caso, numero interno ou numero externo",
+        "description": "Retorna um array de andamentos simples por identificador do caso, numero interno ou numero externo",
         "operationId": "api-casos-num-andamentosimples",
         "parameters": [
           {
@@ -1875,6 +1772,7 @@
             "name": "NumeroInterno",
             "in": "query",
             "required": false,
+            "description": "Default: 0",
             "schema": {
               "type": "integer"
             }
@@ -1883,6 +1781,7 @@
             "name": "NumeroExterno",
             "in": "query",
             "required": false,
+            "description": "Default: empty string",
             "schema": {
               "type": "string"
             }
@@ -1891,6 +1790,7 @@
             "name": "IdProcesso",
             "in": "query",
             "required": false,
+            "description": "Default: 0",
             "schema": {
               "type": "integer"
             }
@@ -1898,7 +1798,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna um array de andamentos simples por caso, numero interno ou numero externo.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -1977,7 +1877,7 @@
         },
         "responses": {
           "200": {
-            "description": "Retorna o andamento inserido.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2052,7 +1952,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém o andamento de acordo com o identificador informado.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2134,7 +2034,7 @@
         },
         "responses": {
           "200": {
-            "description": "Retorna o andamento atualizado.",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2206,8 +2106,13 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "O andamento foi excluído."
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": "O andamento foi excluído."
+              }
+            }
           },
           "401": {
             "description": "Unauthorized",
@@ -2284,7 +2189,7 @@
         },
         "responses": {
           "200": {
-            "description": "Atualiza o andamento",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2298,7 +2203,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/EncapsuladorDeResposta"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ExceptionResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -2308,7 +2220,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/EncapsuladorDeResposta"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ExceptionResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -2318,7 +2237,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/EncapsuladorDeResposta"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ExceptionResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -2328,7 +2254,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/EncapsuladorDeResposta"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ExceptionResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -15857,6 +15790,42 @@
           }
         }
       },
+      "DTOAndamentoSimples": {
+        "title": "DTOAndamentoSimples",
+        "type": "object",
+        "properties": {
+          "NomeCliente": {
+            "type": "string"
+          },
+          "TituloCaso": {
+            "type": "string"
+          },
+          "NumeroInterno": {
+            "type": "string"
+          },
+          "NumeroExterno": {
+            "type": "string"
+          },
+          "idAndamento": {
+            "type": "integer"
+          },
+          "Classificacao": {
+            "type": "string"
+          },
+          "DataCompetencia": {
+            "type": "string"
+          },
+          "DataCompetenciaFormatada": {
+            "type": "string"
+          },
+          "TextoAndamento": {
+            "type": "string"
+          },
+          "IdCaso": {
+            "type": "integer"
+          }
+        }
+      },
       "eTipoClassificacaoAutomatica": {
         "type": "integer",
         "example": 1,
@@ -15963,42 +15932,6 @@
           }
         }
       },
-      "DTOAndamentoSimples": {
-        "title": "DTOAndamentoSimples",
-        "type": "object",
-        "properties": {
-          "NomeCliente": {
-            "type": "string"
-          },
-          "TituloCaso": {
-            "type": "string"
-          },
-          "NumeroInterno": {
-            "type": "string"
-          },
-          "NumeroExterno": {
-            "type": "string"
-          },
-          "idAndamento": {
-            "type": "integer"
-          },
-          "Classificacao": {
-            "type": "string"
-          },
-          "DataCompetencia": {
-            "type": "string"
-          },
-          "DataCompetenciaFormatada": {
-            "type": "string"
-          },
-          "TextoAndamento": {
-            "type": "string"
-          },
-          "IdCaso": {
-            "type": "integer"
-          }
-        }
-      },
       "EncapsuladorDeResposta": {
         "title": "EncapsuladorDeResposta",
         "type": "object",
@@ -16008,10 +15941,12 @@
             "type": "object"
           },
           "Success": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indica se foi concluído com sucesso"
           },
           "ExceptionMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "A descrição do erro (se houver)"
           }
         }
       },

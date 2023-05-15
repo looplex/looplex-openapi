@@ -17,7 +17,7 @@ requestBody:
         $ref: ../../../components/schemas/cases/DTOAndamento.yaml
 responses:
   "200":
-    description: "Retorna o andamento atualizado."
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -46,4 +46,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-          

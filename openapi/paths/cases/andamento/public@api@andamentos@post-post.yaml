@@ -5,7 +5,6 @@ description: Inclui o andamento
 operationId: api-andamentos-post
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
 requestBody:
   content:
     application/json:
@@ -13,7 +12,7 @@ requestBody:
         $ref: ../../../components/schemas/cases/DTOAndamento.yaml
 responses:
   "200":
-    description: "Retorna o andamento inserido."
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -42,4 +41,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-          

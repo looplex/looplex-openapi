@@ -5,7 +5,6 @@ description: Atualiza o andamento
 operationId: api-andamentos-update-idAndamento
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: idAndamento
     in: path
     required: true
@@ -18,7 +17,7 @@ requestBody:
         $ref: ../../../components/schemas/cases/DTOAndamento.yaml
 responses:
   "200":
-    description: "Atualiza o andamento"
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -28,23 +27,30 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          oneOf: 
+            - $ref: ../../../components/schemas/cases/EncapsuladorDeResposta.yaml
+            - $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
   "403":
     description: "Forbidden"
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          oneOf: 
+            - $ref: ../../../components/schemas/cases/EncapsuladorDeResposta.yaml
+            - $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
   "404":
     description: "Não encontrado"
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+          oneOf: 
+            - $ref: ../../../components/schemas/cases/EncapsuladorDeResposta.yaml
+            - $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
   "500":
     description: "Internal Server Error"
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-          
+          oneOf: 
+            - $ref: ../../../components/schemas/cases/EncapsuladorDeResposta.yaml
+            - $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
