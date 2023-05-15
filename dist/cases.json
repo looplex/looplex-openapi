@@ -53,7 +53,7 @@
         },
         "responses": {
           "200": {
-            "description": "Resultado do login",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
