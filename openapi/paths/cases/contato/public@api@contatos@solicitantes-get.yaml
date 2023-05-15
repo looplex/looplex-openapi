@@ -8,6 +8,7 @@ parameters:
   - name: codCliente
     in: query
     required: true
+    description: "O identificador do cliente"
     schema:
       type: integer
 responses:

@@ -41,6 +41,7 @@
           "Autenticação"
         ],
         "summary": "Login",
+        "description": "Login do Looplex Cases",
         "operationId": "api-logon",
         "requestBody": {
           "content": {
@@ -1678,7 +1679,7 @@
         }
       }
     },
-    "/api/casos/{idCaso}/andamentosimples": {
+    "/api/casos/{IDCaso}/andamentosimples": {
       "get": {
         "tags": [
           "Andamento"
@@ -1691,9 +1692,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idCaso",
+            "name": "IDCaso",
             "in": "path",
             "required": true,
+            "description": "O identificador do processo",
             "schema": {
               "type": "integer"
             }
@@ -1929,7 +1931,7 @@
         }
       }
     },
-    "/api/andamentos/{ID}": {
+    "/api/andamentos/{IDAndamento}": {
       "get": {
         "tags": [
           "Andamento"
@@ -1942,9 +1944,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "ID",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -2015,9 +2018,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "ID",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -2097,9 +2101,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "ID",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -2157,7 +2162,7 @@
         }
       }
     },
-    "/api/andamentos/update/{idAndamento}": {
+    "/api/andamentos/update/{IDAndamento}": {
       "put": {
         "tags": [
           "Andamento"
@@ -2170,9 +2175,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idAndamento",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -5654,6 +5660,7 @@
             "name": "IDContato",
             "in": "path",
             "required": true,
+            "description": "O identificador do contato",
             "schema": {
               "type": "integer"
             }
@@ -5799,6 +5806,7 @@
             "name": "IDCliente",
             "in": "path",
             "required": true,
+            "description": "O identificador do cliente",
             "schema": {
               "type": "integer"
             }
@@ -5877,6 +5885,7 @@
             "name": "codCliente",
             "in": "query",
             "required": true,
+            "description": "O identificador do cliente",
             "schema": {
               "type": "integer"
             }

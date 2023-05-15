@@ -99,7 +99,7 @@ paths:
   /api/andamentos/classificacoes:
     get:
       $ref: ./paths/cases/andamento/public@api@andamentos@classificacoes-get.yaml
-  /api/casos/{idCaso}/andamentosimples:
+  /api/casos/{IDCaso}/andamentosimples:
     get:
       $ref: ./paths/cases/andamento/public@api@casos@{idCaso}@andamentosimples-get.yaml
   /api/casos/num/andamentosimples:
@@ -108,14 +108,14 @@ paths:
   /api/andamentos:
     post:
       $ref: ./paths/cases/andamento/public@api@andamentos@post-post.yaml
-  /api/andamentos/{ID}:
+  /api/andamentos/{IDAndamento}:
     get:
       $ref: ./paths/cases/andamento/public@api@andamentos@{id}-get.yaml
     put:
       $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
     delete:
       $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
-  /api/andamentos/update/{idAndamento}:
+  /api/andamentos/update/{IDAndamento}:
     put:
       $ref: ./paths/cases/andamento/public@api@andamentos@update@{idAndamento}-put.yaml
 

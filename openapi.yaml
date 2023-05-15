@@ -22426,6 +22426,7 @@ paths:
       tags:
         - Autenticação
       summary: Login
+      description: Login do Looplex Cases
       operationId: api-logon
       requestBody:
         content:
@@ -23480,7 +23481,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/casos/{idCaso}/andamentosimples:
+  /api/casos/{IDCaso}/andamentosimples:
     get:
       tags:
         - Andamento
@@ -23489,9 +23490,10 @@ paths:
       operationId: api-casos-idCaso-andamentosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: idCaso
+        - name: IDCaso
           in: path
           required: true
+          description: O identificador do processo
           schema:
             type: integer
       responses:
@@ -23640,7 +23642,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/andamentos/{ID}:
+  /api/andamentos/{IDAndamento}:
     get:
       tags:
         - Andamento
@@ -23649,9 +23651,10 @@ paths:
       operationId: api-andamentos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: ID
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       responses:
@@ -23695,9 +23698,10 @@ paths:
       operationId: api-andamentos-idAndamento-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: ID
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       requestBody:
@@ -23746,9 +23750,10 @@ paths:
       operationId: api-andamentos-idAndamento-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: ID
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       responses:
@@ -23783,7 +23788,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/andamentos/update/{idAndamento}:
+  /api/andamentos/update/{IDAndamento}:
     put:
       tags:
         - Andamento
@@ -23792,9 +23797,10 @@ paths:
       operationId: api-andamentos-update-idAndamento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: idAndamento
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       requestBody:
@@ -25996,6 +26002,7 @@ paths:
         - name: IDContato
           in: path
           required: true
+          description: O identificador do contato
           schema:
             type: integer
       responses:
@@ -26087,6 +26094,7 @@ paths:
         - name: IDCliente
           in: path
           required: true
+          description: O identificador do cliente
           schema:
             type: integer
       responses:
@@ -26136,6 +26144,7 @@ paths:
         - name: codCliente
           in: query
           required: true
+          description: O identificador do cliente
           schema:
             type: integer
       responses:

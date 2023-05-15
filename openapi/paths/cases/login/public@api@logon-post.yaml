@@ -2,6 +2,7 @@
 tags:
   - Autenticação
 summary: Login
+description: "Login do Looplex Cases"
 operationId: api-logon
 # Parâmetros da requisição
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
