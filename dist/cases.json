@@ -53,7 +53,7 @@
         },
         "responses": {
           "200": {
-            "description": "Resultado do login",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -5638,7 +5638,7 @@
         }
       }
     },
-    "/api/contatos/{id}": {
+    "/api/contatos/{IDContato}": {
       "get": {
         "tags": [
           "Contato"
@@ -5651,7 +5651,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "IDContato",
             "in": "path",
             "required": true,
             "schema": {
@@ -5661,7 +5661,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém informações do contato",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -5728,7 +5728,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém uma lista de contatos",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -5783,7 +5783,7 @@
         }
       }
     },
-    "/api/clientes/{idCliente}/contatos": {
+    "/api/clientes/{IDCliente}/contatos": {
       "get": {
         "tags": [
           "Contato"
@@ -5796,7 +5796,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idCliente",
+            "name": "IDCliente",
             "in": "path",
             "required": true,
             "schema": {
@@ -5806,7 +5806,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém uma lista com os contatos do cliente",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -5884,7 +5884,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém uma lista de solicitantes do cliente",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -5892,166 +5892,6 @@
                   "items": {
                     "$ref": "#/components/schemas/DTOSolicitante"
                   }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/ContaDeAcesso/ObtemContaDeAcesso": {
-      "get": {
-        "tags": [
-          "Conta de acesso"
-        ],
-        "summary": "Conta de acesso por nome",
-        "description": "Obtém a conta de acesso por nome",
-        "operationId": "api-ContaDeAcesso-ObtemContaDeAcesso",
-        "parameters": [
-          {
-            "name": "nomeUsuario",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "domain",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Obtém a conta de acesso por nome",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DTOContaDeAcesso"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/ContaDeAcesso/ObtemContaDeAcesso2": {
-      "get": {
-        "tags": [
-          "Conta de acesso"
-        ],
-        "summary": "Conta de acesso por nome",
-        "description": "Obtém a conta de acesso por nome",
-        "operationId": "api-ContaDeAcesso-ObtemContaDeAcesso2",
-        "parameters": [
-          {
-            "name": "nomeUsuario",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "domain",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Obtém a conta de acesso por nome",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DTOContaDeAcesso"
                 }
               }
             }
@@ -17621,24 +17461,6 @@
           "CdSolicitante": {
             "type": "integer",
             "description": "O identificador do solicitante"
-          }
-        }
-      },
-      "DTOContaDeAcesso": {
-        "title": "DTOContaDeAcesso",
-        "type": "object",
-        "properties": {
-          "IDFuncionario": {
-            "type": "integer"
-          },
-          "Conta": {
-            "type": "string"
-          },
-          "IsPrimeiroAcesso": {
-            "type": "boolean"
-          },
-          "IsOldPassword": {
-            "type": "boolean"
           }
         }
       },
