@@ -1,29 +1,31 @@
 tags: 
   - Andamento 
 summary: Andamentos simples por caso, numero interno ou numero externo
-description: Retorna um array de andamentos simples por caso, numero interno ou numero externo
+description: Retorna um array de andamentos simples por identificador do caso, numero interno ou numero externo
 operationId: api-casos-num-andamentosimples
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: NumeroInterno
     in: query
     required: false
+    description: "Default: 0"
     schema:
       type: integer
   - name: NumeroExterno
     in: query
     required: false
+    description: "Default: empty string"
     schema:
       type: string
   - name: IdProcesso
     in: query
     required: false
+    description: "Default: 0"
     schema:
       type: integer
 responses:
   "200":
-    description: "Retorna um array de andamentos simples por caso, numero interno ou numero externo."
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -54,4 +56,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

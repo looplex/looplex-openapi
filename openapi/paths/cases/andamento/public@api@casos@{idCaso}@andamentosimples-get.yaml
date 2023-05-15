@@ -5,7 +5,6 @@ description: Retorna um array de andamentos simples do caso informado.
 operationId: api-casos-idCaso-andamentosimples
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: idCaso
     in: path
     required: true
@@ -13,7 +12,7 @@ parameters:
       type: integer
 responses:
   "200":
-    description: "Retorna um array de andamentos simples do caso informado."
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -44,4 +43,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

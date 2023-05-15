@@ -5,7 +5,6 @@ description: Retorna um array com as categorias de preço do escritório
 operationId: api-escritorios-IdEscritorio-categoriaspreco
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: IdEscritorio
     in: path
     required: true
@@ -13,7 +12,7 @@ parameters:
       type: integer
 responses:
   "200":
-    description: "Retorna um array com as categorias de preço do escritório"
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -44,4 +43,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

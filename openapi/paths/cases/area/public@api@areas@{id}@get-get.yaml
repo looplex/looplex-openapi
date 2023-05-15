@@ -5,7 +5,6 @@ description: Retorna a área de acordo com o identificador informado.
 operationId: api-areas-id-get
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: id
     in: path
     required: true
@@ -13,7 +12,7 @@ parameters:
       type: integer
 responses:
   "200":
-    description: "Retorna a área de acordo com o identificador informado."
+    description: "OK"
     content:
       application/json:
         schema: 

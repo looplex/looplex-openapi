@@ -6,5 +6,7 @@ properties:
     type: object
   Success:
     type: boolean
+    description: "Indica se foi concluído com sucesso"
   ExceptionMessage:
     type: string
+    description: "A descrição do erro (se houver)"

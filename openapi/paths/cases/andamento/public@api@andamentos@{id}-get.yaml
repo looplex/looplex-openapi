@@ -12,7 +12,7 @@ parameters:
       type: integer
 responses:
   "200":
-    description: "Obtém o andamento de acordo com o identificador informado."
+    description: "OK"
     content:
       application/json:
         schema: 
@@ -41,4 +41,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-          

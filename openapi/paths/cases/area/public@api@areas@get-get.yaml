@@ -5,22 +5,21 @@ description: Retorna um array com as áreas encontradas de acordo com o filtro i
 operationId: api-areas-get
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: ativos
     in: query
     description: "Default: true"
     required: false
     schema:
-      type: string
+      type: boolean
   - name: inativos
     in: query
     description: "Default: false"
     required: false
     schema:
-      type: string
+      type: boolean
 responses:
   "200":
-    description: "Retorna um array com as áreas encontradas de acordo com o filtro informado."
+    description: "OK"
     content:
       application/json:
         schema: 

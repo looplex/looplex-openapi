@@ -11,8 +11,11 @@ parameters:
     schema:
       type: integer
 responses:
-  "204":
-    description: "O andamento foi excluído."
+  "200":
+    description: "OK"
+    content:
+      application/json:
+        example: "O andamento foi excluído."
   "401":
     description: "Unauthorized"
     content:
@@ -37,4 +40,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-    

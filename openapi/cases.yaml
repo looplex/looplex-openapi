@@ -99,9 +99,6 @@ paths:
   /api/andamentos/classificacoes:
     get:
       $ref: ./paths/cases/andamento/public@api@andamentos@classificacoes-get.yaml
-  /api/casos/{idCaso}/andamentos/{data}/{primeiraLeitura}/{totalAndamentosLidosPeloMobile}:
-    get:
-      $ref: ./paths/cases/andamento/public@api@casos@{idCaso}@andamentos@{data}@{primeiraLeitura}@{totalAndamentosLidosPeloMobile}-get.yaml
   /api/casos/{idCaso}/andamentosimples:
     get:
       $ref: ./paths/cases/andamento/public@api@casos@{idCaso}@andamentosimples-get.yaml
@@ -126,9 +123,6 @@ paths:
   /api/areas:
     get:
       $ref: ./paths/cases/area/public@api@areas@get-get.yaml
-  /api/areas/porDomain/{domain}:
-    get:
-      $ref: ./paths/cases/area/public@api@areas@porDomain@{domain}-get.yaml
   /api/areas/{id}:
     get:
       $ref: ./paths/cases/area/public@api@areas@{id}@get-get.yaml
