@@ -6384,7 +6384,7 @@
           "Informações adicionais"
         ],
         "summary": "Excluir informação adicional",
-        "description": "Exclui a informação adicional. <br />**Essa informação não poderá mais ser utilizada para gravar valores em processos depois de excluída.**<br />**A exclusão de uma informação adicional só é possível se não estiver sendo utilizada.**",
+        "description": "Exclui a informação adicional. <br />**Essa informação não poderá mais ser utilizada para gravar valores em processos depois de excluída.**<br />**A exclusão de uma informação adicional só é possível se não estiver sendo utilizada.**. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar-id-delete",
         "parameters": [
           {
@@ -6456,7 +6456,7 @@
           "Informações adicionais"
         ],
         "summary": "Obter Informação adicional por identificador",
-        "description": "Obtém os dados de uma Informação adicional de acordo com o identificador informado",
+        "description": "Obtém os dados de uma Informação adicional de acordo com o identificador informado. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar-id-get",
         "parameters": [
           {
@@ -6532,7 +6532,7 @@
           "Informações adicionais"
         ],
         "summary": "Listar todas as Informações adicionais",
-        "description": "Lista todas as informações adicionais",
+        "description": "Lista todas as informações adicionais. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar-todos",
         "parameters": [
           {
@@ -6602,7 +6602,7 @@
           "Informações adicionais"
         ],
         "summary": "Lista Informações adicionais por filtro",
-        "description": "Lista as Informações adicionais de acordo com o filtro informado",
+        "description": "Lista as Informações adicionais de acordo com o filtro informado. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar_caso",
         "parameters": [
           {
@@ -6707,6 +6707,7 @@
           "Informações adicionais"
         ],
         "summary": "Lista Informações adicionais por tipo de caso",
+        "description": "**Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar_caso-tipoCaso",
         "parameters": [
           {
@@ -6793,6 +6794,7 @@
           "Informações adicionais"
         ],
         "summary": "Informações adicionais por processo",
+        "description": "**Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-casos-idCaso-DadosComplementaresPorCaso",
         "parameters": [
           {
@@ -6871,7 +6873,7 @@
           "Informações adicionais"
         ],
         "summary": "Listar Informações adicionais",
-        "description": "Listar as Informações adicionais por identificador do processo, numero interno ou numero externo",
+        "description": "Listar as Informações adicionais por identificador do processo, numero interno ou numero externo. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-casos-num-dadoscomplementares",
         "parameters": [
           {
@@ -7048,7 +7050,7 @@
           "Informações adicionais"
         ],
         "summary": "Atualiza Informações adicionais",
-        "description": "Atualiza as Informações adicionais informadas",
+        "description": "Atualiza as Informações adicionais informadas. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar-put",
         "parameters": [
           {
@@ -7125,7 +7127,7 @@
           "Informações adicionais"
         ],
         "summary": "Editar Informação adicional",
-        "description": "Editar propriedades de Informações adicionais. <p>**Para editar as opções de uma Informação adicional (em caso de dropdown) utilize o endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do dropdown na propriedade `Opcoes`.</p><p>Propriedades disponíveis para edição: `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>.**",
+        "description": "Editar propriedades de Informações adicionais. <p>**Para editar as opções de uma Informação adicional (em caso de dropdown) utilize o endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do dropdown na propriedade `Opcoes`.</p><p>Propriedades disponíveis para edição: `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>.**. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar-edit",
         "parameters": [
           {
@@ -7213,7 +7215,7 @@
           "Informações adicionais (valor)"
         ],
         "summary": "Incluir valor",
-        "description": "Utilizado para incluir um valor em um processo utilizando uma informação adicional",
+        "description": "Utilizado para incluir um valor em um processo utilizando uma informação adicional. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-casos-idCaso-CamposDadosComplementares",
         "parameters": [
           {
@@ -7299,7 +7301,7 @@
           "Informações adicionais (valor)"
         ],
         "summary": "Incluir valor",
-        "description": "Inclui valores em processos utilizando Informação adicional",
+        "description": "Inclui valores em processos utilizando Informação adicional. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar-valor",
         "parameters": [
           {

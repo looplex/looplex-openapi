@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: Obter Informação adicional por identificador
-description: Obtém os dados de uma Informação adicional de acordo com o identificador informado
+description: "Obtém os dados de uma Informação adicional de acordo com o identificador informado. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório."
 operationId: api-dado_complementar-id-get
 # Parâmetros da requisição
 parameters:
