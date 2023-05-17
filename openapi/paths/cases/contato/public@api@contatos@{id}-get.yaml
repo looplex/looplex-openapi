@@ -8,6 +8,7 @@ parameters:
   - name: IDContato
     in: path
     required: true
+    description: "O identificador do contato"
     schema:
       type: integer
 responses:

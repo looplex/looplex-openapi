@@ -22426,6 +22426,7 @@ paths:
       tags:
         - Autenticação
       summary: Login
+      description: Login do Looplex Cases
       operationId: api-logon
       requestBody:
         content:
@@ -23480,7 +23481,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/casos/{idCaso}/andamentosimples:
+  /api/casos/{IDCaso}/andamentosimples:
     get:
       tags:
         - Andamento
@@ -23489,9 +23490,10 @@ paths:
       operationId: api-casos-idCaso-andamentosimples
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: idCaso
+        - name: IDCaso
           in: path
           required: true
+          description: O identificador do processo
           schema:
             type: integer
       responses:
@@ -23640,7 +23642,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/andamentos/{ID}:
+  /api/andamentos/{IDAndamento}:
     get:
       tags:
         - Andamento
@@ -23649,9 +23651,10 @@ paths:
       operationId: api-andamentos-id
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: ID
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       responses:
@@ -23695,9 +23698,10 @@ paths:
       operationId: api-andamentos-idAndamento-put
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: ID
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       requestBody:
@@ -23746,9 +23750,10 @@ paths:
       operationId: api-andamentos-idAndamento-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: ID
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       responses:
@@ -23783,7 +23788,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/andamentos/update/{idAndamento}:
+  /api/andamentos/update/{IDAndamento}:
     put:
       tags:
         - Andamento
@@ -23792,9 +23797,10 @@ paths:
       operationId: api-andamentos-update-idAndamento
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: idAndamento
+        - name: IDAndamento
           in: path
           required: true
+          description: O identificador do andamento
           schema:
             type: integer
       requestBody:
@@ -25996,6 +26002,7 @@ paths:
         - name: IDContato
           in: path
           required: true
+          description: O identificador do contato
           schema:
             type: integer
       responses:
@@ -26087,6 +26094,7 @@ paths:
         - name: IDCliente
           in: path
           required: true
+          description: O identificador do cliente
           schema:
             type: integer
       responses:
@@ -26136,6 +26144,7 @@ paths:
         - name: codCliente
           in: query
           required: true
+          description: O identificador do cliente
           schema:
             type: integer
       responses:
@@ -26445,7 +26454,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/dado_complementar/{id}:
+  /api/dado_complementar/{IDParametroDadoComplementar}:
     delete:
       tags:
         - Informações adicionais
@@ -26458,7 +26467,7 @@ paths:
       operationId: api-dado_complementar-id-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: id
+        - name: IDParametroDadoComplementar
           in: path
           description: O identificador da Informação adicional
           required: true
@@ -26506,7 +26515,7 @@ paths:
       operationId: api-dado_complementar-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
-        - name: id
+        - name: IDParametroDadoComplementar
           in: path
           description: O identificador da Informação adicional
           required: true
@@ -26828,7 +26837,13 @@ paths:
       tags:
         - Informações adicionais
       summary: Cadastra Informação adicional
-      description: Cadastrar uma nova Informação adicional
+      description: >-
+        Cadastrar uma nova Informação adicional. <p /> **Notas**<br
+        />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser
+        preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou
+        opcional nas seguintes situações: <br />- **GET**: O valor já vem
+        preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor
+        padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.
       operationId: api-dado_complementar-post
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26930,8 +26945,9 @@ paths:
         Editar propriedades de Informações adicionais. <p>**Para editar as
         opções de uma Informação adicional (em caso de dropdown) utilize o
         endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do
-        dropdown na propriedade `Opcoes`.</p><p>Opções disponíveis para edição
-        `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>**
+        dropdown na propriedade `Opcoes`.</p><p>Propriedades disponíveis para
+        edição: `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`,
+        `Ativo`</p>.**
       operationId: api-dado_complementar-edit
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -86269,7 +86285,10 @@ components:
         5: interval
     RamosJudicial:
       type: integer
+      example: -2147483648
       description: |
+        `O tipo do processo`
+
         -2147483648: None
 
         1: Administrativo
@@ -87613,10 +87632,15 @@ components:
       properties:
         Nome:
           type: string
+          example: Propriedade
           description: O nome da propriedade a editar
         Valor:
           type: string
+          example: Valor a gravar
           description: O novo valor a gravar
+      required:
+        - Nome
+        - Valor
     DTOCategoriaPreco:
       title: DTOCategoriaPreco
       type: object
@@ -87915,6 +87939,8 @@ components:
       title: TipoDadoComplementar
       example: 1
       description: |
+        `O tipo do dado complementar` 
+
         -2147483648: None
 
         1: CaixaTexto
@@ -87954,88 +87980,89 @@ components:
       properties:
         IDItemDadoComplementar:
           type: integer
-          description: O identificador da opção da Informação adicional
+          example: -2147483648
+          description: >-
+            `Required / Optional`<br />O identificador da opção da Informação
+            adicional
         IDParametroDadoComplementar:
           type: integer
+          example: -2147483648
           description: O identificador da Informação adicional
         Texto:
           type: string
+          example: Opção 1
           description: O texto da opção
         Valor:
           type: string
+          example: Opção 1
           description: O texto da opção
+      required:
+        - IDParametroDadoComplementar
+        - Texto
+        - Valor
     DTOTipoProcesso:
       title: DTOTipoProcesso
       type: object
       properties:
         IDParametroDadoComplementar:
-          description: O identificador da informação adicional
           type: integer
+          example: -2147483648
+          description: '`Required / Optional`<br />O identificador da informação adicional'
         Tipo:
           $ref: '#/components/schemas/RamosJudicial'
+      required:
+        - Tipo
     DTOAreaInformacaoAdicional:
       title: DTOAreaInformacaoAdicional
       type: object
       properties:
         IDAreaParametroDadoComplementar:
           type: integer
-          description: O identificador do vinculo da area
+          example: -2147483648
+          description: '`Required / Optional`<br />O identificador do vinculo da area.'
         IDParametroDadoComplementar:
           type: integer
+          example: -2147483648
           description: O identificador da Informação adicional
         IDArea:
           type: integer
-          description: O identificador da área em que a Informação adicional está vinculada
+          example: -2147483648
+          description: >-
+            O identificador da área em que a Informação adicional está ou será
+            vinculada
         Area:
           type: string
-          description: O nome da área em que a Informação adicional está vinculada
-    DTOValorDadoComplementarFuncionario:
-      title: DTOValorDadoComplementarFuncionario
-      type: object
-      properties:
-        IDFuncionarioValorDadoComplementar:
-          type: integer
+          example: Administrativo
           description: >-
-            O identificador do valor gravado para o funcionário utilizando a
-            Informação adicional
-        IDFuncionario:
-          type: integer
-          description: O identificador do funcionário
-        IDParametroDadoComplementar:
-          type: integer
-          description: O identificador da Informação adicional
-        Valor:
-          type: string
-          description: O valor a ser gravado/atualizado na Informação adicional
-          example: Valor para gravar
-        DataDeAtualizacao:
-          description: A data de atualização do valor
-          example: '2022-01-01T00:00:00.000'
-          type: string
+            `ReadOnly`<br />O nome da área em que a Informação adicional está
+            vinculada.
+      required:
+        - IDParametroDadoComplementar
+        - IDArea
     DTOInformacaoAdicional:
       title: DTOInformacaoAdicional
       type: object
       properties:
         IDParametroDadoComplementar:
-          example: -2147483648
-          description: O identificador da Informação adicional
           type: integer
+          example: -2147483648
+          description: '`Required / Optional`<br />O identificador da Informação adicional.'
         IDCliente:
           type: integer
+          example: -2147483648
           description: >-
             O identificador do cliente. Se o valor for maior que 0, a Informação
             adicional será vinculada ao cliente.
         TipoCampoDadoComplementar:
           $ref: '#/components/schemas/TipoDadoComplementar'
-        TipoCampoDadoComplementarText:
-          type: string
-          description: O tipo de campo da Informação adicional formatado
         TituloDadoComplementar:
           description: O titulo da Informação adicional
-          example: Nome completo
+          example: Nova Informação adicional
           type: string
         TamanhoCampo:
-          description: O tamanho do campo (quando aplicável)
+          description: >-
+            O tamanho do campo. <br />`Required apenas quando
+            TipoCampoDadoComplementar for de tipo 1: CaixaTexto`
           example: 200
           type: integer
         Obrigatorio:
@@ -88047,30 +88074,47 @@ components:
           description: Indica se essa Informação adicional está ativa ou inativa
         Ordem:
           type: integer
+          example: 1
           description: A ordem de exibição dessa Informação adicional
         TipoDeVinculo:
           type: string
-          description: Indica quais os tipos de vínculo dessa Informação adicional
+          example: 'Tipos de processo: Administrativo, JudicialEstadual'
+          description: >-
+            `ReadOnly`<br />Indica quais os tipos de vínculo dessa Informação
+            adicional.
         Opcoes:
+          description: >-
+            As opções da Informação adicional. <br />`Required apenas quando
+            TipoCampoDadoComplementar for dos tipos 6: CaixaCombo ou 7:
+            CaixaDeMarcacao`.
           type: array
           items:
             $ref: '#/components/schemas/DTOItemDadoComplementar'
         VinculadoNosTiposDeProcesso:
           type: array
+          description: >-
+            Vincular dado complementar nos tipos de processos informados. <br
+            />`No GET indica os tipos de processo em que a informação adicional
+            está vinculada, em POST e PUT indica em quais tipos de processo a
+            Informação adicional deve ser vinculada.`
           items:
             $ref: '#/components/schemas/DTOTipoProcesso'
         VinculadoNasAreas:
           type: array
+          description: >-
+            Vincular dado complementar nas áreas informadas. <br />`No GET
+            indica as áreas em que a informação adicional está vinculada, em
+            POST e PUT indica em quais áreas a Informação adicional deve ser
+            vinculada.`
           items:
             $ref: '#/components/schemas/DTOAreaInformacaoAdicional'
-        ValoresProcessosCadastrados:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
-        ValoresFuncionariosCadastrados:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOValorDadoComplementarFuncionario'
+      required:
+        - TipoCampoDadoComplementar
+        - TituloDadoComplementar
+        - TamanhoCampo
+        - Obrigatorio
+        - Ativo
+        - Opcoes
     DTOInformacaoAdicionalSimples:
       title: DTOInformacaoAdicionalSimples
       type: object

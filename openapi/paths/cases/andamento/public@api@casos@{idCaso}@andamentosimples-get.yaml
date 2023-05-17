@@ -5,9 +5,10 @@ description: Retorna um array de andamentos simples do caso informado.
 operationId: api-casos-idCaso-andamentosimples
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: idCaso
+  - name: IDCaso
     in: path
     required: true
+    description: "O identificador do processo"
     schema:
       type: integer
 responses:

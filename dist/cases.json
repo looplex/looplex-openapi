@@ -41,6 +41,7 @@
           "Autenticação"
         ],
         "summary": "Login",
+        "description": "Login do Looplex Cases",
         "operationId": "api-logon",
         "requestBody": {
           "content": {
@@ -1678,7 +1679,7 @@
         }
       }
     },
-    "/api/casos/{idCaso}/andamentosimples": {
+    "/api/casos/{IDCaso}/andamentosimples": {
       "get": {
         "tags": [
           "Andamento"
@@ -1691,9 +1692,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idCaso",
+            "name": "IDCaso",
             "in": "path",
             "required": true,
+            "description": "O identificador do processo",
             "schema": {
               "type": "integer"
             }
@@ -1929,7 +1931,7 @@
         }
       }
     },
-    "/api/andamentos/{ID}": {
+    "/api/andamentos/{IDAndamento}": {
       "get": {
         "tags": [
           "Andamento"
@@ -1942,9 +1944,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "ID",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -2015,9 +2018,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "ID",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -2097,9 +2101,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "ID",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -2157,7 +2162,7 @@
         }
       }
     },
-    "/api/andamentos/update/{idAndamento}": {
+    "/api/andamentos/update/{IDAndamento}": {
       "put": {
         "tags": [
           "Andamento"
@@ -2170,9 +2175,10 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idAndamento",
+            "name": "IDAndamento",
             "in": "path",
             "required": true,
+            "description": "O identificador do andamento",
             "schema": {
               "type": "integer"
             }
@@ -5654,6 +5660,7 @@
             "name": "IDContato",
             "in": "path",
             "required": true,
+            "description": "O identificador do contato",
             "schema": {
               "type": "integer"
             }
@@ -5799,6 +5806,7 @@
             "name": "IDCliente",
             "in": "path",
             "required": true,
+            "description": "O identificador do cliente",
             "schema": {
               "type": "integer"
             }
@@ -5877,6 +5885,7 @@
             "name": "codCliente",
             "in": "query",
             "required": true,
+            "description": "O identificador do cliente",
             "schema": {
               "type": "integer"
             }
@@ -6369,7 +6378,7 @@
         }
       }
     },
-    "/api/dado_complementar/{id}": {
+    "/api/dado_complementar/{IDParametroDadoComplementar}": {
       "delete": {
         "tags": [
           "Informações adicionais"
@@ -6382,7 +6391,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "IDParametroDadoComplementar",
             "in": "path",
             "description": "O identificador da Informação adicional",
             "required": true,
@@ -6454,7 +6463,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "IDParametroDadoComplementar",
             "in": "path",
             "description": "O identificador da Informação adicional",
             "required": true,
@@ -6959,7 +6968,7 @@
           "Informações adicionais"
         ],
         "summary": "Cadastra Informação adicional",
-        "description": "Cadastrar uma nova Informação adicional",
+        "description": "Cadastrar uma nova Informação adicional. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
         "operationId": "api-dado_complementar-post",
         "parameters": [
           {
@@ -7116,7 +7125,7 @@
           "Informações adicionais"
         ],
         "summary": "Editar Informação adicional",
-        "description": "Editar propriedades de Informações adicionais. <p>**Para editar as opções de uma Informação adicional (em caso de dropdown) utilize o endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do dropdown na propriedade `Opcoes`.</p><p>Opções disponíveis para edição `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>**",
+        "description": "Editar propriedades de Informações adicionais. <p>**Para editar as opções de uma Informação adicional (em caso de dropdown) utilize o endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do dropdown na propriedade `Opcoes`.</p><p>Propriedades disponíveis para edição: `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>.**",
         "operationId": "api-dado_complementar-edit",
         "parameters": [
           {
@@ -15458,7 +15467,8 @@
       },
       "RamosJudicial": {
         "type": "integer",
-        "description": "-2147483648: None\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
+        "example": -2147483648,
+        "description": "`O tipo do processo`\n\n-2147483648: None\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
       },
       "DTOCompromissoSimples": {
         "title": "DTOCompromissoSimples",
@@ -17111,13 +17121,19 @@
         "properties": {
           "Nome": {
             "type": "string",
+            "example": "Propriedade",
             "description": "O nome da propriedade a editar"
           },
           "Valor": {
             "type": "string",
+            "example": "Valor a gravar",
             "description": "O novo valor a gravar"
           }
-        }
+        },
+        "required": [
+          "Nome",
+          "Valor"
+        ]
       },
       "DTOCategoriaPreco": {
         "title": "DTOCategoriaPreco",
@@ -17521,7 +17537,7 @@
         "type": "object",
         "title": "TipoDadoComplementar",
         "example": 1,
-        "description": "-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
+        "description": "`O tipo do dado complementar` \n\n-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
       },
       "DTOItemDadoComplementar": {
         "title": "DTOItemDadoComplementar",
@@ -17529,34 +17545,47 @@
         "properties": {
           "IDItemDadoComplementar": {
             "type": "integer",
-            "description": "O identificador da opção da Informação adicional"
+            "example": -2147483648,
+            "description": "`Required / Optional`<br />O identificador da opção da Informação adicional"
           },
           "IDParametroDadoComplementar": {
             "type": "integer",
+            "example": -2147483648,
             "description": "O identificador da Informação adicional"
           },
           "Texto": {
             "type": "string",
+            "example": "Opção 1",
             "description": "O texto da opção"
           },
           "Valor": {
             "type": "string",
+            "example": "Opção 1",
             "description": "O texto da opção"
           }
-        }
+        },
+        "required": [
+          "IDParametroDadoComplementar",
+          "Texto",
+          "Valor"
+        ]
       },
       "DTOTipoProcesso": {
         "title": "DTOTipoProcesso",
         "type": "object",
         "properties": {
           "IDParametroDadoComplementar": {
-            "description": "O identificador da informação adicional",
-            "type": "integer"
+            "type": "integer",
+            "example": -2147483648,
+            "description": "`Required / Optional`<br />O identificador da informação adicional"
           },
           "Tipo": {
             "$ref": "#/components/schemas/RamosJudicial"
           }
-        }
+        },
+        "required": [
+          "Tipo"
+        ]
       },
       "DTOAreaInformacaoAdicional": {
         "title": "DTOAreaInformacaoAdicional",
@@ -17564,77 +17593,54 @@
         "properties": {
           "IDAreaParametroDadoComplementar": {
             "type": "integer",
-            "description": "O identificador do vinculo da area"
+            "example": -2147483648,
+            "description": "`Required / Optional`<br />O identificador do vinculo da area."
           },
           "IDParametroDadoComplementar": {
             "type": "integer",
+            "example": -2147483648,
             "description": "O identificador da Informação adicional"
           },
           "IDArea": {
             "type": "integer",
-            "description": "O identificador da área em que a Informação adicional está vinculada"
+            "example": -2147483648,
+            "description": "O identificador da área em que a Informação adicional está ou será vinculada"
           },
           "Area": {
             "type": "string",
-            "description": "O nome da área em que a Informação adicional está vinculada"
+            "example": "Administrativo",
+            "description": "`ReadOnly`<br />O nome da área em que a Informação adicional está vinculada."
           }
-        }
-      },
-      "DTOValorDadoComplementarFuncionario": {
-        "title": "DTOValorDadoComplementarFuncionario",
-        "type": "object",
-        "properties": {
-          "IDFuncionarioValorDadoComplementar": {
-            "type": "integer",
-            "description": "O identificador do valor gravado para o funcionário utilizando a Informação adicional"
-          },
-          "IDFuncionario": {
-            "type": "integer",
-            "description": "O identificador do funcionário"
-          },
-          "IDParametroDadoComplementar": {
-            "type": "integer",
-            "description": "O identificador da Informação adicional"
-          },
-          "Valor": {
-            "type": "string",
-            "description": "O valor a ser gravado/atualizado na Informação adicional",
-            "example": "Valor para gravar"
-          },
-          "DataDeAtualizacao": {
-            "description": "A data de atualização do valor",
-            "example": "2022-01-01T00:00:00.000",
-            "type": "string"
-          }
-        }
+        },
+        "required": [
+          "IDParametroDadoComplementar",
+          "IDArea"
+        ]
       },
       "DTOInformacaoAdicional": {
         "title": "DTOInformacaoAdicional",
         "type": "object",
         "properties": {
           "IDParametroDadoComplementar": {
+            "type": "integer",
             "example": -2147483648,
-            "description": "O identificador da Informação adicional",
-            "type": "integer"
+            "description": "`Required / Optional`<br />O identificador da Informação adicional."
           },
           "IDCliente": {
             "type": "integer",
+            "example": -2147483648,
             "description": "O identificador do cliente. Se o valor for maior que 0, a Informação adicional será vinculada ao cliente."
           },
           "TipoCampoDadoComplementar": {
             "$ref": "#/components/schemas/TipoDadoComplementar"
           },
-          "TipoCampoDadoComplementarText": {
-            "type": "string",
-            "description": "O tipo de campo da Informação adicional formatado"
-          },
           "TituloDadoComplementar": {
             "description": "O titulo da Informação adicional",
-            "example": "Nome completo",
+            "example": "Nova Informação adicional",
             "type": "string"
           },
           "TamanhoCampo": {
-            "description": "O tamanho do campo (quando aplicável)",
+            "description": "O tamanho do campo. <br />`Required apenas quando TipoCampoDadoComplementar for de tipo 1: CaixaTexto`",
             "example": 200,
             "type": "integer"
           },
@@ -17649,13 +17655,16 @@
           },
           "Ordem": {
             "type": "integer",
+            "example": 1,
             "description": "A ordem de exibição dessa Informação adicional"
           },
           "TipoDeVinculo": {
             "type": "string",
-            "description": "Indica quais os tipos de vínculo dessa Informação adicional"
+            "example": "Tipos de processo: Administrativo, JudicialEstadual",
+            "description": "`ReadOnly`<br />Indica quais os tipos de vínculo dessa Informação adicional."
           },
           "Opcoes": {
+            "description": "As opções da Informação adicional. <br />`Required apenas quando TipoCampoDadoComplementar for dos tipos 6: CaixaCombo ou 7: CaixaDeMarcacao`.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DTOItemDadoComplementar"
@@ -17663,29 +17672,27 @@
           },
           "VinculadoNosTiposDeProcesso": {
             "type": "array",
+            "description": "Vincular dado complementar nos tipos de processos informados. <br />`No GET indica os tipos de processo em que a informação adicional está vinculada, em POST e PUT indica em quais tipos de processo a Informação adicional deve ser vinculada.`",
             "items": {
               "$ref": "#/components/schemas/DTOTipoProcesso"
             }
           },
           "VinculadoNasAreas": {
             "type": "array",
+            "description": "Vincular dado complementar nas áreas informadas. <br />`No GET indica as áreas em que a informação adicional está vinculada, em POST e PUT indica em quais áreas a Informação adicional deve ser vinculada.`",
             "items": {
               "$ref": "#/components/schemas/DTOAreaInformacaoAdicional"
             }
-          },
-          "ValoresProcessosCadastrados": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOValorDadoComplementarCaso"
-            }
-          },
-          "ValoresFuncionariosCadastrados": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DTOValorDadoComplementarFuncionario"
-            }
           }
-        }
+        },
+        "required": [
+          "TipoCampoDadoComplementar",
+          "TituloDadoComplementar",
+          "TamanhoCampo",
+          "Obrigatorio",
+          "Ativo",
+          "Opcoes"
+        ]
       },
       "DTOInformacaoAdicionalSimples": {
         "title": "DTOInformacaoAdicionalSimples",

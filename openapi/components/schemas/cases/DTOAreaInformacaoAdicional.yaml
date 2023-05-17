@@ -3,13 +3,20 @@ type: object
 properties:
   IDAreaParametroDadoComplementar:    
     type: integer
-    description: "O identificador do vinculo da area"
+    example: -2147483648
+    description: "`Required / Optional`<br />O identificador do vinculo da area."
   IDParametroDadoComplementar:    
     type: integer
+    example: -2147483648
     description: "O identificador da Informação adicional"
   IDArea:    
     type: integer
-    description: "O identificador da área em que a Informação adicional está vinculada"
+    example: -2147483648
+    description: "O identificador da área em que a Informação adicional está ou será vinculada"
   Area:    
     type: string
-    description: "O nome da área em que a Informação adicional está vinculada"
+    example: "Administrativo"
+    description: "`ReadOnly`<br />O nome da área em que a Informação adicional está vinculada."
+required: 
+  - IDParametroDadoComplementar
+  - IDArea

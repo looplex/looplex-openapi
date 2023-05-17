@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: Editar Informação adicional
-description: Editar propriedades de Informações adicionais. <p>**Para editar as opções de uma Informação adicional (em caso de dropdown) utilize o endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do dropdown na propriedade `Opcoes`.</p><p>Opções disponíveis para edição `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>**
+description: "Editar propriedades de Informações adicionais. <p>**Para editar as opções de uma Informação adicional (em caso de dropdown) utilize o endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do dropdown na propriedade `Opcoes`.</p><p>Propriedades disponíveis para edição: `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`</p>.**"
 operationId: api-dado_complementar-edit
 # Parâmetros da requisição
 parameters:

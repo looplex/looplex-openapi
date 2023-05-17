@@ -7,7 +7,7 @@ operationId: api-dado_complementar-id-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: id
+  - name: IDParametroDadoComplementar
     in: path
     description: "O identificador da Informação adicional"
     required: true
