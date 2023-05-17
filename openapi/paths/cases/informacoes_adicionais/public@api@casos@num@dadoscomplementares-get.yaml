@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: Listar Informações adicionais
-description: Listar as Informações adicionais por identificador do processo, numero interno ou numero externo
+description: "Listar as Informações adicionais por identificador do processo, numero interno ou numero externo. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório."
 operationId: api-casos-num-dadoscomplementares
 # Parâmetros da requisição
 parameters:
