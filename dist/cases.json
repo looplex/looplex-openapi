@@ -6970,7 +6970,7 @@
           "Informações adicionais"
         ],
         "summary": "Cadastra Informação adicional",
-        "description": "Cadastrar uma nova Informação adicional. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.",
+        "description": "Cadastrar uma nova Informação adicional.",
         "operationId": "api-dado_complementar-post",
         "parameters": [
           {
@@ -15470,7 +15470,7 @@
       "RamosJudicial": {
         "type": "integer",
         "example": -2147483648,
-        "description": "`O tipo do processo`\n\n-2147483648: None\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
+        "description": "`O tipo do processo`\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
       },
       "DTOCompromissoSimples": {
         "title": "DTOCompromissoSimples",
@@ -17579,7 +17579,7 @@
           "IDParametroDadoComplementar": {
             "type": "integer",
             "example": -2147483648,
-            "description": "`Required / Optional`<br />O identificador da informação adicional"
+            "description": "O identificador da informação adicional.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor do parâmetro já existente."
           },
           "Tipo": {
             "$ref": "#/components/schemas/RamosJudicial"
@@ -17596,7 +17596,7 @@
           "IDAreaParametroDadoComplementar": {
             "type": "integer",
             "example": -2147483648,
-            "description": "`Required / Optional`<br />O identificador do vinculo da area."
+            "description": "O identificador do vinculo da area.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor do parâmetro já existente."
           },
           "IDParametroDadoComplementar": {
             "type": "integer",
@@ -17611,7 +17611,7 @@
           "Area": {
             "type": "string",
             "example": "Administrativo",
-            "description": "`ReadOnly`<br />O nome da área em que a Informação adicional está vinculada."
+            "description": "O nome da área em que a Informação adicional está vinculada.<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />"
           }
         },
         "required": [
@@ -17626,7 +17626,7 @@
           "IDParametroDadoComplementar": {
             "type": "integer",
             "example": -2147483648,
-            "description": "`Required / Optional`<br />O identificador da Informação adicional."
+            "description": "O identificador da Informação adicional.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor do parâmetro já existente."
           },
           "IDCliente": {
             "type": "integer",
@@ -17642,7 +17642,7 @@
             "type": "string"
           },
           "TamanhoCampo": {
-            "description": "O tamanho do campo. <br />`Required apenas quando TipoCampoDadoComplementar for de tipo 1: CaixaTexto`",
+            "description": "O tamanho do campo.<br />`Required apenas quando TipoCampoDadoComplementar for de tipo 1: CaixaTexto`",
             "example": 200,
             "type": "integer"
           },
@@ -17663,7 +17663,7 @@
           "TipoDeVinculo": {
             "type": "string",
             "example": "Tipos de processo: Administrativo, JudicialEstadual",
-            "description": "`ReadOnly`<br />Indica quais os tipos de vínculo dessa Informação adicional."
+            "description": "Indica quais os tipos de vínculo dessa Informação adicional.<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido."
           },
           "Opcoes": {
             "description": "As opções da Informação adicional. <br />`Required apenas quando TipoCampoDadoComplementar for dos tipos 6: CaixaCombo ou 7: CaixaDeMarcacao`.",
@@ -17688,6 +17688,7 @@
           }
         },
         "required": [
+          "IDParametroDadoComplementar",
           "TipoCampoDadoComplementar",
           "TituloDadoComplementar",
           "TamanhoCampo",

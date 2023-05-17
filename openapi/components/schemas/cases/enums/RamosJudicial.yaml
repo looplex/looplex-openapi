@@ -2,8 +2,6 @@ type: integer
 example: -2147483648
 description: |
   `O tipo do processo`
-
-  -2147483648: None
   
   1: Administrativo
 

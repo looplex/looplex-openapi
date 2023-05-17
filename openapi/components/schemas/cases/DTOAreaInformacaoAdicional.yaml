@@ -4,7 +4,7 @@ properties:
   IDAreaParametroDadoComplementar:    
     type: integer
     example: -2147483648
-    description: "`Required / Optional`<br />O identificador do vinculo da area."
+    description: "O identificador do vinculo da area.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor do parâmetro já existente."
   IDParametroDadoComplementar:    
     type: integer
     example: -2147483648
@@ -16,7 +16,7 @@ properties:
   Area:    
     type: string
     example: "Administrativo"
-    description: "`ReadOnly`<br />O nome da área em que a Informação adicional está vinculada."
+    description: "O nome da área em que a Informação adicional está vinculada.<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />"
 required: 
   - IDParametroDadoComplementar
   - IDArea
