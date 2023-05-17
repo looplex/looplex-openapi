@@ -26843,7 +26843,7 @@ paths:
         preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou
         opcional nas seguintes situações: <br />- **GET**: O valor já vem
         preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor
-        padrão do payload.<br />- **PUT e DELETE**: Required.
+        padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.
       operationId: api-dado_complementar-post
       parameters:
         - $ref: '#/components/parameters/Profile'
