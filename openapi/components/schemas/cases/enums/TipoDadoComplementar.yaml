@@ -2,6 +2,8 @@ type: object
 title: TipoDadoComplementar
 example: 1
 description: |
+  `O tipo do dado complementar` 
+
   -2147483648: None
   
   1: CaixaTexto

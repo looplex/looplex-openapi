@@ -287,7 +287,7 @@ paths:
       $ref: ./paths/cases/contrato/public@api@contratos@{id}-get.yaml
 
   # Informações adicionais
-  /api/dado_complementar/{id}:
+  /api/dado_complementar/{IDParametroDadoComplementar}:
     delete:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
     get:
