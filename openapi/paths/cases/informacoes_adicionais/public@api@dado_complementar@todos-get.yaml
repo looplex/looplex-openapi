@@ -1,8 +1,8 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Informações adicionais
-summary: Listar todas as Informações adicionais
-description: "Lista todas as informações adicionais. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou opcional nas seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório."
+summary: "Lista todas as Informações adicionais"
+description: ""
 operationId: api-dado_complementar-todos
 # Parâmetros da requisição
 parameters:

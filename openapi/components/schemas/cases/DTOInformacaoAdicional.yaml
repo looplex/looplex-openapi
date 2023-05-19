@@ -4,7 +4,7 @@ properties:
   IDParametroDadoComplementar:
     type: integer
     example: -2147483648
-    description: "`Required / Optional`<br />O identificador da Informação adicional."
+    description: "O identificador da Informação adicional.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
   IDCliente:
     type: integer
     example: -2147483648
@@ -16,7 +16,7 @@ properties:
     example: "Nova Informação adicional"
     type: string
   TamanhoCampo:
-    description: "O tamanho do campo. <br />`Required apenas quando TipoCampoDadoComplementar for de tipo 1: CaixaTexto`"
+    description: "O tamanho do campo.<br />`Required apenas quando TipoCampoDadoComplementar for de tipo 1: CaixaTexto`"
     example: 200
     type: integer
   Obrigatorio:
@@ -32,8 +32,8 @@ properties:
     description: "A ordem de exibição dessa Informação adicional"
   TipoDeVinculo:
     type: string
-    example: "Tipos de processo: Administrativo, JudicialEstadual"
-    description: "`ReadOnly`<br />Indica quais os tipos de vínculo dessa Informação adicional."  
+    example: "Global"
+    description: "Indica quais os tipos de vínculo dessa Informação adicional.<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido."  
   Opcoes:
     description: "As opções da Informação adicional. <br />`Required apenas quando TipoCampoDadoComplementar for dos tipos 6: CaixaCombo ou 7: CaixaDeMarcacao`."
     type: array
@@ -50,6 +50,7 @@ properties:
     items: 
       $ref: DTOAreaInformacaoAdicional.yaml         
 required: 
+  - IDParametroDadoComplementar
   - TipoCampoDadoComplementar
   - TituloDadoComplementar
   - TamanhoCampo
