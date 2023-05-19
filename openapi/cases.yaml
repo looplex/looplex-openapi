@@ -317,9 +317,6 @@ paths:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@edit-put.yaml'
 
   # Informações adicionais (Valor)
-  /api/casos/{idCaso}/CamposDadosComplementares:
-    post:
-      $ref: './paths/cases/informacoes_adicionais_valor/public@api@casos@idCaso@CamposDadosComplementares-post.yaml'
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'

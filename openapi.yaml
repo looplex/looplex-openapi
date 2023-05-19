@@ -26458,17 +26458,11 @@ paths:
     delete:
       tags:
         - Informações adicionais
-      summary: Excluir informação adicional
+      summary: Exclui a informação adicional
       description: >-
-        Exclui a informação adicional. <br />**Essa informação não poderá mais
-        ser utilizada para gravar valores em processos depois de excluída.**<br
-        />**A exclusão de uma informação adicional só é possível se não estiver
-        sendo utilizada.**. <p /> **Notas**<br />`ReadOnly`: O campo deve ser
-        enviado no objeto mas não deve ser preenchido.<br />`Required /
-        Optional`: O campo pode ser obrigatório ou opcional nas seguintes
-        situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**:
-        A propriedade deve ser enviada com o valor padrão do payload.<br />-
-        **PUT e DELETE**: Preenchimento obrigatório.
+        **Essa informação não poderá mais ser utilizada para gravar valores em
+        processos depois de excluída.**<br />**A exclusão de uma informação
+        adicional só é possível se não estiver sendo utilizada.**.
       operationId: api-dado_complementar-id-delete
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26516,12 +26510,7 @@ paths:
       summary: Obter Informação adicional por identificador
       description: >-
         Obtém os dados de uma Informação adicional de acordo com o identificador
-        informado. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no
-        objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo
-        pode ser obrigatório ou opcional nas seguintes situações: <br />-
-        **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve
-        ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**:
-        Preenchimento obrigatório.
+        informado.
       operationId: api-dado_complementar-id-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26568,14 +26557,8 @@ paths:
     get:
       tags:
         - Informações adicionais
-      summary: Listar todas as Informações adicionais
-      description: >-
-        Lista todas as informações adicionais. <p /> **Notas**<br />`ReadOnly`:
-        O campo deve ser enviado no objeto mas não deve ser preenchido.<br
-        />`Required / Optional`: O campo pode ser obrigatório ou opcional nas
-        seguintes situações: <br />- **GET**: O valor já vem preenchido.<br />-
-        **POST**: A propriedade deve ser enviada com o valor padrão do
-        payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.
+      summary: Lista todas as Informações adicionais
+      description: ''
       operationId: api-dado_complementar-todos
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26619,14 +26602,7 @@ paths:
       tags:
         - Informações adicionais
       summary: Lista Informações adicionais por filtro
-      description: >-
-        Lista as Informações adicionais de acordo com o filtro informado. <p />
-        **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não
-        deve ser preenchido.<br />`Required / Optional`: O campo pode ser
-        obrigatório ou opcional nas seguintes situações: <br />- **GET**: O
-        valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada
-        com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento
-        obrigatório.
+      description: Lista as Informações adicionais de acordo com o filtro informado.
       operationId: api-dado_complementar_caso
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26693,13 +26669,7 @@ paths:
       tags:
         - Informações adicionais
       summary: Lista Informações adicionais por tipo de caso
-      description: >-
-        **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não
-        deve ser preenchido.<br />`Required / Optional`: O campo pode ser
-        obrigatório ou opcional nas seguintes situações: <br />- **GET**: O
-        valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada
-        com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento
-        obrigatório.
+      description: ''
       operationId: api-dado_complementar_caso-tipoCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26753,14 +26723,8 @@ paths:
     get:
       tags:
         - Informações adicionais
-      summary: Informações adicionais por processo
-      description: >-
-        **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não
-        deve ser preenchido.<br />`Required / Optional`: O campo pode ser
-        obrigatório ou opcional nas seguintes situações: <br />- **GET**: O
-        valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada
-        com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento
-        obrigatório.
+      summary: Lista Informações adicionais por caso
+      description: ''
       operationId: api-casos-idCaso-DadosComplementaresPorCaso
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26809,33 +26773,28 @@ paths:
     get:
       tags:
         - Informações adicionais
-      summary: Listar Informações adicionais
+      summary: Lista Informações adicionais por filtro
       description: >-
         Listar as Informações adicionais por identificador do processo, numero
-        interno ou numero externo. <p /> **Notas**<br />`ReadOnly`: O campo deve
-        ser enviado no objeto mas não deve ser preenchido.<br />`Required /
-        Optional`: O campo pode ser obrigatório ou opcional nas seguintes
-        situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**:
-        A propriedade deve ser enviada com o valor padrão do payload.<br />-
-        **PUT e DELETE**: Preenchimento obrigatório.
+        interno ou numero externo.
       operationId: api-casos-num-dadoscomplementares
       parameters:
         - $ref: '#/components/parameters/Profile'
         - name: NumeroInterno
           in: query
-          description: 'O numero interno do processo. (Default: 0)'
+          description: 'O numero interno do processo. `(Default: 0)`'
           required: false
           schema:
             type: integer
         - name: NumeroExterno
           in: query
-          description: 'O numero externo do processo. (Default: empty string)'
+          description: 'O numero externo do processo. `(Default: empty string)`'
           required: false
           schema:
             type: string
         - name: IdProcesso
           in: query
-          description: 'O identificador do processo. (Default: 0)'
+          description: 'O identificador do processo. `(Default: 0)`'
           required: false
           schema:
             type: integer
@@ -26878,8 +26837,8 @@ paths:
     post:
       tags:
         - Informações adicionais
-      summary: Cadastra Informação adicional
-      description: Cadastrar uma nova Informação adicional.
+      summary: Cadastra Informações adicionais (completa)
+      description: Cadastrar novas Informações adicionais.
       operationId: api-dado_complementar-post
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26928,14 +26887,8 @@ paths:
     put:
       tags:
         - Informações adicionais
-      summary: Atualiza Informações adicionais
-      description: >-
-        Atualiza as Informações adicionais informadas. <p /> **Notas**<br
-        />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser
-        preenchido.<br />`Required / Optional`: O campo pode ser obrigatório ou
-        opcional nas seguintes situações: <br />- **GET**: O valor já vem
-        preenchido.<br />- **POST**: A propriedade deve ser enviada com o valor
-        padrão do payload.<br />- **PUT e DELETE**: Preenchimento obrigatório.
+      summary: Atualiza Informações adicionais (completa)
+      description: Atualiza as Informações adicionais informadas.
       operationId: api-dado_complementar-put
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26982,19 +26935,10 @@ paths:
     put:
       tags:
         - Informações adicionais
-      summary: Editar Informação adicional
+      summary: Editar propriedades específicas da Informação adicional
       description: >-
-        Editar propriedades de Informações adicionais. <p>**Para editar as
-        opções de uma Informação adicional (em caso de dropdown) utilize o
-        endpoint `Atualiza Informações adicionais [PUT]`, passando as opções do
-        dropdown na propriedade `Opcoes`.</p><p>Propriedades disponíveis para
-        edição: `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`,
-        `Ativo`</p>.**. <p /> **Notas**<br />`ReadOnly`: O campo deve ser
-        enviado no objeto mas não deve ser preenchido.<br />`Required /
-        Optional`: O campo pode ser obrigatório ou opcional nas seguintes
-        situações: <br />- **GET**: O valor já vem preenchido.<br />- **POST**:
-        A propriedade deve ser enviada com o valor padrão do payload.<br />-
-        **PUT e DELETE**: Preenchimento obrigatório.
+        **Propriedades disponíveis para edição**<br /> `TituloDadoComplementar`,
+        `TamanhoCampo`, `Obrigatorio`, `Ativo`.
       operationId: api-dado_complementar-edit
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -27044,80 +26988,12 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/casos/{idCaso}/CamposDadosComplementares:
-    post:
-      tags:
-        - Informações adicionais (valor)
-      summary: Incluir valor
-      description: >-
-        Utilizado para incluir um valor em um processo utilizando uma informação
-        adicional. <p /> **Notas**<br />`ReadOnly`: O campo deve ser enviado no
-        objeto mas não deve ser preenchido.<br />`Required / Optional`: O campo
-        pode ser obrigatório ou opcional nas seguintes situações: <br />-
-        **GET**: O valor já vem preenchido.<br />- **POST**: A propriedade deve
-        ser enviada com o valor padrão do payload.<br />- **PUT e DELETE**:
-        Preenchimento obrigatório.
-      operationId: api-casos-idCaso-CamposDadosComplementares
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - name: idCaso
-          in: path
-          description: O identificador do processo
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/DTOProcessoValorDadoComplementar'
-      responses:
-        '200':
-          description: 200 OK
-          content:
-            application/json:
-              example: true
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
   /api/dado_complementar/valor:
     post:
       tags:
         - Informações adicionais (valor)
-      summary: Incluir valor
-      description: >-
-        Inclui valores em processos utilizando Informação adicional. <p />
-        **Notas**<br />`ReadOnly`: O campo deve ser enviado no objeto mas não
-        deve ser preenchido.<br />`Required / Optional`: O campo pode ser
-        obrigatório ou opcional nas seguintes situações: <br />- **GET**: O
-        valor já vem preenchido.<br />- **POST**: A propriedade deve ser enviada
-        com o valor padrão do payload.<br />- **PUT e DELETE**: Preenchimento
-        obrigatório.
+      summary: Incluir valor em processo utilizando informação adicional
+      description: Inclui valores em processos utilizando Informação adicional.
       operationId: api-dado_complementar-valor
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -87114,20 +86990,20 @@ components:
         IDProcessoValorDadoComplementar:
           description: >-
             O identificador do valor gravado no processo utilizando a Informação
-            adicional
+            adicional.<br />`Required`<br />- **POST**: A propriedade deve ser
+            enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher
+            com o valor da propriedade já existente.
           type: integer
         IDCaso:
-          description: >-
-            O identificador do caso. Se o valor for maior que 0, o dado
-            complementar será vinculada ao caso.
+          description: O identificador do caso.
           example: 100
           type: integer
         IDParametroDadoComplementar:
-          description: O identificador da Informação adicional
+          description: O identificador da Informação adicional.
           example: 50
           type: integer
         Valor:
-          description: O valor a ser gravado/atualizado na Informação adicional
+          description: O valor a ser gravado / atualizado na Informação adicional
           example: Valor para gravar
           type: string
         DataDeAtualizacao:
@@ -88114,8 +87990,8 @@ components:
           description: >-
             O identificador da Informação adicional.<br />`Required`<br />-
             **POST**: A propriedade deve ser enviada com o valor
-            *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor do
-            parâmetro já existente.
+            *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da
+            propriedade já existente.
         IDCliente:
           type: integer
           example: -2147483648
@@ -88147,7 +88023,7 @@ components:
           description: A ordem de exibição dessa Informação adicional
         TipoDeVinculo:
           type: string
-          example: 'Tipos de processo: Administrativo, JudicialEstadual'
+          example: Global
           description: >-
             Indica quais os tipos de vínculo dessa Informação adicional.<br
             />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser
@@ -88208,36 +88084,6 @@ components:
             type: string
         IdCaso:
           type: integer
-    DTOProcessoValorDadoComplementar:
-      title: DTOProcessoValorDadoComplementar
-      type: object
-      properties:
-        IDProcessoValorDadoComplementar:
-          description: O identificador do valor gravado no processo
-          type: integer
-        IDProcesso:
-          description: O identificador do processo em que o valor foi ou será gravado
-          type: integer
-        IDParamDadoComplementar:
-          description: >-
-            O identificador da Informação adicional que será utilizada para
-            gravar o valor
-          type: integer
-        Valor:
-          description: O valor a ser gravado
-          type: string
-        DtValor:
-          type: string
-        DataAtualizacao:
-          type: string
-        IDContaDeAcesso:
-          type: integer
-      required:
-        - IDProcesso
-        - IDParamDadoComplementar
-        - Valor
-        - DtValor
-        - DataAtualizacao
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object
