@@ -14,10 +14,16 @@ parameters:
     required: true
     schema:
       type: string
-  - name: data
+  - name: dataInicio
     in: query
-    description: "A data para pesquisa"
+    description: "Data início para pesquisa"
     required: true
+    schema:
+      type: string
+  - name: dataFim
+    in: query
+    description: "Data utilizada apenas para o filtro de intervalo (customizado)" 
+    required: false
     schema:
       type: string
   - name: listaPorExecutor
