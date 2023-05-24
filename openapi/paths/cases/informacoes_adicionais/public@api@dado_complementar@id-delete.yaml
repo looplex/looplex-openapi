@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: "Exclui a informação adicional"
-description: "**Essa informação não poderá mais ser utilizada para gravar valores em processos depois de excluída.**<br />**A exclusão de uma informação adicional só é possível se não estiver sendo utilizada.**."
+description: "**Essa informação não poderá mais ser utilizada para gravar valores em processos depois de excluída.**<br />**A exclusão de uma informação adicional só é possível se não estiver sendo utilizada.**"
 operationId: api-dado_complementar-id-delete
 # Parâmetros da requisição
 parameters:

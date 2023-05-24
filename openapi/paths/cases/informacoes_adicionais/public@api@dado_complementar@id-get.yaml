@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Informações adicionais
-summary: "Obter Informação adicional por identificador"
+summary: "Obtém Informação adicional por identificador"
 description: "Obtém os dados de uma Informação adicional de acordo com o identificador informado."
 operationId: api-dado_complementar-id-get
 # Parâmetros da requisição

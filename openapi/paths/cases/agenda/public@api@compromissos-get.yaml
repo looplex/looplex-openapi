@@ -1,13 +1,12 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Agenda
-summary: Compromissos do funcionário
-description: Obtém a lista de compromissos de acordo com o filtro informado
+summary: "Compromissos do funcionário"
+description: "Obtém a lista de compromissos de acordo com o filtro informado"
 operationId: api-compromissos
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: idsFuncionarios
     in: query
     description: "Os identificadores dos funcionários"

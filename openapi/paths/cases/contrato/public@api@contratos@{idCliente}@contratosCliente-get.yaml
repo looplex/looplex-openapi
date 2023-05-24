@@ -1,31 +1,31 @@
 tags: 
   - Contrato 
-summary: Contratos do cliente
-description: Obtém os contratos do cliente de acordo com o filtro informado
+summary: "Lista os contratos do cliente"
+description: ""
 operationId: api-contratos-idCliente-contratosCliente
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: idCliente
+  - name: IDCliente
     in: path
     required: true
+    description: "O identificador do cliente"
     schema:
       type: integer
   - name: ativos
     in: query
-    description: "Default: true"
+    description: "`Default: true`<br />Lista contratos ativos?"
     required: false
     schema:
       type: boolean
   - name: inativos
     in: query
-    description: "Default: false"
+    description: "`Default: false`<br />Lista contratos inativos?"
     required: false
     schema:
       type: boolean
 responses:
   "200":
-    description: "Obtém os contratos do cliente"
+    description: "OK"
     content:
       application/json:
         schema: 
