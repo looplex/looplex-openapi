@@ -1,26 +1,25 @@
 tags: 
   - Contrato 
-summary: Contratos
-description: Obtém os contratos de acordo com o filtro informado
+summary: "Lista os contratos por situação (ativos / inativos)"
+description: ""
 operationId: api-contratos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: ativos
     in: query
-    description: "Default: true"
+    description: "`Default: true`<br />Lista os contratos ativos?"
     required: false
     schema:
       type: boolean
   - name: inativos
     in: query
-    description: "Default: false"
+    description: "`Default: false`<br />Lista os contratos inativos?"
     required: false
     schema:
       type: boolean
 responses:
   "200":
-    description: "Obtém um array com os contratos de acordo com o filtro informado"
+    description: "OK"
     content:
       application/json:
         schema: 

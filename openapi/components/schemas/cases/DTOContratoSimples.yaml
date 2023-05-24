@@ -1,9 +1,12 @@
 title: DTOContratoSimples
 type: object
 properties:
-  Titulo:
-    type: string
   IDCliente:
     type: integer
+    description: "O identificador do cliente"
+  Titulo:
+    type: string
+    description: "O título do contrato"
   Descricao:
     type: string
+    description: "A descrição do contrato"

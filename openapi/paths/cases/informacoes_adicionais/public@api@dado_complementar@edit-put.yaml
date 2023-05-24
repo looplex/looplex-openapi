@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Informações adicionais
-summary: Editar propriedades específicas da Informação adicional
+summary: Edita propriedades específicas da Informação adicional
 description: "**Propriedades disponíveis para edição**<br /> `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`."
 operationId: api-dado_complementar-edit
 # Parâmetros da requisição

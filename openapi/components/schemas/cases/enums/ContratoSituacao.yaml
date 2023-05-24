@@ -1,7 +1,7 @@
 type: integer
 example: 1
 description: |
-  -2147483648: None
+  `Situação do contrato`
   
   1: Ativo
 

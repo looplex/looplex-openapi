@@ -1,19 +1,19 @@
 tags: 
   - Contrato 
-summary: Contrato
-description: Obtém o contrato de acordo com o identificador informado
+summary: "Obtém o contrato por identificador"
+description: ""
 operationId: api-contratos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: id
+  - name: IDContrato
     in: path
     required: true
+    description: "O identificador do contrato"
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém o contrato de acordo com o identificador informado"
+    description: "OK"
     content:
       application/json:
         schema: 

@@ -267,31 +267,29 @@ paths:
     get:
       $ref: ./paths/cases/contato/public@api@contatos@solicitantes-get.yaml
 
-  # Conta de acesso
-
   # Contrato
+  /api/contratos/{IDContrato}:
+    get:
+      $ref: ./paths/cases/contrato/public@api@contratos@{id}-get.yaml
+  /api/clientes/{IDCliente}/contratos:
+    get:
+      $ref: ./paths/cases/contrato/public@api@clientes@{idCliente}@contratos-get.yaml
+  /api/contratos/{IDCliente}/contratosCliente:
+    get:
+      $ref: ./paths/cases/contrato/public@api@contratos@{idCliente}@contratosCliente-get.yaml
+  /api/casos/{IDCaso}/contratosimples:
+    get:
+      $ref: ./paths/cases/contrato/public@api@casos@{idCaso}@contratosimples-get.yaml
   /api/contratos:
     get:
       $ref: ./paths/cases/contrato/public@api@contratos-get.yaml
-  /api/casos/{idCaso}/contratosimples:
-    get:
-      $ref: ./paths/cases/contrato/public@api@casos@{idCaso}@contratosimples-get.yaml
-  /api/contratos/{idCliente}/contratosCliente:
-    get:
-      $ref: ./paths/cases/contrato/public@api@contratos@{idCliente}@contratosCliente-get.yaml
-  /api/clientes/{idCliente}/contratos:
-    get:
-      $ref: ./paths/cases/contrato/public@api@clientes@{idCliente}@contratos-get.yaml
-  /api/contratos/{id}:
-    get:
-      $ref: ./paths/cases/contrato/public@api@contratos@{id}-get.yaml
 
   # Informações adicionais
   /api/dado_complementar/{IDParametroDadoComplementar}:
-    delete:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
     get:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-get.yaml'
+    delete:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
   /api/dado_complementar/todos:
     get:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@todos-get.yaml'

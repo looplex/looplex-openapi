@@ -1,22 +1,22 @@
 tags: 
   - Contrato 
-summary: Contrato do caso
-description: Obtém o contrato simples do caso informado
+summary: "Obtém o contrato do caso"
+description: ""
 operationId: api-casos-idCaso-contratosimples
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: idCaso
+  - name: IDCaso
     in: path
     required: true
+    description: "O identificador do caso"
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém o contrato simples do caso informado"
+    description: "OK"
     content:
       application/json:
-        schema: 
+        schema:
           $ref: ../../../components/schemas/cases/DTOContratoSimples.yaml
   "401":
     description: "Unauthorized"
