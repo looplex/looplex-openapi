@@ -209,6 +209,9 @@ paths:
   /api/casos/subcasos/{cdProcessoPai}:
     get:
       $ref: './paths/cases/casos/public@api@casos@subcasos@cdProcessoPai-get.yaml'
+  /api/casos/editadosrecentemente:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@editadosrecentemente-get.yaml'
 
   # Categoria
   /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
