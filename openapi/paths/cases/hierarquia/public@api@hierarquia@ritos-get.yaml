@@ -1,34 +1,37 @@
 tags: 
   - Hierarquia 
-summary: Ritos
-description: Obtém um array com os ritos de acordo com os filtros informados
+summary: "Lista os ritos de acordo com os filtros informados"
+description: ""
 operationId: api-hierarquia-ritos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: nrClasse
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
   - name: cdRitoDoProcessoPai
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
   - name: nrRamoJudicial
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
   - name: cdForo
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém um array com os ritos de acordo com os filtros informados"
+    description: "OK"
     content:
       application/json:
         schema: 

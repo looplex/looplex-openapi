@@ -1,19 +1,19 @@
 tags: 
   - Hierarquia 
-summary: Regiões
-description: Obtém as regiões de acordo com o filtro informado
+summary: "Lista as regiões de acordo com o filtro informado"
+description: ""
 operationId: api-hierarquia-regioes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: nrRamoJudicial
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém as regiões de acordo com o filtro informado"
+    description: "OK"
     content:
       application/json:
         schema: 

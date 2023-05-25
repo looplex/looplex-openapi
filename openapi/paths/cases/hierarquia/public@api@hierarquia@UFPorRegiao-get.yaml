@@ -1,11 +1,10 @@
 tags: 
   - Hierarquia 
-summary: UF por região e ramo judicial
-description: Obtém as UFs de acordo com a região e ramo judicial
+summary: "Lista as UFs de acordo com a região e ramo judicial"
+description: ""
 operationId: statesByRegion
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: regiao
     in: query
     required: true
@@ -15,13 +14,17 @@ parameters:
     in: query
     required: true
     schema:
-      $ref: ../../../components/schemas/cases/enums/RamosJudicial.yaml
+      type: integer
 responses:
   "200":
-    description: "Obtém as UFs de acordo com a região e ramo judicial"
+    description: "OK"
     content:
       application/json:
         example: ["SP", "RJ"]
+        schema: 
+          type: array
+          items: 
+            type: string
   "401":
     description: "Unauthorized"
     content:

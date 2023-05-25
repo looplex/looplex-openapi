@@ -1,11 +1,10 @@
 tags: 
   - Hierarquia 
-summary: Grupos de foro superiores
-description: Obtém os grupos de foro superiores por ramo judicial
+summary: "Lista os grupos de foro superiores por ramo judicial"
+description: ""
 operationId: api-hierarquia-grupoforosuperiores
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: nrRamoJudicial
     in: query
     required: true
@@ -13,7 +12,7 @@ parameters:
       type: integer
 responses:
   "200":
-    description: "Obtém os grupos de foro superiores por ramo judicial"
+    description: "OK"
     content:
       application/json:
         schema: 

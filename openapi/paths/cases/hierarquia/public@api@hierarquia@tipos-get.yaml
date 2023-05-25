@@ -1,14 +1,13 @@
 tags: 
   - Hierarquia 
-summary: Tipos de processos administrativos
-description: Obtém os tipos de processos administrativos
+summary: "Lista os tipos de processos administrativos"
+description: ""
 operationId: api-hierarquia-tipos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
 responses:
   "200":
-    description: "Obtém os tipos de processos administrativos"
+    description: "OK"
     content:
       application/json:
         schema: 
