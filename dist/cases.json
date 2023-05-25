@@ -10824,8 +10824,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Ritos",
-        "description": "Obtém um array com os ritos de acordo com os filtros informados",
+        "summary": "Lista os ritos de acordo com os filtros informados",
+        "description": "",
         "operationId": "api-hierarquia-ritos",
         "parameters": [
           {
@@ -10835,6 +10835,7 @@
             "name": "nrClasse",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -10843,6 +10844,7 @@
             "name": "cdRitoDoProcessoPai",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -10851,6 +10853,7 @@
             "name": "nrRamoJudicial",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -10859,6 +10862,7 @@
             "name": "cdForo",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -10866,7 +10870,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém um array com os ritos de acordo com os filtros informados",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -10926,8 +10930,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Tipos de processos administrativos",
-        "description": "Obtém os tipos de processos administrativos",
+        "summary": "Lista os tipos de processos administrativos",
+        "description": "",
         "operationId": "api-hierarquia-tipos",
         "parameters": [
           {
@@ -10936,7 +10940,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém os tipos de processos administrativos",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -10996,8 +11000,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Regiões",
-        "description": "Obtém as regiões de acordo com o filtro informado",
+        "summary": "Lista as regiões de acordo com o filtro informado",
+        "description": "",
         "operationId": "api-hierarquia-regioes",
         "parameters": [
           {
@@ -11007,6 +11011,7 @@
             "name": "nrRamoJudicial",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11014,7 +11019,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém as regiões de acordo com o filtro informado",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -11074,8 +11079,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Grupo foro",
-        "description": "Obtém os grupos foro por ramo de justiça, estado, grupo de família e tipo",
+        "summary": "Lista os grupos foro por ramo de justiça, estado, grupo de família e tipo",
+        "description": "",
         "operationId": "api-hierarquia-grupoforoportipo",
         "parameters": [
           {
@@ -11085,6 +11090,7 @@
             "name": "nrRamoJudicial",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11093,6 +11099,7 @@
             "name": "dsUF",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "string"
             }
@@ -11101,6 +11108,7 @@
             "name": "nrGrupoFamilia",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11109,6 +11117,7 @@
             "name": "cdRegiao",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11117,6 +11126,7 @@
             "name": "nrTipo",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11124,7 +11134,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém os grupos foro por ramo de justiça, estado, grupo de família e tipo",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -11184,8 +11194,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Grupos de foro",
-        "description": "Obtém os grupos de foro por ramo de justiça, estado e grupo de família",
+        "summary": "Lista os grupos de foro por ramo de justiça, estado e grupo de família",
+        "description": "",
         "operationId": "api-hierarquia-grupoforo",
         "parameters": [
           {
@@ -11195,6 +11205,7 @@
             "name": "nrRamoJudicial",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11203,6 +11214,7 @@
             "name": "dsUF",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "string"
             }
@@ -11211,6 +11223,7 @@
             "name": "nrGrupoFamilia",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11219,6 +11232,7 @@
             "name": "cdRegiao",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
               "type": "integer"
             }
@@ -11226,7 +11240,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém os grupos de foro por ramo de justiça, estado e grupo de família",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -11286,8 +11300,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Grupos de foro superiores",
-        "description": "Obtém os grupos de foro superiores por ramo judicial",
+        "summary": "Lista os grupos de foro superiores por ramo judicial",
+        "description": "",
         "operationId": "api-hierarquia-grupoforosuperiores",
         "parameters": [
           {
@@ -11304,7 +11318,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém os grupos de foro superiores por ramo judicial",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -11364,8 +11378,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Grupo foro",
-        "description": "Obtém as informações do grupo foro",
+        "summary": "Obtém as informações do grupo foro",
+        "description": "",
         "operationId": "api-hierarquia-GrupoForoDetalhado",
         "parameters": [
           {
@@ -11390,7 +11404,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém as informações do grupo foro",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -11447,8 +11461,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "UF por região e ramo judicial",
-        "description": "Obtém as UFs de acordo com a região e ramo judicial",
+        "summary": "Lista as UFs de acordo com a região e ramo judicial",
+        "description": "",
         "operationId": "statesByRegion",
         "parameters": [
           {
@@ -11467,19 +11481,25 @@
             "in": "query",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/RamosJudicial"
+              "type": "integer"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Obtém as UFs de acordo com a região e ramo judicial",
+            "description": "OK",
             "content": {
               "application/json": {
                 "example": [
                   "SP",
                   "RJ"
-                ]
+                ],
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
@@ -11531,8 +11551,8 @@
         "tags": [
           "Hierarquia"
         ],
-        "summary": "Fases de processo por ramo judicial",
-        "description": "Obtém as fases de processo por ramo judicial",
+        "summary": "Lista as fases de processo por ramo judicial",
+        "description": "",
         "operationId": "api-hierarquia-fases",
         "parameters": [
           {
@@ -11542,14 +11562,15 @@
             "name": "nrRamoJudicial",
             "in": "query",
             "required": false,
+            "description": "`Default: null`",
             "schema": {
-              "$ref": "#/components/schemas/RamosJudicial"
+              "type": "integer"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Obtém as fases de processo por ramo judicial",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {

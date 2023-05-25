@@ -1,34 +1,37 @@
 tags: 
   - Hierarquia 
-summary: Grupos de foro
-description: Obtém os grupos de foro por ramo de justiça, estado e grupo de família
+summary: "Lista os grupos de foro por ramo de justiça, estado e grupo de família"
+description: ""
 operationId: api-hierarquia-grupoforo
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: nrRamoJudicial
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
   - name: dsUF
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: string
   - name: nrGrupoFamilia
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
   - name: cdRegiao
     in: query
     required: false
+    description: "`Default: null`"
     schema:
       type: integer
 responses:
   "200":
-    description: "Obtém os grupos de foro por ramo de justiça, estado e grupo de família"
+    description: "OK"
     content:
       application/json:
         schema: 

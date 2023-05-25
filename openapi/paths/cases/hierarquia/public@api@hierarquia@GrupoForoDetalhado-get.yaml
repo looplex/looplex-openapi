@@ -1,11 +1,10 @@
 tags: 
   - Hierarquia 
-summary: Grupo foro
-description: Obtém as informações do grupo foro
+summary: "Obtém as informações do grupo foro"
+description: ""
 operationId: api-hierarquia-GrupoForoDetalhado
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: cdGrupoForo
     in: query
     required: true
@@ -18,7 +17,7 @@ parameters:
       type: string
 responses:
   "200":
-    description: "Obtém as informações do grupo foro"
+    description: "OK"
     content:
       application/json:
         schema: 

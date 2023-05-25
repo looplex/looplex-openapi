@@ -1,19 +1,19 @@
 tags: 
   - Hierarquia 
-summary: Fases de processo por ramo judicial
-description: Obtém as fases de processo por ramo judicial
+summary: "Lista as fases de processo por ramo judicial"
+description: ""
 operationId: api-hierarquia-fases
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: nrRamoJudicial
     in: query
     required: false
+    description: "`Default: null`"
     schema:
-      $ref: ../../../components/schemas/cases/enums/RamosJudicial.yaml
+      type: integer
 responses:
   "200":
-    description: "Obtém as fases de processo por ramo judicial"
+    description: "OK"
     content:
       application/json:
         schema: 
