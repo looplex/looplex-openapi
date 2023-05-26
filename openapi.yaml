@@ -87313,6 +87313,26 @@ components:
           type: integer
         Domain:
           type: string
+        dsProcessFlowableID:
+          type: string
+        dsExecutionID:
+          type: string
+        dtDataDistribuicao:
+          type: string
+        dtDataEntrada:
+          type: string
+        dtDataCitacao:
+          type: string
+        nrMoedaInicialCausa:
+          $ref: '#/components/schemas/Moeda'
+        vlInicialCausa:
+          type: number
+        vlExpectativaApuracao:
+          type: number
+        vlContingencia:
+          type: number
+        dsObservacoes:
+          type: string
     RetornoCadastroDeCaso:
       title: RetornoCadastroDeCaso
       type: object
