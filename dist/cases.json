@@ -7633,8 +7633,15 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "A decisão foi incluída"
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOProcessoDecisao"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized",
@@ -7781,8 +7788,15 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "A decisão foi atualizada"
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOProcessoDecisao"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized",

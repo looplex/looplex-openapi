@@ -16,8 +16,12 @@ requestBody:
       schema:
         $ref: ../../../components/schemas/cases/DTOProcessoDecisao.yaml
 responses:
-  "204":
-    description: A decisão foi atualizada
+  "200":
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/DTOProcessoDecisao.yaml
   "401":
     description: "Unauthorized"
     content:
