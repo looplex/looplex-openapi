@@ -21,3 +21,23 @@ properties:
     type: integer
   Domain:
     type: string
+  dsProcessFlowableID:
+    type: string
+  dsExecutionID:
+    type: string
+  dtDataDistribuicao:
+    type: string
+  dtDataEntrada:
+    type: string
+  dtDataCitacao:
+    type: string
+  nrMoedaInicialCausa:
+    $ref: enums/Moeda.yaml
+  vlInicialCausa:
+    type: number
+  vlExpectativaApuracao:
+    type: number
+  vlContingencia:
+    type: number
+  dsObservacoes:
+    type: string
