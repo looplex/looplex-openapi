@@ -186,10 +186,45 @@ paths:
   /api/escritorios/funcionarios:
     get:
       $ref: './paths/cases/funcionario/public@api@escritorios@funcionarios-get.yaml'
-      
-  # Garantia
-  
 
+  # Garantia
+  /api/casos/Garantia/{IDCasoGarantia}:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IDCasoGarantia-get.yaml'
+  /api/casos/{IDCaso}/Garantias:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@IDCaso@Garantias-get.yaml'
+  /api/TiposGarantia:
+    get:
+      $ref: './paths/cases/garantia/public@api@TiposGarantia-get.yaml'
+  /api/casos/num/garantias:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@num@garantias-get.yaml'
+  /api/casos/Garantia/Inclui/{IDCaso}:
+    post:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@Inclui@IDCaso-post.yaml'
+  /api/casos/Garantia/Atualiza/{IDCaso}:
+    put:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@Atualiza@IDCaso-put.yaml'
+  /api/casos/GarantiaMovimentacao/Exclui/{IDGarantiaMovimentacao}:
+    delete:
+      $ref: './paths/cases/garantia/public@api@casos@GarantiaMovimentacao@Exclui@IDGarantiaMovimentacao-delete.yaml'
+  /api/casos/Garantia/IncluiMovimentacao/{IDCaso}:
+    post:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IncluiMovimentacao@IDCaso-post.yaml'
+  /api/casos/Garantia/{IDGarantia}/ObtemMovimentacao/{IDGarantiaMovimentacao}:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IDGarantia@ObtemMovimentacao@IDGarantiaMovimentacao-get.yaml'
+  /api/casos/Garantia/Exclui/{IDCaso}:
+    delete:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@Exclui@IDCaso-delete.yaml'
+  /api/casos/Garantia/AtualizaMovimentacao:
+    put:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@AtualizaMovimentacao-put.yaml'
+  /api/casos/Garantia/{IDProcessoGarantia}/IdsPedidos:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IDProcessoGarantia@IdsPedidos-get.yaml'
+      
   # Hierarquia
   /api/hierarquia/ritos:
     get: 

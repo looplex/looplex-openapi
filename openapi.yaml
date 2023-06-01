@@ -61,6 +61,8 @@ tags:
     x-displayName: Contrato
   - name: Funcionário
     x-displayName: Funcionário
+  - name: Garantia
+    x-displayName: Garantia
   - name: Hierarquia
     x-displayName: Hierarquia
   - name: Informações adicionais
@@ -109,6 +111,7 @@ x-tagGroups:
       - Contato
       - Contrato
       - Funcionário
+      - Garantia
       - Hierarquia
       - Informações adicionais
       - Informações adicionais (valor)
@@ -24369,6 +24372,604 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOFuncionarioBase'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/{IDCasoGarantia}:
+    get:
+      tags:
+        - Garantia
+      summary: Obtém garantia por identificador
+      operationId: api-casos-Garantia-IDCasoGarantia-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCasoGarantia
+          in: path
+          description: O identificador da garantia
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCasoGarantia'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{IDCaso}/Garantias:
+    get:
+      tags:
+        - Garantia
+      summary: Lista garantias do caso
+      operationId: api-casos-IDCaso-Garantias-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoGarantia'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/TiposGarantia:
+    get:
+      tags:
+        - Garantia
+      summary: Lista garantias
+      operationId: api-TiposGarantia-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOGarantia'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/garantias:
+    get:
+      tags:
+        - Garantia
+      summary: >-
+        Lista garantias por identificador do caso, numero interno ou numero
+        externo
+      operationId: api-casos-num-garantias-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: '`Default: 0`<br />O numero interno do caso'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: '`Default: empty string`<br />O numero externo do caso'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: '`Default: 0`<br />O identificador do caso'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoGarantia'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/Inclui/{IDCaso}:
+    post:
+      tags:
+        - Garantia
+      summary: Inclui garantia no caso
+      operationId: api-casos-Garantia-Inclui-IDCaso-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOCasoGarantia'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: 1
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/Atualiza/{IDCaso}:
+    put:
+      tags:
+        - Garantia
+      summary: Atualiza garantia do caso
+      operationId: api-casos-Garantia-Atualiza-IDCaso-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOCasoGarantia'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCasoGarantia'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/GarantiaMovimentacao/Exclui/{IDGarantiaMovimentacao}:
+    delete:
+      tags:
+        - Garantia
+      summary: Exclui movimentação da garantia
+      operationId: api-casos-GarantiaMovimentacao-Exclui-IDGarantiaMovimentacao-delete
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDGarantiaMovimentacao
+          in: path
+          description: O identificador da movimentação
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/IncluiMovimentacao/{IDCaso}:
+    post:
+      tags:
+        - Garantia
+      summary: Inclui movimentação na garantia
+      operationId: api-casos-Garantia-IncluiMovimentacao-IDCaso-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOMovimentacao'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: 1
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/{IDGarantia}/ObtemMovimentacao/{IDGarantiaMovimentacao}:
+    get:
+      tags:
+        - Garantia
+      summary: >-
+        Obtém movimentação da garantia por identificador da garantia e
+        identificador da movimentação
+      operationId: >-
+        api-casos-Garantia-IDGarantia-ObtemMovimentacao-IDGarantiaMovimentacao-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDGarantia
+          in: path
+          description: O identificador da garantia
+          required: true
+          schema:
+            type: integer
+        - name: IDGarantiaMovimentacao
+          in: path
+          description: O identificador da movimentação da garantia
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOMovimentacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/Exclui/{IDCaso}:
+    delete:
+      tags:
+        - Garantia
+      summary: Exclui garantia do caso
+      operationId: api-casos-Garantia-Exclui-IDCaso-delete
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/AtualizaMovimentacao:
+    put:
+      tags:
+        - Garantia
+      summary: Atualiza movimentação da garantia
+      operationId: api-casos-Garantia-AtualizaMovimentacao-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOMovimentacao'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/Garantia/{IDProcessoGarantia}/IdsPedidos:
+    get:
+      tags:
+        - Garantia
+      summary: Lista os identificadores dos pedidos da garantia
+      operationId: api-casos-Garantia-IDProcessoGarantia-IdsPedidos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDProcessoGarantia
+          in: path
+          description: O identificador da garantia
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
         '401':
           description: Unauthorized
           content:
@@ -81169,6 +81770,129 @@ components:
           type: integer
         NumeroVinculoEmpregaticio:
           type: integer
+    Moeda:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Real
+
+        2: Dólar americano
+
+        3: Euro
+    TipoDeMovimentacao:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Transferência
+
+        2: Recuperação
+    StatusAlvara:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Aguardando expedição alvará
+
+        2: Alvará retirado
+
+        3: Alvará recuperado
+    DTOMovimentacao:
+      title: DTOMovimentacao
+      type: object
+      properties:
+        IdMovimentacao:
+          type: integer
+        IdCasoGarantia:
+          type: integer
+        vlGarantiaAtualizado:
+          type: number
+        Moeda:
+          type: string
+        NrMoeda:
+          $ref: '#/components/schemas/Moeda'
+        TipoDeMovimentacao:
+          type: string
+        NrTipoDeMovimentacao:
+          $ref: '#/components/schemas/TipoDeMovimentacao'
+        Transferido:
+          type: string
+        Justificativa:
+          type: string
+        ValorMovimentacao:
+          type: number
+        ValorSaldoRemanescente:
+          type: number
+        StatusAlvara:
+          type: string
+        EnumStatusAlvara:
+          $ref: '#/components/schemas/StatusAlvara'
+        DataMovimentacao:
+          type: string
+    DTOCasoGarantia:
+      title: DTOCasoGarantia
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        IdCasoGarantia:
+          type: integer
+        Movimentacoes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOMovimentacao'
+        Moeda:
+          type: string
+        NrMoeda:
+          $ref: '#/components/schemas/Moeda'
+        IdGarantia:
+          type: integer
+        Garantia:
+          type: string
+        idCaso:
+          type: integer
+        DataDeposito:
+          type: string
+        DataDepositoFormatada:
+          type: string
+        ValorGarantia:
+          type: number
+        ValorGarantiaAtualizado:
+          type: number
+        Observacao:
+          type: string
+        Identificacao:
+          type: string
+        ValorSaldoRemanescente:
+          type: number
+        AlteraPedidos:
+          type: boolean
+        IdsPedidos:
+          type: array
+          items:
+            type: integer
+        NrForma:
+          type: integer
+    DTOGarantia:
+      title: DTOGarantia
+      type: object
+      properties:
+        IdGarantia:
+          type: integer
+        IdEscritorio:
+          type: integer
+        DescricaoGarantia:
+          type: string
     DTORito:
       title: DTORito
       type: object
@@ -81629,17 +82353,6 @@ components:
           type: integer
         IdCaso:
           type: integer
-    Moeda:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Real
-
-        2: Dólar americano
-
-        3: Euro
     DTOCasoPedidoSimples:
       title: DTOCasoPedidoSimples
       type: object
