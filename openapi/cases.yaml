@@ -538,6 +538,31 @@ paths:
     get:
       $ref: ./paths/cases/parte_papel/public@api@envolvimentos-get.yaml
 
+  # Pedidos
+  /api/casos/{IDCaso}/Pedidos:
+    get:
+      $ref: './paths/cases/pedidos/public@api@casos@idCaso@Pedidos-get.yaml'
+    post:
+      $ref: './paths/cases/pedidos/public@api@casos@IDCaso@pedidos-post.yaml'
+  /api/casos/num/pedidos:
+    get:
+      $ref: './paths/cases/pedidos/public@api@casos@num@pedidos-get.yaml'
+  /api/Pedidos/possiveisStatus:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@possiveisStatus-get.yaml'    
+  /api/Pedidos/possiveisExitos:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@possiveisExitos-get.yaml'
+  /api/Pedidos/lista:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@lista-get.yaml'
+  /api/Pedidos/causas:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@causas-get.yaml'
+  /api/casos/Pedidos/{IDCasoPedido}/IdsGarantias:
+    get:
+      $ref: './paths/cases/pedidos/public@api@casos@Pedidos@IDCasoPedido@IdsGarantias-get.yaml'
+      
   # Push
   /api/push/publicacoes:
     get:

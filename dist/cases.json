@@ -12442,6 +12442,620 @@
         }
       }
     },
+    "/api/casos/{IDCaso}/Pedidos": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Lista pedidos do caso",
+        "operationId": "api-casos-idCaso-Pedidos-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "IDCaso",
+            "in": "path",
+            "example": 1,
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCasoPedido"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Atualiza / inclui pedidos do caso",
+        "operationId": "api-casos-IDCaso-pedidos-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "IDCaso",
+            "in": "path",
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DTOCasoPedidoSimples"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/num/pedidos": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Lista pedidos por identificador do caso, numero interno ou numero externo",
+        "operationId": "api-casos-num-pedidos-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "NumeroInterno",
+            "in": "query",
+            "description": "`Default: 0`<br />O numero interno do caso",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "NumeroExterno",
+            "in": "query",
+            "description": "`Default: empty string`<br />O numero externo do caso",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "IdProcesso",
+            "in": "query",
+            "description": "`Default: 0`<br />O identificador do caso",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCasoPedido"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Pedidos/possiveisStatus": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Lista possíveis status do pedido",
+        "operationId": "api-Pedidos-possiveisStatus-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOObjetoNomeID"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Pedidos/possiveisExitos": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Lista possíveis êxitos do pedido",
+        "operationId": "api-Pedidos-possiveisExitos-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOObjetoNomeID"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Pedidos/lista": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Lista pedidos por ramo judicial",
+        "operationId": "api-Pedidos-lista-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "tipoJustica",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOPedidoCausaGrupo"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Pedidos/causas": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Lista pedido causas",
+        "operationId": "api-Pedidos-causas-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOPedidoCausa"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/Pedidos/{IDCasoPedido}/IdsGarantias": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Lista identificadores de garantias dos pedidos",
+        "operationId": "api-casos-Pedidos-IDCasoPedido-IdsGarantias-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "IDCasoPedido",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/push/publicacoes": {
       "get": {
         "tags": [
@@ -19395,6 +20009,111 @@
           "Envolvimento": {
             "type": "string",
             "example": "Verificador do caso"
+          }
+        }
+      },
+      "DTOCasoPedido": {
+        "title": "DTOCasoPedido",
+        "type": "object",
+        "properties": {
+          "NomeCliente": {
+            "type": "string"
+          },
+          "TituloCaso": {
+            "type": "string"
+          },
+          "NumeroInterno": {
+            "type": "string"
+          },
+          "NumeroExterno": {
+            "type": "string"
+          },
+          "ValorPrevisto": {
+            "type": "number"
+          },
+          "ValorPrevistoMoeda": {
+            "type": "string"
+          },
+          "ValorContingenciado": {
+            "type": "number"
+          },
+          "ValorContingenciadoMoeda": {
+            "type": "string"
+          },
+          "ValorDeferido": {
+            "type": "number"
+          },
+          "ValorDeferidoMoeda": {
+            "type": "string"
+          },
+          "ExitoPerda": {
+            "type": "string"
+          },
+          "Situacao": {
+            "type": "string"
+          },
+          "Justificativa": {
+            "type": "string"
+          },
+          "IdCasoPedido": {
+            "type": "integer"
+          },
+          "IdCaso": {
+            "type": "integer"
+          }
+        }
+      },
+      "DTOObjetoNomeID": {
+        "title": "DTOObjetoNomeID",
+        "type": "object",
+        "properties": {
+          "Nome": {
+            "type": "string"
+          },
+          "Id": {
+            "type": "integer"
+          }
+        }
+      },
+      "DTOPedidoCausa": {
+        "title": "DTOPedidoCausa",
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer"
+          },
+          "Nome": {
+            "type": "string"
+          },
+          "IdPedidoCausaGrupoAfinidade": {
+            "type": "integer"
+          },
+          "IdEscritorio": {
+            "type": "integer"
+          },
+          "NomeGrupo": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOPedidoCausaGrupo": {
+        "title": "DTOPedidoCausaGrupo",
+        "type": "object",
+        "properties": {
+          "IdPedidoGrupo": {
+            "type": "integer"
+          },
+          "NomeGrupo": {
+            "type": "string"
+          },
+          "IdEscritorio": {
+            "type": "integer"
+          },
+          "Pedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOPedidoCausa"
+            }
           }
         }
       },

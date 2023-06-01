@@ -1,22 +1,27 @@
-tags: 
-  - Pedidos 
-summary: Pedidos do caso
-description: Obtém os pedidos do caso
-operationId: api-casos-idCaso-Pedidos
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Pedidos
+summary: "Lista pedidos do caso"
+operationId: api-casos-idCaso-Pedidos-get
+# Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: idCaso
+  - name: IDCaso
     in: path
+    example: 1
+    description: "O identificador do caso"
     required: true
     schema:
       type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
 responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Obtém os pedidos do caso"
+    description: "OK"
     content:
       application/json:
-        schema: 
+        schema:
           type: array
           items:
             $ref: ../../../components/schemas/cases/DTOCasoPedido.yaml
@@ -44,4 +49,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            
