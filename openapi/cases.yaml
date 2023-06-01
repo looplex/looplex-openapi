@@ -290,7 +290,12 @@ paths:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
 
   # Natureza
-  
+  /api/casos/{IDCaso}/natureza:
+    get:
+      $ref: './paths/cases/natureza/public@api@casos@IDCaso@natureza-get.yaml'
+  /api/casos/num/natureza:
+    get:
+      $ref: './paths/cases/natureza/public@api@casos@num@natureza-get.yaml'
 
   # País
   /api/pais:
@@ -330,6 +335,14 @@ paths:
   /api/casos/Pedidos/{IDCasoPedido}/IdsGarantias:
     get:
       $ref: './paths/cases/pedidos/public@api@casos@Pedidos@IDCasoPedido@IdsGarantias-get.yaml'
+      
+  # Produtos
+  /api/casos/{IDCaso}/produtos:
+    get:
+      $ref: './paths/cases/produtos/public@api@casos@IDCaso@produtos-get.yaml'
+  /api/casos/num/produtos:
+    get:
+      $ref: './paths/cases/produtos/public@api@casos@num@produtos-get.yaml'
 
   # Push + Push Publicação
   

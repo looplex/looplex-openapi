@@ -69,10 +69,14 @@ tags:
     x-displayName: Informações adicionais
   - name: Informações adicionais (valor)
     x-displayName: Informações adicionais (valor)
+  - name: Natureza
+    x-displayName: Natureza
   - name: País
     x-displayName: País
   - name: Pedidos
     x-displayName: Pedidos
+  - name: Produtos
+    x-displayName: Produtos
   - name: Tabela de preço
     x-displayName: Tabela de preço
   - name: Tabela preço categoria
@@ -115,8 +119,10 @@ x-tagGroups:
       - Hierarquia
       - Informações adicionais
       - Informações adicionais (valor)
+      - Natureza
       - País
       - Pedidos
+      - Produtos
       - Tabela de preço
       - Tabela preço categoria
       - Tarefa
@@ -26077,6 +26083,118 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+  /api/casos/{IDCaso}/natureza:
+    get:
+      tags:
+        - Natureza
+      summary: Lista naturezas do caso
+      operationId: api-casos-IDCaso-natureza-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTONatureza'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/natureza:
+    get:
+      tags:
+        - Natureza
+      summary: >-
+        Lista naturezas do caso por identificador do caso, numero interno ou
+        numero externo
+      operationId: api-casos-num-natureza-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: '`Default: 0`<br />O numero interno do caso'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: '`Default: empty string`<br />O numero externo do caso'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: '`Default: 0`<br />O identificador do caso'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTONatureza'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/pais:
     get:
       tags:
@@ -26577,6 +26695,118 @@ paths:
                 type: array
                 items:
                   type: integer
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{IDCaso}/produtos:
+    get:
+      tags:
+        - Produtos
+      summary: Lista produtos do caso
+      operationId: api-casos-IDCaso-produtos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOProduto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/produtos:
+    get:
+      tags:
+        - Produtos
+      summary: >-
+        Lista produtos do caso por identificador do caso, numero interno ou
+        numero externo
+      operationId: api-casos-num-produtos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: '`Default: 0`<br />O numero interno do caso'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: '`Default: empty string`<br />O numero externo do caso'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: '`Default: 0`<br />O identificador do caso'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOProduto'
         '401':
           description: Unauthorized
           content:
@@ -82283,6 +82513,22 @@ components:
         - IDParametroDadoComplementar
         - Valor
         - DataDeAtualizacao
+    DTONatureza:
+      title: DTONatureza
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        NomeNatureza:
+          type: string
+        IdCaso:
+          type: integer
     DTOPais:
       title: DTOPais
       type: object
@@ -82417,6 +82663,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOPedidoCausa'
+    DTOProduto:
+      title: DTOProduto
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        dsProduto:
+          type: string
+        IdCaso:
+          type: integer
     DTOTabelaPreco:
       title: DTOTabelaPreco
       type: object
