@@ -33,7 +33,7 @@ servers:
   - url: "https://graph.looplex.com/cases"
     description: "Looplex Cases Server"
 paths:
-  
+
   # Autenticação
   /api/logon:
     post:
@@ -155,6 +155,70 @@ paths:
     get:
       $ref: ./paths/cases/contrato/public@api@contratos-get.yaml
 
+  # Decisões
+  
+
+  # Despesas
+  
+
+  # Expectativa reivindicação
+  
+
+  # Funcionários
+  /api/funcionarios/porIds/{ids}:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios@porIds@ids-get.yaml'
+  /api/funcionarios/porId/{IDFuncionario}:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios@porId@IDFuncionario-get.yaml'
+  /api/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios-get.yaml' 
+  /api/areas/{IDArea}/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@areas@IDArea@funcionarios-get.yaml' 
+  /api/funcionarios/{IDFuncionario}/areas:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios@IDFuncionario@areas-get.yaml'
+  /api/escritorios/{IDEscritorio}/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@escritorios@IDEscritorio@funcionarios-get.yaml'
+  /api/escritorios/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@escritorios@funcionarios-get.yaml'
+      
+  # Garantia
+  
+
+  # Hierarquia
+  /api/hierarquia/ritos:
+    get: 
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@ritos-get.yaml
+  /api/hierarquia/tipos:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@tipos-get.yaml
+  /api/hierarquia/regioes:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@regioes-get.yaml
+  /api/hierarquia/GrupoForoPorTipo:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforoportipo-get.yaml
+  /api/hierarquia/GrupoForo:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforo-get.yaml
+  /api/hierarquia/GrupoForoSuperiores:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
+  /api/hierarquia/GrupoForoDetalhado:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@GrupoForoDetalhado-get.yaml
+  /api/hierarquia/UFPorRegiao:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@UFPorRegiao-get.yaml
+  /api/hierarquia/fases:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@fases-get.yaml
+
   # Informações adicionais
   /api/dado_complementar/{IDParametroDadoComplementar}:
     get:
@@ -189,58 +253,6 @@ paths:
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
-
-  # Decisões
-  
-
-  # Despesas
-  
-
-  # Expectativa reivindicação
-  /api/casos/{idCaso}/Valores:
-    get:
-      $ref: './paths/cases/expectativa_reivindicacao/public@api@casos@idCaso@Valores-get.yaml'
-  /api/casos/{idCaso}/PedidosComHistorico:
-    get:
-      $ref: './paths/cases/expectativa_reivindicacao/public@api@casos@idCaso@PedidosComHistorico-get.yaml'
-  /api/expectativa/valores/{idCaso}:
-    get:
-      $ref: './paths/cases/expectativa_reivindicacao/public@api@expectativa@valores@idCaso-get.yaml'
-
-  # Funcionários
-  
-
-  # Garantia
-  
-
-  # Hierarquia
-  /api/hierarquia/ritos:
-    get: 
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@ritos-get.yaml
-  /api/hierarquia/tipos:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@tipos-get.yaml
-  /api/hierarquia/regioes:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@regioes-get.yaml
-  /api/hierarquia/GrupoForoPorTipo:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforoportipo-get.yaml
-  /api/hierarquia/GrupoForo:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforo-get.yaml
-  /api/hierarquia/GrupoForoSuperiores:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
-  /api/hierarquia/GrupoForoDetalhado:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@GrupoForoDetalhado-get.yaml
-  /api/hierarquia/UFPorRegiao:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@UFPorRegiao-get.yaml
-  /api/hierarquia/fases:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@fases-get.yaml
 
   # Natureza
   
