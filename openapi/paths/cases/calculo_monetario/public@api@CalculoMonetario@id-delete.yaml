@@ -1,13 +1,12 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Calculo Monetário
-summary: Exclui cálculo monetário
+summary: "Exclui o cálculo monetário"
 operationId: api-CalculoMonetario-id-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: id
+  - name: ID
     in: path
     required: true
     schema:
@@ -16,8 +15,8 @@ parameters:
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
-  "204":
-    description: "O cálculo monetário foi excluído"
+  "200":
+    description: "OK"
   "401":
     description: "Unauthorized"
     content:

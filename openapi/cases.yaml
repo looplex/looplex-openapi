@@ -133,15 +133,15 @@ paths:
       $ref: './paths/cases/busca/public@api@busca@mobilenovo-get.yaml'
 
   # Calculo Monetário
-  /api/casos/{cdProcesso}/CalculosMonetarios:
+  /api/casos/{IDCaso}/CalculosMonetarios:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@casos@cdProcesso@CalculosMonetarios-get.yaml'
-  /api/CalculoMonetario/{id}:
+  /api/CalculoMonetario/{ID}:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@id-get.yaml'
     delete:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@id-delete.yaml'
-  /api/casos/{id}/Calcula:
+  /api/casos/{ID}/Calcula:
     post:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@Calcula-post.yaml'
   /api/CalculoMonetario/Indices:
@@ -150,10 +150,10 @@ paths:
   /api/CalculoMonetario/Modelos:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@Modelos-get.yaml'
-  /api/CalculoMonetario/Modelos/{id}:
+  /api/CalculoMonetario/Modelos/{ID}:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@Modelos@id-get.yaml'
-  /api/casos/{id}/ValoresParaCalculo:
+  /api/casos/{IDCaso}/ValoresParaCalculo:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@ValoresParaCalculo-get.yaml'
 

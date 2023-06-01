@@ -1,13 +1,12 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Calculo Monetário
-summary: Calcula Valores para atualização monetária
+summary: "Calcula valores para atualização monetária"
 operationId: api-casos-id-Calcula
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: id
+  - name: ID
     in: path
     required: true
     schema:
@@ -27,7 +26,7 @@ requestBody:
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Response"
+    description: "OK"
     content:
       application/json:
         schema:

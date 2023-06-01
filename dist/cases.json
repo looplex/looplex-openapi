@@ -2549,19 +2549,19 @@
         }
       }
     },
-    "/api/casos/{cdProcesso}/CalculosMonetarios": {
+    "/api/casos/{IDCaso}/CalculosMonetarios": {
       "get": {
         "tags": [
           "Calculo Monetário"
         ],
-        "summary": "Lista cálculo monetário",
+        "summary": "Lista os cálculos monetários",
         "operationId": "api-casos-cdProcesso-CalculosMonetarios",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "cdProcesso",
+            "name": "IDCaso",
             "in": "path",
             "required": true,
             "schema": {
@@ -2571,7 +2571,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Lista os cálculos monetários",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2626,19 +2626,19 @@
         }
       }
     },
-    "/api/CalculoMonetario/{id}": {
+    "/api/CalculoMonetario/{ID}": {
       "get": {
         "tags": [
           "Calculo Monetário"
         ],
-        "summary": "Obtém cálculo monetário",
+        "summary": "Obtém cálculo monetário por identificador",
         "operationId": "api-CalculoMonetario-id-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -2648,7 +2648,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Obtém cálculo monetário",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2703,14 +2703,14 @@
         "tags": [
           "Calculo Monetário"
         ],
-        "summary": "Exclui cálculo monetário",
+        "summary": "Exclui o cálculo monetário",
         "operationId": "api-CalculoMonetario-id-delete",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -2719,8 +2719,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "O cálculo monetário foi excluído"
+          "200": {
+            "description": "OK"
           },
           "401": {
             "description": "Unauthorized",
@@ -2765,19 +2765,19 @@
         }
       }
     },
-    "/api/casos/{id}/Calcula": {
+    "/api/casos/{ID}/Calcula": {
       "post": {
         "tags": [
           "Calculo Monetário"
         ],
-        "summary": "Calcula Valores para atualização monetária",
+        "summary": "Calcula valores para atualização monetária",
         "operationId": "api-casos-id-Calcula",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -2804,7 +2804,7 @@
         },
         "responses": {
           "200": {
-            "description": "Response",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2861,7 +2861,7 @@
         "tags": [
           "Calculo Monetário"
         ],
-        "summary": "Listar indices monetários",
+        "summary": "Lista indices monetários",
         "operationId": "api-CalculoMonetario-Indices",
         "parameters": [
           {
@@ -2870,7 +2870,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Indices monetários",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2939,7 +2939,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Modelos de cálculo",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2994,19 +2994,19 @@
         }
       }
     },
-    "/api/CalculoMonetario/Modelos/{id}": {
+    "/api/CalculoMonetario/Modelos/{ID}": {
       "get": {
         "tags": [
           "Calculo Monetário"
         ],
-        "summary": "Obtém modelo de cálculo",
+        "summary": "Obtém modelo de cálculo por identificador",
         "operationId": "api-CalculoMonetario-Modelos-id",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "ID",
             "in": "path",
             "required": true,
             "schema": {
@@ -3016,7 +3016,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Modelo de cálculo",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -3068,19 +3068,19 @@
         }
       }
     },
-    "/api/casos/{id}/ValoresParaCalculo": {
+    "/api/casos/{IDCaso}/ValoresParaCalculo": {
       "get": {
         "tags": [
           "Calculo Monetário"
         ],
-        "summary": "Lista valores para cálculo",
+        "summary": "Lista valores para cálculo por identificador do caso",
         "operationId": "api-casos-id-ValoresParaCalculo",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "id",
+            "name": "IDCaso",
             "in": "path",
             "required": true,
             "schema": {
@@ -3090,7 +3090,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Valores para cálculo",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {

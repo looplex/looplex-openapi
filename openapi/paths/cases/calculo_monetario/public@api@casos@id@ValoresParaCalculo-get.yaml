@@ -1,13 +1,12 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Calculo Monetário
-summary: Lista valores para cálculo
+summary: "Lista valores para cálculo por identificador do caso"
 operationId: api-casos-id-ValoresParaCalculo
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
-  - name: id
+  - name: IDCaso
     in: path
     required: true
     schema:
@@ -17,7 +16,7 @@ parameters:
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Valores para cálculo"
+    description: "OK"
     content:
       application/json:
         schema:
