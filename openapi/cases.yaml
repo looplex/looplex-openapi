@@ -423,53 +423,10 @@ paths:
       $ref: ./paths/cases/fase_caso/public@api@casos@num@fase-get.yaml
 
   # Funcionários
-  /api/funcionarios/porIds/{ids}:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios@porIds@{ids}-get.yaml
-  /api/funcionarios/porId/{id}:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios@porId@{id}-get.yaml
-  /api/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios-get.yaml
-  /api/areas/{idArea}/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@areas@{idArea}@funcionarios-get.yaml
-  /api/funcionarios/{idFuncionario}/areas:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios@{idFuncionario}@areas-get.yaml
-  /api/escritorios/{IdEscritorio}/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@escritorios@{IdEscritorio}@funcionarios-get.yaml
-  /api/escritorios/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@escritorios@funcionarios-get.yaml
+  
 
   # Garantia
-  /api/casos/Garantia/{idCasoGarantia}:
-    get:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@idCasoGarantia-get.yaml'
-  /api/casos/{idCaso}/Garantias:
-    get:
-      $ref: './paths/cases/garantia/public@api@casos@idCaso@Garantias-get.yaml'
-  /api/TiposGarantia:
-    get:
-      $ref: './paths/cases/garantia/public@api@TiposGarantia-get.yaml'
-  /api/casos/num/garantias:
-    get:
-      $ref: './paths/cases/garantia/public@api@casos@num@garantias-get.yaml'
-  /api/casos/Garantia/Inclui/{idCaso}:
-    post:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@Inclui@idCaso-post.yaml'
-  /api/casos/Garantia/Atualiza/{idCaso}:
-    put:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@Atualiza@idCaso-put.yaml'
-  /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
-    delete:
-      $ref: './paths/cases/garantia/public@api@casos@GarantiaMovimentacao@Exclui@idGarantiaMovimentacao-delete.yaml'
-  /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
-    post:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@IncluiMovimentacao-post.yaml'
+  
 
   # Hierarquia
   /api/hierarquia/ritos:
@@ -562,7 +519,7 @@ paths:
   /api/casos/Pedidos/{IDCasoPedido}/IdsGarantias:
     get:
       $ref: './paths/cases/pedidos/public@api@casos@Pedidos@IDCasoPedido@IdsGarantias-get.yaml'
-      
+
   # Push
   /api/push/publicacoes:
     get:
