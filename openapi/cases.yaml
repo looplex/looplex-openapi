@@ -163,6 +163,10 @@ paths:
 
   # Expectativa reivindicação
   
+  # Fornecedor
+  /api/fornecedores:
+    get:
+      $ref: './paths/cases/fornecedor/public@api@fornecedores-get.yaml'
 
   # Funcionários
   /api/funcionarios/porIds/{ids}:

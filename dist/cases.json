@@ -2686,6 +2686,75 @@
         }
       }
     },
+    "/api/fornecedores": {
+      "get": {
+        "tags": [
+          "Funcionário"
+        ],
+        "summary": "Lista os fornecedores ativos do escritório",
+        "operationId": "api-fornecedores-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOFornecedor"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/funcionarios/porIds/{ids}": {
       "get": {
         "tags": [
@@ -8447,6 +8516,93 @@
           "Descricao": {
             "type": "string",
             "description": "A descrição do contrato"
+          }
+        }
+      },
+      "DTOFornecedor": {
+        "title": "DTOFornecedor",
+        "type": "object",
+        "properties": {
+          "IDFornecedor": {
+            "type": "integer"
+          },
+          "Nome": {
+            "type": "string"
+          },
+          "DDD": {
+            "type": "integer"
+          },
+          "Telefone": {
+            "type": "string"
+          },
+          "Extensao": {
+            "type": "string"
+          },
+          "Banco": {
+            "type": "string"
+          },
+          "Agencia": {
+            "type": "string"
+          },
+          "ContaBanco": {
+            "type": "string"
+          },
+          "Logradouro": {
+            "type": "string"
+          },
+          "NumeroDoEndereco": {
+            "type": "string"
+          },
+          "Complemento": {
+            "type": "string"
+          },
+          "Bairro": {
+            "type": "string"
+          },
+          "Cidade": {
+            "type": "string"
+          },
+          "Estado": {
+            "type": "string"
+          },
+          "CEP": {
+            "type": "string"
+          },
+          "Observacao": {
+            "type": "string"
+          },
+          "HomePage": {
+            "type": "string"
+          },
+          "DataUltimoLancamento": {
+            "type": "string"
+          },
+          "Pais": {
+            "type": "string"
+          },
+          "IDEscritorio": {
+            "type": "integer"
+          },
+          "CPFCNPJ": {
+            "type": "string"
+          },
+          "Tipo": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "DsCodigoSAP": {
+            "type": "string"
+          },
+          "DsCodigoOriginal": {
+            "type": "string"
+          },
+          "IDFuncionarioVinculado": {
+            "type": "integer"
+          },
+          "Ativo": {
+            "type": "boolean"
           }
         }
       },
