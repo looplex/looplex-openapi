@@ -1,8 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Busca
-summary: Busca
-description: Obtém os clientes e casos que correspondem ao termo informado
+summary: "Lista os clientes e casos que correspondem ao termo informado"
 operationId: api-busca-mobilenovo
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
@@ -14,19 +13,19 @@ parameters:
   - name: ativos
     in: query
     required: false
-    description: "Default: true"
+    description: "`Default: true`"
     schema:
       type: boolean
   - name: inativos
     in: query
     required: false
-    description: "Default: false"
+    description: "`Default: false`"
     schema:
       type: boolean
   - name: apenasMeusCasos
     in: query
     required: false
-    description: "Default: false"
+    description: "`Default: false`"
     schema:
       type: boolean
 responses:

@@ -1,7 +1,6 @@
 tags: 
   - Contrato 
 summary: "Obtém o contrato por identificador"
-description: ""
 operationId: api-contratos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: "Lista Informações adicionais por tipo de caso"
-description: ""
+
 operationId: api-dado_complementar_caso-tipoCaso
 # Parâmetros da requisição
 parameters:

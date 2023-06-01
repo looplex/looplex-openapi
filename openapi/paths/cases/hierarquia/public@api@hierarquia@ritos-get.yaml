@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Lista os ritos de acordo com os filtros informados"
-description: ""
+
 operationId: api-hierarquia-ritos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

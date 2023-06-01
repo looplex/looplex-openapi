@@ -1,7 +1,6 @@
 tags: 
   - Contrato 
-summary: "Obtém o contrato do caso"
-description: ""
+summary: "Obtém o contrato por identificador do caso"
 operationId: api-casos-idCaso-contratosimples
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

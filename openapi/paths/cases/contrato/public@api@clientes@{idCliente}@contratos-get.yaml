@@ -1,7 +1,6 @@
 tags: 
   - Contrato 
 summary: "Lista os contratos do cliente"
-description: ""
 operationId: api-clientes-idCliente-contratos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

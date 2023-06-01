@@ -1,7 +1,6 @@
 tags: 
   - Area 
-summary: Obtém áreas
-description: Retorna um array com as áreas encontradas de acordo com o filtro informado.
+summary: "Lista as áreas de acordo com o filtro informado"
 operationId: api-areas-get
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: "Lista Informações adicionais por caso, numero interno ou numero externo"
-description: ""
+
 operationId: api-casos-num-dadoscomplementares
 # Parâmetros da requisição
 parameters:

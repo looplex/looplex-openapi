@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Lista as fases de processo por ramo judicial"
-description: ""
+
 operationId: api-hierarquia-fases
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

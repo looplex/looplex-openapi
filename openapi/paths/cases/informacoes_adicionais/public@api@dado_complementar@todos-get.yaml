@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: "Lista todas as Informações adicionais"
-description: ""
+
 operationId: api-dado_complementar-todos
 # Parâmetros da requisição
 parameters:

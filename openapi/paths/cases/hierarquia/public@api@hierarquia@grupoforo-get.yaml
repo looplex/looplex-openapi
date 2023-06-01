@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Lista os grupos de foro por ramo de justiça, estado e grupo de família"
-description: ""
+
 operationId: api-hierarquia-grupoforo
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
