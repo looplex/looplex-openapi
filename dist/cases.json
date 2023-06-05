@@ -1707,6 +1707,170 @@
         }
       }
     },
+    "/api/casos": {
+      "get": {
+        "tags": [
+          "Casos"
+        ],
+        "summary": "Casos",
+        "description": "Casos por filtro",
+        "operationId": "api-casos",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idsCliente",
+            "in": "query",
+            "required": false,
+            "example": "[1,15,33, 50]",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "name": "idsAreaCaso",
+            "in": "query",
+            "required": false,
+            "example": "[1,15,33, 50]",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "name": "idsResponsaveis",
+            "in": "query",
+            "required": false,
+            "example": "[1,15,33, 50]",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "name": "dataCriacao",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataCitacao",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataDistribuicao",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataEncerramento",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataEntrada",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataUltimaAlteracao",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "situacoes",
+            "in": "query",
+            "required": false,
+            "example": "[1,2,3]",
+            "schema": {
+              "description": "`Enviar um array`",
+              "$ref": "#/components/schemas/SituacaoDoProcesso"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna um array com todos os casos de acordo com o filtro informado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCasoCompleto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco": {
       "get": {
         "tags": [
@@ -8346,6 +8510,350 @@
           },
           "Parametros": {
             "$ref": "#/components/schemas/DTOTabelaCalculoParametros"
+          }
+        }
+      },
+      "SituacaoDoProcesso": {
+        "title": "SituacaoDoProcesso",
+        "example": 1,
+        "description": "1: Ativo\n\n2: Arquivo morto\n\n3: Encerrado\n"
+      },
+      "ExpectavivaReivindicacao": {
+        "type": "integer",
+        "example": 2,
+        "description": "1: Provável\n\n2: Possível\n\n3: Remoto\n"
+      },
+      "ClasseDoCaso": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n \n1: Processo\n\n2: Subprocesso\n\n3: Recurso\n\n4: Incidente\n"
+      },
+      "SituacaoDoCaso": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Ativo\n\n2: Arquivo morto\n\n3: Encerrado\n\n99: Excluído\n"
+      },
+      "DTOCoresponsavel": {
+        "title": "DTOCoresponsavel",
+        "type": "object",
+        "properties": {
+          "IDCoresponsavel": {
+            "type": "integer"
+          },
+          "NomeCorresponsavel": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCasoSimples": {
+        "title": "DTOCasoSimples",
+        "type": "object",
+        "properties": {
+          "IDCaso": {
+            "type": "integer"
+          },
+          "Titulo": {
+            "type": "string"
+          },
+          "IDCliente": {
+            "type": "integer"
+          },
+          "NomeCliente": {
+            "type": "string"
+          },
+          "NomeResponsavelCaso": {
+            "type": "string"
+          },
+          "IDPasta": {
+            "type": "integer"
+          },
+          "NomePasta": {
+            "type": "string"
+          },
+          "IDContrato": {
+            "type": "integer"
+          },
+          "NomeContrato": {
+            "type": "string"
+          },
+          "NumeroInterno": {
+            "type": "string"
+          },
+          "NumeroExterno": {
+            "type": "string"
+          },
+          "NumeroLawoffice": {
+            "type": "integer"
+          },
+          "IDCasoPai": {
+            "type": "integer"
+          },
+          "Classe": {
+            "$ref": "#/components/schemas/ClasseDoCaso"
+          },
+          "DataDeCriacao": {
+            "type": "string"
+          },
+          "DataDeCriacaoFormatada": {
+            "type": "string"
+          },
+          "Situacao": {
+            "$ref": "#/components/schemas/SituacaoDoCaso"
+          },
+          "NomeArea": {
+            "type": "string"
+          },
+          "TipoProcesso": {
+            "type": "string"
+          },
+          "DataUltimaAlteracao": {
+            "type": "string"
+          },
+          "HierarquiaProcesso": {
+            "type": "string"
+          },
+          "PoloAtivo": {
+            "type": "string"
+          },
+          "PoloPassivo": {
+            "type": "string"
+          },
+          "StatusCaso": {
+            "type": "string"
+          },
+          "Coresponsavel": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOCoresponsavel"
+            }
+          },
+          "FaseDoCaso": {
+            "type": "string"
+          },
+          "ProcessoPai": {
+            "$ref": "#/components/schemas/DTOCasoSimples"
+          },
+          "QuantidadeCasosFilho": {
+            "type": "integer"
+          },
+          "IDFornecedor": {
+            "type": "integer"
+          },
+          "PrimeiroPoloAtivo": {
+            "type": "string"
+          },
+          "PrimeiroPoloPassivo": {
+            "type": "string"
+          },
+          "NomeFornecedor": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCasoCompleto": {
+        "title": "DTOCasoCompleto",
+        "type": "object",
+        "properties": {
+          "CdNoForoVara": {
+            "type": "integer"
+          },
+          "IDRito": {
+            "type": "integer"
+          },
+          "IDFaseProcesso": {
+            "type": "integer"
+          },
+          "IDArea": {
+            "type": "integer"
+          },
+          "IDForo": {
+            "type": "integer"
+          },
+          "IDsCoResponsaveis": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "IDFuncionarioResponsavel": {
+            "type": "integer"
+          },
+          "Foro": {
+            "type": "string"
+          },
+          "Rito": {
+            "type": "string"
+          },
+          "Observacao": {
+            "type": "string"
+          },
+          "PolosAtivos": {
+            "type": "string"
+          },
+          "PolosPassivos": {
+            "type": "string"
+          },
+          "FaseProcesso": {
+            "type": "string"
+          },
+          "ComentarioExpectativaDaCausa": {
+            "type": "string"
+          },
+          "UF": {
+            "type": "string"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "IBGECode": {
+            "type": "string"
+          },
+          "nrUF": {
+            "type": "integer"
+          },
+          "Tipo": {
+            "$ref": "#/components/schemas/RamosJudicial"
+          },
+          "ExpectativaDeExito": {
+            "$ref": "#/components/schemas/ExpectavivaReivindicacao"
+          },
+          "DataDeEntrada": {
+            "type": "string"
+          },
+          "DataDeDistribuicao": {
+            "type": "string"
+          },
+          "DataDeCitacao": {
+            "type": "string"
+          },
+          "DataDeEncerramento": {
+            "type": "string"
+          },
+          "DataPrevistaDeEncerramento": {
+            "type": "string"
+          },
+          "DataDeEntradaFormatada": {
+            "type": "string"
+          },
+          "DataDeDistribuicaoFormatada": {
+            "type": "string"
+          },
+          "DataDeCitacaoFormatada": {
+            "type": "string"
+          },
+          "DataDeEncerramentoFormatada": {
+            "type": "string"
+          },
+          "DataPrevistaDeEncerramentoFormatada": {
+            "type": "string"
+          },
+          "DsProcessFlowableId": {
+            "type": "string"
+          },
+          "ExecutionID": {
+            "type": "string"
+          },
+          "Confidencial": {
+            "type": "boolean"
+          },
+          "IDCaso": {
+            "type": "integer"
+          },
+          "Titulo": {
+            "type": "string"
+          },
+          "IDCliente": {
+            "type": "integer"
+          },
+          "NomeCliente": {
+            "type": "string"
+          },
+          "NomeResponsavelCaso": {
+            "type": "string"
+          },
+          "IDPasta": {
+            "type": "integer"
+          },
+          "NomePasta": {
+            "type": "string"
+          },
+          "IDContrato": {
+            "type": "integer"
+          },
+          "NomeContrato": {
+            "type": "string"
+          },
+          "NumeroInterno": {
+            "type": "string"
+          },
+          "NumeroExterno": {
+            "type": "string"
+          },
+          "NumeroLawoffice": {
+            "type": "integer"
+          },
+          "IDCasoPai": {
+            "type": "integer"
+          },
+          "Classe": {
+            "$ref": "#/components/schemas/ClasseDoCaso"
+          },
+          "DataDeCriacao": {
+            "type": "string"
+          },
+          "DataDeCriacaoFormatada": {
+            "type": "string"
+          },
+          "Situacao": {
+            "$ref": "#/components/schemas/SituacaoDoCaso"
+          },
+          "NomeArea": {
+            "type": "string"
+          },
+          "TipoProcesso": {
+            "type": "string"
+          },
+          "DataUltimaAlteracao": {
+            "type": "string"
+          },
+          "HierarquiaProcesso": {
+            "type": "string"
+          },
+          "PoloAtivo": {
+            "type": "string"
+          },
+          "PoloPassivo": {
+            "type": "string"
+          },
+          "StatusCaso": {
+            "type": "string"
+          },
+          "Coresponsavel": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOCoresponsavel"
+            }
+          },
+          "FaseDoCaso": {
+            "type": "string"
+          },
+          "ProcessoPai": {
+            "$ref": "#/components/schemas/DTOCasoSimples"
+          },
+          "QuantidadeCasosFilho": {
+            "type": "integer"
+          },
+          "IDFornecedor": {
+            "type": "integer"
+          },
+          "PrimeiroPoloAtivo": {
+            "type": "string"
+          },
+          "PrimeiroPoloPassivo": {
+            "type": "string"
+          },
+          "NomeFornecedor": {
+            "type": "string"
           }
         }
       },

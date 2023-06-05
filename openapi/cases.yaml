@@ -108,7 +108,9 @@ paths:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@ValoresParaCalculo-get.yaml'
 
   # Caso + Fase caso
-  
+  /api/casos:
+    get:
+      $ref: './paths/cases/casos/public@api@casos-get.yaml'  
 
   # Categoria
   /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
