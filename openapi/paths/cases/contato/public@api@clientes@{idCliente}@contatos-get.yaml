@@ -1,7 +1,6 @@
 tags: 
   - Contato
-summary: Contatos do cliente
-description: Obtém uma lista com os contatos do cliente
+summary: "Lista os contatos do cliente"
 operationId: api-clientes-idCliente-contatos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

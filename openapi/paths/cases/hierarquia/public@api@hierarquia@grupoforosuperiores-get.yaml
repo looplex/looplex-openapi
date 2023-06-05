@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Lista os grupos de foro superiores por ramo judicial"
-description: ""
+
 operationId: api-hierarquia-grupoforosuperiores
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

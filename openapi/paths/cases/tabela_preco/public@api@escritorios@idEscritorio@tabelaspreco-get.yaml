@@ -1,8 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tabela de preço
-summary: Tabelas de preço
-description: Lista as tabelas de preço
+summary: "Lista as tabelas de preço"
 operationId: api-escritorios-idEscritorio-tabelaspreco
 # Parâmetros da requisição
 parameters:

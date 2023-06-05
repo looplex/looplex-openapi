@@ -1,7 +1,6 @@
 tags: 
   - Contato
-summary: Contato
-description: Obtém informações do contato
+summary: "Obtém informações do contato"
 operationId: api-contatos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

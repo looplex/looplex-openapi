@@ -33,64 +33,14 @@ servers:
   - url: "https://graph.looplex.com/cases"
     description: "Looplex Cases Server"
 paths:
+
   # Autenticação
   /api/logon:
     post:
       $ref: ./paths/cases/login/public@api@logon-post.yaml
-  # /api/session:
-  #   post:
-  #     $ref: ./paths/cases/login/public@api@session-post.yaml
       
   # Agenda
-  /api/agenda/totaleventos:
-    get:
-      $ref: ./paths/cases/agenda/public@api@agenda@totaleventos-get.yaml
-  /api/agenda/proximoslancamentos:
-    get:
-      $ref: ./paths/cases/agenda/public@api@agenda@proximos-lancamentos-get.yaml
-  /api/agenda:
-    get:
-      $ref: ./paths/cases/agenda/public@api@agenda-get.yaml
-    post:
-      $ref: ./paths/cases/agenda/public@api@agenda@post-post.yaml
-    put:
-      $ref: ./paths/cases/agenda/public@api@agenda@put-put.yaml
-  /api/casos/{idCaso}/agenda:
-    get:
-      $ref: ./paths/cases/agenda/public@api@casos@{idCaso}@agenda-get.yaml
-  /api/agenda/{tipo}/{id}:
-    delete:
-      $ref: ./paths/cases/agenda/public@api@agenda@{tipo}@{id}-delete.yaml
-  /api/agenda/executores:
-    get:
-      $ref: ./paths/cases/agenda/public@api@agenda@executores-get.yaml
-  /api/agenda/participantes:
-    get:
-      $ref: ./paths/cases/agenda/public@api@agenda@participantes-get.yaml
-  /api/agenda/titulos:
-    get:
-      $ref: ./paths/cases/agenda/public@api@agenda@titulos-get.yaml
-  /api/casos/{idCaso}/audiencias:
-    get:
-      $ref: ./paths/cases/agenda/public@api@casos@{idCaso}@audiencias-get.yaml
-  /api/casos/num/audiencias:
-    get:
-      $ref: ./paths/cases/agenda/public@api@casos@num@audiencias-get.yaml
-  /api/casos/{idCaso}/tabagenda:
-    get: 
-      $ref: ./paths/cases/agenda/public@api@casos@{idCaso}@tabagenda-get.yaml
-  /api/casos/num/tabagenda:
-    get:
-      $ref: ./paths/cases/agenda/public@api@casos@num@tabagenda-get.yaml
-  /api/compromissos:
-    get:
-      $ref: './paths/cases/agenda/public@api@compromissos-get.yaml'
-  # /api/agenda/{id}/{tipo}:
-  #   get:
-  #     $ref: './paths/cases/agenda/public@api@agenda@id@tipo-get.yaml'
-  /api/agenda/status_encerramento:
-    get:
-      $ref: './paths/cases/agenda/public@api@agenda@status_encerramento-get.yaml'
+  
 
   # Andamentos
   /api/andamentos/templates:
@@ -133,15 +83,15 @@ paths:
       $ref: './paths/cases/busca/public@api@busca@mobilenovo-get.yaml'
 
   # Calculo Monetário
-  /api/casos/{cdProcesso}/CalculosMonetarios:
+  /api/casos/{IDCaso}/CalculosMonetarios:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@casos@cdProcesso@CalculosMonetarios-get.yaml'
-  /api/CalculoMonetario/{id}:
+  /api/CalculoMonetario/{ID}:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@id-get.yaml'
     delete:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@id-delete.yaml'
-  /api/casos/{id}/Calcula:
+  /api/casos/{ID}/Calcula:
     post:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@Calcula-post.yaml'
   /api/CalculoMonetario/Indices:
@@ -150,68 +100,17 @@ paths:
   /api/CalculoMonetario/Modelos:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@Modelos-get.yaml'
-  /api/CalculoMonetario/Modelos/{id}:
+  /api/CalculoMonetario/Modelos/{ID}:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@Modelos@id-get.yaml'
-  /api/casos/{id}/ValoresParaCalculo:
+  /api/casos/{IDCaso}/ValoresParaCalculo:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@ValoresParaCalculo-get.yaml'
 
-  # Casos
-  /api/casos/inclui:
-    post:
-      $ref: ./paths/cases/casos/public@api@casos@inclui-post.yaml
-  /api/clientes/{idCliente}/casos:
-    get:
-      $ref: ./paths/cases/casos/public@api@clientes@{idCliente}@casos-get.yaml
-  /api/clientes/{idCliente}/pastas:
-    get:
-      $ref: ./paths/cases/casos/public@api@clientes@{idCliente}@pastas-get.yaml
-  /api/casos/{idCliente}/pastasDoCaso:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@{idCliente}@pastasDoCaso-get.yaml
-  /api/casos/{id}:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@{id}-get.yaml
-  /api/casos/{id}/ficha:
-    get: 
-      $ref: ./paths/cases/casos/public@api@casos@{id}@ficha-get.yaml
-  /api/casos/id/ficha/num:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@id@ficha@num-get.yaml
-  /api/casos/meuscasos/{cdResponsavel}:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@meuscasos@{cdResponsavel}-get.yaml
-  /api/casos/RamosJudiciais:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@RamosJudiciais-get.yaml
+  # Caso + Fase caso
   /api/casos:
     get:
-      $ref: ./paths/cases/casos/public@api@casos-get.yaml
-  /api/casos/id/num:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@id@num-get.yaml
-  /api/casos/porIds/{ids}:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@porIds@{ids}-get.yaml
-  /api/casos/num:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@num-get.yaml
-  /api/casos/busca:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@busca-get.yaml
-  /api/casos/edit:
-    put:
-      $ref: ./paths/cases/casos/public@api@casos@edit-put.yaml
-  /api/casos/listacasos:
-    get:
-      $ref: ./paths/cases/casos/public@api@casos@listacasos-get.yaml
-  /api/casos/subcasos/{cdProcessoPai}:
-    get:
-      $ref: './paths/cases/casos/public@api@casos@subcasos@cdProcessoPai-get.yaml'
-  /api/casos/editadosrecentemente:
-    get:
-      $ref: './paths/cases/casos/public@api@casos@editadosrecentemente-get.yaml'
+      $ref: './paths/cases/casos/public@api@casos-get.yaml'  
 
   # Categoria
   /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
@@ -225,36 +124,7 @@ paths:
       $ref: ./paths/cases/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
 
   # Cliente
-  /api/clientes/todos:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@todos-get.yaml
-  /api/clientes:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes-get.yaml
-  /api/clientes/enderecos:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@enderecos-get.yaml
-  /api/clientes/porDomain/{domain}:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@porDomain@domain-get.yaml
-  /api/clientes/ficha:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@ficha-get.yaml
-  /api/clientes/ficha_mobile:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@ficha@mobile-get.yaml
-  /api/clientes/mobile:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@mobile-get.yaml
-  /api/clientes/{id}:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@{id}-get.yaml
-  /api/clientes/porIds/{idsClientes}:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@porIds@{idsClientes}-get.yaml
-  /api/clientes/{idCliente}/pasta:
-    get:
-      $ref: ./paths/cases/cliente/public@api@clientes@{idCliente}@pasta-get.yaml
+  
 
   # Contatos
   /api/contatos/{IDContato}:
@@ -286,6 +156,109 @@ paths:
   /api/contratos:
     get:
       $ref: ./paths/cases/contrato/public@api@contratos-get.yaml
+
+  # Decisões
+  
+
+  # Despesas
+  
+
+  # Expectativa reivindicação
+  
+  # Fornecedor
+  /api/fornecedores:
+    get:
+      $ref: './paths/cases/fornecedor/public@api@fornecedores-get.yaml'
+
+  # Funcionários
+  /api/funcionarios/porIds/{ids}:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios@porIds@ids-get.yaml'
+  /api/funcionarios/porId/{IDFuncionario}:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios@porId@IDFuncionario-get.yaml'
+  /api/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios-get.yaml' 
+  /api/areas/{IDArea}/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@areas@IDArea@funcionarios-get.yaml' 
+  /api/funcionarios/{IDFuncionario}/areas:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios@IDFuncionario@areas-get.yaml'
+  /api/escritorios/{IDEscritorio}/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@escritorios@IDEscritorio@funcionarios-get.yaml'
+  /api/escritorios/funcionarios:
+    get:
+      $ref: './paths/cases/funcionario/public@api@escritorios@funcionarios-get.yaml'
+
+  # Garantia
+  /api/casos/Garantia/{IDCasoGarantia}:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IDCasoGarantia-get.yaml'
+  /api/casos/{IDCaso}/Garantias:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@IDCaso@Garantias-get.yaml'
+  /api/TiposGarantia:
+    get:
+      $ref: './paths/cases/garantia/public@api@TiposGarantia-get.yaml'
+  /api/casos/num/garantias:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@num@garantias-get.yaml'
+  /api/casos/Garantia/Inclui/{IDCaso}:
+    post:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@Inclui@IDCaso-post.yaml'
+  /api/casos/Garantia/Atualiza/{IDCaso}:
+    put:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@Atualiza@IDCaso-put.yaml'
+  /api/casos/GarantiaMovimentacao/Exclui/{IDGarantiaMovimentacao}:
+    delete:
+      $ref: './paths/cases/garantia/public@api@casos@GarantiaMovimentacao@Exclui@IDGarantiaMovimentacao-delete.yaml'
+  /api/casos/Garantia/IncluiMovimentacao/{IDCaso}:
+    post:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IncluiMovimentacao@IDCaso-post.yaml'
+  /api/casos/Garantia/{IDGarantia}/ObtemMovimentacao/{IDGarantiaMovimentacao}:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IDGarantia@ObtemMovimentacao@IDGarantiaMovimentacao-get.yaml'
+  /api/casos/Garantia/Exclui/{IDCaso}:
+    delete:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@Exclui@IDCaso-delete.yaml'
+  /api/casos/Garantia/AtualizaMovimentacao:
+    put:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@AtualizaMovimentacao-put.yaml'
+  /api/casos/Garantia/{IDProcessoGarantia}/IdsPedidos:
+    get:
+      $ref: './paths/cases/garantia/public@api@casos@Garantia@IDProcessoGarantia@IdsPedidos-get.yaml'
+      
+  # Hierarquia
+  /api/hierarquia/ritos:
+    get: 
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@ritos-get.yaml
+  /api/hierarquia/tipos:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@tipos-get.yaml
+  /api/hierarquia/regioes:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@regioes-get.yaml
+  /api/hierarquia/GrupoForoPorTipo:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforoportipo-get.yaml
+  /api/hierarquia/GrupoForo:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforo-get.yaml
+  /api/hierarquia/GrupoForoSuperiores:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
+  /api/hierarquia/GrupoForoDetalhado:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@GrupoForoDetalhado-get.yaml
+  /api/hierarquia/UFPorRegiao:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@UFPorRegiao-get.yaml
+  /api/hierarquia/fases:
+    get:
+      $ref: ./paths/cases/hierarquia/public@api@hierarquia@fases-get.yaml
 
   # Informações adicionais
   /api/dado_complementar/{IDParametroDadoComplementar}:
@@ -322,188 +295,10 @@ paths:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
 
-  # Decisões
-  /api/casos/{idCaso}/Decisoes:
-    get:
-      $ref: './paths/cases/decisoes/public@api@casos@idCaso@Decisoes-get.yaml'
-  /api/casos/num/decisoes:
-    get:
-      $ref: './paths/cases/decisoes/public@api@casos@num@decisoes-get.yaml'
-  /api/Decisoes/tipos:
-    get:
-      $ref: './paths/cases/decisoes/public@api@Decisoes@tipos-get.yaml'
-  /api/Decisoes:
-    post:
-      $ref: './paths/cases/decisoes/public@api@Decisoes-post.yaml'
-  /api/Decisoes/{id}:
-    get:
-      $ref: './paths/cases/decisoes/public@api@Decisoes@id-get.yaml'
-    put:
-      $ref: './paths/cases/decisoes/public@api@Decisoes@id-put.yaml'
-  /api/casos/{idCaso}/DecisoesComValores:
-    get:
-      $ref: './paths/cases/decisoes/public@api@casos@idCaso@DecisoesComValores-get.yaml'
-  # /api/Decisoes/{idProcessoDecisao}:
-  #   delete:
-  #     $ref: './paths/cases/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
-
-  # Despesas
-  /api/despesas/totaldespesasmes:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@totaldespesasmes-get.yaml'
-  /api/despesas/proximoslancamentos:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@proximoslancamentos-get.yaml'
-  /api/despesas/adiantamentosliberados:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@adiantamentosliberados-get.yaml'
-  /api/despesas/adiantamentos/categorias:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@adiantamentos@categorias-get.yaml'
-  /api/despesas/adiantamentos/fornecedores:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@adiantamentos@fornecedores-get.yaml'
-  /api/despesas/reembolsos/categorias:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@reembolsos@categorias-get.yaml'
-  /api/despesas/reembolsos/fornecedores:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@reembolsos@fornecedores-get.yaml'
-  /api/despesas/voucher:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@voucher-get.yaml'
-  /api/despesas/voucher/{idVoucher}/categorias:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@voucher@idVoucher@categorias-get.yaml'
-  /api/despesas/voucher/{idVoucher}/fornecedores:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@voucher@idVoucher@fornecedores-get.yaml'
-  /api/despesas/obtem:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@obtem-get.yaml'
-  /api/despesas/obtem/{id}:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@obtem@id-get.yaml'
-  /api/despesas/inclui:
-    post:
-      $ref: './paths/cases/despesa/public@api@despesas@inclui-post.yaml'
-  /api/despesas/atualiza:
-    put:
-      $ref: './paths/cases/despesa/public@api@despesas@atualiza-put.yaml'
-  /api/despesas/exclui/{id}:
-    delete:
-      $ref: './paths/cases/despesa/public@api@despesas@exclui@id-delete.yaml'
-  /api/despesas/valorKMRodado:
-    get:
-      $ref: './paths/cases/despesa/public@api@despesas@valorKMRodado-get.yaml'
-
-  # Expectativa reivindicação
-  /api/casos/{idCaso}/Valores:
-    get:
-      $ref: './paths/cases/expectativa_reivindicacao/public@api@casos@idCaso@Valores-get.yaml'
-  /api/casos/{idCaso}/PedidosComHistorico:
-    get:
-      $ref: './paths/cases/expectativa_reivindicacao/public@api@casos@idCaso@PedidosComHistorico-get.yaml'
-  /api/expectativa/valores/{idCaso}:
-    get:
-      $ref: './paths/cases/expectativa_reivindicacao/public@api@expectativa@valores@idCaso-get.yaml'
-
-  # Fase
-  /api/fase:
-    get:
-      $ref: './paths/cases/fase_caso/public@api@fase-get.yaml'
-  /api/casos/fase/{nrGrupo}:
-    get:
-      $ref: ./paths/cases/fase_caso/public@api@casos@fase@{nrGrupo}-get.yaml
-  /api/casos/{nrSequencia}/fase:
-    get:
-      $ref: ./paths/cases/fase_caso/public@api@casos@{nrSequencia}@fase-get.yaml
-  /api/casos/num/fase:
-    get:
-      $ref: ./paths/cases/fase_caso/public@api@casos@num@fase-get.yaml
-
-  # Funcionários
-  /api/funcionarios/porIds/{ids}:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios@porIds@{ids}-get.yaml
-  /api/funcionarios/porId/{id}:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios@porId@{id}-get.yaml
-  /api/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios-get.yaml
-  /api/areas/{idArea}/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@areas@{idArea}@funcionarios-get.yaml
-  /api/funcionarios/{idFuncionario}/areas:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@funcionarios@{idFuncionario}@areas-get.yaml
-  /api/escritorios/{IdEscritorio}/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@escritorios@{IdEscritorio}@funcionarios-get.yaml
-  /api/escritorios/funcionarios:
-    get:
-      $ref: ./paths/cases/funcionario/public@api@escritorios@funcionarios-get.yaml
-
-  # Garantia
-  /api/casos/Garantia/{idCasoGarantia}:
-    get:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@idCasoGarantia-get.yaml'
-  /api/casos/{idCaso}/Garantias:
-    get:
-      $ref: './paths/cases/garantia/public@api@casos@idCaso@Garantias-get.yaml'
-  /api/TiposGarantia:
-    get:
-      $ref: './paths/cases/garantia/public@api@TiposGarantia-get.yaml'
-  /api/casos/num/garantias:
-    get:
-      $ref: './paths/cases/garantia/public@api@casos@num@garantias-get.yaml'
-  /api/casos/Garantia/Inclui/{idCaso}:
-    post:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@Inclui@idCaso-post.yaml'
-  /api/casos/Garantia/Atualiza/{idCaso}:
-    put:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@Atualiza@idCaso-put.yaml'
-  /api/casos/GarantiaMovimentacao/Exclui/{idGarantiaMovimentacao}:
-    delete:
-      $ref: './paths/cases/garantia/public@api@casos@GarantiaMovimentacao@Exclui@idGarantiaMovimentacao-delete.yaml'
-  /api/casos/Garantia/IncluiMovimentacao/{idCaso}:
-    post:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@IncluiMovimentacao-post.yaml'
-
-  # Hierarquia
-  /api/hierarquia/ritos:
-    get: 
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@ritos-get.yaml
-  /api/hierarquia/tipos:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@tipos-get.yaml
-  /api/hierarquia/regioes:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@regioes-get.yaml
-  /api/hierarquia/GrupoForoPorTipo:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforoportipo-get.yaml
-  /api/hierarquia/GrupoForo:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforo-get.yaml
-  /api/hierarquia/GrupoForoSuperiores:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@grupoforosuperiores-get.yaml
-  /api/hierarquia/GrupoForoDetalhado:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@GrupoForoDetalhado-get.yaml
-  /api/hierarquia/UFPorRegiao:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@UFPorRegiao-get.yaml
-  /api/hierarquia/fases:
-    get:
-      $ref: ./paths/cases/hierarquia/public@api@hierarquia@fases-get.yaml
-
   # Natureza
-  /api/casos/{idCaso}/natureza:
+  /api/casos/{IDCaso}/natureza:
     get:
-      $ref: './paths/cases/natureza/public@api@casos@idCaso@natureza-get.yaml'
+      $ref: './paths/cases/natureza/public@api@casos@IDCaso@natureza-get.yaml'
   /api/casos/num/natureza:
     get:
       $ref: './paths/cases/natureza/public@api@casos@num@natureza-get.yaml'
@@ -519,29 +314,44 @@ paths:
     get:
       $ref: ./paths/cases/pais/public@api@pais@cidades-get.yaml
 
-  # Parte
-  /api/Partes:
-    get:
-      $ref: ./paths/cases/partes/public@api@partes-get.yaml
-  /api/casos/{idCaso}/Partes:
-    get:
-      $ref: ./paths/cases/partes/public@api@casos@idCaso@partes-get.yaml
-  /api/parte:
-    post:
-      $ref: ./paths/cases/partes/public@api@parte@post-post.yaml
-  /api/partes/desvincular:
-    post:
-      $ref: ./paths/cases/partes/public@api@partes@desvincular-post.yaml
+  # Parte + Parte Papel (Envolvimento das partes)
+  
 
-  # Parte Papel (Envolvimento das partes)
-  /api/envolvimentos":
+  # Pedidos
+  /api/casos/{IDCaso}/Pedidos:
     get:
-      $ref: ./paths/cases/parte_papel/public@api@envolvimentos-get.yaml
+      $ref: './paths/cases/pedidos/public@api@casos@idCaso@Pedidos-get.yaml'
+    post:
+      $ref: './paths/cases/pedidos/public@api@casos@IDCaso@pedidos-post.yaml'
+  /api/casos/num/pedidos:
+    get:
+      $ref: './paths/cases/pedidos/public@api@casos@num@pedidos-get.yaml'
+  /api/Pedidos/possiveisStatus:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@possiveisStatus-get.yaml'    
+  /api/Pedidos/possiveisExitos:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@possiveisExitos-get.yaml'
+  /api/Pedidos/lista:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@lista-get.yaml'
+  /api/Pedidos/causas:
+    get:
+      $ref: './paths/cases/pedidos/public@api@Pedidos@causas-get.yaml'
+  /api/casos/Pedidos/{IDCasoPedido}/IdsGarantias:
+    get:
+      $ref: './paths/cases/pedidos/public@api@casos@Pedidos@IDCasoPedido@IdsGarantias-get.yaml'
+      
+  # Produtos
+  /api/casos/{IDCaso}/produtos:
+    get:
+      $ref: './paths/cases/produtos/public@api@casos@IDCaso@produtos-get.yaml'
+  /api/casos/num/produtos:
+    get:
+      $ref: './paths/cases/produtos/public@api@casos@num@produtos-get.yaml'
 
-  # Push
-  /api/push/publicacoes:
-    get:
-      $ref: './paths/cases/push/public@api@push@publicacoes-get.yaml'
+  # Push + Push Publicação
+  
 
   # Tabela de preço
   /api/escritorios/{idEscritorio}/tabelaspreco:
@@ -564,83 +374,10 @@ paths:
       $ref: './paths/cases/timeline/public@api@timeline@items-get.yaml'
 
   # Timesheet
-  /api/timesheet/totalhoras:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@totalhoras-get.yaml'
-  /api/timesheet/proximoslancamentos:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@proximoslancamentos-get.yaml'
-  /api/timesheet/activitycodes:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@activitycodes-get.yaml'
-  /api/timesheet/taskcodes:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@taskcodes-get.yaml'
-  /api/timesheet/listaporperiodo:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@listaporperiodo-get.yaml'
-  /api/timesheet/obtemmaisrecente:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@obtemmaisrecente-get.yaml'
-  /api/timesheet/obtem:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@obtem-get.yaml'
-  /api/timesheet/funcionarios/{idFuncionario}/areas:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@funcionarios@idFuncionario@areas-get.yaml'
-  /api/timesheet/areas/{idArea}/titulos:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@areas@idArea@titulos-get.yaml'
-  /api/timesheet/funcionarios:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@funcionarios-get.yaml'
-  /api/timesheet/funcionarios/permissaolcto/{idFuncionario}:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@funcionarios@permissaolcto@idFuncionario-get.yaml'
-  /api/timesheet/classificacoes:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@classificacoes-get.yaml'
-  /api/casos/{idCaso}/timesheet:
-    get:
-      $ref: './paths/cases/timesheet/public@api@casos@idCaso@timesheet-get.yaml'
-  /api/timesheet/caso/{idCaso}:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@caso@idCaso-get.yaml'
-  /api/timesheet/obtem/{id}:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@obtem@id-get.yaml'
-  /api/timesheet/inclui:
-    post:
-      $ref: './paths/cases/timesheet/public@api@timesheet@inclui-post.yaml'
-  /api/timesheet/incluiWeb:
-    post:
-      $ref: './paths/cases/timesheet/public@api@timesheet@incluiWeb-post.yaml'
-  /api/timesheet/atualizaWeb:
-    put:
-      $ref: './paths/cases/timesheet/public@api@timesheet@atualizaWeb-put.yaml'
-  /api/timesheet/atualiza:
-    put:
-      $ref: './paths/cases/timesheet/public@api@timesheet@atualiza-put.yaml'
-  /api/timesheet/exclui/{id}:
-    delete:
-      $ref: './paths/cases/timesheet/public@api@timesheet@exclui@id-delete.yaml'
-  /api/timesheet/limiteMinimo:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@limiteMinimo-get.yaml'
-  /api/timesheet/arredondamento:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet@arredondamento-get.yaml'
-  /api/timesheet:
-    get:
-      $ref: './paths/cases/timesheet/public@api@timesheet-get.yaml'
+  
 
   # Valores apurados
-  /api/casos/{idCaso}/valoresapurados:
-    get:
-      $ref: './paths/cases/valores_apurados/public@api@casos@idCaso@valoresapurados-get.yaml'
-  /api/casos/num/valoresapurados:
-    get:
-      $ref: './paths/cases/valores_apurados/public@api@casos@num@valoresapurados-get.yaml'
+  
 
 components:
   securitySchemes:

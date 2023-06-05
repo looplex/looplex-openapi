@@ -1,28 +1,26 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Natureza
-summary: Natureza dos casos
-description: Obtém as naturezas dos casos encontrados de acordo com o identificador do caso, numero interno ou numero externo
-operationId: api-casos-num-natureza
+summary: "Lista naturezas do caso por identificador do caso, numero interno ou numero externo"
+operationId: api-casos-num-natureza-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: NumeroInterno
     in: query
-    description: "Default: 0"
+    description: "`Default: 0`<br />O numero interno do caso"
     required: false
     schema:
       type: integer
   - name: NumeroExterno
     in: query
-    description: "Default: empty string"
+    description: "`Default: empty string`<br />O numero externo do caso"
     required: false
     schema:
       type: string
   - name: IdProcesso
     in: query
-    description: "Default: 0"
+    description: "`Default: 0`<br />O identificador do caso"
     required: false
     schema:
       type: integer
@@ -31,7 +29,7 @@ parameters:
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Natureza dos casos"
+    description: "OK"
     content:
       application/json:
         schema:
@@ -62,4 +60,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

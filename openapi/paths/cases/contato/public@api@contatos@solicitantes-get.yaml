@@ -1,7 +1,6 @@
 tags: 
   - Contato
-summary: Solicitantes
-description: Obtém uma lista de solicitantes do cliente
+summary: "Lista os solicitantes do cliente"
 operationId: api-contatos-solicitantes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

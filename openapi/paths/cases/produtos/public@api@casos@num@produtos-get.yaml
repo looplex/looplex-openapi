@@ -1,32 +1,38 @@
-tags: 
-  - Produtos 
-summary: Produtos do caso
-description: Obtém um array com os produtos por caso por identificador do caso, numero interno ou numero externo.
-operationId: caseProductsByIdentifiers
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Produtos
+summary: "Lista produtos do caso por identificador do caso, numero interno ou numero externo"
+operationId: api-casos-num-produtos-get
+# Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: NumeroInterno
     in: query
+    description: "`Default: 0`<br />O numero interno do caso"
     required: false
     schema:
       type: integer
   - name: NumeroExterno
     in: query
+    description: "`Default: empty string`<br />O numero externo do caso"
     required: false
     schema:
       type: string
   - name: IdProcesso
     in: query
+    description: "`Default: 0`<br />O identificador do caso"
     required: false
     schema:
       type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
 responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Obtém um array com os produtos por caso por identificador do caso, numero interno ou numero externo."
+    description: "OK"
     content:
       application/json:
-        schema: 
+        schema:
           type: array
           items:
             $ref: ../../../components/schemas/cases/DTOProduto.yaml
@@ -54,4 +60,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

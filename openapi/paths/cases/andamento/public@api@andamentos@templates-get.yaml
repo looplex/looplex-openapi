@@ -1,7 +1,6 @@
 tags: 
   - Andamento 
-summary: Templates de andamento
-description: Retorna um array com os templates de andamento
+summary: "Lista os templates de andamento"
 operationId: api-andamentos-templates
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Timeline
-summary: Timeline
+summary: "Lista timeline por filtros"
 operationId: api-timeline-items
 # Parâmetros da requisição
 parameters:

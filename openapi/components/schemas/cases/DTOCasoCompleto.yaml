@@ -3,20 +3,10 @@ type: object
 properties:
   CdNoForoVara:
     type: integer
-  IDCaso:
-    type: integer
-  IDCliente:
-    type: integer
-  IDPasta:
-    type: integer
-  IDContrato:
-    type: integer
   IDRito:
     type: integer
   IDFaseProcesso:
-    type: integer
-  IDCasoPai:
-    type: integer
+    type: integer  
   IDArea:
     type: integer
   IDForo:
@@ -27,8 +17,7 @@ properties:
       type: integer
   IDFuncionarioResponsavel:
     type: integer
-  Titulo:
-    type: string
+  
   Foro:
     type: string
   Rito:
@@ -39,30 +28,11 @@ properties:
     type: string
   PolosPassivos:
     type: string
-  StatusCaso:
-    type: string
-  TipoProcesso:
-    type: string
+  
   FaseProcesso:
     type: string
   ComentarioExpectativaDaCausa:
-    type: string
-  NomeCliente:
-    type: string
-  NomePasta:
-    type: string
-  NomeArea:
-    type: string
-  NomeContrato:
-    type: string
-  NomeResponsavelCaso:
-    type: string
-  NumeroInterno:
-    type: string
-  NumeroExterno:
-    type: string
-  NumeroLawoffice:
-    type: integer
+    type: string  
   UF:
     type: string
   cidade:
@@ -70,17 +40,12 @@ properties:
   IBGECode:
     type: string
   nrUF:
-    type: integer
-  Classe:
-    $ref: enums/ClasseDoCaso.yaml
-  Situacao:
-    $ref: enums/SituacaoDoCaso.yaml
+    type: integer  
   Tipo:
     $ref: enums/RamosJudicial.yaml
   ExpectativaDeExito:
     $ref: enums/ExpectavivaReivindicacao.yaml
-  DataDeCriacao:
-    type: string
+  
   DataDeEntrada:
     type: string
   DataDeDistribuicao:
@@ -90,9 +55,7 @@ properties:
   DataDeEncerramento:
     type: string
   DataPrevistaDeEncerramento:
-    type: string
-  DataDeCriacaoFormatada:
-    type: string
+    type: string  
   DataDeEntradaFormatada:
     type: string
   DataDeDistribuicaoFormatada:
@@ -102,16 +65,78 @@ properties:
   DataDeEncerramentoFormatada:
     type: string
   DataPrevistaDeEncerramentoFormatada:
-    type: string
-  DataUltimaAlteracao:
-    type: string
+    type: string  
   DsProcessFlowableId:
     type: string
   ExecutionID:
     type: string
   Confidencial:
-    type: boolean
-  IDFornecedor:
+    type: boolean  
+
+#Herança do DTOCasoSimples
+  IDCaso:
     type: integer
+  Titulo:
+    type: string
+  IDCliente:
+    type: integer
+  NomeCliente:
+    type: string
+  NomeResponsavelCaso:
+    type: string
+  IDPasta:
+    type: integer
+  NomePasta:
+    type: string
+  IDContrato:
+    type: integer
+  NomeContrato:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  NumeroLawoffice:
+    type: integer
+  IDCasoPai:
+    type: integer
+  Classe:
+    $ref: enums/ClasseDoCaso.yaml
+  DataDeCriacao:
+    type: string
+  DataDeCriacaoFormatada:
+    type: string
+  Situacao:
+    $ref: enums/SituacaoDoCaso.yaml
+  NomeArea:
+    type: string
+  TipoProcesso:
+    type: string
+  DataUltimaAlteracao:
+    type: string
+  HierarquiaProcesso:
+    type: string
+  PoloAtivo:
+    type: string
+  PoloPassivo:
+    type: string
+  StatusCaso:
+    type: string
+  Coresponsavel:
+    type: array
+    items:
+      $ref: DTOCoresponsavel.yaml
+  FaseDoCaso:
+    type: string
+  ProcessoPai:
+    $ref: DTOCasoSimples.yaml
   QuantidadeCasosFilho:
     type: integer
+  IDFornecedor:
+    type: integer
+  PrimeiroPoloAtivo:
+    type: string
+  PrimeiroPoloPassivo:
+    type: string
+  NomeFornecedor:
+    type: string

@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Lista as UFs de acordo com a região e ramo judicial"
-description: ""
+
 operationId: statesByRegion
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

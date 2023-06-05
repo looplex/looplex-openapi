@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Obtém as informações do grupo foro"
-description: ""
+
 operationId: api-hierarquia-GrupoForoDetalhado
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

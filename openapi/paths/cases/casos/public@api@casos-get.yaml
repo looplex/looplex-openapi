@@ -6,18 +6,67 @@ operationId: api-casos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   
-  - name: ativos
-    in: query
-    description: "Default: true"
+  - name: idsCliente
+    in: query    
+    required: false
+    example: '[1,15,33, 50]'
+    schema:
+      type: array
+      items: 
+        type: integer
+  - name: idsAreaCaso
+    in: query    
+    required: false
+    example: '[1,15,33, 50]'
+    schema:
+      type: array
+      items: 
+        type: integer
+  - name: idsResponsaveis
+    in: query    
+    required: false
+    example: '[1,15,33, 50]'
+    schema:
+      type: array
+      items: 
+        type: integer   
+  - name: dataCriacao
+    in: query    
     required: false
     schema:
-      type: boolean
-  - name: inativos
-    in: query
-    description: "Default: false"
+      type: string 
+  - name: dataCitacao
+    in: query    
     required: false
     schema:
-      type: boolean
+      type: string    
+  - name: dataDistribuicao
+    in: query    
+    required: false
+    schema:
+      type: string 
+  - name: dataEncerramento
+    in: query    
+    required: false
+    schema:
+      type: string  
+  - name: dataEntrada
+    in: query    
+    required: false
+    schema:
+      type: string
+  - name: dataUltimaAlteracao
+    in: query    
+    required: false
+    schema:
+      type: string   
+  - name: situacoes
+    in: query    
+    required: false
+    example: '[1,2,3]'
+    schema:
+      description: '`Enviar um array`'     
+      $ref: ../../../components/schemas/cases/enums/SituacaoDoProcesso.yaml       
 responses:
   "200":
     description: "Retorna um array com todos os casos de acordo com o filtro informado"
@@ -26,7 +75,7 @@ responses:
         schema: 
           type: array
           items:
-            $ref: ../../../components/schemas/cases/DTOCasoSimples.yaml
+            $ref: ../../../components/schemas/cases/DTOCasoCompleto.yaml
   "401":
     description: "Unauthorized"
     content:

@@ -1,29 +1,32 @@
-tags: 
-  - Funcionário 
-summary: Funcionários (Filtro)
-description: Obtém uma lista de informações de funcionários de acordo com o filtro informado
-operationId: employees
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Funcionário
+summary: "Lista funcionários por situação (ativo / inativo)"
+operationId: api-funcionarios-get
+# Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: ativos
     in: query
+    description: "`Default: true`<br />Listar funcionários ativos?"
     required: false
-    description: "Default: true"
     schema:
       type: boolean
   - name: inativos
     in: query
-    description: "Default: false"
+    description: "`Default: false`<br />Listar funcionários inativos?"
     required: false
     schema:
       type: boolean
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
 responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":
-    description: "Obtém uma lista de informações de funcionários de acordo com o filtro informado"
+    description: "OK"
     content:
       application/json:
-        schema: 
+        schema:
           type: array
           items:
             $ref: ../../../components/schemas/cases/DTOFuncionario.yaml
@@ -51,4 +54,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

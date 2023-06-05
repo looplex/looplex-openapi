@@ -1,7 +1,6 @@
 tags: 
   - Contrato 
 summary: "Lista os contratos por situação (ativos / inativos)"
-description: ""
 operationId: api-contratos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

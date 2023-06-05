@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Lista as regiões de acordo com o filtro informado"
-description: ""
+
 operationId: api-hierarquia-regioes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml

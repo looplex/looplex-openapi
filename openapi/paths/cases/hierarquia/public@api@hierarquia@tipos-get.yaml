@@ -1,7 +1,7 @@
 tags: 
   - Hierarquia 
 summary: "Lista os tipos de processos administrativos"
-description: ""
+
 operationId: api-hierarquia-tipos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
