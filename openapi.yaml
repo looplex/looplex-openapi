@@ -55,8 +55,12 @@ tags:
     x-displayName: Calculo Monetário
   - name: Casos
     x-displayName: Casos
+  - name: Fase do caso
+    x-displayName: Fase do caso
   - name: Categoria
     x-displayName: Categoria
+  - name: Cliente
+    x-displayName: Cliente
   - name: Contato
     x-displayName: Contato
   - name: Contrato
@@ -114,7 +118,9 @@ x-tagGroups:
       - Busca
       - Calculo Monetário
       - Casos
+      - Fase do caso
       - Categoria
+      - Cliente
       - Contato
       - Contrato
       - Funcionário
@@ -23436,15 +23442,14 @@ paths:
     get:
       tags:
         - Casos
-      summary: Casos
-      description: Casos por filtro
+      summary: Lista casos por filtro
       operationId: api-casos
       parameters:
         - $ref: '#/components/parameters/Profile'
         - name: idsCliente
           in: query
           required: false
-          example: '[1,15,33, 50]'
+          example: '[1,15,33,50]'
           schema:
             type: array
             items:
@@ -23452,7 +23457,7 @@ paths:
         - name: idsAreaCaso
           in: query
           required: false
-          example: '[1,15,33, 50]'
+          example: '[1,15,33,50]'
           schema:
             type: array
             items:
@@ -23460,7 +23465,7 @@ paths:
         - name: idsResponsaveis
           in: query
           required: false
-          example: '[1,15,33, 50]'
+          example: '[1,15,33,50]'
           schema:
             type: array
             items:
@@ -23504,13 +23509,1180 @@ paths:
             $ref: '#/components/schemas/SituacaoDoProcesso'
       responses:
         '200':
-          description: Retorna um array com todos os casos de acordo com o filtro informado
+          description: OK
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOCasoCompleto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/inclui:
+    post:
+      tags:
+        - Casos
+      summary: Cadastra casos
+      operationId: api-casos-inclui-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOProcessoPreCadastro'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetornoCadastroDeCaso'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/edit:
+    put:
+      tags:
+        - Casos
+      summary: Edita informações do caso
+      operationId: api-casos-edit-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: query
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOObjetoNomeValor'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCasoCompleto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/clientes/{idCliente}/casos:
+    get:
+      tags:
+        - Casos
+      summary: Lista casos do cliente
+      operationId: api-clientes-idCliente-casos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCliente
+          in: path
+          description: O identificador do cliente
+          required: true
+          schema:
+            type: integer
+        - name: ativos
+          in: query
+          description: 'Listar os casos ativos?<br />`Default: true`'
+          required: false
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          description: 'Listar os casos inativos?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: apenasMeusCasos
+          in: query
+          description: '`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: apenasCasosPai
+          in: query
+          description: '`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{id}:
+    get:
+      tags:
+        - Casos
+      summary: Obtém caso por identificador
+      operationId: api-casos-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCasoCompleto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/id/num:
+    get:
+      tags:
+        - Casos
+      summary: Lista casos por identificador do caso, numero interno ou numero externo
+      operationId: api-casos-id-num-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do caso<br />`Default: empty string`'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoCompleto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/porIds/{ids}:
+    get:
+      tags:
+        - Casos
+      summary: Lista casos por identificadores dos casos
+      operationId: api-casos-porIds-ids-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: ids
+          in: path
+          description: Os identificadores dos casos
+          example: '[1,2]'
+          required: true
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num:
+    get:
+      tags:
+        - Casos
+      summary: >-
+        Lista casos por identificadores dos casos, numeros externo ou numeros
+        interno
+      operationId: api-casos-num-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IdProcesso
+          in: query
+          description: Os identificadores dos casos
+          example: '[1,2]'
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: NumeroInterno
+          in: query
+          example: '[1,2]'
+          description: Os numeros interno dos casos
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: NumeroExterno
+          in: query
+          example: '["102030-01","102030-02"]'
+          description: Os numeros externo dos casos
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/listacasos:
+    get:
+      tags:
+        - Casos
+      summary: Lista casos por situação
+      operationId: api-casos-listacasos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: ativos
+          in: query
+          description: 'Listar casos ativos?<br />`Default: true`'
+          required: false
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          description: 'Listar casos inativos?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/busca:
+    get:
+      tags:
+        - Casos
+      summary: Lista casos por termo e situação
+      operationId: api-casos-busca-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: termo
+          in: query
+          description: O termo para pesquisa
+          required: true
+          schema:
+            type: string
+        - name: ativos
+          in: query
+          description: 'Listar casos ativos?<br />`Default: true`'
+          required: false
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          description: 'Listar casos inativos?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/buscaWeb:
+    get:
+      tags:
+        - Casos
+      summary: Lista casos por termo e situação
+      operationId: api-casos-buscaWeb-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: termo
+          in: query
+          description: O termo para pesquisa
+          required: true
+          schema:
+            type: string
+        - name: ativos
+          in: query
+          description: 'Listar os casos ativos?<br />`Default: true`'
+          required: false
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          description: 'Listar os casos inativos?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/RamosJudiciais:
+    get:
+      tags:
+        - Casos
+      summary: Lista os ramos judiciais
+      operationId: api-casos-RamosJudiciais-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOEnum'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{id}/ficha:
+    get:
+      tags:
+        - Casos
+      summary: Obtém ficha do caso
+      operationId: api-casos-id-ficha-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCasoFicha'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/id/ficha/num:
+    get:
+      tags:
+        - Casos
+      summary: Lista casos por identificador do caso, numero interno ou numero externo
+      operationId: api-casos-id-ficha-num-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do caso<br />`Default: empty string`'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoFicha'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/meuscasos/{cdResponsavel}:
+    get:
+      tags:
+        - Casos
+      summary: Listar os casos em que sou responsável
+      operationId: api-casos-meuscasos-cdResponsavel-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: cdResponsavel
+          in: path
+          description: O identificador do funcionário
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/subcasos/{cdProcessoPai}:
+    get:
+      tags:
+        - Casos
+      summary: Listar os casos por identificador do caso pai
+      operationId: api-casos-subcasos-cdProcessoPai-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: cdProcessoPai
+          in: path
+          description: O identificador do caso pai
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/editadosrecentemente:
+    get:
+      tags:
+        - Casos
+      summary: Listar os casos editados recentemente
+      operationId: api-casos-editadosrecentemente-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/fase:
+    get:
+      tags:
+        - Fase do caso
+      summary: Lista as fases ativas
+      operationId: api-fase-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFase'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+    post:
+      tags:
+        - Fase do caso
+      summary: Inclui fase
+      operationId: api-fase-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOFase'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOFase'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+    put:
+      tags:
+        - Fase do caso
+      summary: Atualiza fase
+      operationId: api-fase-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOFase'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MFaseProcesso'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/fase/{nrGrupo}:
+    get:
+      tags:
+        - Fase do caso
+      summary: Listar as fases por ramo judicial
+      operationId: api-casos-fase-nrGrupo-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: nrGrupo
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFaseCaso'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{nrSequencia}/fase:
+    get:
+      tags:
+        - Fase do caso
+      summary: Listar a fase por numero do caso
+      operationId: api-casos-nrSequencia-fase-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: nrSequencia
+          in: path
+          description: O numero do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOFaseCaso'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/fase:
+    get:
+      tags:
+        - Fase do caso
+      summary: >-
+        Listar fase do caso por identificador do caso, numero interno ou numero
+        externo
+      operationId: api-casos-num-fase-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do caso<br />`Default: empty string`'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFaseCaso'
         '401':
           description: Unauthorized
           content:
@@ -23670,6 +24842,55 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOCategoriaFuncionario'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/clientes/{idCliente}/pastas:
+    get:
+      tags:
+        - Cliente
+      summary: Lista pastas do cliente
+      operationId: api-clientes-idCliente-pastas-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCliente
+          in: path
+          description: O identificador do cliente
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPasta'
         '401':
           description: Unauthorized
           content:
@@ -82122,6 +83343,683 @@ components:
           type: string
         NomeFornecedor:
           type: string
+    PoloLawOffice:
+      type: integer
+      example: 1
+      description: |
+        0: None
+
+        1: Ativo
+
+        2: Passivo
+
+        3: Terceiro
+
+        4: Nenhum
+
+        5: Outro envolvido
+    TipoDeInstancia:
+      type: integer
+      example: 1
+      description: |
+        0: None
+
+        1: Tribunal
+
+        2: Comarca
+
+        3: Fórum
+
+        4: Seção
+
+        5: Natureza
+
+        6: Município
+
+        9: Nível
+    HierarquiaParaLO:
+      title: HierarquiaParaLO
+      type: object
+      properties:
+        nomeItemHierarquia:
+          description: O item da hierarquia
+          type: string
+        grupoFamilia:
+          $ref: '#/components/schemas/TipoDeInstancia'
+    TipoPessoa:
+      type: integer
+      example: 1
+      description: |
+        0: None
+
+        1: Pessoa física
+
+        2: Pessoa jurídica
+    ParteParaLO:
+      title: ParteParaLO
+      type: object
+      properties:
+        IdParteNoLo:
+          example: -2147483648
+          type: integer
+        nomeParte:
+          type: string
+        tipoPessoa:
+          $ref: '#/components/schemas/TipoPessoa'
+        polo:
+          $ref: '#/components/schemas/PoloLawOffice'
+        principal:
+          type: boolean
+    TipoItemAgenda:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Atividade externa,
+
+        2: Prazo, 
+
+        4: Audiência, 
+
+        8: Compromisso de trabalho
+
+        9: Compromisso particular
+
+        10: Compromisso (Compromisso de trabalho e Compromisso particular)
+
+        11: Publicação
+    SituacaoDoItemAgenda:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Em aberto,
+
+        2: Agendada, 
+
+        3: Realizada, 
+
+        4: Ocupado, 
+
+        5: A confirmar
+
+        6: Desmarcável
+    SituacaoLembrete:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: A notificar
+
+        2: Descartado por ambos
+
+        3: Notificado
+
+        4: Descartado pelo executor
+
+        5: Descartado pelo responsável
+    DTOItemAgenda:
+      title: DTOItemAgenda
+      type: object
+      properties:
+        IDCaso:
+          type: integer
+        IDItemAgenda:
+          type: integer
+        IDItemAgendaPai:
+          type: integer
+          description: >-
+            Se for uma subtarefa, esse valor é o identificador da tarefa pai,
+            senão o valor será nulo
+        IDFuncionarioCriador:
+          type: integer
+        Tipo:
+          $ref: '#/components/schemas/TipoItemAgenda'
+        Titulo:
+          type: string
+        IDTitulocobranca:
+          type: integer
+        Data:
+          type: string
+        Lembrete:
+          type: string
+        DataLimite:
+          type: string
+        FuncionarioExecutor:
+          type: integer
+        FuncionarioResponsavel:
+          typ: integer
+        FuncionariosParticipantes:
+          example:
+            - 10
+            - 20
+          type: array
+          items:
+            type: integer
+        Observacao:
+          type: string
+        DataRealizacao:
+          type: string
+        IDStatusEncerramentoItemAgenda:
+          type: integer
+        ObservacaoRegistroRealizacao:
+          type: string
+        Situacao:
+          $ref: '#/components/schemas/SituacaoDoItemAgenda'
+        DataFormatada:
+          type: string
+          example: 01/01/2022
+        DataLimiteFormatada:
+          type: string
+          example: 01/01/2022
+        IDForo:
+          type: integer
+        Local:
+          type: string
+        NomeFuncionarioExecutor:
+          type: string
+        DataCriacao:
+          type: string
+          example: '2022-01-01T12:00:00'
+        DataCriacaoFormatada:
+          type: string
+          example: 01/01/2022
+        DataRealizacaoFormatada:
+          type: string
+        DataRegistroRealizacao:
+          type: string
+        DataRegistroRealizacaoFormatada:
+          type: string
+        SituacaoLembrete:
+          $ref: '#/components/schemas/SituacaoLembrete'
+        IsEditable:
+          type: boolean
+        Concluido:
+          type: boolean
+          description: Indica se o item está concluído
+        StatusEncerramentoItemAgenda:
+          type: string
+        NomeClienteFormatado:
+          type: string
+        AreaFormatada:
+          type: string
+        TituloCasoFormatado:
+          type: string
+        NumeroDoCaso:
+          type: integer
+        TituloCaso:
+          type: string
+        NumeroExternoCaso:
+          type: string
+        Cliente:
+          type: string
+        Executor:
+          type: string
+        NumeroPasta:
+          type: integer
+        Assunto:
+          type: string
+        NumeroInterno:
+          type: string
+        Rito:
+          type: string
+        Vencido:
+          type: string
+        SituacaoString:
+          type: string
+        PoloAtivo:
+          type: string
+        PoloPassivo:
+          type: string
+        Classificacao:
+          type: string
+        ExecutionID:
+          type: string
+    DTOValorDadoComplementarCaso:
+      title: DTOValorDadoComplementarCaso
+      type: object
+      properties:
+        IDProcessoValorDadoComplementar:
+          description: >-
+            O identificador do valor gravado no processo utilizando a Informação
+            adicional.<br />`Required`<br />- **POST**: A propriedade deve ser
+            enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher
+            com o valor da propriedade já existente.
+          type: integer
+        IDCaso:
+          description: O identificador do caso.
+          example: 100
+          type: integer
+        IDParametroDadoComplementar:
+          description: O identificador da Informação adicional.
+          example: 50
+          type: integer
+        Valor:
+          description: O valor a ser gravado / atualizado na Informação adicional
+          example: Valor para gravar
+          type: string
+        DataDeAtualizacao:
+          description: A data de atualização do valor
+          example: '2022-01-01T00:00:00.000'
+          type: string
+      required:
+        - IDCaso
+        - IDParametroDadoComplementar
+        - Valor
+        - DataDeAtualizacao
+    Moeda:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Real
+
+        2: Dólar americano
+
+        3: Euro
+    DTOCasoPedidoSimples:
+      title: DTOCasoPedidoSimples
+      type: object
+      properties:
+        Risco:
+          type: integer
+        ValorPrevisto:
+          type: number
+        ValorContingencia:
+          type: number
+        Nome:
+          type: string
+        Situacao:
+          type: integer
+        IdProcessoExpectativaReivindicacao:
+          type: integer
+        IdPedidoCausa:
+          type: integer
+        Justificativa:
+          type: string
+        MoedaValorPrevisto:
+          $ref: '#/components/schemas/Moeda'
+        MoedaValorContingenciado:
+          $ref: '#/components/schemas/Moeda'
+        DataConstituicao:
+          type: string
+        DataVencimento:
+          type: string
+    DTOProcessoPreCadastro:
+      title: DTOProcessoPreCadastro
+      type: object
+      properties:
+        idPreProcesso:
+          example: -2147483648
+          type: integer
+        idCliente:
+          example: -2147483648
+          type: integer
+        idResponsavel:
+          example: -2147483648
+          type: integer
+        idArea:
+          example: -2147483648
+          type: integer
+        envolvimentoCliente:
+          $ref: '#/components/schemas/PoloLawOffice'
+        tipo:
+          $ref: '#/components/schemas/RamosJudicial'
+        dsAssunto:
+          description: Título da pasta
+          type: string
+        nrExito:
+          example: -2147483648
+          type: integer
+        nrTipoExito:
+          example: -2147483648
+          type: integer
+        nrMoedaInicialCausa:
+          example: -2147483648
+          type: integer
+        idProcessoPai:
+          example: -2147483648
+          type: integer
+        idPasta:
+          example: -2147483648
+          type: integer
+        idRito:
+          example: -2147483648
+          type: integer
+        idForo:
+          example: -2147483648
+          type: integer
+        cdNoForoVara:
+          example: -2147483648
+          type: integer
+        numeroSequencial:
+          type: integer
+        confidencial:
+          type: boolean
+        dataCriacao:
+          type: string
+        dataUltimaAlteracao:
+          type: string
+        classeDoProcesso:
+          $ref: '#/components/schemas/ClasseDoCaso'
+        situacaoDoProcesso:
+          $ref: '#/components/schemas/SituacaoDoCaso'
+        tituloProcesso:
+          description: Título do processo
+          type: string
+        observacao:
+          type: string
+        numeroInterno:
+          type: string
+        idContrato:
+          example: -2147483648
+          type: integer
+        idFase:
+          example: -2147483648
+          type: integer
+        nivel:
+          type: string
+        numeroExterno:
+          type: string
+        valorCausa:
+          type: number
+        valorExpectativaApuracao:
+          type: number
+        valorContingencia:
+          type: number
+        cnj:
+          type: string
+        utilizaPedidosDoProcessoPai:
+          type: boolean
+        foroTemporario:
+          type: string
+        comentarioExpectativaDaCausa:
+          type: string
+        segundoNumero:
+          type: string
+        anotacoesSegundoNumero:
+          type: string
+        dataEntrada:
+          type: string
+        dataDistribuicao:
+          type: string
+        dataCitacao:
+          type: string
+        UF:
+          type: string
+        cidade:
+          type: string
+        IBGECode:
+          type: string
+        nrUF:
+          type: integer
+        hierarquia:
+          type: array
+          items:
+            $ref: '#/components/schemas/HierarquiaParaLO'
+        coResponsaveis:
+          type: array
+          items:
+            type: integer
+        executionID:
+          type: string
+        idFornecedor:
+          type: integer
+        idProcessoNoFornecedorPush:
+          example: -2147483648
+          type: integer
+        nrFornecedorPush:
+          type: integer
+        partes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParteParaLO'
+        andamentos:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOAndamento'
+        itensDeAgenda:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOItemAgenda'
+        valoresDadoComplementar:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOValorDadoComplementarCaso'
+        pedidos:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCasoPedidoSimples'
+      required:
+        - idCliente
+        - envolvimentoCliente
+        - idResponsavel
+        - idArea
+        - dsAssunto
+        - tipo
+    DTOErroCadastroProcesso:
+      title: DTOErroCadastroProcesso
+      type: object
+      properties:
+        IdPreProcesso:
+          type: integer
+        DetalheErro:
+          type: string
+        NumeroExterno:
+          type: string
+        NumeroSequencial:
+          type: integer
+        NumeroInterno:
+          type: string
+        TituloProcesso:
+          type: string
+    ProcessosCadastradosResposta:
+      title: ProcessosCadastradosResposta
+      type: object
+      properties:
+        idPreProcesso:
+          type: integer
+        dsNumeroExterno:
+          type: string
+        nrSequencia:
+          type: integer
+        nrInterno:
+          type: string
+        dsTitulo:
+          type: string
+        dtCriacao:
+          type: string
+        IDFuncionario:
+          type: integer
+        Nome:
+          type: string
+        cdProcesso:
+          type: integer
+        Domain:
+          type: string
+        dsProcessFlowableID:
+          type: string
+        dsExecutionID:
+          type: string
+        dtDataDistribuicao:
+          type: string
+        dtDataEntrada:
+          type: string
+        dtDataCitacao:
+          type: string
+        nrMoedaInicialCausa:
+          $ref: '#/components/schemas/Moeda'
+        vlInicialCausa:
+          type: number
+        vlExpectativaApuracao:
+          type: number
+        vlContingencia:
+          type: number
+        dsObservacoes:
+          type: string
+    RetornoCadastroDeCaso:
+      title: RetornoCadastroDeCaso
+      type: object
+      properties:
+        HouveException:
+          type: boolean
+          description: Indica se aconteceu pelo menos uma exception
+        ProcessosNaoCadastrados:
+          type: array
+          description: Os processos que não puderam ser cadastrados
+          items:
+            $ref: '#/components/schemas/DTOErroCadastroProcesso'
+        ProcessosCadastrados:
+          type: array
+          description: Os processos que foram cadastrados
+          items:
+            $ref: '#/components/schemas/ProcessosCadastradosResposta'
+    DTOObjetoNomeValor:
+      title: DTOObjetoNomeValor
+      type: object
+      properties:
+        Nome:
+          type: string
+          example: Propriedade
+          description: O nome da propriedade a editar
+        Valor:
+          type: string
+          example: Valor a gravar
+          description: O novo valor a gravar
+      required:
+        - Nome
+        - Valor
+    DTOEnum:
+      title: DTOEnum
+      type: object
+      properties:
+        Valor:
+          type: string
+        ID:
+          type: integer
+        Description:
+          type: string
+    DTOCasoFicha:
+      title: DTOCasoFicha
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        Titulo:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        Situacao:
+          type: string
+        ExpectativaDeExito:
+          type: string
+        NomeFilial:
+          type: string
+        DataDeEntrada:
+          type: string
+        DataDeEntradaFormatada:
+          type: string
+        DataDeCitacao:
+          type: string
+        DataDeCitacaoFormatada:
+          type: string
+        DataDeDistribuicao:
+          type: string
+        DataDeDistribuicaoFormatada:
+          type: string
+        DataPrevistaDeEncerramento:
+          type: string
+        DataPrevistaDeEncerramentoFormatada:
+          type: string
+        DataDeEncerramento:
+          type: string
+        DataDeEncerramentoFormatada:
+          type: string
+        Foro:
+          type: string
+        Rito:
+          type: string
+        ValorCausa:
+          type: number
+        ValorPrevistoCausa:
+          type: number
+        ValorContingencia:
+          type: number
+        IdCaso:
+          type: integer
+        IdFase:
+          type: integer
+        IdPasta:
+          type: integer
+        IdArea:
+          type: integer
+        IdResponsavel:
+          type: integer
+        IDsCoResponsaveis:
+          type: array
+          items:
+            type: integer
+            example:
+              - 10
+              - 20
+        IDFornecedor:
+          type: integer
+    DTOFase:
+      title: DTOFase
+      type: object
+      properties:
+        IDFase:
+          type: integer
+        NomeFase:
+          type: string
+        TipoProcesso:
+          $ref: '#/components/schemas/RamosJudicial'
+        TipoProcessoText:
+          type: string
+        Ativo:
+          type: boolean
+        IDEscritorio:
+          type: integer
+    MFaseProcesso:
+      title: MFaseProcesso
+      type: object
+      properties:
+        cdFaseProcesso:
+          type: integer
+        cdEscritorio:
+          type: integer
+        dsFaseProcesso:
+          type: string
+        nrGrupo:
+          $ref: '#/components/schemas/RamosJudicial'
+        isAtivo:
+          type: boolean
+        nrGrupoText:
+          type: string
+    DTOFaseCaso:
+      title: DTOFaseCaso
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        NomeFaseCaso:
+          type: string
+        IDFaseProcesso:
+          type: integer
+        IdCaso:
+          type: integer
     DTOCategoriaPreco:
       title: DTOCategoriaPreco
       type: object
@@ -82159,6 +84057,20 @@ components:
         NomeCategoria:
           type: string
         NomeResponsavel:
+          type: string
+    DTOPasta:
+      title: DTOPasta
+      type: object
+      properties:
+        IDPasta:
+          type: integer
+        IDEscritorio:
+          type: integer
+        IDCliente:
+          type: integer
+        NumeroDaPasta:
+          type: integer
+        Assunto:
           type: string
     DTOContato:
       title: DTOContato
@@ -82469,17 +84381,6 @@ components:
           type: integer
         NumeroVinculoEmpregaticio:
           type: integer
-    Moeda:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Real
-
-        2: Dólar americano
-
-        3: Euro
     TipoDeMovimentacao:
       type: integer
       example: 1
@@ -82935,53 +84836,6 @@ components:
             type: string
         IdCaso:
           type: integer
-    DTOObjetoNomeValor:
-      title: DTOObjetoNomeValor
-      type: object
-      properties:
-        Nome:
-          type: string
-          example: Propriedade
-          description: O nome da propriedade a editar
-        Valor:
-          type: string
-          example: Valor a gravar
-          description: O novo valor a gravar
-      required:
-        - Nome
-        - Valor
-    DTOValorDadoComplementarCaso:
-      title: DTOValorDadoComplementarCaso
-      type: object
-      properties:
-        IDProcessoValorDadoComplementar:
-          description: >-
-            O identificador do valor gravado no processo utilizando a Informação
-            adicional.<br />`Required`<br />- **POST**: A propriedade deve ser
-            enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher
-            com o valor da propriedade já existente.
-          type: integer
-        IDCaso:
-          description: O identificador do caso.
-          example: 100
-          type: integer
-        IDParametroDadoComplementar:
-          description: O identificador da Informação adicional.
-          example: 50
-          type: integer
-        Valor:
-          description: O valor a ser gravado / atualizado na Informação adicional
-          example: Valor para gravar
-          type: string
-        DataDeAtualizacao:
-          description: A data de atualização do valor
-          example: '2022-01-01T00:00:00.000'
-          type: string
-      required:
-        - IDCaso
-        - IDParametroDadoComplementar
-        - Valor
-        - DataDeAtualizacao
     DTONatureza:
       title: DTONatureza
       type: object
@@ -83068,34 +84922,6 @@ components:
           type: integer
         IdCaso:
           type: integer
-    DTOCasoPedidoSimples:
-      title: DTOCasoPedidoSimples
-      type: object
-      properties:
-        Risco:
-          type: integer
-        ValorPrevisto:
-          type: number
-        ValorContingencia:
-          type: number
-        Nome:
-          type: string
-        Situacao:
-          type: integer
-        IdProcessoExpectativaReivindicacao:
-          type: integer
-        IdPedidoCausa:
-          type: integer
-        Justificativa:
-          type: string
-        MoedaValorPrevisto:
-          $ref: '#/components/schemas/Moeda'
-        MoedaValorContingenciado:
-          $ref: '#/components/schemas/Moeda'
-        DataConstituicao:
-          type: string
-        DataVencimento:
-          type: string
     DTOObjetoNomeID:
       title: DTOObjetoNomeID
       type: object
@@ -83195,174 +85021,6 @@ components:
         2: Finalizados
 
         3: Em aberto
-    TipoItemAgenda:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Atividade externa,
-
-        2: Prazo, 
-
-        4: Audiência, 
-
-        8: Compromisso de trabalho
-
-        9: Compromisso particular
-
-        10: Compromisso (Compromisso de trabalho e Compromisso particular)
-
-        11: Publicação
-    SituacaoDoItemAgenda:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Em aberto,
-
-        2: Agendada, 
-
-        3: Realizada, 
-
-        4: Ocupado, 
-
-        5: A confirmar
-
-        6: Desmarcável
-    SituacaoLembrete:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: A notificar
-
-        2: Descartado por ambos
-
-        3: Notificado
-
-        4: Descartado pelo executor
-
-        5: Descartado pelo responsável
-    DTOItemAgenda:
-      title: DTOItemAgenda
-      type: object
-      properties:
-        IDCaso:
-          type: integer
-        IDItemAgenda:
-          type: integer
-        IDItemAgendaPai:
-          type: integer
-          description: >-
-            Se for uma subtarefa, esse valor é o identificador da tarefa pai,
-            senão o valor será nulo
-        IDFuncionarioCriador:
-          type: integer
-        Tipo:
-          $ref: '#/components/schemas/TipoItemAgenda'
-        Titulo:
-          type: string
-        IDTitulocobranca:
-          type: integer
-        Data:
-          type: string
-        Lembrete:
-          type: string
-        DataLimite:
-          type: string
-        FuncionarioExecutor:
-          type: integer
-        FuncionarioResponsavel:
-          typ: integer
-        FuncionariosParticipantes:
-          example:
-            - 10
-            - 20
-          type: array
-          items:
-            type: integer
-        Observacao:
-          type: string
-        DataRealizacao:
-          type: string
-        IDStatusEncerramentoItemAgenda:
-          type: integer
-        ObservacaoRegistroRealizacao:
-          type: string
-        Situacao:
-          $ref: '#/components/schemas/SituacaoDoItemAgenda'
-        DataFormatada:
-          type: string
-          example: 01/01/2022
-        DataLimiteFormatada:
-          type: string
-          example: 01/01/2022
-        IDForo:
-          type: integer
-        Local:
-          type: string
-        NomeFuncionarioExecutor:
-          type: string
-        DataCriacao:
-          type: string
-          example: '2022-01-01T12:00:00'
-        DataCriacaoFormatada:
-          type: string
-          example: 01/01/2022
-        DataRealizacaoFormatada:
-          type: string
-        DataRegistroRealizacao:
-          type: string
-        DataRegistroRealizacaoFormatada:
-          type: string
-        SituacaoLembrete:
-          $ref: '#/components/schemas/SituacaoLembrete'
-        IsEditable:
-          type: boolean
-        Concluido:
-          type: boolean
-          description: Indica se o item está concluído
-        StatusEncerramentoItemAgenda:
-          type: string
-        NomeClienteFormatado:
-          type: string
-        AreaFormatada:
-          type: string
-        TituloCasoFormatado:
-          type: string
-        NumeroDoCaso:
-          type: integer
-        TituloCaso:
-          type: string
-        NumeroExternoCaso:
-          type: string
-        Cliente:
-          type: string
-        Executor:
-          type: string
-        NumeroPasta:
-          type: integer
-        Assunto:
-          type: string
-        NumeroInterno:
-          type: string
-        Rito:
-          type: string
-        Vencido:
-          type: string
-        SituacaoString:
-          type: string
-        PoloAtivo:
-          type: string
-        PoloPassivo:
-          type: string
-        Classificacao:
-          type: string
-        ExecutionID:
-          type: string
     TipoItemTimeline:
       type: integer
       example: 1

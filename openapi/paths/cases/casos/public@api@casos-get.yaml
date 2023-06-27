@@ -1,15 +1,13 @@
 tags: 
   - Casos 
-summary: Casos
-description: Casos por filtro
+summary: "Lista casos por filtro"
 operationId: api-casos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  
   - name: idsCliente
     in: query    
     required: false
-    example: '[1,15,33, 50]'
+    example: '[1,15,33,50]'
     schema:
       type: array
       items: 
@@ -17,7 +15,7 @@ parameters:
   - name: idsAreaCaso
     in: query    
     required: false
-    example: '[1,15,33, 50]'
+    example: '[1,15,33,50]'
     schema:
       type: array
       items: 
@@ -25,7 +23,7 @@ parameters:
   - name: idsResponsaveis
     in: query    
     required: false
-    example: '[1,15,33, 50]'
+    example: '[1,15,33,50]'
     schema:
       type: array
       items: 
@@ -69,7 +67,7 @@ parameters:
       $ref: ../../../components/schemas/cases/enums/SituacaoDoProcesso.yaml       
 responses:
   "200":
-    description: "Retorna um array com todos os casos de acordo com o filtro informado"
+    description: "OK"
     content:
       application/json:
         schema: 
