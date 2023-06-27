@@ -107,10 +107,76 @@ paths:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@ValoresParaCalculo-get.yaml'
 
-  # Caso + Fase caso
+  # Caso
   /api/casos:
     get:
-      $ref: './paths/cases/casos/public@api@casos-get.yaml'  
+      $ref: './paths/cases/casos/public@api@casos-get.yaml'
+  /api/casos/inclui:
+    post:
+      $ref: './paths/cases/casos/public@api@casos@inclui-post.yaml'
+  /api/casos/edit:
+    put:
+      $ref: './paths/cases/casos/public@api@casos@edit-put.yaml'
+  /api/clientes/{idCliente}/casos:
+    get:
+      $ref: './paths/cases/casos/public@api@clientes@idCliente@casos-get.yaml'
+  /api/casos/{id}:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@id-get.yaml'
+  /api/casos/id/num:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@id@num-get.yaml'
+  /api/casos/porIds/{ids}:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@porIds@ids-get.yaml'
+  /api/casos/num:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@num-get.yaml'
+  /api/casos/listacasos:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@listacasos-get.yaml'
+  /api/casos/busca:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@busca-get.yaml'
+  /api/casos/buscaWeb:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@buscaWeb-get.yaml'
+  /api/casos/RamosJudiciais:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@RamosJudiciais-get.yaml'
+  /api/casos/{id}/ficha:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@id@ficha-get.yaml'
+  /api/casos/id/ficha/num:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@id@ficha@num-get.yaml'
+  /api/casos/meuscasos/{cdResponsavel}:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@meuscasos@cdResponsavel-get.yaml'
+  /api/casos/subcasos/{cdProcessoPai}:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@subcasos@cdProcessoPai-get.yaml'
+  /api/casos/editadosrecentemente:
+    get:
+      $ref: './paths/cases/casos/public@api@casos@editadosrecentemente-get.yaml'
+
+  # Fase caso
+  /api/fase:
+    get:
+      $ref: './paths/cases/fase_caso/public@api@fase-get.yaml'
+    post:
+      $ref: './paths/cases/fase_caso/public@api@fase-post.yaml'
+    put:
+      $ref: './paths/cases/fase_caso/public@api@fase-put.yaml'
+  /api/casos/fase/{nrGrupo}:
+    get:
+      $ref: './paths/cases/fase_caso/public@api@casos@fase@nrGrupo-get.yaml'
+  /api/casos/{nrSequencia}/fase:
+    get:
+      $ref: './paths/cases/fase_caso/public@api@casos@nrSequencia@fase-get.yaml'
+  /api/casos/num/fase:
+    get:
+      $ref: './paths/cases/fase_caso/public@api@casos@num@fase-get.yaml'
 
   # Categoria
   /api/escritorios/{IdEscritorio},{intfiltroCategoria}/categoriaspreco:
@@ -124,7 +190,9 @@ paths:
       $ref: ./paths/cases/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
 
   # Cliente
-  
+  /api/clientes/{idCliente}/pastas:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@idCliente@pastas-get.yaml'
 
   # Contatos
   /api/contatos/{IDContato}:
@@ -164,6 +232,7 @@ paths:
   
 
   # Expectativa reivindicação
+
   
   # Fornecedor
   /api/fornecedores:
