@@ -63,8 +63,8 @@ paths:
       $ref: ./paths/cases/andamento/public@api@andamentos@{id}-get.yaml
     put:
       $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@put-put.yaml
-    delete:
-      $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
+    # delete:
+    #   $ref: ./paths/cases/andamento/public@api@andamentos@{idAndamento}@delete-delete.yaml
   /api/andamentos/update/{IDAndamento}:
     put:
       $ref: ./paths/cases/andamento/public@api@andamentos@update@{idAndamento}-put.yaml
@@ -89,8 +89,8 @@ paths:
   /api/CalculoMonetario/{ID}:
     get:
       $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@id-get.yaml'
-    delete:
-      $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@id-delete.yaml'
+    # delete:
+    #   $ref: './paths/cases/calculo_monetario/public@api@CalculoMonetario@id-delete.yaml'
   /api/casos/{ID}/Calcula:
     post:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@Calcula-post.yaml'
@@ -229,7 +229,54 @@ paths:
   
 
   # Despesas
-  
+  /api/despesas/totaldespesasmes:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@totaldespesasmes-get.yaml'
+  /api/despesas/proximoslancamentos:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@proximoslancamentos-get.yaml'
+  /api/despesas/adiantamentosliberados:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@adiantamentosliberados-get.yaml'
+  /api/despesas/adiantamentos/categorias:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@adiantamentos@categorias-get.yaml'
+  /api/despesas/adiantamentos/fornecedores:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@adiantamentos@fornecedores-get.yaml'
+  /api/despesas/reembolsos/categorias:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@reembolsos@categorias-get.yaml'
+  /api/despesas/reembolsos/fornecedores:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@reembolsos@fornecedores-get.yaml'
+  /api/despesas/voucher:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@voucher-get.yaml'
+  /api/despesas/voucher/{idVoucher}/categorias:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@voucher@idVoucher@categorias-get.yaml'
+  /api/despesas/voucher/{idVoucher}/fornecedores:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@voucher@idVoucher@fornecedores-get.yaml'
+  /api/despesas/obtem:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@obtem-get.yaml'
+  /api/despesas/obtem/{id}:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@obtem@id-get.yaml'
+  /api/despesas/inclui:
+    post:
+      $ref: './paths/cases/despesa/public@api@despesas@inclui-post.yaml'
+  /api/despesas/atualiza:
+    put:
+      $ref: './paths/cases/despesa/public@api@despesas@atualiza-put.yaml'
+  # /api/despesas/exclui/{id}:
+  #   delete:
+  #     $ref: './paths/cases/despesa/public@api@despesas@exclui@id-delete.yaml'
+  /api/despesas/valorKMRodado:
+    get:
+      $ref: './paths/cases/despesa/public@api@despesas@valorKMRodado-get.yaml'
 
   # Expectativa reivindicação
 
@@ -281,18 +328,18 @@ paths:
   /api/casos/Garantia/Atualiza/{IDCaso}:
     put:
       $ref: './paths/cases/garantia/public@api@casos@Garantia@Atualiza@IDCaso-put.yaml'
-  /api/casos/GarantiaMovimentacao/Exclui/{IDGarantiaMovimentacao}:
-    delete:
-      $ref: './paths/cases/garantia/public@api@casos@GarantiaMovimentacao@Exclui@IDGarantiaMovimentacao-delete.yaml'
+  # /api/casos/GarantiaMovimentacao/Exclui/{IDGarantiaMovimentacao}:
+  #   delete:
+  #     $ref: './paths/cases/garantia/public@api@casos@GarantiaMovimentacao@Exclui@IDGarantiaMovimentacao-delete.yaml'
   /api/casos/Garantia/IncluiMovimentacao/{IDCaso}:
     post:
       $ref: './paths/cases/garantia/public@api@casos@Garantia@IncluiMovimentacao@IDCaso-post.yaml'
   /api/casos/Garantia/{IDGarantia}/ObtemMovimentacao/{IDGarantiaMovimentacao}:
     get:
       $ref: './paths/cases/garantia/public@api@casos@Garantia@IDGarantia@ObtemMovimentacao@IDGarantiaMovimentacao-get.yaml'
-  /api/casos/Garantia/Exclui/{IDCaso}:
-    delete:
-      $ref: './paths/cases/garantia/public@api@casos@Garantia@Exclui@IDCaso-delete.yaml'
+  # /api/casos/Garantia/Exclui/{IDCaso}:
+  #   delete:
+  #     $ref: './paths/cases/garantia/public@api@casos@Garantia@Exclui@IDCaso-delete.yaml'
   /api/casos/Garantia/AtualizaMovimentacao:
     put:
       $ref: './paths/cases/garantia/public@api@casos@Garantia@AtualizaMovimentacao-put.yaml'
@@ -333,8 +380,8 @@ paths:
   /api/dado_complementar/{IDParametroDadoComplementar}:
     get:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-get.yaml'
-    delete:
-      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
+    # delete:
+    #   $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@id-delete.yaml'
   /api/dado_complementar/todos:
     get:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@todos-get.yaml'

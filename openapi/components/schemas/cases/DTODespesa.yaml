@@ -1,44 +1,61 @@
 title: DTODespesa
 type: object
 properties:
-  ObservacaoAnexo:
-    type: string
-  Anexos:
-    type: array
-    items:
-      $ref: DTOAnexo.yaml
-  CategoriaLancamento:
-    type: string
-  DataDaDespesa:
-    type: string
-  DataDaDespesaFormatada:
-    type: string
-  ValorDaDespesa:
-    type: number
+  IDDespesa:
+    type: integer
+    description: "O identificador da despesa. <br />`Se for cadastro, evviar o valor: -2147483648.` <br />`Se for atualização, enviar o identificador da despesa.`"
   IDFuncionarioTransacao:
     type: integer
-  DataTransacao:
-    type: string
-  DataTransacaoFormatada:
-    type: string
-  Moeda:
-    $ref: enums/Moeda.yaml
   IDFuncionarioFavorecido:
     type: integer
   IDCategoriaLancamento:
     type: integer
   IDVoucher:
     type: integer
+    description: "O identificador do voucher."
   IDLiberacao:
     type: integer
   IDFornecedor:
     type: integer
+    description: "O identificador do fornecedor."
+  IDFuncionarioAprovador:
+    type: integer
+  IDFuncionarioIndicado:
+    type: integer
+  IDTarifacao:
+    type: integer
+  IDSolicitacaoMaterialItem:
+    type: integer
+  IDGeracaoDespesa:
+    type: integer
+  IDEscritorio:
+    type: integer
+  ObservacaoAnexo:
+    type: string
+  Anexos:
+    type: array
+    description: "Os anexos da despesa."
+    items:
+      $ref: DTOAnexo.yaml
+  CategoriaLancamento:
+    type: string
+  DataDaDespesa:
+    type: string
+    description: "A data da despesa."
+  DataDaDespesaFormatada:
+    type: string
+    description: "`ReadOnly`"
+  ValorDaDespesa:
+    type: number
+    description: "O valor da despesa."
+  DataTransacao:
+    type: string
+  Moeda:
+    $ref: enums/Moeda.yaml
   Documento:
     type: string
   TipoDePagamento:
     $ref: enums/TipoFormaLancamento.yaml
-  IDEscritorio:
-    type: integer
   QtdKMRodado:
     type: integer
   TextoDaDespesa:
@@ -51,25 +68,20 @@ properties:
     $ref: enums/SituacaoLancamentoDespesa.yaml
   DataAprovacao:
     type: string
-  DataAprovacaoFormatada:
-    type: string
   ObservacaoAprovador:
     type: string
-  IDFuncionarioAprovador:
-    type: integer
-  IDFuncionarioIndicado:
-    type: integer
-  IDTarifacao:
-    type: integer
-  IDSolicitacaoMaterialItem:
-    type: integer
-  IDGeracaoDespesa:
-    type: integer
-  IDDespesa:
-    type: integer
   Alocacoes:
     type: array
     items:
       $ref: DTOAlocacaoDeDespesa.yaml
   IsEditable:
     type: boolean 
+  DataTransacaoFormatada:
+    type: string
+    description: "`ReadOnly`"
+  DataAprovacaoFormatada:
+    type: string
+    description: "`ReadOnly`"
+
+required: 
+  - IDDespesa
