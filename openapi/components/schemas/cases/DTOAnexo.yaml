@@ -3,29 +3,42 @@ type: object
 properties:
   path:
     type: string
+    description: "`ReadOnly`"
   name:
     type: string
-  #type:
-    #type: string
-    # Essa propriedade existe no DTO mas não pode se chamar type pois é reservado no YAML
+    description: "O nome do arquivo de anexo"
+  [type]:
+    type: string
+    description: "O tipo do arquivo (MIME). <br />Exemplos: `image/jpeg`, `application/pdf`"
   size:
     type: integer
+    description: "O tamanho do anexo."
   cdAnexo:
     type: integer
+    description: "O identificador do anexo. <br />`Se for cadastro, passar o valor: -2147483648.`<br />`Se for atualização, passar o identificador do anexo.`"
   base64:
     type: string
   anexoAExcluir:
     type: boolean
-    description: "Essa propriedade indica que o cliente excluiu o anexo da interface do Mobile então deve ser apagado do LO e do storage"
+    description: "Excluir esse anexo?"
+    # description: "Essa propriedade indica que o cliente excluiu o anexo da interface do Mobile então deve ser apagado do LO e do storage"
   rotacionarImagem:
     type: boolean
     description: "Indica se a imagem deve ser rotacionada antes de ser gravada"
   isSelected:
     type: boolean
-    description: "Essa propriedade é utilizada apenas no aplicativo"
+    description: "`ReadOnly`"
   title:
     type: string
-    description: "Essa propriedade é utilizada apenas no aplicativo"
+    description: "`ReadOnly`"
   value:
     type: string
-    description: "Essa propriedade é utilizada apenas no aplicativo"
+    description: "`ReadOnly`"
+
+required:
+  - name 
+  - type
+  - cdAnexo
+  - base64
+  - rotacionarImagem
+  - size

@@ -65,6 +65,8 @@ tags:
     x-displayName: Contato
   - name: Contrato
     x-displayName: Contrato
+  - name: Despesas
+    x-displayName: Despesas
   - name: Funcionário
     x-displayName: Funcionário
   - name: Garantia
@@ -123,6 +125,7 @@ x-tagGroups:
       - Cliente
       - Contato
       - Contrato
+      - Despesas
       - Funcionário
       - Garantia
       - Hierarquia
@@ -22795,52 +22798,6 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-    delete:
-      tags:
-        - Andamento
-      summary: Apagar andamento
-      description: Apaga o andamento
-      operationId: api-andamentos-idAndamento-delete
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - name: IDAndamento
-          in: path
-          required: true
-          description: O identificador do andamento
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              example: O andamento foi excluído.
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
   /api/andamentos/update/{IDAndamento}:
     put:
       tags:
@@ -23135,47 +23092,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOProcessoPedidoCalculo'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
-    delete:
-      tags:
-        - Calculo Monetário
-      summary: Exclui o cálculo monetário
-      operationId: api-CalculoMonetario-id-delete
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - name: ID
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: OK
         '401':
           description: Unauthorized
           content:
@@ -25376,6 +25292,705 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+  /api/despesas/totaldespesasmes:
+    get:
+      tags:
+        - Despesas
+      summary: Total de despesas no mês por profissional (separadas por tipo)
+      operationId: api-despesas-totaldespesasmes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOTotalGastoDespesas'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/proximoslancamentos:
+    get:
+      tags:
+        - Despesas
+      summary: Lista próximos lançamentos de despesa de acordo com a data informada
+      operationId: api-despesas-proximoslancamentos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: dataDespesaString
+          in: query
+          description: A data para pesquisa
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/adiantamentosliberados:
+    get:
+      tags:
+        - Despesas
+      summary: Lista adiantamentos em aberto
+      operationId: api-despesas-adiantamentosliberados-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOLiberacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/adiantamentos/categorias:
+    get:
+      tags:
+        - Despesas
+      summary: Lista categorias de adiantamento
+      operationId: api-despesas-adiantamentos-categorias-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCategoriaDespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/adiantamentos/fornecedores:
+    get:
+      tags:
+        - Despesas
+      summary: Lista fornecedores de adiantamento
+      operationId: api-despesas-adiantamentos-fornecedores-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFornecedor'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/reembolsos/categorias:
+    get:
+      tags:
+        - Despesas
+      summary: Lista categorias de reembolso
+      operationId: api-despesas-reembolsos-categorias-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCategoriaDespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/reembolsos/fornecedores:
+    get:
+      tags:
+        - Despesas
+      summary: Lista fornecedores de reembolso
+      operationId: api-despesas-reembolsos-fornecedores-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFornecedor'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/voucher:
+    get:
+      tags:
+        - Despesas
+      summary: Lista vouchers por funcionário
+      operationId: api-despesas-voucher-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOVoucher'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/voucher/{idVoucher}/categorias:
+    get:
+      tags:
+        - Despesas
+      summary: Lista categorias do voucher
+      operationId: api-despesas-voucher-idVoucher-categorias-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idVoucher
+          in: path
+          description: O identificador do voucher
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCategoriaDespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/voucher/{idVoucher}/fornecedores:
+    get:
+      tags:
+        - Despesas
+      summary: Lista fornecedores do voucher
+      operationId: api-despesas-voucher-idVoucher-fornecedores-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idVoucher
+          in: path
+          description: O identificador do voucher
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFornecedor'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/obtem:
+    get:
+      tags:
+        - Despesas
+      summary: Lista despesas
+      operationId: api-despesas-obtem-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: ano
+          in: query
+          description: O ano para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          description: O mês para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: tipoDePagamento
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoFormaLancamento'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/obtem/{id}:
+    get:
+      tags:
+        - Despesas
+      summary: Obtém despesa por identificador
+      operationId: api-despesas-obtem-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da despesa
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/inclui:
+    post:
+      tags:
+        - Despesas
+      summary: Inclui despesa
+      operationId: api-despesas-inclui-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: selecionaAprovador
+          in: query
+          description: '`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTODespesa'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/atualiza:
+    put:
+      tags:
+        - Despesas
+      summary: Atualiza despesa
+      operationId: api-despesas-atualiza-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: selecionaAprovador
+          in: query
+          description: '`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTODespesa'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTODespesa'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/despesas/valorKMRodado:
+    get:
+      tags:
+        - Despesas
+      summary: Obtém valor km rodado
+      operationId: api-despesas-valorKMRodado-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                example: 0.5
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/fornecedores:
     get:
       tags:
@@ -26081,52 +26696,6 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/casos/GarantiaMovimentacao/Exclui/{IDGarantiaMovimentacao}:
-    delete:
-      tags:
-        - Garantia
-      summary: Exclui movimentação da garantia
-      operationId: api-casos-GarantiaMovimentacao-Exclui-IDGarantiaMovimentacao-delete
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - name: IDGarantiaMovimentacao
-          in: path
-          description: O identificador da movimentação
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              example: true
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
   /api/casos/Garantia/IncluiMovimentacao/{IDCaso}:
     post:
       tags:
@@ -26208,52 +26777,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOMovimentacao'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
-  /api/casos/Garantia/Exclui/{IDCaso}:
-    delete:
-      tags:
-        - Garantia
-      summary: Exclui garantia do caso
-      operationId: api-casos-Garantia-Exclui-IDCaso-delete
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - name: IDCaso
-          in: path
-          description: O identificador do caso
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              example: true
         '401':
           description: Unauthorized
           content:
@@ -26903,55 +27426,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOInformacaoAdicional'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '404':
-          description: Não encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ExceptionResponse'
-      security:
-        - Ocp-Apim-Subscription-Key: []
-    delete:
-      tags:
-        - Informações adicionais
-      summary: Exclui a informação adicional
-      description: >-
-        **Essa informação não poderá mais ser utilizada para gravar valores em
-        processos depois de excluída.**<br />**A exclusão de uma informação
-        adicional só é possível se não estiver sendo utilizada.**
-      operationId: api-dado_complementar-id-delete
-      parameters:
-        - $ref: '#/components/parameters/Profile'
-        - name: IDParametroDadoComplementar
-          in: path
-          description: O identificador da Informação adicional
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              example: A informação adicional foi excluída.
         '401':
           description: Unauthorized
           content:
@@ -84158,6 +84632,262 @@ components:
         Descricao:
           type: string
           description: A descrição do contrato
+    DTOGastoDespesa:
+      title: DTOGastoDespesa
+      type: object
+      properties:
+        TipoDespesa:
+          type: string
+        TotalGasto:
+          type: number
+    DTOTotalGastoDespesas:
+      title: DTOTotalGastoDespesas
+      type: object
+      properties:
+        Gastos:
+          description: Os gastos de cada despesa (Fundo Fixo, Reembolso, Voucher)
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOGastoDespesa'
+    DTOAnexo:
+      title: DTOAnexo
+      type: object
+      properties:
+        path:
+          type: string
+          description: '`ReadOnly`'
+        name:
+          type: string
+          description: O nome do arquivo de anexo
+        type:
+          type: string
+          description: >-
+            O tipo do arquivo (MIME). <br />Exemplos: `image/jpeg`,
+            `application/pdf`
+        size:
+          type: integer
+          description: O tamanho do anexo.
+        cdAnexo:
+          type: integer
+          description: >-
+            O identificador do anexo. <br />`Se for cadastro, passar o valor:
+            -2147483648.`<br />`Se for atualização, passar o identificador do
+            anexo.`
+        base64:
+          type: string
+        anexoAExcluir:
+          type: boolean
+          description: Excluir esse anexo?
+        rotacionarImagem:
+          type: boolean
+          description: Indica se a imagem deve ser rotacionada antes de ser gravada
+        isSelected:
+          type: boolean
+          description: '`ReadOnly`'
+        title:
+          type: string
+          description: '`ReadOnly`'
+        value:
+          type: string
+          description: '`ReadOnly`'
+      required:
+        - name
+        - type
+        - cdAnexo
+        - base64
+        - rotacionarImagem
+        - size
+    TipoFormaLancamento:
+      type: integer
+      example: 2
+      description: |
+        -2147483648: None
+
+        1: Fundo fixo (Adiantamento)
+
+        2: Voucher
+
+        3: Reembolso
+
+        4: Contas a pagar
+
+        5: Estorno
+    SituacaoLancamentoDespesa:
+      type: integer
+      example: 2
+      description: |
+        -2147483648: None
+
+        1: Aprovado
+
+        2: Aguardando aprovação
+
+        3: Pré aprovado
+
+        4: Não aprovado
+
+        5: Aprovado e pré aprovado
+    DTOAlocacaoDeDespesa:
+      title: DTOAlocacaoDeDespesa
+      type: object
+      properties:
+        IDAlocacaoDeDespesa:
+          type: integer
+        IDDespesa:
+          type: integer
+        IDCliente:
+          type: integer
+        IDContrato:
+          type: integer
+        IDCaso:
+          type: integer
+        PorcentagemAlocada:
+          type: number
+        ValorAlocado:
+          type: number
+        IDFechamento:
+          type: integer
+        IDCategoriaDeDespesa:
+          type: integer
+        Caso:
+          $ref: '#/components/schemas/DTOCasoSimples'
+    DTODespesa:
+      title: DTODespesa
+      type: object
+      properties:
+        IDDespesa:
+          type: integer
+          description: >-
+            O identificador da despesa. <br />`Se for cadastro, evviar o valor:
+            -2147483648.` <br />`Se for atualização, enviar o identificador da
+            despesa.`
+        IDFuncionarioTransacao:
+          type: integer
+        IDFuncionarioFavorecido:
+          type: integer
+        IDCategoriaLancamento:
+          type: integer
+        IDVoucher:
+          type: integer
+          description: O identificador do voucher.
+        IDLiberacao:
+          type: integer
+        IDFornecedor:
+          type: integer
+          description: O identificador do fornecedor.
+        IDFuncionarioAprovador:
+          type: integer
+        IDFuncionarioIndicado:
+          type: integer
+        IDTarifacao:
+          type: integer
+        IDSolicitacaoMaterialItem:
+          type: integer
+        IDGeracaoDespesa:
+          type: integer
+        IDEscritorio:
+          type: integer
+        ObservacaoAnexo:
+          type: string
+        Anexos:
+          type: array
+          description: Os anexos da despesa.
+          items:
+            $ref: '#/components/schemas/DTOAnexo'
+        CategoriaLancamento:
+          type: string
+        DataDaDespesa:
+          type: string
+          description: A data da despesa.
+        DataDaDespesaFormatada:
+          type: string
+          description: '`ReadOnly`'
+        ValorDaDespesa:
+          type: number
+          description: O valor da despesa.
+        DataTransacao:
+          type: string
+        Moeda:
+          $ref: '#/components/schemas/Moeda'
+        Documento:
+          type: string
+        TipoDePagamento:
+          $ref: '#/components/schemas/TipoFormaLancamento'
+        QtdKMRodado:
+          type: integer
+        TextoDaDespesa:
+          type: string
+        TemTextoModificado:
+          type: boolean
+        ValorKMRodado:
+          type: number
+        Situacao:
+          $ref: '#/components/schemas/SituacaoLancamentoDespesa'
+        DataAprovacao:
+          type: string
+        ObservacaoAprovador:
+          type: string
+        Alocacoes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOAlocacaoDeDespesa'
+        IsEditable:
+          type: boolean
+        DataTransacaoFormatada:
+          type: string
+          description: '`ReadOnly`'
+        DataAprovacaoFormatada:
+          type: string
+          description: '`ReadOnly`'
+      required:
+        - IDDespesa
+    SituacaoLiberacao:
+      type: integer
+      example: -2147483646
+      description: |
+        -2147483648: None
+
+        -2147483647: Aberto
+
+        -2147483646: Fechado
+
+        -2147483645: Programado
+
+        -2147483644: Liberado para fechamento
+    DTOLiberacao:
+      title: DTOLiberacao
+      type: object
+      properties:
+        DataUltimaLiberacao:
+          type: string
+        Descricao:
+          type: string
+        ID:
+          type: integer
+        Situacao:
+          $ref: '#/components/schemas/SituacaoLiberacao'
+        ValorDespesasLancadas:
+          type: number
+        ValorLiberado:
+          type: number
+        Adiantamento:
+          type: string
+    DTOCategoriaDespesa:
+      title: DTOCategoriaDespesa
+      type: object
+      properties:
+        NomeCategoria:
+          type: string
+        IDCategoria:
+          type: integer
+        IDCategoriaPai:
+          type: integer
+        IsKmRodado:
+          type: boolean
+        SubCategorias:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCategoriaDespesa'
     DTOFornecedor:
       title: DTOFornecedor
       type: object
@@ -84216,6 +84946,22 @@ components:
           type: integer
         Ativo:
           type: boolean
+    DTOVoucher:
+      title: DTOVoucher
+      type: object
+      properties:
+        Observacao:
+          description: Observação do voucher
+          type: string
+        IDFornecedor:
+          description: O identificador do fornecedor do voucher
+          type: integer
+        Nome:
+          description: O nome do VOucher
+          type: string
+        ID:
+          description: O identificador do voucher
+          type: integer
     EstadoCivil:
       type: integer
       example: 1
