@@ -490,11 +490,75 @@ paths:
       $ref: './paths/cases/timeline/public@api@timeline@items-get.yaml'
 
   # Timesheet
-  
+  /api/timesheet:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet-get.yaml'
+  /api/timesheet/totalhoras:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@totalhoras-get.yaml'
+  /api/timesheet/proximoslancamentos:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@proximoslancamentos-get.yaml'
+  /api/timesheet/activitycodes:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@activitycodes-get.yaml'
+  /api/timesheet/taskcodes:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@taskcodes-get.yaml'
+  /api/timesheet/obtem:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@obtem-get.yaml'
+  /api/timesheet/funcionarios/{idFuncionario}/areas:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@funcionarios@idFuncionario@areas-get.yaml'
+  /api/timesheet/areas/{idArea}/titulos:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@areas@idArea@titulos-get.yaml'
+  /api/timesheet/funcionarios:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@funcionarios-get.yaml'
+  /api/timesheet/classificacoes:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@classificacoes-get.yaml'
+  /api/casos/{idCaso}/timesheet:
+    get:
+      $ref: './paths/cases/timesheet/public@api@casos@idCaso@timesheet-get.yaml'
+  /api/timesheet/caso/{idCaso}:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@caso@idCaso-get.yaml'
+  /api/timesheet/obtem/{id}:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@obtem@id-get.yaml'
+  /api/timesheet/inclui:
+    post:
+      $ref: './paths/cases/timesheet/public@api@timesheet@inclui-post.yaml'
+  /api/timesheet/incluiWeb:
+    post:
+      $ref: './paths/cases/timesheet/public@api@timesheet@incluiWeb-post.yaml'
+  /api/timesheet/atualizaWeb:
+    put:
+      $ref: './paths/cases/timesheet/public@api@timesheet@atualizaWeb-put.yaml'
+  /api/timesheet/atualiza:
+    put:
+      $ref: './paths/cases/timesheet/public@api@timesheet@atualiza-put.yaml'
+  /api/timesheet/limiteMinimo:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@limiteMinimo-get.yaml'
+  /api/timesheet/arredondamento:
+    get:
+      $ref: './paths/cases/timesheet/public@api@timesheet@arredondamento-get.yaml'
+  # /api/timesheet/exclui/{id}:
+  #   delete:
+  #     $ref: './paths/cases/timesheet/public@api@timesheet@exclui@id-delete.yaml'
 
   # Valores apurados
-  
-
+  /api/casos/{idCaso}/valoresapurados:
+    get:
+      $ref: './paths/cases/valores_apurados/public@api@casos@idCaso@valoresapurados-get.yaml'
+  /api/casos/num/valoresapurados:
+    get:
+      $ref: './paths/cases/valores_apurados/public@api@casos@num@valoresapurados-get.yaml'
+      
 components:
   securitySchemes:
     api_key:

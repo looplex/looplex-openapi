@@ -93,6 +93,10 @@ tags:
     x-displayName: Tarefa
   - name: Timeline
     x-displayName: Timeline
+  - name: Timesheet
+    x-displayName: Timesheet
+  - name: Valores apurados
+    x-displayName: Valores apurados
 x-tagGroups:
   - name: assembler
     tags:
@@ -139,6 +143,8 @@ x-tagGroups:
       - Tabela preço categoria
       - Tarefa
       - Timeline
+      - Timesheet
+      - Valores apurados
 servers:
   - url: https://graph.looplex.com/api/v1/assembler
     description: Graph server
@@ -28958,6 +28964,1014 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOTimelineItem'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista timesheet por filtro
+      operationId: api-timesheet-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idsFuncionarios
+          in: query
+          example: 10,25,30
+          description: Os identificadores por funcionarios separados por virgula
+          required: true
+          schema:
+            type: string
+        - name: dataInicial
+          in: query
+          description: A data inicial para pesquisa
+          required: true
+          schema:
+            type: string
+        - name: dataFinal
+          in: query
+          description: A data final para pesquisa
+          required: false
+          schema:
+            type: string
+        - name: typeMode
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/TipoDeConsultaCalendario'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/totalhoras:
+    get:
+      tags:
+        - Timesheet
+      summary: Total de horas lançadas no mês por profissional
+      operationId: api-timesheet-totalhoras-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: 4
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/proximoslancamentos:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista ultimos lançamentos por profissional
+      operationId: api-timesheet-proximoslancamentos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/activitycodes:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista os Activity Codes
+      operationId: api-timesheet-activitycodes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LEDESCodes'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/taskcodes:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista os Task Codes
+      operationId: api-timesheet-taskcodes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LEDESCodes'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/obtem:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista lançamentos de timesheet do funcionário
+      operationId: api-timesheet-obtem-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: ano
+          in: query
+          description: O ano para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          description: O mês para pesquisa
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/funcionarios/{idFuncionario}/areas:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista áreas para lançamento de hora
+      operationId: api-timesheet-funcionarios-idFuncionario-areas-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idFuncionario
+          in: path
+          description: O identificador do funcionário
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOArea'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/areas/{idArea}/titulos:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista títulos para lançamento de hora
+      operationId: api-timesheet-areas-idArea-titulos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idArea
+          in: path
+          description: O identificador da área
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOClassificacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/funcionarios:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista funcionários para lançamento de hora
+      operationId: api-timesheet-funcionarios-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionario'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/classificacoes:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista classificações para lançamento de hora
+      operationId: api-timesheet-classificacoes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOClassificacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/timesheet:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista horas lançadas do caso
+      operationId: api-casos-idCaso-timesheet-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+        - name: ano
+          in: query
+          description: O ano para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          description: O mês para pesquisa
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/caso/{idCaso}:
+    get:
+      tags:
+        - Timesheet
+      summary: Lista horas lançadas do caso
+      operationId: api-timesheet-caso-idCaso-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/obtem/{id}:
+    get:
+      tags:
+        - Timesheet
+      summary: Obtém lançamento de hora por identificador
+      operationId: api-timesheet-obtem-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador do lançamento de hora
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/inclui:
+    post:
+      tags:
+        - Timesheet
+      summary: Inclui lançamento de hora
+      operationId: api-timesheet-inclui-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOPlanilhaHoras'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/incluiWeb:
+    post:
+      tags:
+        - Timesheet
+      summary: Inclui lançamento de hora
+      operationId: api-timesheet-incluiWeb-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOPlanilhaHoras'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/atualizaWeb:
+    put:
+      tags:
+        - Timesheet
+      summary: Atualiza lançamento de hora
+      operationId: api-timesheet-atualizaWeb-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOPlanilhaHoras'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/atualiza:
+    put:
+      tags:
+        - Timesheet
+      summary: Atualiza lançamento de hora
+      operationId: api-timesheet-atualiza-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOPlanilhaHoras'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOPlanilhaHoras'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/limiteMinimo:
+    get:
+      tags:
+        - Timesheet
+      summary: Obtém limite mínimo de minutos
+      operationId: api-timesheet-limiteMinimo-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: 10
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/timesheet/arredondamento:
+    get:
+      tags:
+        - Timesheet
+      summary: Obtém arredondamento de minutos
+      operationId: api-timesheet-arredondamento-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: 10
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/valoresapurados:
+    get:
+      tags:
+        - Valores apurados
+      summary: Lista valores apurados por caso
+      operationId: api-casos-idCaso-valoresapurados-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOValorApurado'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/valoresapurados:
+    get:
+      tags:
+        - Valores apurados
+      summary: >-
+        Lista valores apurados por identificador do caso, numero interno ou
+        numero externo
+      operationId: api-casos-num-valoresapurados-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do caso.<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do caso.<br />`Default: empty string`'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do caso.<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOValorApurado'
         '401':
           description: Unauthorized
           content:
@@ -85836,6 +86850,155 @@ components:
         ClasseCaso:
           type: string
           description: A classe do processo
+    TipoDeConsultaCalendario:
+      type: integer
+      example: 1
+      description: |
+        1: dayGridMonth
+
+        2: timeGridWeek
+
+        3: timeGridDay
+
+        4: listWeek
+
+        5: interval
+    TipoDeTarefa:
+      type: integer
+      example: 2
+      description: |
+        -2147483648: None
+
+        1: Aprimoramento profissional
+
+        2: Horas debitáveis
+
+        3: Horas de relacionamento
+
+        4: Horas não debitáveis
+    SituacaoDaPlanilhaDeHoras:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Aberta
+
+        2: A aprovar
+
+        3: Aprovada
+
+        4: Não aprovada
+    DTOPlanilhaHoras:
+      title: DTOPlanilhaHoras
+      type: object
+      properties:
+        NrLEDESTaskCode:
+          type: string
+        NrLEDESActivityCode:
+          type: string
+        DsSolicitante:
+          type: string
+        CdSolicitante:
+          type: integer
+        IDCliente:
+          type: integer
+        IDProcesso:
+          type: integer
+        IDFuncionario:
+          type: integer
+        NomeFuncionario:
+          type: string
+        Descricao:
+          type: string
+        DataExecucao:
+          type: string
+        TipoDeTarefa:
+          $ref: '#/components/schemas/TipoDeTarefa'
+        QtdMinutos:
+          type: integer
+        IDFuncionarioResponsavel:
+          type: integer
+        IDFuncionarioBeneficiario:
+          type: integer
+        IDFechamentoPlanilhaHoras:
+          type: integer
+        IDRegistroFechamentoContaCliente:
+          type: integer
+        SituacaoDaPlanilha:
+          $ref: '#/components/schemas/SituacaoDaPlanilhaDeHoras'
+        MotivoDaRecusa:
+          type: string
+        IDClassificacaoHorasDebitaveis:
+          type: integer
+        IDClassificacao:
+          type: integer
+        DsClassificacao:
+          type: string
+        Titulo:
+          type: string
+        IDAndamento:
+          type: integer
+        IDArea:
+          type: integer
+        IDContrato:
+          type: integer
+        DataLancamento:
+          type: string
+        InFaturadoPreVersao35:
+          type: boolean
+        IDLancamentoDeHoras:
+          type: integer
+        IsEditable:
+          type: boolean
+    LEDESCodes:
+      title: LEDESCodes
+      type: object
+      properties:
+        Code:
+          type: string
+        Description:
+          type: string
+        ChildCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/LEDESCodes'
+    DTOClassificacao:
+      title: DTOClassificacao
+      type: object
+      properties:
+        ID:
+          type: integer
+        Titulo:
+          type: string
+        TextoPadrao:
+          type: string
+    DTOValorApurado:
+      title: DTOValorApurado
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        Data:
+          type: string
+        DataFormatada:
+          type: string
+        NomePedido:
+          type: string
+        ValorApurado:
+          type: number
+        Moeda:
+          type: string
+        Observacao:
+          type: string
+        IdCaso:
+          type: integer
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: https://github.com/Rebilly/generator-openapi-repo
