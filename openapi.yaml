@@ -28786,7 +28786,7 @@ paths:
     get:
       tags:
         - Tarefa
-      summary: Compromissos por filtro tarefas Web
+      summary: Lista compromissos por filtro
       operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -28809,13 +28809,314 @@ paths:
         - name: numeroDeRecorrencias
           in: query
           required: false
-          description: 'Default: 10'
+          description: '`Default: 10`'
           schema:
             type: integer
         - name: subcasos
           in: query
           required: false
-          description: 'Default: false'
+          description: '`Default: false`'
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/{id}/{tipo}:
+    get:
+      tags:
+        - Tarefa
+      summary: Obtém item de agenda por identificador e tipo
+      operationId: api-agenda-id-tipo-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador do item de agenda
+          required: true
+          schema:
+            type: integer
+        - name: tipo
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoItemAgenda'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/compromissos:
+    get:
+      tags:
+        - Tarefa
+      summary: Lista itens de agenda por funcionários e filtro
+      operationId: api-compromissos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idsFuncionarios
+          in: query
+          example: '"1,15,20"'
+          description: Os identificadores dos funcionários separados por virgula
+          required: true
+          schema:
+            type: string
+        - name: dataInicio
+          in: query
+          description: A data inicial para pesquisa
+          required: true
+          schema:
+            type: string
+        - name: dataFim
+          in: query
+          description: A data final para pesquisa
+          required: false
+          schema:
+            type: string
+        - name: listaPorExecutor
+          in: query
+          description: 'Listar por executor?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: listaPorParticipante
+          in: query
+          description: 'Listar por participante?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: listaPorDelegante
+          in: query
+          description: 'Listar por delegante?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: typeMode
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/TipoDeConsultaCalendario'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCompromissoSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/edit:
+    put:
+      tags:
+        - Tarefa
+      summary: Editar propriedades específicas
+      description: >-
+        **Propriedades que podem ser alteradas**<br />- Atividade externa:
+        `ExecutionID`<br />- Audiência: `ExecutionID`<br />- Compromisso:
+        `ExecutionID`
+      operationId: api-agenda-edit-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: IDItemAgenda
+          in: query
+          description: O identificador do item de agenda
+          required: true
+          schema:
+            type: integer
+        - name: Tipo
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoItemAgenda'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOObjetoNomeValor'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/totaleventos:
+    get:
+      tags:
+        - Tarefa
+      summary: Lista quantidade de itens de agenda para os próximos 7 dias
+      operationId: api-agenda-totaleventos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: 10
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/proximoslancamentos:
+    get:
+      tags:
+        - Tarefa
+      summary: Lista próximos compromissos por profissional
+      operationId: api-agenda-proximoslancamentos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: data
+          in: query
+          description: A data para pesquisa
+          required: true
+          schema:
+            type: string
+        - name: quantidadeEventosARetornar
+          in: query
+          description: 'A quantidade de itens de agenda para listar<br />`Default: 4`'
+          required: false
+          schema:
+            type: integer
+        - name: idCaso
+          in: query
+          description: O identificador do caso para filtrar os resultados
+          required: false
           schema:
             type: integer
       responses:
@@ -28827,6 +29128,663 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda:
+    get:
+      tags:
+        - Tarefa
+      summary: Lista itens de agenda por período
+      operationId: api-agenda-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: ano
+          in: query
+          description: O ano para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          description: O mês para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: dia
+          in: query
+          description: O dia para pesquisa
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+    post:
+      tags:
+        - Tarefa
+      summary: Cadastrar item de agenda
+      operationId: api-agenda-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOItemAgenda'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+    put:
+      tags:
+        - Tarefa
+      summary: Atualizar item de agenda
+      operationId: api-agenda-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOItemAgenda'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/agenda:
+    get:
+      tags:
+        - Tarefa
+      summary: Lista agenda do caso
+      operationId: api-casos-idCaso-agenda-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+        - name: ano
+          in: query
+          description: O ano para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          description: O mês para pesquisa
+          required: true
+          schema:
+            type: integer
+        - name: dia
+          in: query
+          description: O dia para pesquisa
+          required: false
+          schema:
+            type: integer
+        - name: subcasos
+          in: query
+          description: '`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/executores:
+    get:
+      tags:
+        - Tarefa
+      summary: Listar executores
+      operationId: api-agenda-executores-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionario'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/participantes:
+    get:
+      tags:
+        - Tarefa
+      summary: Listar participantes
+      operationId: api-agenda-participantes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFuncionario'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/titulos:
+    get:
+      tags:
+        - Tarefa
+      summary: Titulos
+      operationId: api-agenda-titulos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: tipo
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoItemAgenda'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOTituloAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/audiencias:
+    get:
+      tags:
+        - Tarefa
+      summary: Listar audiências por identificador do caso
+      operationId: api-casos-idCaso-audiencias-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCompromissoAudiencia'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/audiencias:
+    get:
+      tags:
+        - Tarefa
+      summary: >-
+        Listar audiências por identificador do caso, numero interno ou numero
+        externo
+      operationId: api-casos-num-audiencias-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do caso.<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do caso.<br />`Default: empty string`'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do caso.<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCompromissoAudiencia'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/tabagenda:
+    get:
+      tags:
+        - Tarefa
+      summary: Listar compromissos, prazos e publicações por identificadores dos casos
+      operationId: api-casos-idCaso-tabagenda-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: Os identificadores dos casos
+          required: true
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgendaSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/tabagenda:
+    get:
+      tags:
+        - Tarefa
+      summary: >-
+        Listar compromissos, prazos e publicações por identificador do caso,
+        numero interno ou numero externo
+      operationId: api-casos-num-tabagenda-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do caso.<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do caso.<br />`Default: empty string`'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do caso.<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemAgendaSimples'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/status_encerramento:
+    get:
+      tags:
+        - Tarefa
+      summary: Listar status de encerramento de tarefas por tipo da tarefa
+      operationId: api-agenda-status_encerramento-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: inCompromisso
+          in: query
+          description: 'Listar as classificações de compromisso?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: inPrazo
+          in: query
+          description: 'Listar as classificações de prazo?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: inAtividadeExterna
+          in: query
+          description: 'Listar as classificações de atividade externa?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: inPublicacao
+          in: query
+          description: 'Listar as classificações de publicação?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+        - name: inAudiencia
+          in: query
+          description: 'Listar as classificações de audiência?<br />`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOStatusEncerramentoItemAgenda'
         '401':
           description: Unauthorized
           content:
@@ -84904,11 +85862,11 @@ components:
       description: |
         -2147483648: None
 
-        1: Atividade externa,
+        1: Atividade externa
 
-        2: Prazo, 
+        2: Prazo
 
-        4: Audiência, 
+        4: Audiência
 
         8: Compromisso de trabalho
 
@@ -86781,6 +87739,242 @@ components:
         2: Finalizados
 
         3: Em aberto
+    TipoDeConsultaCalendario:
+      type: integer
+      example: 1
+      description: |
+        1: dayGridMonth
+
+        2: timeGridWeek
+
+        3: timeGridDay
+
+        4: listWeek
+
+        5: interval
+    DTOCompromissoSimples:
+      title: DTOCompromissoSimples
+      type: object
+      properties:
+        IDCompromisso:
+          description: O identificador do compromisso
+          type: integer
+        IDPrazo:
+          type: integer
+        IDArea:
+          description: O identificador da área
+          type: integer
+        IDDelegante:
+          type: integer
+        IDExecutor:
+          type: integer
+        IDResponsavelCaso:
+          type: integer
+        NumeroPasta:
+          type: integer
+        Data:
+          description: A data do item de agenda
+          type: string
+        HoraInicial:
+          type: string
+        DataFinal:
+          description: A data limite do item de agenda
+          type: string
+        DataRealizacao:
+          description: A data em que foi concluido o item
+          type: string
+        Concluido:
+          description: Indica se o item está concluído
+          type: boolean
+        TipoItemAgenda:
+          $ref: '#/components/schemas/TipoItemAgenda'
+        Assunto:
+          description: O título do item de agenda
+          type: string
+        Descricao:
+          description: A descrição do item de agenda
+          type: string
+        IDProcesso:
+          type: integer
+        TipoProcesso:
+          $ref: '#/components/schemas/RamosJudicial'
+        NumeroDoCaso:
+          description: O numero do caso no LawOffice
+          type: integer
+        TituloCaso:
+          description: O titulo do caso
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExternoCaso:
+          description: O numero externo do caso
+          type: string
+        Rito:
+          type: string
+        Vencido:
+          type: string
+        Cliente:
+          description: O nome do cliente do caso
+          type: string
+        Executor:
+          description: O nome do executor do item de agenda
+          type: string
+        Situacao:
+          type: integer
+        SituacaoString:
+          type: string
+        PoloAtivo:
+          type: string
+        PoloPassivo:
+          type: string
+        Classificacao:
+          type: string
+        IsEditable:
+          type: boolean
+    TipoEventoDeCobranca:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Por compromisso
+
+        2: Por prazo
+
+        3: Por atividade externa
+
+        4: Por publicação
+
+        5: Por audiência
+    DTOTituloAgenda:
+      title: DTOTituloAgenda
+      type: object
+      properties:
+        IDEscritorio:
+          description: O identificador do escritório
+          type: integer
+        TipoCobrancaEvento:
+          $ref: '#/components/schemas/TipoEventoDeCobranca'
+        Titulo:
+          type: string
+        IDTituloCobranca:
+          description: O identificador do titulo de cobrança
+          type: integer
+        LinkEntrevistaTemplate:
+          type: string
+    DTOCompromissoAudiencia:
+      title: DTOCompromissoAudiencia
+      type: object
+      properties:
+        NomeClienteProcesso:
+          type: string
+        TituloProcesso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        idAudiencia:
+          type: integer
+        Assunto:
+          type: string
+        Area:
+          type: string
+        Hora:
+          type: string
+        Data:
+          type: string
+        DataFormatada:
+          type: string
+        Delegante:
+          type: string
+        Executor:
+          type: string
+        Participantes:
+          type: array
+          example:
+            - 10
+            - 20
+          items:
+            type: integer
+        Descricao:
+          type: string
+        Local:
+          type: string
+        Situacao:
+          type: string
+        IdCaso:
+          type: integer
+        IdAudienciaPai:
+          type: integer
+        IsEditable:
+          type: boolean
+    DTORecorrenciaDeItemAgenda:
+      title: DTORecorrenciaDeItemAgenda
+      type: object
+      properties:
+        Tipo:
+          type: string
+        DiasDaSemana:
+          type: array
+          items:
+            type: string
+        DataInicio:
+          type: string
+        DataFim:
+          type: string
+        MesDoAno:
+          type: string
+        DiaDoMes:
+          type: string
+        ACada:
+          type: string
+    DTOItemAgendaSimples:
+      title: DTOItemAgendaSimples
+      type: object
+      properties:
+        NomeClienteProcesso:
+          type: string
+        TituloProcesso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        TipoDeItem:
+          type: string
+        Data:
+          type: string
+        DataFormatada:
+          type: string
+        Assunto:
+          type: string
+        IdCaso:
+          type: integer
+        idExecutor:
+          type: integer
+        Executor:
+          type: string
+        Observacao:
+          type: string
+        IdPai:
+          type: integer
+        IsEditable:
+          type: boolean
+        Recorrencia:
+          $ref: '#/components/schemas/DTORecorrenciaDeItemAgenda'
+    DTOStatusEncerramentoItemAgenda:
+      title: DTOStatusEncerramentoItemAgenda
+      type: object
+      properties:
+        IDStatusEncerramento:
+          description: O identificador do status de encerramento
+          example: 10
+          type: integer
+        Titulo:
+          description: O status de encerramento
+          example: Item concluído
+          type: string
     TipoItemTimeline:
       type: integer
       example: 1
@@ -86850,19 +88044,6 @@ components:
         ClasseCaso:
           type: string
           description: A classe do processo
-    TipoDeConsultaCalendario:
-      type: integer
-      example: 1
-      description: |
-        1: dayGridMonth
-
-        2: timeGridWeek
-
-        3: timeGridDay
-
-        4: listWeek
-
-        5: interval
     TipoDeTarefa:
       type: integer
       example: 2

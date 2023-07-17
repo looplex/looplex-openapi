@@ -3,11 +3,11 @@ example: 1
 description: |
   -2147483648: None
 
-  1: Atividade externa,
+  1: Atividade externa
 
-  2: Prazo, 
+  2: Prazo
 
-  4: Audiência, 
+  4: Audiência
 
   8: Compromisso de trabalho
 

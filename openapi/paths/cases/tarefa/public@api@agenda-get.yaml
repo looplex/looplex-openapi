@@ -1,39 +1,29 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: Lista compromissos por filtro
-operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
+summary: "Lista itens de agenda por período"
+operationId: api-agenda-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: cdProcesso
-    in: path
+  - name: ano
+    in: query
+    description: "O ano para pesquisa"
     required: true
-    description: "O identificador do processo"
     schema:
       type: integer
-  - name: ignoraIdFuncionario
-    in: path
-    required: true
-    schema:
-      type: boolean
-  - name: filtro
-    in: path
-    required: true
-    schema:
-      $ref: ../../../components/schemas/cases/enums/FiltroSituacaoItemAgenda.yaml
-  - name: numeroDeRecorrencias
+  - name: mes
     in: query
-    required: false
-    description: "`Default: 10`"
+    description: "O mês para pesquisa"
+    required: true
     schema:
       type: integer
-  - name: subcasos
+  - name: dia
     in: query
+    description: "O dia para pesquisa"
     required: false
-    description: "`Default: false`"
-    schema: 
-      type: boolean
+    schema:
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -70,4 +60,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

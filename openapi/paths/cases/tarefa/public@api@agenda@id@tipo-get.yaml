@@ -1,39 +1,22 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: Lista compromissos por filtro
-operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
+summary: "Obtém item de agenda por identificador e tipo"
+operationId: api-agenda-id-tipo-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: cdProcesso
+  - name: id
     in: path
+    description: "O identificador do item de agenda"
     required: true
-    description: "O identificador do processo"
     schema:
       type: integer
-  - name: ignoraIdFuncionario
+  - name: tipo
     in: path
     required: true
     schema:
-      type: boolean
-  - name: filtro
-    in: path
-    required: true
-    schema:
-      $ref: ../../../components/schemas/cases/enums/FiltroSituacaoItemAgenda.yaml
-  - name: numeroDeRecorrencias
-    in: query
-    required: false
-    description: "`Default: 10`"
-    schema:
-      type: integer
-  - name: subcasos
-    in: query
-    required: false
-    description: "`Default: false`"
-    schema: 
-      type: boolean
+      $ref: ../../../components/schemas/cases/enums/TipoItemAgenda.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -43,9 +26,7 @@ responses:
     content:
       application/json:
         schema:
-          type: array
-          items:
-            $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
+          $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
   "401":
     description: "Unauthorized"
     content:
@@ -70,4 +51,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

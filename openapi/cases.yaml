@@ -39,9 +39,6 @@ paths:
     post:
       $ref: ./paths/cases/login/public@api@logon-post.yaml
       
-  # Agenda
-  
-
   # Andamentos
   /api/andamentos/templates:
     get:
@@ -190,9 +187,7 @@ paths:
       $ref: ./paths/cases/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
 
   # Cliente
-  /api/clientes/{idCliente}/pastas:
-    get:
-      $ref: './paths/cases/cliente/public@api@clientes@idCliente@pastas-get.yaml'
+  
 
   # Contatos
   /api/contatos/{IDContato}:
@@ -479,10 +474,66 @@ paths:
     get:
       $ref: './paths/cases/tabela_preco_categoria/public@api@escritorios@idEscritorio@tabelasprecocategoria-get.yaml'
 
-  # Tarefa
+  # Agenda + Tarefa
   /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
     get:
       $ref: './paths/cases/tarefa/public@api@casos@tarefas@cdProcesso@ignoraIdFuncionario@filtro-get.yaml'
+  /api/agenda/{id}/{tipo}:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda@id@tipo-get.yaml'
+  /api/compromissos:
+    get:
+      $ref: './paths/cases/tarefa/public@api@compromissos-get.yaml'
+  /api/agenda/edit:
+    put:
+      $ref: './paths/cases/tarefa/public@api@agenda@edit-put.yaml'
+  /api/agenda/totaleventos:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda@totaleventos-get.yaml'
+  /api/agenda/proximoslancamentos:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda@proximoslancamentos-get.yaml'
+  /api/agenda:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda-get.yaml'
+    post:
+      $ref: './paths/cases/tarefa/public@api@agenda-post.yaml'
+    put:
+      $ref: './paths/cases/tarefa/public@api@agenda-put.yaml'
+  /api/casos/{idCaso}/agenda:
+    get:
+      $ref: './paths/cases/tarefa/public@api@casos@idCaso@agenda-get.yaml'
+  /api/agenda/executores:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda@executores-get.yaml'
+  /api/agenda/participantes:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda@participantes-get.yaml'
+  # /api/agenda/{tipo}/{id}:
+  #   delete:
+  #     $ref: './paths/cases/tarefa/public@api@agenda@tipo@id-delete.yaml'
+  /api/agenda/titulos:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda@titulos-get.yaml'
+    # post:
+    #   $ref: './paths/cases/tarefa/public@api@agenda@titulos-post.yaml'
+    # put:
+    #   $ref: './paths/cases/tarefa/public@api@agenda@titulos-put.yaml'
+  /api/casos/{idCaso}/audiencias:
+    get:
+      $ref: './paths/cases/tarefa/public@api@casos@idCaso@audiencias-get.yaml'
+  /api/casos/num/audiencias:
+    get:
+      $ref: './paths/cases/tarefa/public@api@casos@num@audiencias-get.yaml'
+  /api/casos/{idCaso}/tabagenda:
+    get:
+      $ref: './paths/cases/tarefa/public@api@casos@idCaso@tabagenda-get.yaml'
+  /api/casos/num/tabagenda:
+    get:
+      $ref: './paths/cases/tarefa/public@api@casos@num@tabagenda-get.yaml'
+  /api/agenda/status_encerramento:
+    get:
+      $ref: './paths/cases/tarefa/public@api@agenda@status_encerramento-get.yaml'
 
   # Timeline
   /api/timeline/items:
