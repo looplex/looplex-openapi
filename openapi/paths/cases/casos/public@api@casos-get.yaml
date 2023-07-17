@@ -63,7 +63,7 @@ parameters:
     required: false
     example: '[1,2,3]'
     schema:
-      description: '`Enviar um array`'     
+      description: '`Enviar um array`'
       $ref: ../../../components/schemas/cases/enums/SituacaoDoProcesso.yaml       
 responses:
   "200":

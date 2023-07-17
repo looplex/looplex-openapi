@@ -1,39 +1,19 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: Lista compromissos por filtro
-operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
+summary: "Listar compromissos, prazos e publicações por identificadores dos casos"
+operationId: api-casos-idCaso-tabagenda-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: cdProcesso
+  - name: idCaso
     in: path
-    required: true
-    description: "O identificador do processo"
-    schema:
-      type: integer
-  - name: ignoraIdFuncionario
-    in: path
+    description: "Os identificadores dos casos"
     required: true
     schema:
-      type: boolean
-  - name: filtro
-    in: path
-    required: true
-    schema:
-      $ref: ../../../components/schemas/cases/enums/FiltroSituacaoItemAgenda.yaml
-  - name: numeroDeRecorrencias
-    in: query
-    required: false
-    description: "`Default: 10`"
-    schema:
-      type: integer
-  - name: subcasos
-    in: query
-    required: false
-    description: "`Default: false`"
-    schema: 
-      type: boolean
+      type: array
+      items:
+        type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -45,7 +25,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
+            $ref: ../../../components/schemas/cases/DTOItemAgendaSimples.yaml
   "401":
     description: "Unauthorized"
     content:
@@ -70,4 +50,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            

@@ -1,39 +1,53 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: Lista compromissos por filtro
-operationId: api-casos-tarefas-cdProcesso-ignoraIdFuncionario-filtro
+summary: "Lista itens de agenda por funcionários e filtro"
+operationId: api-compromissos-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: cdProcesso
-    in: path
+  - name: idsFuncionarios
+    in: query
+    example: "\"1,15,20\""
+    description: "Os identificadores dos funcionários separados por virgula"
     required: true
-    description: "O identificador do processo"
     schema:
-      type: integer
-  - name: ignoraIdFuncionario
-    in: path
+      type: string
+  - name: dataInicio
+    in: query
+    description: "A data inicial para pesquisa"
     required: true
+    schema:
+      type: string
+  - name: dataFim
+    in: query
+    description: "A data final para pesquisa"
+    required: false
+    schema:
+      type: string
+  - name: listaPorExecutor
+    in: query
+    description: "Listar por executor?<br />`Default: false`"
+    required: false
     schema:
       type: boolean
-  - name: filtro
-    in: path
-    required: true
-    schema:
-      $ref: ../../../components/schemas/cases/enums/FiltroSituacaoItemAgenda.yaml
-  - name: numeroDeRecorrencias
+  - name: listaPorParticipante
     in: query
+    description: "Listar por participante?<br />`Default: false`"
     required: false
-    description: "`Default: 10`"
     schema:
-      type: integer
-  - name: subcasos
-    in: query
-    required: false
-    description: "`Default: false`"
-    schema: 
       type: boolean
+  - name: listaPorDelegante
+    in: query
+    description: "Listar por delegante?<br />`Default: false`"
+    required: false
+    schema:
+      type: boolean
+  - name: typeMode
+    in: query
+    required: false
+    schema:
+      $ref: ../../../components/schemas/cases/enums/TipoDeConsultaCalendario.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -45,7 +59,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
+            $ref: ../../../components/schemas/cases/DTOCompromissoSimples.yaml
   "401":
     description: "Unauthorized"
     content:
@@ -70,4 +84,3 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
-            
