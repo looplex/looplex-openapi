@@ -187,9 +187,7 @@ paths:
       $ref: ./paths/cases/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
 
   # Cliente
-  /api/clientes/{idCliente}/pastas:
-    get:
-      $ref: './paths/cases/cliente/public@api@clientes@idCliente@pastas-get.yaml'
+  
 
   # Contatos
   /api/contatos/{IDContato}:
