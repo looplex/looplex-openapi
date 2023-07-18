@@ -791,7 +791,7 @@
           {
             "name": "ativos",
             "in": "query",
-            "description": "Default: true",
+            "description": "Listar áreas ativas?<br />`Default: true`",
             "required": false,
             "schema": {
               "type": "boolean"
@@ -800,7 +800,7 @@
           {
             "name": "inativos",
             "in": "query",
-            "description": "Default: false",
+            "description": "Listar áreas inativas?<br />`Default: false`",
             "required": false,
             "schema": {
               "type": "boolean"
