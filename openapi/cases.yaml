@@ -187,7 +187,30 @@ paths:
       $ref: ./paths/cases/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
 
   # Cliente
-  
+  /api/clientes/todos:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@todos-get.yaml'
+  /api/clientes/ficha:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@ficha-get.yaml'
+  /api/clientes/ficha_mobile:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@ficha_mobile-get.yaml'
+  /api/clientes:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes-get.yaml'
+  /api/clientes/enderecos:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@enderecos-get.yaml'
+  /api/clientes/mobile:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@mobile-get.yaml'
+  /api/clientes/{id}:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@id-get.yaml'
+  /api/clientes/porIds/{idsClientes}:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@porIds@idsClientes-get.yaml'
 
   # Contatos
   /api/contatos/{IDContato}:

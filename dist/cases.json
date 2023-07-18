@@ -3830,6 +3830,664 @@
         }
       }
     },
+    "/api/clientes/todos": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Listar todos os clientes",
+        "operationId": "api-clientes-todos-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCliente"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clientes/ficha": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Obtém cliente por identificador",
+        "operationId": "api-clientes-ficha-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCliente",
+            "in": "query",
+            "description": "O identificador do cliente",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCliente"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clientes/ficha_mobile": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Obtém cliente por identificador",
+        "operationId": "api-clientes-ficha_mobile-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCliente",
+            "in": "query",
+            "description": "O identificador do cliente",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOClienteMobile"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clientes": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Lista clientes por filtro",
+        "operationId": "api-clientes-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "ativos",
+            "in": "query",
+            "description": "Listar clientes ativos?<br />`Default: true`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "inativos",
+            "in": "query",
+            "description": "Listar clientes inativos?<br />`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "apenasMeusCasos",
+            "in": "query",
+            "description": "`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "clientesSemCasos",
+            "in": "query",
+            "description": "`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCliente"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clientes/enderecos": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Listar endereços de cliente",
+        "operationId": "api-clientes-enderecos-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOEnderecoCliente"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clientes/mobile": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Listar clientes por filtro",
+        "operationId": "api-clientes-mobile-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "ativos",
+            "in": "query",
+            "description": "Listar clientes ativos?<br />`Default: true`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "inativos",
+            "in": "query",
+            "description": "Listar clientes inativos?<br />`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "apenasMeusCasos",
+            "in": "query",
+            "description": "`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "clientesSemCasos",
+            "in": "query",
+            "description": "`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOClienteMobile"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clientes/{id}": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Obtém cliente por identificador",
+        "operationId": "api-clientes-id-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "O identificador do cliente",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCliente"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clientes/porIds/{idsClientes}": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Listar clientes por identificadores",
+        "operationId": "api-clientes-porIds-idsClientes-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idsClientes",
+            "in": "path",
+            "example": [
+              1,
+              2
+            ],
+            "description": "Os identificadores dos clientes",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCliente"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/contatos/{IDContato}": {
       "get": {
         "tags": [
@@ -15806,6 +16464,247 @@
           },
           "NomeResponsavel": {
             "type": "string"
+          }
+        }
+      },
+      "TipoCliente": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Pessoa física\n\n2: Pessoa jurídica\n"
+      },
+      "SituacaoDeCliente": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Ativa\n\n2: Inativa\n"
+      },
+      "TipoDeEndereco": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Residencial\n\n2: Comercial\n\n3: Outros\n"
+      },
+      "DTOCliente": {
+        "title": "DTOCliente",
+        "type": "object",
+        "properties": {
+          "IDCliente": {
+            "type": "integer"
+          },
+          "NumeroDoCliente": {
+            "type": "integer"
+          },
+          "Nome": {
+            "type": "string"
+          },
+          "Apelido": {
+            "type": "string"
+          },
+          "Tipo": {
+            "$ref": "#/components/schemas/TipoCliente"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "Situacao": {
+            "$ref": "#/components/schemas/SituacaoDeCliente"
+          },
+          "MotivoInativacao": {
+            "type": "string"
+          },
+          "WebSite": {
+            "type": "string"
+          },
+          "Observacoes": {
+            "type": "string"
+          },
+          "CPFCNPJ": {
+            "type": "string"
+          },
+          "TratoConfidencial": {
+            "type": "boolean"
+          },
+          "InscricaoMunicipal": {
+            "type": "string"
+          },
+          "DataCriacao": {
+            "type": "string"
+          },
+          "Estrangeiro": {
+            "type": "boolean"
+          },
+          "InscricaoEstadual": {
+            "type": "string"
+          },
+          "Idioma": {
+            "type": "string"
+          },
+          "TipoEndereco": {
+            "$ref": "#/components/schemas/TipoDeEndereco"
+          },
+          "Logradouro": {
+            "type": "string"
+          },
+          "Numero": {
+            "type": "string"
+          },
+          "Complemento": {
+            "type": "string"
+          },
+          "Bairro": {
+            "type": "string"
+          },
+          "Cidade": {
+            "type": "string"
+          },
+          "Estado": {
+            "type": "string"
+          },
+          "CEP": {
+            "type": "string"
+          },
+          "Pais": {
+            "type": "string"
+          },
+          "EnderecoPrincipal": {
+            "type": "integer"
+          }
+        }
+      },
+      "DTOClienteMobile": {
+        "title": "DTOClienteMobile",
+        "type": "object",
+        "properties": {
+          "IDCliente": {
+            "type": "integer"
+          },
+          "NumeroDoCliente": {
+            "type": "integer"
+          },
+          "Nome": {
+            "type": "string"
+          },
+          "Apelido": {
+            "type": "string"
+          },
+          "Tipo": {
+            "$ref": "#/components/schemas/TipoCliente"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "Situacao": {
+            "$ref": "#/components/schemas/SituacaoDeCliente"
+          },
+          "MotivoInativacao": {
+            "type": "string"
+          },
+          "WebSite": {
+            "type": "string"
+          },
+          "Observacoes": {
+            "type": "string"
+          },
+          "CPFCNPJ": {
+            "type": "string"
+          },
+          "TratoConfidencial": {
+            "type": "boolean"
+          },
+          "InscricaoMunicipal": {
+            "type": "string"
+          },
+          "DataCriacao": {
+            "type": "string"
+          },
+          "Estrangeiro": {
+            "type": "boolean"
+          },
+          "InscricaoEstadual": {
+            "type": "string"
+          },
+          "Idioma": {
+            "type": "string"
+          },
+          "TipoEndereco": {
+            "$ref": "#/components/schemas/TipoDeEndereco"
+          },
+          "Logradouro": {
+            "type": "string"
+          },
+          "Numero": {
+            "type": "string"
+          },
+          "Complemento": {
+            "type": "string"
+          },
+          "Bairro": {
+            "type": "string"
+          },
+          "Cidade": {
+            "type": "string"
+          },
+          "Estado": {
+            "type": "string"
+          },
+          "CEP": {
+            "type": "string"
+          },
+          "Pais": {
+            "type": "string"
+          },
+          "EnderecoPrincipal": {
+            "type": "integer"
+          },
+          "inTemLEDES": {
+            "type": "boolean"
+          },
+          "inNecessitaDeSolicitanteParaLancamentoDeHoras": {
+            "type": "boolean"
+          },
+          "Status": {
+            "type": "integer",
+            "description": "StatusCode definitions: https://docs.microsoft.com/en-us/dotnet/api/system.net.httpstatuscode?view=netframework-4.5"
+          }
+        }
+      },
+      "DTOEnderecoCliente": {
+        "title": "DTOEnderecoCliente",
+        "type": "object",
+        "properties": {
+          "IDCliente": {
+            "type": "integer"
+          },
+          "NumeroDoCliente": {
+            "type": "integer"
+          },
+          "TipoEndereco": {
+            "$ref": "#/components/schemas/TipoDeEndereco"
+          },
+          "Logradouro": {
+            "type": "string"
+          },
+          "Numero": {
+            "type": "string"
+          },
+          "Complemento": {
+            "type": "string"
+          },
+          "Bairro": {
+            "type": "string"
+          },
+          "Cidade": {
+            "type": "string"
+          },
+          "Estado": {
+            "type": "string"
+          },
+          "CEP": {
+            "type": "string"
+          },
+          "Pais": {
+            "type": "string"
+          },
+          "EnderecoPrincipal": {
+            "type": "integer"
           }
         }
       },
