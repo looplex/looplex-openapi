@@ -65,6 +65,8 @@ tags:
     x-displayName: Contato
   - name: Contrato
     x-displayName: Contrato
+  - name: Decisões
+    x-displayName: Decisões
   - name: Despesas
     x-displayName: Despesas
   - name: Expectativa reivindicação
@@ -131,6 +133,7 @@ x-tagGroups:
       - Cliente
       - Contato
       - Contrato
+      - Decisões
       - Despesas
       - Expectativa reivindicação
       - Funcionário
@@ -25641,6 +25644,396 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOContrato'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/Decisoes:
+    get:
+      tags:
+        - Decisões
+      summary: Listar decisões do caso
+      operationId: api-casos-idCaso-Decisoes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoDecisao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/num/decisoes:
+    get:
+      tags:
+        - Decisões
+      summary: >-
+        Listar decisões do caso por identificador do caso, numero interno ou
+        numero externo
+      operationId: api-casos-num-decisoes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: NumeroInterno
+          in: query
+          description: 'O numero interno do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+        - name: NumeroExterno
+          in: query
+          description: 'O numero externo do caso<br />`Default: empty string`'
+          required: false
+          schema:
+            type: string
+        - name: IdProcesso
+          in: query
+          description: 'O identificador do caso<br />`Default: 0`'
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoDecisao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/Decisoes/tipos:
+    get:
+      tags:
+        - Decisões
+      summary: Listar tipos de decisão
+      operationId: api-Decisoes-tipos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTODecisao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/Decisoes:
+    post:
+      tags:
+        - Decisões
+      summary: Inclui decisão
+      operationId: api-Decisoes-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOProcessoDecisao'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOProcessoDecisao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/Decisoes/{id}:
+    put:
+      tags:
+        - Decisões
+      summary: Atualiza decisão
+      operationId: api-Decisoes-id-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da decisão
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOProcessoDecisao'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOProcessoDecisao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+    get:
+      tags:
+        - Decisões
+      summary: Obtém decisão com valores
+      operationId: api-Decisoes-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da decisão
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOProcessoDecisao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+    delete:
+      tags:
+        - Decisões
+      summary: Exclui decisão
+      operationId: api-Decisoes-idProcessoDecisao-delete
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idProcessoDecisao
+          in: path
+          description: O identificador da decisão
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/{idCaso}/DecisoesComValores:
+    get:
+      tags:
+        - Decisões
+      summary: Lista decisões do caso com valores
+      operationId: api-casos-idCaso-DecisoesComValores-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: idCaso
+          in: path
+          description: O identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOProcessoDecisao'
         '401':
           description: Unauthorized
           content:
@@ -87336,6 +87729,106 @@ components:
         Descricao:
           type: string
           description: A descrição do contrato
+    DTOCasoDecisao:
+      title: DTOCasoDecisao
+      type: object
+      properties:
+        NomeCliente:
+          type: string
+        TituloCaso:
+          type: string
+        NumeroInterno:
+          type: string
+        NumeroExterno:
+          type: string
+        DataDecisao:
+          type: string
+        DataDecisaoFormatada:
+          type: string
+        Observacao:
+          type: string
+        ValorDeferido:
+          type: number
+        ExitoPerda:
+          type: string
+        Decisao:
+          type: string
+        Encerramento:
+          type: boolean
+        IdCasoDecisao:
+          type: integer
+        IdCaso:
+          type: integer
+    DTODecisao:
+      title: DTODecisao
+      type: object
+      properties:
+        IdDecisao:
+          type: integer
+        IdEscritorio:
+          type: integer
+        Nome:
+          type: string
+    DTOProcessoDecisaoValor:
+      title: DTOProcessoDecisaoValor
+      type: object
+      properties:
+        nrExitoPerda:
+          type: integer
+        nrMoeda:
+          $ref: '#/components/schemas/Moeda'
+        nrMoedaSolicitado:
+          $ref: '#/components/schemas/Moeda'
+        dsJustificativaPedido:
+          type: string
+        nrMoedaContigenciado:
+          $ref: '#/components/schemas/Moeda'
+        vlContigenciado:
+          type: number
+        vlDeferido:
+          type: number
+        IdProcessoExpectativaReivindicacao:
+          type: integer
+        IdProcessoDecisao:
+          type: integer
+        inAlterado:
+          type: boolean
+        IdProcessoDecisaoValor:
+          type: integer
+        vlSolicitado:
+          type: number
+        nrSituacao:
+          type: integer
+    DTOProcessoDecisao:
+      title: DTOProcessoDecisao
+      type: object
+      properties:
+        Valores:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOProcessoDecisaoValor'
+        inDeEncerramento:
+          type: boolean
+        cdParteJuiz:
+          type: integer
+        cdParteAdvAcusacao:
+          type: integer
+        cdParteAdvDefesa:
+          type: integer
+        Observacao:
+          type: string
+        vlDeferido:
+          type: number
+        DataOcorrencia:
+          type: string
+        IdCaso:
+          type: integer
+        Decisao:
+          type: integer
+        nrExitoPerda:
+          type: integer
+        IdCasoDecisao:
+          type: integer
     DTOGastoDespesa:
       title: DTOGastoDespesa
       type: object

@@ -244,7 +244,28 @@ paths:
       $ref: ./paths/cases/contrato/public@api@contratos-get.yaml
 
   # Decisões
-  
+  /api/casos/{idCaso}/Decisoes:
+    get:
+      $ref: './paths/cases/decisoes/public@api@casos@idCaso@Decisoes-get.yaml'
+  /api/casos/num/decisoes:
+    get:
+      $ref: './paths/cases/decisoes/public@api@casos@num@decisoes-get.yaml'
+  /api/Decisoes/tipos:
+    get:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@tipos-get.yaml'
+  /api/Decisoes:
+    post:
+      $ref: './paths/cases/decisoes/public@api@Decisoes-post.yaml'
+  /api/Decisoes/{id}:
+    put:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@id-put.yaml'
+    get:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@id-get.yaml'
+    delete:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
+  /api/casos/{idCaso}/DecisoesComValores:
+    get:
+      $ref: './paths/cases/decisoes/public@api@casos@idCaso@DecisoesComValores-get.yaml'
 
   # Despesas
   /api/despesas/totaldespesasmes:
