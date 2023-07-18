@@ -1,0 +1,12 @@
+title: ObjetoNomeValor
+type: object
+properties:
+  Nome:
+    description: "O nome da propriedade<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    type: string
+  Valor:
+    description: "O valor a ser incluído na propriedade<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    type: string
+required:
+  - Nome
+  - Valor

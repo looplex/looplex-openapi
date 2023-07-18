@@ -274,8 +274,19 @@ paths:
       $ref: './paths/cases/despesa/public@api@despesas@valorKMRodado-get.yaml'
 
   # Expectativa reivindicação
-
-  
+  /api/casos/{idCaso}/Valores:
+    get:
+      $ref: './paths/cases/expectativa_reivindicacao/public@api@casos@idCaso@Valores-get.yaml'
+  /api/casos/{idCaso}/PedidosComHistorico:
+    get:
+      $ref: './paths/cases/expectativa_reivindicacao/public@api@casos@idCaso@PedidosComHistorico-get.yaml'
+  /api/expectativa/{idCaso}/Valores:
+    put:
+      $ref: './paths/cases/expectativa_reivindicacao/public@api@expectativa@idCaso@Valores-put.yaml'
+  /api/expectativa/valores/{idCaso}:
+    get:
+      $ref: './paths/cases/expectativa_reivindicacao/public@api@expectativa@valores@idCaso-get.yaml'
+      
   # Fornecedor
   /api/fornecedores:
     get:

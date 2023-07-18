@@ -3830,84 +3830,6 @@
         }
       }
     },
-    "/api/clientes/{idCliente}/pastas": {
-      "get": {
-        "tags": [
-          "Cliente"
-        ],
-        "summary": "Lista pastas do cliente",
-        "operationId": "api-clientes-idCliente-pastas-get",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Profile"
-          },
-          {
-            "name": "idCliente",
-            "in": "path",
-            "description": "O identificador do cliente",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOPasta"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/contatos/{IDContato}": {
       "get": {
         "tags": [
@@ -5709,6 +5631,318 @@
                 "schema": {
                   "type": "number",
                   "example": 0.5
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{idCaso}/Valores": {
+      "get": {
+        "tags": [
+          "Expectativa reivindicação"
+        ],
+        "summary": "Obtém valores do caso",
+        "operationId": "api-casos-idCaso-Valores-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOValoresDoCaso"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{idCaso}/PedidosComHistorico": {
+      "get": {
+        "tags": [
+          "Expectativa reivindicação"
+        ],
+        "summary": "Listar pedidos com histórico",
+        "operationId": "api-casos-idCaso-PedidosComHistorico-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOValoresComPedidosAtualizados"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/expectativa/{idCaso}/Valores": {
+      "put": {
+        "tags": [
+          "Expectativa reivindicação"
+        ],
+        "summary": "Atualiza valores por caso",
+        "operationId": "api-expectativa-idCaso-Valores-put",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ObjetoNomeValor"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCasoSimples"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/expectativa/valores/{idCaso}": {
+      "get": {
+        "tags": [
+          "Expectativa reivindicação"
+        ],
+        "summary": "Obtém valores do caso inicial",
+        "operationId": "api-expectativa-valores-idCaso-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCaso",
+            "in": "path",
+            "description": "O identificador do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOValoresDoCasoAntigo"
                 }
               }
             }
@@ -15575,27 +15809,6 @@
           }
         }
       },
-      "DTOPasta": {
-        "title": "DTOPasta",
-        "type": "object",
-        "properties": {
-          "IDPasta": {
-            "type": "integer"
-          },
-          "IDEscritorio": {
-            "type": "integer"
-          },
-          "IDCliente": {
-            "type": "integer"
-          },
-          "NumeroDaPasta": {
-            "type": "integer"
-          },
-          "Assunto": {
-            "type": "string"
-          }
-        }
-      },
       "DTOContato": {
         "title": "DTOContato",
         "type": "object",
@@ -16125,6 +16338,243 @@
           "ID": {
             "description": "O identificador do voucher",
             "type": "integer"
+          }
+        }
+      },
+      "DTOValoresDoCaso": {
+        "title": "DTOValoresDoCaso",
+        "type": "object",
+        "properties": {
+          "Risco": {
+            "type": "integer"
+          },
+          "TipoRisco": {
+            "type": "integer"
+          },
+          "ValorDaCausa": {
+            "type": "number"
+          },
+          "MoedaValorDaCausa": {
+            "type": "integer"
+          },
+          "ValorDaCausaAtualizado": {
+            "type": "number"
+          },
+          "MoedaValorDaCausaAtualizado": {
+            "type": "integer"
+          },
+          "ValorPrevisto": {
+            "type": "number"
+          },
+          "MoedaValorPrevisto": {
+            "type": "integer"
+          },
+          "ValorContingencia": {
+            "type": "number"
+          },
+          "ValorContingenciaAtualizado": {
+            "type": "number"
+          },
+          "EditarCamposValoresEObrigacoes": {
+            "type": "boolean"
+          },
+          "MoedaValorContingencia": {
+            "type": "integer"
+          },
+          "Pedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOCasoPedidoSimples"
+            }
+          }
+        }
+      },
+      "DTOPedidoHistorico": {
+        "title": "DTOPedidoHistorico",
+        "type": "object",
+        "properties": {
+          "MoedaSolicitadoText": {
+            "type": "string"
+          },
+          "PorcentagemExitoText": {
+            "type": "string"
+          },
+          "SituacaoText": {
+            "type": "string"
+          },
+          "Situacao": {
+            "type": "integer"
+          },
+          "JustificativaPedido": {
+            "type": "string"
+          },
+          "dtDecisao": {
+            "type": "string"
+          },
+          "PorcentagemExito": {
+            "type": "integer"
+          },
+          "vlContigenciado": {
+            "type": "number"
+          },
+          "MoedaContigenciado": {
+            "type": "integer"
+          },
+          "MoedaDeferido": {
+            "type": "integer"
+          },
+          "MoedaSolicitado": {
+            "type": "integer"
+          },
+          "vlSolicitado": {
+            "type": "number"
+          },
+          "vlDeferido": {
+            "type": "number"
+          },
+          "IdProcessoDecisao": {
+            "type": "integer"
+          },
+          "IdProcessoExpectativaReivindicacao": {
+            "type": "integer"
+          },
+          "dtInclusaoRegistro": {
+            "type": "string"
+          },
+          "IdPedidoHistorico": {
+            "type": "integer"
+          },
+          "MoedaContigenciadoText": {
+            "type": "string"
+          },
+          "MoedaDeferidoText": {
+            "type": "string"
+          },
+          "Observacao": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOPedidoComHistorico": {
+        "title": "DTOPedidoComHistorico",
+        "type": "object",
+        "properties": {
+          "PedidoCausa": {
+            "type": "string"
+          },
+          "RiscoPai": {
+            "type": "integer"
+          },
+          "RiscoPaiText": {
+            "type": "string"
+          },
+          "ValorPrevistoPai": {
+            "type": "number"
+          },
+          "SituacaoPaiText": {
+            "type": "string"
+          },
+          "ValorContingenciadoPai": {
+            "type": "number"
+          },
+          "ValorContingenciadoAtualizado": {
+            "type": "number"
+          },
+          "ValorPrevistoAtualizado": {
+            "type": "number"
+          },
+          "ValorDeferidoPelaUltimaDecisao": {
+            "type": "number"
+          },
+          "MoedaDeferidoPelaUltimaDecisao": {
+            "type": "string"
+          },
+          "Historico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOPedidoHistorico"
+            }
+          },
+          "ValorPrevistoPelaUltimaDecisao": {
+            "type": "number"
+          },
+          "ValorContingenciadoPelaUltimaDecisao": {
+            "type": "number"
+          },
+          "RiscoUltimaDecisao": {
+            "type": "integer"
+          },
+          "RiscoUltimaDecisaoText": {
+            "type": "string"
+          },
+          "SituacaoUltimaDecisao": {
+            "type": "string"
+          },
+          "DataConstituicao": {
+            "type": "string"
+          },
+          "DataVencimento": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOValoresComPedidosAtualizados": {
+        "title": "DTOValoresComPedidosAtualizados",
+        "type": "object",
+        "properties": {
+          "Pedidos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOPedidoComHistorico"
+            }
+          },
+          "vlValorPrevistoAtualizado": {
+            "type": "number"
+          },
+          "vlValorContigenciaAtualizado": {
+            "type": "number"
+          }
+        }
+      },
+      "ObjetoNomeValor": {
+        "title": "ObjetoNomeValor",
+        "type": "object",
+        "properties": {
+          "Nome": {
+            "description": "O nome da propriedade<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "type": "string"
+          },
+          "Valor": {
+            "description": "O valor a ser incluído na propriedade<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "Nome",
+          "Valor"
+        ]
+      },
+      "DTOValoresDoCasoAntigo": {
+        "title": "DTOValoresDoCasoAntigo",
+        "type": "object",
+        "properties": {
+          "Risco": {
+            "type": "string"
+          },
+          "ValorDaCausa": {
+            "type": "string"
+          },
+          "ValorDaCausaAtualizado": {
+            "type": "string"
+          },
+          "ValorPrevisto": {
+            "type": "string"
+          },
+          "ValorContingencia": {
+            "type": "string"
+          },
+          "TotalDosPedidos": {
+            "type": "string"
           }
         }
       },
