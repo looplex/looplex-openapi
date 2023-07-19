@@ -187,7 +187,30 @@ paths:
       $ref: ./paths/cases/categoria/public@api@funcionarios@IdsMin@IdsMax@categorias-get.yaml
 
   # Cliente
-  
+  /api/clientes/todos:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@todos-get.yaml'
+  /api/clientes/ficha:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@ficha-get.yaml'
+  /api/clientes/ficha_mobile:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@ficha_mobile-get.yaml'
+  /api/clientes:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes-get.yaml'
+  /api/clientes/enderecos:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@enderecos-get.yaml'
+  /api/clientes/mobile:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@mobile-get.yaml'
+  /api/clientes/{id}:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@id-get.yaml'
+  /api/clientes/porIds/{idsClientes}:
+    get:
+      $ref: './paths/cases/cliente/public@api@clientes@porIds@idsClientes-get.yaml'
 
   # Contatos
   /api/contatos/{IDContato}:
@@ -221,7 +244,28 @@ paths:
       $ref: ./paths/cases/contrato/public@api@contratos-get.yaml
 
   # Decisões
-  
+  /api/casos/{idCaso}/Decisoes:
+    get:
+      $ref: './paths/cases/decisoes/public@api@casos@idCaso@Decisoes-get.yaml'
+  /api/casos/num/decisoes:
+    get:
+      $ref: './paths/cases/decisoes/public@api@casos@num@decisoes-get.yaml'
+  /api/Decisoes/tipos:
+    get:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@tipos-get.yaml'
+  /api/Decisoes:
+    post:
+      $ref: './paths/cases/decisoes/public@api@Decisoes-post.yaml'
+  /api/Decisoes/{id}:
+    put:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@id-put.yaml'
+    get:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@id-get.yaml'
+    delete:
+      $ref: './paths/cases/decisoes/public@api@Decisoes@idProcessoDecisao-delete.yaml'
+  /api/casos/{idCaso}/DecisoesComValores:
+    get:
+      $ref: './paths/cases/decisoes/public@api@casos@idCaso@DecisoesComValores-get.yaml'
 
   # Despesas
   /api/despesas/totaldespesasmes:
@@ -437,7 +481,24 @@ paths:
       $ref: ./paths/cases/pais/public@api@pais@cidades-get.yaml
 
   # Parte + Parte Papel (Envolvimento das partes)
-  
+  /api/envolvimentos:
+    get:
+      $ref: './paths/cases/partes/public@api@envolvimentos-get.yaml'
+  /api/casos/{idCaso}/Partes:
+    get:
+      $ref: './paths/cases/partes/public@api@casos@idCaso@Partes-get.yaml'
+  /api/Partes:
+    get:
+      $ref: './paths/cases/partes/public@api@Partes-get.yaml'
+  /api/casos/num/partes:
+    get:
+      $ref: './paths/cases/partes/public@api@casos@num@partes-get.yaml'
+  /api/parte:
+    post:
+      $ref: './paths/cases/partes/public@api@parte-post.yaml'
+  /api/Partes/desvincular:
+    delete:
+      $ref: './paths/cases/partes/public@api@Partes@desvincular-delete.yaml'
 
   # Pedidos
   /api/casos/{IDCaso}/Pedidos:
@@ -473,7 +534,33 @@ paths:
       $ref: './paths/cases/produtos/public@api@casos@num@produtos-get.yaml'
 
   # Push + Push Publicação
-  
+  /api/push/publicacoes:
+    get:
+      $ref: './paths/cases/push/public@api@push@publicacoes-get.yaml'
+  /api/push/publicacoes/{id}:
+    get:
+      $ref: './paths/cases/push/public@api@push@publicacoes@id-get.yaml'
+  /api/push/publicacoes/{id}/acoes:
+    get:
+      $ref: './paths/cases/push/public@api@push@publicacoes@id@acoes-get.yaml'
+  /api/push/inclui/publicacoes/{id}/acoes:
+    post:
+      $ref: './paths/cases/push/public@api@push@inclui@publicacoes@id@acoes-post.yaml'
+  /api/push/altera/publicacoes/{id}:
+    put:
+      $ref: './paths/cases/push/public@api@push@altera@publicacoes@id-put.yaml'
+  /api/publicacao/vincula:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@vincula-post.yaml'
+  /api/publicacao/aprova:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@aprova-post.yaml'
+  /api/publicacao/prazo:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@prazo-post.yaml'
+  /api/publicacao/hora:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@hora-post.yaml'
 
   # Tabela de preço
   /api/escritorios/{idEscritorio}/tabelaspreco:
