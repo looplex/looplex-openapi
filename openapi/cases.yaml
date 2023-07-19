@@ -481,7 +481,24 @@ paths:
       $ref: ./paths/cases/pais/public@api@pais@cidades-get.yaml
 
   # Parte + Parte Papel (Envolvimento das partes)
-  
+  /api/envolvimentos:
+    get:
+      $ref: './paths/cases/partes/public@api@envolvimentos-get.yaml'
+  /api/casos/{idCaso}/Partes:
+    get:
+      $ref: './paths/cases/partes/public@api@casos@idCaso@Partes-get.yaml'
+  /api/Partes:
+    get:
+      $ref: './paths/cases/partes/public@api@Partes-get.yaml'
+  /api/casos/num/partes:
+    get:
+      $ref: './paths/cases/partes/public@api@casos@num@partes-get.yaml'
+  /api/parte:
+    post:
+      $ref: './paths/cases/partes/public@api@parte-post.yaml'
+  /api/Partes/desvincular:
+    delete:
+      $ref: './paths/cases/partes/public@api@Partes@desvincular-delete.yaml'
 
   # Pedidos
   /api/casos/{IDCaso}/Pedidos:
