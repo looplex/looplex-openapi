@@ -517,7 +517,33 @@ paths:
       $ref: './paths/cases/produtos/public@api@casos@num@produtos-get.yaml'
 
   # Push + Push Publicação
-  
+  /api/push/publicacoes:
+    get:
+      $ref: './paths/cases/push/public@api@push@publicacoes-get.yaml'
+  /api/push/publicacoes/{id}:
+    get:
+      $ref: './paths/cases/push/public@api@push@publicacoes@id-get.yaml'
+  /api/push/publicacoes/{id}/acoes:
+    get:
+      $ref: './paths/cases/push/public@api@push@publicacoes@id@acoes-get.yaml'
+  /api/push/inclui/publicacoes/{id}/acoes:
+    post:
+      $ref: './paths/cases/push/public@api@push@inclui@publicacoes@id@acoes-post.yaml'
+  /api/push/altera/publicacoes/{id}:
+    put:
+      $ref: './paths/cases/push/public@api@push@altera@publicacoes@id-put.yaml'
+  /api/publicacao/vincula:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@vincula-post.yaml'
+  /api/publicacao/aprova:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@aprova-post.yaml'
+  /api/publicacao/prazo:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@prazo-post.yaml'
+  /api/publicacao/hora:
+    post:
+      $ref: './paths/cases/push/public@api@publicacao@hora-post.yaml'
 
   # Tabela de preço
   /api/escritorios/{idEscritorio}/tabelaspreco:

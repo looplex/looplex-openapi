@@ -89,6 +89,8 @@ tags:
     x-displayName: Pedidos
   - name: Produtos
     x-displayName: Produtos
+  - name: Push
+    x-displayName: Push
   - name: Tabela de preço
     x-displayName: Tabela de preço
   - name: Tabela preço categoria
@@ -145,6 +147,7 @@ x-tagGroups:
       - País
       - Pedidos
       - Produtos
+      - Push
       - Tabela de preço
       - Tabela preço categoria
       - Tarefa
@@ -29616,6 +29619,474 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOProduto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/push/publicacoes:
+    get:
+      tags:
+        - Push
+      summary: Listar publicações por filtro
+      operationId: api-push-publicacoes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: ano
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: mes
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: novos
+          in: query
+          description: '`Default: true`'
+          required: false
+          schema:
+            type: boolean
+        - name: visualizados
+          in: query
+          description: '`Default: true`'
+          required: false
+          schema:
+            type: boolean
+        - name: finalizados
+          in: query
+          description: '`Default: false`'
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOItemPublicacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/push/publicacoes/{id}:
+    get:
+      tags:
+        - Push
+      summary: Obtém publicação por identificador
+      operationId: api-push-publicacoes-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da publicação
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemPublicacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/push/publicacoes/{id}/acoes:
+    get:
+      tags:
+        - Push
+      summary: Listar ações de publicação
+      operationId: api-push-publicacoes-id-acoes-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da publicação
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOAcaoPush'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/push/inclui/publicacoes/{id}/acoes:
+    post:
+      tags:
+        - Push
+      summary: Incluir item de agenda na publicação
+      operationId: api-push-inclui-publicacoes-id-acoes-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da publicação
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOItemAgenda'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/push/altera/publicacoes/{id}:
+    put:
+      tags:
+        - Push
+      summary: Altera status da publicação
+      operationId: api-push-altera-publicacoes-id-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          description: O identificador da publicação
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOItemPublicacao'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemPublicacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/publicacao/vincula:
+    post:
+      tags:
+        - Push
+      summary: Vincular publicações com caso
+      operationId: api-publicacao-vincula-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOVinculoAndamento'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/publicacao/aprova:
+    post:
+      tags:
+        - Push
+      summary: Finalizar publicações
+      operationId: api-publicacao-aprova-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/publicacao/prazo:
+    post:
+      tags:
+        - Push
+      summary: Adicionar prazo com publicação
+      operationId: api-publicacao-prazo-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: cdPublicacao
+          in: query
+          description: O identificador da publicação
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOPrazoPublicacao'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOPrazoPublicacao'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/publicacao/hora:
+    post:
+      tags:
+        - Push
+      summary: Inclui timesheet com publicação
+      operationId: api-publicacao-hora-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: cdPublicacao
+          in: query
+          description: O identificador da publicação
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOPlanilhaHoras'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: true
         '401':
           description: Unauthorized
           content:
@@ -89083,6 +89554,238 @@ components:
           type: string
         IdCaso:
           type: integer
+    StatusItemPublicacao:
+      type: integer
+      example: 1
+      description: |
+        1: Nova
+
+        2: Visualizada
+
+        4: Finalizada
+    SituacaoDeAndamentoPublicacao:
+      type: integer
+      example: 2
+      description: |
+        -2147483648: None
+
+        1: A aprovar
+
+        2: Aprovado
+
+        3: Publicado
+    DTOItemPublicacao:
+      title: DTOItemPublicacao
+      type: object
+      properties:
+        IDItemPublicacao:
+          type: integer
+        DataDePublicacao:
+          type: string
+        Status:
+          $ref: '#/components/schemas/StatusItemPublicacao'
+        Text:
+          type: string
+        IDProcesso:
+          type: integer
+        DataDeDisponibilizacao:
+          type: string
+        IDAutor:
+          type: integer
+        Situacao:
+          $ref: '#/components/schemas/SituacaoDeAndamentoPublicacao'
+        TextContinuacao:
+          type: string
+        IDAndamento:
+          type: integer
+        TipoDePush:
+          $ref: '#/components/schemas/TipoDePush'
+    TipoDeAcao:
+      type: integer
+      example: 2
+      description: |
+        -2147483648: None
+
+        1: Geração de prazo
+
+        2: Geração de atividade externa
+
+        3: Geração de audiência
+
+        4: Lançamento de hora
+
+        5: Geração de tarefa
+
+        6: Marcado como lixo
+
+        7: Finalizar
+    DTOAcaoPush:
+      title: DTOAcaoPush
+      type: object
+      properties:
+        IDAcaoPush:
+          type: integer
+        IDFuncionario:
+          type: integer
+        Tipo:
+          $ref: '#/components/schemas/TipoDeAcao'
+        DataCriacao:
+          type: string
+        IDVinculo:
+          type: integer
+        IDPublicacaoAndamento:
+          type: integer
+    DTOVinculoAndamento:
+      title: DTOVinculoAndamento
+      type: object
+      properties:
+        IDsPublicacao:
+          type: array
+          items:
+            type: integer
+        IDProcesso:
+          description: >-
+            O identificador do processo<br />`Required`<br />- **POST**: A
+            propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT
+            e DELETE**: Preencher com o valor da propriedade já existente.
+          type: integer
+      required:
+        - IDsPublicacao
+        - IDProcesso
+    TipoDeCompromisso:
+      title: TipoDeCompromisso
+      example: 1
+      description: |
+
+        -2147483648: None  
+
+        1: DeTrabalho  
+
+        2: Particular  
+
+        3: Prazo  
+
+        4: Publicacao
+    DTOPrazoPublicacao:
+      title: DTOPrazoPublicacao
+      type: object
+      properties:
+        IDItemAgenda:
+          type: integer
+        IDFuncionarioInclusao:
+          type: integer
+        IDTituloCobranca:
+          type: integer
+        IDFuncionario:
+          type: integer
+        IDFuncionarioExecutor:
+          type: integer
+        SituacaoLembrete:
+          $ref: '#/components/schemas/SituacaoLembrete'
+        Observacoes:
+          type: string
+        Assunto:
+          type: string
+        DataRegistro:
+          type: string
+        DataPublicacao:
+          type: string
+        ClassificacaoDePrazo:
+          type: integer
+        DataRealizacao:
+          type: string
+        Tipo:
+          $ref: '#/components/schemas/TipoDeCompromisso'
+        IDFuncionarioResponsavelCumprimento:
+          type: integer
+    TipoDeTarefa:
+      type: integer
+      example: 2
+      description: |
+        -2147483648: None
+
+        1: Aprimoramento profissional
+
+        2: Horas debitáveis
+
+        3: Horas de relacionamento
+
+        4: Horas não debitáveis
+    SituacaoDaPlanilhaDeHoras:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Aberta
+
+        2: A aprovar
+
+        3: Aprovada
+
+        4: Não aprovada
+    DTOPlanilhaHoras:
+      title: DTOPlanilhaHoras
+      type: object
+      properties:
+        NrLEDESTaskCode:
+          type: string
+        NrLEDESActivityCode:
+          type: string
+        DsSolicitante:
+          type: string
+        CdSolicitante:
+          type: integer
+        IDCliente:
+          type: integer
+        IDProcesso:
+          type: integer
+        IDFuncionario:
+          type: integer
+        NomeFuncionario:
+          type: string
+        Descricao:
+          type: string
+        DataExecucao:
+          type: string
+        TipoDeTarefa:
+          $ref: '#/components/schemas/TipoDeTarefa'
+        QtdMinutos:
+          type: integer
+        IDFuncionarioResponsavel:
+          type: integer
+        IDFuncionarioBeneficiario:
+          type: integer
+        IDFechamentoPlanilhaHoras:
+          type: integer
+        IDRegistroFechamentoContaCliente:
+          type: integer
+        SituacaoDaPlanilha:
+          $ref: '#/components/schemas/SituacaoDaPlanilhaDeHoras'
+        MotivoDaRecusa:
+          type: string
+        IDClassificacaoHorasDebitaveis:
+          type: integer
+        IDClassificacao:
+          type: integer
+        DsClassificacao:
+          type: string
+        Titulo:
+          type: string
+        IDAndamento:
+          type: integer
+        IDArea:
+          type: integer
+        IDContrato:
+          type: integer
+        DataLancamento:
+          type: string
+        InFaturadoPreVersao35:
+          type: boolean
+        IDLancamentoDeHoras:
+          type: integer
+        IsEditable:
+          type: boolean
     DTOTabelaPreco:
       title: DTOTabelaPreco
       type: object
@@ -89435,94 +90138,6 @@ components:
         ClasseCaso:
           type: string
           description: A classe do processo
-    TipoDeTarefa:
-      type: integer
-      example: 2
-      description: |
-        -2147483648: None
-
-        1: Aprimoramento profissional
-
-        2: Horas debitáveis
-
-        3: Horas de relacionamento
-
-        4: Horas não debitáveis
-    SituacaoDaPlanilhaDeHoras:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Aberta
-
-        2: A aprovar
-
-        3: Aprovada
-
-        4: Não aprovada
-    DTOPlanilhaHoras:
-      title: DTOPlanilhaHoras
-      type: object
-      properties:
-        NrLEDESTaskCode:
-          type: string
-        NrLEDESActivityCode:
-          type: string
-        DsSolicitante:
-          type: string
-        CdSolicitante:
-          type: integer
-        IDCliente:
-          type: integer
-        IDProcesso:
-          type: integer
-        IDFuncionario:
-          type: integer
-        NomeFuncionario:
-          type: string
-        Descricao:
-          type: string
-        DataExecucao:
-          type: string
-        TipoDeTarefa:
-          $ref: '#/components/schemas/TipoDeTarefa'
-        QtdMinutos:
-          type: integer
-        IDFuncionarioResponsavel:
-          type: integer
-        IDFuncionarioBeneficiario:
-          type: integer
-        IDFechamentoPlanilhaHoras:
-          type: integer
-        IDRegistroFechamentoContaCliente:
-          type: integer
-        SituacaoDaPlanilha:
-          $ref: '#/components/schemas/SituacaoDaPlanilhaDeHoras'
-        MotivoDaRecusa:
-          type: string
-        IDClassificacaoHorasDebitaveis:
-          type: integer
-        IDClassificacao:
-          type: integer
-        DsClassificacao:
-          type: string
-        Titulo:
-          type: string
-        IDAndamento:
-          type: integer
-        IDArea:
-          type: integer
-        IDContrato:
-          type: integer
-        DataLancamento:
-          type: string
-        InFaturadoPreVersao35:
-          type: boolean
-        IDLancamentoDeHoras:
-          type: integer
-        IsEditable:
-          type: boolean
     LEDESCodes:
       title: LEDESCodes
       type: object
