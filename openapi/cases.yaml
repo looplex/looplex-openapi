@@ -30,8 +30,8 @@ externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: "https://github.com/Rebilly/generator-openapi-repo"
 servers:
-  - url: "https://graph.looplex.com/cases"
-    description: "Looplex Cases Server"
+  - url: "https://apim.looplex.com/cases"
+    description: "Cases Server"
 paths:
 
   # Autenticação

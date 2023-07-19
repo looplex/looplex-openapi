@@ -162,8 +162,8 @@ servers:
     description: Graph server
   - url: https://apim.looplex.com/actions/v1
     description: Actions Server
-  - url: https://graph.looplex.com/cases
-    description: Looplex Cases Server
+  - url: https://apim.looplex.com/cases
+    description: Cases Server
 paths:
   /documents/{docId}/answers:
     get:
