@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Listar executores"
+summary: "Lista executores"
 operationId: api-agenda-executores-get
 # Parâmetros da requisição
 parameters:

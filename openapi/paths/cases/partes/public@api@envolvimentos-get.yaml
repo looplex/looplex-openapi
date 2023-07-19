@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Partes
-summary: "Listar envolvimentos de parte"
+summary: "Lista envolvimentos de parte"
 operationId: api-envolvimentos-get
 # Parâmetros da requisição
 parameters:

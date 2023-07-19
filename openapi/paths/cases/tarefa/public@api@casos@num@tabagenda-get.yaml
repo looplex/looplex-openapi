@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Listar compromissos, prazos e publicações por identificador do caso, numero interno ou numero externo"
+summary: "Lista compromissos, prazos e publicações por identificador do caso, numero interno ou numero externo"
 operationId: api-casos-num-tabagenda-get
 # Parâmetros da requisição
 parameters:

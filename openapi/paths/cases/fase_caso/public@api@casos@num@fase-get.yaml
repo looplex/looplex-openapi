@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Fase do caso
-summary: "Listar fase do caso por identificador do caso, numero interno ou numero externo"
+summary: "Lista fase do caso por identificador do caso, numero interno ou numero externo"
 operationId: api-casos-num-fase-get
 # Parâmetros da requisição
 parameters:

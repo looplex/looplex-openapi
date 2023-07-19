@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Fase do caso
-summary: "Listar a fase por numero do caso"
+summary: "Lista a fase por numero do caso"
 operationId: api-casos-nrSequencia-fase-get
 # Parâmetros da requisição
 parameters:

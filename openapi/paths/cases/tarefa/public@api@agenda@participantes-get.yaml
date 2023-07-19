@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Listar participantes"
+summary: "Lista participantes"
 operationId: api-agenda-participantes-get
 # Parâmetros da requisição
 parameters:

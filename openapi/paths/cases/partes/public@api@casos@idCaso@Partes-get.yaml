@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Partes
-summary: "Listar partes do caso"
+summary: "Lista partes do caso"
 operationId: api-casos-idCaso-Partes-get
 # Parâmetros da requisição
 parameters:

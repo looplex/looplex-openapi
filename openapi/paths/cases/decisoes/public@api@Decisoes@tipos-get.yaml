@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Decisões
-summary: "Listar tipos de decisão"
+summary: "Lista tipos de decisão"
 operationId: api-Decisoes-tipos-get
 # Parâmetros da requisição
 parameters:

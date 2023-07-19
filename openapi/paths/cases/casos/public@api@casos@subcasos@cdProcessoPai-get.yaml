@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Casos
-summary: "Listar os casos por identificador do caso pai"
+summary: "Lista os casos por identificador do caso pai"
 operationId: api-casos-subcasos-cdProcessoPai-get
 # Parâmetros da requisição
 parameters:

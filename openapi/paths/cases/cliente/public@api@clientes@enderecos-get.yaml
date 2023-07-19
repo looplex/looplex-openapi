@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Cliente
-summary: "Listar endereços de cliente"
+summary: "Lista endereços de cliente"
 operationId: api-clientes-enderecos-get
 # Parâmetros da requisição
 parameters:

@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Partes
-summary: "Listar partes por do caso por identificador do caso, numero interno ou numero externo"
+summary: "Lista partes por do caso por identificador do caso, numero interno ou numero externo"
 operationId: api-casos-num-partes-get
 # Parâmetros da requisição
 parameters:
