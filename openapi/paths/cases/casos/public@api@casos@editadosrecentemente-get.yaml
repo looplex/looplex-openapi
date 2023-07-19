@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Casos
-summary: "Listar os casos editados recentemente"
+summary: "Lista os casos editados recentemente"
 operationId: api-casos-editadosrecentemente-get
 # Parâmetros da requisição
 parameters:

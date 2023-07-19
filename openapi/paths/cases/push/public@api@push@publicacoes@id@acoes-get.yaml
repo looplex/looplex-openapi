@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Push
-summary: "Listar ações de publicação"
+summary: "Lista ações de publicação"
 operationId: api-push-publicacoes-id-acoes-get
 # Parâmetros da requisição
 parameters:

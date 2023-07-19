@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Listar status de encerramento de tarefas por tipo da tarefa"
+summary: "Lista status de encerramento de tarefas por tipo da tarefa"
 operationId: api-agenda-status_encerramento-get
 # Parâmetros da requisição
 parameters:

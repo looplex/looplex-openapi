@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Calculo Monetário
-summary: "Listar modelos de Cálculo"
+summary: "Lista modelos de Cálculo"
 operationId: api-CalculoMonetario-Modelos
 # Parâmetros da requisição
 parameters:

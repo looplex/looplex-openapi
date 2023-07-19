@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Cliente
-summary: "Listar todos os clientes"
+summary: "Lista todos os clientes"
 operationId: api-clientes-todos-get
 # Parâmetros da requisição
 parameters:

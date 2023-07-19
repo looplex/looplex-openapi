@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Decisões
-summary: "Listar decisões do caso por identificador do caso, numero interno ou numero externo"
+summary: "Lista decisões do caso por identificador do caso, numero interno ou numero externo"
 operationId: api-casos-num-decisoes-get
 # Parâmetros da requisição
 parameters:

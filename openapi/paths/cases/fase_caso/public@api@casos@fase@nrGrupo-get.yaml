@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Fase do caso
-summary: "Listar as fases por ramo judicial"
+summary: "Lista as fases por ramo judicial"
 operationId: api-casos-fase-nrGrupo-get
 # Parâmetros da requisição
 parameters:

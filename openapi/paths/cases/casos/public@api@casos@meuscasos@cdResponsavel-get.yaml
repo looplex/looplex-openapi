@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Casos
-summary: "Listar os casos em que sou responsável"
+summary: "Lista os casos em que sou responsável"
 operationId: api-casos-meuscasos-cdResponsavel-get
 # Parâmetros da requisição
 parameters:

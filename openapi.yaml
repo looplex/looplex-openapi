@@ -23239,7 +23239,7 @@ paths:
     get:
       tags:
         - Calculo Monetário
-      summary: Listar modelos de Cálculo
+      summary: Lista modelos de Cálculo
       operationId: api-CalculoMonetario-Modelos
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -24215,7 +24215,7 @@ paths:
     get:
       tags:
         - Casos
-      summary: Listar os casos em que sou responsável
+      summary: Lista os casos em que sou responsável
       operationId: api-casos-meuscasos-cdResponsavel-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -24264,7 +24264,7 @@ paths:
     get:
       tags:
         - Casos
-      summary: Listar os casos por identificador do caso pai
+      summary: Lista os casos por identificador do caso pai
       operationId: api-casos-subcasos-cdProcessoPai-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -24313,7 +24313,7 @@ paths:
     get:
       tags:
         - Casos
-      summary: Listar os casos editados recentemente
+      summary: Lista os casos editados recentemente
       operationId: api-casos-editadosrecentemente-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -24489,7 +24489,7 @@ paths:
     get:
       tags:
         - Fase do caso
-      summary: Listar as fases por ramo judicial
+      summary: Lista as fases por ramo judicial
       operationId: api-casos-fase-nrGrupo-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -24537,7 +24537,7 @@ paths:
     get:
       tags:
         - Fase do caso
-      summary: Listar a fase por numero do caso
+      summary: Lista a fase por numero do caso
       operationId: api-casos-nrSequencia-fase-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -24585,7 +24585,7 @@ paths:
       tags:
         - Fase do caso
       summary: >-
-        Listar fase do caso por identificador do caso, numero interno ou numero
+        Lista fase do caso por identificador do caso, numero interno ou numero
         externo
       operationId: api-casos-num-fase-get
       parameters:
@@ -24806,7 +24806,7 @@ paths:
     get:
       tags:
         - Cliente
-      summary: Listar todos os clientes
+      summary: Lista todos os clientes
       operationId: api-clientes-todos-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -25010,7 +25010,7 @@ paths:
     get:
       tags:
         - Cliente
-      summary: Listar endereços de cliente
+      summary: Lista endereços de cliente
       operationId: api-clientes-enderecos-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -25053,7 +25053,7 @@ paths:
     get:
       tags:
         - Cliente
-      summary: Listar clientes por filtro
+      summary: Lista clientes por filtro
       operationId: api-clientes-mobile-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -25167,7 +25167,7 @@ paths:
     get:
       tags:
         - Cliente
-      summary: Listar clientes por identificadores
+      summary: Lista clientes por identificadores
       operationId: api-clientes-porIds-idsClientes-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -25680,7 +25680,7 @@ paths:
     get:
       tags:
         - Decisões
-      summary: Listar decisões do caso
+      summary: Lista decisões do caso
       operationId: api-casos-idCaso-Decisoes-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -25730,7 +25730,7 @@ paths:
       tags:
         - Decisões
       summary: >-
-        Listar decisões do caso por identificador do caso, numero interno ou
+        Lista decisões do caso por identificador do caso, numero interno ou
         numero externo
       operationId: api-casos-num-decisoes-get
       parameters:
@@ -25792,7 +25792,7 @@ paths:
     get:
       tags:
         - Decisões
-      summary: Listar tipos de decisão
+      summary: Lista tipos de decisão
       operationId: api-Decisoes-tipos-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -26816,7 +26816,7 @@ paths:
     get:
       tags:
         - Expectativa reivindicação
-      summary: Listar pedidos com histórico
+      summary: Lista pedidos com histórico
       operationId: api-casos-idCaso-PedidosComHistorico-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -29153,7 +29153,7 @@ paths:
     get:
       tags:
         - Partes
-      summary: Listar envolvimentos de parte
+      summary: Lista envolvimentos de parte
       operationId: api-envolvimentos-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -29211,7 +29211,7 @@ paths:
     get:
       tags:
         - Partes
-      summary: Listar partes do caso
+      summary: Lista partes do caso
       operationId: api-casos-idCaso-Partes-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -29310,7 +29310,7 @@ paths:
       tags:
         - Partes
       summary: >-
-        Listar partes por do caso por identificador do caso, numero interno ou
+        Lista partes por do caso por identificador do caso, numero interno ou
         numero externo
       operationId: api-casos-num-partes-get
       parameters:
@@ -29970,7 +29970,7 @@ paths:
     get:
       tags:
         - Push
-      summary: Listar publicações por filtro
+      summary: Lista publicações por filtro
       operationId: api-push-publicacoes-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -30088,7 +30088,7 @@ paths:
     get:
       tags:
         - Push
-      summary: Listar ações de publicação
+      summary: Lista ações de publicação
       operationId: api-push-publicacoes-id-acoes-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -31131,7 +31131,7 @@ paths:
     get:
       tags:
         - Tarefa
-      summary: Listar executores
+      summary: Lista executores
       operationId: api-agenda-executores-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -31174,7 +31174,7 @@ paths:
     get:
       tags:
         - Tarefa
-      summary: Listar participantes
+      summary: Lista participantes
       operationId: api-agenda-participantes-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -31265,7 +31265,7 @@ paths:
     get:
       tags:
         - Tarefa
-      summary: Listar audiências por identificador do caso
+      summary: Lista audiências por identificador do caso
       operationId: api-casos-idCaso-audiencias-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -31315,7 +31315,7 @@ paths:
       tags:
         - Tarefa
       summary: >-
-        Listar audiências por identificador do caso, numero interno ou numero
+        Lista audiências por identificador do caso, numero interno ou numero
         externo
       operationId: api-casos-num-audiencias-get
       parameters:
@@ -31377,7 +31377,7 @@ paths:
     get:
       tags:
         - Tarefa
-      summary: Listar compromissos, prazos e publicações por identificadores dos casos
+      summary: Lista compromissos, prazos e publicações por identificadores dos casos
       operationId: api-casos-idCaso-tabagenda-get
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -31429,7 +31429,7 @@ paths:
       tags:
         - Tarefa
       summary: >-
-        Listar compromissos, prazos e publicações por identificador do caso,
+        Lista compromissos, prazos e publicações por identificador do caso,
         numero interno ou numero externo
       operationId: api-casos-num-tabagenda-get
       parameters:
@@ -31491,7 +31491,7 @@ paths:
     get:
       tags:
         - Tarefa
-      summary: Listar status de encerramento de tarefas por tipo da tarefa
+      summary: Lista status de encerramento de tarefas por tipo da tarefa
       operationId: api-agenda-status_encerramento-get
       parameters:
         - $ref: '#/components/parameters/Profile'
