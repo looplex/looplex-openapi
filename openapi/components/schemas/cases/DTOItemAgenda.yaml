@@ -25,7 +25,7 @@ properties:
   FuncionarioExecutor: 
     type: integer 
   FuncionarioResponsavel:
-    typ: integer     
+    type: integer     
   FuncionariosParticipantes: 
     example: [10, 20]
     type: array

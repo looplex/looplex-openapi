@@ -6,7 +6,7 @@ operationId: api-Decisoes-idProcessoDecisao-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: idProcessoDecisao
+  - name: id
     in: path
     description: "O identificador da decisão"
     required: true

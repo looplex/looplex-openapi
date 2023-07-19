@@ -5702,7 +5702,7 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "idProcessoDecisao",
+            "name": "id",
             "in": "path",
             "description": "O identificador da decisão",
             "required": true,
@@ -17529,7 +17529,7 @@
             "type": "integer"
           },
           "FuncionarioResponsavel": {
-            "typ": "integer"
+            "type": "integer"
           },
           "FuncionariosParticipantes": {
             "example": [
