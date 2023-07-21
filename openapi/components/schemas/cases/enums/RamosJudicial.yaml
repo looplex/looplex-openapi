@@ -1,0 +1,30 @@
+type: integer
+example: -2147483648
+description: |
+  `O tipo do processo`
+  
+  1: Administrativo
+
+  2: Interno (Consultivo)
+
+  3: Judicial Estadual
+
+  4: Judicial Federal
+
+  5: Judicial Trabalhista
+
+  6: Interno do escritório
+
+  7: Militar Estadual
+
+  8: Eleitoral
+
+  9: Militar da União
+
+  10: Consultivo contrato
+
+  11: Análise Documental
+
+  12: Gestão de Ativos
+
+  13: Societário

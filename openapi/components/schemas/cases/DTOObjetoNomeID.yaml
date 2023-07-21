@@ -1,0 +1,7 @@
+title: DTOObjetoNomeID
+type: object
+properties:
+  Nome:
+    type: string
+  Id:
+    type: integer

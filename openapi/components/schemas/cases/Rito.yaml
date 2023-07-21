@@ -1,0 +1,28 @@
+# Rito (Varas e Foros unificados)
+name: Rito
+type: object
+properties:
+  cdRito:
+    type: integer
+    example: 1
+  cdGrupoRito:
+    type: integer
+    example: 2
+  dsNome:
+    type: string
+    example: "Arrecadação de Coisas Vagas"
+  inEsperaPoloPassivo:
+    type: boolean
+    example: false
+  inAtivo:
+    type: boolean
+    example: true
+  dsPoloAtivo:
+    type: string
+    example: null 
+  dsPoloPassivo:
+    type: string
+    example: null
+  dsPoloTerceiro:
+    type: string
+    example: null

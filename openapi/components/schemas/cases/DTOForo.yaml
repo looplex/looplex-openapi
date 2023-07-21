@@ -1,0 +1,21 @@
+title: DTOForo
+type: object
+properties:
+  cdForo:
+    type: integer
+  cdGrupoForo:
+    type: integer
+  dsNome:
+    type: string
+  cdLocal:
+    type: integer
+  inAtivoInativo:
+    type: boolean
+  cdOrdenacao:
+    type: integer
+  cdUF:
+    type: string
+  Municipio:
+    type: string
+  dsHierarquia:
+    type: string

@@ -1,0 +1,12 @@
+type: integer
+example: 3
+description: |
+  -2147483648: None
+  
+  1: Residencial
+
+  2: Comercial
+
+  3: Celular
+
+  4: Fax

@@ -1,0 +1,13 @@
+title: DTOPedidoCausaGrupo
+type: object
+properties:
+  IdPedidoGrupo:
+    type: integer
+  NomeGrupo:
+    type: string
+  IdEscritorio:
+    type: integer
+  Pedidos:
+    type: array
+    items:
+      $ref: DTOPedidoCausa.yaml

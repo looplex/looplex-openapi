@@ -1,0 +1,7 @@
+title: LoginWeb
+type: object
+properties:
+  domain:
+    type: string
+  email:
+    type: string
