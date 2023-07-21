@@ -1,0 +1,69 @@
+title: DTOCasoSimples
+type: object
+properties:
+  IDCaso:
+    type: integer
+  Titulo:
+    type: string
+  IDCliente:
+    type: integer
+  NomeCliente:
+    type: string
+  NomeResponsavelCaso:
+    type: string
+  IDPasta:
+    type: integer
+  NomePasta:
+    type: string
+  IDContrato:
+    type: integer
+  NomeContrato:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  NumeroLawoffice:
+    type: integer
+  IDCasoPai:
+    type: integer
+  Classe:
+    $ref: enums/ClasseDoCaso.yaml
+  DataDeCriacao:
+    type: string
+  DataDeCriacaoFormatada:
+    type: string
+  Situacao:
+    $ref: enums/SituacaoDoCaso.yaml
+  NomeArea:
+    type: string
+  TipoProcesso:
+    type: string
+  DataUltimaAlteracao:
+    type: string
+  HierarquiaProcesso:
+    type: string
+  PoloAtivo:
+    type: string
+  PoloPassivo:
+    type: string
+  StatusCaso:
+    type: string
+  Coresponsavel:
+    type: array
+    items:
+      $ref: DTOCoresponsavel.yaml
+  FaseDoCaso:
+    type: string
+  ProcessoPai:
+    $ref: DTOCasoSimples.yaml
+  QuantidadeCasosFilho:
+    type: integer
+  IDFornecedor:
+    type: integer
+  PrimeiroPoloAtivo:
+    type: string
+  PrimeiroPoloPassivo:
+    type: string
+  NomeFornecedor:
+    type: string

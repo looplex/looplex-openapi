@@ -1,0 +1,14 @@
+title: DTOObjetoNomeValor
+type: object
+properties:
+  Nome:
+    type: string
+    example: "Propriedade"
+    description: "O nome da propriedade a editar"
+  Valor:
+    type: string
+    example: "Valor a gravar"
+    description: "O novo valor a gravar"
+required: 
+  - Nome
+  - Valor

@@ -1,0 +1,27 @@
+title: DTOTabelaPrecoCategoria
+type: object
+properties:
+  IdCategoria:
+    type: integer
+  IdTabelaPreco:
+    type: integer
+  IdTabelaPrecoCategoria:
+    type: integer
+  NomeCategoria:
+    type: string
+  NomeTabelaPreco:
+    type: string
+  DataVigencia:
+    type: string
+  EhPadrao:
+    type: boolean
+  NumeroMoeda:
+    type: integer
+  NumeroMoedaHoraPadrao:
+    type: integer
+  NumeroMoedaInt:
+    type: integer
+  ValorHora:
+    type: number
+  ValorHoraTrabalhadaPadrao:
+    type: number

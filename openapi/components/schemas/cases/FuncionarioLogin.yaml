@@ -1,0 +1,12 @@
+title: FuncionarioLogin
+type: object
+properties:
+  ID:
+    description: "O identificador do funcionário"
+    type: integer
+  Nome:
+    description: "O nome do funcionário"
+    type: string
+  Domain:
+    description: "O nome do escritório"
+    type: string

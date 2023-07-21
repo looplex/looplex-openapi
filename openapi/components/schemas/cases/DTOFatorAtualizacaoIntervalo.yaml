@@ -1,0 +1,7 @@
+title: DTOFatorAtualizacaoIntervalo
+type: object
+properties:
+  fatorAlto:
+    type: number
+  fatorBaixo:
+    type: number

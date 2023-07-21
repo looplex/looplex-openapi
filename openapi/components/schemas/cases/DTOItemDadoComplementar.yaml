@@ -1,0 +1,23 @@
+title: DTOItemDadoComplementar
+type: object
+properties:
+  IDItemDadoComplementar:    
+    type: integer
+    example: -2147483648
+    description: "`Required / Optional`<br />O identificador da opção da Informação adicional"
+  IDParametroDadoComplementar:
+    type: integer
+    example: -2147483648
+    description: "O identificador da Informação adicional"
+  Texto:    
+    type: string
+    example: "Opção 1"
+    description: "O texto da opção"
+  Valor:    
+    type: string
+    example: "Opção 1"
+    description: "O texto da opção"
+required: 
+  - IDParametroDadoComplementar
+  - Texto
+  - Valor

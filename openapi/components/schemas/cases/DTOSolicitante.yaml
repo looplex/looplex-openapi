@@ -1,0 +1,9 @@
+title: DTOSolicitante
+type: object
+properties:
+  DsNome: 
+    type: string
+    description: "O nome do solicitante"
+  CdSolicitante:
+    type: integer
+    description: "O identificador do solicitante"

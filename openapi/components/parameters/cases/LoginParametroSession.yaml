@@ -1,0 +1,8 @@
+type: object
+properties:
+  escritorio: 
+    type: string
+    description: Nome do escritório
+  token:
+    type: string
+    description: Token obtido no Lawsoft client

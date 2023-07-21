@@ -1,0 +1,63 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: Looplex 365
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
+  contact:
+    name: Developers Looplex
+    email: developer@looplex.com.br
+    url: "https://www.looplex.com.br"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  x-logo:
+    url: "/assets/images/logo.png"
+    href: "/"
+  description: >
+    # Looplex 365
+
+    # Começando
+
+    ...
+servers:
+  - url: "https://apim.looplex.com"
+    description: Looplex 365 Server
+tags:
+  - name: Looplex 365
+    description: Looplex 365 operations
+paths:
+  /looplex365/docass-render:
+    post:
+      $ref: ./paths/looplex365/docass-render.yaml
+  /looplex365/easydocs-render:
+    post:
+      $ref: ./paths/looplex365/easydocs-render.yaml
+  /looplex365/headless-surf:
+    post:
+      $ref: ./paths/looplex365/headless-surf.yaml
+  /looplex365/jsbox:
+    post:
+      $ref: ./paths/looplex365/jsbox.yaml
+  /looplex365/looplex-render:
+    post:
+      $ref: ./paths/looplex365/looplex-render.yaml
+  /looplex365/mjml-render:
+    post:
+      $ref: ./paths/looplex365/mjml-render.yaml
+  /looplex365/mustache-render:
+    post:
+      $ref: ./paths/looplex365/mustache-render.yaml
+  /looplex365/pdf-convert:
+    post:
+      $ref: ./paths/looplex365/pdf-convert.yaml
+  /looplex365/word-convert:
+    post:
+      $ref: ./paths/looplex365/word-convert.yaml
+components:
+  securitySchemes:
+    Subscription-Key:
+      $ref: ./components/securitySchemes/ocp_apim_subscription_key.yaml
+security:
+  -  Subscription-Key: []
+    
+  

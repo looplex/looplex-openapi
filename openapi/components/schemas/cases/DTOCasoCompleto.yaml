@@ -1,0 +1,142 @@
+title: DTOCasoCompleto
+type: object
+properties:
+  CdNoForoVara:
+    type: integer
+  IDRito:
+    type: integer
+  IDFaseProcesso:
+    type: integer  
+  IDArea:
+    type: integer
+  IDForo:
+    type: integer
+  IDsCoResponsaveis:
+    type: array
+    items:
+      type: integer
+  IDFuncionarioResponsavel:
+    type: integer
+  
+  Foro:
+    type: string
+  Rito:
+    type: string
+  Observacao:
+    type: string
+  PolosAtivos:
+    type: string
+  PolosPassivos:
+    type: string
+  
+  FaseProcesso:
+    type: string
+  ComentarioExpectativaDaCausa:
+    type: string  
+  UF:
+    type: string
+  cidade:
+    type: string
+  IBGECode:
+    type: string
+  nrUF:
+    type: integer  
+  Tipo:
+    $ref: enums/RamosJudicial.yaml
+  ExpectativaDeExito:
+    $ref: enums/ExpectavivaReivindicacao.yaml
+  
+  DataDeEntrada:
+    type: string
+  DataDeDistribuicao:
+    type: string
+  DataDeCitacao:
+    type: string
+  DataDeEncerramento:
+    type: string
+  DataPrevistaDeEncerramento:
+    type: string  
+  DataDeEntradaFormatada:
+    type: string
+  DataDeDistribuicaoFormatada:
+    type: string
+  DataDeCitacaoFormatada:
+    type: string
+  DataDeEncerramentoFormatada:
+    type: string
+  DataPrevistaDeEncerramentoFormatada:
+    type: string  
+  DsProcessFlowableId:
+    type: string
+  ExecutionID:
+    type: string
+  Confidencial:
+    type: boolean  
+
+#Herança do DTOCasoSimples
+  IDCaso:
+    type: integer
+  Titulo:
+    type: string
+  IDCliente:
+    type: integer
+  NomeCliente:
+    type: string
+  NomeResponsavelCaso:
+    type: string
+  IDPasta:
+    type: integer
+  NomePasta:
+    type: string
+  IDContrato:
+    type: integer
+  NomeContrato:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  NumeroLawoffice:
+    type: integer
+  IDCasoPai:
+    type: integer
+  Classe:
+    $ref: enums/ClasseDoCaso.yaml
+  DataDeCriacao:
+    type: string
+  DataDeCriacaoFormatada:
+    type: string
+  Situacao:
+    $ref: enums/SituacaoDoCaso.yaml
+  NomeArea:
+    type: string
+  TipoProcesso:
+    type: string
+  DataUltimaAlteracao:
+    type: string
+  HierarquiaProcesso:
+    type: string
+  PoloAtivo:
+    type: string
+  PoloPassivo:
+    type: string
+  StatusCaso:
+    type: string
+  Coresponsavel:
+    type: array
+    items:
+      $ref: DTOCoresponsavel.yaml
+  FaseDoCaso:
+    type: string
+  ProcessoPai:
+    $ref: DTOCasoSimples.yaml
+  QuantidadeCasosFilho:
+    type: integer
+  IDFornecedor:
+    type: integer
+  PrimeiroPoloAtivo:
+    type: string
+  PrimeiroPoloPassivo:
+    type: string
+  NomeFornecedor:
+    type: string

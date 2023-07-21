@@ -1,0 +1,10 @@
+tags:
+  - Looplex 365
+summary: PDF Converter
+description: ...
+operationId: pdf-converter
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

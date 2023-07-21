@@ -1,0 +1,11 @@
+title: DTOIndiceMonetarioDados
+type: object
+properties:
+  Id:
+    type: integer
+  IdIndiceMonetario:
+    type: integer
+  DataCorrecao:
+    type: string    
+  ValorCorrecao:
+    type: number

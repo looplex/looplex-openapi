@@ -1,0 +1,27 @@
+title: DTOCasoPedidoSimples
+type: object
+properties:
+  Risco:
+    type: integer
+  ValorPrevisto:
+    type: number
+  ValorContingencia:
+    type: number
+  Nome:
+    type: string
+  Situacao:
+    type: integer
+  IdProcessoExpectativaReivindicacao:
+    type: integer
+  IdPedidoCausa:
+    type: integer
+  Justificativa:
+    type: string
+  MoedaValorPrevisto:
+    $ref: enums/Moeda.yaml
+  MoedaValorContingenciado:
+    $ref: enums/Moeda.yaml
+  DataConstituicao:
+    type: string
+  DataVencimento:
+    type: string
