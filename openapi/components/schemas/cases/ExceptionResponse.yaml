@@ -1,8 +1,8 @@
 type: object
 properties:
-  Message: 
+  message: 
     type: string
-    description: "Tipo do Erro"
-  ExceptionMessage: 
+    description: "Status Code do erro"
+  exceptionMessage: 
     type: string
     description: "Descrição do erro"

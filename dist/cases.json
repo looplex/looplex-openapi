@@ -16428,11 +16428,11 @@
       "ExceptionResponse": {
         "type": "object",
         "properties": {
-          "Message": {
+          "message": {
             "type": "string",
-            "description": "Tipo do Erro"
+            "description": "Status Code do erro"
           },
-          "ExceptionMessage": {
+          "exceptionMessage": {
             "type": "string",
             "description": "Descrição do erro"
           }
