@@ -156,6 +156,9 @@ paths:
   /api/casos/editadosrecentemente:
     get:
       $ref: './paths/cases/casos/public@api@casos@editadosrecentemente-get.yaml'
+  /api/render/dados:
+    get:
+      $ref: './paths/cases/casos/public@api@render@dados-get.yaml'
 
   # Fase caso
   /api/fase:
