@@ -21,6 +21,8 @@ properties:
           type: string
         numero_caso_pai:
           type: integer
+        id:
+          type: integer
         numero:
           type: integer
         area: 
