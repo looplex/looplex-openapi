@@ -3117,6 +3117,170 @@
         }
       }
     },
+    "/api/render/dados": {
+      "get": {
+        "tags": [
+          "Casos"
+        ],
+        "summary": "Obtém JSON de casos por filtro",
+        "operationId": "api-render-dados-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "listarTimesheet",
+            "in": "query",
+            "description": "Listar lançamentos de hora?<br />`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "listarGarantias",
+            "in": "query",
+            "description": "Listar garantias?<br />`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "listarPedidos",
+            "in": "query",
+            "description": "Listar pedidos?<br />`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "listarAndamentos",
+            "in": "query",
+            "description": "Listar andamentos?<br />`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "listarAndamentosDeUsoInterno",
+            "in": "query",
+            "description": "Listar andamentos de uso interno?<br />`Default: false`",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dataInicialAndamento",
+            "in": "query",
+            "description": "A data incial de pesquisa de andamentos<br />`Default: null`",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataFinalAndamento",
+            "in": "query",
+            "description": "A data final de pesquisa de andamentos<br />`Default: null`",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idsCasos",
+            "in": "query",
+            "example": "[100, 200]",
+            "description": "Os identificadores dos casos",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "name": "quantidadeUltimosAndamentos",
+            "in": "query",
+            "description": "A quantidade de andamentos recentes a listar<br />`Default: 0`",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "tiposDeAndamento",
+            "in": "query",
+            "example": "['automatico', 'manual']",
+            "description": "Os tipos de andamento a incluir na resposta<br />`Default null`<br />**Tipos disponíveis:** `'planilha_de_horas'`, `'push_de_publicação'`, `'push_de_andamento'`, `'outlook'`, `'automatico'`, `'manual'`",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTODadosJsonRender"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/fase": {
       "get": {
         "tags": [
@@ -16430,7 +16594,7 @@
         "properties": {
           "Message": {
             "type": "string",
-            "description": "Tipo do Erro"
+            "description": "Erro"
           },
           "ExceptionMessage": {
             "type": "string",
@@ -17222,7 +17386,22 @@
         "title": "DTOCasoCompleto",
         "type": "object",
         "properties": {
-          "CdNoForoVara": {
+          "IDCaso": {
+            "type": "integer"
+          },
+          "IDCasoPai": {
+            "type": "integer"
+          },
+          "IDCliente": {
+            "type": "integer"
+          },
+          "IDFornecedor": {
+            "type": "integer"
+          },
+          "IDPasta": {
+            "type": "integer"
+          },
+          "IDContrato": {
             "type": "integer"
           },
           "IDRito": {
@@ -17244,6 +17423,9 @@
             }
           },
           "IDFuncionarioResponsavel": {
+            "type": "integer"
+          },
+          "CdNoForoVara": {
             "type": "integer"
           },
           "Foro": {
@@ -17285,6 +17467,9 @@
           "ExpectativaDeExito": {
             "$ref": "#/components/schemas/ExpectavivaReivindicacao"
           },
+          "DataDeCriacao": {
+            "type": "string"
+          },
           "DataDeEntrada": {
             "type": "string"
           },
@@ -17298,6 +17483,9 @@
             "type": "string"
           },
           "DataPrevistaDeEncerramento": {
+            "type": "string"
+          },
+          "DataDeCriacaoFormatada": {
             "type": "string"
           },
           "DataDeEntradaFormatada": {
@@ -17324,29 +17512,20 @@
           "Confidencial": {
             "type": "boolean"
           },
-          "IDCaso": {
-            "type": "integer"
-          },
           "Titulo": {
             "type": "string"
           },
-          "IDCliente": {
-            "type": "integer"
-          },
           "NomeCliente": {
+            "type": "string"
+          },
+          "NomeFornecedor": {
             "type": "string"
           },
           "NomeResponsavelCaso": {
             "type": "string"
           },
-          "IDPasta": {
-            "type": "integer"
-          },
           "NomePasta": {
             "type": "string"
-          },
-          "IDContrato": {
-            "type": "integer"
           },
           "NomeContrato": {
             "type": "string"
@@ -17360,17 +17539,8 @@
           "NumeroLawoffice": {
             "type": "integer"
           },
-          "IDCasoPai": {
-            "type": "integer"
-          },
           "Classe": {
             "$ref": "#/components/schemas/ClasseDoCaso"
-          },
-          "DataDeCriacao": {
-            "type": "string"
-          },
-          "DataDeCriacaoFormatada": {
-            "type": "string"
           },
           "Situacao": {
             "$ref": "#/components/schemas/SituacaoDoCaso"
@@ -17411,16 +17581,10 @@
           "QuantidadeCasosFilho": {
             "type": "integer"
           },
-          "IDFornecedor": {
-            "type": "integer"
-          },
           "PrimeiroPoloAtivo": {
             "type": "string"
           },
           "PrimeiroPoloPassivo": {
-            "type": "string"
-          },
-          "NomeFornecedor": {
             "type": "string"
           }
         }
@@ -18205,6 +18369,728 @@
           },
           "IDFornecedor": {
             "type": "integer"
+          }
+        }
+      },
+      "DTODadosJsonRender": {
+        "type": "object",
+        "properties": {
+          "logo": {
+            "description": "logotipo",
+            "type": "string"
+          },
+          "caso": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "tipo": {
+                  "type": "string"
+                },
+                "situacao": {
+                  "type": "string"
+                },
+                "classe": {
+                  "type": "string"
+                },
+                "titulo": {
+                  "type": "string"
+                },
+                "numero_externo": {
+                  "type": "string"
+                },
+                "numero_interno": {
+                  "type": "string"
+                },
+                "numero_caso_pai": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "numero": {
+                  "type": "integer"
+                },
+                "area": {
+                  "type": "string"
+                },
+                "rito": {
+                  "type": "string"
+                },
+                "segundo_numero": {
+                  "type": "string"
+                },
+                "anotacoes_segundo_numero": {
+                  "type": "string"
+                },
+                "responsavel": {
+                  "type": "string"
+                },
+                "filial": {
+                  "type": "string"
+                },
+                "fase": {
+                  "type": "string"
+                },
+                "data_criacao": {
+                  "type": "string"
+                },
+                "data_de_entrada": {
+                  "type": "string"
+                },
+                "data_de_distribuicao": {
+                  "type": "string"
+                },
+                "data_prevista_de_encerramento": {
+                  "type": "string"
+                },
+                "data_de_encerramento": {
+                  "type": "string"
+                },
+                "motivo_encerramento": {
+                  "type": "string"
+                },
+                "comentario_encerramento": {
+                  "type": "string"
+                },
+                "observacoes": {
+                  "type": "string"
+                },
+                "envolvimento_cliente": {
+                  "type": "string"
+                },
+                "natureza": {
+                  "type": "string"
+                },
+                "produto": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "risco": {
+                  "type": "string"
+                },
+                "nome_juiz": {
+                  "type": "string"
+                },
+                "pasta": {
+                  "properties": {
+                    "numero": {
+                      "type": "integer"
+                    },
+                    "titulo": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "contrato": {
+                  "properties": {
+                    "numero": {
+                      "type": "integer"
+                    },
+                    "nome": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "valor": {
+                  "properties": {
+                    "inicial_da_causa": {
+                      "type": "integer"
+                    },
+                    "previsto_da_causa": {
+                      "type": "integer"
+                    },
+                    "contingenciado": {
+                      "type": "integer"
+                    },
+                    "previsto_da_causa_atualizado": {
+                      "type": "integer"
+                    },
+                    "contingenciado_atualizado": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "hierarquia_consolidada": {
+                  "type": "string"
+                },
+                "hierarquia": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "dados_complementares": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cliente": {
+                  "properties": {
+                    "tipo": {
+                      "type": "string",
+                      "description": "pessoa_fisica|pessoa_juridica"
+                    },
+                    "nome": {
+                      "type": "string",
+                      "description": "(em caso de pessoa física)"
+                    },
+                    "apelido": {
+                      "type": "string",
+                      "description": "(em caso de pessoa física)"
+                    },
+                    "rg": {
+                      "type": "string",
+                      "description": "(em caso de pessoa física)"
+                    },
+                    "aniversario": {
+                      "type": "string",
+                      "description": "(em caso de pessoa física)"
+                    },
+                    "razao_social": {
+                      "type": "string",
+                      "description": "(em caso de pessoa jurídica)"
+                    },
+                    "nome_fantasia": {
+                      "type": "string",
+                      "description": "(em caso de pessoa jurídica)"
+                    },
+                    "inscricao_estadual": {
+                      "type": "string",
+                      "description": "(em caso de pessoa jurídica)"
+                    },
+                    "inscricao_municipal": {
+                      "type": "string"
+                    },
+                    "cpf_cnpj": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "ramo_de_atividade": {
+                      "type": "string"
+                    },
+                    "grupo": {
+                      "type": "string"
+                    },
+                    "gerente_de_conta": {
+                      "type": "string"
+                    },
+                    "telefones": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "codigo_pais": {
+                            "type": "string"
+                          },
+                          "ddd": {
+                            "type": "string"
+                          },
+                          "numero": {
+                            "type": "string"
+                          },
+                          "ramal": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "enderecos": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "logradouro": {
+                            "type": "string"
+                          },
+                          "numero": {
+                            "type": "integer"
+                          },
+                          "complemento": {
+                            "type": "string"
+                          },
+                          "pais": {
+                            "type": "string"
+                          },
+                          "estado": {
+                            "type": "string"
+                          },
+                          "cidade": {
+                            "type": "string"
+                          },
+                          "cep": {
+                            "type": "string"
+                          },
+                          "idioma": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "contatos": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "nome": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "telefones": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "codigo_pais": {
+                                  "type": "integer"
+                                },
+                                "ddd": {
+                                  "type": "integer"
+                                },
+                                "numero": {
+                                  "type": "string"
+                                },
+                                "ramal": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          },
+                          "enderecos": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "logradouro": {
+                                  "type": "string"
+                                },
+                                "numero": {
+                                  "type": "integer"
+                                },
+                                "complemento": {
+                                  "type": "string"
+                                },
+                                "pais": {
+                                  "type": "string"
+                                },
+                                "estado": {
+                                  "type": "string"
+                                },
+                                "cidade": {
+                                  "type": "string"
+                                },
+                                "cep": {
+                                  "type": "string"
+                                },
+                                "idioma": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "partes_ativas": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "polo": {
+                        "type": "string"
+                      },
+                      "nome": {
+                        "type": "string"
+                      },
+                      "cpf_cnpj": {
+                        "type": "string"
+                      },
+                      "nome_advogado": {
+                        "type": "string"
+                      },
+                      "escritorio_advogado": {
+                        "type": "string"
+                      },
+                      "oab_advogado": {
+                        "type": "string"
+                      },
+                      "regime_de_contratacao": {
+                        "type": "string"
+                      },
+                      "data_de_admissao": {
+                        "type": "string"
+                      },
+                      "data_de_demissao": {
+                        "type": "string"
+                      },
+                      "cargo": {
+                        "type": "string"
+                      },
+                      "area": {
+                        "type": "string"
+                      },
+                      "departamento": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "partes_ativas_consolidadas": {
+                  "type": "string"
+                },
+                "partes_passivas": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "polo": {
+                        "type": "string"
+                      },
+                      "nome": {
+                        "type": "string"
+                      },
+                      "cpf_cnpj": {
+                        "type": "string"
+                      },
+                      "nome_advogado": {
+                        "type": "string"
+                      },
+                      "escritorio_advogado": {
+                        "type": "string"
+                      },
+                      "oab_advogado": {
+                        "type": "string"
+                      },
+                      "regime_de_contratacao": {
+                        "type": "string"
+                      },
+                      "data_de_admissao": {
+                        "type": "string"
+                      },
+                      "data_de_demissao": {
+                        "type": "string"
+                      },
+                      "cargo": {
+                        "type": "string"
+                      },
+                      "area": {
+                        "type": "string"
+                      },
+                      "departamento": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "partes_passivas_consolidadas": {
+                  "type": "string"
+                },
+                "andamentos": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "data": {
+                        "type": "string"
+                      },
+                      "descricao": {
+                        "type": "string"
+                      },
+                      "autor": {
+                        "type": "string"
+                      },
+                      "data_inclusao": {
+                        "type": "string"
+                      },
+                      "classificacao": {
+                        "type": "string"
+                      },
+                      "modelo": {
+                        "type": "string"
+                      },
+                      "uso_interno": {
+                        "type": "string"
+                      },
+                      "tipo_classificacao_automatica": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "pedidos": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "descricao": {
+                        "type": "string"
+                      },
+                      "valor_previsto": {
+                        "type": "integer"
+                      },
+                      "valor_previsto_atualizado": {
+                        "type": "integer"
+                      },
+                      "valor_contingenciado": {
+                        "type": "integer"
+                      },
+                      "valor_contingenciado_atualizado": {
+                        "type": "integer"
+                      },
+                      "risco": {
+                        "type": "string"
+                      },
+                      "situacao": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "soma_pedidos": {
+                  "type": "integer"
+                },
+                "garantias": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "nome": {
+                        "type": "string"
+                      },
+                      "data_ultima_atualizacao": {
+                        "type": "string"
+                      },
+                      "valor": {
+                        "type": "integer"
+                      },
+                      "valor_atualizado": {
+                        "type": "integer"
+                      },
+                      "data_deposito": {
+                        "type": "string"
+                      },
+                      "identificacao": {
+                        "type": "string"
+                      },
+                      "observacao": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "soma_garantias": {
+                  "type": "integer"
+                },
+                "valores_apurados": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "data": {
+                        "type": "string"
+                      },
+                      "valor": {
+                        "type": "integer"
+                      },
+                      "pedido": {
+                        "type": "string"
+                      },
+                      "motivo": {
+                        "type": "string"
+                      },
+                      "observacao": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "decisoes": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "decisao": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "string"
+                      },
+                      "descricao": {
+                        "type": "string"
+                      },
+                      "valor_deferido": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "corresponsaveis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "horas": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "profissional_executor": {
+                        "type": "string"
+                      },
+                      "profissional_lancador": {
+                        "type": "string"
+                      },
+                      "classificacao": {
+                        "type": "string"
+                      },
+                      "area": {
+                        "type": "string"
+                      },
+                      "data_execucao": {
+                        "type": "string"
+                      },
+                      "data_lancamento": {
+                        "type": "string"
+                      },
+                      "tempo": {
+                        "type": "string"
+                      },
+                      "cliente": {
+                        "properties": {
+                          "numero": {
+                            "type": "integer"
+                          },
+                          "nome": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "contrato": {
+                        "properties": {
+                          "numero": {
+                            "type": "integer"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "caso": {
+                        "properties": {
+                          "numero": {
+                            "type": "integer"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "titulo": {
+                        "type": "string"
+                      },
+                      "descricao": {
+                        "type": "string"
+                      },
+                      "solicitante": {
+                        "type": "string"
+                      },
+                      "activity_code": {
+                        "type": "string"
+                      },
+                      "task_code": {
+                        "type": "string"
+                      },
+                      "categoria_profissional": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "agenda": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "tipo": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "string"
+                      },
+                      "data_limite": {
+                        "type": "string"
+                      },
+                      "hora": {
+                        "type": "string"
+                      },
+                      "hora_limite": {
+                        "type": "string"
+                      },
+                      "titulo": {
+                        "type": "string"
+                      },
+                      "descricao": {
+                        "type": "string"
+                      },
+                      "delegante": {
+                        "type": "string"
+                      },
+                      "executor": {
+                        "type": "string"
+                      },
+                      "local": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "data_conclusao": {
+                        "type": "string"
+                      },
+                      "observacao_conclusao": {
+                        "type": "string"
+                      },
+                      "classificacao_conclusao": {
+                        "type": "string"
+                      },
+                      "participantes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "subtarefas": {
+                        "type": "array",
+                        "items": {
+                          "properties": {
+                            "data": {
+                              "type": "string"
+                            },
+                            "titulo": {
+                              "type": "string"
+                            },
+                            "executor": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            },
+                            "data_conclusao": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "caso": {
+                        "properties": {
+                          "numero": {
+                            "type": "integer"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
