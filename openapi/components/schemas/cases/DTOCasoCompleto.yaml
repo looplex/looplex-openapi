@@ -1,7 +1,17 @@
 title: DTOCasoCompleto
 type: object
 properties:
-  CdNoForoVara:
+  IDCaso:
+    type: integer
+  IDCasoPai:
+    type: integer
+  IDCliente:
+    type: integer
+  IDFornecedor:
+    type: integer
+  IDPasta:
+    type: integer
+  IDContrato:
     type: integer
   IDRito:
     type: integer
@@ -17,7 +27,8 @@ properties:
       type: integer
   IDFuncionarioResponsavel:
     type: integer
-  
+  CdNoForoVara:
+    type: integer
   Foro:
     type: string
   Rito:
@@ -28,7 +39,6 @@ properties:
     type: string
   PolosPassivos:
     type: string
-  
   FaseProcesso:
     type: string
   ComentarioExpectativaDaCausa:
@@ -45,7 +55,8 @@ properties:
     $ref: enums/RamosJudicial.yaml
   ExpectativaDeExito:
     $ref: enums/ExpectavivaReivindicacao.yaml
-  
+  DataDeCriacao:
+    type: string
   DataDeEntrada:
     type: string
   DataDeDistribuicao:
@@ -56,6 +67,8 @@ properties:
     type: string
   DataPrevistaDeEncerramento:
     type: string  
+  DataDeCriacaoFormatada:
+    type: string
   DataDeEntradaFormatada:
     type: string
   DataDeDistribuicaoFormatada:
@@ -71,25 +84,17 @@ properties:
   ExecutionID:
     type: string
   Confidencial:
-    type: boolean  
-
-#Herança do DTOCasoSimples
-  IDCaso:
-    type: integer
+    type: boolean
   Titulo:
     type: string
-  IDCliente:
-    type: integer
   NomeCliente:
+    type: string
+  NomeFornecedor:
     type: string
   NomeResponsavelCaso:
     type: string
-  IDPasta:
-    type: integer
   NomePasta:
     type: string
-  IDContrato:
-    type: integer
   NomeContrato:
     type: string
   NumeroInterno:
@@ -98,14 +103,8 @@ properties:
     type: string
   NumeroLawoffice:
     type: integer
-  IDCasoPai:
-    type: integer
   Classe:
     $ref: enums/ClasseDoCaso.yaml
-  DataDeCriacao:
-    type: string
-  DataDeCriacaoFormatada:
-    type: string
   Situacao:
     $ref: enums/SituacaoDoCaso.yaml
   NomeArea:
@@ -132,11 +131,7 @@ properties:
     $ref: DTOCasoSimples.yaml
   QuantidadeCasosFilho:
     type: integer
-  IDFornecedor:
-    type: integer
   PrimeiroPoloAtivo:
     type: string
   PrimeiroPoloPassivo:
-    type: string
-  NomeFornecedor:
     type: string
