@@ -86258,7 +86258,17 @@ components:
       title: DTOCasoCompleto
       type: object
       properties:
-        CdNoForoVara:
+        IDCaso:
+          type: integer
+        IDCasoPai:
+          type: integer
+        IDCliente:
+          type: integer
+        IDFornecedor:
+          type: integer
+        IDPasta:
+          type: integer
+        IDContrato:
           type: integer
         IDRito:
           type: integer
@@ -86273,6 +86283,8 @@ components:
           items:
             type: integer
         IDFuncionarioResponsavel:
+          type: integer
+        CdNoForoVara:
           type: integer
         Foro:
           type: string
@@ -86300,6 +86312,8 @@ components:
           $ref: '#/components/schemas/RamosJudicial'
         ExpectativaDeExito:
           $ref: '#/components/schemas/ExpectavivaReivindicacao'
+        DataDeCriacao:
+          type: string
         DataDeEntrada:
           type: string
         DataDeDistribuicao:
@@ -86309,6 +86323,8 @@ components:
         DataDeEncerramento:
           type: string
         DataPrevistaDeEncerramento:
+          type: string
+        DataDeCriacaoFormatada:
           type: string
         DataDeEntradaFormatada:
           type: string
@@ -86326,22 +86342,16 @@ components:
           type: string
         Confidencial:
           type: boolean
-        IDCaso:
-          type: integer
         Titulo:
           type: string
-        IDCliente:
-          type: integer
         NomeCliente:
+          type: string
+        NomeFornecedor:
           type: string
         NomeResponsavelCaso:
           type: string
-        IDPasta:
-          type: integer
         NomePasta:
           type: string
-        IDContrato:
-          type: integer
         NomeContrato:
           type: string
         NumeroInterno:
@@ -86350,14 +86360,8 @@ components:
           type: string
         NumeroLawoffice:
           type: integer
-        IDCasoPai:
-          type: integer
         Classe:
           $ref: '#/components/schemas/ClasseDoCaso'
-        DataDeCriacao:
-          type: string
-        DataDeCriacaoFormatada:
-          type: string
         Situacao:
           $ref: '#/components/schemas/SituacaoDoCaso'
         NomeArea:
@@ -86384,13 +86388,9 @@ components:
           $ref: '#/components/schemas/DTOCasoSimples'
         QuantidadeCasosFilho:
           type: integer
-        IDFornecedor:
-          type: integer
         PrimeiroPoloAtivo:
           type: string
         PrimeiroPoloPassivo:
-          type: string
-        NomeFornecedor:
           type: string
     PoloLawOffice:
       type: integer

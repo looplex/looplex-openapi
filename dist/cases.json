@@ -17386,7 +17386,22 @@
         "title": "DTOCasoCompleto",
         "type": "object",
         "properties": {
-          "CdNoForoVara": {
+          "IDCaso": {
+            "type": "integer"
+          },
+          "IDCasoPai": {
+            "type": "integer"
+          },
+          "IDCliente": {
+            "type": "integer"
+          },
+          "IDFornecedor": {
+            "type": "integer"
+          },
+          "IDPasta": {
+            "type": "integer"
+          },
+          "IDContrato": {
             "type": "integer"
           },
           "IDRito": {
@@ -17408,6 +17423,9 @@
             }
           },
           "IDFuncionarioResponsavel": {
+            "type": "integer"
+          },
+          "CdNoForoVara": {
             "type": "integer"
           },
           "Foro": {
@@ -17449,6 +17467,9 @@
           "ExpectativaDeExito": {
             "$ref": "#/components/schemas/ExpectavivaReivindicacao"
           },
+          "DataDeCriacao": {
+            "type": "string"
+          },
           "DataDeEntrada": {
             "type": "string"
           },
@@ -17462,6 +17483,9 @@
             "type": "string"
           },
           "DataPrevistaDeEncerramento": {
+            "type": "string"
+          },
+          "DataDeCriacaoFormatada": {
             "type": "string"
           },
           "DataDeEntradaFormatada": {
@@ -17488,29 +17512,20 @@
           "Confidencial": {
             "type": "boolean"
           },
-          "IDCaso": {
-            "type": "integer"
-          },
           "Titulo": {
             "type": "string"
           },
-          "IDCliente": {
-            "type": "integer"
-          },
           "NomeCliente": {
+            "type": "string"
+          },
+          "NomeFornecedor": {
             "type": "string"
           },
           "NomeResponsavelCaso": {
             "type": "string"
           },
-          "IDPasta": {
-            "type": "integer"
-          },
           "NomePasta": {
             "type": "string"
-          },
-          "IDContrato": {
-            "type": "integer"
           },
           "NomeContrato": {
             "type": "string"
@@ -17524,17 +17539,8 @@
           "NumeroLawoffice": {
             "type": "integer"
           },
-          "IDCasoPai": {
-            "type": "integer"
-          },
           "Classe": {
             "$ref": "#/components/schemas/ClasseDoCaso"
-          },
-          "DataDeCriacao": {
-            "type": "string"
-          },
-          "DataDeCriacaoFormatada": {
-            "type": "string"
           },
           "Situacao": {
             "$ref": "#/components/schemas/SituacaoDoCaso"
@@ -17575,16 +17581,10 @@
           "QuantidadeCasosFilho": {
             "type": "integer"
           },
-          "IDFornecedor": {
-            "type": "integer"
-          },
           "PrimeiroPoloAtivo": {
             "type": "string"
           },
           "PrimeiroPoloPassivo": {
-            "type": "string"
-          },
-          "NomeFornecedor": {
             "type": "string"
           }
         }
