@@ -1817,6 +1817,7 @@
           "Casos"
         ],
         "summary": "Edita informações do caso",
+        "description": "**As propriedades que podem ser editadas são as listadas na resposta 200 e devem ser enviadas com o respectivo nome**.<br />`Observação: Nem todas as propriedades podem ser atualizadas/editadas.`",
         "operationId": "api-casos-edit-put",
         "parameters": [
           {
@@ -17387,43 +17388,68 @@
         "type": "object",
         "properties": {
           "IDCaso": {
-            "type": "integer"
+            "type": "integer",
+            "example": 10,
+            "description": "O identificador do caso"
           },
           "IDCasoPai": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador do caso pai. <br />`-2147483648 se não houver`"
           },
           "IDCliente": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador do cliente"
           },
           "IDFornecedor": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador do fornecedor"
           },
           "IDPasta": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador da pasta"
           },
           "IDContrato": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador do contrato"
           },
           "IDRito": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador do rito"
           },
           "IDFaseProcesso": {
             "type": "integer"
           },
           "IDArea": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador da área"
           },
           "IDForo": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador do foro"
+          },
+          "IDFuncionarioResponsavel": {
+            "type": "integer",
+            "example": 1,
+            "description": "O identificador do funcionário responsável"
           },
           "IDsCoResponsaveis": {
             "type": "array",
+            "example": [
+              1,
+              2
+            ],
+            "description": "Os identificadores dos funcionários corresponsáveis",
             "items": {
               "type": "integer"
             }
-          },
-          "IDFuncionarioResponsavel": {
-            "type": "integer"
           },
           "CdNoForoVara": {
             "type": "integer"
@@ -17435,7 +17461,8 @@
             "type": "string"
           },
           "Observacao": {
-            "type": "string"
+            "type": "string",
+            "description": "Observações do caso"
           },
           "PolosAtivos": {
             "type": "string"
@@ -17522,19 +17549,29 @@
             "type": "string"
           },
           "NomeResponsavelCaso": {
-            "type": "string"
+            "type": "string",
+            "example": "Responsável pelo caso",
+            "description": "O responsável pelo caso"
           },
           "NomePasta": {
-            "type": "string"
+            "type": "string",
+            "example": "Nome da pasta",
+            "description": "O nome da pasta"
           },
           "NomeContrato": {
-            "type": "string"
+            "type": "string",
+            "example": "Nome do contrato",
+            "description": "O nome do contrato"
           },
           "NumeroInterno": {
-            "type": "string"
+            "type": "string",
+            "example": "1020.1020.4050",
+            "description": "O numero interno do caso"
           },
           "NumeroExterno": {
-            "type": "string"
+            "type": "string",
+            "example": "1234561020",
+            "description": "O numero externo do caso"
           },
           "NumeroLawoffice": {
             "type": "integer"
@@ -18243,7 +18280,7 @@
         "properties": {
           "Nome": {
             "type": "string",
-            "example": "Propriedade",
+            "example": "Nome da propriedade",
             "description": "O nome da propriedade a editar"
           },
           "Valor": {

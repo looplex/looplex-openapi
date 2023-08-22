@@ -3,7 +3,7 @@ type: object
 properties:
   Nome:
     type: string
-    example: "Propriedade"
+    example: "Nome da propriedade"
     description: "O nome da propriedade a editar"
   Valor:
     type: string
