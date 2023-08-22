@@ -2,6 +2,8 @@
 tags:
   - Casos
 summary: "Edita informações do caso"
+description: "**As propriedades que podem ser editadas são as listadas na resposta 200 e devem ser enviadas com o respectivo nome**.<br />`Observação: Nem todas as propriedades podem ser atualizadas/editadas.`"
+
 operationId: api-casos-edit-put
 # Parâmetros da requisição
 parameters:

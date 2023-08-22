@@ -3,30 +3,52 @@ type: object
 properties:
   IDCaso:
     type: integer
+    example: 10
+    description: "O identificador do caso"
   IDCasoPai:
     type: integer
+    example: 1
+    description: "O identificador do caso pai. <br />`-2147483648 se não houver`"
   IDCliente:
     type: integer
+    example: 1
+    description: "O identificador do cliente"
   IDFornecedor:
     type: integer
+    example: 1
+    description: "O identificador do fornecedor"
   IDPasta:
     type: integer
+    example: 1
+    description: "O identificador da pasta"
   IDContrato:
     type: integer
+    example: 1
+    description: "O identificador do contrato"
   IDRito:
     type: integer
+    example: 1
+    description: "O identificador do rito"
   IDFaseProcesso:
     type: integer  
   IDArea:
     type: integer
+    example: 1
+    description: "O identificador da área"
   IDForo:
     type: integer
-  IDsCoResponsaveis:
-    type: array
-    items:
-      type: integer
+    example: 1
+    description: "O identificador do foro"
   IDFuncionarioResponsavel:
     type: integer
+    example: 1
+    description: "O identificador do funcionário responsável"
+  IDsCoResponsaveis:
+    type: array
+    example: [1, 2]
+    description: "Os identificadores dos funcionários corresponsáveis"
+    items:
+      type: integer
   CdNoForoVara:
     type: integer
   Foro:
@@ -35,6 +57,7 @@ properties:
     type: string
   Observacao:
     type: string
+    description: "Observações do caso"
   PolosAtivos:
     type: string
   PolosPassivos:
@@ -93,14 +116,24 @@ properties:
     type: string
   NomeResponsavelCaso:
     type: string
+    example: "Responsável pelo caso"
+    description: "O responsável pelo caso"
   NomePasta:
     type: string
+    example: "Nome da pasta"
+    description: "O nome da pasta"
   NomeContrato:
     type: string
+    example: "Nome do contrato"
+    description: "O nome do contrato"
   NumeroInterno:
     type: string
+    example: "1020.1020.4050"
+    description: "O numero interno do caso"
   NumeroExterno:
     type: string
+    example: "1234561020"
+    description: "O numero externo do caso"
   NumeroLawoffice:
     type: integer
   Classe:
