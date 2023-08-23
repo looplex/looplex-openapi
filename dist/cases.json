@@ -10669,6 +10669,83 @@
         }
       }
     },
+    "/api/natureza": {
+      "get": {
+        "tags": [
+          "Natureza"
+        ],
+        "summary": "Lista naturezas",
+        "operationId": "api-natureza-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "tipoCaso",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTONaturezaCompleto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/pais": {
       "get": {
         "tags": [
@@ -16605,7 +16682,7 @@
       },
       "RamosJudicial": {
         "type": "integer",
-        "example": -2147483648,
+        "example": 3,
         "description": "`O tipo do processo`\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
       },
       "DTOAndamentoTemplate": {
@@ -21175,6 +21252,38 @@
             "type": "integer"
           }
         }
+      },
+      "GrupoNaturezaDaCausa": {
+        "title": "GrupoNaturezaDaCausa",
+        "example": 2,
+        "description": "1: ProcessosAdministrativos  \n\n2: ProcessosJudiciaisEstadual  \n\n3: ProcessosJudiciaisFederal  \n\n4: ProcessosJudiciaisTrabalhista  \n\n5: ProcessosConsultivo  \n\n6: ProcessosEleitoral  \n\n7: ProcessosMilitarEstadual  \n\n8: ProcessosMilitarUniao  \n"
+      },
+      "DTONaturezaCompleto": {
+        "title": "DTONaturezaCompleto",
+        "type": "object",
+        "properties": {
+          "IDNatureza": {
+            "description": "O identificador da natureza<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": 1,
+            "type": "integer"
+          },
+          "IDEscritorio": {
+            "description": "O identificador do escritório",
+            "example": 1,
+            "type": "integer"
+          },
+          "Natureza": {
+            "example": "Nome da natureza",
+            "description": "O nome da natureza",
+            "type": "string"
+          },
+          "GrupoDaNatureza": {
+            "$ref": "#/components/schemas/GrupoNaturezaDaCausa"
+          }
+        },
+        "required": [
+          "IDNatureza"
+        ]
       },
       "DTOPais": {
         "title": "DTOPais",

@@ -1,0 +1,19 @@
+title: DTONaturezaCompleto
+type: object
+properties:
+  IDNatureza:
+    description: "O identificador da natureza<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: 1
+    type: integer
+  IDEscritorio:
+    description: "O identificador do escritório"
+    example: 1
+    type: integer
+  Natureza:
+    example: "Nome da natureza"
+    description: "O nome da natureza"
+    type: string
+  GrupoDaNatureza:
+    $ref: enums/GrupoNaturezaDaCausa.yaml
+required:
+  - IDNatureza

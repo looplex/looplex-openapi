@@ -1,5 +1,5 @@
 type: integer
-example: -2147483648
+example: 3
 description: |
   `O tipo do processo`
   

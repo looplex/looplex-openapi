@@ -471,6 +471,9 @@ paths:
   /api/casos/num/natureza:
     get:
       $ref: './paths/cases/natureza/public@api@casos@num@natureza-get.yaml'
+  /api/natureza:
+    get:
+      $ref: './paths/cases/natureza/public@api@natureza-get.yaml'
 
   # País
   /api/pais:

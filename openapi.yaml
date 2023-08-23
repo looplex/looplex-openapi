@@ -28526,6 +28526,54 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+  /api/natureza:
+    get:
+      tags:
+        - Natureza
+      summary: Lista naturezas
+      operationId: api-natureza-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: tipoCaso
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTONaturezaCompleto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/pais:
     get:
       tags:
@@ -85557,7 +85605,7 @@ components:
           description: Descrição do erro
     RamosJudicial:
       type: integer
-      example: -2147483648
+      example: 3
       description: |
         `O tipo do processo`
 
@@ -89114,6 +89162,48 @@ components:
           type: string
         IdCaso:
           type: integer
+    GrupoNaturezaDaCausa:
+      title: GrupoNaturezaDaCausa
+      example: 2
+      description: |
+        1: ProcessosAdministrativos  
+
+        2: ProcessosJudiciaisEstadual  
+
+        3: ProcessosJudiciaisFederal  
+
+        4: ProcessosJudiciaisTrabalhista  
+
+        5: ProcessosConsultivo  
+
+        6: ProcessosEleitoral  
+
+        7: ProcessosMilitarEstadual  
+
+        8: ProcessosMilitarUniao  
+    DTONaturezaCompleto:
+      title: DTONaturezaCompleto
+      type: object
+      properties:
+        IDNatureza:
+          description: >-
+            O identificador da natureza<br />`Required`<br />- **POST**: A
+            propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT
+            e DELETE**: Preencher com o valor da propriedade já existente.
+          example: 1
+          type: integer
+        IDEscritorio:
+          description: O identificador do escritório
+          example: 1
+          type: integer
+        Natureza:
+          example: Nome da natureza
+          description: O nome da natureza
+          type: string
+        GrupoDaNatureza:
+          $ref: '#/components/schemas/GrupoNaturezaDaCausa'
+      required:
+        - IDNatureza
     DTOPais:
       title: DTOPais
       type: object
