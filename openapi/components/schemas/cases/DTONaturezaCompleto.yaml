@@ -2,7 +2,7 @@ title: DTONaturezaCompleto
 type: object
 properties:
   IDNatureza:
-    description: "O identificador da natureza<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    description: "O identificador da natureza"
     example: 1
     type: integer
   IDEscritorio:

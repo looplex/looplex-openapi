@@ -10871,11 +10871,20 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
-            "name": "tipoCaso",
+            "name": "TipoCaso",
             "in": "query",
             "required": true,
             "schema": {
               "$ref": "#/components/schemas/RamosJudicial"
+            }
+          },
+          {
+            "name": "IDCaso",
+            "in": "query",
+            "required": false,
+            "description": "O identificador do caso.<br />Se for informado, retorna as naturezas em que o caso está vinculado.",
+            "schema": {
+              "type": "integer"
             }
           }
         ],
@@ -10887,7 +10896,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTONaturezaCompleto"
+                    "$ref": "#/components/schemas/DTONaturezaDoRamoJudicial"
                   }
                 }
               }
@@ -21452,7 +21461,7 @@
         "type": "object",
         "properties": {
           "IDNatureza": {
-            "description": "O identificador da natureza<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "description": "O identificador da natureza",
             "example": 1,
             "type": "integer"
           },
@@ -21473,6 +21482,30 @@
         "required": [
           "IDNatureza"
         ]
+      },
+      "DTONaturezaDoRamoJudicial": {
+        "title": "DTONaturezaDoRamoJudicial",
+        "type": "object",
+        "properties": {
+          "IDCaso": {
+            "description": "O identificador do caso em que foi feita a pesquisa de naturezas",
+            "example": 1,
+            "type": "integer"
+          },
+          "IDsNaturezasDoCaso": {
+            "type": "array",
+            "description": "Os identificadores das naturezas em que o caso está vinculado (se houver).<br />`Apenas quando o identificador do caso foi informado`.",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "Naturezas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTONaturezaCompleto"
+            }
+          }
+        }
       },
       "DTOPais": {
         "title": "DTOPais",
