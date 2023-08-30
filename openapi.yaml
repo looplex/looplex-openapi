@@ -23868,6 +23868,131 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+  /api/casos/por_pagina:
+    get:
+      tags:
+        - Casos
+      summary: Listagem de casos paginada
+      operationId: api-casos-por_pagina-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: currentPage
+          in: query
+          example: 1
+          description: A página atual da leitura
+          required: true
+          schema:
+            type: integer
+        - name: pageSize
+          in: query
+          description: A quantidade de itens para leitura
+          required: true
+          schema:
+            type: integer
+        - name: clientIDs
+          in: query
+          example: '[1, 2]'
+          description: Os identificadores dos clientes
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: caseAreaIDs
+          in: query
+          example: '[1, 2]'
+          description: Os identificadores das áreas
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: responsibleIDs
+          in: query
+          example: '[1, 2]'
+          description: Os identificadores dos responsáveis
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: creationDate
+          in: query
+          description: A data de criação do caso
+          required: false
+          schema:
+            type: string
+        - name: citationDate
+          in: query
+          description: A data de citação do caso
+          required: false
+          schema:
+            type: string
+        - name: distributionDate
+          in: query
+          description: A data de distribuição do caso
+          required: false
+          schema:
+            type: string
+        - name: closingDate
+          in: query
+          description: A data de encerramento do caso
+          required: false
+          schema:
+            type: string
+        - name: entryDate
+          in: query
+          description: A data de entrada do caso
+          required: false
+          schema:
+            type: string
+        - name: lastUpdateDate
+          in: query
+          description: A data da última atualização do caso
+          required: false
+          schema:
+            type: string
+        - name: caseStatus
+          in: query
+          example: '[1, 2]. `Enviar um array`'
+          required: false
+          schema:
+            $ref: '#/components/schemas/SituacaoDoProcesso'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCasoCompleto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/fase:
     get:
       tags:
@@ -86186,7 +86311,6 @@ components:
           $ref: '#/components/schemas/DTOTabelaCalculoParametros'
     SituacaoDoProcesso:
       title: SituacaoDoProcesso
-      example: 1
       description: |
         1: Ativo
 
