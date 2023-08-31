@@ -3,6 +3,11 @@ type: object
 properties:
   IDCaso:
     type: integer
+  IDsNaturezasDoCaso:
+    type: array
+    description: "Os identificadores das naturezas em que o caso está vinculado"
+    items: 
+      type: integer
   Titulo:
     type: string
   IDCliente:
