@@ -17560,6 +17560,13 @@
           "IDCaso": {
             "type": "integer"
           },
+          "IDsNaturezasDoCaso": {
+            "type": "array",
+            "description": "Os identificadores das naturezas em que o caso está vinculado",
+            "items": {
+              "type": "integer"
+            }
+          },
           "Titulo": {
             "type": "string"
           },
@@ -17722,6 +17729,13 @@
               2
             ],
             "description": "Os identificadores dos funcionários corresponsáveis",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "IDsNaturezasDoCaso": {
+            "type": "array",
+            "description": "Os identificadores das naturezas em que o caso está vinculado",
             "items": {
               "type": "integer"
             }
@@ -18677,6 +18691,13 @@
                 10,
                 20
               ]
+            }
+          },
+          "IDsNaturezasDoCaso": {
+            "type": "array",
+            "description": "Os identificadores das naturezas em que o caso está vinculado",
+            "items": {
+              "type": "integer"
             }
           },
           "IDFornecedor": {

@@ -60,5 +60,10 @@ properties:
     items:
       type: integer
       example: [10, 20]
+  IDsNaturezasDoCaso:
+    type: array
+    description: "Os identificadores das naturezas em que o caso está vinculado"
+    items: 
+      type: integer
   IDFornecedor:
     type: integer
