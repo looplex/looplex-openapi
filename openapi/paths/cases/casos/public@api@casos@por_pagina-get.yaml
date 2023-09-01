@@ -97,9 +97,14 @@ responses:
     content:
       application/json:
         schema:
-          type: array
-          items:
-            $ref: ../../../components/schemas/cases/DTOCasoCompleto.yaml
+          properties: 
+            Result:
+              type: array
+              items:
+                $ref: ../../../components/schemas/cases/DTOCasoCompleto.yaml
+            QuantidadeCasosExistente:
+              type: integer
+              description: "A quantidade de casos existente"
   "401":
     description: "Unauthorized"
     content:

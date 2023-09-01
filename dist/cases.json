@@ -3421,9 +3421,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DTOCasoCompleto"
+                  "properties": {
+                    "Result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/DTOCasoCompleto"
+                      }
+                    },
+                    "QuantidadeCasosExistente": {
+                      "type": "integer",
+                      "description": "A quantidade de casos existente"
+                    }
                   }
                 }
               }
