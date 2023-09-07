@@ -72,3 +72,5 @@ properties:
     type: string
   NomeFornecedor:
     type: string
+  Rito:
+    type: string

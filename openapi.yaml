@@ -86448,6 +86448,8 @@ components:
           type: string
         NomeFornecedor:
           type: string
+        Rito:
+          type: string
     DTOCasoCompleto:
       title: DTOCasoCompleto
       type: object
