@@ -17670,6 +17670,9 @@
           },
           "NomeFornecedor": {
             "type": "string"
+          },
+          "Rito": {
+            "type": "string"
           }
         }
       },
