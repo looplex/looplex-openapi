@@ -3,6 +3,22 @@ type: object
 properties:
   IDCaso:
     type: integer
+    description: "O identificador do caso"
+  IDCasoPai:
+    type: integer
+    description: "O identificador do caso pai"
+  IDCliente:
+    type: integer
+    description: "O identificador do cliente"
+  IDFornecedor:
+    type: integer
+    description: "O identificador do fornecedor"
+  IDPasta:
+    type: integer
+    description: "O identificador da pasta"
+  IDContrato:
+    type: integer
+    description: "O identificador do contrato"
   IDsNaturezasDoCaso:
     type: array
     description: "Os identificadores das naturezas em que o caso está vinculado"
@@ -10,67 +26,68 @@ properties:
       type: integer
   Titulo:
     type: string
-  IDCliente:
-    type: integer
-  NomeCliente:
-    type: string
-  NomeResponsavelCaso:
-    type: string
-  IDPasta:
-    type: integer
-  NomePasta:
-    type: string
-  IDContrato:
-    type: integer
-  NomeContrato:
-    type: string
+    description: "O titulo do caso"
   NumeroInterno:
     type: string
+    description: "O nomero interno do caso"
   NumeroExterno:
     type: string
+    description: "O numero externo do caso"
   NumeroLawoffice:
     type: integer
-  IDCasoPai:
-    type: integer
-  Classe:
-    $ref: enums/ClasseDoCaso.yaml
+  HierarquiaProcesso:
+    type: string
+  NomeCliente:
+    type: string
+    description: "O nome do cliente"
+  NomeArea:
+    type: string
+    description: "O nome da área"
+  NomeResponsavelCaso:
+    type: string
+    description: "O nome do responsável pelo caso"
+  NomeFornecedor:
+    type: string
+    description: "O nome do fornecedor"
+  NomePasta:
+    type: string
+    description: "O nome da pasta em em que o caso está"
+  NomeContrato:
+    type: string
+    description: "O nome do contrato em que o caso está"
   DataDeCriacao:
     type: string
+  DataUltimaAlteracao:
+    type: string
+    description: "A data da ultima alteração do caso"
   DataDeCriacaoFormatada:
     type: string
   Situacao:
     $ref: enums/SituacaoDoCaso.yaml
-  NomeArea:
-    type: string
+  Classe:
+    $ref: enums/ClasseDoCaso.yaml
   TipoProcesso:
     type: string
-  DataUltimaAlteracao:
+  Rito:
     type: string
-  HierarquiaProcesso:
+  StatusCaso:
+    type: string
+  FaseDoCaso:
     type: string
   PoloAtivo:
     type: string
   PoloPassivo:
     type: string
-  StatusCaso:
-    type: string
-  Coresponsavel:
-    type: array
-    items:
-      $ref: DTOCoresponsavel.yaml
-  FaseDoCaso:
-    type: string
-  ProcessoPai:
-    $ref: DTOCasoSimples.yaml
-  QuantidadeCasosFilho:
-    type: integer
-  IDFornecedor:
-    type: integer
   PrimeiroPoloAtivo:
     type: string
   PrimeiroPoloPassivo:
     type: string
-  NomeFornecedor:
-    type: string
-  Rito:
-    type: string
+  QuantidadeCasosFilho:
+    type: integer
+    description: "A quantidade de casos filhos desse caso"
+  Coresponsavel:
+    type: array
+    items:
+      $ref: DTOCoresponsavel.yaml
+  ProcessoPai:
+    $ref: DTOCasoSimples.yaml

@@ -21,7 +21,7 @@ parameters:
       type: integer
   - name: clientIDs
     in: query
-    example: "[1, 2]"
+    example: "[1,2]"
     description: "Os identificadores dos clientes"
     required: false
     schema:
@@ -30,7 +30,7 @@ parameters:
         type: integer
   - name: caseAreaIDs
     in: query
-    example: "[1, 2]"
+    example: "[1,2]"
     description: "Os identificadores das áreas"
     required: false
     schema:
@@ -39,7 +39,7 @@ parameters:
         type: integer
   - name: responsibleIDs
     in: query
-    example: "[1, 2]"
+    example: "[1,2]"
     description: "Os identificadores dos responsáveis"
     required: false
     schema:
@@ -84,10 +84,24 @@ parameters:
       type: string
   - name: caseStatus
     in: query
-    example: "[1, 2]. `Enviar um array`"
+    example: "[1,2]. `Enviar um array`"
     required: false
     schema:
       $ref: ..\..\..\components\schemas\cases\enums\SituacaoDoProcesso.yaml
+  - name: searchTerm
+    in: query
+    example: "\"termo para pesquisa\""
+    description: "`Mínimo de 3 caracteres`"
+    required: false
+    schema:
+      type: string
+  - name: id
+    in: query
+    example: 120
+    description: "O ID ou ID legado"
+    required: false
+    schema:
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -104,7 +118,7 @@ responses:
                 $ref: ../../../components/schemas/cases/DTOCasoCompleto.yaml
             QuantidadeCasosExistente:
               type: integer
-              description: "A quantidade de casos existente"
+              description: "A quantidade de casos existente de acordo com o filtro informado"
   "401":
     description: "Unauthorized"
     content:
