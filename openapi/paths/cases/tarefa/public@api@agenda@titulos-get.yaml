@@ -11,6 +11,18 @@ parameters:
     required: true
     schema:
       $ref: ../../../components/schemas/cases/enums/TipoItemAgenda.yaml
+  - name: ativos
+    in: query
+    required: false
+    description: "Listar ativos?<br />`Default: true`"
+    schema: 
+      type: boolean
+  - name: inativos
+    in: query
+    required: false
+    description: "Listar inativos?<br />`Default: false`"
+    schema: 
+      type: boolean
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

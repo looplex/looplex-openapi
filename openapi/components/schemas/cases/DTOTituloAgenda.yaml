@@ -13,3 +13,9 @@ properties:
     type: integer
   LinkEntrevistaTemplate:
     type: string
+  Situacao:
+    type: string
+  Subtarefas:
+    type: array
+    items:
+      $ref: DTOTituloAgenda.yaml

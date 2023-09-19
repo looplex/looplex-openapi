@@ -30944,6 +30944,18 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/TipoItemAgenda'
+        - name: ativos
+          in: query
+          required: false
+          description: 'Listar ativos?<br />`Default: true`'
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          required: false
+          description: 'Listar inativos?<br />`Default: false`'
+          schema:
+            type: boolean
       responses:
         '200':
           description: OK
@@ -90145,6 +90157,12 @@ components:
           type: integer
         LinkEntrevistaTemplate:
           type: string
+        Situacao:
+          type: string
+        Subtarefas:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOTituloAgenda'
     DTOCompromissoAudiencia:
       title: DTOCompromissoAudiencia
       type: object
