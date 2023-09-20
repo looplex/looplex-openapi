@@ -3315,7 +3315,7 @@
           {
             "name": "clientIDs",
             "in": "query",
-            "example": "[1, 2]",
+            "example": "[1,2]",
             "description": "Os identificadores dos clientes",
             "required": false,
             "schema": {
@@ -3328,7 +3328,7 @@
           {
             "name": "caseAreaIDs",
             "in": "query",
-            "example": "[1, 2]",
+            "example": "[1,2]",
             "description": "Os identificadores das áreas",
             "required": false,
             "schema": {
@@ -3341,7 +3341,7 @@
           {
             "name": "responsibleIDs",
             "in": "query",
-            "example": "[1, 2]",
+            "example": "[1,2]",
             "description": "Os identificadores dos responsáveis",
             "required": false,
             "schema": {
@@ -3408,10 +3408,30 @@
           {
             "name": "caseStatus",
             "in": "query",
-            "example": "[1, 2]. `Enviar um array`",
+            "example": "[1,2]. `Enviar um array`",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/SituacaoDoProcesso"
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "example": "\"termo para pesquisa\"",
+            "description": "`Mínimo de 3 caracteres`",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "example": 120,
+            "description": "O ID ou ID legado",
+            "required": false,
+            "schema": {
+              "type": "integer"
             }
           }
         ],
@@ -3430,7 +3450,7 @@
                     },
                     "QuantidadeCasosExistente": {
                       "type": "integer",
-                      "description": "A quantidade de casos existente"
+                      "description": "A quantidade de casos existente de acordo com o filtro informado"
                     }
                   }
                 }
@@ -14465,6 +14485,24 @@
             "schema": {
               "$ref": "#/components/schemas/TipoItemAgenda"
             }
+          },
+          {
+            "name": "ativos",
+            "in": "query",
+            "required": false,
+            "description": "Listar ativos?<br />`Default: true`",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "inativos",
+            "in": "query",
+            "required": false,
+            "description": "Listar inativos?<br />`Default: false`",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -17566,7 +17604,28 @@
         "type": "object",
         "properties": {
           "IDCaso": {
-            "type": "integer"
+            "type": "integer",
+            "description": "O identificador do caso"
+          },
+          "IDCasoPai": {
+            "type": "integer",
+            "description": "O identificador do caso pai"
+          },
+          "IDCliente": {
+            "type": "integer",
+            "description": "O identificador do cliente"
+          },
+          "IDFornecedor": {
+            "type": "integer",
+            "description": "O identificador do fornecedor"
+          },
+          "IDPasta": {
+            "type": "integer",
+            "description": "O identificador da pasta"
+          },
+          "IDContrato": {
+            "type": "integer",
+            "description": "O identificador do contrato"
           },
           "IDsNaturezasDoCaso": {
             "type": "array",
@@ -17576,46 +17635,53 @@
             }
           },
           "Titulo": {
-            "type": "string"
-          },
-          "IDCliente": {
-            "type": "integer"
-          },
-          "NomeCliente": {
-            "type": "string"
-          },
-          "NomeResponsavelCaso": {
-            "type": "string"
-          },
-          "IDPasta": {
-            "type": "integer"
-          },
-          "NomePasta": {
-            "type": "string"
-          },
-          "IDContrato": {
-            "type": "integer"
-          },
-          "NomeContrato": {
-            "type": "string"
+            "type": "string",
+            "description": "O titulo do caso"
           },
           "NumeroInterno": {
-            "type": "string"
+            "type": "string",
+            "description": "O nomero interno do caso"
           },
           "NumeroExterno": {
-            "type": "string"
+            "type": "string",
+            "description": "O numero externo do caso"
           },
           "NumeroLawoffice": {
             "type": "integer"
           },
-          "IDCasoPai": {
-            "type": "integer"
+          "HierarquiaProcesso": {
+            "type": "string"
           },
-          "Classe": {
-            "$ref": "#/components/schemas/ClasseDoCaso"
+          "NomeCliente": {
+            "type": "string",
+            "description": "O nome do cliente"
+          },
+          "NomeArea": {
+            "type": "string",
+            "description": "O nome da área"
+          },
+          "NomeResponsavelCaso": {
+            "type": "string",
+            "description": "O nome do responsável pelo caso"
+          },
+          "NomeFornecedor": {
+            "type": "string",
+            "description": "O nome do fornecedor"
+          },
+          "NomePasta": {
+            "type": "string",
+            "description": "O nome da pasta em em que o caso está"
+          },
+          "NomeContrato": {
+            "type": "string",
+            "description": "O nome do contrato em que o caso está"
           },
           "DataDeCriacao": {
             "type": "string"
+          },
+          "DataUltimaAlteracao": {
+            "type": "string",
+            "description": "A data da ultima alteração do caso"
           },
           "DataDeCriacaoFormatada": {
             "type": "string"
@@ -17623,16 +17689,19 @@
           "Situacao": {
             "$ref": "#/components/schemas/SituacaoDoCaso"
           },
-          "NomeArea": {
-            "type": "string"
+          "Classe": {
+            "$ref": "#/components/schemas/ClasseDoCaso"
           },
           "TipoProcesso": {
             "type": "string"
           },
-          "DataUltimaAlteracao": {
+          "Rito": {
             "type": "string"
           },
-          "HierarquiaProcesso": {
+          "StatusCaso": {
+            "type": "string"
+          },
+          "FaseDoCaso": {
             "type": "string"
           },
           "PoloAtivo": {
@@ -17641,8 +17710,15 @@
           "PoloPassivo": {
             "type": "string"
           },
-          "StatusCaso": {
+          "PrimeiroPoloAtivo": {
             "type": "string"
+          },
+          "PrimeiroPoloPassivo": {
+            "type": "string"
+          },
+          "QuantidadeCasosFilho": {
+            "type": "integer",
+            "description": "A quantidade de casos filhos desse caso"
           },
           "Coresponsavel": {
             "type": "array",
@@ -17650,29 +17726,8 @@
               "$ref": "#/components/schemas/DTOCoresponsavel"
             }
           },
-          "FaseDoCaso": {
-            "type": "string"
-          },
           "ProcessoPai": {
             "$ref": "#/components/schemas/DTOCasoSimples"
-          },
-          "QuantidadeCasosFilho": {
-            "type": "integer"
-          },
-          "IDFornecedor": {
-            "type": "integer"
-          },
-          "PrimeiroPoloAtivo": {
-            "type": "string"
-          },
-          "PrimeiroPoloPassivo": {
-            "type": "string"
-          },
-          "NomeFornecedor": {
-            "type": "string"
-          },
-          "Rito": {
-            "type": "string"
           }
         }
       },
@@ -22445,6 +22500,15 @@
           },
           "LinkEntrevistaTemplate": {
             "type": "string"
+          },
+          "Situacao": {
+            "type": "string"
+          },
+          "Subtarefas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTituloAgenda"
+            }
           }
         }
       },
