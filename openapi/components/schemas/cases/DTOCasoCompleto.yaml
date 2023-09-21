@@ -24,7 +24,7 @@ properties:
   IDContrato:
     type: integer
     example: 1
-    description: "O identificador do contrato"
+    description: "O identificador do contrato"  
   IDRito:
     type: integer
     example: 1
@@ -172,4 +172,21 @@ properties:
   PrimeiroPoloAtivo:
     type: string
   PrimeiroPoloPassivo:
-    type: string
+    type: string  
+  IDResponsavelCaso:
+    type: integer
+    description: "O identificador do responsável pelo caso"    
+  IDEscritorioResponsavel:
+    type: integer
+    description: "O identificador do escritório responsável"    
+  EnvolvimentoCliente:    
+    $ref: enums/Polo.yaml
+    description: "Tipo de envolvimento do cliente"
+  TipoCaso: 
+    $ref: enums/RamosJudicial.yaml
+    description: "Tipo de justiça do caso"  
+  Partes:
+    type: array
+    items: 
+      $ref: DTOParte.yaml  
+  
