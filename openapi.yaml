@@ -86358,6 +86358,8 @@ components:
         2: Arquivo morto
 
         3: Encerrado
+
+        99: Excluído
     ExpectavivaReivindicacao:
       type: integer
       example: 2
@@ -86401,6 +86403,21 @@ components:
           type: integer
         NomeCorresponsavel:
           type: string
+    Polo:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Ativo
+
+        2: Passivo
+
+        3: Terceiro
+
+        4: Nenhum
+
+        5: Outro envolvido
     DTOCasoSimples:
       title: DTOCasoSimples
       type: object
@@ -86414,23 +86431,50 @@ components:
         IDCliente:
           type: integer
           description: O identificador do cliente
-        IDFornecedor:
-          type: integer
-          description: O identificador do fornecedor
         IDPasta:
           type: integer
           description: O identificador da pasta
         IDContrato:
           type: integer
           description: O identificador do contrato
+        IDArea:
+          type: integer
+          description: O identificador da área
+        IDFornecedor:
+          type: integer
+          description: O identificador do fornecedor
+        IDResponsavelCaso:
+          type: integer
+          description: O identificador do responsável pelo caso
+        IDEscritorioResponsavel:
+          type: integer
+          description: O identificador do escritório responsável
         IDsNaturezasDoCaso:
           type: array
           description: Os identificadores das naturezas em que o caso está vinculado
           items:
             type: integer
+        EnvolvimentoCliente:
+          $ref: '#/components/schemas/Polo'
+          description: Tipo de envolvimento do cliente
+        TipoCaso:
+          $ref: '#/components/schemas/RamosJudicial'
+          description: Tipo de justiça do caso
         Titulo:
           type: string
           description: O titulo do caso
+        NomeCliente:
+          type: string
+          description: O nome do cliente
+        NomeResponsavelCaso:
+          type: string
+          description: O nome do responsável pelo caso
+        NomePasta:
+          type: string
+          description: O nome da pasta do caso
+        NomeContrato:
+          type: string
+          description: O nome do contrato do caso
         NumeroInterno:
           type: string
           description: O nomero interno do caso
@@ -86439,62 +86483,269 @@ components:
           description: O numero externo do caso
         NumeroLawoffice:
           type: integer
-        HierarquiaProcesso:
-          type: string
-        NomeCliente:
-          type: string
-          description: O nome do cliente
-        NomeArea:
-          type: string
-          description: O nome da área
-        NomeResponsavelCaso:
-          type: string
-          description: O nome do responsável pelo caso
-        NomeFornecedor:
-          type: string
-          description: O nome do fornecedor
-        NomePasta:
-          type: string
-          description: O nome da pasta em em que o caso está
-        NomeContrato:
-          type: string
-          description: O nome do contrato em que o caso está
+        Classe:
+          $ref: '#/components/schemas/ClasseDoCaso'
         DataDeCriacao:
           type: string
-        DataUltimaAlteracao:
-          type: string
-          description: A data da ultima alteração do caso
         DataDeCriacaoFormatada:
           type: string
         Situacao:
           $ref: '#/components/schemas/SituacaoDoCaso'
-        Classe:
-          $ref: '#/components/schemas/ClasseDoCaso'
+        NomeArea:
+          type: string
+          description: O nome da área do caso
         TipoProcesso:
           type: string
-        Rito:
+        DataUltimaAlteracao:
           type: string
-        StatusCaso:
-          type: string
-        FaseDoCaso:
+          description: A data da ultima alteração do caso
+        HierarquiaProcesso:
           type: string
         PoloAtivo:
           type: string
         PoloPassivo:
           type: string
-        PrimeiroPoloAtivo:
+        StatusCaso:
           type: string
-        PrimeiroPoloPassivo:
-          type: string
-        QuantidadeCasosFilho:
-          type: integer
-          description: A quantidade de casos filhos desse caso
         Coresponsavel:
           type: array
           items:
             $ref: '#/components/schemas/DTOCoresponsavel'
+        FaseDoCaso:
+          type: string
         ProcessoPai:
           $ref: '#/components/schemas/DTOCasoSimples'
+        Partes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOParte'
+        QuantidadeCasosFilho:
+          type: integer
+          description: A quantidade de casos filhos desse caso
+        PrimeiroPoloAtivo:
+          type: string
+        PrimeiroPoloPassivo:
+          type: string
+        NomeFornecedor:
+          type: string
+          description: O nome do fornecedor
+        Rito:
+          type: string
+    PoloLawOffice:
+      type: integer
+      example: 1
+      description: |
+        0: None
+
+        1: Ativo
+
+        2: Passivo
+
+        3: Terceiro
+
+        4: Nenhum
+
+        5: Outro envolvido
+    TipoPessoa:
+      type: integer
+      example: 1
+      description: |
+        0: None
+
+        1: Pessoa física
+
+        2: Pessoa jurídica
+    TipoDeEndereco:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Residencial
+
+        2: Comercial
+
+        3: Outros
+    DTOEnderecoParte:
+      title: DTOEnderecoParte
+      type: object
+      properties:
+        IDEnderecoParte:
+          type: integer
+        Tipo:
+          $ref: '#/components/schemas/TipoDeEndereco'
+        CEP:
+          type: string
+        Logradouro:
+          type: string
+        Numero:
+          type: string
+        Complemento:
+          type: string
+        Bairro:
+          type: string
+        IDPais:
+          type: integer
+        Pais:
+          type: string
+        IDEstado:
+          type: string
+        Estado:
+          type: string
+        IDCidade:
+          type: integer
+        Cidade:
+          type: string
+    TipoDeTelefone:
+      type: integer
+      example: 3
+      description: |
+        -2147483648: None
+
+        1: Residencial
+
+        2: Comercial
+
+        3: Celular
+
+        4: Fax
+    DTOTelefoneParte:
+      title: DTOTelefoneParte
+      type: object
+      properties:
+        IDTelefone:
+          type: integer
+          description: O identificador do telefone
+        TipoTelefone:
+          $ref: '#/components/schemas/TipoDeTelefone'
+        DDD:
+          type: string
+          description: O DDD do telefone
+        Telefone:
+          type: string
+          description: O numero de telefone
+        Extensao:
+          type: string
+          description: A extensão do telefone
+    DTOTelefoneAdvogado:
+      title: DTOTelefoneAdvogado
+      type: object
+      properties:
+        IDTelefone:
+          type: integer
+          description: O identificador do telefone
+        TipoTelefone:
+          $ref: '#/components/schemas/TipoDeTelefone'
+        DDD:
+          type: string
+          description: O DDD do telefone
+        Telefone:
+          type: string
+          description: O numero de telefone
+        Extensao:
+          type: string
+          description: A extensão do telefone
+    DTODadosAdvogado:
+      title: DTODadosAdvogado
+      type: object
+      properties:
+        IDAdvogadoParte:
+          type: integer
+        Nome:
+          type: string
+        Escritorio:
+          type: string
+        Email:
+          type: string
+        OAB:
+          type: string
+        Telefones:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOTelefoneAdvogado'
+    DTOEnvolvimento:
+      title: DTOEnvolvimento
+      type: object
+      properties:
+        ClienteProfissional:
+          type: string
+        Processo:
+          type: string
+        Participacao:
+          type: string
+    DTOParte:
+      title: DTOParte
+      type: object
+      properties:
+        IdParte:
+          type: integer
+          description: >-
+            Se for menor ou igual a zero insere uma nova parte, senão, atualiza
+            a parte de acordo com o identificador informado.
+        IdCliente:
+          type: integer
+        NrCliente:
+          type: integer
+        inContato:
+          type: boolean
+        inMigradoParaNovosContatos:
+          type: boolean
+        IdFuncionario:
+          type: integer
+        Polo:
+          $ref: '#/components/schemas/PoloLawOffice'
+        TipoPessoa:
+          $ref: '#/components/schemas/TipoPessoa'
+        CPF:
+          type: string
+        CNPJ:
+          type: string
+        RG:
+          type: string
+        nomeParte:
+          type: string
+        Nome:
+          type: string
+        RazaoSocial:
+          type: string
+        NomeFantasia:
+          type: string
+        NomeContato:
+          type: string
+        Email:
+          type: string
+        TipoEnvolvimento:
+          type: integer
+        TipoEnvolvimentoPapel:
+          type: string
+        PoloPrincipal:
+          type: boolean
+        Observacoes:
+          type: string
+        Endereco:
+          $ref: '#/components/schemas/DTOEnderecoParte'
+        Telefones:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOTelefoneParte'
+        Advogado:
+          $ref: '#/components/schemas/DTODadosAdvogado'
+        Envolvimento:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOEnvolvimento'
+        NomeCliente:
+          type: string
+          description: Preenchido apenas na pesquisa de partes do caso
+        TituloCaso:
+          type: string
+          description: Preenchido apenas na pesquisa de partes do caso
+        NumeroInterno:
+          type: string
+          description: Preenchido apenas na pesquisa de partes do caso
+        NumeroExterno:
+          type: string
+          description: Preenchido apenas na pesquisa de partes do caso
     DTOCasoCompleto:
       title: DTOCasoCompleto
       type: object
@@ -86673,21 +86924,22 @@ components:
           type: string
         PrimeiroPoloPassivo:
           type: string
-    PoloLawOffice:
-      type: integer
-      example: 1
-      description: |
-        0: None
-
-        1: Ativo
-
-        2: Passivo
-
-        3: Terceiro
-
-        4: Nenhum
-
-        5: Outro envolvido
+        IDResponsavelCaso:
+          type: integer
+          description: O identificador do responsável pelo caso
+        IDEscritorioResponsavel:
+          type: integer
+          description: O identificador do escritório responsável
+        EnvolvimentoCliente:
+          $ref: '#/components/schemas/Polo'
+          description: Tipo de envolvimento do cliente
+        TipoCaso:
+          $ref: '#/components/schemas/RamosJudicial'
+          description: Tipo de justiça do caso
+        Partes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOParte'
     TipoDeInstancia:
       type: integer
       example: 1
@@ -86716,15 +86968,6 @@ components:
           type: string
         grupoFamilia:
           $ref: '#/components/schemas/TipoDeInstancia'
-    TipoPessoa:
-      type: integer
-      example: 1
-      description: |
-        0: None
-
-        1: Pessoa física
-
-        2: Pessoa jurídica
     ParteParaLO:
       title: ParteParaLO
       type: object
@@ -87879,17 +88122,6 @@ components:
         1: Ativa
 
         2: Inativa
-    TipoDeEndereco:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Residencial
-
-        2: Comercial
-
-        3: Outros
     DTOCliente:
       title: DTOCliente
       type: object
@@ -89464,21 +89696,6 @@ components:
         1: Processo
 
         2: Contrato
-    Polo:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Ativo
-
-        2: Passivo
-
-        3: Terceiro
-
-        4: Nenhum
-
-        5: Outro envolvido
     DTOPartePapel:
       title: DTOPartePapel
       type: object
@@ -89489,186 +89706,6 @@ components:
         Envolvimento:
           type: string
           example: Verificador do caso
-    DTOEnderecoParte:
-      title: DTOEnderecoParte
-      type: object
-      properties:
-        IDEnderecoParte:
-          type: integer
-        Tipo:
-          $ref: '#/components/schemas/TipoDeEndereco'
-        CEP:
-          type: string
-        Logradouro:
-          type: string
-        Numero:
-          type: string
-        Complemento:
-          type: string
-        Bairro:
-          type: string
-        IDPais:
-          type: integer
-        Pais:
-          type: string
-        IDEstado:
-          type: string
-        Estado:
-          type: string
-        IDCidade:
-          type: integer
-        Cidade:
-          type: string
-    TipoDeTelefone:
-      type: integer
-      example: 3
-      description: |
-        -2147483648: None
-
-        1: Residencial
-
-        2: Comercial
-
-        3: Celular
-
-        4: Fax
-    DTOTelefoneParte:
-      title: DTOTelefoneParte
-      type: object
-      properties:
-        IDTelefone:
-          type: integer
-          description: O identificador do telefone
-        TipoTelefone:
-          $ref: '#/components/schemas/TipoDeTelefone'
-        DDD:
-          type: string
-          description: O DDD do telefone
-        Telefone:
-          type: string
-          description: O numero de telefone
-        Extensao:
-          type: string
-          description: A extensão do telefone
-    DTOTelefoneAdvogado:
-      title: DTOTelefoneAdvogado
-      type: object
-      properties:
-        IDTelefone:
-          type: integer
-          description: O identificador do telefone
-        TipoTelefone:
-          $ref: '#/components/schemas/TipoDeTelefone'
-        DDD:
-          type: string
-          description: O DDD do telefone
-        Telefone:
-          type: string
-          description: O numero de telefone
-        Extensao:
-          type: string
-          description: A extensão do telefone
-    DTODadosAdvogado:
-      title: DTODadosAdvogado
-      type: object
-      properties:
-        IDAdvogadoParte:
-          type: integer
-        Nome:
-          type: string
-        Escritorio:
-          type: string
-        Email:
-          type: string
-        OAB:
-          type: string
-        Telefones:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOTelefoneAdvogado'
-    DTOEnvolvimento:
-      title: DTOEnvolvimento
-      type: object
-      properties:
-        ClienteProfissional:
-          type: string
-        Processo:
-          type: string
-        Participacao:
-          type: string
-    DTOParte:
-      title: DTOParte
-      type: object
-      properties:
-        IdParte:
-          type: integer
-          description: >-
-            Se for menor ou igual a zero insere uma nova parte, senão, atualiza
-            a parte de acordo com o identificador informado.
-        IdCliente:
-          type: integer
-        NrCliente:
-          type: integer
-        inContato:
-          type: boolean
-        inMigradoParaNovosContatos:
-          type: boolean
-        IdFuncionario:
-          type: integer
-        Polo:
-          $ref: '#/components/schemas/PoloLawOffice'
-        TipoPessoa:
-          $ref: '#/components/schemas/TipoPessoa'
-        CPF:
-          type: string
-        CNPJ:
-          type: string
-        RG:
-          type: string
-        nomeParte:
-          type: string
-        Nome:
-          type: string
-        RazaoSocial:
-          type: string
-        NomeFantasia:
-          type: string
-        NomeContato:
-          type: string
-        Email:
-          type: string
-        TipoEnvolvimento:
-          type: integer
-        TipoEnvolvimentoPapel:
-          type: string
-        PoloPrincipal:
-          type: boolean
-        Observacoes:
-          type: string
-        Endereco:
-          $ref: '#/components/schemas/DTOEnderecoParte'
-        Telefones:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOTelefoneParte'
-        Advogado:
-          $ref: '#/components/schemas/DTODadosAdvogado'
-        Envolvimento:
-          type: array
-          items:
-            $ref: '#/components/schemas/DTOEnvolvimento'
-        NomeCliente:
-          type: string
-          description: Preenchido apenas na pesquisa de partes do caso
-        TituloCaso:
-          type: string
-          description: Preenchido apenas na pesquisa de partes do caso
-        NumeroInterno:
-          type: string
-          description: Preenchido apenas na pesquisa de partes do caso
-        NumeroExterno:
-          type: string
-          description: Preenchido apenas na pesquisa de partes do caso
     DTOCasoPedido:
       title: DTOCasoPedido
       type: object
