@@ -87367,6 +87367,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOCasoPedidoSimples'
+        idsNatureza:
+          type: array
+          items:
+            type: integer
+            example:
+              - 10
+              - 20
       required:
         - idCliente
         - envolvimentoCliente
