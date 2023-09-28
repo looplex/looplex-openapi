@@ -142,6 +142,11 @@ properties:
     type: array
     items:
       $ref: DTOCasoPedidoSimples.yaml
+  idsNatureza:
+    type: array
+    items:
+      type: integer
+      example: [10, 20]    
 required:
   - idCliente
   - envolvimentoCliente
