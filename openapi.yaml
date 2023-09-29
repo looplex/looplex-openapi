@@ -86983,6 +86983,9 @@ components:
           $ref: '#/components/schemas/PoloLawOffice'
         principal:
           type: boolean
+        tipoEnvolvimento:
+          example: -2147483648
+          type: integer
     TipoItemAgenda:
       type: integer
       example: 1

@@ -18332,6 +18332,10 @@
           },
           "principal": {
             "type": "boolean"
+          },
+          "tipoEnvolvimento": {
+            "example": -2147483648,
+            "type": "integer"
           }
         }
       },
