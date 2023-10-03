@@ -1,0 +1,40 @@
+title: DTOCumprimento
+type: object
+properties:
+  cdCumprimento:
+    description: "Identificador do cumprimento`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: 15
+    type: integer
+  vlPago:    
+    description: "Valor pago<br />`Required`"
+    example: 20.00
+    type: number
+  vlAbatido:
+    description: "Valor abatido da dívida<br /> **Ao usar esse valor abatido não utilizar percentual abatido**"
+    example: 5.00
+    type: number
+  pctAbatido:
+    description: "Percentual abatido da dívida<br /> **Ao usar percentual abatido não utilizar valor abatido**"
+    example: 10.00
+    type: number
+  cdProcessoExpectativaReivindicacao:
+    description: "Identificador do pedido vinculado ao cumprimento<br />`Required`"
+    example: 3
+    type: integer
+  dtPagamento:
+    description: "Data do pagamento da dívida<br />`Required`"
+    type: string
+  dtInclusaoRegistro:
+    description: "Data da inclusão do registro"
+    type: string
+  cdDecisao:
+    description: "Identificador da decisão vinculada"
+    example: 55
+    type: integer
+  dtDecisao:
+    description: "Data da decisão"
+    type: string
+  dsDecisao:
+    description: "Descrição da decisão vinculada"
+    type: string
+

@@ -53,6 +53,8 @@ tags:
     x-displayName: Contato
   - name: Contrato
     x-displayName: Contrato
+  - name: Cumprimentos
+    x-displayName: Cumprimentos
   - name: Decisões
     x-displayName: Decisões
   - name: Despesas
@@ -116,6 +118,7 @@ x-tagGroups:
       - Cliente
       - Contato
       - Contrato
+      - Cumprimentos
       - Decisões
       - Despesas
       - Expectativa reivindicação
@@ -25312,6 +25315,278 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOContrato'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/cumprimentos/ListaComFiltro:
+    post:
+      tags:
+        - Cumprimentos
+      summary: Lista cumprimentos conforme filtro
+      operationId: api-cumprimentos-ListaComFiltro-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FiltroCumprimentos'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOCumprimento'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/cumprimentos/{cdCumprimento}:
+    get:
+      tags:
+        - Cumprimentos
+      summary: Obtem cumprimento
+      operationId: api-cumprimentos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: cdCumprimento
+          in: path
+          example: 10
+          description: Identificador do cumprimento
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOCumprimento'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/cumprimentos (put):
+    put:
+      tags:
+        - Cumprimentos
+      summary: Edita cumprimentos
+      operationId: api-cumprimentos-put
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOCumprimento'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/cumprimentos (post):
+    post:
+      tags:
+        - Cumprimentos
+      summary: Inclui cumprimentos
+      operationId: api-cumprimentos-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOCumprimento'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/cumprimentos (delete):
+    delete:
+      tags:
+        - Cumprimentos
+      summary: Exclui cumprimentos
+      operationId: api-cumprimentos-exclui-delete
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/Pedidos/{cdPedido}/cumprimentos:
+    delete:
+      tags:
+        - Cumprimentos
+      summary: Exclui cumprimento por pedido
+      operationId: api-Pedidos-cdPedido-cumprimentos-delete
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: cdPedido
+          in: path
+          example: '10'
+          description: Identificador do pedido
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
         '401':
           description: Unauthorized
           content:
@@ -88371,6 +88646,90 @@ components:
         Descricao:
           type: string
           description: A descrição do contrato
+    FiltroCumprimentos:
+      title: FiltroCumprimentos
+      type: object
+      properties:
+        cdCumprimentos:
+          description: Identificadores dos cumprimentos
+          type: array
+          items:
+            type: integer
+        cdProcessoExpectativaReivindicacao:
+          description: Identificadores dos pedidos
+          type: array
+          items:
+            type: integer
+        dtPagamentoInicio:
+          description: Data inicial do pagamento
+          type: string
+        dtPagamentoFim:
+          description: Data final do pagamento
+          type: string
+        dtInclusaoRegistroInicio:
+          description: Data inicial da inclusão do registro
+          type: string
+        dtInclusaoRegistroFim:
+          description: Data final da inclusão do registro
+          type: string
+        cdDecisao:
+          description: Identificadores das decisões
+          type: array
+          items:
+            type: integer
+        dtDecisaoInicio:
+          description: Data inicial da decisão
+          type: string
+        dtDecisaoFim:
+          description: Data final da decisão
+          type: string
+    DTOCumprimento:
+      title: DTOCumprimento
+      type: object
+      properties:
+        cdCumprimento:
+          description: >-
+            Identificador do cumprimento`Required`<br />- **POST**: A
+            propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT
+            e DELETE**: Preencher com o valor da propriedade já existente.
+          example: 15
+          type: integer
+        vlPago:
+          description: Valor pago<br />`Required`
+          example: 20
+          type: number
+        vlAbatido:
+          description: >-
+            Valor abatido da dívida<br /> **Ao usar esse valor abatido não
+            utilizar percentual abatido**
+          example: 5
+          type: number
+        pctAbatido:
+          description: >-
+            Percentual abatido da dívida<br /> **Ao usar percentual abatido não
+            utilizar valor abatido**
+          example: 10
+          type: number
+        cdProcessoExpectativaReivindicacao:
+          description: Identificador do pedido vinculado ao cumprimento<br />`Required`
+          example: 3
+          type: integer
+        dtPagamento:
+          description: Data do pagamento da dívida<br />`Required`
+          type: string
+        dtInclusaoRegistro:
+          description: Data da inclusão do registro
+          type: string
+        cdDecisao:
+          description: Identificador da decisão vinculada
+          example: 55
+          type: integer
+        dtDecisao:
+          description: Data da decisão
+          type: string
+        dsDecisao:
+          description: Descrição da decisão vinculada
+          type: string
     DTOCasoDecisao:
       title: DTOCasoDecisao
       type: object
