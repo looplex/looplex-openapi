@@ -1,0 +1,36 @@
+title: FiltroCumprimentos
+type: object
+properties:
+  cdCumprimentos:
+    description: "Identificadores dos cumprimentos"
+    type: array
+    items:    
+      type: integer
+  cdProcessoExpectativaReivindicacao:
+    description: "Identificadores dos pedidos"
+    type: array
+    items:
+      type: integer
+  dtPagamentoInicio:
+    description: "Data inicial do pagamento"
+    type: string
+  dtPagamentoFim:
+    description: "Data final do pagamento"
+    type: string
+  dtInclusaoRegistroInicio:
+    description: "Data inicial da inclusão do registro"
+    type: string
+  dtInclusaoRegistroFim:
+    description: "Data final da inclusão do registro"
+    type: string
+  cdDecisao:
+    description: "Identificadores das decisões"
+    type: array
+    items:
+      type: integer
+  dtDecisaoInicio:
+    description: "Data inicial da decisão"
+    type: string
+  dtDecisaoFim:
+    description: "Data final da decisão"
+    type: string

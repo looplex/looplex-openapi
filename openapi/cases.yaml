@@ -249,6 +249,27 @@ paths:
     get:
       $ref: ./paths/cases/contrato/public@api@contratos-get.yaml
 
+  # Cumprimentos
+  /api/cumprimentos/ListaComFiltro:
+    post:
+      $ref: './paths/cases/cumprimentos/public@api@cumprimentos@ListaComFiltro-post.yaml'    
+  /api/cumprimentos/{cdCumprimento}:   
+    get:
+      $ref: './paths/cases/cumprimentos/public@api@cumprimentos-get.yaml'
+  /api/cumprimentos (put):
+    put:
+      $ref: './paths/cases/cumprimentos/public@api@cumprimentos-put.yaml'  
+  /api/cumprimentos (post):
+    post:
+      $ref: './paths/cases/cumprimentos/public@api@cumprimentos-post.yaml'
+  /api/cumprimentos (delete):
+    delete:
+      $ref: './paths/cases/cumprimentos/public@api@cumprimentos@exclui-delete.yaml'
+  /api/Pedidos/{cdPedido}/cumprimentos:
+    delete:
+      $ref: './paths/cases/cumprimentos/public@api@Pedidos@cdPedido@cumprimentos-delete.yaml'            
+      
+  
   # Decisões
   /api/casos/{idCaso}/Decisoes:
     get:
