@@ -110,7 +110,9 @@ properties:
     description: "O nome do fornecedor"
   Rito:
     type: string
-  
+  Locale:
+    type: string
+    example: "pt-BR"
   
   
   
