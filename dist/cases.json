@@ -18195,6 +18195,10 @@
           },
           "Rito": {
             "type": "string"
+          },
+          "Locale": {
+            "type": "string",
+            "example": "pt-BR"
           }
         }
       },
