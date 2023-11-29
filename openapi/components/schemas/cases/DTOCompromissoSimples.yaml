@@ -4,6 +4,9 @@ properties:
   IDCompromisso:
     description: "O identificador do compromisso"
     type: integer
+  IDCompromissoPai:
+    description: "O identificador do compromisso pai"
+    type: integer
   IDPrazo:
     type: integer
   IDArea:

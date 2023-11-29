@@ -3,6 +3,9 @@ type: object
 properties:
   IDItemAgenda:
     type: integer
+  IDCompromissoPai:
+    description: "O identificador do compromisso pai"
+    type: integer
   IDFuncionarioInclusao:
     type: integer
   IDTituloCobranca:
