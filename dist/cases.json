@@ -18732,6 +18732,10 @@
             "items": {
               "$ref": "#/components/schemas/DTOParte"
             }
+          },
+          "Locale": {
+            "type": "string",
+            "example": "pt-BR"
           }
         }
       },
