@@ -189,4 +189,7 @@ properties:
     type: array
     items: 
       $ref: DTOParte.yaml  
+  Locale:
+    type: string
+    example: "pt-BR"
   
