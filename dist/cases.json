@@ -22757,6 +22757,10 @@
           "IDItemAgenda": {
             "type": "integer"
           },
+          "IDCompromissoPai": {
+            "description": "O identificador do compromisso pai",
+            "type": "integer"
+          },
           "IDFuncionarioInclusao": {
             "type": "integer"
           },
@@ -22974,6 +22978,10 @@
         "properties": {
           "IDCompromisso": {
             "description": "O identificador do compromisso",
+            "type": "integer"
+          },
+          "IDCompromissoPai": {
+            "description": "O identificador do compromisso pai",
             "type": "integer"
           },
           "IDPrazo": {
