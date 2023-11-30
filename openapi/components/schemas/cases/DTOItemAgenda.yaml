@@ -10,6 +10,8 @@ properties:
     description: "Se for uma subtarefa, esse valor é o identificador da tarefa pai, senão o valor será nulo"    
   IDFuncionarioCriador: 
     type: integer    
+  IDForoUnificado:
+    type: integer
   Tipo:     
     $ref: enums/TipoItemAgenda.yaml
   Titulo: 
