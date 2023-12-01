@@ -18815,6 +18815,9 @@
           "IDFuncionarioCriador": {
             "type": "integer"
           },
+          "IDForoUnificado": {
+            "type": "integer"
+          },
           "Tipo": {
             "$ref": "#/components/schemas/TipoItemAgenda"
           },
