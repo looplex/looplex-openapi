@@ -24,9 +24,6 @@ properties:
   dtPagamento:
     description: "Data do pagamento da dívida<br />`Required`"
     type: string
-  dtInclusaoRegistro:
-    description: "Data da inclusão do registro"
-    type: string
   cdDecisao:
     description: "Identificador da decisão vinculada"
     example: 55
@@ -36,5 +33,11 @@ properties:
     type: string
   dsDecisao:
     description: "Descrição da decisão vinculada"
+    type: string
+  custom_fields:
+    description: "Campo padrão customizável"
+    type: string
+  created_at:
+    description: "Campo padrão, Data da inclusão do registro"
     type: string
 

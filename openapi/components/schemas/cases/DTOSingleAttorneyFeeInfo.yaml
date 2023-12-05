@@ -1,0 +1,27 @@
+title: DTOSingleAttorneyFeeInfo
+type: object
+properties:
+    Name:
+      type: string
+    Id:
+      description: "Identificador opcional"
+      type: integer
+    Value:
+      type: number
+    isPercentage:
+      description: "Indica se o Value é percentual ou um valor fixo"
+      type: boolean
+    isOverCompensatoryInterest:
+       description: "Indica se aplica sobre juros compensatórios"
+       type: boolean
+    isOverInterestInArrears:
+       description: "Indica se aplica sobre juros moratórios"
+       type: boolean
+    isOverOriginalValue:
+       description: "Indica se aplica sobre o valor original"
+       type: boolean
+    isOverPenalty:
+       description: "Indica se aplica sobre multa"
+       type: boolean
+
+
