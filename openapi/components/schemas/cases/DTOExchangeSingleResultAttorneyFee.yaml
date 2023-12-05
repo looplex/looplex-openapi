@@ -1,0 +1,43 @@
+title: DTOExchangeSingleResultAttorneyFee
+type: object
+properties:
+    Name:
+      type: string
+    Id:
+      type: integer
+      description: "Identificador opcional do honorário"
+    OverOriginalValue:
+      description: "Valor resultante da aplicação sobre o valor original"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    OverAdjustedValue:
+      description: "Valor resultante da aplicação sobre o valor corrigido"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    OverCompensatoryInterest:
+      description: "Valor resultante da aplicação sobre os juros compensatórios"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    OverInterestInArrear:
+      description: "Valor resultante da aplicação sobre os juros moratórios"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    OverPenalty:
+      description: "Valor resultante da aplicação sobre a multa"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    FixedValue:
+      description: "Valor fixo de honorário"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    Total:
+      description: "Valor Total do honorário"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml

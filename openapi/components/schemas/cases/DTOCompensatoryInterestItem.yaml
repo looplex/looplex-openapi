@@ -1,0 +1,23 @@
+title: DTOCompensatoryInterestItem
+type: object
+properties:
+    Rate:
+      type: number
+      description: "Taxa de Juros"
+    RateFrequencyType:
+      type: integer
+      description: "Indica a frequência de aplicação de juros"
+      example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
+    isProRata:
+      type: boolean
+      desacription: "Indica se o juros é pro rata"
+    RateType:
+      type: integer
+      description: "Indica se são juros simples ou compostos"
+      example: "1 - Simples\r\n2 - Compostos"
+    StartDate:
+      type: string
+      description: "Início da vigência de juros"
+    EndDate:
+      type: string
+      description: "Fim da vigência de juros"

@@ -1,0 +1,38 @@
+title: DTOExchangeRebateInfo
+type: objeect
+properties:
+    Value:
+      description: "Valor Fixo de abatimento"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    Name:
+      description: "Nome do Abatimento"
+      type: string
+    Percentage:
+      description: "Valor Percentual do abatimento"
+      example: "10.5 para 10,5%"
+      type: number
+    RebateFromOrder:
+      description: "Oredem de aplicação do abatimento"
+      example: "1 - JM->JC->Principal\r\n2 - JC->JM->Principal\r\n3 - Principal->JM->JC\r\n4 - Principal->JC->JM\r\n5 - JM->Principal->JC\r\n6 - JC->Principal->JM\r\n7 - Proporcional"
+      type: integer
+    Date:
+      description: "Data do abatimento"
+      type: string
+    OverPrincipal:
+      description: "Abatimento aplicado sobre o principal"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    OverCompensatoryInterests:
+      description: "Abatimento aplicado sobre os juros compensatórios"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    OverInterestsInArrears:
+      description: "Abatimento aplicado sobre os juros moratórios"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    

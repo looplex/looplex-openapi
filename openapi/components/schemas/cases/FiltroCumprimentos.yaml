@@ -34,3 +34,8 @@ properties:
   dtDecisaoFim:
     description: "Data final da decisão"
     type: string
+  cdProcesso:
+    description: "Identificadores dos casos"
+    type: array
+    items:
+      type: integer

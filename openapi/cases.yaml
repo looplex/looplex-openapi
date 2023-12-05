@@ -487,7 +487,10 @@ paths:
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
-
+  # Liabilities Calculation
+  /api/liabilitiesCalculation/calculaCaso/{cdProcesso}:
+    post:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculation@calculaCaso-post.yaml'
   # Natureza
   /api/casos/{IDCaso}/natureza:
     get:
@@ -554,6 +557,9 @@ paths:
   /api/casos/Pedidos/{IDCasoPedido}/IdsGarantias:
     get:
       $ref: './paths/cases/pedidos/public@api@casos@Pedidos@IDCasoPedido@IdsGarantias-get.yaml'
+  /api/casos/pedidostmp:
+    post:
+      $ref: './paths/cases/pedidos/public@api@pedidostmp-post.yaml'
       
   # Produtos
   /api/casos/{IDCaso}/produtos:

@@ -71,6 +71,8 @@ tags:
     x-displayName: Informações adicionais
   - name: Informações adicionais (valor)
     x-displayName: Informações adicionais (valor)
+  - name: LiabilitiesCalculation
+    x-displayName: LiabilitiesCalculation
   - name: Natureza
     x-displayName: Natureza
   - name: País
@@ -127,6 +129,7 @@ x-tagGroups:
       - Hierarquia
       - Informações adicionais
       - Informações adicionais (valor)
+      - LiabilitiesCalculation
       - Natureza
       - País
       - Partes
@@ -28835,6 +28838,54 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+  /api/liabilitiesCalculation/calculaCaso/{cdProcesso}:
+    post:
+      tags:
+        - LiabilitiesCalculation
+      summary: Calcula caso
+      operationId: api-liabilitiesCalculation-calculaCaso-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: cdProcesso
+          in: path
+          example: 10
+          description: Identificador do caso
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOResultadoCalculo'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/casos/{IDCaso}/natureza:
     get:
       tags:
@@ -29821,6 +29872,54 @@ paths:
                 type: array
                 items:
                   type: integer
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/casos/pedidostmp:
+    post:
+      tags:
+        - Pedidos
+      summary: Lista tabela temporal de pedidos
+      operationId: api-pedidostmp-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FilterTMPProcessoExpectativaReivindicacao'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOTMPPedido'
         '401':
           description: Unauthorized
           content:
@@ -88691,6 +88790,11 @@ components:
         dtDecisaoFim:
           description: Data final da decisão
           type: string
+        cdProcesso:
+          description: Identificadores dos casos
+          type: array
+          items:
+            type: integer
     DTOCumprimento:
       title: DTOCumprimento
       type: object
@@ -88725,9 +88829,6 @@ components:
         dtPagamento:
           description: Data do pagamento da dívida<br />`Required`
           type: string
-        dtInclusaoRegistro:
-          description: Data da inclusão do registro
-          type: string
         cdDecisao:
           description: Identificador da decisão vinculada
           example: 55
@@ -88737,6 +88838,12 @@ components:
           type: string
         dsDecisao:
           description: Descrição da decisão vinculada
+          type: string
+        custom_fields:
+          description: Campo padrão customizável
+          type: string
+        created_at:
+          description: Campo padrão, Data da inclusão do registro
           type: string
     DTOCasoDecisao:
       title: DTOCasoDecisao
@@ -89954,6 +90061,870 @@ components:
             type: string
         IdCaso:
           type: integer
+    DTOCurrencyValue:
+      title: DTOCurrencyValue
+      type: object
+      properties:
+        Value:
+          type: number
+        Currency:
+          description: Moeda
+          type: string
+        CurrencySymbol:
+          description: Símbolo da Moeda
+          type: string
+        IsCalculationCurrency:
+          description: Indica se é a moeda do cálculo
+          type: string
+        ExchangeRateDate:
+          description: Indica o dia da taxa de conversão
+          type: string
+        ExchangeRate:
+          description: Indica a taxa de conversão para o Real
+          type: string
+        isCustomCurrencyRate:
+          description: Indica se é uma moeda customizada
+          type: string
+    DTOExchangeSingleResultCompensatoryInterest:
+      title: DTOExchangeSingleResultCompensatoryInterest
+      type: object
+      properties:
+        OverAdjustedValue:
+          description: Valor resultante sobre o principal
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverCompensatoryInterest:
+          description: Valor resultante sobre juros compensatórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Rate:
+          description: Taxa de juros aplicada
+          type: number
+        CompoundRate:
+          description: >-
+            Taxa de juros composta aplicada(a princípio será sempre igual a Rate
+            pois atualmente o cálculo é sempre realizado diariamente)
+          type: array
+        RateFrequencyType:
+          type: integer
+          description: Indica a frequência de aplicação de juros
+          example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
+        isProRata:
+          description: Indica se o juros é pro rata
+          type: boolean
+        RateType:
+          type: integer
+          description: Indica se são juros simples ou compostos
+          example: "1 - Simples\r\n2 - Compostos"
+    DTOExchangeSingleResultInterestInArrears:
+      title: DTOExchangeSingleResultInterestInArrears
+      type: object
+      properties:
+        OverFactoredValue:
+          description: Valor resultante sobre o principal
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverCompensatoryInterest:
+          description: Valor resultante sobre juros compensatórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverInterestInArrears:
+          description: Valor resultante sobre juros moratórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Rate:
+          description: Taxa de juros aplicada
+          type: number
+        CompoundRate:
+          description: >-
+            Taxa de juros composta aplicada(a princípio será sempre igual a Rate
+            pois atualmente o cálculo é sempre realizado diariamente)
+          type: array
+        RateFrequencyType:
+          type: integer
+          description: Indica a frequência de aplicação de juros
+          example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
+        isProRata:
+          description: Indica se o juros é pro rata
+          type: boolean
+        RateType:
+          type: integer
+          description: Indica se são juros simples ou compostos
+          example: "1 - Simples\r\n2 - Compostos"
+    DTOCalculationFactors:
+      title: DTOCalculationFactors
+      type: object
+      properties:
+        upAdjustmentRate:
+          type: number
+        downAdjustmentRate:
+          type: number
+        StartDate:
+          type: string
+        EndDate:
+          type: string
+    DTOExchangeRebateInfo:
+      title: DTOExchangeRebateInfo
+      type: objeect
+      properties:
+        Value:
+          description: Valor Fixo de abatimento
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Name:
+          description: Nome do Abatimento
+          type: string
+        Percentage:
+          description: Valor Percentual do abatimento
+          example: 10.5 para 10,5%
+          type: number
+        RebateFromOrder:
+          description: Oredem de aplicação do abatimento
+          example: "1 - JM->JC->Principal\r\n2 - JC->JM->Principal\r\n3 - Principal->JM->JC\r\n4 - Principal->JC->JM\r\n5 - JM->Principal->JC\r\n6 - JC->Principal->JM\r\n7 - Proporcional"
+          type: integer
+        Date:
+          description: Data do abatimento
+          type: string
+        OverPrincipal:
+          description: Abatimento aplicado sobre o principal
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverCompensatoryInterests:
+          description: Abatimento aplicado sobre os juros compensatórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverInterestsInArrears:
+          description: Abatimento aplicado sobre os juros moratórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+    DTOExchangeResultItemSingleOccurenceIntervalValues:
+      title: DTOExchangeResultItemSingleOccurenceIntervalValues
+      type: object
+      properties:
+        NextAccumulatedPRORATAInterestInArrearsTILLWITHLastRebate:
+          description: Montante acumulado de Juros moratórios após cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        NextAccumulatedPRORATACompensatoryInterestTILLWITHLastRebate:
+          description: >-
+            Montante acumulado de Juros compensatórios após cálculos do dia
+            atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedPRORATACompensatoryInterestTILLWITHLastRebate:
+          description: Montante acumulado de Juros compensatórios sem cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedPRORATAInterestInArrearsTILLWITHLastRebate:
+          description: Montante acumulado de Juros moratórios sem cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedPRORATACompensatoryInterest:
+          description: Montante acumulado de Juros compensatórios sem cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedPRORATAInterestInArrears:
+          description: Montante acumulado de Juros moratórios sem cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedPRORATACompensatoryInterestNOREBATE:
+          description: Montante acumulado de Juros compensatórios sem cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedPRORATAInterestInArrearsNOREBATE:
+          description: Montante acumulado de Juros moratórios sem cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDCompensatoryInterestBefore:
+          description: >-
+            Montante acumulado de Juros compensatórios FECHADOS sem cálculos do
+            dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDCompensatoryInterestBeforeFACTORED:
+          description: >-
+            Montante acumulado de Juros compensatórios FECHADOS sem cálculos do
+            dia atual mas atualizados pela correção monetária
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDCompensatoryInterestAfter:
+          description: >-
+            Montante acumulado de Juros compensatórios FECHADOS COM cálculos do
+            dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDCompensatoryInterestAfterNOREBATE:
+          description: >-
+            Montante acumulado de Juros compensatórios FECHADOS COM cálculos do
+            dia atual mas sem aplicação de abatimentos
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDInterestInArrearsBefore:
+          description: >-
+            Montante acumulado de Juros moratórios FECHADOS sem cálculos do dia
+            atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDInterestInArrearsBeforeFACTORED:
+          description: >-
+            Montante acumulado de Juros moratórios FECHADOS sem cálculos do dia
+            atual mas atualizados pela correção monetária
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDInterestInArrearsAfter:
+          description: >-
+            Montante acumulado de Juros moratórios FECHADOS COM cálculos do dia
+            atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCLOSEDInterestInArrearsAfterNOREBATE:
+          description: >-
+            Montante acumulado de Juros moratórios FECHADOS COM cálculos do dia
+            atual mas sem aplicação de abatimentos
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCompensatoryInterestBefore:
+          description: Montante acumulado de Juros compensatórios sem cálculos do dia
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedInterestInArrearsBefore:
+          description: Montante acumulado de Juros moratórios sem cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCompensatoryInterestFACTOREDBefore:
+          description: >-
+            Montante acumulado de Juros compensatórios sem cálculos do dia atual
+            mas atualizados pela correção monetária
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedInterestInArrearsFACTOREDBefore:
+          description: >-
+            Montante acumulado de Juros moratórios sem cálculos do dia atual mas
+            atualizados pela correção monetária
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCompensatoryInterestAfterNOREBATE:
+          description: >-
+            Montante acumulado de Juros compensatórios com cálculos do dia atual
+            mas sem abatimentos
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedInterestInArrearsAfterNOREBATE:
+          description: >-
+            Montante acumulado de Juros moratórios com cálculos do dia atual mas
+            sem abatimentos
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCompensatoryInterestAfter:
+          description: Montante acumulado de Juros compensatórios com cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedInterestInArrearsAfter:
+          description: Montante acumulado de Juros moratórios com cálculos do dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        LastTotalValue:
+          description: Total do dia anterior
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        LastAdjustedValue:
+          description: Total do dia anterior com correção para o dia atual
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OriginalValue:
+          description: Valor original
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        StartDate:
+          description: Início do período (dia atual)
+          type: string
+        EndDate:
+          description: Fim do período (dia seguinte)
+          type: string
+        AdjustedValue:
+          description: Principal Corrigido depois dos cálculos do período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AdjustedValueNOREBATES:
+          description: Principal Corrigido depois dos cálculos do período sem abatimentos
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        CompensatoryInterest:
+          description: Juros Compensatórios do período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        CompensatoryInterestResult:
+          description: Detalhes dos juros compensatórios do período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeSingleResultCompensatoryInterest'
+        InterestInArrearsResult:
+          description: Detalhes dos juros moratórios do período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeSingleResultInterestInArrears'
+        InterestInArrears:
+          description: Juros moratórios do período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Total:
+          description: Valor Total Final do Período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalNOREBATE:
+          description: Valor Total sem Abatimentos
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalProRataTillHereNOREBATE:
+          description: Valor Total com Pro rata sem abatimentos
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedCompensatoryProRataTillHere:
+          description: Montante acumulado de Juros compensatórios com pro rata
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AccumulatedInArrearsProRataTillHere:
+          description: Montante acumulado de Juros moratórios com pro rata
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AdjustmentRates:
+          description: Fatores aplicados na Correções monetárias do período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCalculationFactors'
+        Rebates:
+          description: Abatimentos aplicados no período
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeRebateInfo'
+        AdjustedValueChanged:
+          description: >-
+            Indica que houve alteração de valor por correção monetária neste
+            período
+          type: boolean
+        CompensatoryInterestChanged:
+          description: >-
+            Indica que houve alteração de valor por juros compensatórios neste
+            período
+          type: boolean
+        InterestInArrearsChanged:
+          description: >-
+            Indica que houve alteração de valor por juros moratórios neste
+            período
+          type: boolean
+        RebateOnCompensatoryInterestChanged:
+          description: >-
+            Indica que houve alteração de valor por abatimento em juros
+            compensatórios neste período
+          type: boolean
+        RebateOnInterestInArrearsChanged:
+          description: >-
+            Indica que houve alteração de valor por abatimento em juros
+            moratórios neste período
+          type: boolean
+        RebateOnPrincipalChanged:
+          description: >-
+            Indica que houve alteração de valor por abatimento no montante
+            principal neste período
+          type: boolean
+        ToBePresented:
+          description: Indica que este período deve ser retornado ao fim do cálculo
+          type: boolean
+    DTOExchangeSingleResultFine:
+      title: DTOExchangeSingleResultFine
+      type: object
+      properties:
+        Id:
+          type: integer
+          description: Identificador opcional de multa
+        Name:
+          type: string
+        OverOriginalValue:
+          description: Valor resultante da aplicação sobre o valor original
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverAdjustedValue:
+          description: Valor resultante da aplicação sobre o valor corrigido
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverCompensatoryInterest:
+          description: Valor resultante da aplicação sobre os juros compensatórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverInterestInArrears:
+          description: Valor resultante da aplicação sobre os juros moratórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Total:
+          description: Valor Total da multa
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+    DTOExchangeSingleResultAttorneyFee:
+      title: DTOExchangeSingleResultAttorneyFee
+      type: object
+      properties:
+        Name:
+          type: string
+        Id:
+          type: integer
+          description: Identificador opcional do honorário
+        OverOriginalValue:
+          description: Valor resultante da aplicação sobre o valor original
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverAdjustedValue:
+          description: Valor resultante da aplicação sobre o valor corrigido
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverCompensatoryInterest:
+          description: Valor resultante da aplicação sobre os juros compensatórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverInterestInArrear:
+          description: Valor resultante da aplicação sobre os juros moratórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OverPenalty:
+          description: Valor resultante da aplicação sobre a multa
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        FixedValue:
+          description: Valor fixo de honorário
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Total:
+          description: Valor Total do honorário
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+    DTOExchangeResultItemSingleOccurence:
+      title: DTOExchangeResultItemSingleOccurence
+      type: object
+      properties:
+        OriginalValue:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        CalculationIntervalValues:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/DTOExchangeResultItemSingleOccurenceIntervalValues
+        OccurenceDate:
+          type: string
+          description: Data inicial do pedido
+        AdjustedValue:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        CompensatoryInterest:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        InterestInArrears:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Total:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        PenaltyResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeSingleResultFine'
+        PenaltyValue:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        LoserPaysAttorneyFeesResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeSingleResultAttorneyFee'
+        AppealMotionResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeSingleResultAttorneyFee'
+        ContractualAttorneyFeesResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeSingleResultAttorneyFee'
+        AppealMotionFeesValue:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        ContractualAttorneyFeesValue:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        LoserPaysAttorneyFeesValue:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalAttorneyFees:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        SubTotalWithInterest:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        ContingencyPercentage:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        ContingengyTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+    DTOSingleAttorneyFeeInfo:
+      title: DTOSingleAttorneyFeeInfo
+      type: object
+      properties:
+        Name:
+          type: string
+        Id:
+          description: Identificador opcional
+          type: integer
+        Value:
+          type: number
+        isPercentage:
+          description: Indica se o Value é percentual ou um valor fixo
+          type: boolean
+        isOverCompensatoryInterest:
+          description: Indica se aplica sobre juros compensatórios
+          type: boolean
+        isOverInterestInArrears:
+          description: Indica se aplica sobre juros moratórios
+          type: boolean
+        isOverOriginalValue:
+          description: Indica se aplica sobre o valor original
+          type: boolean
+        isOverPenalty:
+          description: Indica se aplica sobre multa
+          type: boolean
+    DTOAttorneyFeeInfo:
+      title: DTOAttorneyFeeInfo
+      type: object
+      properties:
+        LoserPaysAttorneyFees:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOSingleAttorneyFeeInfo'
+        AppealMotionFees:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOSingleAttorneyFeeInfo'
+        ContractualAttorneyFees:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOSingleAttorneyFeeInfo'
+    DTOPenaltyInfo:
+      title: DTOPenaltyInfo
+      type: object
+      properties:
+        Id:
+          description: Identificador opcional da multa
+          type: integer
+        Name:
+          description: Nome da multa
+          type: string
+        Value:
+          description: Valor percentual
+          example: 10.5 para 10.5%
+          type: number
+        isOverCompensatoryInterest:
+          description: Indica se aplica-se sobre os Juros Compensatórios
+          type: boolean
+        isOverInterestInArrears:
+          description: Indica se aplica-se sobre os Juros Moratórios
+          type: boolean
+        isOverOriginalValue:
+          description: Indica se aplica-se sobre o valor original em vez do valor corrigido
+          type: boolean
+    DTODefaultInterestItem:
+      title: DTODefaultInterestItem
+      type: object
+      properties:
+        Rate:
+          type: number
+          description: Taxa de Juros
+        RateFrequencyType:
+          type: integer
+          description: Indica a frequência de aplicação de juros
+          example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
+        isProRata:
+          type: boolean
+          desacription: Indica se o juros é pro rata
+        RateType:
+          type: integer
+          description: Indica se são juros simples ou compostos
+          example: "1 - Simples\r\n2 - Compostos"
+        StartDate:
+          type: string
+          description: Início da vigência de juros
+        EndDate:
+          type: string
+          description: Fim da vigência de juros
+        isOverCompensatory:
+          type: boolean
+          description: Indica se aplica sobre os juros compensatórios
+    DTOCompensatoryInterestItem:
+      title: DTOCompensatoryInterestItem
+      type: object
+      properties:
+        Rate:
+          type: number
+          description: Taxa de Juros
+        RateFrequencyType:
+          type: integer
+          description: Indica a frequência de aplicação de juros
+          example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
+        isProRata:
+          type: boolean
+          desacription: Indica se o juros é pro rata
+        RateType:
+          type: integer
+          description: Indica se são juros simples ou compostos
+          example: "1 - Simples\r\n2 - Compostos"
+        StartDate:
+          type: string
+          description: Início da vigência de juros
+        EndDate:
+          type: string
+          description: Fim da vigência de juros
+    DTOCalculationAdjustmentRates:
+      title: DTOCalculationAdjustmentRates
+      type: object
+      properties:
+        Id:
+          type: integer
+          description: Identificador do indice monetário
+          example: >-
+            Para obter a lista de índices basta fazer uma requisição GET para a
+            API de Índices monetários
+            (https://indicesmonetarios.lawoffice.com.br/api/IndicesMonetarios),
+            os ids são dados pelo campo indiceMonetarioId
+        name:
+          type: string
+        UpdateFrequency:
+          description: "Indica a frequencia com que o indíce atualiza o valor\r\n1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual\r\n5 - Diário sem fim de semana"
+          type: integer
+        StartDate:
+          description: Início da vigência do correção monetária
+          type: string
+        EndDate:
+          description: Fim da vigência do correção monetária
+          type: string
+    DTOExchangeResultItem:
+      title: DTOExchangeResultItem
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Identificador do pedido (definido no escritório)
+        OriginalValue:
+          description: Valor original do pedido
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalAdjustedValue:
+          description: Valor atualizado do pedido
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalCompensatoryInterest:
+          description: Valor total dos juros compensatórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalInterestInArrears:
+          description: Valor total dos juros moratórios
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalPenalty:
+          description: Valor total de multa
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalLoserPaysAttorneyFees:
+          description: Valor total dos honorários sucumbenciais
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalContractualAttorneyFees:
+          description: Valor total dos honorários contratuais
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalAppealMotionFees:
+          description: Valor total dos honorários recursais
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalAttorneyFees:
+          description: Valor total dos honorários
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Total:
+          description: Valor total de todos os valores
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        ContingencyTotal:
+          description: Valor contingencial
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        SubTotalWithInterest:
+          description: Valor total sem honorários e multas
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Description:
+          type: string
+        Occurences:
+          description: Resultados de cada ocorrência, a princípio será sempre uma
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeResultItemSingleOccurence'
+        FinalDate:
+          description: Início do cálculo
+          type: string
+        StartDate:
+          description: Fim do cálculo
+          type: string
+        TIAHonorariumInfo:
+          description: configurações de honorários utilizadas no cálculo
+          $ref: '#/components/schemas/DTOAttorneyFeeInfo'
+        TIAFineInfo:
+          description: configurações de Multa utilizadas no cálculo
+          $ref: '#/components/schemas/DTOPenaltyInfo'
+        TIADefaultInterest:
+          description: configurações de juros moratórios utilizadas no cálculo
+          $ref: '#/components/schemas/DTODefaultInterestItem'
+        TIACompensatoryInterest:
+          description: configurações de juros compensatórios utilizadas no cálculo
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCompensatoryInterestItem'
+        TIAIndexes:
+          description: configurações de correção monetária utilizadas no cálculo
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCalculationAdjustmentRates'
+        CalculationObservations:
+          type: string
+    DTOResultadoCalculo:
+      title: DTOResultadoCalculo
+      type: object
+      properties:
+        Total:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AdjustedTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        OriginalTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        CompensatoryInterestTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        InterestInArrearsTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        PenaltyTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        TotalContingency:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AttorneyFeesTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        LoserPaysAttorneyFeesTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        AppealMotionFeesTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        ContractualAttorneyFeesTotal:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOCurrencyValue'
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOExchangeResultItem'
     DTONatureza:
       title: DTONatureza
       type: object
@@ -90153,6 +91124,160 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOPedidoCausa'
+    FilterTMPProcessoExpectativaReivindicacao:
+      title: FilterTMPProcessoExpectativaReivindicacao
+      type: object
+      properties:
+        ExactMoment:
+          description: Momento exato em que se quer o valor de um registro temporal
+          type: string
+        StartDate:
+          description: >-
+            Data inicial do período em que se quer todos os valores dos
+            registros temporais
+          type: string
+        EndDate:
+          description: >-
+            Data final do período em que se quer todos os valores dos registros
+            temporais
+          type: string
+        idsCasos:
+          description: Identificadores dos casos
+          type: array
+          items:
+            type: integer
+        idsProcessoExpectativaReivindicacao:
+          description: Identificadores dos pedidos dos casos
+          type: array
+          items:
+            type: integer
+    DTOTMPPedido:
+      title: DTOTMPPedido
+      type: object
+      properties:
+        cdProcessoExpectativaReivindicacao:
+          description: Identificador do Pedido do caso
+          type: integer
+        cdProcesso:
+          description: Identificador do caso
+          type: integer
+        cdPedidoCausa:
+          description: Identificador do Pedido(Definição do escritório)
+          type: object
+          properties:
+            Value:
+              type: integer
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        dsPedidoCausa:
+          description: Nome do Pedido(Definição do escritório)
+          type: object
+          properties:
+            Value:
+              type: string
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        vlSolicitado:
+          description: Valor Solicitado do pedido
+          type: object
+          properties:
+            Value:
+              type: number
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        nrMoedaSolicitado:
+          description: Moeda do valor solicitado do pedido
+          type: object
+          properties:
+            Value:
+              type: integer
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        vlContigenciado:
+          description: Valor Contingenciado do pedido(valor antigo do lawoffice)
+          type: object
+          properties:
+            Value:
+              type: number
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        nrMoedaContigenciado:
+          description: Moeda do Valor Contingenciado do pedido(valor antigo do lawoffice)
+          type: object
+          properties:
+            Value:
+              type: integer
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        nrPorcentagemExito:
+          description: Exito/Perda do pedido
+          type: object
+          properties:
+            Value:
+              type: integer
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        dsPorcentagemExito:
+          description: Descrição Exito/Perda do pedido
+          type: object
+          properties:
+            Value:
+              type: string
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        dsJustificativaPedido:
+          description: Justificativa do Pedido
+          type: object
+          properties:
+            Value:
+              type: string
+            Changed:
+              description: Justificativa do pedido
+              type: boolean
+        nrSituacao:
+          description: Situação do Pedido
+          type: object
+          properties:
+            Value:
+              type: integer
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        dsSituacao:
+          description: Descrição da Situação do Pedido
+          type: object
+          properties:
+            Value:
+              type: string
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        dtDataConstituicao:
+          description: Data de Constituição
+          type: object
+          properties:
+            Value:
+              type: string
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
+        dtDataVencimento:
+          description: Data de Vencimento
+          type: object
+          properties:
+            Value:
+              type: string
+            Changed:
+              description: Indica se a propriedade foi alterada neste registro temporal
+              type: boolean
     DTOProduto:
       title: DTOProduto
       type: object
