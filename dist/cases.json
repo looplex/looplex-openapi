@@ -5754,7 +5754,7 @@
         }
       }
     },
-    "/api/cumprimentos (put)": {
+    "/api/cumprimentos": {
       "put": {
         "tags": [
           "Cumprimentos"
@@ -5823,9 +5823,7 @@
             }
           }
         }
-      }
-    },
-    "/api/cumprimentos (post)": {
+      },
       "post": {
         "tags": [
           "Cumprimentos"
@@ -5894,9 +5892,7 @@
             }
           }
         }
-      }
-    },
-    "/api/cumprimentos (delete)": {
+      },
       "delete": {
         "tags": [
           "Cumprimentos"
@@ -11025,6 +11021,92 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DTOInformacaoAdicional"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dado_complementar/filtro": {
+      "get": {
+        "tags": [
+          "Informações adicionais"
+        ],
+        "summary": "Informações adicionais por filtro",
+        "description": "`tiposCaso - Enviar array` <br/> `tiposCampo - Enviar array`",
+        "operationId": "api-dado_complementar-filtro-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "tiposCaso",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
+          },
+          {
+            "name": "tiposCampo",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/TipoDadoComplementar"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOFiltroInformacaoAdicional"
+                  }
                 }
               }
             }
@@ -17517,8 +17599,7 @@
       },
       "RamosJudicial": {
         "type": "integer",
-        "example": 3,
-        "description": "`O tipo do processo`\n\n1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
+        "description": "1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
       },
       "DTOAndamentoTemplate": {
         "title": "DTOAndamentoTemplate",
@@ -22348,10 +22429,9 @@
         }
       },
       "TipoDadoComplementar": {
-        "type": "object",
+        "type": "integer",
         "title": "TipoDadoComplementar",
-        "example": 1,
-        "description": "`O tipo do dado complementar` \n\n-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
+        "description": "-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n"
       },
       "DTOItemDadoComplementar": {
         "title": "DTOItemDadoComplementar",
@@ -22538,6 +22618,36 @@
             }
           },
           "IdCaso": {
+            "type": "integer"
+          }
+        }
+      },
+      "DTOFiltroInformacaoAdicional": {
+        "title": "DTOFiltroInformacaoAdicional",
+        "type": "object",
+        "properties": {
+          "IDParametroDadoComplementar": {
+            "type": "integer"
+          },
+          "IDCliente": {
+            "type": "integer"
+          },
+          "TipoCampoDadoComplementar": {
+            "type": "enums\\TipoDadoComplementar.yaml"
+          },
+          "TituloDadoComplementar": {
+            "type": "string"
+          },
+          "TamanhoCampo": {
+            "type": "integer"
+          },
+          "Obrigatorio": {
+            "type": "boolean"
+          },
+          "Ativo": {
+            "type": "boolean"
+          },
+          "Ordem": {
             "type": "integer"
           }
         }

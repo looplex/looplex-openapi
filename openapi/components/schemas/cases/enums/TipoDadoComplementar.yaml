@@ -1,9 +1,6 @@
-type: object
+type: integer
 title: TipoDadoComplementar
-example: 1
-description: |
-  `O tipo do dado complementar` 
-
+description: |  
   -2147483648: None
   
   1: CaixaTexto
