@@ -25440,7 +25440,7 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/cumprimentos (put):
+  /api/cumprimentos:
     put:
       tags:
         - Cumprimentos
@@ -25484,7 +25484,6 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/cumprimentos (post):
     post:
       tags:
         - Cumprimentos
@@ -25528,7 +25527,6 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /api/cumprimentos (delete):
     delete:
       tags:
         - Cumprimentos
@@ -28764,6 +28762,60 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOInformacaoAdicional'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/dado_complementar/filtro:
+    get:
+      tags:
+        - Informações adicionais
+      summary: Informações adicionais por filtro
+      description: '`tiposCaso - Enviar array` <br/> `tiposCampo - Enviar array`'
+      operationId: api-dado_complementar-filtro-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: tiposCaso
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/RamosJudicial'
+        - name: tiposCampo
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/TipoDadoComplementar'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOFiltroInformacaoAdicional'
         '401':
           description: Unauthorized
           content:
@@ -86145,10 +86197,7 @@ components:
           description: Descrição do erro
     RamosJudicial:
       type: integer
-      example: 3
       description: |
-        `O tipo do processo`
-
         1: Administrativo
 
         2: Interno (Consultivo)
@@ -89845,12 +89894,9 @@ components:
         isAtivo:
           type: boolean
     TipoDadoComplementar:
-      type: object
+      type: integer
       title: TipoDadoComplementar
-      example: 1
       description: |
-        `O tipo do dado complementar` 
-
         -2147483648: None
 
         1: CaixaTexto
@@ -90060,6 +90106,26 @@ components:
           items:
             type: string
         IdCaso:
+          type: integer
+    DTOFiltroInformacaoAdicional:
+      title: DTOFiltroInformacaoAdicional
+      type: object
+      properties:
+        IDParametroDadoComplementar:
+          type: integer
+        IDCliente:
+          type: integer
+        TipoCampoDadoComplementar:
+          type: enums\TipoDadoComplementar.yaml
+        TituloDadoComplementar:
+          type: string
+        TamanhoCampo:
+          type: integer
+        Obrigatorio:
+          type: boolean
+        Ativo:
+          type: boolean
+        Ordem:
           type: integer
     DTOCurrencyValue:
       title: DTOCurrencyValue

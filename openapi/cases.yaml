@@ -256,13 +256,11 @@ paths:
   /api/cumprimentos/{cdCumprimento}:   
     get:
       $ref: './paths/cases/cumprimentos/public@api@cumprimentos-get.yaml'
-  /api/cumprimentos (put):
+  /api/cumprimentos:
     put:
       $ref: './paths/cases/cumprimentos/public@api@cumprimentos-put.yaml'  
-  /api/cumprimentos (post):
     post:
       $ref: './paths/cases/cumprimentos/public@api@cumprimentos-post.yaml'
-  /api/cumprimentos (delete):
     delete:
       $ref: './paths/cases/cumprimentos/public@api@cumprimentos@exclui-delete.yaml'
   /api/Pedidos/{cdPedido}/cumprimentos:
@@ -482,6 +480,9 @@ paths:
   /api/dado_complementar/edit:
     put:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@edit-put.yaml'
+  /api/dado_complementar/filtro:
+    get:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@filtro-get.yaml'   
 
   # Informações adicionais (Valor)
   /api/dado_complementar/valor:

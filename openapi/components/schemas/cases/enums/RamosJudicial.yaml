@@ -1,8 +1,5 @@
 type: integer
-example: 3
 description: |
-  `O tipo do processo`
-  
   1: Administrativo
 
   2: Interno (Consultivo)
