@@ -90627,6 +90627,9 @@ components:
           type: string
         IsEditable:
           type: boolean
+        CustomFields:
+          description: Os custom fields definidos para essa tarefa (item de agenda)
+          type: object
     TipoEventoDeCobranca:
       type: integer
       example: 1
