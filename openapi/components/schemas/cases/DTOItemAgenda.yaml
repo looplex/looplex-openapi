@@ -112,3 +112,6 @@ properties:
     type: string
   ExecutionID:
     type: string
+  CustomFields:
+    description: "Os custom fields definidos para essa tarefa (item de agenda)"
+    type: object

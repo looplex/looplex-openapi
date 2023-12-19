@@ -2,7 +2,7 @@
 apis:
   looplex_graph@v1:
     root: openapi.yaml
-    #root: openapi/cases.yaml
+    # root: openapi/cases.yaml
 extends:
   - recommended
 rules:

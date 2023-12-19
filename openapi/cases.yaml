@@ -662,6 +662,9 @@ paths:
   /api/agenda/status_encerramento:
     get:
       $ref: './paths/cases/tarefa/public@api@agenda@status_encerramento-get.yaml'
+  /api/agenda/custom_field:
+    post:
+      $ref: './paths/cases/tarefa/public@api@agenda@custom_field-post.yaml'
 
   # Timeline
   /api/timeline/items:

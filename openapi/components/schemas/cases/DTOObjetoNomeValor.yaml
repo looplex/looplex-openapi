@@ -4,11 +4,11 @@ properties:
   Nome:
     type: string
     example: "Nome da propriedade"
-    description: "O nome da propriedade a editar"
+    description: "O nome da propriedade"
   Valor:
     type: string
     example: "Valor a gravar"
-    description: "O novo valor a gravar"
+    description: "O valor a gravar"
 required: 
   - Nome
   - Valor

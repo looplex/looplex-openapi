@@ -1,18 +1,39 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Cadastrar item de agenda"
-description: "A propriedade `Custom_Fields` será ignorada nesse endpoint.<br />Para atualizar essa propriedade, verifique o endpoint '`Cadastra / atualiza Custom Fields`'."
-operationId: api-agenda-post
+summary: "Cadastra / atualiza Custom Fields"
+description: "Esse endpoint é `exclusivo para criar ou atualizar valores de custom fields`"
+operationId: api-agenda-custom_field-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - name: client_id
+    in: header
+    description: "O identificador do client que está efetuando a operação"
+    example: 0abc123...
+    required: true
+    schema:
+      type: string
+  - name: idCompromisso
+    in: query
+    example: 1
+    description: "O identificador da tarefa (item de agenda)"
+    required: true
+    schema:
+      type: integer
+  - name: tipoItemAgenda
+    in: query
+    required: true
+    schema:
+      $ref: ../../../components/schemas/cases/enums/TipoItemAgenda.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/cases/DTOItemAgenda.yaml
+        type: array
+        items: 
+          $ref: ../../../components/schemas/cases/DTOObjetoNomeValor.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
