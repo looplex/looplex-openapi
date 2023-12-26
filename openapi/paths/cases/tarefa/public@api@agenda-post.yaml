@@ -2,6 +2,7 @@
 tags:
   - Tarefa
 summary: "Cadastrar item de agenda"
+description: "A propriedade `Custom_Fields` será ignorada nesse endpoint.<br />Para atualizar essa propriedade, verifique o endpoint '`Cadastra / atualiza Custom Fields`'."
 operationId: api-agenda-post
 # Parâmetros da requisição
 parameters:

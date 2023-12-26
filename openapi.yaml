@@ -31112,6 +31112,10 @@ paths:
       tags:
         - Tarefa
       summary: Cadastrar item de agenda
+      description: >-
+        A propriedade `Custom_Fields` será ignorada nesse endpoint.<br />Para
+        atualizar essa propriedade, verifique o endpoint '`Cadastra / atualiza
+        Custom Fields`'.
       operationId: api-agenda-post
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -31157,6 +31161,10 @@ paths:
       tags:
         - Tarefa
       summary: Atualizar item de agenda
+      description: >-
+        A propriedade `Custom_Fields` será ignorada nesse endpoint.<br />Para
+        atualizar essa propriedade, verifique o endpoint '`Cadastra / atualiza
+        Custom Fields`'.
       operationId: api-agenda-put
       parameters:
         - $ref: '#/components/parameters/Profile'
@@ -31690,6 +31698,76 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DTOStatusEncerramentoItemAgenda'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/agenda/custom_field:
+    post:
+      tags:
+        - Tarefa
+      summary: Cadastra / atualiza Custom Fields
+      description: >-
+        Esse endpoint é `exclusivo para criar ou atualizar valores de custom
+        fields`
+      operationId: api-agenda-custom_field-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: client_id
+          in: header
+          description: O identificador do client que está efetuando a operação
+          example: 0abc123...
+          required: true
+          schema:
+            type: string
+        - name: idCompromisso
+          in: query
+          example: 1
+          description: O identificador da tarefa (item de agenda)
+          required: true
+          schema:
+            type: integer
+        - name: tipoItemAgenda
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoItemAgenda'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DTOObjetoNomeValor'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DTOItemAgenda'
         '401':
           description: Unauthorized
           content:
@@ -87585,6 +87663,9 @@ components:
           type: string
         ExecutionID:
           type: string
+        CustomFields:
+          description: Os custom fields definidos para essa tarefa (item de agenda)
+          type: object
     DTOValorDadoComplementarCaso:
       title: DTOValorDadoComplementarCaso
       type: object
@@ -87899,11 +87980,11 @@ components:
         Nome:
           type: string
           example: Nome da propriedade
-          description: O nome da propriedade a editar
+          description: O nome da propriedade
         Valor:
           type: string
           example: Valor a gravar
-          description: O novo valor a gravar
+          description: O valor a gravar
       required:
         - Nome
         - Valor
@@ -91737,6 +91818,9 @@ components:
           type: string
         IsEditable:
           type: boolean
+        CustomFields:
+          description: Os custom fields definidos para essa tarefa (item de agenda)
+          type: object
     TipoEventoDeCobranca:
       type: integer
       example: 1
@@ -91821,6 +91905,9 @@ components:
           type: integer
         IsEditable:
           type: boolean
+        CustomFields:
+          description: Os custom fields definidos para essa tarefa (item de agenda)
+          type: object
     DTORecorrenciaDeItemAgenda:
       title: DTORecorrenciaDeItemAgenda
       type: object
@@ -91873,6 +91960,9 @@ components:
           type: integer
         IsEditable:
           type: boolean
+        CustomFields:
+          description: Os custom fields definidos para essa tarefa (item de agenda)
+          type: object
         Recorrencia:
           $ref: '#/components/schemas/DTORecorrenciaDeItemAgenda'
     DTOStatusEncerramentoItemAgenda:

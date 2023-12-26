@@ -42,3 +42,6 @@ properties:
     type: integer
   IsEditable:
     type: boolean
+  CustomFields:
+    description: "Os custom fields definidos para essa tarefa (item de agenda)"
+    type: object
