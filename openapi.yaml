@@ -30578,6 +30578,104 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+  /api/publicacao/por_pagina:
+    get:
+      tags:
+        - Push
+      summary: Listagem de publicações paginada
+      operationId: api-publicacao-por_pagina-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: currentPage
+          in: query
+          description: A página atual da leitura
+          required: true
+          schema:
+            type: integer
+        - name: pageSize
+          in: query
+          description: A quantidade de itens para leitura
+          required: true
+          schema:
+            type: integer
+        - name: filterType
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoPesquisaPublicacao'
+        - name: bind
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/SituacaoPublicacao'
+        - name: status
+          in: query
+          required: true
+          example: '[2,3]'
+          schema:
+            $ref: '#/components/schemas/StatusDaPublicacao'
+        - name: startDate
+          in: query
+          description: A data inicial para pesquisa
+          required: true
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          description: A data final para pesquisa
+          required: true
+          schema:
+            type: string
+        - name: areaID
+          in: query
+          description: O identificador da área
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Result:
+                    description: As publicações da página informada
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DTOPublicacao'
+                  QuantidadePublicacoesExistente:
+                    description: >-
+                      A quantidade de resgistros que corresponde aos parâmetros
+                      informados
+                    type: integer
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/escritorios/{idEscritorio}/tabelaspreco:
     get:
       tags:
@@ -91506,6 +91604,10 @@ components:
         6: Marcado como lixo
 
         7: Finalizar
+
+        8: Vincular
+
+        9: Desvincular
     DTOAcaoPush:
       title: DTOAcaoPush
       type: object
@@ -91522,6 +91624,8 @@ components:
           type: integer
         IDPublicacaoAndamento:
           type: integer
+        Descricao:
+          type: string
     DTOVinculoAndamento:
       title: DTOVinculoAndamento
       type: object
@@ -91676,6 +91780,97 @@ components:
           type: integer
         IsEditable:
           type: boolean
+    TipoPesquisaPublicacao:
+      title: TipoPesquisaPublicacao
+      example: 1
+      description: |
+
+        1: PorDataDeDisponibilizacao
+
+        2: PorDataDePublicacao  
+    SituacaoPublicacao:
+      title: SituacaoPublicacao
+      example: 1
+      description: |
+
+        0: NaoVinculada
+
+        1: Vinculada  
+
+        2: Todas  
+    StatusDaPublicacao:
+      title: StatusDaPublicacao
+      description: |
+        1: Nova  
+        2: Visualizada  
+        3: Finalizada  
+    FornecedorPush:
+      title: FornecedorPush
+      description: |
+
+        1: Vista
+
+        2: Digesto  
+
+        3: XMLAdvise  
+    DTOPublicacao:
+      title: DTOPublicacao
+      type: object
+      properties:
+        IDPublicacaoAndamento:
+          type: integer
+        IDProcesso:
+          type: integer
+        IDCliente:
+          type: integer
+        NumeroFornecedor:
+          $ref: '#/components/schemas/FornecedorPush'
+        StatusDePublicacao:
+          $ref: '#/components/schemas/StatusDaPublicacao'
+        IDPublicacaoAndamentoNoFornecedor:
+          type: string
+        IDTermo:
+          type: integer
+        IDTermoNoFornecedor:
+          type: integer
+        Tipo:
+          $ref: '#/components/schemas/TipoDePush'
+        DataPublicacao:
+          type: string
+        DataDisponibilizacao:
+          type: string
+        Valor:
+          type: number
+        Texto:
+          type: string
+        NumeroProcesso:
+          type: string
+        Hash:
+          type: string
+        Diario:
+          type: string
+        Vinculado:
+          type: boolean
+        Notificacao:
+          type: boolean
+        TermoEncontrado:
+          type: string
+        IDResponsavelCaso:
+          type: integer
+        Orgao:
+          type: string
+        TituloProcesso:
+          type: string
+        Vara:
+          type: string
+        NomeArea:
+          type: string
+        UF:
+          type: string
+        Acoes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DTOAcaoPush'
     DTOTabelaPreco:
       title: DTOTabelaPreco
       type: object

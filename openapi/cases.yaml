@@ -598,6 +598,9 @@ paths:
   /api/publicacao/hora:
     post:
       $ref: './paths/cases/push/public@api@publicacao@hora-post.yaml'
+  /api/publicacao/por_pagina:
+    get:
+      $ref: '.\paths\cases\push\public@api@publicacao@por_pagina-get.yaml'
 
   # Tabela de preço
   /api/escritorios/{idEscritorio}/tabelaspreco:

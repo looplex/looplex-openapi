@@ -1,0 +1,9 @@
+title: SituacaoPublicacao
+example: 1
+description: |
+  
+  0: NaoVinculada
+
+  1: Vinculada  
+
+  2: Todas  

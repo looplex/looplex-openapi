@@ -13,3 +13,5 @@ properties:
     type: integer
   IDPublicacaoAndamento:
     type: integer
+  Descricao:
+    type: string

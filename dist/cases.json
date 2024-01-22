@@ -13907,6 +13907,155 @@
         }
       }
     },
+    "/api/publicacao/por_pagina": {
+      "get": {
+        "tags": [
+          "Push"
+        ],
+        "summary": "Listagem de publicações paginada",
+        "operationId": "api-publicacao-por_pagina-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "currentPage",
+            "in": "query",
+            "description": "A página atual da leitura",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "A quantidade de itens para leitura",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filterType",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/TipoPesquisaPublicacao"
+            }
+          },
+          {
+            "name": "bind",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SituacaoPublicacao"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": true,
+            "example": "[2,3]",
+            "schema": {
+              "$ref": "#/components/schemas/StatusDaPublicacao"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "A data inicial para pesquisa",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "A data final para pesquisa",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "areaID",
+            "in": "query",
+            "description": "O identificador da área",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Result": {
+                      "description": "As publicações da página informada",
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/DTOPublicacao"
+                      }
+                    },
+                    "QuantidadePublicacoesExistente": {
+                      "description": "A quantidade de resgistros que corresponde aos parâmetros informados",
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/escritorios/{idEscritorio}/tabelaspreco": {
       "get": {
         "tags": [
@@ -24457,7 +24606,7 @@
       "TipoDeAcao": {
         "type": "integer",
         "example": 2,
-        "description": "-2147483648: None\n\n1: Geração de prazo\n\n2: Geração de atividade externa\n\n3: Geração de audiência\n\n4: Lançamento de hora\n\n5: Geração de tarefa\n\n6: Marcado como lixo\n\n7: Finalizar\n"
+        "description": "-2147483648: None\n\n1: Geração de prazo\n\n2: Geração de atividade externa\n\n3: Geração de audiência\n\n4: Lançamento de hora\n\n5: Geração de tarefa\n\n6: Marcado como lixo\n\n7: Finalizar\n\n8: Vincular\n\n9: Desvincular\n"
       },
       "DTOAcaoPush": {
         "title": "DTOAcaoPush",
@@ -24480,6 +24629,9 @@
           },
           "IDPublicacaoAndamento": {
             "type": "integer"
+          },
+          "Descricao": {
+            "type": "string"
           }
         }
       },
@@ -24660,6 +24812,111 @@
           },
           "IsEditable": {
             "type": "boolean"
+          }
+        }
+      },
+      "TipoPesquisaPublicacao": {
+        "title": "TipoPesquisaPublicacao",
+        "example": 1,
+        "description": "\n1: PorDataDeDisponibilizacao\n\n2: PorDataDePublicacao  \n"
+      },
+      "SituacaoPublicacao": {
+        "title": "SituacaoPublicacao",
+        "example": 1,
+        "description": "\n0: NaoVinculada\n\n1: Vinculada  \n\n2: Todas  \n"
+      },
+      "StatusDaPublicacao": {
+        "title": "StatusDaPublicacao",
+        "description": "1: Nova  \n2: Visualizada  \n3: Finalizada  \n"
+      },
+      "FornecedorPush": {
+        "title": "FornecedorPush",
+        "description": "\n1: Vista\n\n2: Digesto  \n\n3: XMLAdvise  \n"
+      },
+      "DTOPublicacao": {
+        "title": "DTOPublicacao",
+        "type": "object",
+        "properties": {
+          "IDPublicacaoAndamento": {
+            "type": "integer"
+          },
+          "IDProcesso": {
+            "type": "integer"
+          },
+          "IDCliente": {
+            "type": "integer"
+          },
+          "NumeroFornecedor": {
+            "$ref": "#/components/schemas/FornecedorPush"
+          },
+          "StatusDePublicacao": {
+            "$ref": "#/components/schemas/StatusDaPublicacao"
+          },
+          "IDPublicacaoAndamentoNoFornecedor": {
+            "type": "string"
+          },
+          "IDTermo": {
+            "type": "integer"
+          },
+          "IDTermoNoFornecedor": {
+            "type": "integer"
+          },
+          "Tipo": {
+            "$ref": "#/components/schemas/TipoDePush"
+          },
+          "DataPublicacao": {
+            "type": "string"
+          },
+          "DataDisponibilizacao": {
+            "type": "string"
+          },
+          "Valor": {
+            "type": "number"
+          },
+          "Texto": {
+            "type": "string"
+          },
+          "NumeroProcesso": {
+            "type": "string"
+          },
+          "Hash": {
+            "type": "string"
+          },
+          "Diario": {
+            "type": "string"
+          },
+          "Vinculado": {
+            "type": "boolean"
+          },
+          "Notificacao": {
+            "type": "boolean"
+          },
+          "TermoEncontrado": {
+            "type": "string"
+          },
+          "IDResponsavelCaso": {
+            "type": "integer"
+          },
+          "Orgao": {
+            "type": "string"
+          },
+          "TituloProcesso": {
+            "type": "string"
+          },
+          "Vara": {
+            "type": "string"
+          },
+          "NomeArea": {
+            "type": "string"
+          },
+          "UF": {
+            "type": "string"
+          },
+          "Acoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOAcaoPush"
+            }
           }
         }
       },
