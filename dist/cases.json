@@ -3306,7 +3306,7 @@
           {
             "name": "pageSize",
             "in": "query",
-            "description": "A quantidade de itens para leitura",
+            "description": "A quantidade de itens por página",
             "required": true,
             "schema": {
               "type": "integer"
@@ -13930,7 +13930,7 @@
           {
             "name": "pageSize",
             "in": "query",
-            "description": "A quantidade de itens para leitura",
+            "description": "A quantidade de itens por página",
             "required": true,
             "schema": {
               "type": "integer"
