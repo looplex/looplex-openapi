@@ -13955,8 +13955,8 @@
           {
             "name": "status",
             "in": "query",
-            "required": true,
-            "example": "[2,3]",
+            "required": false,
+            "example": "[2,3]. `Default: [1,2,3]`",
             "schema": {
               "$ref": "#/components/schemas/StatusDaPublicacao"
             }
