@@ -30603,17 +30603,6 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/TipoPesquisaPublicacao'
-        - name: bind
-          in: query
-          required: true
-          schema:
-            $ref: '#/components/schemas/SituacaoPublicacao'
-        - name: status
-          in: query
-          required: false
-          example: '[2,3]. `Default: [1,2,3]`'
-          schema:
-            $ref: '#/components/schemas/StatusDaPublicacao'
         - name: startDate
           in: query
           description: A data inicial para pesquisa
@@ -30626,9 +30615,22 @@ paths:
           required: true
           schema:
             type: string
+        - name: bind
+          in: query
+          required: false
+          example: '1. `Default: 2`(Todas)'
+          schema:
+            $ref: '#/components/schemas/SituacaoPublicacao'
+        - name: status
+          in: query
+          required: false
+          example: '[2,3]. `Default: [1,2,3]`'
+          schema:
+            $ref: '#/components/schemas/StatusDaPublicacao'
         - name: areaID
           in: query
           description: O identificador da área
+          example: 10
           required: false
           schema:
             type: integer

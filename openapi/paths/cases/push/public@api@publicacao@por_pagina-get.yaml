@@ -23,17 +23,6 @@ parameters:
     required: true
     schema:
       $ref: ../../../components/schemas/cases/enums/TipoPesquisaPublicacao.yaml
-  - name: bind
-    in: query
-    required: true
-    schema:
-      $ref: ../../../components/schemas/cases/enums/SituacaoPublicacao.yaml
-  - name: status
-    in: query
-    required: false
-    example: "[2,3]. `Default: [1,2,3]`"
-    schema:
-      $ref: ../../../components/schemas/cases/enums/StatusDaPublicacao.yaml
   - name: startDate
     in: query
     description: "A data inicial para pesquisa"
@@ -46,9 +35,22 @@ parameters:
     required: true
     schema:
       type: string
+  - name: bind
+    in: query
+    required: false
+    example: "1. `Default: 2`(Todas)"
+    schema:
+      $ref: ../../../components/schemas/cases/enums/SituacaoPublicacao.yaml
+  - name: status
+    in: query
+    required: false
+    example: "[2,3]. `Default: [1,2,3]`"
+    schema:
+      $ref: ../../../components/schemas/cases/enums/StatusDaPublicacao.yaml
   - name: areaID
     in: query
     description: "O identificador da área"
+    example: 10
     required: false
     schema:
       type: integer
