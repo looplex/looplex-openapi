@@ -1,0 +1,70 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Funcionário
+summary: "Lista áreas e categorias do funcionário"
+operationId: api-funcionarios-categoriaseareas-get
+# Parâmetros da requisição
+parameters:
+  - $ref: ../../../components/parameters/cases/Profile.yaml
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "OK"
+    content:
+      application/json:
+        schema: 
+          type: object
+          properties:
+            ID_Funcionario:
+              type: integer
+            Nome_Funcionario: 
+              type: string
+            AreasFuncionario:
+              type: array
+              items:
+                type: object
+                properties: 
+                  ID_Area: 
+                    type: integer
+                  Nome_Area: 
+                    type: string
+                  Area_Padrao:
+                    type: boolean
+                  ID_Funcionario:
+                    type: integer
+            CategoriaFuncionario:
+              type: object
+              properties:
+                ID_Categoria: 
+                  type: integer
+                Nome_Categoria:
+                  type: string
+                ID_Funcionario:
+                  type: integer
+
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/cases/ExceptionResponse.yaml

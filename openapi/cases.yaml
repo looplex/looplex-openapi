@@ -383,6 +383,9 @@ paths:
   /api/escritorios/funcionarios:
     get:
       $ref: './paths/cases/funcionario/public@api@escritorios@funcionarios-get.yaml'
+  /api/funcionarios/categoriaseareas:
+    get:
+      $ref: './paths/cases/funcionario/public@api@funcionarios@categoriaseareas-get.yaml'    
 
   # Garantia
   /api/casos/Garantia/{IDCasoGarantia}:
