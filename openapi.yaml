@@ -27314,32 +27314,33 @@ paths:
               schema:
                 type: object
                 properties:
-                  ID_Funcionario:
-                    type: integer
-                  Nome_Funcionario:
-                    type: string
-                  AreasFuncionario:
+                  Areas:
                     type: array
                     items:
                       type: object
                       properties:
-                        ID_Area:
+                        IDArea:
                           type: integer
-                        Nome_Area:
+                        NomeArea:
                           type: string
-                        Area_Padrao:
-                          type: boolean
-                        ID_Funcionario:
-                          type: integer
-                  CategoriaFuncionario:
-                    type: object
-                    properties:
-                      ID_Categoria:
-                        type: integer
-                      Nome_Categoria:
-                        type: string
-                      ID_Funcionario:
-                        type: integer
+                        Categorias:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              IDCategoria:
+                                type: integer
+                              NomeCategoria:
+                                type: string
+                              Funcionarios:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    IDFuncionario:
+                                      type: integer
+                                    NomeFuncionario:
+                                      type: string
         '401':
           description: Unauthorized
           content:
@@ -90830,6 +90831,8 @@ components:
       properties:
         Name:
           type: string
+          desciption: teste
+          example: abc
         Id:
           type: integer
           description: Identificador opcional do honorário
