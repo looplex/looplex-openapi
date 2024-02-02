@@ -90831,8 +90831,6 @@ components:
       properties:
         Name:
           type: string
-          desciption: teste
-          example: abc
         Id:
           type: integer
           description: Identificador opcional do honorário

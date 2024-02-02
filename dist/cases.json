@@ -23595,9 +23595,7 @@
         "type": "object",
         "properties": {
           "Name": {
-            "type": "string",
-            "desciption": "teste",
-            "example": "abc"
+            "type": "string"
           },
           "Id": {
             "type": "integer",
