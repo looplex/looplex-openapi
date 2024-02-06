@@ -8767,6 +8767,9 @@
                                       },
                                       "NomeFuncionario": {
                                         "type": "string"
+                                      },
+                                      "AreaPadrao": {
+                                        "type": "boolean"
                                       }
                                     }
                                   }
