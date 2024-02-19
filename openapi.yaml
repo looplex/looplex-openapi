@@ -91765,6 +91765,8 @@ components:
           $ref: '#/components/schemas/TipoDeCompromisso'
         IDFuncionarioResponsavelCumprimento:
           type: integer
+        IDCaso:
+          type: integer
     TipoDeTarefa:
       type: integer
       example: 2

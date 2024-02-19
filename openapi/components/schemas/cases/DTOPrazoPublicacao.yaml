@@ -32,3 +32,5 @@ properties:
     $ref: enums/TipoDeCompromisso.yaml
   IDFuncionarioResponsavelCumprimento:
     type: integer
+  IDCaso: 
+    type: integer

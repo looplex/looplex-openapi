@@ -24824,6 +24824,9 @@
           },
           "IDFuncionarioResponsavelCumprimento": {
             "type": "integer"
+          },
+          "IDCaso": {
+            "type": "integer"
           }
         }
       },
