@@ -1,0 +1,14 @@
+title: TipoTarefa
+example: 1
+description: |  
+  **O tipo da tarefa** <br />
+
+  1: AtividadeExterna
+
+  2: Prazo
+  
+  3: Audiencia
+  
+  4: Compromisso
+  
+  5: Publicacao
