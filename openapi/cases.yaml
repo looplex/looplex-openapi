@@ -604,9 +604,6 @@ paths:
   /api/publicacao/por_pagina:
     get:
       $ref: '.\paths\cases\push\public@api@publicacao@por_pagina-get.yaml'
-  /api/publicacao/tarefas:
-    post:
-      $ref: './paths/cases/push/public@api@publicacao@tarefas-post.yaml'
 
   # Tabela de preço
   /api/escritorios/{idEscritorio}/tabelaspreco:
@@ -681,6 +678,9 @@ paths:
   /api/agenda/custom_field:
     post:
       $ref: './paths/cases/tarefa/public@api@agenda@custom_field-post.yaml'
+  /api/tarefas:
+    post:
+      $ref: './paths/cases/tarefa/public@api@tarefas-post.yaml'
 
   # Timeline
   /api/timeline/items:

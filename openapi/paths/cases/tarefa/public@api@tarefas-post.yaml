@@ -1,19 +1,19 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Push
-summary: "Adiciona tarefas com publicação"
-description: "Cadastra tarefas vinculadas a determinada publicação"
+  - Tarefa
+summary: "Adiciona tarefas"
+description: "Cadastra tarefas vinculadas ou não a determinada publicação"
 operationId: api-publicacao-tarefas-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - name: IDPublicacao
     in: query
-    required: true
-    description: "O identificador da publicação"
+    required: false
+    description: "O identificador da publicação.<br />**Se essa propriedade for informada, cadastra a tarefa vinculada à publicação. <br />Se não for informada, cadastra uma tarefa sem vinculo com publicação.**"
     example: 15
     schema:
-      type: integer
+      type: integer 
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:
@@ -29,7 +29,10 @@ responses:
     description: "OK"
     content:
       application/json:
-        example: "O item foi cadastrado corretamente"
+        schema:
+          type: array
+          items: 
+            $ref: ../../../components/schemas/cases/DTOTarefaResponse.yaml
   "401":
     description: "Unauthorized"
     content:
