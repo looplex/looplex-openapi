@@ -19491,7 +19491,7 @@
       "SituacaoDoItemAgenda": {
         "type": "integer",
         "example": 1,
-        "description": "**A situação da tarefa**\n\n-2147483648: None\n\n1: Em aberto,\n\n2: Agendada, \n\n3: Realizada, \n\n4: Ocupado, \n\n5: A confirmar\n\n6: Desmarcável\n"
+        "description": "**A situação da tarefa**\n\n-2147483648: None\n\n**Atividade externa e Audiência**\n\n1: Em aberto \n\n2: Agendada\n\n3: Realizada\n\n**Compromisso, prazo e publicação**\n\n4: Ocupado \n\n5: A confirmar\n\n6: Desmarcável\n"
       },
       "SituacaoLembrete": {
         "type": "integer",
