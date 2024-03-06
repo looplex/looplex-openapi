@@ -2,12 +2,12 @@ title: DTOTarefa
 type: object
 properties:
   IDTarefa:
-    description: "O identificador da tarefa. <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT**: Preencher com o valor da propriedade já existente."
-    example: -2147483648
+    description: "O identificador da tarefa. <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *0*<br />- **PUT**: Preencher com o valor da propriedade já existente."
+    example: 0
     type: integer
   IDTarefaPai:
-    example: -2147483648
-    description: "ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o valor **-2147483648** caso seja uma tarefa)"
+    example: 0
+    description: "ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o valor **0** caso seja uma tarefa)"
     type: integer
   IDCaso:
     example: 1
@@ -18,7 +18,7 @@ properties:
     description: "`Required` <br />O identificador do funcionário que criou / atualizou a tarefa"
     type: integer
   IDForo:
-    example: -2147483648
+    example: 0
     description: "O identificador do foro / vara"
     type: integer
   Local:
@@ -36,19 +36,19 @@ properties:
     description: "O identificador do titulo personalizado utilizado (ao invés do titulo escrito)"
     type: integer
   Data:
-    description: "A data da tarefa"
+    description: "A data e hora da tarefa **(em UTC)**"
     example: "2024-02-29T15:00:00.000"
     type: string
+  DataLimite:
+    description: "A data limite para a realização da tarefa **(em UTC)**"
+    example: "2024-03-01T15:00:00.000"
+    type: string
   Lembrete:
-    description: "A data e hora para lembrete"
+    description: "A data e hora para lembrete **(em UTC)**"
     example: "2024-02-29T15:30:00.000"
     type: string
   SituacaoLembrete:
     $ref: enums/SituacaoLembrete.yaml
-  DataLimite:
-    description: "A data limite para a realização da tarefa"
-    example: "2024-03-01T15:00:00.000"
-    type: string
   IDFuncionarioExecutor:
     example: 1
     description: "O identificador do funcionário que executou a tarefa"
