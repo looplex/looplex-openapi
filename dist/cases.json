@@ -25532,7 +25532,7 @@
       "TipoTarefa": {
         "title": "TipoTarefa",
         "example": 1,
-        "description": "**O tipo da tarefa** <br />\n\n1: AtividadeExterna\n\n2: Prazo\n\n3: Audiencia\n\n4: Compromisso\n\n5: Publicacao\n"
+        "description": "**O tipo da tarefa** <br />\n\n1: AtividadeExterna\n\n2: Prazo\n\n4: Audiencia\n\n8: Compromisso\n\n11: Publicacao\n"
       },
       "DTOTarefa": {
         "title": "DTOTarefa",
@@ -25582,17 +25582,17 @@
             "type": "integer"
           },
           "Data": {
-            "description": "A data e hora da tarefa **(em UTC)**",
+            "description": "A data e hora da tarefa **(ISO 8601)**",
             "example": "2024-02-29T15:00:00.000",
             "type": "string"
           },
           "DataLimite": {
-            "description": "A data limite para a realização da tarefa **(em UTC)**",
+            "description": "A data limite para a realização da tarefa **(ISO 8601)**",
             "example": "2024-03-01T15:00:00.000",
             "type": "string"
           },
           "Lembrete": {
-            "description": "A data e hora para lembrete **(em UTC)**",
+            "description": "A data e hora para lembrete **(ISO 8601)**",
             "example": "2024-02-29T15:30:00.000",
             "type": "string"
           },

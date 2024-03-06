@@ -36,15 +36,15 @@ properties:
     description: "O identificador do titulo personalizado utilizado (ao invés do titulo escrito)"
     type: integer
   Data:
-    description: "A data e hora da tarefa **(em UTC)**"
+    description: "A data e hora da tarefa **(ISO 8601)**"
     example: "2024-02-29T15:00:00.000"
     type: string
   DataLimite:
-    description: "A data limite para a realização da tarefa **(em UTC)**"
+    description: "A data limite para a realização da tarefa **(ISO 8601)**"
     example: "2024-03-01T15:00:00.000"
     type: string
   Lembrete:
-    description: "A data e hora para lembrete **(em UTC)**"
+    description: "A data e hora para lembrete **(ISO 8601)**"
     example: "2024-02-29T15:30:00.000"
     type: string
   SituacaoLembrete:
