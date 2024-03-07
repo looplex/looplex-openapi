@@ -25583,17 +25583,17 @@
           },
           "Data": {
             "description": "A data e hora da tarefa **(ISO 8601)**",
-            "example": "2024-02-29T15:00:00.000",
+            "example": "2024-02-29T15:00:00.000Z",
             "type": "string"
           },
           "DataLimite": {
             "description": "A data limite para a realização da tarefa **(ISO 8601)**",
-            "example": "2024-03-01T15:00:00.000",
+            "example": "2024-03-01T15:00:00.000Z",
             "type": "string"
           },
           "Lembrete": {
             "description": "A data e hora para lembrete **(ISO 8601)**",
-            "example": "2024-02-29T15:30:00.000",
+            "example": "2024-02-29T15:30:00.000Z",
             "type": "string"
           },
           "SituacaoLembrete": {
@@ -25626,8 +25626,8 @@
             "type": "string"
           },
           "DataRealizacao": {
-            "description": "A data da realização da tarefa",
-            "example": "2024-03-01T10:25:00.000",
+            "description": "A data da realização da tarefa **(ISO 8601)**",
+            "example": "2024-03-01T10:25:00.000Z",
             "type": "string"
           },
           "IDStatusEncerramentoTarefa": {
@@ -25698,21 +25698,21 @@
             "type": "integer"
           },
           "Data": {
-            "description": "A data da tarefa",
-            "example": "2024-02-29T15:00:00.000",
+            "description": "A data da tarefa **(ISO 8601)**",
+            "example": "2024-02-29T15:00:00.000Z",
             "type": "string"
           },
           "Lembrete": {
-            "description": "A data e hora para lembrete",
-            "example": "2024-02-29T15:30:00.000",
+            "description": "A data e hora para lembrete **(ISO 8601)**",
+            "example": "2024-02-29T15:30:00.000Z",
             "type": "string"
           },
           "SituacaoLembrete": {
             "$ref": "#/components/schemas/SituacaoLembrete"
           },
           "DataLimite": {
-            "description": "A data limite para a realização da tarefa",
-            "example": "2024-03-01T15:00:00.000",
+            "description": "A data limite para a realização da tarefa **(ISO 8601)**",
+            "example": "2024-03-01T15:00:00.000Z",
             "type": "string"
           },
           "IDFuncionarioExecutor": {
@@ -25742,8 +25742,8 @@
             "type": "string"
           },
           "DataRealizacao": {
-            "description": "A data da realização da tarefa",
-            "example": "2024-03-01T10:25:00.000",
+            "description": "A data da realização da tarefa **(ISO 8601)**",
+            "example": "2024-03-01T10:25:00.000Z",
             "type": "string"
           },
           "IDStatusEncerramentoTarefa": {
