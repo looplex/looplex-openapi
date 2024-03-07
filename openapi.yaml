@@ -87752,13 +87752,17 @@ components:
 
         -2147483648: None
 
-        1: Em aberto,
+        **Atividade externa e Audiência**
 
-        2: Agendada, 
+        1: Em aberto 
 
-        3: Realizada, 
+        2: Agendada
 
-        4: Ocupado, 
+        3: Realizada
+
+        **Compromisso, prazo e publicação**
+
+        4: Ocupado 
 
         5: A confirmar
 
@@ -92322,11 +92326,11 @@ components:
 
         2: Prazo
 
-        3: Audiencia
+        4: Audiencia
 
-        4: Compromisso
+        8: Compromisso
 
-        5: Publicacao
+        11: Publicacao
     DTOTarefa:
       title: DTOTarefa
       type: object
@@ -92334,15 +92338,15 @@ components:
         IDTarefa:
           description: >-
             O identificador da tarefa. <br />`Required`<br />- **POST**: A
-            propriedade deve ser enviada com o valor *-2147483648*<br />-
-            **PUT**: Preencher com o valor da propriedade já existente.
-          example: -2147483648
+            propriedade deve ser enviada com o valor *0*<br />- **PUT**:
+            Preencher com o valor da propriedade já existente.
+          example: 0
           type: integer
         IDTarefaPai:
-          example: -2147483648
+          example: 0
           description: >-
             ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o
-            valor **-2147483648** caso seja uma tarefa)
+            valor **0** caso seja uma tarefa)
           type: integer
         IDCaso:
           example: 1
@@ -92355,7 +92359,7 @@ components:
             atualizou a tarefa
           type: integer
         IDForo:
-          example: -2147483648
+          example: 0
           description: O identificador do foro / vara
           type: integer
         Local:
@@ -92375,19 +92379,19 @@ components:
             titulo escrito)
           type: integer
         Data:
-          description: A data da tarefa
-          example: '2024-02-29T15:00:00.000'
+          description: A data e hora da tarefa **(ISO 8601)**
+          example: '2024-02-29T15:00:00.000Z'
+          type: string
+        DataLimite:
+          description: A data limite para a realização da tarefa **(ISO 8601)**
+          example: '2024-03-01T15:00:00.000Z'
           type: string
         Lembrete:
-          description: A data e hora para lembrete
-          example: '2024-02-29T15:30:00.000'
+          description: A data e hora para lembrete **(ISO 8601)**
+          example: '2024-02-29T15:30:00.000Z'
           type: string
         SituacaoLembrete:
           $ref: '#/components/schemas/SituacaoLembrete'
-        DataLimite:
-          description: A data limite para a realização da tarefa
-          example: '2024-03-01T15:00:00.000'
-          type: string
         IDFuncionarioExecutor:
           example: 1
           description: O identificador do funcionário que executou a tarefa
@@ -92409,8 +92413,8 @@ components:
           example: Essa tarefa não pode ultrapassar a data limite estabelecida
           type: string
         DataRealizacao:
-          description: A data da realização da tarefa
-          example: '2024-03-01T10:25:00.000'
+          description: A data da realização da tarefa **(ISO 8601)**
+          example: '2024-03-01T10:25:00.000Z'
           type: string
         IDStatusEncerramentoTarefa:
           description: >-
@@ -92469,18 +92473,18 @@ components:
             titulo escrito)
           type: integer
         Data:
-          description: A data da tarefa
-          example: '2024-02-29T15:00:00.000'
+          description: A data da tarefa **(ISO 8601)**
+          example: '2024-02-29T15:00:00.000Z'
           type: string
         Lembrete:
-          description: A data e hora para lembrete
-          example: '2024-02-29T15:30:00.000'
+          description: A data e hora para lembrete **(ISO 8601)**
+          example: '2024-02-29T15:30:00.000Z'
           type: string
         SituacaoLembrete:
           $ref: '#/components/schemas/SituacaoLembrete'
         DataLimite:
-          description: A data limite para a realização da tarefa
-          example: '2024-03-01T15:00:00.000'
+          description: A data limite para a realização da tarefa **(ISO 8601)**
+          example: '2024-03-01T15:00:00.000Z'
           type: string
         IDFuncionarioExecutor:
           example: 1
@@ -92503,8 +92507,8 @@ components:
           example: Essa tarefa não pode ultrapassar a data limite estabelecida
           type: string
         DataRealizacao:
-          description: A data da realização da tarefa
-          example: '2024-03-01T10:25:00.000'
+          description: A data da realização da tarefa **(ISO 8601)**
+          example: '2024-03-01T10:25:00.000Z'
           type: string
         IDStatusEncerramentoTarefa:
           description: >-

@@ -19491,7 +19491,7 @@
       "SituacaoDoItemAgenda": {
         "type": "integer",
         "example": 1,
-        "description": "**A situação da tarefa**\n\n-2147483648: None\n\n1: Em aberto,\n\n2: Agendada, \n\n3: Realizada, \n\n4: Ocupado, \n\n5: A confirmar\n\n6: Desmarcável\n"
+        "description": "**A situação da tarefa**\n\n-2147483648: None\n\n**Atividade externa e Audiência**\n\n1: Em aberto \n\n2: Agendada\n\n3: Realizada\n\n**Compromisso, prazo e publicação**\n\n4: Ocupado \n\n5: A confirmar\n\n6: Desmarcável\n"
       },
       "SituacaoLembrete": {
         "type": "integer",
@@ -25532,20 +25532,20 @@
       "TipoTarefa": {
         "title": "TipoTarefa",
         "example": 1,
-        "description": "**O tipo da tarefa** <br />\n\n1: AtividadeExterna\n\n2: Prazo\n\n3: Audiencia\n\n4: Compromisso\n\n5: Publicacao\n"
+        "description": "**O tipo da tarefa** <br />\n\n1: AtividadeExterna\n\n2: Prazo\n\n4: Audiencia\n\n8: Compromisso\n\n11: Publicacao\n"
       },
       "DTOTarefa": {
         "title": "DTOTarefa",
         "type": "object",
         "properties": {
           "IDTarefa": {
-            "description": "O identificador da tarefa. <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT**: Preencher com o valor da propriedade já existente.",
-            "example": -2147483648,
+            "description": "O identificador da tarefa. <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *0*<br />- **PUT**: Preencher com o valor da propriedade já existente.",
+            "example": 0,
             "type": "integer"
           },
           "IDTarefaPai": {
-            "example": -2147483648,
-            "description": "ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o valor **-2147483648** caso seja uma tarefa)",
+            "example": 0,
+            "description": "ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o valor **0** caso seja uma tarefa)",
             "type": "integer"
           },
           "IDCaso": {
@@ -25559,7 +25559,7 @@
             "type": "integer"
           },
           "IDForo": {
-            "example": -2147483648,
+            "example": 0,
             "description": "O identificador do foro / vara",
             "type": "integer"
           },
@@ -25582,22 +25582,22 @@
             "type": "integer"
           },
           "Data": {
-            "description": "A data da tarefa",
-            "example": "2024-02-29T15:00:00.000",
+            "description": "A data e hora da tarefa **(ISO 8601)**",
+            "example": "2024-02-29T15:00:00.000Z",
+            "type": "string"
+          },
+          "DataLimite": {
+            "description": "A data limite para a realização da tarefa **(ISO 8601)**",
+            "example": "2024-03-01T15:00:00.000Z",
             "type": "string"
           },
           "Lembrete": {
-            "description": "A data e hora para lembrete",
-            "example": "2024-02-29T15:30:00.000",
+            "description": "A data e hora para lembrete **(ISO 8601)**",
+            "example": "2024-02-29T15:30:00.000Z",
             "type": "string"
           },
           "SituacaoLembrete": {
             "$ref": "#/components/schemas/SituacaoLembrete"
-          },
-          "DataLimite": {
-            "description": "A data limite para a realização da tarefa",
-            "example": "2024-03-01T15:00:00.000",
-            "type": "string"
           },
           "IDFuncionarioExecutor": {
             "example": 1,
@@ -25626,8 +25626,8 @@
             "type": "string"
           },
           "DataRealizacao": {
-            "description": "A data da realização da tarefa",
-            "example": "2024-03-01T10:25:00.000",
+            "description": "A data da realização da tarefa **(ISO 8601)**",
+            "example": "2024-03-01T10:25:00.000Z",
             "type": "string"
           },
           "IDStatusEncerramentoTarefa": {
@@ -25698,21 +25698,21 @@
             "type": "integer"
           },
           "Data": {
-            "description": "A data da tarefa",
-            "example": "2024-02-29T15:00:00.000",
+            "description": "A data da tarefa **(ISO 8601)**",
+            "example": "2024-02-29T15:00:00.000Z",
             "type": "string"
           },
           "Lembrete": {
-            "description": "A data e hora para lembrete",
-            "example": "2024-02-29T15:30:00.000",
+            "description": "A data e hora para lembrete **(ISO 8601)**",
+            "example": "2024-02-29T15:30:00.000Z",
             "type": "string"
           },
           "SituacaoLembrete": {
             "$ref": "#/components/schemas/SituacaoLembrete"
           },
           "DataLimite": {
-            "description": "A data limite para a realização da tarefa",
-            "example": "2024-03-01T15:00:00.000",
+            "description": "A data limite para a realização da tarefa **(ISO 8601)**",
+            "example": "2024-03-01T15:00:00.000Z",
             "type": "string"
           },
           "IDFuncionarioExecutor": {
@@ -25742,8 +25742,8 @@
             "type": "string"
           },
           "DataRealizacao": {
-            "description": "A data da realização da tarefa",
-            "example": "2024-03-01T10:25:00.000",
+            "description": "A data da realização da tarefa **(ISO 8601)**",
+            "example": "2024-03-01T10:25:00.000Z",
             "type": "string"
           },
           "IDStatusEncerramentoTarefa": {

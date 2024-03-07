@@ -2,12 +2,12 @@ title: DTOTarefa
 type: object
 properties:
   IDTarefa:
-    description: "O identificador da tarefa. <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT**: Preencher com o valor da propriedade já existente."
-    example: -2147483648
+    description: "O identificador da tarefa. <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *0*<br />- **PUT**: Preencher com o valor da propriedade já existente."
+    example: 0
     type: integer
   IDTarefaPai:
-    example: -2147483648
-    description: "ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o valor **-2147483648** caso seja uma tarefa)"
+    example: 0
+    description: "ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o valor **0** caso seja uma tarefa)"
     type: integer
   IDCaso:
     example: 1
@@ -18,7 +18,7 @@ properties:
     description: "`Required` <br />O identificador do funcionário que criou / atualizou a tarefa"
     type: integer
   IDForo:
-    example: -2147483648
+    example: 0
     description: "O identificador do foro / vara"
     type: integer
   Local:
@@ -36,19 +36,19 @@ properties:
     description: "O identificador do titulo personalizado utilizado (ao invés do titulo escrito)"
     type: integer
   Data:
-    description: "A data da tarefa"
-    example: "2024-02-29T15:00:00.000"
+    description: "A data e hora da tarefa **(ISO 8601)**"
+    example: "2024-02-29T15:00:00.000Z"
+    type: string
+  DataLimite:
+    description: "A data limite para a realização da tarefa **(ISO 8601)**"
+    example: "2024-03-01T15:00:00.000Z"
     type: string
   Lembrete:
-    description: "A data e hora para lembrete"
-    example: "2024-02-29T15:30:00.000"
+    description: "A data e hora para lembrete **(ISO 8601)**"
+    example: "2024-02-29T15:30:00.000Z"
     type: string
   SituacaoLembrete:
     $ref: enums/SituacaoLembrete.yaml
-  DataLimite:
-    description: "A data limite para a realização da tarefa"
-    example: "2024-03-01T15:00:00.000"
-    type: string
   IDFuncionarioExecutor:
     example: 1
     description: "O identificador do funcionário que executou a tarefa"
@@ -68,8 +68,8 @@ properties:
     example: "Essa tarefa não pode ultrapassar a data limite estabelecida"
     type: string
   DataRealizacao:
-    description: "A data da realização da tarefa"
-    example: "2024-03-01T10:25:00.000"
+    description: "A data da realização da tarefa **(ISO 8601)**"
+    example: "2024-03-01T10:25:00.000Z"
     type: string
   IDStatusEncerramentoTarefa:
     description: "O identificador do status personalizado de encerramento de tarefa utilizado"

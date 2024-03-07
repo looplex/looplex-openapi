@@ -5,13 +5,17 @@ description: |
 
   -2147483648: None
   
-  1: Em aberto,
+  **Atividade externa e Audiência**
 
-  2: Agendada, 
+  1: Em aberto 
 
-  3: Realizada, 
+  2: Agendada
 
-  4: Ocupado, 
+  3: Realizada
+
+  **Compromisso, prazo e publicação**
+
+  4: Ocupado 
 
   5: A confirmar
 
