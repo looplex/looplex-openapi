@@ -87746,7 +87746,7 @@ components:
         11: Publicação
     SituacaoDoItemAgenda:
       type: integer
-      example: 1
+      example: 5
       description: |
         **A situação da tarefa**
 
@@ -92316,7 +92316,7 @@ components:
           type: string
     TipoTarefa:
       title: TipoTarefa
-      example: 1
+      example: 2
       description: |
         **O tipo da tarefa** <br />
 
@@ -92350,20 +92350,32 @@ components:
           example: 1
           description: O identificador do caso
           type: integer
+        IDForo:
+          example: 0
+          description: O identificador do foro / vara
+          type: integer
         IDFuncionarioCriador:
           example: 1
           description: >-
             `Required` <br />O identificador do funcionário que criou /
             atualizou a tarefa
           type: integer
-        IDForo:
-          example: 0
-          description: O identificador do foro / vara
+        IDFuncionarioExecutor:
+          example: 1
+          description: O identificador do funcionário que executou a tarefa
           type: integer
-        Local:
-          description: 'Local para a realização da tarefa <br />**Exemplo: Fórum central**'
-          example: Fórum central
-          type: string
+        IDFuncionarioResponsavel:
+          example: 1
+          description: O identificador do funcionário responsável pela tarefa
+          type: integer
+        IDsFuncionariosParticipantes:
+          description: Os identificadores dos funcionários participantes dessa tarefa
+          example:
+            - 1
+            - 2
+          type: array
+          items:
+            type: integer
         Tipo:
           $ref: '#/components/schemas/TipoTarefa'
         Titulo:
@@ -92388,24 +92400,10 @@ components:
           description: A data e hora para lembrete **(ISO 8601)**
           example: '2024-02-29T15:30:00.000Z'
           type: string
-        SituacaoLembrete:
-          $ref: '#/components/schemas/SituacaoLembrete'
-        IDFuncionarioExecutor:
-          example: 1
-          description: O identificador do funcionário que executou a tarefa
-          type: integer
-        IDFuncionarioResponsavel:
-          example: 1
-          description: O identificador do funcionário responsável pela tarefa
-          type: integer
-        IDsFuncionariosParticipantes:
-          description: Os identificadores dos funcionários participantes dessa tarefa
-          example:
-            - 1
-            - 2
-          type: array
-          items:
-            type: integer
+        Local:
+          description: 'Local para a realização da tarefa <br />**Exemplo: Fórum central**'
+          example: Fórum central
+          type: string
         Observacao:
           description: Observações da tarefa
           example: Essa tarefa não pode ultrapassar a data limite estabelecida
@@ -92424,40 +92422,53 @@ components:
           description: Observações sobre o encerramento da tarefa
           example: Essa tarefa é um exemplo
           type: string
-        Situacao:
-          $ref: '#/components/schemas/SituacaoDoItemAgenda'
     DTOTarefaResponse:
       title: DTOTarefa
       type: object
       properties:
         IDTarefa:
-          description: O identificador da tarefa
-          example: -2147483648
+          description: >-
+            O identificador da tarefa. <br />`Required`<br />- **POST**: A
+            propriedade deve ser enviada com o valor *0*<br />- **PUT**:
+            Preencher com o valor da propriedade já existente.
+          example: 0
           type: integer
         IDTarefaPai:
-          example: -2147483648
-          description: ID da tarefa pai caso esta seja uma subtarefa
+          example: 0
+          description: >-
+            ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o
+            valor **0** caso seja uma tarefa)
           type: integer
         IDCaso:
           example: 1
           description: O identificador do caso
           type: integer
-        IDCliente:
-          example: 1
-          description: O identificador do cliente
+        IDForo:
+          example: 0
+          description: O identificador do foro / vara
           type: integer
         IDFuncionarioCriador:
           example: 1
-          description: O identificador do funcionário que criou / atualizou a tarefa
+          description: >-
+            `Required` <br />O identificador do funcionário que criou /
+            atualizou a tarefa
           type: integer
-        IDForo:
-          example: -2147483648
-          description: O identificador do foro / vara
+        IDFuncionarioExecutor:
+          example: 1
+          description: O identificador do funcionário que executou a tarefa
           type: integer
-        Local:
-          description: 'Local para a realização da tarefa <br />**Exemplo: Fórum central**'
-          example: Fórum central
-          type: string
+        IDFuncionarioResponsavel:
+          example: 1
+          description: O identificador do funcionário responsável pela tarefa
+          type: integer
+        IDsFuncionariosParticipantes:
+          description: Os identificadores dos funcionários participantes dessa tarefa
+          example:
+            - 1
+            - 2
+          type: array
+          items:
+            type: integer
         Tipo:
           $ref: '#/components/schemas/TipoTarefa'
         Titulo:
@@ -92471,35 +92482,21 @@ components:
             titulo escrito)
           type: integer
         Data:
-          description: A data da tarefa **(ISO 8601)**
+          description: A data e hora da tarefa **(ISO 8601)**
           example: '2024-02-29T15:00:00.000Z'
+          type: string
+        DataLimite:
+          description: A data limite para a realização da tarefa **(ISO 8601)**
+          example: '2024-03-01T15:00:00.000Z'
           type: string
         Lembrete:
           description: A data e hora para lembrete **(ISO 8601)**
           example: '2024-02-29T15:30:00.000Z'
           type: string
-        SituacaoLembrete:
-          $ref: '#/components/schemas/SituacaoLembrete'
-        DataLimite:
-          description: A data limite para a realização da tarefa **(ISO 8601)**
-          example: '2024-03-01T15:00:00.000Z'
+        Local:
+          description: 'Local para a realização da tarefa <br />**Exemplo: Fórum central**'
+          example: Fórum central
           type: string
-        IDFuncionarioExecutor:
-          example: 1
-          description: O identificador do funcionário que executou a tarefa
-          type: integer
-        IDFuncionarioResponsavel:
-          example: 1
-          description: O identificador do funcionário responsável pela tarefa
-          type: integer
-        IDsFuncionariosParticipantes:
-          description: Os identificadores dos funcionários participantes dessa tarefa
-          example:
-            - 1
-            - 2
-          type: array
-          items:
-            type: integer
         Observacao:
           description: Observações da tarefa
           example: Essa tarefa não pode ultrapassar a data limite estabelecida
@@ -92518,6 +92515,12 @@ components:
           description: Observações sobre o encerramento da tarefa
           example: Essa tarefa é um exemplo
           type: string
+        IDCliente:
+          description: O identificador do cliente
+          example: 1
+          type: integer
+        SituacaoLembrete:
+          $ref: '#/components/schemas/SituacaoLembrete'
         Situacao:
           $ref: '#/components/schemas/SituacaoDoItemAgenda'
     TipoItemTimeline:

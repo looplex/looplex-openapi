@@ -1,5 +1,5 @@
 type: integer
-example: 1
+example: 5
 description: |
   **A situação da tarefa**
 
