@@ -2,8 +2,6 @@ type: integer
 example: 1
 description: |
   **A situação do lembrete**
-
-  -2147483648: None
   
   1: A notificar
 

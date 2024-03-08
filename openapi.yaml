@@ -87773,8 +87773,6 @@ components:
       description: |
         **A situação do lembrete**
 
-        -2147483648: None
-
         1: A notificar
 
         2: Descartado por ambos
