@@ -13,18 +13,29 @@ properties:
     example: 1
     description: "O identificador do caso"
     type: integer
-  IDFuncionarioCriador:
-    example: 1
-    description: "`Required` <br />O identificador do funcionário que criou / atualizou a tarefa"
-    type: integer
   IDForo:
     example: 0
     description: "O identificador do foro / vara"
     type: integer
-  Local:
-    description: "Local para a realização da tarefa <br />**Exemplo: Fórum central**"
-    example: "Fórum central"
-    type: string
+  IDFuncionarioCriador:
+    example: 1
+    description: "`Required` <br />O identificador do funcionário que criou / atualizou a tarefa"
+    type: integer
+  IDFuncionarioExecutor:
+    example: 1
+    description: "O identificador do funcionário que executou a tarefa"
+    type: integer
+  IDFuncionarioResponsavel:
+    example: 1
+    description: "O identificador do funcionário responsável pela tarefa"
+    type: integer
+  IDsFuncionariosParticipantes:
+    description: "Os identificadores dos funcionários participantes dessa tarefa"
+    example: [1, 2]
+    type: array
+    items:
+      type: integer
+  
   Tipo:
     $ref: enums/TipoTarefa.yaml
   Titulo:
@@ -47,22 +58,10 @@ properties:
     description: "A data e hora para lembrete **(ISO 8601)**"
     example: "2024-02-29T15:30:00.000Z"
     type: string
-  SituacaoLembrete:
-    $ref: enums/SituacaoLembrete.yaml
-  IDFuncionarioExecutor:
-    example: 1
-    description: "O identificador do funcionário que executou a tarefa"
-    type: integer
-  IDFuncionarioResponsavel:
-    example: 1
-    description: "O identificador do funcionário responsável pela tarefa"
-    type: integer
-  IDsFuncionariosParticipantes:
-    description: "Os identificadores dos funcionários participantes dessa tarefa"
-    example: [1, 2]
-    type: array
-    items:
-      type: integer
+  Local:
+    description: "Local para a realização da tarefa <br />**Exemplo: Fórum central**"
+    example: "Fórum central"
+    type: string
   Observacao: 
     description: "Observações da tarefa"
     example: "Essa tarefa não pode ultrapassar a data limite estabelecida"
@@ -79,5 +78,3 @@ properties:
     description: "Observações sobre o encerramento da tarefa"
     example: "Essa tarefa é um exemplo"
     type: string
-  Situacao:
-    $ref: enums/SituacaoDoItemAgenda.yaml
