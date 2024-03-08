@@ -68,7 +68,7 @@ properties:
     type: string
   DataRealizacao:
     description: "A data da realização da tarefa **(ISO 8601)**"
-    example: "2024-03-01T10:25:00.000Z"
+    example: "2024-03-01T15:00:00.000Z"
     type: string
   IDStatusEncerramentoTarefa:
     description: "O identificador do status personalizado de encerramento de tarefa utilizado"

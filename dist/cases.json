@@ -25624,7 +25624,7 @@
           },
           "DataRealizacao": {
             "description": "A data da realização da tarefa **(ISO 8601)**",
-            "example": "2024-03-01T10:25:00.000Z",
+            "example": "2024-03-01T15:00:00.000Z",
             "type": "string"
           },
           "IDStatusEncerramentoTarefa": {
@@ -25704,7 +25704,7 @@
           },
           "Data": {
             "description": "A data e hora da tarefa **(ISO 8601)**",
-            "example": "2024-02-29T15:00:00.000Z",
+            "example": "2024-02-28T15:00:00.000Z",
             "type": "string"
           },
           "DataLimite": {
@@ -25714,7 +25714,7 @@
           },
           "Lembrete": {
             "description": "A data e hora para lembrete **(ISO 8601)**",
-            "example": "2024-02-29T15:30:00.000Z",
+            "example": "2024-02-28T14:00:00.000Z",
             "type": "string"
           },
           "Local": {
@@ -25729,7 +25729,7 @@
           },
           "DataRealizacao": {
             "description": "A data da realização da tarefa **(ISO 8601)**",
-            "example": "2024-03-01T10:25:00.000Z",
+            "example": "2024-03-01T15:00:00.000Z",
             "type": "string"
           },
           "IDStatusEncerramentoTarefa": {
