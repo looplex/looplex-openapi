@@ -19496,7 +19496,7 @@
       "SituacaoLembrete": {
         "type": "integer",
         "example": 1,
-        "description": "**A situação do lembrete**\n\n-2147483648: None\n\n1: A notificar\n\n2: Descartado por ambos\n\n3: Notificado\n\n4: Descartado pelo executor\n\n5: Descartado pelo responsável\n"
+        "description": "**A situação do lembrete**\n\n1: A notificar\n\n2: Descartado por ambos\n\n3: Notificado\n\n4: Descartado pelo executor\n\n5: Descartado pelo responsável\n"
       },
       "DTOItemAgenda": {
         "title": "DTOItemAgenda",
