@@ -92523,6 +92523,9 @@ components:
           $ref: '#/components/schemas/SituacaoLembrete'
         Situacao:
           $ref: '#/components/schemas/SituacaoDoItemAgenda'
+        CustomFields:
+          description: As propriedades personalizadas para essa tarefa
+          type: object
     TipoItemTimeline:
       type: integer
       example: 1
