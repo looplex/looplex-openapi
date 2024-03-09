@@ -85,3 +85,6 @@ properties:
     $ref: enums/SituacaoLembrete.yaml
   Situacao: 
     $ref: enums/SituacaoDoItemAgenda.yaml
+  CustomFields:
+    description: "As propriedades personalizadas para essa tarefa"
+    type: object

@@ -25752,6 +25752,10 @@
           },
           "Situacao": {
             "$ref": "#/components/schemas/SituacaoDoItemAgenda"
+          },
+          "CustomFields": {
+            "description": "As propriedades personalizadas para essa tarefa",
+            "type": "object"
           }
         }
       },
