@@ -25545,7 +25545,7 @@
           },
           "IDTarefaPai": {
             "example": 0,
-            "description": "ID da tarefa pai caso esta seja uma subtarefa <br />(Deixar com o valor **0** caso seja uma tarefa)",
+            "description": "ID da tarefa pai caso esta seja uma subtarefa <br />**(Deixar com o valor 0 caso seja uma tarefa)**",
             "type": "integer"
           },
           "IDCaso": {
