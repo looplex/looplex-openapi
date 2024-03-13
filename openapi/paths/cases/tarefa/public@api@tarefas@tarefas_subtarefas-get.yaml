@@ -14,6 +14,12 @@ parameters:
       type: array
       items:
         type: integer
+  - name: tipoTarefa
+    description: O tipo da tarefa 
+    in: query
+    required: true
+    schema:
+      $ref: ../../../components/schemas/cases/enums/TipoTarefa.yaml         
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

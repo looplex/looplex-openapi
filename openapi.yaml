@@ -32042,6 +32042,12 @@ paths:
             type: array
             items:
               type: integer
+        - name: tipoTarefa
+          description: O tipo da tarefa
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/TipoTarefa'
       responses:
         '200':
           description: OK
