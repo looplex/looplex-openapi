@@ -15451,7 +15451,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTOTituloAgenda"
+                    "$ref": "#/components/schemas/DTOTituloAgendaResponse"
                   }
                 }
               }
@@ -15530,7 +15530,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTOTituloAgenda"
+                    "$ref": "#/components/schemas/DTOTituloAgendaResponse"
                   }
                 }
               }
@@ -19734,7 +19734,7 @@
       "TipoItemAgenda": {
         "type": "integer",
         "example": 1,
-        "description": "-2147483648: None\n\n1: Atividade externa\n\n2: Prazo\n\n4: Audiência\n\n8: Compromisso de trabalho\n\n9: Compromisso particular\n\n10: Compromisso (Compromisso de trabalho e Compromisso particular)\n\n11: Publicação\n"
+        "description": "1: Atividade externa\n\n2: Prazo\n\n4: Audiência\n\n8: Compromisso de trabalho\n\n9: Compromisso particular\n\n10: Compromisso (Compromisso de trabalho e Compromisso particular)\n\n11: Publicação\n"
       },
       "SituacaoDoItemAgenda": {
         "type": "integer",
@@ -25568,30 +25568,26 @@
       "TipoEventoDeCobranca": {
         "type": "integer",
         "example": 1,
-        "description": "-2147483648: None\n\n1: Por compromisso\n\n2: Por prazo\n\n3: Por atividade externa\n\n4: Por publicação\n\n5: Por audiência\n"
+        "description": "1: Por compromisso\n\n2: Por prazo\n\n3: Por atividade externa\n\n4: Por publicação\n\n5: Por audiência\n"
       },
       "DTOTituloAgenda": {
         "title": "DTOTituloAgenda",
         "type": "object",
         "properties": {
           "IDTituloCobranca": {
-            "description": "O identificador do titulo de cobrança<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT**: Preencher com o valor da propriedade já existente.",
-            "type": "integer"
-          },
-          "IDEscritorio": {
-            "description": "O identificador do escritório",
-            "type": "integer"
+            "description": "O identificador do titulo de cobrança<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *0*<br />- **PUT**: Preencher com o valor da propriedade já existente.",
+            "type": "integer",
+            "example": 0
           },
           "TipoCobrancaEvento": {
             "$ref": "#/components/schemas/TipoEventoDeCobranca"
           },
           "Titulo": {
-            "type": "string"
+            "description": "O nome do título",
+            "type": "string",
+            "example": "Titulo de tarefa"
           },
           "LinkEntrevistaTemplate": {
-            "type": "string"
-          },
-          "Situacao": {
             "type": "string"
           },
           "Subtarefas": {
@@ -25599,6 +25595,44 @@
             "items": {
               "$ref": "#/components/schemas/DTOTituloAgenda"
             }
+          }
+        }
+      },
+      "DTOTituloAgendaResponse": {
+        "title": "DTOTituloAgendaResponse",
+        "type": "object",
+        "properties": {
+          "IDTituloCobranca": {
+            "description": "O identificador do titulo de cobrança",
+            "type": "integer",
+            "example": 1
+          },
+          "TipoCobrancaEvento": {
+            "$ref": "#/components/schemas/TipoEventoDeCobranca"
+          },
+          "Titulo": {
+            "description": "O nome do título",
+            "type": "string",
+            "example": "Titulo de tarefa"
+          },
+          "LinkEntrevistaTemplate": {
+            "type": "string"
+          },
+          "Subtarefas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTituloAgenda"
+            }
+          },
+          "IDEscritorio": {
+            "description": "O identificador do escritório",
+            "type": "integer",
+            "example": 1
+          },
+          "Situacao": {
+            "description": "A situação do título de agenda (Ativo ou Inativo)",
+            "type": "string",
+            "example": "Ativo"
           }
         }
       },

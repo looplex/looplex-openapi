@@ -2,18 +2,16 @@ title: DTOTituloAgenda
 type: object
 properties:
   IDTituloCobranca:
-    description: "O identificador do titulo de cobrança<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT**: Preencher com o valor da propriedade já existente."
+    description: "O identificador do titulo de cobrança<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *0*<br />- **PUT**: Preencher com o valor da propriedade já existente."
     type: integer
-  IDEscritorio:
-    description: "O identificador do escritório"
-    type: integer
+    example: 0
   TipoCobrancaEvento:
     $ref: enums/TipoEventoDeCobranca.yaml
   Titulo:
+    description: "O nome do título"
     type: string
+    example: "Titulo de tarefa"
   LinkEntrevistaTemplate:
-    type: string
-  Situacao:
     type: string
   Subtarefas:
     type: array
