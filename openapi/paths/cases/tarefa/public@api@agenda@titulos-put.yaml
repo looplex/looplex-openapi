@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Atualiza titulos"
+summary: "Edita título de tarefa"
 operationId: api-agenda-titulos-put
 # Parâmetros da requisição
 parameters:
@@ -24,7 +24,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/cases/MTituloCobranca.yaml
+            $ref: ../../../components/schemas/cases/DTOTituloAgenda.yaml
   "401":
     description: "Unauthorized"
     content:

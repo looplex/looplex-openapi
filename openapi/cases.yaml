@@ -656,10 +656,10 @@ paths:
   /api/agenda/titulos:
     get:
       $ref: './paths/cases/tarefa/public@api@agenda@titulos-get.yaml'
-    # post:
-    #   $ref: './paths/cases/tarefa/public@api@agenda@titulos-post.yaml'
-    # put:
-    #   $ref: './paths/cases/tarefa/public@api@agenda@titulos-put.yaml'
+    post:
+      $ref: './paths/cases/tarefa/public@api@agenda@titulos-post.yaml'
+    put:
+      $ref: './paths/cases/tarefa/public@api@agenda@titulos-put.yaml'
   /api/casos/{idCaso}/audiencias:
     get:
       $ref: './paths/cases/tarefa/public@api@casos@idCaso@audiencias-get.yaml'
