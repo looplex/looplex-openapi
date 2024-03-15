@@ -88,3 +88,7 @@ properties:
   CustomFields:
     description: "As propriedades personalizadas para essa tarefa"
     type: object
+  Subtarefas:
+    type: array
+    items:
+      $ref: DTOTarefaResponse.yaml

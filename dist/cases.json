@@ -16164,6 +16164,96 @@
         }
       }
     },
+    "/api/tarefas/tarefas_subtarefas": {
+      "get": {
+        "tags": [
+          "Tarefa"
+        ],
+        "summary": "Lista tarefas e subtarefas",
+        "operationId": "api-tarefas-tarefas_subtarefas-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idsTarefa",
+            "description": "Os ids das tarefas",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "name": "tipoTarefa",
+            "description": "O tipo da tarefa",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/TipoTarefa"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOTarefaResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/timeline/items": {
       "get": {
         "tags": [
@@ -25756,6 +25846,12 @@
           "CustomFields": {
             "description": "As propriedades personalizadas para essa tarefa",
             "type": "object"
+          },
+          "Subtarefas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTarefaResponse"
+            }
           }
         }
       },
