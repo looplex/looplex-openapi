@@ -1,0 +1,27 @@
+title: DTOTituloAgendaResponse
+type: object
+properties:
+  IDTituloCobranca:
+    description: "O identificador do titulo de cobrança"
+    type: integer
+    example: 1
+  TipoCobrancaEvento:
+    $ref: enums/TipoEventoDeCobranca.yaml
+  Titulo:
+    description: "O nome do título"
+    type: string
+    example: "Titulo de tarefa"
+  LinkEntrevistaTemplate:
+    type: string
+  Subtarefas:
+    type: array
+    items:
+      $ref: DTOTituloAgenda.yaml
+  IDEscritorio:
+    description: "O identificador do escritório"
+    type: integer
+    example: 1
+  Situacao:
+    description: "A situação do título de agenda (Ativo ou Inativo)"
+    type: string
+    example: "Ativo"
