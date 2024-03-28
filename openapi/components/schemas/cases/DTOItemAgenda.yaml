@@ -115,3 +115,13 @@ properties:
   CustomFields:
     description: "Os custom fields definidos para essa tarefa (item de agenda)"
     type: object
+    example:
+      integracao_1: {
+        prop1: "Valor prop1",
+        prop2: "valor prop2",
+        prop_N: "Valor prop_N"
+      }
+      integracao_N: {
+        prop1: "Valor prop1",
+        prop_N: "Valor prop_N"
+      }

@@ -33,7 +33,7 @@ requestBody:
       schema:
         type: array
         items: 
-          $ref: ../../../components/schemas/cases/DTOObjetoNomeValor.yaml
+          $ref: ../../../components/schemas/cases/DTOCustomFields.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
