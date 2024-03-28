@@ -19147,6 +19147,10 @@
           "Locale": {
             "type": "string",
             "example": "pt-BR"
+          },
+          "CampoLivreHierarquiaAdm": {
+            "type": "string",
+            "description": "Campo de texto livre para hierarquia de casos administrativos"
           }
         }
       },
@@ -19684,6 +19688,10 @@
           "Locale": {
             "type": "string",
             "example": "pt-BR"
+          },
+          "CampoLivreHierarquiaAdm": {
+            "type": "string",
+            "description": "Campo de texto livre para hierarquia de casos administrativos"
           }
         }
       },
