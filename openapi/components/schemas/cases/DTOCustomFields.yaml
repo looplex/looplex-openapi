@@ -1,0 +1,21 @@
+title: DTOCustomFields
+type: object
+properties:
+  Nome:
+    example: "Dado_complementar_exemplo"
+    description: "O nome da propriedade a atualizar / cadastrar um json"
+    type: string
+  Valor:
+    description: "O json a ser gravado nessa propriedade de custom fields"
+    type: object
+    example:
+      Tipo: "Campo de texto"
+      Validacoes: {
+          TamanhoCampo: 10,
+          Obrigatorio: true
+        }
+      Ativo: true
+      DataCadastro: "2024-03-27"
+required:
+  - Nome
+  - Valor
