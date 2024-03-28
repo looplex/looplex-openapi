@@ -87422,6 +87422,9 @@ components:
         Locale:
           type: string
           example: pt-BR
+        CampoLivreHierarquiaAdm:
+          type: string
+          description: Campo de texto livre para hierarquia de casos administrativos
     PoloLawOffice:
       type: integer
       example: 1
@@ -87834,6 +87837,9 @@ components:
         Locale:
           type: string
           example: pt-BR
+        CampoLivreHierarquiaAdm:
+          type: string
+          description: Campo de texto livre para hierarquia de casos administrativos
     TipoDeInstancia:
       type: integer
       example: 1
