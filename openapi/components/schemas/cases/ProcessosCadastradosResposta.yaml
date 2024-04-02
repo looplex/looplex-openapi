@@ -41,3 +41,5 @@ properties:
     type: number
   dsObservacoes:
     type: string
+  CampoLivreHierarquiaAdm:
+    type: string

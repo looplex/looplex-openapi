@@ -88294,6 +88294,8 @@ components:
             example:
               - 10
               - 20
+        CampoLivreHierarquiaAdm:
+          type: string
       required:
         - idCliente
         - envolvimentoCliente
@@ -88360,6 +88362,8 @@ components:
         vlContingencia:
           type: number
         dsObservacoes:
+          type: string
+        CampoLivreHierarquiaAdm:
           type: string
     RetornoCadastroDeCaso:
       title: RetornoCadastroDeCaso

@@ -20240,6 +20240,9 @@
                 20
               ]
             }
+          },
+          "CampoLivreHierarquiaAdm": {
+            "type": "string"
           }
         },
         "required": [
@@ -20337,6 +20340,9 @@
             "type": "number"
           },
           "dsObservacoes": {
+            "type": "string"
+          },
+          "CampoLivreHierarquiaAdm": {
             "type": "string"
           }
         }
