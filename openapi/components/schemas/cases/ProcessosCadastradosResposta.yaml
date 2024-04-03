@@ -43,3 +43,7 @@ properties:
     type: string
   CampoLivreHierarquiaAdm:
     type: string
+  IDsNaturezaCausa:
+    type: array
+    items: 
+      type: integer

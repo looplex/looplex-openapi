@@ -88365,6 +88365,10 @@ components:
           type: string
         CampoLivreHierarquiaAdm:
           type: string
+        IDsNaturezaCausa:
+          type: array
+          items:
+            type: integer
     RetornoCadastroDeCaso:
       title: RetornoCadastroDeCaso
       type: object
