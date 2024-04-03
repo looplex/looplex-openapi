@@ -20344,6 +20344,12 @@
           },
           "CampoLivreHierarquiaAdm": {
             "type": "string"
+          },
+          "IDsNaturezaCausa": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
           }
         }
       },
