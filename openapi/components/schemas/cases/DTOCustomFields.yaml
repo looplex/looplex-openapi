@@ -6,7 +6,7 @@ properties:
     description: "O nome da propriedade a atualizar / cadastrar um json"
     type: string
   Valor:
-    description: "O json a ser gravado nessa propriedade de custom fields"
+    description: "O json a ser gravado nessa propriedade de custom fields<br />`O conteúdo da propriedade 'Valor' no payload do 'Request sample' a ser enviado para o endpoint é um exemplo de Json a ser gravado, não precisa ser desse jeito.`"
     type: object
     example:
       Tipo: "Campo de texto"
