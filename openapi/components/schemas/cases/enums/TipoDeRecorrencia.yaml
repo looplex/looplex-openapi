@@ -1,0 +1,13 @@
+title: TipoDeRecorrencia
+example: 1
+description: |
+  None: -2147483648  
+
+  Diaria: 1  
+
+  Semanal: 2  
+
+  Mensal: 3  
+
+  Anual: 4  
+

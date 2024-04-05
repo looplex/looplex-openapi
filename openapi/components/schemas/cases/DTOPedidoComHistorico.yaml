@@ -38,4 +38,5 @@ properties:
   DataConstituicao:
     type: string
   DataVencimento:
-    type: string    
+    type: string 
+  

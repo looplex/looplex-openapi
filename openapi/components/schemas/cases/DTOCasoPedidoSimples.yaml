@@ -2,15 +2,15 @@ title: DTOCasoPedidoSimples
 type: object
 properties:
   Risco:
-    type: integer
+    $ref: enums/ExpectativaReivindicacao.yaml
   ValorPrevisto:
     type: number
   ValorContingencia:
     type: number
   Nome:
     type: string
-  Situacao:
-    type: integer
+  Situacao:     
+    $ref: enums/eSituacaoDePedido.yaml
   IdProcessoExpectativaReivindicacao:
     type: integer
   IdPedidoCausa:
@@ -25,3 +25,18 @@ properties:
     type: string
   DataVencimento:
     type: string
+  Envolvimento: 
+    $ref: enums/Polo.yaml
+  IsLiquido:
+    type: boolean
+  TipoRecorrencia: 
+    $ref: enums/TipoDeRecorrencia.yaml
+  IsLiminar:
+    type: boolean
+  MotivoDePedir:
+    type: string  
+  IDsParte:
+    type: array
+    items:
+      type: integer
+      

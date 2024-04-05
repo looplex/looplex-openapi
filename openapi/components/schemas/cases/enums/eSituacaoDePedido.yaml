@@ -1,0 +1,21 @@
+title: eSituacaoDePedido
+example: 2
+description: |
+  0: None
+
+  1: Procedente  
+
+  2: ParcialmenteProcedente  
+
+  3: Improcedente  
+
+  4: Acordo  
+
+  5: PrescricaoOuDecadencia
+
+  6: LitispendenciaCoisaJulgadaPerempcao
+
+  7: Ilegitimidade
+
+  8: Desistencia
+
