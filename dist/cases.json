@@ -12499,6 +12499,15 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "name": "alteraPartes",
+            "in": "query",
+            "description": "Propriedade utilizada para vincular ou desvincular as partes com pedidos. Padrão = false.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "requestBody": {
