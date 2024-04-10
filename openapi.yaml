@@ -87389,6 +87389,9 @@ components:
           description: A data da ultima alteração do caso
         HierarquiaProcesso:
           type: string
+        Foro:
+          type: string
+          description: A hierarquia do processo
         PoloAtivo:
           type: string
         PoloPassivo:
