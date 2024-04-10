@@ -25668,6 +25668,10 @@
             "description": "A situação do título de agenda (Ativo ou Inativo)",
             "type": "string",
             "example": "Ativo"
+          },
+          "TipoTarefa": {
+            "description": "O tipo da tarefa",
+            "$ref": "#/components/schemas/TipoItemAgenda"
           }
         }
       },
