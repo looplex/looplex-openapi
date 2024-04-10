@@ -12513,7 +12513,7 @@
           }
         }
       },
-      "ExpectavivaReivindicacao": {
+      "ExpectativaReivindicacao": {
         "type": "integer",
         "example": 2,
         "description": "1: Provável\n\n2: Possível\n\n3: Remoto\n"
@@ -12625,7 +12625,7 @@
             "$ref": "#/components/schemas/RamosJudicial"
           },
           "ExpectativaDeExito": {
-            "$ref": "#/components/schemas/ExpectavivaReivindicacao"
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
           },
           "DataDeCriacao": {
             "type": "string"

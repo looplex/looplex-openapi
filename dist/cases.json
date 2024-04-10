@@ -12499,6 +12499,15 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "name": "alteraPartes",
+            "in": "query",
+            "description": "Propriedade utilizada para vincular ou desvincular as partes com pedidos. Padrão = false.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "requestBody": {
@@ -18956,10 +18965,10 @@
         "title": "SituacaoDoProcesso",
         "description": "1: Ativo\n\n2: Arquivo morto\n\n3: Encerrado\n\n99: Excluído\n"
       },
-      "ExpectavivaReivindicacao": {
+      "ExpectativaReivindicacao": {
         "type": "integer",
         "example": 2,
-        "description": "1: Provável\n\n2: Possível\n\n3: Remoto\n"
+        "description": "-2147483648: None\n\n1: Provável\n\n2: Possível\n\n3: Remoto\n"
       },
       "ClasseDoCaso": {
         "type": "integer",
@@ -19535,7 +19544,7 @@
             "$ref": "#/components/schemas/RamosJudicial"
           },
           "ExpectativaDeExito": {
-            "$ref": "#/components/schemas/ExpectavivaReivindicacao"
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
           },
           "DataDeCriacao": {
             "type": "string"
@@ -19981,17 +19990,27 @@
           "DataDeAtualizacao"
         ]
       },
+      "eSituacaoDePedido": {
+        "title": "eSituacaoDePedido",
+        "example": 2,
+        "description": "0: None\n\n1: Procedente  \n\n2: ParcialmenteProcedente  \n\n3: Improcedente  \n\n4: Acordo  \n\n5: PrescricaoOuDecadencia\n\n6: LitispendenciaCoisaJulgadaPerempcao\n\n7: Ilegitimidade\n\n8: Desistencia\n"
+      },
       "Moeda": {
         "type": "integer",
         "example": 1,
         "description": "-2147483648: None\n\n1: Real\n\n2: Dólar americano\n\n3: Euro\n"
+      },
+      "TipoDeRecorrencia": {
+        "title": "TipoDeRecorrencia",
+        "example": 1,
+        "description": "None: -2147483648  \n\nDiaria: 1  \n\nSemanal: 2  \n\nMensal: 3  \n\nAnual: 4  \n"
       },
       "DTOCasoPedidoSimples": {
         "title": "DTOCasoPedidoSimples",
         "type": "object",
         "properties": {
           "Risco": {
-            "type": "integer"
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
           },
           "ValorPrevisto": {
             "type": "number"
@@ -20003,7 +20022,7 @@
             "type": "string"
           },
           "Situacao": {
-            "type": "integer"
+            "$ref": "#/components/schemas/eSituacaoDePedido"
           },
           "IdProcessoExpectativaReivindicacao": {
             "type": "integer"
@@ -20025,6 +20044,27 @@
           },
           "DataVencimento": {
             "type": "string"
+          },
+          "Envolvimento": {
+            "$ref": "#/components/schemas/Polo"
+          },
+          "IsLiquido": {
+            "type": "boolean"
+          },
+          "TipoRecorrencia": {
+            "$ref": "#/components/schemas/TipoDeRecorrencia"
+          },
+          "IsLiminar": {
+            "type": "boolean"
+          },
+          "MotivoDePedir": {
+            "type": "string"
+          },
+          "IDsParte": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
           }
         }
       },
@@ -24748,6 +24788,27 @@
           },
           "IdCaso": {
             "type": "integer"
+          },
+          "Envolvimento": {
+            "$ref": "#/components/schemas/Polo"
+          },
+          "IsLiquido": {
+            "type": "boolean"
+          },
+          "TipoRecorrencia": {
+            "$ref": "#/components/schemas/TipoDeRecorrencia"
+          },
+          "IsLiminar": {
+            "type": "boolean"
+          },
+          "MotivoDePedir": {
+            "type": "string"
+          },
+          "IDsParte": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
           }
         }
       },

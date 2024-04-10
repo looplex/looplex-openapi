@@ -82,7 +82,7 @@ properties:
   Tipo:
     $ref: enums/RamosJudicial.yaml
   ExpectativaDeExito:
-    $ref: enums/ExpectavivaReivindicacao.yaml
+    $ref: enums/ExpectativaReivindicacao.yaml
   DataDeCriacao:
     type: string
   DataDeEntrada:

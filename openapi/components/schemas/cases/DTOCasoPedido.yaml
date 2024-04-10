@@ -31,3 +31,17 @@ properties:
     type: integer
   IdCaso:
     type: integer
+  Envolvimento:
+    $ref: enums/Polo.yaml
+  IsLiquido:
+    type: boolean
+  TipoRecorrencia:
+    $ref: enums/TipoDeRecorrencia.yaml
+  IsLiminar:
+    type: boolean
+  MotivoDePedir:
+    type: string
+  IDsParte: 
+    type: array
+    items: 
+      type: integer

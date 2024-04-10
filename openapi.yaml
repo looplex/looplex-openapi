@@ -29697,6 +29697,14 @@ paths:
           required: true
           schema:
             type: integer
+        - name: alteraPartes
+          in: query
+          description: >-
+            Propriedade utilizada para vincular ou desvincular as partes com
+            pedidos. Padrão = false.
+          required: false
+          schema:
+            type: boolean
       requestBody:
         content:
           application/json:
@@ -87248,10 +87256,12 @@ components:
         3: Encerrado
 
         99: Excluído
-    ExpectavivaReivindicacao:
+    ExpectativaReivindicacao:
       type: integer
       example: 2
       description: |
+        -2147483648: None
+
         1: Provável
 
         2: Possível
@@ -87730,7 +87740,7 @@ components:
         Tipo:
           $ref: '#/components/schemas/RamosJudicial'
         ExpectativaDeExito:
-          $ref: '#/components/schemas/ExpectavivaReivindicacao'
+          $ref: '#/components/schemas/ExpectativaReivindicacao'
         DataDeCriacao:
           type: string
         DataDeEntrada:
@@ -88106,6 +88116,27 @@ components:
         - IDParametroDadoComplementar
         - Valor
         - DataDeAtualizacao
+    eSituacaoDePedido:
+      title: eSituacaoDePedido
+      example: 2
+      description: |
+        0: None
+
+        1: Procedente  
+
+        2: ParcialmenteProcedente  
+
+        3: Improcedente  
+
+        4: Acordo  
+
+        5: PrescricaoOuDecadencia
+
+        6: LitispendenciaCoisaJulgadaPerempcao
+
+        7: Ilegitimidade
+
+        8: Desistencia
     Moeda:
       type: integer
       example: 1
@@ -88117,12 +88148,25 @@ components:
         2: Dólar americano
 
         3: Euro
+    TipoDeRecorrencia:
+      title: TipoDeRecorrencia
+      example: 1
+      description: |
+        None: -2147483648  
+
+        Diaria: 1  
+
+        Semanal: 2  
+
+        Mensal: 3  
+
+        Anual: 4  
     DTOCasoPedidoSimples:
       title: DTOCasoPedidoSimples
       type: object
       properties:
         Risco:
-          type: integer
+          $ref: '#/components/schemas/ExpectativaReivindicacao'
         ValorPrevisto:
           type: number
         ValorContingencia:
@@ -88130,7 +88174,7 @@ components:
         Nome:
           type: string
         Situacao:
-          type: integer
+          $ref: '#/components/schemas/eSituacaoDePedido'
         IdProcessoExpectativaReivindicacao:
           type: integer
         IdPedidoCausa:
@@ -88145,6 +88189,20 @@ components:
           type: string
         DataVencimento:
           type: string
+        Envolvimento:
+          $ref: '#/components/schemas/Polo'
+        IsLiquido:
+          type: boolean
+        TipoRecorrencia:
+          $ref: '#/components/schemas/TipoDeRecorrencia'
+        IsLiminar:
+          type: boolean
+        MotivoDePedir:
+          type: string
+        IDsParte:
+          type: array
+          items:
+            type: integer
     DTOProcessoPreCadastro:
       title: DTOProcessoPreCadastro
       type: object
@@ -91651,6 +91709,20 @@ components:
           type: integer
         IdCaso:
           type: integer
+        Envolvimento:
+          $ref: '#/components/schemas/Polo'
+        IsLiquido:
+          type: boolean
+        TipoRecorrencia:
+          $ref: '#/components/schemas/TipoDeRecorrencia'
+        IsLiminar:
+          type: boolean
+        MotivoDePedir:
+          type: string
+        IDsParte:
+          type: array
+          items:
+            type: integer
     DTOObjetoNomeID:
       title: DTOObjetoNomeID
       type: object
