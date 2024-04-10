@@ -19100,6 +19100,10 @@
           "HierarquiaProcesso": {
             "type": "string"
           },
+          "Foro": {
+            "type": "string",
+            "description": "A hierarquia do processo"
+          },
           "PoloAtivo": {
             "type": "string"
           },
