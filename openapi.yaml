@@ -92421,6 +92421,15 @@ components:
         4: Por publicação
 
         5: Por audiência
+    TipoVinculoComDocumento:
+      title: TipoVinculoComDocumento
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Builder
+
+        2: Assembler
     DTOTituloAgenda:
       title: DTOTituloAgenda
       type: object
@@ -92440,6 +92449,20 @@ components:
           example: Titulo de tarefa
         LinkEntrevistaTemplate:
           type: string
+        DiasParaCumprimento:
+          type: integer
+          description: Quantidade de dias para cumprimento da tarefa
+        DiasCorridos:
+          type: boolean
+          description: Indica se são dias corridos ou não
+        HorasParaExecucaoDaTarefa:
+          type: integer
+          description: A quantidade de horas para cumprimento da tarefa
+        TipoVinculoComDocumento:
+          $ref: '#/components/schemas/TipoVinculoComDocumento'
+        IdentificadorDocumento:
+          type: string
+          description: O identificador do documento
         Subtarefas:
           type: array
           items:
@@ -92460,6 +92483,20 @@ components:
           example: Titulo de tarefa
         LinkEntrevistaTemplate:
           type: string
+        DiasParaCumprimento:
+          type: integer
+          description: Quantidade de dias para cumprimento da tarefa
+        DiasCorridos:
+          type: boolean
+          description: Indica se são dias corridos ou não
+        HorasParaExecucaoDaTarefa:
+          type: integer
+          description: A quantidade de horas para cumprimento da tarefa
+        TipoVinculoComDocumento:
+          $ref: '#/components/schemas/TipoVinculoComDocumento'
+        IdentificadorDocumento:
+          type: string
+          description: O identificador do documento
         Subtarefas:
           type: array
           items:

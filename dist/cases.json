@@ -25666,6 +25666,11 @@
         "example": 1,
         "description": "1: Por compromisso\n\n2: Por prazo\n\n3: Por atividade externa\n\n4: Por publicação\n\n5: Por audiência\n"
       },
+      "TipoVinculoComDocumento": {
+        "title": "TipoVinculoComDocumento",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Builder\n\n2: Assembler\n"
+      },
       "DTOTituloAgenda": {
         "title": "DTOTituloAgenda",
         "type": "object",
@@ -25685,6 +25690,25 @@
           },
           "LinkEntrevistaTemplate": {
             "type": "string"
+          },
+          "DiasParaCumprimento": {
+            "type": "integer",
+            "description": "Quantidade de dias para cumprimento da tarefa"
+          },
+          "DiasCorridos": {
+            "type": "boolean",
+            "description": "Indica se são dias corridos ou não"
+          },
+          "HorasParaExecucaoDaTarefa": {
+            "type": "integer",
+            "description": "A quantidade de horas para cumprimento da tarefa"
+          },
+          "TipoVinculoComDocumento": {
+            "$ref": "#/components/schemas/TipoVinculoComDocumento"
+          },
+          "IdentificadorDocumento": {
+            "type": "string",
+            "description": "O identificador do documento"
           },
           "Subtarefas": {
             "type": "array",
@@ -25713,6 +25737,25 @@
           },
           "LinkEntrevistaTemplate": {
             "type": "string"
+          },
+          "DiasParaCumprimento": {
+            "type": "integer",
+            "description": "Quantidade de dias para cumprimento da tarefa"
+          },
+          "DiasCorridos": {
+            "type": "boolean",
+            "description": "Indica se são dias corridos ou não"
+          },
+          "HorasParaExecucaoDaTarefa": {
+            "type": "integer",
+            "description": "A quantidade de horas para cumprimento da tarefa"
+          },
+          "TipoVinculoComDocumento": {
+            "$ref": "#/components/schemas/TipoVinculoComDocumento"
+          },
+          "IdentificadorDocumento": {
+            "type": "string",
+            "description": "O identificador do documento"
           },
           "Subtarefas": {
             "type": "array",

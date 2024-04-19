@@ -13,6 +13,20 @@ properties:
     example: "Titulo de tarefa"
   LinkEntrevistaTemplate:
     type: string
+  DiasParaCumprimento:
+    type: integer
+    description: "Quantidade de dias para cumprimento da tarefa"
+  DiasCorridos:
+    type: boolean
+    description: "Indica se são dias corridos ou não"
+  HorasParaExecucaoDaTarefa:
+    type: integer
+    description: "A quantidade de horas para cumprimento da tarefa"
+  TipoVinculoComDocumento:
+    $ref: enums/TipoVinculoComDocumento.yaml
+  IdentificadorDocumento:
+    type: string
+    description: "O identificador do documento"
   Subtarefas:
     type: array
     items:
