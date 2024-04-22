@@ -35,7 +35,6 @@ properties:
     type: array
     items:
       type: integer
-  
   Tipo:
     $ref: enums/TipoTarefa.yaml
   Titulo:
