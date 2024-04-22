@@ -25710,6 +25710,17 @@
             "type": "string",
             "description": "O identificador do documento"
           },
+          "VinculoTiposDeProcesso": {
+            "example": [
+              1,
+              3
+            ],
+            "description": "1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
+          },
           "Subtarefas": {
             "type": "array",
             "items": {
@@ -25756,6 +25767,17 @@
           "IdentificadorDocumento": {
             "type": "string",
             "description": "O identificador do documento"
+          },
+          "VinculoTiposDeProcesso": {
+            "example": [
+              1,
+              3
+            ],
+            "description": "1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RamosJudicial"
+            }
           },
           "Subtarefas": {
             "type": "array",
