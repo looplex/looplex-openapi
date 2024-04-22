@@ -24,7 +24,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/cases/DTOTituloAgenda.yaml
+            $ref: ../../../components/schemas/cases/DTOTituloAgendaResponse.yaml
   "401":
     description: "Unauthorized"
     content:
