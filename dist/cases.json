@@ -18321,7 +18321,7 @@
       },
       "RamosJudicial": {
         "type": "integer",
-        "description": "1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Consultivo contrato\n\n11: Análise Documental\n\n12: Gestão de Ativos\n\n13: Societário\n"
+        "description": "1: Administrativo\n\n2: Interno (Consultivo)\n\n3: Judicial Estadual\n\n4: Judicial Federal\n\n5: Judicial Trabalhista\n\n6: Interno do escritório\n\n7: Militar Estadual\n\n8: Eleitoral\n\n9: Militar da União\n\n10: Contrato\n\n11: Análise Documental\n\n12: Cobrança\n\n13: Societário\n"
       },
       "DTOAndamentoTemplate": {
         "title": "DTOAndamentoTemplate",
@@ -22596,6 +22596,9 @@
           },
           "MoedaDeferidoPelaUltimaDecisao": {
             "type": "string"
+          },
+          "IdProcessoExpectativaReivindicacao": {
+            "type": "integer"
           },
           "Historico": {
             "type": "array",
