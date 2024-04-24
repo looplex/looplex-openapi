@@ -37,6 +37,9 @@ properties:
     type: array
     items:
       $ref: DTOTituloAgenda.yaml
+  IDArea:
+    description: "O identificador da área"
+    type: integer
   IDEscritorio:
     description: "O identificador do escritório"
     type: integer

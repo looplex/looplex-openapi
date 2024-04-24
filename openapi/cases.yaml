@@ -684,6 +684,9 @@ paths:
   /api/tarefas/tarefas_subtarefas:
     get:
       $ref: './paths/cases/tarefa/public@api@tarefas@tarefas_subtarefas-get.yaml'    
+  /api/tarefas/titulos:
+    get:
+      $ref: './paths/cases/tarefa/public@api@tarefas@titulos-get.yaml'
 
   # Timeline
   /api/timeline/items:

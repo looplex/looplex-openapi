@@ -32189,6 +32189,144 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
+  /api/tarefas/titulos:
+    get:
+      tags:
+        - Tarefa
+      summary: Lista titulos de tarefa por filtro
+      description: Lista os tipos de tarefa de acordo com os parâmetros informados
+      operationId: api-tarefas-titulos-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: arrTipoTarefa
+          in: query
+          required: true
+          description: |-
+            **Os tipos de tarefa**
+
+            1: AtividadeExterna
+
+            2: Prazo
+
+            4: Audiencia
+
+            8: Compromisso
+
+            11: Publicacao
+          example: '[1,4]'
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: arrTipoCasos
+          in: query
+          required: false
+          description: |-
+            **Os tipos de caso**
+
+            1: Administrativo
+
+            2: Interno (Consultivo)
+
+            3: Judicial Estadual
+
+            4: Judicial Federal
+
+            5: Judicial Trabalhista
+
+            6: Interno do escritório
+
+            7: Militar Estadual
+
+            8: Eleitoral
+
+            9: Militar da União
+
+            10: Contrato
+
+            11: Análise Documental
+
+            12: Cobrança
+
+            13: Societário
+          example: '[1,3]'
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: areaID
+          in: query
+          required: false
+          description: O identificador da área
+          schema:
+            type: integer
+        - name: ativos
+          in: query
+          required: true
+          description: Indica se retorna os titulos ativos
+          example: 'true'
+          schema:
+            type: boolean
+        - name: inativos
+          in: query
+          required: true
+          description: Indica se retorna os titulos inativos
+          example: 'false'
+          schema:
+            type: boolean
+        - name: listarTituloSemVinculoCaso
+          in: query
+          required: false
+          description: >-
+            Indica se deve incluir na resposta os titulos que não tem vinculo
+            com processos
+          example: 'true'
+          schema:
+            type: boolean
+        - name: listarTituloSemVinculoArea
+          in: query
+          required: false
+          description: >-
+            Indica se deve incluir na resposta os titulos que não tem vinculo
+            com área
+          example: 'false'
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOTituloAgendaResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
   /api/timeline/items:
     get:
       tags:
@@ -92502,6 +92640,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOTituloAgenda'
+        IDArea:
+          description: O identificador da área
+          type: integer
     DTOTituloAgendaResponse:
       title: DTOTituloAgendaResponse
       type: object
@@ -92569,6 +92710,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOTituloAgenda'
+        IDArea:
+          description: O identificador da área
+          type: integer
         IDEscritorio:
           description: O identificador do escritório
           type: integer
