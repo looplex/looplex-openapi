@@ -86689,11 +86689,11 @@ components:
 
         9: Militar da União
 
-        10: Consultivo contrato
+        10: Contrato
 
         11: Análise Documental
 
-        12: Gestão de Ativos
+        12: Cobrança
 
         13: Societário
     DTOAndamentoTemplate:
@@ -89979,6 +89979,8 @@ components:
           type: number
         MoedaDeferidoPelaUltimaDecisao:
           type: string
+        IdProcessoExpectativaReivindicacao:
+          type: integer
         Historico:
           type: array
           items:
