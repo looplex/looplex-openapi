@@ -93084,6 +93084,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOTarefaResponse'
+        NomeClienteFormatado:
+          type: string
+        AreaFormatada:
+          type: string
+        IsEditable:
+          type: boolean
     TipoItemTimeline:
       type: integer
       example: 1
