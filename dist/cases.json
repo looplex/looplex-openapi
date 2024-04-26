@@ -16356,12 +16356,9 @@
           },
           {
             "name": "tipoTarefa",
-            "description": "O tipo da tarefa",
+            "description": "**O tipo da tarefa**\n\n1: AtividadeExterna\n\n2: Prazo\n\n4: Audiencia\n\n8: Compromisso\n\n11: Publicacao",
             "in": "query",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/TipoTarefa"
-            }
+            "required": true
           }
         ],
         "responses": {
