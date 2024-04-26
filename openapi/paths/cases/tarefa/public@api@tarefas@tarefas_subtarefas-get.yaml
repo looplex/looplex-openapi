@@ -15,9 +15,11 @@ parameters:
       items:
         type: integer
   - name: tipoTarefa
-    description: "**O tipo da tarefa**\n\n1: AtividadeExterna\n\n2: Prazo\n\n4: Audiencia\n\n8: Compromisso\n\n11: Publicacao" 
     in: query
+    description: "**O tipo da tarefa**\n\n1: AtividadeExterna\n\n2: Prazo\n\n4: Audiencia\n\n8: Compromisso\n\n11: Publicacao" 
     required: true       
+    schema:
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
