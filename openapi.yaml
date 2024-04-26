@@ -32149,11 +32149,20 @@ paths:
             items:
               type: integer
         - name: tipoTarefa
-          description: O tipo da tarefa
+          description: |-
+            **O tipo da tarefa**
+
+            1: AtividadeExterna
+
+            2: Prazo
+
+            4: Audiencia
+
+            8: Compromisso
+
+            11: Publicacao
           in: query
           required: true
-          schema:
-            $ref: '#/components/schemas/TipoTarefa'
       responses:
         '200':
           description: OK
