@@ -32149,6 +32149,7 @@ paths:
             items:
               type: integer
         - name: tipoTarefa
+          in: query
           description: |-
             **O tipo da tarefa**
 
@@ -32161,8 +32162,9 @@ paths:
             8: Compromisso
 
             11: Publicacao
-          in: query
           required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: OK
