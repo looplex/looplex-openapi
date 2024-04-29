@@ -6,7 +6,7 @@ properties:
     example: 0
     type: integer
   IDPedidoCausa:
-    description: "O identificador do pedido em que esse motivo está vinculado"
+    description: "O identificador do pedido"
     example: 2
     type: integer
   Motivo:
