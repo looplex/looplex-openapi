@@ -19340,7 +19340,7 @@
       },
       "ExpectativaReivindicacao": {
         "type": "integer",
-        "example": 2,
+        "example": -2147483648,
         "description": "-2147483648: None\n\n1: Provável\n\n2: Possível\n\n3: Remoto\n"
       },
       "ClasseDoCaso": {
@@ -20365,7 +20365,7 @@
       },
       "eSituacaoDePedido": {
         "title": "eSituacaoDePedido",
-        "example": 2,
+        "example": 0,
         "description": "0: None\n\n1: Procedente  \n\n2: ParcialmenteProcedente  \n\n3: Improcedente  \n\n4: Acordo  \n\n5: PrescricaoOuDecadencia\n\n6: LitispendenciaCoisaJulgadaPerempcao\n\n7: Ilegitimidade\n\n8: Desistencia\n"
       },
       "Moeda": {
@@ -20380,7 +20380,7 @@
       },
       "TipoReparacao": {
         "title": "TipoReparacao",
-        "example": 1,
+        "example": -2147483648,
         "description": "-2147483648: None\n\n1: Dano moral\n\n2: Dano material\n\n3: Obrigação de fazer\n\n4: Declaratória\n"
       },
       "DTOCasoPedidoSimples": {
@@ -20391,25 +20391,32 @@
             "$ref": "#/components/schemas/ExpectativaReivindicacao"
           },
           "ValorPrevisto": {
-            "type": "number"
+            "type": "number",
+            "example": 10
           },
           "ValorContingencia": {
-            "type": "number"
+            "type": "number",
+            "example": 10
           },
           "Nome": {
-            "type": "string"
+            "type": "string",
+            "example": "Nome do pedido"
           },
           "Situacao": {
             "$ref": "#/components/schemas/eSituacaoDePedido"
           },
           "IdProcessoExpectativaReivindicacao": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IdPedidoCausa": {
-            "type": "integer"
+            "type": "integer",
+            "description": "O identificador do pedido a ser utilizado",
+            "example": 1
           },
           "Justificativa": {
-            "type": "string"
+            "type": "string",
+            "example": "Descrição da justificativa"
           },
           "MoedaValorPrevisto": {
             "$ref": "#/components/schemas/Moeda"
@@ -20418,22 +20425,26 @@
             "$ref": "#/components/schemas/Moeda"
           },
           "DataConstituicao": {
-            "type": "string"
+            "type": "string",
+            "example": "2024-04-01T12:30:00.000Z"
           },
           "DataVencimento": {
-            "type": "string"
+            "type": "string",
+            "example": "2024-04-01T12:30:00.000Z"
           },
           "Envolvimento": {
             "$ref": "#/components/schemas/Polo"
           },
           "IsLiquido": {
-            "type": "boolean"
+            "type": "boolean",
+            "example": false
           },
           "TipoRecorrencia": {
             "$ref": "#/components/schemas/TipoDeRecorrencia"
           },
           "IsLiminar": {
-            "type": "boolean"
+            "type": "boolean",
+            "example": false
           },
           "IDMotivoDePedir": {
             "type": "integer"
@@ -20443,6 +20454,7 @@
           },
           "IDsParte": {
             "type": "array",
+            "example": [],
             "items": {
               "type": "integer"
             }

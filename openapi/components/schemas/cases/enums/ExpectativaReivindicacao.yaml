@@ -1,5 +1,5 @@
 type: integer
-example: 2
+example: -2147483648
 description: |
   -2147483648: None
 
