@@ -1,0 +1,12 @@
+title: TipoReparacao
+example: 1
+description: |  
+  -2147483648: None
+
+  1: Dano moral
+
+  2: Dano material
+
+  3: Obrigação de fazer
+
+  4: Declaratória

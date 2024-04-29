@@ -88449,15 +88449,28 @@ components:
       title: TipoDeRecorrencia
       example: 1
       description: |
-        None: -2147483648  
+        -2147483648: None   
 
-        Diaria: 1  
+        1: Diaria  
 
-        Semanal: 2  
+        2: Semanal  
 
-        Mensal: 3  
+        3: Mensal  
 
-        Anual: 4  
+        4: Anual  
+    TipoReparacao:
+      title: TipoReparacao
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Dano moral
+
+        2: Dano material
+
+        3: Obrigação de fazer
+
+        4: Declaratória
     DTOCasoPedidoSimples:
       title: DTOCasoPedidoSimples
       type: object
@@ -88494,8 +88507,10 @@ components:
           $ref: '#/components/schemas/TipoDeRecorrencia'
         IsLiminar:
           type: boolean
-        MotivoDePedir:
-          type: string
+        IDMotivoDePedir:
+          type: integer
+        TipoReparacao:
+          $ref: '#/components/schemas/TipoReparacao'
         IDsParte:
           type: array
           items:
@@ -92036,8 +92051,10 @@ components:
           $ref: '#/components/schemas/TipoDeRecorrencia'
         IsLiminar:
           type: boolean
-        MotivoDePedir:
-          type: string
+        IDMotivoDePedir:
+          type: integer
+        TipoReparacao:
+          $ref: '#/components/schemas/TipoReparacao'
         IDsParte:
           type: array
           items:

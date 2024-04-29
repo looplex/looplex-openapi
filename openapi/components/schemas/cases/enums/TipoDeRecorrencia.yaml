@@ -1,13 +1,12 @@
 title: TipoDeRecorrencia
 example: 1
 description: |
-  None: -2147483648  
+  -2147483648: None   
 
-  Diaria: 1  
+  1: Diaria  
 
-  Semanal: 2  
+  2: Semanal  
 
-  Mensal: 3  
+  3: Mensal  
 
-  Anual: 4  
-
+  4: Anual  
