@@ -87555,7 +87555,7 @@ components:
         99: Excluído
     ExpectativaReivindicacao:
       type: integer
-      example: 2
+      example: -2147483648
       description: |
         -2147483648: None
 
@@ -88415,7 +88415,7 @@ components:
         - DataDeAtualizacao
     eSituacaoDePedido:
       title: eSituacaoDePedido
-      example: 2
+      example: 0
       description: |
         0: None
 
@@ -88460,7 +88460,7 @@ components:
         4: Anual  
     TipoReparacao:
       title: TipoReparacao
-      example: 1
+      example: -2147483648
       description: |
         -2147483648: None
 
@@ -88479,40 +88479,52 @@ components:
           $ref: '#/components/schemas/ExpectativaReivindicacao'
         ValorPrevisto:
           type: number
+          example: 10
         ValorContingencia:
           type: number
+          example: 10
         Nome:
           type: string
+          example: Nome do pedido
         Situacao:
           $ref: '#/components/schemas/eSituacaoDePedido'
         IdProcessoExpectativaReivindicacao:
           type: integer
+          example: 0
         IdPedidoCausa:
           type: integer
+          description: O identificador do pedido a ser utilizado
+          example: 1
         Justificativa:
           type: string
+          example: Descrição da justificativa
         MoedaValorPrevisto:
           $ref: '#/components/schemas/Moeda'
         MoedaValorContingenciado:
           $ref: '#/components/schemas/Moeda'
         DataConstituicao:
           type: string
+          example: '2024-04-01T12:30:00.000Z'
         DataVencimento:
           type: string
+          example: '2024-04-01T12:30:00.000Z'
         Envolvimento:
           $ref: '#/components/schemas/Polo'
         IsLiquido:
           type: boolean
+          example: false
         TipoRecorrencia:
           $ref: '#/components/schemas/TipoDeRecorrencia'
         IsLiminar:
           type: boolean
+          example: false
         IDMotivoDePedir:
           type: integer
         TipoReparacao:
           $ref: '#/components/schemas/TipoReparacao'
         IDsParte:
           type: array
+          example: []
           items:
             type: integer
     DTOProcessoPreCadastro:

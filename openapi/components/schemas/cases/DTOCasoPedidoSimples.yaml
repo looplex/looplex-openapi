@@ -5,40 +5,52 @@ properties:
     $ref: enums/ExpectativaReivindicacao.yaml
   ValorPrevisto:
     type: number
+    example: 10
   ValorContingencia:
     type: number
+    example: 10
   Nome:
     type: string
+    example: "Nome do pedido"
   Situacao:     
     $ref: enums/eSituacaoDePedido.yaml
   IdProcessoExpectativaReivindicacao:
     type: integer
+    example: 0
   IdPedidoCausa:
     type: integer
+    description: "O identificador do pedido a ser utilizado"
+    example: 1
   Justificativa:
     type: string
+    example: "Descrição da justificativa"
   MoedaValorPrevisto:
     $ref: enums/Moeda.yaml
   MoedaValorContingenciado:
     $ref: enums/Moeda.yaml
   DataConstituicao:
     type: string
+    example: "2024-04-01T12:30:00.000Z"
   DataVencimento:
     type: string
+    example: "2024-04-01T12:30:00.000Z"
   Envolvimento: 
     $ref: enums/Polo.yaml
   IsLiquido:
     type: boolean
+    example: false
   TipoRecorrencia: 
     $ref: enums/TipoDeRecorrencia.yaml
   IsLiminar:
     type: boolean
+    example: false
   IDMotivoDePedir:
     type: integer
   TipoReparacao:
     $ref: enums/TipoReparacao.yaml  
   IDsParte:
     type: array
+    example: []
     items:
       type: integer
       
