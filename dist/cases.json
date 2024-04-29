@@ -20376,7 +20376,12 @@
       "TipoDeRecorrencia": {
         "title": "TipoDeRecorrencia",
         "example": 1,
-        "description": "None: -2147483648  \n\nDiaria: 1  \n\nSemanal: 2  \n\nMensal: 3  \n\nAnual: 4  \n"
+        "description": "-2147483648: None   \n\n1: Diaria  \n\n2: Semanal  \n\n3: Mensal  \n\n4: Anual  \n"
+      },
+      "TipoReparacao": {
+        "title": "TipoReparacao",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Dano moral\n\n2: Dano material\n\n3: Obrigação de fazer\n\n4: Declaratória\n"
       },
       "DTOCasoPedidoSimples": {
         "title": "DTOCasoPedidoSimples",
@@ -20430,8 +20435,11 @@
           "IsLiminar": {
             "type": "boolean"
           },
-          "MotivoDePedir": {
-            "type": "string"
+          "IDMotivoDePedir": {
+            "type": "integer"
+          },
+          "TipoReparacao": {
+            "$ref": "#/components/schemas/TipoReparacao"
           },
           "IDsParte": {
             "type": "array",
@@ -25203,8 +25211,11 @@
           "IsLiminar": {
             "type": "boolean"
           },
-          "MotivoDePedir": {
-            "type": "string"
+          "IDMotivoDePedir": {
+            "type": "integer"
+          },
+          "TipoReparacao": {
+            "$ref": "#/components/schemas/TipoReparacao"
           },
           "IDsParte": {
             "type": "array",

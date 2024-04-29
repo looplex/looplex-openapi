@@ -39,8 +39,10 @@ properties:
     $ref: enums/TipoDeRecorrencia.yaml
   IsLiminar:
     type: boolean
-  MotivoDePedir:
-    type: string
+  IDMotivoDePedir:
+    type: integer
+  TipoReparacao:
+    $ref: enums/TipoReparacao.yaml
   IDsParte: 
     type: array
     items: 
