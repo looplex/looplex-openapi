@@ -491,10 +491,23 @@ paths:
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
+  
   # Liabilities Calculation
   /api/liabilitiesCalculation/calculaCaso/{cdProcesso}:
     post:
       $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculation@calculaCaso-post.yaml'
+  
+  # Motivo de pedir
+  /api/propositionStatements/{id}:
+    get:
+      $ref: './paths/cases/motivos/public@api@propositionStatements@id-get.yaml'
+  /api/propositionStatements:
+    get:
+      $ref: './paths/cases/motivos/public@api@propositionStatements-get.yaml'
+  /api/propositionStatement:
+    post:
+      $ref: './paths/cases/motivos/public@api@propositionStatement-post.yaml'
+
   # Natureza
   /api/casos/{IDCaso}/natureza:
     get:
