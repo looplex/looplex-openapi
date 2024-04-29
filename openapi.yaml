@@ -73,6 +73,8 @@ tags:
     x-displayName: Informações adicionais (valor)
   - name: LiabilitiesCalculation
     x-displayName: LiabilitiesCalculation
+  - name: Motivo de pedir
+    x-displayName: Motivo de pedir
   - name: Natureza
     x-displayName: Natureza
   - name: País
@@ -130,6 +132,7 @@ x-tagGroups:
       - Informações adicionais
       - Informações adicionais (valor)
       - LiabilitiesCalculation
+      - Motivo de pedir
       - Natureza
       - País
       - Partes
@@ -28983,6 +28986,151 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DTOResultadoCalculo'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/propositionStatements/{id}:
+    get:
+      tags:
+        - Motivo de pedir
+      summary: Obtém motivo de pedir
+      description: >-
+        Retorna as informações do motivo de pedir de acordo com o identificador
+        dele
+      operationId: api-propositionStatements-id-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+        - name: id
+          in: path
+          required: true
+          description: O identificador do motivo de pedir
+          example: 1
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOMotivoDePedir'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/propositionStatements:
+    get:
+      tags:
+        - Motivo de pedir
+      summary: Lista todos os motivos de pedir
+      operationId: api-propositionStatements-get
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOMotivoDePedir'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '404':
+          description: Não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /api/propositionStatement:
+    post:
+      tags:
+        - Motivo de pedir
+      summary: Cadastra motivo de pedir
+      description: Cadastra um novo motivo de pedir
+      operationId: api-propositionStatement-post
+      parameters:
+        - $ref: '#/components/parameters/Profile'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DTOMotivoDePedir'
+      responses:
+        '201':
+          description: O motivo de pedir cadastrado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DTOMotivoDePedir'
         '401':
           description: Unauthorized
           content:
@@ -91697,6 +91845,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DTOExchangeResultItem'
+    DTOMotivoDePedir:
+      title: DTOMotivoDePedir
+      type: object
+      properties:
+        IDMotivoDePedir:
+          description: O identificador do motivo de pedir
+          example: 0
+          type: integer
+        IDPedidoCausa:
+          description: O identificador do pedido em que esse motivo está vinculado
+          example: 2
+          type: integer
+        Motivo:
+          description: A descrição do motivo de pedir
+          example: Descrição do motivo
+          type: string
+      required:
+        - IDMotivoDePedir
+        - IDPedidoCausa
+        - Motivo
     DTONatureza:
       title: DTONatureza
       type: object
