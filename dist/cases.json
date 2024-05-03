@@ -12631,6 +12631,84 @@
         }
       }
     },
+    "/api/partes/{idParte}": {
+      "patch": {
+        "tags": [
+          "Partes"
+        ],
+        "summary": "Atualiza informações da parte",
+        "operationId": "api-partes-idParte-patch",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idParte",
+            "in": "path",
+            "required": true,
+            "description": "O identificador da parte",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Party"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "As informações da parte foram atualizadas"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{IDCaso}/Pedidos": {
       "get": {
         "tags": [
@@ -25159,6 +25237,60 @@
           "Envolvimento": {
             "type": "string",
             "example": "Verificador do caso"
+          }
+        }
+      },
+      "Address": {
+        "title": "Address",
+        "type": "object",
+        "properties": {
+          "addressID": {
+            "description": "O identificador do endereço",
+            "example": 0,
+            "type": "integer"
+          },
+          "postalCode": {
+            "description": "O CEP",
+            "example": "01010-010",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "O logradouro",
+            "example": "Rua de exemplo",
+            "type": "string"
+          },
+          "region": {
+            "description": "O estado",
+            "example": "SP",
+            "type": "string"
+          },
+          "locality": {
+            "description": "A cidade",
+            "example": "São Paulo",
+            "type": "string"
+          },
+          "country": {
+            "description": "O país",
+            "example": "Brasil",
+            "type": "string"
+          },
+          "neighborhood": {
+            "description": "O bairro",
+            "example": "Centro",
+            "type": "string"
+          }
+        }
+      },
+      "Party": {
+        "title": "Party",
+        "type": "object",
+        "properties": {
+          "addresses": {
+            "description": "Os endereços da parte",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Address"
+            }
           }
         }
       },

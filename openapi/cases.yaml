@@ -549,6 +549,9 @@ paths:
   /api/Partes/desvincular:
     delete:
       $ref: './paths/cases/partes/public@api@Partes@desvincular-delete.yaml'
+  /api/partes/{idParte}:
+    patch:
+      $ref: './paths/cases/partes/public@api@partes@idParte-patch.yaml'
 
   # Pedidos
   /api/casos/{IDCaso}/Pedidos:
