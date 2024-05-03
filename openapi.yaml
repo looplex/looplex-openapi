@@ -88199,6 +88199,26 @@ components:
         CampoLivreHierarquiaAdm:
           type: string
           description: Campo de texto livre para hierarquia de casos administrativos
+    TipoExpectativaReivindicacao:
+      title: TipoExpectativaReivindicacao
+      example: -2147483648
+      description: |
+        -2147483648: None
+
+        1: Perda
+
+        2: Exito
+    Moeda:
+      type: integer
+      example: 1
+      description: |
+        -2147483648: None
+
+        1: Real
+
+        2: Dólar americano
+
+        3: Euro
     TipoDeInstancia:
       type: integer
       example: 1
@@ -88483,17 +88503,6 @@ components:
         7: Ilegitimidade
 
         8: Desistencia
-    Moeda:
-      type: integer
-      example: 1
-      description: |
-        -2147483648: None
-
-        1: Real
-
-        2: Dólar americano
-
-        3: Euro
     TipoDeRecorrencia:
       title: TipoDeRecorrencia
       example: 1
@@ -88601,13 +88610,13 @@ components:
           type: string
         nrExito:
           example: -2147483648
-          type: integer
+          $ref: '#/components/schemas/ExpectativaReivindicacao'
         nrTipoExito:
           example: -2147483648
-          type: integer
+          $ref: '#/components/schemas/TipoExpectativaReivindicacao'
         nrMoedaInicialCausa:
           example: -2147483648
-          type: integer
+          $ref: '#/components/schemas/Moeda'
         idProcessoPai:
           example: -2147483648
           type: integer

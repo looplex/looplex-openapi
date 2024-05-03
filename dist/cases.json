@@ -20159,6 +20159,16 @@
           }
         }
       },
+      "TipoExpectativaReivindicacao": {
+        "title": "TipoExpectativaReivindicacao",
+        "example": -2147483648,
+        "description": "-2147483648: None\n\n1: Perda\n\n2: Exito\n"
+      },
+      "Moeda": {
+        "type": "integer",
+        "example": 1,
+        "description": "-2147483648: None\n\n1: Real\n\n2: Dólar americano\n\n3: Euro\n"
+      },
       "TipoDeInstancia": {
         "type": "integer",
         "example": 1,
@@ -20446,11 +20456,6 @@
         "example": 0,
         "description": "0: None\n\n1: Procedente  \n\n2: ParcialmenteProcedente  \n\n3: Improcedente  \n\n4: Acordo  \n\n5: PrescricaoOuDecadencia\n\n6: LitispendenciaCoisaJulgadaPerempcao\n\n7: Ilegitimidade\n\n8: Desistencia\n"
       },
-      "Moeda": {
-        "type": "integer",
-        "example": 1,
-        "description": "-2147483648: None\n\n1: Real\n\n2: Dólar americano\n\n3: Euro\n"
-      },
       "TipoDeRecorrencia": {
         "title": "TipoDeRecorrencia",
         "example": 1,
@@ -20571,15 +20576,15 @@
           },
           "nrExito": {
             "example": -2147483648,
-            "type": "integer"
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
           },
           "nrTipoExito": {
             "example": -2147483648,
-            "type": "integer"
+            "$ref": "#/components/schemas/TipoExpectativaReivindicacao"
           },
           "nrMoedaInicialCausa": {
             "example": -2147483648,
-            "type": "integer"
+            "$ref": "#/components/schemas/Moeda"
           },
           "idProcessoPai": {
             "example": -2147483648,

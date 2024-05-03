@@ -22,13 +22,13 @@ properties:
     type: string
   nrExito:
     example: -2147483648
-    type: integer
+    $ref: enums/ExpectativaReivindicacao.yaml
   nrTipoExito:
     example: -2147483648
-    type: integer
+    $ref: enums/TipoExpectativaReivindicacao.yaml
   nrMoedaInicialCausa:
     example: -2147483648
-    type: integer
+    $ref: enums/Moeda.yaml
   idProcessoPai:
     example: -2147483648
     type: integer
