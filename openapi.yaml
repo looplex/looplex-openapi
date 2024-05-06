@@ -88506,9 +88506,11 @@ components:
         8: Desistencia
     TipoDeRecorrencia:
       title: TipoDeRecorrencia
-      example: 1
+      example: 0
       description: |
         -2147483648: None   
+
+        0: Sem recorrência  
 
         1: Diaria  
 

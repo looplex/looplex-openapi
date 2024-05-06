@@ -20459,8 +20459,8 @@
       },
       "TipoDeRecorrencia": {
         "title": "TipoDeRecorrencia",
-        "example": 1,
-        "description": "-2147483648: None   \n\n1: Diaria  \n\n2: Semanal  \n\n3: Mensal  \n\n4: Anual  \n"
+        "example": 0,
+        "description": "-2147483648: None   \n\n0: Sem recorrência  \n\n1: Diaria  \n\n2: Semanal  \n\n3: Mensal  \n\n4: Anual  \n"
       },
       "TipoReparacao": {
         "title": "TipoReparacao",
