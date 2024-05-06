@@ -87292,6 +87292,7 @@ components:
       properties:
         IDCliente:
           type: integer
+          example: 1
         IDCasos:
           type: array
           example:
@@ -89814,6 +89815,7 @@ components:
           type: integer
         dtPagamento:
           description: Data do pagamento da dívida<br />`Required`
+          example: '2024-05-01T12:00:00.000Z'
           type: string
         cdDecisao:
           description: Identificador da decisão vinculada
@@ -89821,15 +89823,18 @@ components:
           type: integer
         dtDecisao:
           description: Data da decisão
+          example: '2024-05-01T12:00:00.000Z'
           type: string
         dsDecisao:
           description: Descrição da decisão vinculada
+          example: Descrição
           type: string
         custom_fields:
           description: Campo padrão customizável
           type: string
         created_at:
           description: Campo padrão, Data da inclusão do registro
+          example: '2024-05-01T12:00:00.000Z'
           type: string
     DTOCasoDecisao:
       title: DTOCasoDecisao
@@ -90032,22 +90037,31 @@ components:
       properties:
         IDAlocacaoDeDespesa:
           type: integer
+          example: 0
         IDDespesa:
           type: integer
+          example: 0
         IDCliente:
           type: integer
+          example: 0
         IDContrato:
           type: integer
+          example: 0
         IDCaso:
           type: integer
+          example: 0
         PorcentagemAlocada:
           type: number
+          example: 0
         ValorAlocado:
           type: number
+          example: 0
         IDFechamento:
           type: integer
+          example: 0
         IDCategoriaDeDespesa:
           type: integer
+          example: 0
         Caso:
           $ref: '#/components/schemas/DTOCasoSimples'
     DTODespesa:
@@ -92451,18 +92465,24 @@ components:
       properties:
         IDAcaoPush:
           type: integer
+          example: 0
         IDFuncionario:
           type: integer
+          example: 0
         Tipo:
           $ref: '#/components/schemas/TipoDeAcao'
         DataCriacao:
           type: string
+          example: '2024-05-01T12:00:00.000Z'
         IDVinculo:
           type: integer
+          example: 0
         IDPublicacaoAndamento:
           type: integer
+          example: 0
         Descricao:
           type: string
+          example: Descrição
     DTOVinculoAndamento:
       title: DTOVinculoAndamento
       type: object

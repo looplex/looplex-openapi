@@ -23,6 +23,7 @@ properties:
     type: integer
   dtPagamento:
     description: "Data do pagamento da dívida<br />`Required`"
+    example: "2024-05-01T12:00:00.000Z"
     type: string
   cdDecisao:
     description: "Identificador da decisão vinculada"
@@ -30,14 +31,17 @@ properties:
     type: integer
   dtDecisao:
     description: "Data da decisão"
+    example: "2024-05-01T12:00:00.000Z"
     type: string
   dsDecisao:
     description: "Descrição da decisão vinculada"
+    example: "Descrição"
     type: string
   custom_fields:
     description: "Campo padrão customizável"
     type: string
   created_at:
     description: "Campo padrão, Data da inclusão do registro"
+    example: "2024-05-01T12:00:00.000Z"
     type: string
 

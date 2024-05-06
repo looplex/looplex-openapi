@@ -3,21 +3,30 @@ type: object
 properties:
   IDAlocacaoDeDespesa:
     type: integer
+    example: 0
   IDDespesa:
     type: integer
+    example: 0
   IDCliente:
     type: integer
+    example: 0
   IDContrato:
     type: integer
+    example: 0
   IDCaso:
     type: integer
+    example: 0
   PorcentagemAlocada:
     type: number
+    example: 0
   ValorAlocado:
     type: number
+    example: 0
   IDFechamento:
     type: integer
+    example: 0
   IDCategoriaDeDespesa:
     type: integer
+    example: 0
   Caso:
     $ref: DTOCasoSimples.yaml
