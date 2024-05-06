@@ -3,6 +3,7 @@ type: object
 properties:
   IDCliente:
     type: integer
+    example: 1
   IDCasos:
     type: array
     example: [1,2]

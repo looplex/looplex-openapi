@@ -18996,7 +18996,8 @@
         "type": "object",
         "properties": {
           "IDCliente": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1
           },
           "IDCasos": {
             "type": "array",
@@ -22607,31 +22608,40 @@
         "type": "object",
         "properties": {
           "IDAlocacaoDeDespesa": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IDDespesa": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IDCliente": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IDContrato": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IDCaso": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "PorcentagemAlocada": {
-            "type": "number"
+            "type": "number",
+            "example": 0
           },
           "ValorAlocado": {
-            "type": "number"
+            "type": "number",
+            "example": 0
           },
           "IDFechamento": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IDCategoriaDeDespesa": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "Caso": {
             "$ref": "#/components/schemas/DTOCasoSimples"
@@ -25730,25 +25740,31 @@
         "type": "object",
         "properties": {
           "IDAcaoPush": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IDFuncionario": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "Tipo": {
             "$ref": "#/components/schemas/TipoDeAcao"
           },
           "DataCriacao": {
-            "type": "string"
+            "type": "string",
+            "example": "2024-05-01T12:00:00.000Z"
           },
           "IDVinculo": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "IDPublicacaoAndamento": {
-            "type": "integer"
+            "type": "integer",
+            "example": 0
           },
           "Descricao": {
-            "type": "string"
+            "type": "string",
+            "example": "Descrição"
           }
         }
       },
