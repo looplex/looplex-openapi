@@ -1,0 +1,27 @@
+title: ForoResponse
+type: object
+properties:
+  id:
+    description: "O identificador do item"
+    example: 10
+    type: integer
+  parentID:
+    description: "O identificador do item do qual esse item é o filho"
+    example: 3
+    type: integer
+  name:
+    description: "O nome desse item"
+    example: "1ª Instância"
+    type: string
+  hierarchy:
+    description: "A hierarquia completa do item"
+    example: "3.10"
+    type: string
+  status:
+    description: "Indica se o item está ativo"
+    example: true
+    type: boolean
+  level:
+    description: "Indica o nível desse item"
+    example: 2
+    type: integer

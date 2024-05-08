@@ -99,6 +99,8 @@ tags:
     x-displayName: Timesheet
   - name: Valores apurados
     x-displayName: Valores apurados
+  - name: Varas e Foros
+    x-displayName: Varas e Foros
 x-tagGroups:
   - name: actions
     tags:
@@ -145,6 +147,9 @@ x-tagGroups:
       - Timeline
       - Timesheet
       - Valores apurados
+  - name: varas_e_foros
+    tags:
+      - Varas e Foros
 servers:
   - url: https://apim.looplex.com/actions/v1
     description: Actions Server
@@ -33680,6 +33685,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /v2/{level}:
+    get:
+      tags:
+        - Varas e Foros
+      summary: Lista itens por nível
+      description: Lista os itens de acordo com o nível informado
+      operationId: varas_foros-v2,level-get
+      parameters:
+        - name: level
+          in: path
+          required: true
+          description: O nível do item para pesquisa
+          example: 1
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ForoResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
 components:
@@ -93537,6 +93568,34 @@ components:
         Observacao:
           type: string
         IdCaso:
+          type: integer
+    ForoResponse:
+      title: ForoResponse
+      type: object
+      properties:
+        id:
+          description: O identificador do item
+          example: 10
+          type: integer
+        parentID:
+          description: O identificador do item do qual esse item é o filho
+          example: 3
+          type: integer
+        name:
+          description: O nome desse item
+          example: 1ª Instância
+          type: string
+        hierarchy:
+          description: A hierarquia completa do item
+          example: '3.10'
+          type: string
+        status:
+          description: Indica se o item está ativo
+          example: true
+          type: boolean
+        level:
+          description: Indica o nível desse item
+          example: 2
           type: integer
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.

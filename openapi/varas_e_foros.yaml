@@ -4,7 +4,7 @@ security:
   - Ocp-Apim-Subscription-Key: []
 info:
   version: 1.0.0
-  title: Looplex Varas e Foros
+  title: "Looplex Varas e Foros"
   termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
   contact:
     name: Developers Looplex
@@ -34,7 +34,9 @@ servers:
     description: "Varas e Foros Server"
 paths:
   # paths
-
+  /v2/{level}:
+    get:
+      $ref: './paths/varas_foros/public@varas_foros@v2,level-get.yaml'
 components:
   securitySchemes:
     api_key:
