@@ -150,6 +150,8 @@ servers:
     description: Actions Server
   - url: https://apim.looplex.com/cases
     description: Cases Server
+  - url: https://apim.looplex.com/varas_foros
+    description: Varas e Foros Server
 paths:
   /aspose:
     post:
