@@ -1,8 +1,8 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Varas e Foros
-summary: "Lista itens por nível"
-description: "Lista os itens de acordo com o nível informado"
+summary: "Lista foro / vara por nível"
+description: "Lista os foros / varas de acordo com o nível informado"
 operationId: varas_foros-v2-level-get
 # Parâmetros da requisição
 parameters:

@@ -33691,8 +33691,8 @@ paths:
     get:
       tags:
         - Varas e Foros
-      summary: Lista itens por nível
-      description: Lista os itens de acordo com o nível informado
+      summary: Lista foro / vara por nível
+      description: Lista os foros / varas de acordo com o nível informado
       operationId: varas_foros-v2-level-get
       parameters:
         - name: level
@@ -33734,7 +33734,7 @@ paths:
     get:
       tags:
         - Varas e Foros
-      summary: Lista os itens por ids
+      summary: Lista os foros / varas por ids
       operationId: varas_foros-v2-list-get
       requestBody:
         content:

@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Varas e Foros
-summary: "Lista os itens por ids"
+summary: "Lista os foros / varas por ids"
 operationId: varas_foros-v2-list-get
 # Parâmetros da requisição
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
