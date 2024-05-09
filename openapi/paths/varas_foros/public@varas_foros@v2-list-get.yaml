@@ -23,3 +23,14 @@ responses:
           type: array
           items:
             $ref: ../../components/schemas/cases/ForoResponse.yaml
+  "400":
+    description: "BadRequest"
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              description: "`BadRequest`<br />Indica que o formato da requisição está incorreto" 
+              example: "Indica que o formato da requisição está incorreto"

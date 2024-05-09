@@ -33711,6 +33711,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ForoResponse'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: >-
+                      `BadRequest`<br />Indica que o formato da requisição está
+                      incorreto
+                    example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
   /v2/foro:
@@ -33730,6 +33743,19 @@ paths:
       responses:
         '204':
           description: No Content
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: >-
+                      `BadRequest`<br />Indica que o formato da requisição está
+                      incorreto
+                    example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
   /v2/list:
@@ -33754,6 +33780,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ForoResponse'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: >-
+                      `BadRequest`<br />Indica que o formato da requisição está
+                      incorreto
+                    example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
 components:
