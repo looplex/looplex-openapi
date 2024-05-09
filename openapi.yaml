@@ -33795,6 +33795,44 @@ paths:
                     example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
+  /v2/search:
+    get:
+      tags:
+        - Varas e Foros
+      summary: Pesquisa foros / varas por termo
+      operationId: varas_foros-v2-search-get
+      parameters:
+        - name: term
+          in: query
+          required: true
+          description: O termo para pesquisa
+          example: 1ª Instância
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ForoResponse'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: >-
+                      `BadRequest`<br />Indica que o formato da requisição está
+                      incorreto
+                    example: Indica que o formato da requisição está incorreto
+      security:
+        - Ocp-Apim-Subscription-Key: []
 components:
   securitySchemes:
     Subscription-Key:
