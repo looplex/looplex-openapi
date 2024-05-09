@@ -34,18 +34,17 @@ servers:
     description: "Varas e Foros Server"
 paths:
   # paths
-  /v2:
-    get:
-      $ref: './paths/varas_foros/public@v2@level-get.yaml'
   /v2/foro:
+    get:
+      $ref: './paths/varas_foros/public@v2@foro@level-get.yaml'
     post:
       $ref: './paths/varas_foros/public@v2@foro-post.yaml'
-  /v2/list:
+  /v2/foro/list:
     get:
-      $ref: './paths/varas_foros/public@v2@list-get.yaml'
-  /v2/search:
+      $ref: './paths/varas_foros/public@v2@foro@list-get.yaml'
+  /v2/foro/search:
     get:
-      $ref: './paths/varas_foros/public@v2@search-get.yaml'
+      $ref: './paths/varas_foros/public@v2@foro@search-get.yaml'
 components:
   securitySchemes:
     api_key:

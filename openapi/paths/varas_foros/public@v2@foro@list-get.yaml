@@ -2,7 +2,7 @@
 tags:
   - Varas e Foros
 summary: "Lista os foros / varas por ids"
-operationId: varas_foros-v2-list-get
+operationId: varas_foros-v2-foro-list-get
 # Parâmetros da requisição
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:

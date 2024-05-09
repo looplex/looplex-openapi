@@ -3,7 +3,7 @@ tags:
   - Varas e Foros
 summary: "Lista os foros / varas por nível"
 description: "Lista os foros / varas de acordo com o nível informado"
-operationId: varas_foros-v2-level-get
+operationId: varas_foros-v2-foro-level-get
 # Parâmetros da requisição
 parameters:
   - name: level

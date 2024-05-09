@@ -33687,13 +33687,13 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2:
+  /v2/foro:
     get:
       tags:
         - Varas e Foros
       summary: Lista os foros / varas por nível
       description: Lista os foros / varas de acordo com o nível informado
-      operationId: varas_foros-v2-level-get
+      operationId: varas_foros-v2-foro-level-get
       parameters:
         - name: level
           in: query
@@ -33726,7 +33726,6 @@ paths:
                     example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2/foro:
     post:
       tags:
         - Varas e Foros
@@ -33758,12 +33757,12 @@ paths:
                     example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2/list:
+  /v2/foro/list:
     get:
       tags:
         - Varas e Foros
       summary: Lista os foros / varas por ids
-      operationId: varas_foros-v2-list-get
+      operationId: varas_foros-v2-foro-list-get
       requestBody:
         content:
           application/json:
@@ -33795,12 +33794,12 @@ paths:
                     example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2/search:
+  /v2/foro/search:
     get:
       tags:
         - Varas e Foros
       summary: Pesquisa foros / varas por termo
-      operationId: varas_foros-v2-search-get
+      operationId: varas_foros-v2-foro-search-get
       parameters:
         - name: term
           in: query

@@ -2,7 +2,7 @@
 tags:
   - Varas e Foros
 summary: "Pesquisa foros / varas por termo"
-operationId: varas_foros-v2-search-get
+operationId: varas_foros-v2-foro-search-get
 # Parâmetros da requisição
 parameters:
   - name: term
