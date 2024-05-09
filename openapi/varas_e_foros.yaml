@@ -33,7 +33,8 @@ servers:
   - url: "https://apim.looplex.com/varas_foros"
     description: "Varas e Foros Server"
 paths:
-  # paths
+
+  # Varas e Foros
   /v2/court:
     get:
       $ref: './paths/varas_foros/public@v2@court@level-get.yaml'
@@ -48,6 +49,15 @@ paths:
   /v2/court/children:
     get:
       $ref: './paths/varas_foros/public@v2@court@children-get.yaml'
+  
+  # Ritos
+  /api/sequence/list:
+    get:
+      $ref: './paths/varas_foros/public@v2@sequence@list-get.yaml'
+  /v2/sequence:
+    post:
+      $ref: './paths/varas_foros/public@v2@sequence-post.yaml'
+
 components:
   securitySchemes:
     api_key:

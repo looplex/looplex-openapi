@@ -1,28 +1,14 @@
-# Rito (Varas e Foros unificados)
-name: Rito
+title: Rito
 type: object
 properties:
-  cdRito:
-    type: integer
-    example: 1
-  cdGrupoRito:
-    type: integer
+  groupID:
+    description: "O identificador do grupo no qual o novo rito será vinculado"
     example: 2
-  dsNome:
+    type: integer
+  name:
+    description: "O nome do rito"
+    example: Execução Fiscal
     type: string
-    example: "Arrecadação de Coisas Vagas"
-  inEsperaPoloPassivo:
-    type: boolean
-    example: false
-  inAtivo:
-    type: boolean
-    example: true
-  dsPoloAtivo:
-    type: string
-    example: null 
-  dsPoloPassivo:
-    type: string
-    example: null
-  dsPoloTerceiro:
-    type: string
-    example: null
+required:
+  - groupID
+  - name
