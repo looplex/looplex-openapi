@@ -40,6 +40,9 @@ paths:
   /v2/foro:
     post:
       $ref: './paths/varas_foros/public@varas_foros@v2-foro-post.yaml'
+  /v2/list:
+    get:
+      $ref: './paths/varas_foros/public@varas_foros@v2-list-get.yaml'
 components:
   securitySchemes:
     api_key:
