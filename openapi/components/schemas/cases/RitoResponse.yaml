@@ -11,7 +11,7 @@ properties:
     type: integer
   name:
     description: "O nome do rito"
-    example: Execução Fiscal
+    example: "Nome do rito"
     type: string
   status:
     description: "Indica se o rito está ativo"

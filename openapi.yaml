@@ -33939,6 +33939,44 @@ paths:
                     example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
+  /v2/sequence/search:
+    get:
+      tags:
+        - Varas e Foros
+      summary: Pesquisa ritos por termo
+      operationId: v2-sequence-search-get
+      parameters:
+        - name: term
+          in: query
+          required: true
+          description: O termo para pesquisa
+          example: Termo
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RitoResponse'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: >-
+                      `BadRequest`<br />Indica que o formato da requisição está
+                      incorreto
+                    example: Indica que o formato da requisição está incorreto
+      security:
+        - Ocp-Apim-Subscription-Key: []
 components:
   securitySchemes:
     Subscription-Key:
@@ -93801,19 +93839,19 @@ components:
       properties:
         id:
           description: O identificador do item
-          example: 10
+          example: 2
           type: integer
         parentID:
           description: O identificador do item do qual esse item é o filho
-          example: 3
+          example: 1
           type: integer
         name:
           description: O nome desse item
-          example: 1ª Instância
+          example: Nome do foro / vara
           type: string
         hierarchy:
           description: A hierarquia completa do item
-          example: '3.10'
+          example: '1.2'
           type: string
         status:
           description: Indica se o item está ativo
@@ -93852,7 +93890,7 @@ components:
           type: integer
         name:
           description: O nome do rito
-          example: Execução Fiscal
+          example: Nome do rito
           type: string
         status:
           description: Indica se o rito está ativo

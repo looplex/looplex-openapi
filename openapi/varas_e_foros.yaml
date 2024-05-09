@@ -57,6 +57,9 @@ paths:
   /v2/sequence:
     post:
       $ref: './paths/varas_foros/public@v2@sequence-post.yaml'
+  /v2/sequence/search:
+    get:
+      $ref: './paths/varas_foros/public@v2@sequence@search-get.yaml'
 
 components:
   securitySchemes:

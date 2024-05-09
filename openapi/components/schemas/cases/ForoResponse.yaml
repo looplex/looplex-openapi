@@ -3,19 +3,19 @@ type: object
 properties:
   id:
     description: "O identificador do item"
-    example: 10
+    example: 2
     type: integer
   parentID:
     description: "O identificador do item do qual esse item é o filho"
-    example: 3
+    example: 1
     type: integer
   name:
     description: "O nome desse item"
-    example: "1ª Instância"
+    example: "Nome do foro / vara"
     type: string
   hierarchy:
     description: "A hierarquia completa do item"
-    example: "3.10"
+    example: "1.2"
     type: string
   status:
     description: "Indica se o item está ativo"
