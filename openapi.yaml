@@ -33687,13 +33687,13 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2/foro:
+  /v2/court:
     get:
       tags:
         - Varas e Foros
       summary: Lista os foros / varas por nível
       description: Lista os foros / varas de acordo com o nível informado
-      operationId: varas_foros-v2-foro-level-get
+      operationId: varas_foros-v2-court-level-get
       parameters:
         - name: level
           in: query
@@ -33731,7 +33731,7 @@ paths:
         - Varas e Foros
       summary: Cadastra foros / varas
       description: Cadastra novos foros / varas
-      operationId: varas_foros-v2-foro-post
+      operationId: varas_foros-v2-court-post
       requestBody:
         content:
           application/json:
@@ -33757,12 +33757,12 @@ paths:
                     example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2/foro/list:
+  /v2/court/list:
     get:
       tags:
         - Varas e Foros
       summary: Lista os foros / varas por ids
-      operationId: varas_foros-v2-foro-list-get
+      operationId: varas_foros-v2-court-list-get
       requestBody:
         content:
           application/json:
@@ -33794,12 +33794,12 @@ paths:
                     example: Indica que o formato da requisição está incorreto
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2/foro/search:
+  /v2/court/search:
     get:
       tags:
         - Varas e Foros
       summary: Pesquisa foros / varas por termo
-      operationId: varas_foros-v2-foro-search-get
+      operationId: varas_foros-v2-court-search-get
       parameters:
         - name: term
           in: query
@@ -33808,6 +33808,45 @@ paths:
           example: 1ª Instância
           schema:
             type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ForoResponse'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: >-
+                      `BadRequest`<br />Indica que o formato da requisição está
+                      incorreto
+                    example: Indica que o formato da requisição está incorreto
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /v2/court/children:
+    get:
+      tags:
+        - Varas e Foros
+      summary: Lista foro / vara por pai
+      description: Lista todos os foros / varas de acordo com o identificador do pai
+      operationId: v2-court-children-get
+      parameters:
+        - name: id
+          in: query
+          required: true
+          description: O identificador do item pai
+          example: 3
+          schema:
+            type: integer
       responses:
         '200':
           description: OK
