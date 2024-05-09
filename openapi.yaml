@@ -33687,16 +33687,16 @@ paths:
                 $ref: '#/components/schemas/ExceptionResponse'
       security:
         - Ocp-Apim-Subscription-Key: []
-  /v2/{level}:
+  /v2:
     get:
       tags:
         - Varas e Foros
       summary: Lista itens por nível
       description: Lista os itens de acordo com o nível informado
-      operationId: varas_foros-v2,level-get
+      operationId: varas_foros-v2-level-get
       parameters:
         - name: level
-          in: path
+          in: query
           required: true
           description: O nível do item para pesquisa
           example: 1
@@ -33711,6 +33711,23 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ForoResponse'
+      security:
+        - Ocp-Apim-Subscription-Key: []
+  /v2/foro:
+    post:
+      tags:
+        - Varas e Foros
+      summary: Cadastra foro / vara
+      description: Cadastra um novo foro / vara
+      operationId: varas_foros-v2-foro-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Foro'
+      responses:
+        '204':
+          description: No Content
       security:
         - Ocp-Apim-Subscription-Key: []
 components:
@@ -93597,6 +93614,21 @@ components:
           description: Indica o nível desse item
           example: 2
           type: integer
+    Foro:
+      title: Foro
+      type: object
+      properties:
+        parentID:
+          description: O identificador do item pai desse item
+          example: 3
+          type: integer
+        name:
+          description: O nome do item
+          example: Fórum central
+          type: string
+      required:
+        - parentID
+        - name
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: https://github.com/Rebilly/generator-openapi-repo

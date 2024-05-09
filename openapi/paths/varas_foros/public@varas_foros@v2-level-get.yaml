@@ -1,0 +1,27 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Varas e Foros
+summary: "Lista itens por nível"
+description: "Lista os itens de acordo com o nível informado"
+operationId: varas_foros-v2-level-get
+# Parâmetros da requisição
+parameters:
+  - name: level
+    in: query
+    required: true
+    description: "O nível do item para pesquisa"
+    example: 1
+    schema:
+      type: integer
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "OK"
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../components/schemas/cases/ForoResponse.yaml

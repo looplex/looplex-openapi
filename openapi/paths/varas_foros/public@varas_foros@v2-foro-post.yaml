@@ -1,0 +1,18 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Varas e Foros
+summary: "Cadastra foro / vara"
+description: "Cadastra um novo foro / vara"
+operationId: varas_foros-v2-foro-post
+# Parâmetros da requisição
+# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/cases/Foro.yaml
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "204":
+    description: "No Content"

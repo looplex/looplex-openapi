@@ -1,44 +1,14 @@
-# Foro (Varas e Foros Unificados)
-name: Foro
+title: Foro
 type: object
 properties:
-  grupoId:  
-    type: integer
+  parentID:
+    description: "O identificador do item pai desse item"
     example: 3
-  idPai:
     type: integer
-    example: null
-  nrOrdenacao:
-    type: integer
-    example: 3
-  dsNome:
+  name:
+    description: "O nome do item"
+    example: "Fórum central"
     type: string
-    example: "Judicial Estadual"
-  dsCategoriaFilhos:
-    type: string
-    example: "Instância"
-  dsHierarquiaCompleta:
-    type: string
-    example: "3"
-  nrNivel:
-    type: integer
-    example: 1
-  inAtivo:
-    type: boolean
-    example: true
-  dsCodigoOriginal:
-    type: string
-    example: null
-  isEditavel:
-    type: boolean
-    example: false
-  filhos:
-    type: array
-    items:
-      $ref: Foro.yaml
-  responsavelAlteracao:
-    type: string
-    example: null
-  labelProximosNiveis:
-    type: string
-    example: null
+required:
+  - parentID
+  - name
