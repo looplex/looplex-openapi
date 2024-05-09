@@ -33691,7 +33691,7 @@ paths:
     get:
       tags:
         - Varas e Foros
-      summary: Lista foro / vara por nível
+      summary: Lista os foros / varas por nível
       description: Lista os foros / varas de acordo com o nível informado
       operationId: varas_foros-v2-level-get
       parameters:
@@ -33717,14 +33717,16 @@ paths:
     post:
       tags:
         - Varas e Foros
-      summary: Cadastra foro / vara
-      description: Cadastra um novo foro / vara
+      summary: Cadastra foros / varas
+      description: Cadastra novos foros / varas
       operationId: varas_foros-v2-foro-post
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Foro'
+              type: array
+              items:
+                $ref: '#/components/schemas/Foro'
       responses:
         '204':
           description: No Content
