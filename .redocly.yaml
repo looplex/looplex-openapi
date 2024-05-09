@@ -3,6 +3,7 @@ apis:
   looplex_graph@v1:
     root: openapi.yaml
     # root: openapi/cases.yaml
+    # root: openapi/varas_e_foros.yaml
 extends:
   - recommended
 rules:
