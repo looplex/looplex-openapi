@@ -36,16 +36,16 @@ paths:
   # paths
   /v2:
     get:
-      $ref: './paths/varas_foros/public@varas_foros@v2-level-get.yaml'
+      $ref: './paths/varas_foros/public@v2@level-get.yaml'
   /v2/foro:
     post:
-      $ref: './paths/varas_foros/public@varas_foros@v2-foro-post.yaml'
+      $ref: './paths/varas_foros/public@v2@foro-post.yaml'
   /v2/list:
     get:
-      $ref: './paths/varas_foros/public@varas_foros@v2-list-get.yaml'
+      $ref: './paths/varas_foros/public@v2@list-get.yaml'
   /v2/search:
     get:
-      $ref: './paths/varas_foros/public@varas_foros@v2-search-get.yaml'
+      $ref: './paths/varas_foros/public@v2@search-get.yaml'
 components:
   securitySchemes:
     api_key:
