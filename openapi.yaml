@@ -101,6 +101,8 @@ tags:
     x-displayName: Valores apurados
   - name: Varas e Foros
     x-displayName: Varas e Foros
+  - name: Ritos
+    x-displayName: Ritos
 x-tagGroups:
   - name: actions
     tags:
@@ -147,9 +149,10 @@ x-tagGroups:
       - Timeline
       - Timesheet
       - Valores apurados
-  - name: varas_e_foros
+  - name: varas_foros
     tags:
       - Varas e Foros
+      - Ritos
 servers:
   - url: https://apim.looplex.com/actions/v1
     description: Actions Server
@@ -33874,7 +33877,7 @@ paths:
   /api/sequence/list:
     get:
       tags:
-        - Varas e Foros
+        - Ritos
       summary: Lista os ritos por ids
       operationId: v2-sequence-list-get
       requestBody:
@@ -33911,7 +33914,7 @@ paths:
   /v2/sequence:
     post:
       tags:
-        - Varas e Foros
+        - Ritos
       summary: Cadastra ritos
       operationId: v2-sequence-post
       requestBody:
@@ -33942,7 +33945,7 @@ paths:
   /v2/sequence/search:
     get:
       tags:
-        - Varas e Foros
+        - Ritos
       summary: Pesquisa ritos por termo
       operationId: v2-sequence-search-get
       parameters:
@@ -91368,7 +91371,7 @@ components:
         IDCliente:
           type: integer
         TipoCampoDadoComplementar:
-          type: enums\TipoDadoComplementar.yaml
+          $ref: '#/components/schemas/TipoDadoComplementar'
         TituloDadoComplementar:
           type: string
         TamanhoCampo:
@@ -91488,7 +91491,7 @@ components:
           type: string
     DTOExchangeRebateInfo:
       title: DTOExchangeRebateInfo
-      type: objeect
+      type: object
       properties:
         Value:
           description: Valor Fixo de abatimento
@@ -92029,7 +92032,7 @@ components:
           example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
         isProRata:
           type: boolean
-          desacription: Indica se o juros é pro rata
+          description: Indica se o juros é pro rata
         RateType:
           type: integer
           description: Indica se são juros simples ou compostos
@@ -92056,7 +92059,7 @@ components:
           example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
         isProRata:
           type: boolean
-          desacription: Indica se o juros é pro rata
+          description: Indica se o juros é pro rata
         RateType:
           type: integer
           description: Indica se são juros simples ou compostos

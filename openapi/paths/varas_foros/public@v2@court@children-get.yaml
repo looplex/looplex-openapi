@@ -24,7 +24,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../components/schemas/cases/ForoResponse.yaml
+            $ref: ../../components/schemas/varas_foros/ForoResponse.yaml
   "400":
     description: "BadRequest"
     content:

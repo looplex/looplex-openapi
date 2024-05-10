@@ -10,7 +10,7 @@ properties:
       example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
     isProRata:
       type: boolean
-      desacription: "Indica se o juros é pro rata"
+      description: "Indica se o juros é pro rata"
     RateType:
       type: integer
       description: "Indica se são juros simples ou compostos"

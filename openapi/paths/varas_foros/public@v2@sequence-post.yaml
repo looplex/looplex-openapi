@@ -1,6 +1,6 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Varas e Foros
+  - Ritos
 summary: "Cadastra ritos"
 operationId: v2-sequence-post
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
@@ -10,7 +10,7 @@ requestBody:
       schema:
         type: array
         items: 
-          $ref: ../../components/schemas/cases/Rito.yaml
+          $ref: ../../components/schemas/varas_foros/Rito.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
