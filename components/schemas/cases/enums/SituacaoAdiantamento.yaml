@@ -1,0 +1,12 @@
+type: integer
+example: 1
+description: |
+  -2147483648: None
+  
+  1: Aguardando liberação
+
+  2: Aguardando aprovação
+
+  3: Liberado
+
+  4: Recusado

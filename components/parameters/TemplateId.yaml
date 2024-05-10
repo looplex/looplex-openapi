@@ -1,0 +1,7 @@
+name: templateId
+in: path
+description: Format - int64. The numeric id associated to the template
+required: true
+schema:
+  type: integer
+  format: int64

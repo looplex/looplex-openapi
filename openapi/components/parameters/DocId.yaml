@@ -1,7 +1,0 @@
-name: docId
-in: path
-description: The id associated to the document
-required: true
-schema:
-  type: integer
-  format: int64

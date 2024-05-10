@@ -1,0 +1,14 @@
+title: DTOAndamentoClassificacao
+type: object
+properties:
+  IDAndamentoClassificacao:
+    type: integer
+  NrOrdem:
+    type: integer
+  DsNome:
+    type: string
+  CdEscritorio:
+    type: integer
+  InExibirEmRelatorio:
+    type: boolean
+  

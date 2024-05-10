@@ -1,0 +1,30 @@
+tags:
+  - Operations
+summary: Presigned-url
+description: Get a presigned URL to download the object you passed the path
+operationId: presigned-url
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+  - $ref: ../../components/parameters/cmd.yaml
+  - $ref: ../../components/parameters/path.yaml
+responses:
+  '200':
+    description: OK
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "status": "SUCCESS",
+            "message": "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/examples/summer-style.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAVBKADHNBJ2X72NFH%2F20221205%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221205T140803Z&X-Amz-Expires=300&X-Amz-Signature=0378d83ed77389258115201f4a71f1f596c8da4376a8c9b4c2a87eae541f3fa5&X-Amz-SignedHeaders=host&x-id=GetObject"
+              }
+  '401':
+    description: Access Denied
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "statusCode": 401,
+            "message": "Access denied due to missing subscription key. Make sure to include subscription key when making requests to an API."
+          }

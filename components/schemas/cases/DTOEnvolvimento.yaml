@@ -1,0 +1,9 @@
+title: DTOEnvolvimento
+type: object
+properties:
+  ClienteProfissional:
+    type: string
+  Processo:
+    type: string
+  Participacao:
+    type: string

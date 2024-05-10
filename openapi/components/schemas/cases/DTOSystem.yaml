@@ -1,7 +1,0 @@
-title: DTOSystem
-type: object
-properties:
-  version:
-    type: string
-  workstation:
-    type: string

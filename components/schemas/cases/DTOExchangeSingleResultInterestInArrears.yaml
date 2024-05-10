@@ -1,0 +1,35 @@
+title: DTOExchangeSingleResultInterestInArrears
+type: object
+properties:
+     OverFactoredValue:
+      description: "Valor resultante sobre o principal"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+     OverCompensatoryInterest:
+      description: "Valor resultante sobre juros compensatórios"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+     OverInterestInArrears:
+      description: "Valor resultante sobre juros moratórios"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+     Rate:
+      description: "Taxa de juros aplicada"
+      type: number
+     CompoundRate:
+      description: "Taxa de juros composta aplicada(a princípio será sempre igual a Rate pois atualmente o cálculo é sempre realizado diariamente)"
+      type: array
+     RateFrequencyType:
+      type: integer
+      description: "Indica a frequência de aplicação de juros"
+      example: "1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual"
+     isProRata:
+      description: "Indica se o juros é pro rata"
+      type: boolean
+     RateType:
+      type: integer
+      description: "Indica se são juros simples ou compostos"
+      example: "1 - Simples\r\n2 - Compostos"

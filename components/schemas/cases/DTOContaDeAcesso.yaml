@@ -1,0 +1,11 @@
+title: DTOContaDeAcesso
+type: object
+properties:
+  IDFuncionario:
+    type: integer
+  Conta:
+    type: string
+  IsPrimeiroAcesso:
+    type: boolean
+  IsOldPassword:
+    type: boolean

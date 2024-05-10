@@ -1,9 +1,0 @@
-title: DTOBuscaMobileNovo
-type: object
-properties:
-  IdsClientesComCasos:
-    type: array
-    items:
-      $ref: CasosCliente.yaml
-  TermoBuscado:
-    type: string

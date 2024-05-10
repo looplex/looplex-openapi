@@ -1,0 +1,138 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: Actions
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
+  contact:
+    name: Developers Looplex
+    email: developer@looplex.com.br
+    url: "https://www.looplex.com.br"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  x-logo: 
+    url: "/assets/images/logo.png"
+    href: "/"
+  description: >
+   Actions is the group of APIs consumed by the templates,
+   related to document flows.
+
+servers:
+  - url: "https://apim.looplex.com/actions/v1"
+    description: Actions Server
+tags:
+  - name: Operations
+    description: 
+      Actions is the group of APIs consumed by the templates,
+      related to document flows.
+  - name: Code
+    description: Code operations
+  - name: TinyURL
+    description: TinyURL Operations
+  - name: JWT
+    description: JWT Operations
+paths:
+  /aspose:
+    post:
+      $ref: ./paths/actions/aspose.yaml
+  /code/:id:
+    post:
+      $ref: ./paths/actions/code/code@{id}-post.yaml
+    put:
+        $ref: ./paths/actions/code/code@{id}-put.yaml
+    get:
+        $ref: ./paths/actions/code/code@{id}-get.yaml
+    delete:
+        $ref: ./paths/actions/code/code@{id}-delete.yaml
+  /office-render:
+    post: 
+        $ref: ./paths/actions/office-render.yaml
+  /dictionary-lookup:
+    post: 
+      $ref:  ./paths/actions/dictionary-lookup.yaml
+  /echo:
+    post:
+      $ref:  ./paths/actions/echo.yaml
+  /keyvault:
+    get:
+      $ref: ./paths/actions/keyvault.yaml
+  /oauth2-pkce-pair:
+    post: 
+      $ref: ./paths/actions/oauth2-pkce-pair.yaml
+  /qrcode:
+    post: 
+      $ref: ./paths/actions/qrcode.yaml
+  /spellcheck:
+    post: 
+      $ref: ./paths/actions/spellcheck.yaml
+  /mustache-render:
+    post: 
+      $ref: ./paths/actions/mustache-render.yaml
+  /text-recognize:
+    post:
+      $ref: ./paths/actions/text-recognize.yaml
+  /puppeteer:
+    post: 
+      $ref: ./paths/actions/puppeteer.yaml
+  /presigned-url:
+    get: 
+      $ref: ./paths/actions/presigned-url.yaml
+  /plot:
+    post: 
+      $ref: ./paths/actions/plot.yaml
+  /matchAdobeAnnotationsWithMSFormRecognizerAnalysis:
+    post:
+     $ref:  ./paths/actions/matchAdobeAnnotationsWithMSFormRecognizerAnalysis.yaml 
+  /vm2:
+    post:
+     $ref: ./paths/actions/vm2.yaml
+  /sendmail:
+    post: 
+      $ref: ./paths/actions/sendmail.yaml
+  /mjml-render:
+    post: 
+      $ref: ./paths/actions/mjml-render.yaml
+  /mssql:
+    post:
+     $ref: ./paths/actions/mssql.yaml
+  /looplex/headless-surf:
+    post:
+     $ref: ./paths/actions/looplex-headless-surf.yaml
+  /looplex/sendmail:
+    post:
+     $ref: ./paths/actions/looplex-sendmail.yaml 
+  /looplex/contextAwareSpellcheck:
+    post:
+     $ref: ./paths/actions/looplex-contextAwareSpellcheck.yaml
+  /looplex/text-variants:
+    post:
+      $ref: ./paths/actions/looplex-text-variants.yaml
+  /looplex/thumbnail:
+    post:
+      $ref: ./paths/actions/looplex-thumbnail.yaml
+  /tinyurl:
+    post:
+      $ref: ./paths/actions/tinyurl/tinyurl-post.yaml
+  /tinyurl/:id:
+    put:
+      $ref: ./paths/actions/tinyurl/tinyurl@{id}-put.yaml
+    get:
+      $ref: ./paths/actions/tinyurl/tinyurl@{id}-get.yaml
+    delete:
+      $ref: ./paths/actions/tinyurl/tinyurl@{id}-delete.yaml            
+  /jwt/sign:
+    post:
+      $ref: ./paths/actions/jwt/sign.yaml
+  /jwt/verify:
+    post:
+      $ref: ./paths/actions/jwt/verify.yaml         
+      
+      
+      
+           
+components:
+  securitySchemes:
+    Subscription-Key:
+      $ref: ./components/securitySchemes/ocp_apim_subscription_key.yaml
+security:
+  -  Subscription-Key: []

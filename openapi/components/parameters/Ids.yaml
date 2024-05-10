@@ -1,7 +1,0 @@
-name: ids
-in: query
-description: Format - int64. The id of the documents to be hidden
-required: true
-schema:
-  type: integer
-  format: int64

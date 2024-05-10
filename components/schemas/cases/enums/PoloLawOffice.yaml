@@ -1,0 +1,14 @@
+type: integer
+example: 1
+description: |
+  0: None
+  
+  1: Ativo
+
+  2: Passivo
+
+  3: Terceiro
+
+  4: Nenhum
+
+  5: Outro envolvido

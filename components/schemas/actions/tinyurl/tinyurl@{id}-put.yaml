@@ -1,0 +1,18 @@
+title: TinyURL
+type: object
+example: {
+  "partitionKey": "looplex.com.br",
+  "destination": "https://www.google.com/search?q=Looplex",
+  "permanent": false,
+  "id": "HNpVoVkT0u3UdOXnBWU0E",
+  "createdAt": "2022-11-23T03:01:59.678Z",
+  "visitsCount": 0,
+  "modifiedAt": "2022-11-23T04:20:06.247Z",
+  "active": false,
+  "_rid": "gXt1AKwaC88IAAAAAAAAAA==",
+  "_self": "dbs/gXt1AA==/colls/gXt1AKwaC88=/docs/gXt1AKwaC88IAAAAAAAAAA==/",
+  "_etag": "\"c30ae7a1-0000-0200-0000-637d9f770000\"",
+  "_attachments": "attachments/",
+  "_ts": 1669177207
+}
+description: TinyURL service

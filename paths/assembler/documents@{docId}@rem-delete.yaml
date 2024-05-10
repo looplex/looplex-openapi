@@ -1,0 +1,12 @@
+tags:
+  - Documents
+summary: Delete document and generated files
+description: Deletes a document and its generated files by the the document's id.
+operationId: purgeDocumentUsingDELETE
+parameters:
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/DocId.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

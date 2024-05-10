@@ -1,0 +1,81 @@
+# https://redocly.com/docs/openapi-visual-reference/info/
+openapi: 3.0.2
+security: 
+  - Ocp-Apim-Subscription-Key: []
+info:
+  version: 1.0.0
+  title: "Looplex Varas e Foros"
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
+  contact:
+    name: Developers Looplex
+    email: developer@looplex.com.br
+    url: "https://www.looplex.com.br"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  x-logo:
+    url: "/assets/images/logo.png"
+    href: "/"
+  description: >
+    This is an **example** API to demonstrate features of OpenAPI specification
+
+    # Introduction
+
+    This API definition is intended to to be a good starting point for
+    describing your API in 
+
+    [OpenAPI/Swagger
+    format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
+externalDocs:
+  description: Find out how to create a GitHub repo for your OpenAPI definition.
+  url: "https://github.com/Rebilly/generator-openapi-repo"
+servers:
+  - url: "https://apim.looplex.com/varas_foros"
+    description: "Varas e Foros Server"
+paths:
+
+  # Varas e Foros
+  /v2/court:
+    get:
+      $ref: './paths/varas_foros/public@v2@court@level-get.yaml'
+    post:
+      $ref: './paths/varas_foros/public@v2@court-post.yaml'
+  /v2/court/list:
+    get:
+      $ref: './paths/varas_foros/public@v2@court@list-get.yaml'
+  /v2/court/search:
+    get:
+      $ref: './paths/varas_foros/public@v2@court@search-get.yaml'
+  /v2/court/children:
+    get:
+      $ref: './paths/varas_foros/public@v2@court@children-get.yaml'
+  
+  # Ritos
+  /api/sequence/list:
+    get:
+      $ref: './paths/varas_foros/public@v2@sequence@list-get.yaml'
+  /v2/sequence:
+    post:
+      $ref: './paths/varas_foros/public@v2@sequence-post.yaml'
+  /v2/sequence/search:
+    get:
+      $ref: './paths/varas_foros/public@v2@sequence@search-get.yaml'
+
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: api_key
+    Ocp-Apim-Subscription-Key:
+      type: apiKey
+      in: header
+      description: "Subscription key provided by Looplex"
+      name: Ocp-Apim-Subscription-Key
+    auth_token:
+      type: apiKey
+      in: header
+      name: auth_token
+    basic_auth:
+      type: http
+      scheme: basic

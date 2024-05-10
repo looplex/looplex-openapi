@@ -1,0 +1,8 @@
+title: TipoExpectativaReivindicacao
+example: -2147483648
+description: |  
+  -2147483648: None
+
+  1: Perda
+
+  2: Exito
