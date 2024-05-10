@@ -6,7 +6,7 @@ properties:
   IDCliente: 
     type: integer
   TipoCampoDadoComplementar:
-    type: enums\TipoDadoComplementar.yaml
+    $ref: enums\TipoDadoComplementar.yaml
   TituloDadoComplementar:
     type: string
   TamanhoCampo:

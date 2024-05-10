@@ -23918,7 +23918,7 @@
             "type": "integer"
           },
           "TipoCampoDadoComplementar": {
-            "type": "enums\\TipoDadoComplementar.yaml"
+            "$ref": "#/components/schemas/TipoDadoComplementar"
           },
           "TituloDadoComplementar": {
             "type": "string"
@@ -24081,7 +24081,7 @@
       },
       "DTOExchangeRebateInfo": {
         "title": "DTOExchangeRebateInfo",
-        "type": "objeect",
+        "type": "object",
         "properties": {
           "Value": {
             "description": "Valor Fixo de abatimento",
@@ -24787,7 +24787,7 @@
           },
           "isProRata": {
             "type": "boolean",
-            "desacription": "Indica se o juros é pro rata"
+            "description": "Indica se o juros é pro rata"
           },
           "RateType": {
             "type": "integer",
@@ -24823,7 +24823,7 @@
           },
           "isProRata": {
             "type": "boolean",
-            "desacription": "Indica se o juros é pro rata"
+            "description": "Indica se o juros é pro rata"
           },
           "RateType": {
             "type": "integer",

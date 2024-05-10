@@ -1,5 +1,5 @@
 title: DTOExchangeRebateInfo
-type: objeect
+type: object
 properties:
     Value:
       description: "Valor Fixo de abatimento"

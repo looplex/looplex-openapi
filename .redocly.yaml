@@ -1,16 +1,14 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apis:
-  looplex_graph@v1:
+  looplex@v1:
     root: openapi.yaml
-    # root: openapi/cases.yaml
-    # root: openapi/varas_e_foros.yaml
 extends:
   - recommended
 rules:
   no-unused-components: warn
 features.openapi:
+  htmlTemplate: ./docs/index.html
   theme:
     colors:
       primary:
         main: "#336699"
-  htmlTemplate: ./docs/index.html

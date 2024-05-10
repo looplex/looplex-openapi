@@ -1,6 +1,6 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Varas e Foros
+  - Ritos
 summary: "Pesquisa ritos por termo"
 operationId: v2-sequence-search-get
 # Parâmetros da requisição
@@ -23,7 +23,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../components/schemas/cases/RitoResponse.yaml
+            $ref: ../../components/schemas/varas_foros/RitoResponse.yaml
   "400":
     description: "BadRequest"
     content:
