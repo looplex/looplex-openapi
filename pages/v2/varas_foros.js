@@ -13,7 +13,7 @@ export default function VarasEForos() {
         nativeScrollbars: true,
         sortTagsAlphabetically: true,
         theme: {
-          logo: './logo.png'
+          logo: 'logo.png'
         }
       }}
     />
