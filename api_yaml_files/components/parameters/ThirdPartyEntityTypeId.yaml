@@ -1,0 +1,10 @@
+name: thirdPartyEntityTypeId
+in: path
+description: The id associated to the entity type
+required: true
+schema:
+  exclusiveMaximum: true
+  minimum: 1.0
+  exclusiveMinimum: true
+  type: integer
+  format: int64

@@ -1,7 +1,14 @@
 import { RedocStandalone } from 'redoc'
 
+const json = require('./assembler.json')
+
 export default function Assembler () {
   return (
-    <RedocStandalone specUrl="../assembler.yaml"/>
+    <RedocStandalone
+      spec={json}
+      options={{
+        menuToggle: true
+      }}
+    />
   )
 }

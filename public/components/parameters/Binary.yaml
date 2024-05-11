@@ -1,5 +1,0 @@
-name: binary
-in: query
-description: <binary or url download>
-schema:
-  type: boolean

@@ -1,0 +1,47 @@
+name: DTOTabelaCalculoParametros2
+type: object
+properties:
+  DataIndicePedidos:
+    type: string
+  isClonarCalculo:
+    type: boolean
+  cdPedidoCalculo:
+    type: integer
+  dsTitulo:
+    type: string
+  isManterAtualizado:
+    type: boolean
+  vlCorrigido:
+    type: number
+  NomeTabela:
+    type: string
+  DataReembolso:
+    type: string
+  DataJurosMoratoriosPedidos:
+    type: string
+  DataJurosCompensatoriosPedidos:
+    type: string
+  cdModeloCalculo:
+    type: integer
+  DataJurosMoratorios:
+    type: string
+  DataJurosCompensatorios:
+    type: string
+  DataIndice:
+    type: string
+  MultaEHonorarios:
+    $ref: DTOMultaEHonorarios.yaml
+  Juros:
+    $ref: DTOJurosCalculo.yaml
+  ValoresParaCustasIncorridas:
+    type: array
+    items:
+      $ref: DTOValorCalculo.yaml
+  ValoresParaCorrecao:
+    type: array
+    items:
+      $ref: DTOValorCalculo.yaml
+  cdTabela:
+    type: integer
+  inUsaValoresExpectativaProcesso:
+    type: boolean

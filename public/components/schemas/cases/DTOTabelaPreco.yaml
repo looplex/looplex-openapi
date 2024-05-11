@@ -1,9 +1,0 @@
-title: DTOTabelaPreco
-type: object
-properties:
-  IdEscritorio:
-    type: integer
-  IdTabelaPreco:
-    type: integer
-  NomeTabela:
-    type: string

@@ -1,0 +1,8 @@
+title: TipoVinculoComDocumento
+example: 1
+description: |  
+  -2147483648: None
+
+  1: Builder
+
+  2: Assembler

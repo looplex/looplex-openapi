@@ -1,0 +1,8 @@
+type: integer
+example: 1
+description: |
+  1: Nova
+
+  2: Visualizada
+
+  4: Finalizada

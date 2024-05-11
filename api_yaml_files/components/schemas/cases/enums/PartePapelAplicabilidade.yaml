@@ -1,0 +1,8 @@
+type: integer
+example: 1
+description: |
+  -2147483648: None
+  
+  1: Processo
+
+  2: Contrato

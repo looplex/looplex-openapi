@@ -1,8 +1,0 @@
-type: integer
-example: 3
-description: |
-  1: Exception
-
-  2: Sem dados
-
-  3: Com dados

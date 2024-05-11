@@ -1,8 +1,0 @@
-type: object
-properties:
-  Message: 
-    type: string
-    description: "Erro"
-  ExceptionMessage: 
-    type: string
-    description: "Descrição do erro"

@@ -1,0 +1,8 @@
+title: Party
+type: object
+properties:
+  addresses:
+    description: "Os endereços da parte"
+    type: array
+    items:
+      $ref: "Address.yaml"

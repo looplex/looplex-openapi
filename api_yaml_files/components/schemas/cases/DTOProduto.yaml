@@ -1,0 +1,15 @@
+title: DTOProduto
+type: object
+properties:
+  NomeCliente:
+    type: string
+  TituloCaso:
+    type: string
+  NumeroInterno:
+    type: string
+  NumeroExterno:
+    type: string
+  dsProduto:
+    type: string
+  IdCaso:
+    type: integer

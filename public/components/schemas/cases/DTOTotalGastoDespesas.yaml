@@ -1,8 +1,0 @@
-title: DTOTotalGastoDespesas
-type: object
-properties:
-  Gastos:
-    description: "Os gastos de cada despesa (Fundo Fixo, Reembolso, Voucher)"
-    type: array
-    items:
-      $ref: DTOGastoDespesa.yaml

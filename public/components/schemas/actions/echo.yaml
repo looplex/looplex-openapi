@@ -1,8 +1,0 @@
-title: Echo
-type: object
-properties:
-  key:
-    type: string
-    description: Any value
-    example: "value"
-description: Echo

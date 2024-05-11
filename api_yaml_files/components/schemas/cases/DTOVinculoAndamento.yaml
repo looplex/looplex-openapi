@@ -1,0 +1,13 @@
+title: DTOVinculoAndamento
+type: object
+properties:
+  IDsPublicacao:
+    type: array
+    items:
+      type: integer
+  IDProcesso:
+    description: "O identificador do processo<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    type: integer
+required:
+  - IDsPublicacao
+  - IDProcesso

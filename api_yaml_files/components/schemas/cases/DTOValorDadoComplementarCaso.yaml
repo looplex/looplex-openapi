@@ -1,0 +1,27 @@
+title: DTOValorDadoComplementarCaso
+type: object
+properties:
+  IDProcessoValorDadoComplementar:
+    description: "O identificador do valor gravado no processo utilizando a Informação adicional.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    type: integer
+  IDCaso:
+    description: "O identificador do caso."
+    example: 100
+    type: integer
+  IDParametroDadoComplementar:
+    description: "O identificador da Informação adicional."
+    example: 50
+    type: integer
+  Valor:
+    description: "O valor a ser gravado / atualizado na Informação adicional"
+    example: "Valor para gravar"
+    type: string
+  DataDeAtualizacao:
+    description: "A data de atualização do valor"
+    example: "2022-01-01T00:00:00.000"
+    type: string
+required:
+  - IDCaso
+  - IDParametroDadoComplementar
+  - Valor
+  - DataDeAtualizacao

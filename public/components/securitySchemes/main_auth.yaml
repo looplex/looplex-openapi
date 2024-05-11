@@ -1,7 +1,0 @@
-type: oauth2
-flows:
-  implicit:
-    authorizationUrl: 'a'
-    scopes:
-      'read:users': read users info
-      'write:users': modify or remove users

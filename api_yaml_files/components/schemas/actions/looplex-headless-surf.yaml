@@ -1,0 +1,10 @@
+title: looplex/headless-surf
+type: object
+required:
+  - actions
+properties:
+  actions:
+    type: string
+    description: An action
+    example: "https://looplex-ged.s3.us-east-1.amazonaws.com/demarest/webseek_busca.js"
+description: looplex/headless-surf

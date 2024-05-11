@@ -1,0 +1,9 @@
+title: DTOModeloCalculo
+type: object
+properties:
+  IdModeloCalculo:
+    type: integer
+  NomeTabela:
+    type: string
+  Parametros:
+    $ref: DTOTabelaCalculoParametros.yaml

@@ -1,6 +1,0 @@
-name: template
-in: path
-description: The string that represents the template
-required: true
-schema:
-  type: string

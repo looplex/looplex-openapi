@@ -1,0 +1,7 @@
+title: TipoPesquisaPublicacao
+example: 1
+description: |
+  
+  1: PorDataDeDisponibilizacao
+
+  2: PorDataDePublicacao  

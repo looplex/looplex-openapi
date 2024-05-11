@@ -1,0 +1,9 @@
+name: force
+in: query
+description: Force operands import
+schema:
+  enum:
+    - false
+    - true
+  type: boolean
+  default: false

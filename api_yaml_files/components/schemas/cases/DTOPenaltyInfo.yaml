@@ -1,0 +1,22 @@
+title: DTOPenaltyInfo
+type: object
+properties:
+    Id:
+      description: "Identificador opcional da multa"
+      type: integer
+    Name:
+      description: "Nome da multa"
+      type: string
+    Value:
+      description: "Valor percentual"
+      example: "10.5 para 10.5%"
+      type: number
+    isOverCompensatoryInterest:
+      description: "Indica se aplica-se sobre os Juros Compensatórios"
+      type: boolean
+    isOverInterestInArrears:
+      description: "Indica se aplica-se sobre os Juros Moratórios"
+      type: boolean
+    isOverOriginalValue:
+      description: "Indica se aplica-se sobre o valor original em vez do valor corrigido"
+      type: boolean

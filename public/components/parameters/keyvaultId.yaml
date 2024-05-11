@@ -1,7 +1,0 @@
-name: id
-in: query
-description: Keyvault id
-required: true
-schema:
-  type: string
-  example: 'echo'

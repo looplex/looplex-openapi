@@ -1,0 +1,13 @@
+title: DTOPedidoCausa
+type: object
+properties:
+  Id:
+    type: integer
+  Nome:
+    type: string
+  IdPedidoCausaGrupoAfinidade:
+    type: integer
+  IdEscritorio:
+    type: integer
+  NomeGrupo:
+    type: string

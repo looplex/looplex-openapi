@@ -1,8 +1,0 @@
-title: PeriodoLancamentoAplicabilidade
-type: integer
-description: |
-  -2147483648: None
-  
-  1: Timesheet
-
-  2: Despesa

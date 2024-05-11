@@ -1,0 +1,79 @@
+tags:
+  - Operations
+summary: Looplex Text Variants
+description: Allows you to find text variants
+operationId: looplexTextVariants
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/actions//looplex-text-variants.yaml
+responses:
+  '200':
+    description: OK
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "status": "SUCCESS",
+            "message": {
+                "words": [
+                    {
+                        "variants": [
+                            "pop",
+                            "pai",
+                            "papai",
+                            "estalar",
+                            "pnf",
+                            "estourar",
+                            "popup",
+                            "emergente"
+                        ]
+                    },
+                    {
+                        "variants": [
+                            "acteon",
+                            "action",
+                            "ação",
+                            "share",
+                            "deed",
+                            "stock",
+                            "lawsuit",
+                            "acção",
+                            "medidas",
+                            "measures",
+                            "steps",
+                            "measured",
+                            "acções",
+                            "actions",
+                            "shares",
+                            "stocks",
+                            "equities",
+                            "deeds",
+                            "ações",
+                            "recurso",
+                            "resource",
+                            "feature",
+                            "appeal",
+                            "resort",
+                            "capability",
+                            "recourse",
+                            "asset"
+                        ]
+                    }
+                ]
+            }
+        }
+  '401':
+    description: Access Denied
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          example: {
+            "statusCode": 401,
+            "message": "Access denied due to missing subscription key. Make sure to include subscription key when making requests to an API."
+          }

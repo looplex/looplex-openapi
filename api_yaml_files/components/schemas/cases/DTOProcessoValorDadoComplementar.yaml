@@ -1,0 +1,27 @@
+title: DTOProcessoValorDadoComplementar
+type: object
+properties:
+  IDProcessoValorDadoComplementar:
+    description: "O identificador do valor gravado no processo"
+    type: integer
+  IDProcesso:
+    description: "O identificador do processo em que o valor foi ou será gravado"
+    type: integer
+  IDParamDadoComplementar:
+    description: "O identificador da Informação adicional que será utilizada para gravar o valor"
+    type: integer
+  Valor:
+    description: "O valor a ser gravado"
+    type: string
+  DtValor:
+    type: string
+  DataAtualizacao:
+    type: string
+  IDContaDeAcesso:
+    type: integer
+required:
+  - IDProcesso
+  - IDParamDadoComplementar
+  - Valor
+  - DtValor
+  - DataAtualizacao

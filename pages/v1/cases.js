@@ -1,7 +1,14 @@
 import { RedocStandalone } from 'redoc'
 
-export default function Cases () {
+const json = require('./cases.json')
+
+export default function Cases() {
   return (
-    <RedocStandalone specUrl="../cases.yaml"/>
+    <RedocStandalone
+      spec={json}
+      options={{
+        menuToggle: true
+      }}
+    />
   )
 }

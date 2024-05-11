@@ -1,0 +1,11 @@
+title: DTOValoresComPedidosAtualizados
+type: object
+properties:
+  Pedidos:
+    type: array
+    items:
+      $ref: DTOPedidoComHistorico.yaml
+  vlValorPrevistoAtualizado:
+    type: number
+  vlValorContigenciaAtualizado:
+    type: number

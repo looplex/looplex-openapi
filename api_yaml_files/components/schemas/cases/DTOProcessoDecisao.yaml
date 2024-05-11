@@ -1,0 +1,29 @@
+title: DTOProcessoDecisao
+type: object
+properties:
+  Valores:
+    type: array
+    items:
+      $ref: DTOProcessoDecisaoValor.yaml
+  inDeEncerramento:
+    type: boolean
+  cdParteJuiz:
+    type: integer
+  cdParteAdvAcusacao:
+    type: integer
+  cdParteAdvDefesa:
+    type: integer
+  Observacao:
+    type: string
+  vlDeferido:
+    type: number
+  DataOcorrencia:
+    type: string
+  IdCaso:
+    type: integer
+  Decisao:
+    type: integer
+  nrExitoPerda:
+    type: integer
+  IdCasoDecisao:
+    type: integer

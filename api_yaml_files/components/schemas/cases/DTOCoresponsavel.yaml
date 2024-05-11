@@ -1,0 +1,7 @@
+title: DTOCoresponsavel
+type: object
+properties:
+  IDCoresponsavel:
+    type: integer
+  NomeCorresponsavel:
+    type: string

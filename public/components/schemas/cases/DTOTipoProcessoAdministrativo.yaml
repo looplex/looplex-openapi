@@ -1,7 +1,0 @@
-title: DTOTipoProcessoAdministrativo
-type: object
-properties:
-  IdTipoProcessoAdministrativo:
-    type: integer
-  Nome:
-    type: string

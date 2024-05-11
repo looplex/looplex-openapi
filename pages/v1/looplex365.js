@@ -1,7 +1,14 @@
 import { RedocStandalone } from 'redoc'
 
+const json = require('./looplex365.json')
+
 export default function Looplex365 () {
   return (
-    <RedocStandalone specUrl="../looplex365.yaml"/>
+    <RedocStandalone
+      spec={json}
+      options={{
+        menuToggle: true
+      }}
+    />
   )
 }

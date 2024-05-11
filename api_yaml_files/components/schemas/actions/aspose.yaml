@@ -1,0 +1,32 @@
+title: Aspose
+required:
+  - baseURL
+  - method
+  - url
+  - params
+type: object
+properties:
+  baseURL:
+    type: string
+    description: The request base URL
+    example: "https://api.aspose.cloud/v4.0"
+  method:
+    enum:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    type: string
+    description: method that will be performed in the baseURL
+    example: GET
+  url:
+    type: string
+    description: The request URL
+    example: "/words/fonts/available"
+  params:
+    type: object
+    description: params of the request
+    example: { 
+      "fontsLocation": "Fonts"
+    }
+description: Aspose service

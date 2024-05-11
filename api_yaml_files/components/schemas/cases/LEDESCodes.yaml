@@ -1,0 +1,11 @@
+title: LEDESCodes
+type: object
+properties:
+  Code:
+    type: string
+  Description:
+    type: string
+  ChildCodes:
+    type: array
+    items:
+      $ref: LEDESCodes.yaml
