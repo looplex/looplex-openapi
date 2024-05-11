@@ -7,7 +7,14 @@ export default function VarasEForos() {
     <RedocStandalone
       spec={json}
       options={{
-        menuToggle: true
+        menuToggle: true,
+        disableSearch: false,
+        downloadFileName: 'openapi_looplex_varas_foros_v2.json',
+        nativeScrollbars: true,
+        sortTagsAlphabetically: true,
+        theme: {
+          logo: './logo.png'
+        }
       }}
     />
   )

@@ -7,7 +7,9 @@ export default function Looplex365 () {
     <RedocStandalone
       spec={json}
       options={{
-        menuToggle: true
+        menuToggle: true,
+        disableSearch: false,
+        downloadFileName: 'openapi_looplex365.json'
       }}
     />
   )

@@ -7,7 +7,8 @@ export default function Cases() {
     <RedocStandalone
       spec={json}
       options={{
-        menuToggle: true
+        menuToggle: true,
+        downloadFileName: 'openapi_looplex_cases.json'
       }}
     />
   )
