@@ -16872,6 +16872,91 @@
         }
       }
     },
+    "/api/tarefa/tarefa_subtarefas/{id}/{tipo}": {
+      "get": {
+        "tags": [
+          "Tarefa"
+        ],
+        "summary": "Lista tarefas e subtarefas pelo identificador da tarefa",
+        "description": "**NOTA: Retorna apenas o item informado e as subtarefas dele**",
+        "operationId": "api-tarefa-tarefa_subtarefas-id-tipo-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "O identificador da tarefa",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "tipo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/TipoTarefa"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTarefaResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/timeline/items": {
       "get": {
         "tags": [
