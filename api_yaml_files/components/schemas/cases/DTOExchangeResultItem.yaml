@@ -1,0 +1,100 @@
+title: DTOExchangeResultItem
+type: object
+properties:
+    id:
+      type: integer
+      description: "Identificador do pedido (definido no escritório)"
+    OriginalValue:
+      description: "Valor original do pedido"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalAdjustedValue:
+      description: "Valor atualizado do pedido"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalCompensatoryInterest:
+      description: "Valor total dos juros compensatórios"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalInterestInArrears:
+      description: "Valor total dos juros moratórios"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalPenalty:
+      description: "Valor total de multa"    
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalLoserPaysAttorneyFees:
+      description: "Valor total dos honorários sucumbenciais"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalContractualAttorneyFees:
+      description: "Valor total dos honorários contratuais"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalAppealMotionFees:
+      description: "Valor total dos honorários recursais"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalAttorneyFees:
+      description: "Valor total dos honorários"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    Total:
+      description: "Valor total de todos os valores"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    ContingencyTotal:
+      description: "Valor contingencial"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    SubTotalWithInterest:
+      description: "Valor total sem honorários e multas"
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    Description:
+      type: string
+    Occurences:
+      description: "Resultados de cada ocorrência, a princípio será sempre uma"
+      type: array
+      items:
+        $ref: DTOExchangeResultItemSingleOccurence.yaml
+    FinalDate:
+      description: "Início do cálculo"
+      type: string
+    StartDate:
+      description: "Fim do cálculo"
+      type: string
+    TIAHonorariumInfo:
+      description: configurações de honorários utilizadas no cálculo
+      $ref: DTOAttorneyFeeInfo.yaml
+    TIAFineInfo:
+      description: configurações de Multa utilizadas no cálculo
+      $ref: DTOPenaltyInfo.yaml
+    TIADefaultInterest:
+      description: configurações de juros moratórios utilizadas no cálculo
+      $ref: DTODefaultInterestItem.yaml
+    TIACompensatoryInterest:
+      description: configurações de juros compensatórios utilizadas no cálculo
+      type: array
+      items:
+        $ref: DTOCompensatoryInterestItem.yaml
+    TIAIndexes:
+      description: configurações de correção monetária utilizadas no cálculo
+      type: array
+      items:
+        $ref: DTOCalculationAdjustmentRates.yaml
+    CalculationObservations:
+      type: string

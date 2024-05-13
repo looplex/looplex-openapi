@@ -1,0 +1,7 @@
+name: lang
+in: query
+description: The document language
+schema:
+  enum:
+    - pt_BR
+  type: string

@@ -1,0 +1,10 @@
+type: integer
+example: -2147483648
+description: |
+  -2147483648: None
+
+  1: Provável
+
+  2: Possível
+
+  3: Remoto

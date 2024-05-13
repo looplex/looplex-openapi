@@ -1,0 +1,114 @@
+
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: Assembler
+  termsOfService: "https://docs.looplex.com.br/legal/termos-de-uso"
+  contact:
+    name: Developers Looplex
+    email: developer@looplex.com.br
+    url: "https://www.looplex.com.br"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  x-logo:
+    url: "https://www.looplex.com.br/img/logo-default.png"
+    href: "/"
+  description: >
+    Assembler is the group of APIs consumed by the Looplex web interface,
+    related to document flows, templates and tasks.
+
+servers:
+  - url: "https://graph.looplex.com/api/v1/assembler"
+    description: Graph server
+tags:
+  - name: Tasks
+    description: Tasks operations
+  - name: Documents
+    description: Documents operations
+  - name: Templates
+    description: Template operations
+  - name: Users
+    description: User operations, such as login and profile consulting
+paths:
+
+  /documents/{docId}/answers:
+    get:
+      $ref: ./paths/assembler/documents@{docId}@answers-get.yaml
+  /documents/{docId}/export:
+    get:
+      $ref: ./paths/assembler/documents@{docId}@export-get.yaml
+  /documents/{docId}/import:
+    post:
+      $ref: ./paths/assembler/documents@{docId}@import-post.yaml
+  /documents/{docId}/json:
+    post:
+      $ref: ./paths/assembler/documents@{docId}@json-post.yaml
+  /documents/{docId}/revision-all-answers:
+    get:
+      $ref: ./paths/assembler/documents@{docId}@revision-all-answers-get.yaml
+  /documents:
+    post:
+      $ref: ./paths/assembler/documents-post.yaml
+  /documents/{docId}/hide:
+    post:
+      $ref: ./paths/assembler/documents@{docId}@hide-post.yaml
+  /documents/{docId}/unhide:
+    post:
+      $ref: ./paths/assembler/documents@{docId}@unhide-post.yaml
+  /documents/template/{templateIdentifier}:
+    get:
+      $ref: ./paths/assembler/documents@template@{templateIdentifier}-get.yaml
+  /documents/{docId}:
+    patch:
+      $ref: ./paths/assembler/documents@{docId}-patch.yaml
+    get:
+      $ref: ./paths/assembler/documents@{docId}-get.yaml
+    delete:
+      $ref: ./paths/assembler/documents@{docId}-delete.yaml
+  /documents/{docId}/rem:
+    delete:
+      $ref: ./paths/assembler/documents@{docId}@rem-delete.yaml
+  /documents/{docId}/s3:
+    delete:
+      $ref: ./paths/assembler/documents@{docId}@s3-delete.yaml
+  /tasks:
+    get:
+      $ref: ./paths/assembler/tasks-get.yaml
+    post:
+      $ref: ./paths/assembler/tasks-post.yaml
+  /tasks/me:
+    get:
+      $ref: ./paths/assembler/tasks@me-get.yaml
+  /tasks/{taskId}:
+    patch:
+      $ref: ./paths/assembler/tasks@{taskId}-patch.yaml
+    get:
+      $ref: ./paths/assembler/tasks@{taskId}-get.yaml
+    delete:
+      $ref: ./paths/assembler/tasks@{taskId}-delete.yaml
+    put:
+      $ref: ./paths/assembler/tasks@{taskId}-put.yaml
+  /templates:
+    get:
+      $ref: ./paths/assembler/templates-get.yaml
+  /templates/{template}/persistent:
+    post:
+      $ref: ./paths/assembler/templates@{template}@persistent-post.yaml
+  /templates/{template}/transient:
+    post:
+      $ref: ./paths/assembler/templates@{template}@transient-post.yaml
+  /templates/{templateId}:
+    get:
+      $ref: ./paths/assembler/templates@{templateId}-get.yaml
+  /users/login:
+    post:
+      $ref: ./paths/assembler/users@login-post.yaml
+components:
+  securitySchemes:
+    Subscription-Key:
+      $ref: ./components/securitySchemes/ocp_apim_subscription_key.yaml
+security:
+  -  Subscription-Key: []
+    
+  

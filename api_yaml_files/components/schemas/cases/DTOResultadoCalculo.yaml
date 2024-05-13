@@ -1,0 +1,55 @@
+title: DTOResultadoCalculo
+type: object
+properties:
+    Total:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    AdjustedTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    OriginalTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    CompensatoryInterestTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    InterestInArrearsTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    PenaltyTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalContingency:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    AttorneyFeesTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    LoserPaysAttorneyFeesTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    AppealMotionFeesTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    ContractualAttorneyFeesTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    Items:
+      type: array
+      items:
+        $ref: DTOExchangeResultItem.yaml
+    
+
+
+    

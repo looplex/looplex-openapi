@@ -1,8 +1,0 @@
-# VinculoVaraGrupoRito (Varas e Foros unificados)
-name: VinculoVaraGrupoRito
-type: object
-properties:
-  idVara:
-    type: integer
-  idGrupoRito:
-    type: integer

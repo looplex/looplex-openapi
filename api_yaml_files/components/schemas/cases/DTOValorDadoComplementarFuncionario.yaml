@@ -1,0 +1,20 @@
+title: DTOValorDadoComplementarFuncionario
+type: object
+properties:
+  IDFuncionarioValorDadoComplementar:    
+    type: integer
+    description: "O identificador do valor gravado para o funcionário utilizando a Informação adicional"
+  IDFuncionario:    
+    type: integer
+    description: "O identificador do funcionário"
+  IDParametroDadoComplementar:
+    type: integer
+    description: "O identificador da Informação adicional"
+  Valor:
+    type: string
+    description: O valor a ser gravado/atualizado na Informação adicional
+    example: "Valor para gravar"
+  DataDeAtualizacao:
+    description: "A data de atualização do valor"
+    example: "2022-01-01T00:00:00.000"
+    type: string

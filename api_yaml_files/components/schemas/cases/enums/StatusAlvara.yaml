@@ -1,0 +1,10 @@
+type: integer
+example: 1
+description: |
+  -2147483648: None
+  
+  1: Aguardando expedição alvará
+
+  2: Alvará retirado
+
+  3: Alvará recuperado

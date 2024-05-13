@@ -1,0 +1,19 @@
+title: DTORecorrenciaDeItemAgenda
+type: object
+properties:
+  Tipo:
+    type: string
+  DiasDaSemana:
+    type: array
+    items:
+      type: string
+  DataInicio:
+    type: string
+  DataFim:
+    type: string
+  MesDoAno:
+    type: string
+  DiaDoMes:
+    type: string
+  ACada:
+    type: string

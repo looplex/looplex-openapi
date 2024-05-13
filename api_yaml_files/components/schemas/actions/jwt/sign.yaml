@@ -1,0 +1,33 @@
+title: JWT Sign
+required:
+  - payload
+  - privateKey
+type: object
+properties:
+  payload:
+    type: object
+    description: The payload.
+    example: {
+      "title": "Acordo de confidencialidade",
+      "headerImage": {
+          "src": "https://looplex-ged.s3.us-east-1.amazonaws.com/looplex.com.br/shared/code/examples/nda/hero.png",
+          "alt": "Revisão inteligente do documento",
+          "width": 640,
+          "height": 342
+      },
+      "previewUrl": "https://www.cin.ufpe.br/~gamr/FAFICA/Desenvolvimento%20de%20sistemas/XP.pdf",
+      "state": {
+          "executionId": "01f11a9b-2a03-11ed-9095-028183ecc51f"
+      },
+      "rjsf": {
+          "uiSchema": {
+          },
+          "formData": {
+          }
+      }
+  }
+  privateKey:
+    type: string
+    description: The private key.
+    example: string
+description: JWT Sign

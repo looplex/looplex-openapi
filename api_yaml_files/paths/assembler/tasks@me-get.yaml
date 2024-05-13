@@ -1,0 +1,18 @@
+tags:
+- Tasks
+summary: Get tasks
+description: Return the user's tasks.
+operationId: getUserTasksUsingGET
+parameters:
+  - $ref: ../../components/parameters/tasks-api/Filter.yaml
+  - $ref: ../../components/parameters/PageSize.yaml
+  - $ref: ../../components/parameters/Page.yaml
+  - $ref: ../../components/parameters/tasks-api/SortBy.yaml
+  - $ref: ../../components/parameters/SortOrder.yaml
+responses:
+  '200':
+    description: OK
+    content:
+      "*/*":
+        schema:
+          $ref: ../../components/schemas/tasks-api/PageResponse.yaml

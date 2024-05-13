@@ -1,0 +1,19 @@
+title: RitoResponse
+type: object
+properties:
+  id:
+    description: "O identificador do rito"
+    example: 1
+    type: integer
+  groupID:
+    description: "O identificador do grupo em que o rito está vinculado"
+    example: 2
+    type: integer
+  name:
+    description: "O nome do rito"
+    example: "Nome do rito"
+    type: string
+  status:
+    description: "Indica se o rito está ativo"
+    example: true
+    type: boolean

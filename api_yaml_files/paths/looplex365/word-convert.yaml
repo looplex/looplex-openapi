@@ -1,0 +1,10 @@
+tags:
+  - Looplex 365
+summary: Word Converter
+description: ...
+operationId: word-converter
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

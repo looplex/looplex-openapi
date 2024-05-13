@@ -1,0 +1,78 @@
+title: DTOExchangeResultItemSingleOccurence
+type: object
+properties:
+    OriginalValue:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    CalculationIntervalValues:
+      type: array
+      items:
+        $ref: DTOExchangeResultItemSingleOccurenceIntervalValues.yaml
+    OccurenceDate:
+      type: string
+      description: "Data inicial do pedido"
+    AdjustedValue:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    CompensatoryInterest:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    InterestInArrears:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    Total:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    PenaltyResult:
+      type: array
+      items:
+        $ref: DTOExchangeSingleResultFine.yaml
+    PenaltyValue:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    LoserPaysAttorneyFeesResult:
+      type: array
+      items:
+        $ref: DTOExchangeSingleResultAttorneyFee.yaml
+    AppealMotionResult:
+      type: array
+      items:
+        $ref: DTOExchangeSingleResultAttorneyFee.yaml
+    ContractualAttorneyFeesResult:
+      type: array
+      items:
+        $ref: DTOExchangeSingleResultAttorneyFee.yaml
+    AppealMotionFeesValue:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    ContractualAttorneyFeesValue:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    LoserPaysAttorneyFeesValue:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    TotalAttorneyFees:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    SubTotalWithInterest:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    ContingencyPercentage:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml
+    ContingengyTotal:
+      type: array
+      items:
+        $ref: DTOCurrencyValue.yaml

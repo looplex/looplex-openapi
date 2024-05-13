@@ -1,0 +1,12 @@
+tags:
+  - Looplex 365
+summary: Easy Docs Render
+description: ...
+operationId: easydocs-render
+parameters:
+  - $ref: ../../components/parameters/AccountId.yaml
+  - $ref: ../../components/parameters/DocId.yaml
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

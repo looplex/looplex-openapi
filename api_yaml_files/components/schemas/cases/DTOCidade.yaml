@@ -1,0 +1,11 @@
+title: DTOCidade
+type: object
+properties:
+  ID:
+    type: integer
+  IDUF:
+    description: "O identificador da UF"
+    type: integer
+  Cidade:
+    description: "O nome da cidade"
+    type: string

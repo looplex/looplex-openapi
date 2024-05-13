@@ -1,0 +1,45 @@
+title: Plot
+type: object
+example: {
+  "decorator": {
+      "type": "main",
+      "attrs": {
+          "style": {
+              "width": 360,
+              "height": 360
+          }
+      }
+  },
+  "component": {
+      "type": "Pie",
+      "attrs": {
+          "appendPadding": 10,
+          "data": [
+              {
+                  "description": "Kiwi Sun Gold",
+                  "amount": 120,
+                  "price": 40.0,
+                  "subtotal": 4800
+              },
+              {
+                  "description": "Laranja",
+                  "amount": 24,
+                  "price": 12.0,
+                  "subtotal": 288
+              },
+              {
+                  "description": "Maçã",
+                  "amount": 1,
+                  "price": 8.0,
+                  "subtotal": 8
+              }
+          ],
+          "angleField": "subtotal",
+          "colorField": "description",
+          "radius": 1,
+          "innerRadius": 0.64,
+          "animation": false
+      }
+  }
+}
+description: Plot service

@@ -1,0 +1,12 @@
+# VinculoRitoForo (Varas e Foros unificados)
+name: VinculoRitoForo
+type: object
+properties:
+  idForo:
+    type: integer
+  idsGrupoRito:
+    type: array
+    items:
+      type: integer
+  responsavelAlteracao:
+    type: string

@@ -1,0 +1,33 @@
+title: DTOExchangeSingleResultFine
+type: object
+properties:
+    Id:
+      type: integer
+      description: "Identificador opcional de multa"
+    Name:
+      type: string
+    OverOriginalValue:
+      description: "Valor resultante da aplicação sobre o valor original"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    OverAdjustedValue:
+      description: "Valor resultante da aplicação sobre o valor corrigido"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    OverCompensatoryInterest:
+      description: "Valor resultante da aplicação sobre os juros compensatórios"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    OverInterestInArrears:
+      description: "Valor resultante da aplicação sobre os juros moratórios"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml
+    Total:
+      description: "Valor Total da multa"
+      type: array
+      items: 
+        $ref: DTOCurrencyValue.yaml

@@ -1,0 +1,18 @@
+title: DTOCalculationAdjustmentRates
+type: object
+properties:
+    Id:
+      type: integer
+      description: "Identificador do indice monetário"
+      example: "Para obter a lista de índices basta fazer uma requisição GET para a API de Índices monetários (https://indicesmonetarios.lawoffice.com.br/api/IndicesMonetarios), os ids são dados pelo campo indiceMonetarioId"
+    name:
+      type: string
+    UpdateFrequency:
+      description: "Indica a frequencia com que o indíce atualiza o valor\r\n1 - Diário\r\n2 - Semanal\r\n3 - Mensal\r\n4 - Anual\r\n5 - Diário sem fim de semana"
+      type: integer
+    StartDate:
+      description: "Início da vigência do correção monetária"
+      type: string
+    EndDate:
+      description: "Fim da vigência do correção monetária"
+      type: string

@@ -1,9 +1,0 @@
-name: output
-in: query
-description: The output file extension
-schema:
-  enum:
-    - DOCX
-    - PDF
-  type: string
-  default: PDF

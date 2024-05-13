@@ -1,0 +1,10 @@
+tags:
+  - Looplex 365
+summary: Document Assembler Render
+description: ...
+operationId: docass-render
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
+responses:
+  '200':
+    description: OK

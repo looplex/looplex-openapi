@@ -1,0 +1,24 @@
+title: DTOCurrencyValue
+type: object
+properties:
+  Value:
+    type: number
+  Currency:
+    description: "Moeda"
+    type: string
+  CurrencySymbol:
+    description: "Símbolo da Moeda"
+    type: string
+  IsCalculationCurrency:
+    description: "Indica se é a moeda do cálculo"
+    type: string
+  ExchangeRateDate:
+    description: "Indica o dia da taxa de conversão"
+    type: string
+  ExchangeRate:
+    description: "Indica a taxa de conversão para o Real"
+    type: string
+  isCustomCurrencyRate:
+    description: "Indica se é uma moeda customizada"
+    type: string
+ 

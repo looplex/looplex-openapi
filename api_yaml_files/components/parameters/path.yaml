@@ -1,0 +1,7 @@
+name: path
+in: query
+description: Path
+required: true
+schema:
+  type: string
+  example: 'looplex.com.br/shared/code/examples/summer-style.jpg'

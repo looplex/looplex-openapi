@@ -1,0 +1,42 @@
+title: DocumentDTOReq
+required:
+  - name
+type: object
+properties:
+  answers:
+    type: object
+    description: The object with the answers to populate the document
+    example: { }
+  name:
+    type: string
+    description: The name of the document
+    example: string
+  shelfId:
+    type: integer
+    description: Shelf in which the document is located
+    format: int64
+    example: 0
+  status:
+    enum:
+      - ALL
+    type: string
+    description: Current status of the document
+    example: ALL
+  tags:
+    uniqueItems: true
+    type: array
+    items:
+      type: string
+    description: The set of tags attributed to the document
+    example:
+      - string
+  templateId:
+    type: integer
+    description: The id of the template used to create the document
+    format: int64
+    example: 0
+  templateName:
+    type: string
+    description: The name of the template used to create the document
+    example: string
+description: Document description

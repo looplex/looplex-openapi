@@ -1,0 +1,11 @@
+title: DTOUF
+type: object
+properties:
+  ID:
+    description: "O identificador da UF"
+    example: "AL"
+    type: string
+  UF:
+    description: "O nome da UF"
+    example: "Alagoas"
+    type: string

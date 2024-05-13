@@ -1,0 +1,12 @@
+title: DTOLoginToken
+type: object
+properties:
+  escritorio:
+    description: "O nome do escritório"
+    type: string
+  token:
+    description: "Token de acesso"
+    type: string
+required:
+  - escritorio
+  - token

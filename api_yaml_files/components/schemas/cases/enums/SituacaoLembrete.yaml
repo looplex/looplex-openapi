@@ -1,0 +1,14 @@
+type: integer
+example: 1
+description: |
+  **A situação do lembrete**
+  
+  1: A notificar
+
+  2: Descartado por ambos
+
+  3: Notificado
+
+  4: Descartado pelo executor
+
+  5: Descartado pelo responsável

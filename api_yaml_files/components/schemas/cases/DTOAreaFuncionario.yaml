@@ -1,0 +1,23 @@
+title: DTOAreaFuncionario
+type: object
+properties:
+  IDFuncionarioArea:
+    type: integer
+  IDFuncionario:
+    type: integer
+  IDArea:
+    type: integer
+  NomeArea:
+    type: string
+  Supervisor:
+    type: boolean
+  Gerente:
+    type: boolean
+  Padrao:
+    type: boolean
+  DataInicio:
+    type: string
+  DataFim:
+    type: string
+  DataAlteracao:
+    type: string

@@ -1,0 +1,36 @@
+{
+  "name": "looplex-openapi",
+  "version": "1.0.0",
+  "dependencies": {
+    "@redocly/openapi-cli": "^1.0.0-beta.61",
+    "antd": "^5.17.0",
+    "core-js": "^3.37.0",
+    "mobx": "^6.12.3",
+    "ncp": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "redoc": "^2.1.4",
+    "redoc-cli": "^0.12.3",
+    "rimraf": "^3.0.2",
+    "styled-components": "^6.1.11"
+  },
+  "private": true,
+  "scripts": {
+    "start": "yarn bundle && yarn build && openapi preview-docs",
+    "prebuild": "rimraf public",
+    "build": "openapi bundle -o public/openapi.yaml && redoc-cli bundle public/openapi.yaml -t docs/index.html --output public/index.html",
+    "postbuild": "ncp docs/assets public/assets && ncp docs/favicon.ico public/favicon.ico",
+    "test": "openapi lint",
+    "prebundle": "openapi join openapi/actions.yaml openapi/cases.yaml openapi/varas_foros.yaml",
+    "bundle": "openapi bundle openapi.yaml --output dist/openapi.json",
+    "postbundle": "openapi bundle --output dist --ext json openapi/actions.yaml openapi/cases.yaml"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+title: Template
+type: object
+description: <Descrever Template>
+properties:
+  author:
+    type: object
+    additionalProperties:
+      type: string
+    description: The template's author
+    example: Fabio Cápua
+  creationDate:
+    type: string
+    description: The date the template was created
+    example: 02/05/2022 # TODO: verificar
+  description:
+    type: string
+    description: The template description
+    example: exemplo # TODO: verificar
+  id:
+    type: integer
+    description: The numeric id associated to the template
+    format: int64
+    example: '1.0'
+  identifier:
+    type: string
+    description: The string identifier associated to the template
+    example: TEMP_ACORDO_CONFIDENCIALIDADE_NDA # TODO: verificar
+  logo:
+    type: string
+  name:
+    type: string
+    description: The template name
+    example: Acordo de Confidencialidade/NDA
+  price:
+    type: number
+    description: The price our system attributed to the template
+    format: double
+  tags:
+    type: array
+    items:
+      type: string
+  version:
+    type: integer
+    description: The template version
+    format: int32
+    example: 1

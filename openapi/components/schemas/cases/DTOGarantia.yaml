@@ -1,9 +1,0 @@
-title: DTOGarantia
-type: object
-properties:
-  IdGarantia:
-    type: integer
-  IdEscritorio:
-    type: integer
-  DescricaoGarantia:
-    type: string

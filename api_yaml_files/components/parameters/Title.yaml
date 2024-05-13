@@ -1,0 +1,6 @@
+name: title
+in: query
+required: false
+style: form
+schema:
+  type: string

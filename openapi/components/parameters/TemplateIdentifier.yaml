@@ -1,6 +1,0 @@
-name: templateIdentifier
-in: path
-description: The template identifier
-required: true
-schema:
-  type: string
