@@ -11,7 +11,7 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   x-logo:
-    url: /assets/images/logo.png
+    url: "https://www.looplex.com.br/img/logo-default.png"
     href: /
   description: >
     Actions is the group of APIs consumed by the templates, related to document
