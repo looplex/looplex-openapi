@@ -1,7 +1,7 @@
 title: Rito
 type: object
 properties:
-  groupID:
+  idGroup:
     description: "O identificador do grupo no qual o novo rito será vinculado"
     example: 2
     type: integer
@@ -10,5 +10,5 @@ properties:
     example: Execução Fiscal
     type: string
 required:
-  - groupID
+  - idGroup
   - name

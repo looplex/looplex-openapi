@@ -287,7 +287,7 @@
         }
       }
     },
-    "/api/sequence/list": {
+    "/v2/sequence/list": {
       "get": {
         "tags": [
           "Ritos"
@@ -470,7 +470,7 @@
             "example": 2,
             "type": "integer"
           },
-          "parentID": {
+          "idParent": {
             "description": "O identificador do item do qual esse item é o filho",
             "example": 1,
             "type": "integer"
@@ -501,7 +501,7 @@
         "title": "Foro",
         "type": "object",
         "properties": {
-          "parentID": {
+          "idParent": {
             "description": "O identificador do item pai desse item",
             "example": 3,
             "type": "integer"
@@ -513,7 +513,7 @@
           }
         },
         "required": [
-          "parentID",
+          "idParent",
           "name"
         ]
       },
@@ -526,7 +526,7 @@
             "example": 1,
             "type": "integer"
           },
-          "groupID": {
+          "idGroup": {
             "description": "O identificador do grupo em que o rito está vinculado",
             "example": 2,
             "type": "integer"
@@ -547,7 +547,7 @@
         "title": "Rito",
         "type": "object",
         "properties": {
-          "groupID": {
+          "idGroup": {
             "description": "O identificador do grupo no qual o novo rito será vinculado",
             "example": 2,
             "type": "integer"
@@ -559,7 +559,7 @@
           }
         },
         "required": [
-          "groupID",
+          "idGroup",
           "name"
         ]
       }

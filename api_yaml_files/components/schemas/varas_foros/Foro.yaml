@@ -1,7 +1,7 @@
 title: Foro
 type: object
 properties:
-  parentID:
+  idParent:
     description: "O identificador do item pai desse item"
     example: 3
     type: integer
@@ -10,5 +10,5 @@ properties:
     example: "Fórum central"
     type: string
 required:
-  - parentID
+  - idParent
   - name
