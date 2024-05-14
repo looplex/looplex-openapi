@@ -5,7 +5,7 @@ properties:
     description: "O identificador do item"
     example: 2
     type: integer
-  parentID:
+  idParent:
     description: "O identificador do item do qual esse item é o filho"
     example: 1
     type: integer

@@ -39,7 +39,7 @@ paths:
       $ref: './paths/varas_foros/public@v2@court@children-get.yaml'
   
   # Ritos
-  /api/sequence/list:
+  /v2/sequence/list:
     get:
       $ref: './paths/varas_foros/public@v2@sequence@list-get.yaml'
   /v2/sequence:
