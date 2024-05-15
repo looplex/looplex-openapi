@@ -16872,7 +16872,7 @@
         }
       }
     },
-    "/api/tarefa/tarefa_subtarefas/{id}/{tipo}": {
+    "/api/tarefas/tarefa_subtarefas/{id}/{tipo}": {
       "get": {
         "tags": [
           "Tarefa"
