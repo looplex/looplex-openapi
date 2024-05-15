@@ -37,7 +37,7 @@ export default function Home() {
                 </Col>
                 <Col span={18} style={{ marginTop: 30 }}>
                     <Text style={{ fontWeight: 'bold', fontSize: 18 }}>
-                        Bem vindo à página de documentações das API's internas da Looplex
+                        Bem vindo à página de documentações das APIs internas da Looplex
                     </Text>
                 </Col>
 
