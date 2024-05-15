@@ -703,9 +703,9 @@ paths:
   /api/tarefas/titulos:
     get:
       $ref: './paths/cases/tarefa/public@api@tarefas@titulos-get.yaml'
-  /api/tarefa/tarefa_subtarefas/{id}/{tipo}:
+  /api/tarefas/tarefa_subtarefas/{id}/{tipo}:
     get:
-      $ref: './paths/cases/tarefa/public@api@tarefa@tarefa_subtarefas@id@tipo-get.yaml'
+      $ref: './paths/cases/tarefa/public@api@tarefas@tarefa_subtarefas@id@tipo-get.yaml'
 
   # Timeline
   /api/timeline/items:
