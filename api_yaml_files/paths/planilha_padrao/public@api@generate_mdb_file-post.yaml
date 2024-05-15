@@ -1,0 +1,33 @@
+# Linhas com # são comentários e podem ser removidas.
+tags:
+  - Planilha Padrão
+summary: "Planilha Padrão"
+description: "Gerador de arquivo mdb de planilha padrão"
+operationId: api-generate_mdb_file-post
+# Parâmetros da requisição
+
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/planilha_padrao/ArquivoBase64.yaml
+# Responses
+responses:
+  # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "Retorna o base64 do arquivo mdb gerado"
+    content:
+      application/json:
+        example: "AAEAAFN0YW5kYXJkIEpldCBEQgABAAAAtW4DYmAJwlXpqWdyQD8AnH6fkP+FmjHFebrtMLzfzJ1j2eTDn0b................"  
+  "404":
+    description: "Não encontrado"
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/cases/ExceptionResponse.yaml
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/cases/ExceptionResponse.yaml
