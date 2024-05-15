@@ -15,7 +15,7 @@ const apis = [
                     Endpoints de planilha padrão
                 </Text>
                 <Divider />
-                <a href="/planilha_padrao" target="_blank">
+                <a href="Internal/planilha_padrao" target="_blank">
                     Planilha padrão
                 </a>
             </>
