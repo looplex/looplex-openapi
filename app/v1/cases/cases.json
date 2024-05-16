@@ -20556,24 +20556,6 @@
         "title": "DTOCasoPedidoSimples",
         "type": "object",
         "properties": {
-          "Risco": {
-            "$ref": "#/components/schemas/ExpectativaReivindicacao"
-          },
-          "ValorPrevisto": {
-            "type": "number",
-            "example": 10
-          },
-          "ValorContingencia": {
-            "type": "number",
-            "example": 10
-          },
-          "Nome": {
-            "type": "string",
-            "example": "Nome do pedido"
-          },
-          "Situacao": {
-            "$ref": "#/components/schemas/eSituacaoDePedido"
-          },
           "IdProcessoExpectativaReivindicacao": {
             "type": "integer",
             "example": 0
@@ -20583,15 +20565,56 @@
             "description": "O identificador do pedido a ser utilizado",
             "example": 1
           },
+          "Nome": {
+            "type": "string",
+            "example": "Nome do pedido"
+          },
+          "IDMotivoDePedir": {
+            "type": "integer"
+          },
+          "MotivoDePedir": {
+            "type": "string",
+            "description": "O nome do motivo de pedir",
+            "example": "Nome do motivo de pedir"
+          },
           "Justificativa": {
             "type": "string",
             "example": "Descrição da justificativa"
           },
+          "Risco": {
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
+          },
+          "Situacao": {
+            "$ref": "#/components/schemas/eSituacaoDePedido"
+          },
+          "Envolvimento": {
+            "$ref": "#/components/schemas/Polo"
+          },
+          "TipoRecorrencia": {
+            "$ref": "#/components/schemas/TipoDeRecorrencia"
+          },
+          "TipoReparacao": {
+            "$ref": "#/components/schemas/TipoReparacao"
+          },
+          "ValorPrevisto": {
+            "type": "number",
+            "example": 10
+          },
           "MoedaValorPrevisto": {
             "$ref": "#/components/schemas/Moeda"
           },
+          "ValorPrevistoAtualizado": {
+            "type": "number"
+          },
+          "ValorContingencia": {
+            "type": "number",
+            "example": 10
+          },
           "MoedaValorContingenciado": {
             "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorContingenciaAtualizado": {
+            "type": "number"
           },
           "DataConstituicao": {
             "type": "string",
@@ -20601,25 +20624,13 @@
             "type": "string",
             "example": "2024-04-01T12:30:00.000Z"
           },
-          "Envolvimento": {
-            "$ref": "#/components/schemas/Polo"
-          },
           "IsLiquido": {
             "type": "boolean",
             "example": false
           },
-          "TipoRecorrencia": {
-            "$ref": "#/components/schemas/TipoDeRecorrencia"
-          },
           "IsLiminar": {
             "type": "boolean",
             "example": false
-          },
-          "IDMotivoDePedir": {
-            "type": "integer"
-          },
-          "TipoReparacao": {
-            "$ref": "#/components/schemas/TipoReparacao"
           },
           "IDsParte": {
             "type": "array",

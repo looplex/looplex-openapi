@@ -1,19 +1,6 @@
 title: DTOCasoPedidoSimples
 type: object
 properties:
-  Risco:
-    $ref: enums/ExpectativaReivindicacao.yaml
-  ValorPrevisto:
-    type: number
-    example: 10
-  ValorContingencia:
-    type: number
-    example: 10
-  Nome:
-    type: string
-    example: "Nome do pedido"
-  Situacao:     
-    $ref: enums/eSituacaoDePedido.yaml
   IdProcessoExpectativaReivindicacao:
     type: integer
     example: 0
@@ -21,36 +8,56 @@ properties:
     type: integer
     description: "O identificador do pedido a ser utilizado"
     example: 1
+  Nome:
+    type: string
+    example: "Nome do pedido"
+  IDMotivoDePedir:
+    type: integer
+  MotivoDePedir:
+    type: string
+    description: "O nome do motivo de pedir"
+    example: "Nome do motivo de pedir"
   Justificativa:
     type: string
     example: "Descrição da justificativa"
+  Risco:
+    $ref: enums/ExpectativaReivindicacao.yaml
+  Situacao:     
+    $ref: enums/eSituacaoDePedido.yaml
+  Envolvimento: 
+    $ref: enums/Polo.yaml
+  TipoRecorrencia: 
+    $ref: enums/TipoDeRecorrencia.yaml
+  TipoReparacao:
+      $ref: enums/TipoReparacao.yaml  
+  ValorPrevisto:
+    type: number
+    example: 10
   MoedaValorPrevisto:
     $ref: enums/Moeda.yaml
+  ValorPrevistoAtualizado:
+    type: number
+  ValorContingencia:
+    type: number
+    example: 10
   MoedaValorContingenciado:
     $ref: enums/Moeda.yaml
+  ValorContingenciaAtualizado:
+    type: number
   DataConstituicao:
     type: string
     example: "2024-04-01T12:30:00.000Z"
   DataVencimento:
     type: string
     example: "2024-04-01T12:30:00.000Z"
-  Envolvimento: 
-    $ref: enums/Polo.yaml
   IsLiquido:
     type: boolean
     example: false
-  TipoRecorrencia: 
-    $ref: enums/TipoDeRecorrencia.yaml
   IsLiminar:
     type: boolean
     example: false
-  IDMotivoDePedir:
-    type: integer
-  TipoReparacao:
-    $ref: enums/TipoReparacao.yaml  
   IDsParte:
     type: array
     example: []
     items:
       type: integer
-      
