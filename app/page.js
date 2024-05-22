@@ -77,6 +77,7 @@ const apis = [
       </>
   }
 ]
+
 export default function Home() {
 
   return (
@@ -99,11 +100,6 @@ export default function Home() {
 
         <Col span={18} offset={4}>
           <Tabs
-            tabBarExtraContent={() => {
-              return (
-                <Text>extra</Text>
-              )
-            }}
             tabPosition="left"
             items={apis}
           />

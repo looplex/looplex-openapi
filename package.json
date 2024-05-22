@@ -8,9 +8,8 @@
     "cases": " redocly preview-docs api_yaml_files/cases.yaml",
     "looplex365": "redocly preview-docs api_yaml_files/looplex365.yaml",
     "varas_foros_v2": "redocly preview-docs api_yaml_files/varas_foros_v2.yaml",
-    "planilha_padrao": "redocly preview-docs api_yaml_files/planilha_padrao.yaml",
     
-    "build_apis": "redocly bundle ./api_yaml_files/varas_foros_v2.yaml -o ./app/v2/varas_foros/varas_foros --ext json && redocly bundle ./api_yaml_files/looplex365.yaml -o ./app/v1/looplex365/looplex365 --ext json && redocly bundle ./api_yaml_files/cases.yaml -o ./app/v1/cases/cases --ext json && redocly bundle ./api_yaml_files/assembler.yaml -o ./app/v1/assembler/assembler --ext json && redocly bundle ./api_yaml_files/actions.yaml -o ./app/v1/actions/actions --ext json && redocly bundle ./api_yaml_files/planilha_padrao.yaml -o ./app/internal/planilha_padrao/planilha_padrao --ext json",
+    "build_apis": "redocly bundle ./api_yaml_files/varas_foros_v2.yaml -o ./app/v2/varas_foros/varas_foros --ext json && redocly bundle ./api_yaml_files/looplex365.yaml -o ./app/v1/looplex365/looplex365 --ext json && redocly bundle ./api_yaml_files/cases.yaml -o ./app/v1/cases/cases --ext json && redocly bundle ./api_yaml_files/assembler.yaml -o ./app/v1/assembler/assembler --ext json && redocly bundle ./api_yaml_files/actions.yaml -o ./app/v1/actions/actions --ext json",
     
     "dev": "yarn build_apis && next dev",
     "build": "next build",
@@ -22,11 +21,11 @@
     "antd": "^5.17.0",
     "core-js": "^3.37.0",
     "mobx": "^6.12.3",
+    "redoc": "^2.1.4",
+    "styled-components": "^6.1.11",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3",
-    "redoc": "^2.1.4",
-    "styled-components": "^6.1.11"
+    "next": "14.2.3"
   },
   "devDependencies": {
     "eslint": "^8",
