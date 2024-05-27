@@ -1,0 +1,108 @@
+title: DTOResultadoCalculoSaved
+type: object
+properties:
+  id:
+    description: "id do pedido (pedido causa  e não processoexpectativareivindicacao<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "12"
+    type: integer
+  name:
+    description: "Descrição do Pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "Décimo terceiro"
+    type: string
+  currency:
+    description: "Moeda<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "BRL"
+    type: string
+  total:
+    description: "Valor total do pedido após o cálculo considerando correção monetária, juros, multa e honorários<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "13900,00"
+    type: number
+  originalPrincipal:
+    description: "Montante Principal Original (sem correção Monetária)<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "100,00"
+    type: number
+  adjustedPrincipal:
+    description: "Montante Principal Atualizado por correção Monetária<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "110,00"
+    type: number
+  totalCompensatoryInterests:
+    description: "Total de Juros Compensatórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "200,00"
+    type: number
+  totalInterestInArrears:
+    description: "Total de Juros Moratórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "300,00"
+    type: number
+  totalInterests:
+    description: "Total de Juros Moratórios e Compensatórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "500,00"
+    type: number
+  totalPenalty:
+    description: "Total de Multa<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "200,00"
+    type: number
+  totalRebates:
+    description: "Total de Abatimentos (não faz muito sentido pois são aplicados em diferentes momentos e portanto estão em bases diferentes de correção)<br /> - **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "totalLoserPaysAttorneyFees"
+    type: number
+  totalLoserPaysAttorneyFees:
+    description: "Total de honorários Sucumbenciais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "100,00"
+    type: number
+  totalAppealMotionFees:
+    description: "Total de honorários Recursais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "300,00"
+    type: number
+  totalContractualAttorneyFees:
+    description: "total de honorários contratuais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "400,00"
+    type: number
+  contingency:
+    description: "Valor de contingÊncia calculado a partir do total e do percentual de contingência proveniente do risco<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "2300,00"
+    type: number
+  startDate:
+    description: "Data inicial do cálculo do pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "2021-05-03T12:00:00-03:00"
+    type: string
+  finalDate:
+    description: "Data Final do cálculo do pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "2021-05-03T12:00:00-03:00"
+    type: string
+  calcRequestDate:
+    description: "Data em que foi realizada a chamada do Cálculo<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "2021-05-03T12:00:00-03:00"
+    type: string
+  configDate:
+    description: "Data da  última alteração da configuração dos parâmetros utilizados no cálculo <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "2021-05-03T12:00:00-03:00"
+    type: string
+  calculationObservations:
+    description: "Observações de cálculo<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "Cálculo realizado através do Calcula aí"
+    type: string
+  rebates:
+    type: array
+    items:
+        $ref:  DTORebateResultSaved.yaml
+    description: "Lista de Abatimentos<br />`Required`"
+required:
+  - id
+  - name
+  - currency
+  - total
+  - originalPrincipal
+  - adjustedPrincipal
+  - totalCompensatoryInterests
+  - totalInterestInArrears
+  - totalInterests
+  - totalPenalty
+  - totalLoserPaysAttorneyFees
+  - totalAppealMotionFees
+  - totalContractualAttorneyFees
+  - contingency
+  - startDate
+  - finalDate
+  - calcRequestDate
+  - configDate
+  - rebates

@@ -11420,6 +11420,147 @@
         }
       }
     },
+    "/api/liabilitiesCalculationResults": {
+      "get": {
+        "tags": [
+          "LiabilitiesCalculation"
+        ],
+        "summary": "api/liabilitiesCalculationResults",
+        "description": "Lista Resultados do cálculo do Caso",
+        "operationId": "api-liabilitiesCalculationResults-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCaso",
+            "in": "query",
+            "example": "12",
+            "description": "id do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOResultadoCalculoSavedWithId"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LiabilitiesCalculation"
+        ],
+        "summary": "api/liabilitiesCalculationResults",
+        "description": "Salva resultado de cálculo",
+        "operationId": "api-liabilitiesCalculationResults-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOResultadoCalculoSavedWithId"
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/propositionStatements/{id}": {
       "get": {
         "tags": [
@@ -25180,6 +25321,185 @@
             }
           }
         }
+      },
+      "DTORebateResultSaved": {
+        "title": "DTORebateResultSaved",
+        "type": "object",
+        "properties": {
+          "date": {
+            "description": "data do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "name": {
+            "description": "Nome do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "Pagamento",
+            "type": "string"
+          },
+          "value": {
+            "description": "Valor do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "100,32",
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "name",
+          "value"
+        ]
+      },
+      "DTOResultadoCalculoSaved": {
+        "title": "DTOResultadoCalculoSaved",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "id do pedido (pedido causa  e não processoexpectativareivindicacao<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "12",
+            "type": "integer"
+          },
+          "name": {
+            "description": "Descrição do Pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "Décimo terceiro",
+            "type": "string"
+          },
+          "currency": {
+            "description": "Moeda<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "BRL",
+            "type": "string"
+          },
+          "total": {
+            "description": "Valor total do pedido após o cálculo considerando correção monetária, juros, multa e honorários<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "13900,00",
+            "type": "number"
+          },
+          "originalPrincipal": {
+            "description": "Montante Principal Original (sem correção Monetária)<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "100,00",
+            "type": "number"
+          },
+          "adjustedPrincipal": {
+            "description": "Montante Principal Atualizado por correção Monetária<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "110,00",
+            "type": "number"
+          },
+          "totalCompensatoryInterests": {
+            "description": "Total de Juros Compensatórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "200,00",
+            "type": "number"
+          },
+          "totalInterestInArrears": {
+            "description": "Total de Juros Moratórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "300,00",
+            "type": "number"
+          },
+          "totalInterests": {
+            "description": "Total de Juros Moratórios e Compensatórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "500,00",
+            "type": "number"
+          },
+          "totalPenalty": {
+            "description": "Total de Multa<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "200,00",
+            "type": "number"
+          },
+          "totalRebates": {
+            "description": "Total de Abatimentos (não faz muito sentido pois são aplicados em diferentes momentos e portanto estão em bases diferentes de correção)<br /> - **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "totalLoserPaysAttorneyFees",
+            "type": "number"
+          },
+          "totalLoserPaysAttorneyFees": {
+            "description": "Total de honorários Sucumbenciais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "100,00",
+            "type": "number"
+          },
+          "totalAppealMotionFees": {
+            "description": "Total de honorários Recursais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "300,00",
+            "type": "number"
+          },
+          "totalContractualAttorneyFees": {
+            "description": "total de honorários contratuais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "400,00",
+            "type": "number"
+          },
+          "contingency": {
+            "description": "Valor de contingÊncia calculado a partir do total e do percentual de contingência proveniente do risco<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2300,00",
+            "type": "number"
+          },
+          "startDate": {
+            "description": "Data inicial do cálculo do pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "finalDate": {
+            "description": "Data Final do cálculo do pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "calcRequestDate": {
+            "description": "Data em que foi realizada a chamada do Cálculo<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "configDate": {
+            "description": "Data da  última alteração da configuração dos parâmetros utilizados no cálculo <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "calculationObservations": {
+            "description": "Observações de cálculo<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "Cálculo realizado através do Calcula aí",
+            "type": "string"
+          },
+          "rebates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTORebateResultSaved"
+            },
+            "description": "Lista de Abatimentos<br />`Required`"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "currency",
+          "total",
+          "originalPrincipal",
+          "adjustedPrincipal",
+          "totalCompensatoryInterests",
+          "totalInterestInArrears",
+          "totalInterests",
+          "totalPenalty",
+          "totalLoserPaysAttorneyFees",
+          "totalAppealMotionFees",
+          "totalContractualAttorneyFees",
+          "contingency",
+          "startDate",
+          "finalDate",
+          "calcRequestDate",
+          "configDate",
+          "rebates"
+        ]
+      },
+      "DTOResultadoCalculoSavedWithId": {
+        "title": "DTOResultadoCalculoSavedWithId",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Id do Caso<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "12",
+            "type": "string"
+          },
+          "results": {
+            "description": "Lista de Resultados por pedido<br />`Required`",
+            "$ref": "#/components/schemas/DTOResultadoCalculoSaved"
+          }
+        },
+        "required": [
+          "id",
+          "results"
+        ]
       },
       "DTOMotivoDePedir": {
         "title": "DTOMotivoDePedir",

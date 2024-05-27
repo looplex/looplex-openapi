@@ -1,0 +1,13 @@
+title: DTOResultadoCalculoSavedWithId
+type: object
+properties:
+  id:
+    description: "Id do Caso<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "12"
+    type: string
+  results:
+    description: "Lista de Resultados por pedido<br />`Required`"
+    $ref: DTOResultadoCalculoSaved.yaml
+required:
+  - id
+  - results

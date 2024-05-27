@@ -496,7 +496,11 @@ paths:
   /api/liabilitiesCalculation/calculaCaso/{cdProcesso}:
     post:
       $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculation@calculaCaso-post.yaml'
-  
+  /api/liabilitiesCalculationResults:
+    get:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationResults-get.yaml'
+    post:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationResults-post.yaml'
   # Motivo de pedir
   /api/propositionStatements/{id}:
     get:
