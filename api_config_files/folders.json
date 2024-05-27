@@ -112,7 +112,7 @@
   {
     "label": "Liabilities calculation",
     "detail": "Endpoints de Liabilities Calculation",
-    "opcao": "cases/liabilities_calculation"
+    "opcao": "cases/liabilities_calculation/"
   },
   {
     "label": "Partes",
