@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - LiabilitiesCalculation
-summary: "api/liabilitiesCalculationResults"
+  - Liabilities Calculation
+summary: "Resultados de Cáculo - Listar"
 description: "Lista Resultados do cálculo do Caso"
 operationId: api-liabilitiesCalculationResults-get
 # Parâmetros da requisição

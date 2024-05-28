@@ -1,18 +1,26 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Liabilities Calculation
-summary: "Calcula caso"
-operationId: api-liabilitiesCalculation-calculaCaso-post
+summary: "Parâmetros de Cálculo - Listar"
+description: "Lista os parêmteros de cálculo do caso"
+operationId: api-liabilitiesCalculationEntities-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: cdProcesso
-    in: path
-    example: 10
-    description: "Identificador do caso"
+  - name: caseid
+    in: query
+    example: '10'
+    description: "Id do caso"
     required: true
     schema:
       type: integer
+  - name: env
+    in: query
+    example: 'QA'
+    description: "environment"
+    required: true
+    schema:
+      type: string
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -22,7 +30,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/DTOResultadoCalculo.yaml
+          $ref: ../../../components/schemas/cases/DTOCalcConfig.yaml
   "401":
     description: "Unauthorized"
     content:

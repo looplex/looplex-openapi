@@ -1,0 +1,30 @@
+title: DTOPenaltyConfig
+type: object
+properties:
+  fineId:
+    description: "Identificador da multa"
+    type: string
+  description:
+    description: "Descrição da Multa<br />`Required`<br />"
+    type: string
+  rate:
+    description: "percentual de multa a ser aplicado<br />`Required`<br />"
+    example: "isOverCompensatoryInterest indica se o percentual é aplicado também sobre os juros compensatórios"
+    type: boolean
+  isOverDefaultInterest:
+    description: "Indica se o percental é aplicado também sobre os juros moratórios<br />`Required`<br />"
+    type: boolean
+  isOverCompensatoryInterest:
+    description: "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br /"
+    type: boolean
+  eventId:
+    description: "Identificador de evento relacionado com a multa(ainda não utilizado)"
+    type: integer
+  eventString:
+      description: "Nome de evento relacionado com a multa(ainda não utilizado)"
+      type: string
+required:
+  - description
+  - rate
+  - isOverDefaultInterest
+  - isOverCompensatoryInterest

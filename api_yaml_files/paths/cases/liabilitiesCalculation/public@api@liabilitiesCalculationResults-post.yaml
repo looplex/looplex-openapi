@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - LiabilitiesCalculation
-summary: "api/liabilitiesCalculationResults"
+  - Liabilities Calculation
+summary: "Resultados de Cáculo - Salvar"
 description: "Salva resultado de cálculo"
 operationId: api-liabilitiesCalculationResults-post
 # Parâmetros da requisição
@@ -16,6 +16,8 @@ requestBody:
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "200":
+    description: "OK"
   "401":
     description: "Unauthorized"
     content:

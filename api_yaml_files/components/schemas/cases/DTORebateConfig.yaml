@@ -1,0 +1,15 @@
+title: DTORebateConfig
+type: object
+properties:
+  rebateOrder:
+    description: "Indica a ordem em que o abatimento é aplicado entre os montantes Principal, de Juros Moratórios e de Juros Compensatórios<br />`Required`<br />"
+    type: array
+    items:
+        type: integer
+    example: "[1,0,2] -> JM -> JC -> Principal"
+  IsProportional:
+    description: "False se a ordem é definida por rebateOrder, true se abate proporcionalmente dos montantes diante da respectiva contribuição na soma dos 3 montantes<br />`Required`<br />"
+    type: boolean
+required:
+    - rebateOrder
+    - IsProportional

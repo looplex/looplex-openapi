@@ -1,0 +1,328 @@
+title: DTOCalcTemplate
+type: object
+properties:
+  parameterModelName:
+    type: string
+    description: "Nome do Template"
+  parameterLinkedCaseTypes:
+    type: array
+    items:
+      type: integer
+    description: "Tipos de caso vinculados<br />1 = Administrativo<br />2 = Consultivo<br />3 = Judicial Estadual<br />4 = Judicial Federal<br />5 = Judicial trabalhista<br />7 = Militar Estadual<br />8 = Eleitoral<br />9 = Militar União<br />10 = Consultivo - Contrato<br />11 = Consultivo - Análise Documental<br />12 = Consultivo - Gestão de Ativos<br />13 = Consultivo - Societário "
+  parameterLinkedObligations:
+    type: array
+    items:
+      type: integer
+    description: "Ids pedidos causa que podem utilizar este template"
+  parameterLossLikely:
+    type: number
+    description: "Percentual de contingência para perda provável"
+  parameterLossPossible:
+    type: number
+    description: "Percentual de contingência para perda possível"
+  parameterLossRemote:
+    type: number
+    description: "Percentual de contingência para perda remota"
+  parameterSuccessLikely:
+    type: number
+    description: "Percentual de contingência para êxito provável"
+  parameterSuccessPossible:
+    type: number
+    description: "Percentual de contingência para êxito possível"
+  parameterSuccessRemote:
+    type: number
+    description: "Percentual de contingência para êxito remoto"
+  rateMaintenanceRate:
+    type: integer
+    description: "Identificador do índice de correção da primeira faixa de configuração de correção monetária"
+  rateStartPeriod_Event:
+    type: integer
+    description: Indica a partir de qual evento a data de início da primeira faixa de configuração de correção monetária será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+  rateStartPeriod_AfterNumber:
+    type: integer
+    description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da primeira faixa de configuração de correção monetária"
+  rateStartPeriod_AfterUnit:
+    type: integer
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da primeira faixa de configuração de correção monetária a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+  rateStartPeriod_SpecificDate:
+    type: string
+    description: "data de início  da primeira faixa de configuração de correção monetária"
+  rateEndPeriod_Switch:
+    type: boolean
+    description: "true se estipula data final para a primeira  faixa de configuração de correção monetária"
+  rateEndPeriod_Event:
+    type: integer
+    description: Indica a partir de qual evento a data final da primeira faixa de configuração de correção monetária será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+  rateEndPeriod_AfterNumber:
+    type: integer
+    description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de correção monetária"
+  rateEndPeriod_AfterUnit:
+    type: integer
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da primeira faixa de configuração de correção monetária a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+  rateEndPeriod_SpecificDate:
+      type: string
+      description: "data de fim  da primeira faixa de configuração de correção monetária"
+  compensatoryStartPeriod_Event:
+    type: integer
+    description: Indica a partir de qual evento a data final da primeira faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+  compensatoryStartPeriod_AfterNumber:
+    type: integer
+    description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da primeira faixa de configuração de juros compensatórios"
+  compensatoryStartPeriod_AfterUnit:
+    type: integer
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da primeira faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+  compensatoryStartPeriod_SpecificDate:
+    type: string
+    description: "data de início  da primeira faixa de configuração de juros compensatórios"
+  compensatoryEndPeriod_Event:
+    type: integer
+    description: Indica a partir de qual evento a data final da primeira faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+  compensatoryEndPeriod_AfterNumber:
+    type: integer
+    description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de juros compensatórios"
+  compensatoryEndPeriod_AfterUnit:
+    type: integer
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da primeira faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+  compensatoryEndPeriod_SpecificDate:
+    type: string
+    description: "data final  da primeira faixa de configuração de juros compensatórios"
+  compensatoryRate:
+    type: number
+    description: "Taxa de juros em porcentagem da primeira faixa de configuração de juros compensatórios"
+  compensatoryProRataCheck:
+    type: boolean
+    description: "Indica se o juros da primeira faixa  de configuração de juros compensatórios é pro rata"
+  compensatoryFrequency:
+    type: integer
+    description: "3 se  juros compensatórios da primeira faixa de configuração são Mensais, 4 se Anuais"
+  compensatoryCapitalization:
+    type: integer
+    description: "1 se  juros compensatórios da primeira faixa de configuração são simples, 2 se juro compostos"
+  defaultCalcInterestCheckbox:
+    type: boolean
+    description: "Indica se os juros moratórios são aplicados sobre os compensatórios"
+  defaultStartPeriod_Event:
+    type: integer
+    description: Indica a partir de qual evento a data final da primeira faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+  defaultStartPeriod_AfterNumber:
+    type: integer
+    description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da primeira faixa de configuração de juros moratórios"
+  defaultStartPeriod_AfterUnit:
+    type: integer
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da primeira faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+  defaultStartPeriod_SpecificDate:
+    type: string
+    description: "data de início  da primeira faixa de configuração de juros moratórios"
+  defaultEndPeriod_Event:
+    type: integer
+    description: Indica a partir de qual evento a data final da primeira faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+  defaultEndPeriod_AfterNumber:
+    type: integer
+    description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de juros moratórios"
+  defaultEndPeriod_AfterUnit:
+    type: integer
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da primeira faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+  defaultEndPeriod_SpecificDate:
+    type: string
+    description: "data final  da primeira faixa de configuração de juros moratórios"
+  defaultRate:
+    type: number
+    description: "Taxa de juros em porcentagem da primeira faixa de configuração de juros moratórios"
+  defaultProRataCheck:
+    type: boolean
+    description: "Indica se o juros da primeira faixa  de configuração de juros moratórios é pro rata"
+  defaultFrequency:
+    type: integer
+    description: "3 se  juros moratórios da primeira faixa de configuração são Mensais, 4 se Anuais"
+  defaultCapitalization:
+    type: integer
+    description: "1 se juros moratórios da primeira faixa de configuração são  simples, 2 se  compostos"
+  fineDescription:
+    type: string
+    description: "Nome da multa da primeira faixa de configuração de multa"
+  fineEvent:
+    type: string
+    description: "Campo livre de evento relacionado com a multa da primeira faixa de configuração de multa"
+  finePercentage:
+    type: number
+    description: "Percentual de multa da  primeira faixa de configuração  de multa"
+  fineIncidence:
+    type: array
+    items:
+      type: integer
+    description: "Indica os montantes sobre os quais são aplicados a multa  de multa da primeira faixa de configuração de multa<br /> 1 = Montante Principal(sempre deve estar no array)<br />2 = Juros Compensatórios<br />3 = Juros Moratórios"
+  rebateRuleType:
+    type: integer
+    description: "Tipo de abatimento<br />1 = Pagamento<br />2 = Perdão ou Anistia<br />3 = Compensação com Garantia<br />4 = Cessão ou transferência<br />"
+  rebateDescription:
+    type: string
+    description:  "Nome do Abatimento"
+  rebateOrderFirst: 
+    type: integer
+    description: "Indica o primeiro montante do qual deve ser descontado o abatimento<br />0 = Juros Moratórios<br />1 = Juros Compensatórios<br />2 = Principal Atualizado "
+  rebateOrderSecond: 
+    type: integer
+    description: "Indica o segundo montante do qual deve ser descontado o abatimento<br />0 = Juros Moratórios<br />1 = Juros Compensatórios<br />2 = Principal Atualizado "  
+  rebateOrderThird: 
+    type: integer
+    description: "Indica o terceiro montante do qual deve ser descontado o abatimento<br />0 = Juros Moratórios<br />1 = Juros Compensatórios<br />2 = Principal Atualizado "
+  rebateOrderCheckboxProportionate:
+    type: boolean
+    description: "Indica se em vez de abater um montante até o fim para começar a abater de outro, abate de todos proporcionalmente ao peso de cada montante sobre o montante total da dívida"
+  
+  formMaintenanceRate:
+    type: array
+    description: "Faixas de correção monetárias exceto a primeira"
+    items:
+      type: object
+      properties:
+        rateMaintenanceRate:
+          type: integer
+          description: "Identificador do índice de correção"
+        rateStartPeriod_Event:
+          type: integer
+          description: Indica a partir de qual evento a data de início será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+        rateStartPeriod_AfterNumber:
+          type: integer
+          description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial"
+        rateStartPeriod_AfterUnit:
+          type: integer
+          description: "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+        rateStartPeriod_SpecificDate:
+          type: string
+          description: "data de início"
+        rateEndPeriod_Switch:
+          type: boolean
+          description: "true se estipula data final para a  faixa de configuração de correção monetária"
+        rateEndPeriod_Event:
+          type: integer
+          description: Indica a partir de qual evento a data final da faixa de configuração de correção monetária será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+        rateEndPeriod_AfterNumber:
+          type: integer
+          description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da  faixa de configuração de correção monetária"
+        rateEndPeriod_AfterUnit:
+          type: integer
+          description: "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da  faixa de configuração de correção monetária a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+        rateEndPeriod_SpecificDate:
+            type: string
+            description: "data de fim  da faixa de configuração de correção monetária"
+  formCompensatoryInterest:
+    description: Lista de configurações de juros compensatórios exceto a primeira
+    type: array
+    items:
+      type: object
+      properties:
+        compensatoryStartPeriod_Event:
+          type: integer
+          description: Indica a partir de qual evento a data final da faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+        compensatoryStartPeriod_AfterNumber:
+          type: integer
+          description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da faixa de configuração de juros compensatórios"
+        compensatoryStartPeriod_AfterUnit:
+          type: integer
+          description: "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+        compensatoryStartPeriod_SpecificDate:
+          type: string
+          description: "data de início  da faixa de configuração de juros compensatórios"
+        compensatoryEndPeriod_Event:
+          type: integer
+          description: Indica a partir de qual evento a data final da faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+        compensatoryEndPeriod_AfterNumber:
+          type: integer
+          description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da faixa de configuração de juros compensatórios"
+        compensatoryEndPeriod_AfterUnit:
+          type: integer
+          description: "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+        compensatoryEndPeriod_SpecificDate:
+          type: string
+          description: "data final  da faixa de configuração de juros compensatórios"
+        compensatoryRate:
+          type: number
+          description: "Taxa de juros em porcentagem da faixa de configuração de juros compensatórios"
+        compensatoryProRataCheck:
+          type: boolean
+          description: "Indica se o juros da faixa  de configuração de juros compensatórios é pro rata"
+        compensatoryFrequency:
+          type: integer
+          description: "3 se  juros compensatórios da faixa de configuração são Mensais, 4 se Anuais"
+        compensatoryCapitalization:
+          type: integer
+          description: "1 se  juros compensatórios da faixa de configuração são simples, 2 se juro compostos"
+  formDefaultInterest: 
+    description: Lista de configurações de juros moratórios exceto a primeira
+    type: array
+    items:
+      type: object
+      properties:
+        defaultStartPeriod_Event:
+          type: integer
+          description: Indica a partir de qual evento a data final da faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+        defaultStartPeriod_AfterNumber:
+          type: integer
+          description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da faixa de configuração de juros moratórios"
+        defaultStartPeriod_AfterUnit:
+          type: integer
+          description: "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+        defaultStartPeriod_SpecificDate:
+          type: string
+          description: "data de início  da faixa de configuração de juros moratórios"
+        defaultEndPeriod_Event:
+          type: integer
+          description: Indica a partir de qual evento a data final da faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />
+        defaultEndPeriod_AfterNumber:
+          type: integer
+          description: "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de juros moratórios"
+        defaultEndPeriod_AfterUnit:
+          type: integer
+          description: "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+        defaultEndPeriod_SpecificDate:
+          type: string
+          description: "data final  da faixa de configuração de juros moratórios"
+        defaultRate:
+          type: number
+          description: "Taxa de juros em porcentagem da faixa de configuração de juros moratórios"
+        defaultProRataCheck:
+          type: boolean
+          description: "Indica se o juros da primeira faixa  de configuração de juros moratórios é pro rata"
+        defaultFrequency:
+          type: integer
+          description: "3 se  juros moratórios da faixa de configuração são Mensais, 4 se Anuais"
+        defaultCapitalization:
+          type: integer
+          description: "1 se juros moratórios da faixa de configuração são  simples, 2 se  compostos"
+  formFineRule:
+    description: Lista de configuração de multa, exceto a primeira
+    type: array
+    items: 
+      type: object  
+      properties:
+        fineDescription:
+          type: string
+          description: "Nome da multa da faixa de configuração de multa"
+        fineEvent:
+          type: string
+          description: "Campo livre de evento relacionado com a multa da faixa de configuração de multa"
+        finePercentage:
+          type: number
+          description: "Percentual de multa da  faixa de configuração  de multa"
+        fineIncidence:
+          type: array
+          items:
+            type: integer
+          description: "Indica os montantes sobre os quais são aplicados a multa  de multa da faixa de configuração de multa<br /> 1 = Montante Principal(sempre deve estar no array)<br />2 = Juros Compensatórios<br />3 = Juros Moratórios"
+        
+
+  id:
+    type: string
+    description: "Identificador do template(nome do template trocando espaço por \"-\" eadicionando _obligation ao fim)"
+  type:
+    type: string
+    description: "Indica o tipo de template, por ora \"OBLIGATION\""
+  isActive:
+    type: string
+    description: "Indica se o template está ativo"
+
+           
+     
+    
+  
