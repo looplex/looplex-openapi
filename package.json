@@ -5,7 +5,7 @@
   "scripts": {
     "actions": "redocly preview-docs api_yaml_files/actions.yaml",
     "assembler": "redocly preview-doc sapi_yaml_files/assembler.yaml",
-    "cases": " redocly preview-docs api_yaml_files/cases.yaml",
+    "cases": "redocly preview-docs api_yaml_files/cases.yaml",
     "looplex365": "redocly preview-docs api_yaml_files/looplex365.yaml",
     "varas_foros_v2": "redocly preview-docs api_yaml_files/varas_foros_v2.yaml",
     
@@ -17,7 +17,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@redocly/cli": "1.12.2",
+    "@redocly/cli": "1.14.0",
     "antd": "^5.17.0",
     "core-js": "^3.37.0",
     "mobx": "^6.12.3",
