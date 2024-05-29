@@ -1,0 +1,19 @@
+title: DTORebateResultSaved
+type: object
+properties:
+  date:
+    description: "data do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "2021-05-03T12:00:00-03:00"
+    type: string
+  name:
+    description: "Nome do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "Pagamento"
+    type: string
+  value:
+    description: "Valor do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "100,32"
+    type: string
+required:
+  - date
+  - name
+  - value

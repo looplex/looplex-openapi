@@ -1,18 +1,25 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Liabilities Calculation
-summary: "Calcula caso"
-operationId: api-liabilitiesCalculation-calculaCaso-post
+summary: "Template de Cálculo - Lista"
+description: "Lista templates de parâmetros de cálculo"
+operationId: api-liabilitiesCalculationTemplate-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: cdProcesso
-    in: path
-    example: 10
-    description: "Identificador do caso"
-    required: true
+  - name: templateId
+    in: query
+    example: 'teste-hidden_obligation'
+    description: "identificador do template, se nenhum forindicado, lista todos"
     schema:
       type: integer
+  - name: env
+    in: query
+    example: 'QA'
+    description: "environment"
+    required: true
+    schema:
+      type: string
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -22,7 +29,9 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/DTOResultadoCalculo.yaml
+          type: array
+          items:
+            $ref: ../../../components/schemas/cases/DTOCalcTemplate.yaml
   "401":
     description: "Unauthorized"
     content:

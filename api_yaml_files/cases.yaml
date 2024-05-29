@@ -496,7 +496,21 @@ paths:
   /api/liabilitiesCalculation/calculaCaso/{cdProcesso}:
     post:
       $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculation@calculaCaso-post.yaml'
-  
+  /api/liabilitiesCalculationResults:
+    get:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationResults-get.yaml'
+    post:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationResults-post.yaml'
+  /api/liabilitiesCalculationEntities:
+    get:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationEntities-get.yaml'
+    post:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationEntities-post.yaml'
+  /api/liabilitiesCalculationTemplate:
+    get:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationTemplate-get.yaml'
+    post:
+      $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationTemplate-post.yaml'
   # Motivo de pedir
   /api/propositionStatements/{id}:
     get:

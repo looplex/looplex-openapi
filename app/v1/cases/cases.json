@@ -11420,6 +11420,311 @@
         }
       }
     },
+    "/api/liabilitiesCalculationResults": {
+      "get": {
+        "tags": [
+          "LiabilitiesCalculation"
+        ],
+        "summary": "api/liabilitiesCalculationResults",
+        "description": "Lista Resultados do cálculo do Caso",
+        "operationId": "api-liabilitiesCalculationResults-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "idCaso",
+            "in": "query",
+            "example": "12",
+            "description": "id do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOResultadoCalculoSavedWithId"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LiabilitiesCalculation"
+        ],
+        "summary": "api/liabilitiesCalculationResults",
+        "description": "Salva resultado de cálculo",
+        "operationId": "api-liabilitiesCalculationResults-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOResultadoCalculoSavedWithId"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/liabilitiesCalculationEntities": {
+      "get": {
+        "tags": [
+          "Liabilities Calculation"
+        ],
+        "summary": "Parâmetros de Cálculo",
+        "description": "Lista os parêmteros de cálculo do caso",
+        "operationId": "api-liabilitiesCalculationEntities-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "caseid",
+            "in": "query",
+            "example": "10",
+            "description": "Id do caso",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "env",
+            "in": "query",
+            "example": "QA",
+            "description": "environment",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCalcConfig"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Liabilities Calculation"
+        ],
+        "summary": "Salvar Parâmetros de Cálculo",
+        "description": "Salva os Parâmetros de Cálculo",
+        "operationId": "api-liabilitiesCalculationEntities-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "name": "env",
+            "in": "query",
+            "example": "QA",
+            "description": "environment",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCalcConfig"
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/propositionStatements/{id}": {
       "get": {
         "tags": [
@@ -25177,6 +25482,598 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DTOExchangeResultItem"
+            }
+          }
+        }
+      },
+      "DTORebateResultSaved": {
+        "title": "DTORebateResultSaved",
+        "type": "object",
+        "properties": {
+          "date": {
+            "description": "data do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "name": {
+            "description": "Nome do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "Pagamento",
+            "type": "string"
+          },
+          "value": {
+            "description": "Valor do abatimento<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "100,32",
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "name",
+          "value"
+        ]
+      },
+      "DTOResultadoCalculoSaved": {
+        "title": "DTOResultadoCalculoSaved",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "id do pedido (pedido causa  e não processoexpectativareivindicacao<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "12",
+            "type": "integer"
+          },
+          "name": {
+            "description": "Descrição do Pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "Décimo terceiro",
+            "type": "string"
+          },
+          "currency": {
+            "description": "Moeda<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "BRL",
+            "type": "string"
+          },
+          "total": {
+            "description": "Valor total do pedido após o cálculo considerando correção monetária, juros, multa e honorários<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "13900,00",
+            "type": "number"
+          },
+          "originalPrincipal": {
+            "description": "Montante Principal Original (sem correção Monetária)<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "100,00",
+            "type": "number"
+          },
+          "adjustedPrincipal": {
+            "description": "Montante Principal Atualizado por correção Monetária<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "110,00",
+            "type": "number"
+          },
+          "totalCompensatoryInterests": {
+            "description": "Total de Juros Compensatórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "200,00",
+            "type": "number"
+          },
+          "totalInterestInArrears": {
+            "description": "Total de Juros Moratórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "300,00",
+            "type": "number"
+          },
+          "totalInterests": {
+            "description": "Total de Juros Moratórios e Compensatórios<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "500,00",
+            "type": "number"
+          },
+          "totalPenalty": {
+            "description": "Total de Multa<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "200,00",
+            "type": "number"
+          },
+          "totalRebates": {
+            "description": "Total de Abatimentos (não faz muito sentido pois são aplicados em diferentes momentos e portanto estão em bases diferentes de correção)<br /> - **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "totalLoserPaysAttorneyFees",
+            "type": "number"
+          },
+          "totalLoserPaysAttorneyFees": {
+            "description": "Total de honorários Sucumbenciais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "100,00",
+            "type": "number"
+          },
+          "totalAppealMotionFees": {
+            "description": "Total de honorários Recursais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "300,00",
+            "type": "number"
+          },
+          "totalContractualAttorneyFees": {
+            "description": "total de honorários contratuais<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "400,00",
+            "type": "number"
+          },
+          "contingency": {
+            "description": "Valor de contingÊncia calculado a partir do total e do percentual de contingência proveniente do risco<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2300,00",
+            "type": "number"
+          },
+          "startDate": {
+            "description": "Data inicial do cálculo do pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "finalDate": {
+            "description": "Data Final do cálculo do pedido<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "calcRequestDate": {
+            "description": "Data em que foi realizada a chamada do Cálculo<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "configDate": {
+            "description": "Data da  última alteração da configuração dos parâmetros utilizados no cálculo <br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "calculationObservations": {
+            "description": "Observações de cálculo<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "Cálculo realizado através do Calcula aí",
+            "type": "string"
+          },
+          "rebates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTORebateResultSaved"
+            },
+            "description": "Lista de Abatimentos<br />`Required`"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "currency",
+          "total",
+          "originalPrincipal",
+          "adjustedPrincipal",
+          "totalCompensatoryInterests",
+          "totalInterestInArrears",
+          "totalInterests",
+          "totalPenalty",
+          "totalLoserPaysAttorneyFees",
+          "totalAppealMotionFees",
+          "totalContractualAttorneyFees",
+          "contingency",
+          "startDate",
+          "finalDate",
+          "calcRequestDate",
+          "configDate",
+          "rebates"
+        ]
+      },
+      "DTOResultadoCalculoSavedWithId": {
+        "title": "DTOResultadoCalculoSavedWithId",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Id do Caso<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "12",
+            "type": "string"
+          },
+          "results": {
+            "description": "Lista de Resultados por pedido<br />`Required`",
+            "$ref": "#/components/schemas/DTOResultadoCalculoSaved"
+          }
+        },
+        "required": [
+          "id",
+          "results"
+        ]
+      },
+      "DTOContingencyConfig": {
+        "title": "DTOContingencyConfig",
+        "type": "object",
+        "properties": {
+          "loss": {
+            "type": "object",
+            "properties": {
+              "likely": {
+                "description": "Percentual para o risco provável de perda",
+                "type": "number"
+              },
+              "possible": {
+                "description": "Percentual para o risco possível de perda",
+                "type": "number"
+              },
+              "remote": {
+                "description": "Percentual para o risco remoto de perda",
+                "type": "number"
+              }
+            }
+          },
+          "success": {
+            "type": "object",
+            "properties": {
+              "likely": {
+                "description": "Percentual para o risco provável de êxito",
+                "type": "number"
+              },
+              "possible": {
+                "description": "Percentual para o risco possível de êxito",
+                "type": "number"
+              },
+              "remote": {
+                "description": "Percentual para o risco remoto de êxito",
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "DTOIndexConfig": {
+        "title": "DTOIndexConfig",
+        "type": "object",
+        "properties": {
+          "indexId": {
+            "description": "Identificador do índice<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente.",
+            "example": "1",
+            "type": "integer"
+          },
+          "indexName": {
+            "description": "Nome do índice",
+            "example": "IPCA",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "Ínicio da vigência do índice",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "startDateEvent": {
+            "description": "Indica a partir de qual evento a data de início será definida<br />0 - Data específica(startDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />",
+            "type": "integer"
+          },
+          "startDateAfterNumber": {
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em q será definida a data inicial da vigência",
+            "example": "2",
+            "type": "integer"
+          },
+          "startDateAfterUnit": {
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos",
+            "type": "integer"
+          },
+          "finalDate": {
+            "description": "Data final da vigência ",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "finalDateEvent": {
+            "description": "Indicador do Evento a partir do qual será definida a data final da vigência<br />0 - Data específica(finalDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />",
+            "example": "2",
+            "type": "integer"
+          },
+          "finalDateAfterNumber": {
+            "description": "Número de dias meses ou anos após o evento a partir do qual será definida a data final da vigência",
+            "example": "2",
+            "type": "integer"
+          },
+          "finalDateAfterUnit": {
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos",
+            "example": "2",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "indexId"
+        ]
+      },
+      "DTOInterestsConfig": {
+        "title": "DTOInterestsConfig",
+        "type": "object",
+        "properties": {
+          "rate": {
+            "description": "Taxa de juros em porcentagem<br />`Required`<br />",
+            "type": "number"
+          },
+          "IsProRata": {
+            "description": "Indica se o Juros é pro rata<br />`Required`<br />",
+            "type": "boolean"
+          },
+          "frequency": {
+            "description": "Indica se o juros é  mensal ou anual<br />3 = Mensal<br />4 = Anual <br />`Required`<br />",
+            "type": "integer",
+            "example": 3
+          },
+          "capitalization": {
+            "description": "Indica se os juros são simples (1) ou compostos (2)<br />`Required`<br />",
+            "type": "integer",
+            "example": 1
+          },
+          "startDate": {
+            "description": "Ínicio da vigência",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "startDateEvent": {
+            "description": "Indica a partir de qual evento a data de início será definida<br />0 - Data específica(startDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />",
+            "type": "integer"
+          },
+          "startDateAfterNumber": {
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em q será definida a data inicial da vigência",
+            "example": "2",
+            "type": "integer"
+          },
+          "startDateAfterUnit": {
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos",
+            "type": "integer"
+          },
+          "finalDate": {
+            "description": "Data final da vigência ",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "finalDateEvent": {
+            "description": "Indicador do Evento a partir do qual será definida a data final da vigência<br />0 - Data específica(finalDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />",
+            "example": "2",
+            "type": "integer"
+          },
+          "finalDateAfterNumber": {
+            "description": "Número de dias meses ou anos após o evento a partir do qual será definida a data final da vigência",
+            "example": "2",
+            "type": "integer"
+          },
+          "finalDateAfterUnit": {
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos",
+            "example": "2",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "rate",
+          "IsProRata",
+          "capitalization",
+          "frequency"
+        ]
+      },
+      "DTORebateConfig": {
+        "title": "DTORebateConfig",
+        "type": "object",
+        "properties": {
+          "rebateOrder": {
+            "description": "Indica a ordem em que o abatimento é aplicado entre os montantes Principal, de Juros Moratórios e de Juros Compensatórios<br />`Required`<br />",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "example": "[1,0,2] -> JM -> JC -> Principal"
+          },
+          "IsProportional": {
+            "description": "False se a ordem é definida por rebateOrder, true se abate proporcionalmente dos montantes diante da respectiva contribuição na soma dos 3 montantes<br />`Required`<br />",
+            "type": "boolean"
+          },
+          "required": [
+            "rebateOrder",
+            "IsProportional"
+          ]
+        }
+      },
+      "DTOPenaltyConfig": {
+        "title": "DTOPenaltyConfig",
+        "type": "object",
+        "properties": {
+          "fineId": {
+            "description": "Identificador da multa",
+            "type": "string"
+          },
+          "description": {
+            "description": "Descrição da Multa<br />`Required`<br />",
+            "type": "string"
+          },
+          "rate": {
+            "description": "percentual de multa a ser aplicado<br />`Required`<br />",
+            "example": "isOverCompensatoryInterest indica se o percentual é aplicado também sobre os juros compensatórios",
+            "type": "boolean"
+          },
+          "isOverDefaultInterest": {
+            "description": "Indica se o percental é aplicado também sobre os juros moratórios<br />`Required`<br />",
+            "type": "boolean",
+            "isOverCompensatoryInterest": {
+              "description": "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br /",
+              "type": "boolean"
+            }
+          },
+          "eventId": {
+            "description": "Identificador de evento relacionado com a multa(ainda não utilizado)",
+            "type": "integer"
+          },
+          "eventString": {
+            "description": "Nome de evento relacionado com a multa(ainda não utilizado)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "description",
+          "rate",
+          "isOverDefaultInterest",
+          "isOverCompensatoryInterest"
+        ]
+      },
+      "DTORequestConfig": {
+        "title": "DTORequestConfig",
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "description": "IdPedidoCausa<br />`Required`<br /> ",
+            "type": "integer"
+          },
+          "requestName": {
+            "description": "Nome do Pedido<br />`Required`<br />",
+            "type": "string"
+          },
+          "templateId": {
+            "description": "Identificador do template utilizado",
+            "type": "integer",
+            "example": 3
+          },
+          "templateName": {
+            "description": "Nome do template utilizado",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "Ínicio do cálculo para o pedido",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "startDateEvent": {
+            "description": "Indica a partir de qual evento a data de início será definida<br />0 - Data específica(startDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />",
+            "type": "integer"
+          },
+          "startDateAfterNumber": {
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em q será definida a data inicial da vigência",
+            "example": "2",
+            "type": "integer"
+          },
+          "startDateAfterUnit": {
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos",
+            "type": "integer"
+          },
+          "finalDate": {
+            "description": "Data final do cálculo",
+            "example": "2021-05-03T12:00:00-03:00",
+            "type": "string"
+          },
+          "finalDateEvent": {
+            "description": "Indicador do Evento a partir do qual será definida a data final da vigência<br />0 - Data específica(finalDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />",
+            "example": "2",
+            "type": "integer"
+          },
+          "finalDateAfterNumber": {
+            "description": "Número de dias meses ou anos após o evento a partir do qual será definida a data final da vigência",
+            "example": "2",
+            "type": "integer"
+          },
+          "finalDateAfterUnit": {
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos",
+            "example": "2",
+            "type": "integer"
+          },
+          "contingency": {
+            "description": "Indica o percentual de contingência para cada risco",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOContingencyConfig"
+            }
+          },
+          "indexRuleList": {
+            "description": "Lista de configurações de correção monetária",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOIndexConfig"
+            }
+          },
+          "compensatoryInterestList": {
+            "description": "Lista de Configurações de Juros compensatórios",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOInterestsConfig"
+            }
+          },
+          "defaultInterestList": {
+            "description": "Lista de Configurações de Juros moratórios",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOInterestsConfig"
+            }
+          },
+          "rebateList": {
+            "description": "Lista de Configurações de Abatimentos",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTORebateConfig"
+            }
+          },
+          "fineList": {
+            "description": "Lista de Configurações de Multas",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOPenaltyConfig"
+            }
+          },
+          "defaultInterestOverCompensatoryInterest": {
+            "type": "boolean",
+            "description": "Indica se os juros moratórios são aplicados sobre os juros compensatórios"
+          },
+          "updateDate": {
+            "type": "string",
+            "description": "data da última alteração dessas configurações"
+          }
+        },
+        "required": [
+          "rate",
+          "IsProRata",
+          "capitalization",
+          "frequency"
+        ]
+      },
+      "DTOAttorneyFeesConfig": {
+        "title": "DTOAttorneyFeesConfig",
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "Descrição do honorário<br />`Required`<br />",
+            "type": "string"
+          },
+          "rate": {
+            "description": "percentual de honorários a ser aplicado<br />`Required`<br />",
+            "example": "isOverCompensatoryInterest indica se o percentual é aplicado também sobre os juros compensatórios",
+            "type": "boolean"
+          },
+          "isOverDefaultInterest": {
+            "description": "Indica se o percental é aplicado também sobre os juros moratórios<br />`Required`<br />",
+            "type": "boolean",
+            "isOverCompensatoryInterest": {
+              "description": "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br />",
+              "type": "boolean"
+            }
+          },
+          "isOverFine": {
+            "description": "Indica se o percentual deve ser aplicado sobre a multa<br />`Required`<br />",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "description",
+          "rate",
+          "isOverDefaultInterest",
+          "isOverFine",
+          "isOverCompensatoryInterest"
+        ]
+      },
+      "DTOCalcConfig": {
+        "title": "DTOCalcConfig",
+        "type": "object",
+        "properties": {
+          "requests": {
+            "description": "Lista de configurações de pedidos",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTORequestConfig"
+            }
+          },
+          "succumbentialAttorneyFees": {
+            "description": "Lista de configurações de pedidos",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOAttorneyFeesConfig"
+            }
+          },
+          "contractualAttorneyFees": {
+            "description": "Lista de configurações de pedidos",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOAttorneyFeesConfig"
+            }
+          },
+          "appealAttorneyFees": {
+            "description": "Lista de configurações de pedidos",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOAttorneyFeesConfig"
             }
           }
         }

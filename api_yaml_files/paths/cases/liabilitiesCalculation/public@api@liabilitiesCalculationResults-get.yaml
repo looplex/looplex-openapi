@@ -1,15 +1,16 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Liabilities Calculation
-summary: "Calcula caso"
-operationId: api-liabilitiesCalculation-calculaCaso-post
+summary: "Resultados de Cáculo - Listar"
+description: "Lista Resultados do cálculo do Caso"
+operationId: api-liabilitiesCalculationResults-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
-  - name: cdProcesso
-    in: path
-    example: 10
-    description: "Identificador do caso"
+  - name: idCaso
+    in: query
+    example: '12'
+    description: "id do caso"
     required: true
     schema:
       type: integer
@@ -22,7 +23,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/DTOResultadoCalculo.yaml
+          $ref: ../../../components/schemas/cases/DTOResultadoCalculoSavedWithId.yaml
   "401":
     description: "Unauthorized"
     content:

@@ -1,0 +1,43 @@
+title: DTOIndexConfig
+type: object
+properties:
+  indexId:
+    description: "Identificador do índice<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+    example: "1"
+    type: integer
+  indexName:
+    description: "Nome do índice"
+    example: "IPCA"
+    type: string
+  startDate:
+    description: "Ínicio da vigência do índice"
+    example: "2021-05-03T12:00:00-03:00"
+    type: string
+  startDateEvent:
+    description: "Indica a partir de qual evento a data de início será definida<br />0 - Data específica(startDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+    type: integer
+  startDateAfterNumber:
+    description: "Indica a quantidade de dias, meses ou anos após o evento em q será definida a data inicial da vigência"
+    example: "2"
+    type: integer
+  startDateAfterUnit:
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+    type: integer
+  finalDate:
+    description: "Data final da vigência "
+    example: "2021-05-03T12:00:00-03:00"
+    type: string
+  finalDateEvent:
+    description: "Indicador do Evento a partir do qual será definida a data final da vigência<br />0 - Data específica(finalDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />"
+    example: "2"
+    type: integer
+  finalDateAfterNumber:
+    description: "Número de dias meses ou anos após o evento a partir do qual será definida a data final da vigência"
+    example: "2"
+    type: integer
+  finalDateAfterUnit:
+    description: "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+    example: "2"
+    type: integer
+required:
+  - indexId

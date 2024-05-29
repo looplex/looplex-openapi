@@ -1,0 +1,27 @@
+title: DTOContingencyConfig
+type: object
+properties:
+  loss: 
+    type: object
+    properties:
+      likely:
+        description: "Percentual para o risco provável de perda"
+        type: number
+      possible: 
+        description: "Percentual para o risco possível de perda"
+        type: number
+      remote: 
+        description: "Percentual para o risco remoto de perda"
+        type: number 
+  success: 
+    type: object
+    properties:
+      likely:
+        description: "Percentual para o risco provável de êxito"
+        type: number
+      possible: 
+        description: "Percentual para o risco possível de êxito"
+        type: number
+      remote: 
+        description: "Percentual para o risco remoto de êxito"
+        type: number 

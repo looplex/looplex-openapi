@@ -1,0 +1,25 @@
+title: DTOAttorneyFeesConfig
+type: object
+properties:
+  description:
+    description: "Descrição do honorário<br />`Required`<br />"
+    type: string
+  rate:
+    description: "percentual de honorários a ser aplicado<br />`Required`<br />"
+    example: "isOverCompensatoryInterest indica se o percentual é aplicado também sobre os juros compensatórios"
+    type: boolean
+  isOverDefaultInterest:
+    description: "Indica se o percental é aplicado também sobre os juros moratórios<br />`Required`<br />"
+    type: boolean
+  isOverCompensatoryInterest:
+      description: "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br />"
+      type: boolean
+  isOverFine:
+    description: "Indica se o percentual deve ser aplicado sobre a multa<br />`Required`<br />"
+    type: boolean
+required:
+  - description
+  - rate
+  - isOverDefaultInterest
+  - isOverFine
+  - isOverCompensatoryInterest

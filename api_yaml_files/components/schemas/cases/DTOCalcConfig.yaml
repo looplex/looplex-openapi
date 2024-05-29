@@ -1,0 +1,23 @@
+title: DTOCalcConfig
+type: object
+properties:
+  requests:
+    description: "Lista de configurações de pedidos"
+    type: array
+    items:
+      $ref: DTORequestConfig.yaml
+  succumbentialAttorneyFees:
+    description: "Lista de configurações de pedidos"
+    type: array
+    items:
+      $ref: DTOAttorneyFeesConfig.yaml
+  contractualAttorneyFees:
+    description: "Lista de configurações de pedidos"
+    type: array
+    items:
+      $ref: DTOAttorneyFeesConfig.yaml
+  appealAttorneyFees:
+    description: "Lista de configurações de pedidos"
+    type: array
+    items:
+      $ref: DTOAttorneyFeesConfig.yaml
