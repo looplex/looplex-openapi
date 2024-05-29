@@ -1,0 +1,8 @@
+type: object
+properties:
+  Message: 
+    type: string
+    description: "Erro"
+  ExceptionMessage: 
+    type: string
+    description: "`BadRequest`<br />Indica que o formato da requisição está incorreto"
