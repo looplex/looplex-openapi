@@ -7,6 +7,7 @@ operationId: api-tarefas-titulos-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: arrTipoTarefa
     in: query
     required: true

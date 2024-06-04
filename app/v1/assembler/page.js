@@ -9,7 +9,7 @@ export default function Assembler () {
     <RedocStandalone
       spec={json}
       options={{
-        sortTagsAlphabetically: true,
+        sortTagsAlphabetically: false,
         downloadFileName: 'openapi_looplex_assembler.json'
       }}
     />

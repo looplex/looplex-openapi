@@ -5,6 +5,7 @@ description: Obtém as categorias de funcionário de acordo com o filtro informa
 operationId: api-funcionarios-IdsMin-IdsMax-categorias
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IdsMin
     in: path
     required: true

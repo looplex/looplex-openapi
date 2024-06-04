@@ -6,6 +6,7 @@ operationId: api-liabilitiesCalculation-calculaCaso-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: cdProcesso
     in: path
     example: 10

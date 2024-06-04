@@ -6,6 +6,7 @@ operationId: api-casos-Garantia-IDGarantia-ObtemMovimentacao-IDGarantiaMovimenta
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IDGarantia
     in: path
     description: "O identificador da garantia"

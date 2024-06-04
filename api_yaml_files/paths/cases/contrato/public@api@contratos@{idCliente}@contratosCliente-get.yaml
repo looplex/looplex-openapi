@@ -4,6 +4,7 @@ summary: "Lista os contratos do cliente"
 operationId: api-contratos-idCliente-contratosCliente
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IDCliente
     in: path
     required: true

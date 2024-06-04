@@ -7,6 +7,7 @@ operationId: api-dado_complementar_caso
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: clienteId
     in: query
     description: "O identificador do cliente"

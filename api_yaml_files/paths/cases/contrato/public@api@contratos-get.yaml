@@ -4,6 +4,7 @@ summary: "Lista os contratos por situação (ativos / inativos)"
 operationId: api-contratos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: ativos
     in: query
     description: "`Default: true`<br />Lista os contratos ativos?"

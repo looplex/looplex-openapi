@@ -4,6 +4,7 @@ summary: "Lista casos por filtro"
 operationId: api-casos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idsCliente
     in: query    
     required: false

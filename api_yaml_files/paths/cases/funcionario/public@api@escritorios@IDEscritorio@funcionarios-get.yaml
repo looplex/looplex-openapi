@@ -6,6 +6,7 @@ operationId: api-escritorios-IDEscritorio-funcionarios-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IDEscritorio
     in: path
     description: "O identificador do escritório"

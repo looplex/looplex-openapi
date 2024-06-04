@@ -6,6 +6,7 @@ operationId: api-casos-por_pagina-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: currentPage
     in: query
     example: 1

@@ -5,6 +5,10 @@ summary: Login Token
 description: Login com token de acesso
 operationId: api-session
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+parameters:
+  - name: Ocp-Apim-Subscription-Key
+    in: header
+    $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:

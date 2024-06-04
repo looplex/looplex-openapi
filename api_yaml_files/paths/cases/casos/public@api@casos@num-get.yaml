@@ -6,6 +6,7 @@ operationId: api-casos-num-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IdProcesso
     in: query
     description: "Os identificadores dos casos"

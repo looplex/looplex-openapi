@@ -5,6 +5,7 @@ summary: "Lista os clientes e casos que correspondem ao termo informado"
 operationId: api-busca-mobilenovo
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: termo
     in: query
     required: true

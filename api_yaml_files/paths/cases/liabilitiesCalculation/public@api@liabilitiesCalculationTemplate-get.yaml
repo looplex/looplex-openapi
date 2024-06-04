@@ -7,6 +7,7 @@ operationId: api-liabilitiesCalculationTemplate-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: templateId
     in: query
     example: 'teste-hidden_obligation'

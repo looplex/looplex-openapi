@@ -1,10 +1,10 @@
 tags: 
   - Hierarquia 
 summary: "Lista os ritos de acordo com os filtros informados"
-
 operationId: api-hierarquia-ritos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: nrClasse
     in: query
     required: false

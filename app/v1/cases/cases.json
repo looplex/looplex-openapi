@@ -25,11 +25,7 @@
       "description": "Cases Server"
     }
   ],
-  "security": [
-    {
-      "Ocp-Apim-Subscription-Key": []
-    }
-  ],
+  "security": [],
   "externalDocs": {
     "description": "Find out how to create a GitHub repo for your OpenAPI definition.",
     "url": "https://github.com/Rebilly/generator-openapi-repo"
@@ -43,6 +39,11 @@
         "summary": "Login",
         "description": "Login do Looplex Cases",
         "operationId": "api-logon",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -116,6 +117,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipoCaso",
@@ -194,6 +198,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -264,6 +271,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCaso",
@@ -343,6 +353,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -440,6 +453,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -518,6 +534,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDAndamento",
             "in": "path",
             "required": true,
@@ -590,6 +609,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDAndamento",
@@ -675,6 +697,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDAndamento",
@@ -789,6 +814,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "ativos",
             "in": "query",
             "description": "Listar áreas ativas?<br />`Default: true`",
@@ -876,6 +904,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "required": true,
@@ -948,6 +979,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "termo",
@@ -1051,6 +1085,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCaso",
             "in": "path",
             "required": true,
@@ -1128,6 +1165,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "ID",
             "in": "path",
             "required": true,
@@ -1200,6 +1240,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ID",
@@ -1291,6 +1334,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -1360,6 +1406,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -1429,6 +1478,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ID",
@@ -1503,6 +1555,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCaso",
@@ -1580,6 +1635,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idsCliente",
@@ -1743,6 +1801,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -1822,6 +1883,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -1909,6 +1973,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -2025,6 +2092,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador do caso",
@@ -2098,6 +2168,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -2196,6 +2269,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "ids",
             "in": "path",
             "description": "Os identificadores dos casos",
@@ -2276,6 +2352,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IdProcesso",
@@ -2386,6 +2465,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "ativos",
             "in": "query",
             "description": "Listar casos ativos?<br />`Default: true`",
@@ -2471,6 +2553,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "termo",
@@ -2569,6 +2654,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "termo",
             "in": "query",
             "description": "O termo para pesquisa",
@@ -2663,6 +2751,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -2732,6 +2823,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -2807,6 +2901,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -2905,6 +3002,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "cdResponsavel",
             "in": "path",
             "description": "O identificador do funcionário",
@@ -2983,6 +3083,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "cdProcessoPai",
             "in": "path",
             "description": "O identificador do caso pai",
@@ -3059,6 +3162,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -3128,6 +3234,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "listarTimesheet",
@@ -3292,6 +3401,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "currentPage",
@@ -3510,6 +3622,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -3577,6 +3692,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -3650,6 +3768,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -3725,6 +3846,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrGrupo",
@@ -3804,6 +3928,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "nrSequencia",
             "in": "path",
             "description": "O numero do caso",
@@ -3877,6 +4004,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -3976,6 +4106,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IdEscritorio",
             "in": "path",
             "required": true,
@@ -4062,6 +4195,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IdEscritorio",
             "in": "path",
             "required": true,
@@ -4138,6 +4274,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IdsMin",
@@ -4223,6 +4362,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -4292,6 +4434,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCliente",
@@ -4369,6 +4514,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCliente",
             "in": "query",
             "description": "O identificador do cliente",
@@ -4442,6 +4590,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -4547,6 +4698,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -4616,6 +4770,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -4723,6 +4880,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador do cliente",
@@ -4796,6 +4956,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idsClientes",
@@ -4883,6 +5046,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDContato",
             "in": "path",
             "required": true,
@@ -4956,6 +5122,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -5025,6 +5194,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCliente",
@@ -5105,6 +5277,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "codCliente",
             "in": "query",
             "required": true,
@@ -5183,6 +5358,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDContrato",
             "in": "path",
             "required": true,
@@ -5256,6 +5434,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCliente",
@@ -5354,6 +5535,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCliente",
             "in": "path",
             "required": true,
@@ -5450,6 +5634,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCaso",
             "in": "path",
             "required": true,
@@ -5523,6 +5710,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -5610,6 +5800,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -5690,6 +5883,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "cdCumprimento",
             "in": "path",
             "example": 10,
@@ -5764,6 +5960,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -5833,6 +6032,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -5902,6 +6104,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -5975,6 +6180,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "cdPedido",
             "in": "path",
             "example": "10",
@@ -6042,6 +6250,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -6120,6 +6331,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -6216,6 +6430,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -6285,6 +6502,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -6360,6 +6580,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -6444,6 +6667,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador da decisão",
@@ -6517,6 +6743,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador da decisão",
@@ -6583,6 +6812,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -6661,6 +6893,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -6727,6 +6962,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "dataDespesaString",
@@ -6805,6 +7043,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -6874,6 +7115,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -6943,6 +7187,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -7012,6 +7259,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -7081,6 +7331,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -7150,6 +7403,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -7219,6 +7475,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idVoucher",
@@ -7299,6 +7558,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idVoucher",
             "in": "path",
             "description": "O identificador do voucher",
@@ -7375,6 +7637,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ano",
@@ -7472,6 +7737,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador da despesa",
@@ -7545,6 +7813,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "selecionaAprovador",
@@ -7631,6 +7902,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "selecionaAprovador",
             "in": "query",
             "description": "`Default: false`",
@@ -7713,6 +7987,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -7780,6 +8057,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -7857,6 +8137,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -7930,6 +8213,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -8019,6 +8305,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -8092,6 +8381,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -8161,6 +8453,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ids",
@@ -8244,6 +8539,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDFuncionario",
             "in": "path",
             "description": "O identificador do funcionário",
@@ -8317,6 +8615,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ativos",
@@ -8404,6 +8705,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDArea",
@@ -8502,6 +8806,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDFuncionario",
             "in": "path",
             "description": "O identificador do funcionário",
@@ -8580,6 +8887,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDEscritorio",
             "in": "path",
             "description": "O identificador do escritório",
@@ -8656,6 +8966,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -8725,6 +9038,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -8840,6 +9156,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCasoGarantia",
             "in": "path",
             "description": "O identificador da garantia",
@@ -8913,6 +9232,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCaso",
@@ -8991,6 +9313,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9060,6 +9385,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -9158,6 +9486,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -9238,6 +9569,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCaso",
@@ -9324,6 +9658,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -9404,6 +9741,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDGarantia",
@@ -9488,6 +9828,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -9561,6 +9904,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDProcessoGarantia",
@@ -9639,6 +9985,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrClasse",
@@ -9744,6 +10093,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -9813,6 +10165,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrRamoJudicial",
@@ -9891,6 +10246,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "nrRamoJudicial",
@@ -10007,6 +10365,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "nrRamoJudicial",
             "in": "query",
             "required": false,
@@ -10112,6 +10473,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "nrRamoJudicial",
             "in": "query",
             "required": true,
@@ -10187,6 +10551,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdGrupoForo",
@@ -10269,6 +10636,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "regiao",
@@ -10360,6 +10730,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "nrRamoJudicial",
             "in": "query",
             "required": false,
@@ -10439,6 +10812,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDParametroDadoComplementar",
             "in": "path",
             "description": "O identificador da Informação adicional",
@@ -10512,6 +10888,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -10582,6 +10961,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "clienteId",
@@ -10688,6 +11070,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "tipoCaso",
             "in": "path",
             "required": true,
@@ -10774,6 +11159,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCaso",
             "in": "path",
             "description": "O identificador do processo",
@@ -10850,6 +11238,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -10947,6 +11338,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -11027,6 +11421,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -11104,6 +11501,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDParametroDadoComplementar",
@@ -11194,6 +11594,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "tiposCaso",
             "in": "query",
             "required": false,
@@ -11278,6 +11681,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -11347,13 +11753,16 @@
     "/api/liabilitiesCalculation/calculaCaso/{cdProcesso}": {
       "post": {
         "tags": [
-          "LiabilitiesCalculation"
+          "Liabilities Calculation"
         ],
         "summary": "Calcula caso",
         "operationId": "api-liabilitiesCalculation-calculaCaso-post",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdProcesso",
@@ -11423,14 +11832,17 @@
     "/api/liabilitiesCalculationResults": {
       "get": {
         "tags": [
-          "LiabilitiesCalculation"
+          "Liabilities Calculation"
         ],
-        "summary": "api/liabilitiesCalculationResults",
+        "summary": "Resultados de Cáculo - Listar",
         "description": "Lista Resultados do cálculo do Caso",
         "operationId": "api-liabilitiesCalculationResults-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -11498,14 +11910,17 @@
       },
       "post": {
         "tags": [
-          "LiabilitiesCalculation"
+          "Liabilities Calculation"
         ],
-        "summary": "api/liabilitiesCalculationResults",
+        "summary": "Resultados de Cáculo - Salvar",
         "description": "Salva resultado de cálculo",
         "operationId": "api-liabilitiesCalculationResults-post",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -11569,12 +11984,15 @@
         "tags": [
           "Liabilities Calculation"
         ],
-        "summary": "Parâmetros de Cálculo",
+        "summary": "Parâmetros de Cálculo - Listar",
         "description": "Lista os parêmteros de cálculo do caso",
         "operationId": "api-liabilitiesCalculationEntities-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "caseid",
@@ -11654,12 +12072,15 @@
         "tags": [
           "Liabilities Calculation"
         ],
-        "summary": "Salvar Parâmetros de Cálculo",
+        "summary": "Parâmetros de Cálculo - Salvar",
         "description": "Salva os Parâmetros de Cálculo",
         "operationId": "api-liabilitiesCalculationEntities-post",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "env",
@@ -11682,6 +12103,171 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/liabilitiesCalculationTemplate": {
+      "get": {
+        "tags": [
+          "Liabilities Calculation"
+        ],
+        "summary": "Template de Cálculo - Lista",
+        "description": "Lista templates de parâmetros de cálculo",
+        "operationId": "api-liabilitiesCalculationTemplate-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "templateId",
+            "in": "query",
+            "example": "teste-hidden_obligation",
+            "description": "identificador do template, se nenhum forindicado, lista todos",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "env",
+            "in": "query",
+            "example": "QA",
+            "description": "environment",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCalcTemplate"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Liabilities Calculation"
+        ],
+        "summary": "Template de cálculo - Salvar",
+        "description": "Salva um template de parâmetros de cálculo",
+        "operationId": "api-liabilitiesCalculationTemplate-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCalcTemplate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "401": {
             "description": "Unauthorized",
             "content": {
@@ -11736,6 +12322,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -11815,6 +12404,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -11885,6 +12477,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -11965,6 +12560,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -12041,6 +12639,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -12139,6 +12740,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "TipoCaso",
             "in": "query",
             "required": true,
@@ -12224,6 +12828,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -12294,6 +12901,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -12364,6 +12974,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "uf",
@@ -12443,6 +13056,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipoProcesso",
@@ -12538,6 +13154,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -12616,6 +13235,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "nome",
             "in": "query",
             "description": "O texto para pesquisa<br />`Mínimo de 4 caracteres`",
@@ -12692,6 +13314,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -12788,6 +13413,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -12871,6 +13499,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "processo",
             "in": "query",
             "description": "O identificador do caso",
@@ -12946,6 +13577,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idParte",
@@ -13026,6 +13660,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCaso",
             "in": "path",
             "example": 1,
@@ -13101,6 +13738,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCaso",
@@ -13190,6 +13830,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -13286,6 +13929,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -13355,6 +14001,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -13424,6 +14073,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipoJustica",
@@ -13501,6 +14153,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -13570,6 +14225,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "IDCasoPedido",
@@ -13647,6 +14305,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -13727,6 +14388,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -13803,6 +14467,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -13899,6 +14566,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ano",
@@ -14013,6 +14683,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador da publicação",
@@ -14086,6 +14759,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -14164,6 +14840,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "id",
@@ -14250,6 +14929,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador da publicação",
@@ -14332,6 +15014,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -14405,6 +15090,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -14481,6 +15169,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdPublicacao",
@@ -14570,6 +15261,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "cdPublicacao",
             "in": "query",
             "description": "O identificador da publicação",
@@ -14650,6 +15344,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "currentPage",
@@ -14803,6 +15500,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idEscritorio",
             "in": "path",
             "required": true,
@@ -14881,6 +15581,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idEscritorio",
             "in": "path",
             "required": true,
@@ -14956,6 +15659,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "cdProcesso",
@@ -15070,6 +15776,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador do item de agenda",
@@ -15151,6 +15860,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idsFuncionarios",
@@ -15286,6 +15998,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDItemAgenda",
             "in": "query",
             "description": "O identificador do item de agenda",
@@ -15379,6 +16094,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -15443,6 +16161,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "data",
@@ -15541,6 +16262,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "ano",
             "in": "query",
             "description": "O ano para pesquisa",
@@ -15634,6 +16358,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -15708,6 +16435,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -15783,6 +16513,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -15897,6 +16630,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -15966,6 +16702,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -16035,6 +16774,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "tipo",
@@ -16128,6 +16870,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -16207,6 +16952,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -16290,6 +17038,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -16366,6 +17117,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -16464,6 +17218,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCaso",
             "in": "path",
             "description": "Os identificadores dos casos",
@@ -16543,6 +17300,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -16639,6 +17399,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "inCompromisso",
@@ -16756,6 +17519,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "client_id",
             "in": "header",
             "description": "O identificador do client que está efetuando a operação",
@@ -16863,6 +17629,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "IDPublicacao",
             "in": "query",
             "required": false,
@@ -16954,6 +17723,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idsTarefa",
             "description": "Os ids das tarefas",
             "in": "query",
@@ -17043,6 +17815,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "arrTipoTarefa",
@@ -17190,6 +17965,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "required": true,
@@ -17272,6 +18050,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "paginaAtual",
@@ -17482,6 +18263,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idsFuncionarios",
             "in": "query",
             "example": "10,25,30",
@@ -17585,6 +18369,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -17649,6 +18436,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -17718,6 +18508,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -17787,6 +18580,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -17856,6 +18652,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "ano",
@@ -17945,6 +18744,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idFuncionario",
             "in": "path",
             "description": "O identificador do funcionário",
@@ -18023,6 +18825,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idArea",
             "in": "path",
             "description": "O identificador da área",
@@ -18099,6 +18904,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -18168,6 +18976,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -18237,6 +19048,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -18335,6 +19149,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "idCaso",
             "in": "path",
             "description": "O identificador do caso",
@@ -18413,6 +19230,9 @@
             "$ref": "#/components/parameters/Profile"
           },
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "id",
             "in": "path",
             "description": "O identificador do lançamento de hora",
@@ -18486,6 +19306,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -18561,6 +19384,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -18636,6 +19462,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -18711,6 +19540,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "requestBody": {
@@ -18786,6 +19618,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -18850,6 +19685,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           }
         ],
         "responses": {
@@ -18914,6 +19752,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "idCaso",
@@ -18992,6 +19833,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
           },
           {
             "name": "NumeroInterno",
@@ -19086,12 +19930,6 @@
         "in": "header",
         "name": "api_key"
       },
-      "Ocp-Apim-Subscription-Key": {
-        "type": "apiKey",
-        "in": "header",
-        "description": "Subscription key provided by Looplex",
-        "name": "Ocp-Apim-Subscription-Key"
-      },
       "auth_token": {
         "type": "apiKey",
         "in": "header",
@@ -19100,6 +19938,26 @@
       "basic_auth": {
         "type": "http",
         "scheme": "basic"
+      }
+    },
+    "parameters": {
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header",
+        "description": "Subscription key provided by Looplex",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Profile": {
+        "name": "Profile",
+        "in": "header",
+        "description": "Profile obtained when logged in",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
       }
     },
     "schemas": {
@@ -25845,12 +26703,12 @@
           "IsProportional": {
             "description": "False se a ordem é definida por rebateOrder, true se abate proporcionalmente dos montantes diante da respectiva contribuição na soma dos 3 montantes<br />`Required`<br />",
             "type": "boolean"
-          },
-          "required": [
-            "rebateOrder",
-            "IsProportional"
-          ]
-        }
+          }
+        },
+        "required": [
+          "rebateOrder",
+          "IsProportional"
+        ]
       },
       "DTOPenaltyConfig": {
         "title": "DTOPenaltyConfig",
@@ -25871,11 +26729,11 @@
           },
           "isOverDefaultInterest": {
             "description": "Indica se o percental é aplicado também sobre os juros moratórios<br />`Required`<br />",
-            "type": "boolean",
-            "isOverCompensatoryInterest": {
-              "description": "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br /",
-              "type": "boolean"
-            }
+            "type": "boolean"
+          },
+          "isOverCompensatoryInterest": {
+            "description": "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br /",
+            "type": "boolean"
           },
           "eventId": {
             "description": "Identificador de evento relacionado com a multa(ainda não utilizado)",
@@ -26025,11 +26883,11 @@
           },
           "isOverDefaultInterest": {
             "description": "Indica se o percental é aplicado também sobre os juros moratórios<br />`Required`<br />",
-            "type": "boolean",
-            "isOverCompensatoryInterest": {
-              "description": "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br />",
-              "type": "boolean"
-            }
+            "type": "boolean"
+          },
+          "isOverCompensatoryInterest": {
+            "description": "Indica se o percental é aplicado também sobre os juros compensatórios<br />`Required`<br />",
+            "type": "boolean"
           },
           "isOverFine": {
             "description": "Indica se o percentual deve ser aplicado sobre a multa<br />`Required`<br />",
@@ -26075,6 +26933,440 @@
             "items": {
               "$ref": "#/components/schemas/DTOAttorneyFeesConfig"
             }
+          }
+        }
+      },
+      "DTOCalcTemplate": {
+        "title": "DTOCalcTemplate",
+        "type": "object",
+        "properties": {
+          "parameterModelName": {
+            "type": "string",
+            "description": "Nome do Template"
+          },
+          "parameterLinkedCaseTypes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Tipos de caso vinculados<br />1 = Administrativo<br />2 = Consultivo<br />3 = Judicial Estadual<br />4 = Judicial Federal<br />5 = Judicial trabalhista<br />7 = Militar Estadual<br />8 = Eleitoral<br />9 = Militar União<br />10 = Consultivo - Contrato<br />11 = Consultivo - Análise Documental<br />12 = Consultivo - Gestão de Ativos<br />13 = Consultivo - Societário "
+          },
+          "parameterLinkedObligations": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Ids pedidos causa que podem utilizar este template"
+          },
+          "parameterLossLikely": {
+            "type": "number",
+            "description": "Percentual de contingência para perda provável"
+          },
+          "parameterLossPossible": {
+            "type": "number",
+            "description": "Percentual de contingência para perda possível"
+          },
+          "parameterLossRemote": {
+            "type": "number",
+            "description": "Percentual de contingência para perda remota"
+          },
+          "parameterSuccessLikely": {
+            "type": "number",
+            "description": "Percentual de contingência para êxito provável"
+          },
+          "parameterSuccessPossible": {
+            "type": "number",
+            "description": "Percentual de contingência para êxito possível"
+          },
+          "parameterSuccessRemote": {
+            "type": "number",
+            "description": "Percentual de contingência para êxito remoto"
+          },
+          "rateMaintenanceRate": {
+            "type": "integer",
+            "description": "Identificador do índice de correção da primeira faixa de configuração de correção monetária"
+          },
+          "rateStartPeriod_Event": {
+            "type": "integer",
+            "description": "Indica a partir de qual evento a data de início da primeira faixa de configuração de correção monetária será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+          },
+          "rateStartPeriod_AfterNumber": {
+            "type": "integer",
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da primeira faixa de configuração de correção monetária"
+          },
+          "rateStartPeriod_AfterUnit": {
+            "type": "integer",
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da primeira faixa de configuração de correção monetária a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+          },
+          "rateStartPeriod_SpecificDate": {
+            "type": "string",
+            "description": "data de início  da primeira faixa de configuração de correção monetária"
+          },
+          "rateEndPeriod_Switch": {
+            "type": "boolean",
+            "description": "true se estipula data final para a primeira  faixa de configuração de correção monetária"
+          },
+          "rateEndPeriod_Event": {
+            "type": "integer",
+            "description": "Indica a partir de qual evento a data final da primeira faixa de configuração de correção monetária será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+          },
+          "rateEndPeriod_AfterNumber": {
+            "type": "integer",
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de correção monetária"
+          },
+          "rateEndPeriod_AfterUnit": {
+            "type": "integer",
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da primeira faixa de configuração de correção monetária a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+          },
+          "rateEndPeriod_SpecificDate": {
+            "type": "string",
+            "description": "data de fim  da primeira faixa de configuração de correção monetária"
+          },
+          "compensatoryStartPeriod_Event": {
+            "type": "integer",
+            "description": "Indica a partir de qual evento a data final da primeira faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+          },
+          "compensatoryStartPeriod_AfterNumber": {
+            "type": "integer",
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da primeira faixa de configuração de juros compensatórios"
+          },
+          "compensatoryStartPeriod_AfterUnit": {
+            "type": "integer",
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da primeira faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+          },
+          "compensatoryStartPeriod_SpecificDate": {
+            "type": "string",
+            "description": "data de início  da primeira faixa de configuração de juros compensatórios"
+          },
+          "compensatoryEndPeriod_Event": {
+            "type": "integer",
+            "description": "Indica a partir de qual evento a data final da primeira faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+          },
+          "compensatoryEndPeriod_AfterNumber": {
+            "type": "integer",
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de juros compensatórios"
+          },
+          "compensatoryEndPeriod_AfterUnit": {
+            "type": "integer",
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da primeira faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+          },
+          "compensatoryEndPeriod_SpecificDate": {
+            "type": "string",
+            "description": "data final  da primeira faixa de configuração de juros compensatórios"
+          },
+          "compensatoryRate": {
+            "type": "number",
+            "description": "Taxa de juros em porcentagem da primeira faixa de configuração de juros compensatórios"
+          },
+          "compensatoryProRataCheck": {
+            "type": "boolean",
+            "description": "Indica se o juros da primeira faixa  de configuração de juros compensatórios é pro rata"
+          },
+          "compensatoryFrequency": {
+            "type": "integer",
+            "description": "3 se  juros compensatórios da primeira faixa de configuração são Mensais, 4 se Anuais"
+          },
+          "compensatoryCapitalization": {
+            "type": "integer",
+            "description": "1 se  juros compensatórios da primeira faixa de configuração são simples, 2 se juro compostos"
+          },
+          "defaultCalcInterestCheckbox": {
+            "type": "boolean",
+            "description": "Indica se os juros moratórios são aplicados sobre os compensatórios"
+          },
+          "defaultStartPeriod_Event": {
+            "type": "integer",
+            "description": "Indica a partir de qual evento a data final da primeira faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+          },
+          "defaultStartPeriod_AfterNumber": {
+            "type": "integer",
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da primeira faixa de configuração de juros moratórios"
+          },
+          "defaultStartPeriod_AfterUnit": {
+            "type": "integer",
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da primeira faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+          },
+          "defaultStartPeriod_SpecificDate": {
+            "type": "string",
+            "description": "data de início  da primeira faixa de configuração de juros moratórios"
+          },
+          "defaultEndPeriod_Event": {
+            "type": "integer",
+            "description": "Indica a partir de qual evento a data final da primeira faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+          },
+          "defaultEndPeriod_AfterNumber": {
+            "type": "integer",
+            "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de juros moratórios"
+          },
+          "defaultEndPeriod_AfterUnit": {
+            "type": "integer",
+            "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da primeira faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+          },
+          "defaultEndPeriod_SpecificDate": {
+            "type": "string",
+            "description": "data final  da primeira faixa de configuração de juros moratórios"
+          },
+          "defaultRate": {
+            "type": "number",
+            "description": "Taxa de juros em porcentagem da primeira faixa de configuração de juros moratórios"
+          },
+          "defaultProRataCheck": {
+            "type": "boolean",
+            "description": "Indica se o juros da primeira faixa  de configuração de juros moratórios é pro rata"
+          },
+          "defaultFrequency": {
+            "type": "integer",
+            "description": "3 se  juros moratórios da primeira faixa de configuração são Mensais, 4 se Anuais"
+          },
+          "defaultCapitalization": {
+            "type": "integer",
+            "description": "1 se juros moratórios da primeira faixa de configuração são  simples, 2 se  compostos"
+          },
+          "fineDescription": {
+            "type": "string",
+            "description": "Nome da multa da primeira faixa de configuração de multa"
+          },
+          "fineEvent": {
+            "type": "string",
+            "description": "Campo livre de evento relacionado com a multa da primeira faixa de configuração de multa"
+          },
+          "finePercentage": {
+            "type": "number",
+            "description": "Percentual de multa da  primeira faixa de configuração  de multa"
+          },
+          "fineIncidence": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Indica os montantes sobre os quais são aplicados a multa  de multa da primeira faixa de configuração de multa<br /> 1 = Montante Principal(sempre deve estar no array)<br />2 = Juros Compensatórios<br />3 = Juros Moratórios"
+          },
+          "rebateRuleType": {
+            "type": "integer",
+            "description": "Tipo de abatimento<br />1 = Pagamento<br />2 = Perdão ou Anistia<br />3 = Compensação com Garantia<br />4 = Cessão ou transferência<br />"
+          },
+          "rebateDescription": {
+            "type": "string",
+            "description": "Nome do Abatimento"
+          },
+          "rebateOrderFirst": {
+            "type": "integer",
+            "description": "Indica o primeiro montante do qual deve ser descontado o abatimento<br />0 = Juros Moratórios<br />1 = Juros Compensatórios<br />2 = Principal Atualizado "
+          },
+          "rebateOrderSecond": {
+            "type": "integer",
+            "description": "Indica o segundo montante do qual deve ser descontado o abatimento<br />0 = Juros Moratórios<br />1 = Juros Compensatórios<br />2 = Principal Atualizado "
+          },
+          "rebateOrderThird": {
+            "type": "integer",
+            "description": "Indica o terceiro montante do qual deve ser descontado o abatimento<br />0 = Juros Moratórios<br />1 = Juros Compensatórios<br />2 = Principal Atualizado "
+          },
+          "rebateOrderCheckboxProportionate": {
+            "type": "boolean",
+            "description": "Indica se em vez de abater um montante até o fim para começar a abater de outro, abate de todos proporcionalmente ao peso de cada montante sobre o montante total da dívida"
+          },
+          "formMaintenanceRate": {
+            "type": "array",
+            "description": "Faixas de correção monetárias exceto a primeira",
+            "items": {
+              "type": "object",
+              "properties": {
+                "rateMaintenanceRate": {
+                  "type": "integer",
+                  "description": "Identificador do índice de correção"
+                },
+                "rateStartPeriod_Event": {
+                  "type": "integer",
+                  "description": "Indica a partir de qual evento a data de início será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+                },
+                "rateStartPeriod_AfterNumber": {
+                  "type": "integer",
+                  "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial"
+                },
+                "rateStartPeriod_AfterUnit": {
+                  "type": "integer",
+                  "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+                },
+                "rateStartPeriod_SpecificDate": {
+                  "type": "string",
+                  "description": "data de início"
+                },
+                "rateEndPeriod_Switch": {
+                  "type": "boolean",
+                  "description": "true se estipula data final para a  faixa de configuração de correção monetária"
+                },
+                "rateEndPeriod_Event": {
+                  "type": "integer",
+                  "description": "Indica a partir de qual evento a data final da faixa de configuração de correção monetária será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+                },
+                "rateEndPeriod_AfterNumber": {
+                  "type": "integer",
+                  "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da  faixa de configuração de correção monetária"
+                },
+                "rateEndPeriod_AfterUnit": {
+                  "type": "integer",
+                  "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da  faixa de configuração de correção monetária a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+                },
+                "rateEndPeriod_SpecificDate": {
+                  "type": "string",
+                  "description": "data de fim  da faixa de configuração de correção monetária"
+                }
+              }
+            }
+          },
+          "formCompensatoryInterest": {
+            "description": "Lista de configurações de juros compensatórios exceto a primeira",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "compensatoryStartPeriod_Event": {
+                  "type": "integer",
+                  "description": "Indica a partir de qual evento a data final da faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+                },
+                "compensatoryStartPeriod_AfterNumber": {
+                  "type": "integer",
+                  "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da faixa de configuração de juros compensatórios"
+                },
+                "compensatoryStartPeriod_AfterUnit": {
+                  "type": "integer",
+                  "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+                },
+                "compensatoryStartPeriod_SpecificDate": {
+                  "type": "string",
+                  "description": "data de início  da faixa de configuração de juros compensatórios"
+                },
+                "compensatoryEndPeriod_Event": {
+                  "type": "integer",
+                  "description": "Indica a partir de qual evento a data final da faixa de configuração de juros compensatórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+                },
+                "compensatoryEndPeriod_AfterNumber": {
+                  "type": "integer",
+                  "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da faixa de configuração de juros compensatórios"
+                },
+                "compensatoryEndPeriod_AfterUnit": {
+                  "type": "integer",
+                  "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da faixa de configuração de juros compensatórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+                },
+                "compensatoryEndPeriod_SpecificDate": {
+                  "type": "string",
+                  "description": "data final  da faixa de configuração de juros compensatórios"
+                },
+                "compensatoryRate": {
+                  "type": "number",
+                  "description": "Taxa de juros em porcentagem da faixa de configuração de juros compensatórios"
+                },
+                "compensatoryProRataCheck": {
+                  "type": "boolean",
+                  "description": "Indica se o juros da faixa  de configuração de juros compensatórios é pro rata"
+                },
+                "compensatoryFrequency": {
+                  "type": "integer",
+                  "description": "3 se  juros compensatórios da faixa de configuração são Mensais, 4 se Anuais"
+                },
+                "compensatoryCapitalization": {
+                  "type": "integer",
+                  "description": "1 se  juros compensatórios da faixa de configuração são simples, 2 se juro compostos"
+                }
+              }
+            }
+          },
+          "formDefaultInterest": {
+            "description": "Lista de configurações de juros moratórios exceto a primeira",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "defaultStartPeriod_Event": {
+                  "type": "integer",
+                  "description": "Indica a partir de qual evento a data final da faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+                },
+                "defaultStartPeriod_AfterNumber": {
+                  "type": "integer",
+                  "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data inicial da vigência da faixa de configuração de juros moratórios"
+                },
+                "defaultStartPeriod_AfterUnit": {
+                  "type": "integer",
+                  "description": "Unidade (dias, mes ou ano) utilizada para definir a data inicial da vigência  da faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+                },
+                "defaultStartPeriod_SpecificDate": {
+                  "type": "string",
+                  "description": "data de início  da faixa de configuração de juros moratórios"
+                },
+                "defaultEndPeriod_Event": {
+                  "type": "integer",
+                  "description": "Indica a partir de qual evento a data final da faixa de configuração de juros moratórios será definida<br />0 - Data específica(__SpecificDate)<br />1 - Data de Distribuição<br />2 - Data de Citação<br />`Required`<br />"
+                },
+                "defaultEndPeriod_AfterNumber": {
+                  "type": "integer",
+                  "description": "Indica a quantidade de dias, meses ou anos após o evento em que será definida a data final da vigência da primeira faixa de configuração de juros moratórios"
+                },
+                "defaultEndPeriod_AfterUnit": {
+                  "type": "integer",
+                  "description": "Unidade (dias, mes ou ano) utilizada para definir a data final da vigência  da faixa de configuração de juros moratórios a partir de um evento<br />0 - Dias<br /> 1 - Meses<br /> 2 - Anos"
+                },
+                "defaultEndPeriod_SpecificDate": {
+                  "type": "string",
+                  "description": "data final  da faixa de configuração de juros moratórios"
+                },
+                "defaultRate": {
+                  "type": "number",
+                  "description": "Taxa de juros em porcentagem da faixa de configuração de juros moratórios"
+                },
+                "defaultProRataCheck": {
+                  "type": "boolean",
+                  "description": "Indica se o juros da primeira faixa  de configuração de juros moratórios é pro rata"
+                },
+                "defaultFrequency": {
+                  "type": "integer",
+                  "description": "3 se  juros moratórios da faixa de configuração são Mensais, 4 se Anuais"
+                },
+                "defaultCapitalization": {
+                  "type": "integer",
+                  "description": "1 se juros moratórios da faixa de configuração são  simples, 2 se  compostos"
+                }
+              }
+            }
+          },
+          "formFineRule": {
+            "description": "Lista de configuração de multa, exceto a primeira",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fineDescription": {
+                  "type": "string",
+                  "description": "Nome da multa da faixa de configuração de multa"
+                },
+                "fineEvent": {
+                  "type": "string",
+                  "description": "Campo livre de evento relacionado com a multa da faixa de configuração de multa"
+                },
+                "finePercentage": {
+                  "type": "number",
+                  "description": "Percentual de multa da  faixa de configuração  de multa"
+                },
+                "fineIncidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  },
+                  "description": "Indica os montantes sobre os quais são aplicados a multa  de multa da faixa de configuração de multa<br /> 1 = Montante Principal(sempre deve estar no array)<br />2 = Juros Compensatórios<br />3 = Juros Moratórios"
+                }
+              }
+            }
+          },
+          "id": {
+            "type": "string",
+            "description": "Identificador do template(nome do template trocando espaço por \"-\" eadicionando _obligation ao fim)"
+          },
+          "type": {
+            "type": "string",
+            "description": "Indica o tipo de template, por ora \"OBLIGATION\""
+          },
+          "isActive": {
+            "type": "string",
+            "description": "Indica se o template está ativo"
           }
         }
       },
@@ -27962,17 +29254,6 @@
           "IdCaso": {
             "type": "integer"
           }
-        }
-      }
-    },
-    "parameters": {
-      "Profile": {
-        "name": "Profile",
-        "in": "header",
-        "description": "Profile obtained when logged in",
-        "required": true,
-        "schema": {
-          "type": "string"
         }
       }
     }

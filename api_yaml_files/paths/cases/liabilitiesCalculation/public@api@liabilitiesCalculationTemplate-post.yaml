@@ -7,6 +7,7 @@ operationId: api-liabilitiesCalculationTemplate-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:
@@ -16,6 +17,8 @@ requestBody:
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
+  "204":
+    description: "No Content"
   "401":
     description: "Unauthorized"
     content:

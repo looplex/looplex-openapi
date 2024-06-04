@@ -6,6 +6,7 @@ operationId: api-despesas-proximoslancamentos-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: dataDespesaString
     in: query
     description: "A data para pesquisa"

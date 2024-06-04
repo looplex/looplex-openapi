@@ -6,6 +6,7 @@ operationId: api-clientes-porIds-idsClientes-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idsClientes
     in: path
     example: [1, 2]

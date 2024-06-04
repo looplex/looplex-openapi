@@ -4,6 +4,7 @@ summary: "Obtém o contrato por identificador"
 operationId: api-contratos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IDContrato
     in: path
     required: true

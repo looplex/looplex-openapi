@@ -6,6 +6,7 @@ operationId: api-casos-GarantiaMovimentacao-Exclui-IDGarantiaMovimentacao-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IDGarantiaMovimentacao
     in: path
     description: "O identificador da movimentação"

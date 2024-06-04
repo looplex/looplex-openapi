@@ -4,6 +4,7 @@ summary: "Lista os contatos do cliente"
 operationId: api-clientes-idCliente-contatos
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IDCliente
     in: path
     required: true

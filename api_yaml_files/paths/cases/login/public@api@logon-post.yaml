@@ -6,6 +6,8 @@ description: "Login do Looplex Cases"
 operationId: api-logon
 # Parâmetros da requisição
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
+parameters:
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 requestBody:
   content:
     application/json:

@@ -9,7 +9,7 @@ export default function Looplex365 () {
     <RedocStandalone
       spec={json}
       options={{
-        sortTagsAlphabetically: true,
+        sortTagsAlphabetically: false,
         downloadFileName: 'openapi_looplex365.json'
       }}
     />

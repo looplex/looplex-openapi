@@ -5,6 +5,7 @@ description: Obtém o andamento de acordo com o identificador informado.
 operationId: api-andamentos-id
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: IDAndamento
     in: path
     required: true

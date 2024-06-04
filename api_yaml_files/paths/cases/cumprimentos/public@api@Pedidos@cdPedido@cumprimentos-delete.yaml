@@ -6,6 +6,7 @@ operationId: api-Pedidos-cdPedido-cumprimentos-delete
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: cdPedido
     in: path
     example: '10'

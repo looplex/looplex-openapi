@@ -9,7 +9,7 @@ export default function Actions () {
     <RedocStandalone
       spec={json}
       options={{
-        sortTagsAlphabetically: true,
+        sortTagsAlphabetically: false,
         downloadFileName: 'openapi_looplex_actions.json'
       }}
     />

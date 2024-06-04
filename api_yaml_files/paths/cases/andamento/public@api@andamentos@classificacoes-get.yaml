@@ -5,6 +5,7 @@ description: Retorna um array com as classificações de andamento do escritóri
 operationId: api-andamentos-classificacoes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 responses:
   "200":
     description: "OK"

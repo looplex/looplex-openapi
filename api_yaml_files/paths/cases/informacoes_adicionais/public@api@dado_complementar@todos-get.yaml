@@ -2,11 +2,11 @@
 tags:
   - Informações adicionais
 summary: "Lista todas as Informações adicionais"
-
 operationId: api-dado_complementar-todos
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

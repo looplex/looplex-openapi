@@ -7,6 +7,7 @@ operationId: api-liabilitiesCalculationEntities-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: caseid
     in: query
     example: '10'

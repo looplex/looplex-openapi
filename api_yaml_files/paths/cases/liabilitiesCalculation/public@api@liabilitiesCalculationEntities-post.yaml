@@ -7,6 +7,7 @@ operationId: api-liabilitiesCalculationEntities-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: env
     in: query
     example: 'QA'

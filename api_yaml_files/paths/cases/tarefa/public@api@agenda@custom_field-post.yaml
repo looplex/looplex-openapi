@@ -7,6 +7,7 @@ operationId: api-agenda-custom_field-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: client_id
     in: header
     description: "O identificador do client que está efetuando a operação"

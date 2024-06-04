@@ -4,6 +4,7 @@ summary: "Lista os templates de andamento"
 operationId: api-andamentos-templates
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: tipoCaso
     in: query
     required: true

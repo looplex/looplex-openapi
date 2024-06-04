@@ -9,7 +9,7 @@ export default function VarasEForos() {
     <RedocStandalone
       spec={json}
       options={{
-        sortTagsAlphabetically: true,
+        sortTagsAlphabetically: false,
         downloadFileName: 'openapi_looplex_varas_foros_v2.json'
       }}
     />

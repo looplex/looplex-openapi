@@ -6,6 +6,7 @@ operationId: api-compromissos-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idsFuncionarios
     in: query
     example: "\"1,15,20\""

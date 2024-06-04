@@ -6,6 +6,7 @@ operationId: api-casos-idCaso-PedidosComHistorico-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: idCaso
     in: path
     description: "O identificador do caso"

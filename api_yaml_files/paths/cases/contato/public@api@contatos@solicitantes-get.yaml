@@ -4,6 +4,7 @@ summary: "Lista os solicitantes do cliente"
 operationId: api-contatos-solicitantes
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: codCliente
     in: query
     required: true

@@ -6,6 +6,7 @@ operationId: api-timeline-items
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
+  - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: paginaAtual
     in: query
     example: 1
