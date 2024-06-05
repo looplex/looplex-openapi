@@ -9,7 +9,7 @@ properties:
     description: "A quantidade de itens retornados nessa página."
   totalItems:
     type: integer
-    description: "A quantidade de resultados dessa pesquisa.<br />`A resposta esperada pode estar em outra página, deendendo da quantidade de resultados da pesquisa.`"
+    description: "A quantidade de resultados dessa pesquisa.<br />`A resposta esperada pode estar em outra página, dependendo da quantidade de resultados da pesquisa.`"
   result:
     type: array
     items:
