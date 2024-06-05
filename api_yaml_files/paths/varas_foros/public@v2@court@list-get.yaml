@@ -4,6 +4,21 @@ tags:
 summary: "Lista os foros / varas por ids"
 operationId: varas_foros-v2-court-list-get
 # Parâmetros da requisição
+parameters: 
+  - name: currentPage
+    in: query
+    required: false
+    description: "A página para pesquisa.<br />`Default: 1`"
+    example: 1
+    schema:
+      type: integer
+  - name: pageSize
+    in: query
+    required: false
+    description: "A quantidade de itens por página.<br />`Default: 10`"
+    example: 10
+    schema:
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:

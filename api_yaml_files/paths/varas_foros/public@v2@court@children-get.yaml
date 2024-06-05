@@ -6,6 +6,20 @@ description: "Lista todos os foros / varas de acordo com o identificador do pai"
 operationId: v2-court-children-get
 # Parâmetros da requisição
 parameters:
+  - name: currentPage
+    in: query
+    required: false
+    description: "A página para pesquisa.<br />`Default: 1`"
+    example: 1
+    schema:
+      type: integer
+  - name: pageSize
+    in: query
+    required: false
+    description: "A quantidade de itens por página.<br />`Default: 10`"
+    example: 10
+    schema:
+      type: integer
   - name: id
     in: query
     required: true

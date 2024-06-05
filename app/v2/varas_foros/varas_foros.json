@@ -41,6 +41,26 @@
         "operationId": "varas_foros-v2-court-level-get",
         "parameters": [
           {
+            "name": "currentPage",
+            "in": "query",
+            "required": false,
+            "description": "A página para pesquisa.<br />`Default: 1`",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "A quantidade de itens por página.<br />`Default: 10`",
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
             "name": "level",
             "in": "query",
             "required": true,
@@ -134,6 +154,28 @@
         ],
         "summary": "Lista os foros / varas por ids",
         "operationId": "varas_foros-v2-court-list-get",
+        "parameters": [
+          {
+            "name": "currentPage",
+            "in": "query",
+            "required": false,
+            "description": "A página para pesquisa.<br />`Default: 1`",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "A quantidade de itens por página.<br />`Default: 10`",
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -189,6 +231,26 @@
         "operationId": "varas_foros-v2-court-search-get",
         "parameters": [
           {
+            "name": "currentPage",
+            "in": "query",
+            "required": false,
+            "description": "A página para pesquisa.<br />`Default: 1`",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "A quantidade de itens por página.<br />`Default: 10`",
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
             "name": "term",
             "in": "query",
             "required": true,
@@ -243,6 +305,26 @@
         "operationId": "v2-court-children-get",
         "parameters": [
           {
+            "name": "currentPage",
+            "in": "query",
+            "required": false,
+            "description": "A página para pesquisa.<br />`Default: 1`",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "A quantidade de itens por página.<br />`Default: 10`",
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
             "name": "id",
             "in": "query",
             "required": true,
@@ -294,6 +376,28 @@
         ],
         "summary": "Lista os ritos por ids",
         "operationId": "v2-sequence-list-get",
+        "parameters": [
+          {
+            "name": "currentPage",
+            "in": "query",
+            "required": false,
+            "description": "A página para pesquisa.<br />`Default: 1`",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "A quantidade de itens por página.<br />`Default: 10`",
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -391,6 +495,26 @@
         "summary": "Pesquisa ritos por termo",
         "operationId": "v2-sequence-search-get",
         "parameters": [
+          {
+            "name": "currentPage",
+            "in": "query",
+            "required": false,
+            "description": "A página para pesquisa.<br />`Default: 1`",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "A quantidade de itens por página.<br />`Default: 10`",
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          },
           {
             "name": "term",
             "in": "query",

@@ -6,6 +6,20 @@ description: "Lista os foros / varas de acordo com o nível informado"
 operationId: varas_foros-v2-court-level-get
 # Parâmetros da requisição
 parameters:
+  - name: currentPage
+    in: query
+    required: false
+    description: "A página para pesquisa.<br />`Default: 1`"
+    example: 1
+    schema:
+      type: integer
+  - name: pageSize
+    in: query
+    required: false
+    description: "A quantidade de itens por página.<br />`Default: 10`"
+    example: 10
+    schema:
+      type: integer
   - name: level
     in: query
     required: true
