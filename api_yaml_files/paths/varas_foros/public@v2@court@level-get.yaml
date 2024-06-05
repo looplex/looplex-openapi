@@ -6,6 +6,7 @@ description: "Lista os foros / varas de acordo com o nível informado"
 operationId: varas_foros-v2-court-level-get
 # Parâmetros da requisição
 parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: currentPage
     in: query
     required: false

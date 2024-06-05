@@ -4,6 +4,7 @@ tags:
 summary: "Lista os ritos por ids"
 operationId: v2-sequence-list-get
 parameters: 
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: currentPage
     in: query
     required: false

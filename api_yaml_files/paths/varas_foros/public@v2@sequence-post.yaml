@@ -3,6 +3,8 @@ tags:
   - Ritos
 summary: "Cadastra ritos"
 operationId: v2-sequence-post
+parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:

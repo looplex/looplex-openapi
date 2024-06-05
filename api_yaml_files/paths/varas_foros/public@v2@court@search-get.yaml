@@ -5,6 +5,7 @@ summary: "Pesquisa foros / varas por termo"
 operationId: varas_foros-v2-court-search-get
 # Parâmetros da requisição
 parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: currentPage
     in: query
     required: false

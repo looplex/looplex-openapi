@@ -5,6 +5,7 @@ summary: "Pesquisa ritos por termo"
 operationId: v2-sequence-search-get
 # Parâmetros da requisição
 parameters:
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: currentPage
     in: query
     required: false

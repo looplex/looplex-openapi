@@ -5,6 +5,7 @@ summary: "Lista os foros / varas por ids"
 operationId: varas_foros-v2-court-list-get
 # Parâmetros da requisição
 parameters: 
+  - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: currentPage
     in: query
     required: false

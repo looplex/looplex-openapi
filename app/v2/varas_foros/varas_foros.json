@@ -25,11 +25,7 @@
       "description": "Varas e Foros Server"
     }
   ],
-  "security": [
-    {
-      "Ocp-Apim-Subscription-Key": []
-    }
-  ],
+  "security": [],
   "paths": {
     "/v2/court": {
       "get": {
@@ -40,6 +36,9 @@
         "description": "Lista os foros / varas de acordo com o nível informado",
         "operationId": "varas_foros-v2-court-level-get",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
           {
             "name": "currentPage",
             "in": "query",
@@ -111,6 +110,11 @@
         "summary": "Cadastra foros / varas",
         "description": "Cadastra novos foros / varas",
         "operationId": "varas_foros-v2-court-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -155,6 +159,9 @@
         "summary": "Lista os foros / varas por ids",
         "operationId": "varas_foros-v2-court-list-get",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
           {
             "name": "currentPage",
             "in": "query",
@@ -231,6 +238,9 @@
         "operationId": "varas_foros-v2-court-search-get",
         "parameters": [
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "currentPage",
             "in": "query",
             "required": false,
@@ -305,6 +315,9 @@
         "operationId": "v2-court-children-get",
         "parameters": [
           {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
             "name": "currentPage",
             "in": "query",
             "required": false,
@@ -377,6 +390,9 @@
         "summary": "Lista os ritos por ids",
         "operationId": "v2-sequence-list-get",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
           {
             "name": "currentPage",
             "in": "query",
@@ -451,6 +467,11 @@
         ],
         "summary": "Cadastra ritos",
         "operationId": "v2-sequence-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -495,6 +516,9 @@
         "summary": "Pesquisa ritos por termo",
         "operationId": "v2-sequence-search-get",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
           {
             "name": "currentPage",
             "in": "query",
@@ -568,12 +592,6 @@
         "in": "header",
         "name": "api_key"
       },
-      "Ocp-Apim-Subscription-Key": {
-        "type": "apiKey",
-        "in": "header",
-        "description": "Subscription key provided by Looplex",
-        "name": "Ocp-Apim-Subscription-Key"
-      },
       "auth_token": {
         "type": "apiKey",
         "in": "header",
@@ -582,6 +600,17 @@
       "basic_auth": {
         "type": "http",
         "scheme": "basic"
+      }
+    },
+    "parameters": {
+      "OcpApimSubscriptionKey": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header",
+        "description": "Subscription key provided by Looplex",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
       }
     },
     "schemas": {
