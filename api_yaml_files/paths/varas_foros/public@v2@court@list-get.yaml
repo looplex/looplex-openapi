@@ -20,14 +20,15 @@ parameters:
     example: 10
     schema:
       type: integer
-# RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
-requestBody:
-  content:
-    application/json:
-      schema:
-        type: array
-        items:
-          type: integer
+  - name: ids
+    in: query
+    required: true
+    description: "Os ids dos itens para listar"
+    example: [1,2]
+    schema:
+      type: array
+      items:
+        type: integer
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
