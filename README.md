@@ -23,4 +23,4 @@ Exemplo: `yarn varas_foros_v2.yaml`
 Qualquer alteração feita nesse arquivo será refletida na página enquanto estiver em debug.  
 
 ## Build após criação do endpoint  
-Após criar endpoint novo e queira fazer o commit para atualizar as documentações dos ambientes, rode o comando `yarn build_apis` e faça o commit das alterações dos arquivos .json que forem compilados para a pasta `app/<version_number>/<api_name>/*.json`
+Após criar endpoint novo e queira fazer o commit para atualizar as documentações dos ambientes, clique na extensão da `Looplex no painel esquerdo > OpenAPI > Build + Run da documentação`, aguarde o build terminar e faça o commit das alterações dos arquivos .json que forem compilados para a pasta `app/<version_number>/<api_name>/*.json`
