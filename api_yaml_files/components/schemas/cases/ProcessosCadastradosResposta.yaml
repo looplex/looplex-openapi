@@ -47,3 +47,7 @@ properties:
     type: array
     items: 
       type: integer
+  idCliente:
+    type: integer
+  nomeCliente:
+    type: string
