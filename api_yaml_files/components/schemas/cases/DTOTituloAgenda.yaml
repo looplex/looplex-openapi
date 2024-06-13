@@ -40,3 +40,6 @@ properties:
   IDArea:
     description: "O identificador da área"
     type: integer
+  PrecedenciaAoPaiEmDias:
+    description: "Quantidade em dias que o item filho precede o pai"
+    type: integer  

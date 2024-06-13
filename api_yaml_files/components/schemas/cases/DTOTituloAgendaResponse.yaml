@@ -51,3 +51,6 @@ properties:
   TipoTarefa:
     description: "O tipo da tarefa"
     $ref: enums/TipoItemAgenda.yaml
+  PrecedenciaAoPaiEmDias:
+    description: "Quantidade em dias que o item filho precede o pai"
+    type: integer    
