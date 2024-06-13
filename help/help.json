@@ -3,5 +3,10 @@
     "label": "Adicionar propriedade em endpoint",
     "description": "Como adicionar propriedade em um endpoint já existente?",
     "file": "add_property.md"
+  },
+  {
+    "label": "Build de uma nova API",
+    "description": "Como adicionar build de uma nova API?",
+    "file": "build_new_api.md"
   }
 ]
