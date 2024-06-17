@@ -634,6 +634,16 @@ paths:
     get:
       $ref: '.\paths\cases\push\public@api@publicacao@por_pagina-get.yaml'
 
+  # Solicitação
+  /api/solicitacao/{id}:
+    get:
+      $ref: './paths/cases/solicitacao/public@api@solicitacao@id-get.yaml'
+    put:
+      $ref: './paths/cases/solicitacao/public@api@solicitacao@id-put.yaml'
+  /api/solicitacao/lista:
+    get:
+      $ref: './paths/cases/solicitacao/public@api@solicitacao@lista-get.yaml'  
+
   # Tabela de preço
   /api/escritorios/{idEscritorio}/tabelaspreco:
     get:

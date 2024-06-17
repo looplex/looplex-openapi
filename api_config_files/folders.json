@@ -150,6 +150,11 @@
     "opcao": "cases/login/"
   },
   {
+    "label": "Solicitação",
+    "detail": "Endpoints de Solicitação",
+    "opcao": "cases/solicitacao/"
+  },
+  {
     "label": "Tabela preço categoria",
     "detail": "Endpoints de tabela preço categoria",
     "opcao": "cases/tabela_preco_categoria/"

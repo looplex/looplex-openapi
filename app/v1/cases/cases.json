@@ -15488,6 +15488,242 @@
         }
       }
     },
+    "/api/solicitacao/{id}": {
+      "get": {
+        "tags": [
+          "Solicitação"
+        ],
+        "summary": "Obtem por ID",
+        "description": "Obtem solicitação por id",
+        "operationId": "api-solicitacao-id-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOSolicitacaoResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Solicitação"
+        ],
+        "summary": "Edita solicitação",
+        "description": "Edita solicitação",
+        "operationId": "api-solicitacao-id-put",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOSolicitacao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOSolicitacaoResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solicitacao/lista": {
+      "get": {
+        "tags": [
+          "Solicitação"
+        ],
+        "summary": "Lista solicitações",
+        "description": "Lista solicitações",
+        "operationId": "api-solicitacao-lista-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOSolicitacaoResponse"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/escritorios/{idEscritorio}/tabelaspreco": {
       "get": {
         "tags": [
@@ -28346,6 +28582,95 @@
             }
           }
         }
+      },
+      "DTOSolicitacaoResponse": {
+        "title": "DTOSolicitacaoResponse",
+        "type": "object",
+        "properties": {
+          "TituloSolicitacao": {
+            "description": "O titulo da solicitação",
+            "type": "string"
+          },
+          "Link": {
+            "type": "string"
+          },
+          "IDSolicitacao": {
+            "type": "integer"
+          },
+          "Custom_Fields": {
+            "type": "string"
+          }
+        }
+      },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "`BadRequest`<br />Indica que o formato da requisição está incorreto"
+          }
+        }
+      },
+      "UnauthorizedResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "ForbiddenResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "InternalServerErrorResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica um erro interno ocorrido no servidor."
+          }
+        }
+      },
+      "DTOSolicitacao": {
+        "title": "DTOSolicitacao",
+        "type": "object",
+        "properties": {
+          "TituloSolicitacao": {
+            "description": "O titulo da solicitação",
+            "example": "Nova solicitação",
+            "type": "string"
+          },
+          "Link": {
+            "type": "string",
+            "example": "<link>"
+          }
+        },
+        "required": [
+          "TituloSolicitacao"
+        ]
       },
       "DTOTabelaPreco": {
         "title": "DTOTabelaPreco",

@@ -1,0 +1,12 @@
+title: DTOSolicitacao
+type: object
+properties:
+  TituloSolicitacao:
+    description: "O titulo da solicitação"
+    example: "Nova solicitação"
+    type: string
+  Link:
+    type: string
+    example: "<link>"
+required:
+  - TituloSolicitacao

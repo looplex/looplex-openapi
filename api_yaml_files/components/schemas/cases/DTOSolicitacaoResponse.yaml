@@ -1,0 +1,12 @@
+title: DTOSolicitacaoResponse
+type: object
+properties:
+  TituloSolicitacao:
+    description: "O titulo da solicitação"
+    type: string
+  Link:
+    type: string
+  IDSolicitacao:
+    type: integer
+  Custom_Fields:
+    type: string

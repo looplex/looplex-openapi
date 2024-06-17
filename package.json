@@ -9,7 +9,7 @@
     "looplex365": "redocly preview-docs api_yaml_files/looplex365.yaml",
     "varas_foros_v2": "redocly preview-docs api_yaml_files/varas_foros_v2.yaml",
     
-    "dev": "yarn build_apis && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
