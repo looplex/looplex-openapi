@@ -14376,6 +14376,85 @@
         }
       }
     },
+    "/api/casos/{IDCaso}/pedidosComValores": {
+      "post": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Inclui ou atualiza pedidos e valores do caso",
+        "operationId": "api-casos-IDCaso-pedidosComValores-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IDCaso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOValoresDoCaso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{IDCaso}/produtos": {
       "get": {
         "tags": [
@@ -24445,28 +24524,28 @@
         "type": "object",
         "properties": {
           "Risco": {
-            "type": "integer"
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
           },
           "TipoRisco": {
-            "type": "integer"
+            "$ref": "#/components/schemas/TipoExpectativaReivindicacao"
           },
           "ValorDaCausa": {
             "type": "number"
           },
           "MoedaValorDaCausa": {
-            "type": "integer"
+            "$ref": "#/components/schemas/Moeda"
           },
           "ValorDaCausaAtualizado": {
             "type": "number"
           },
           "MoedaValorDaCausaAtualizado": {
-            "type": "integer"
+            "$ref": "#/components/schemas/Moeda"
           },
           "ValorPrevisto": {
             "type": "number"
           },
           "MoedaValorPrevisto": {
-            "type": "integer"
+            "$ref": "#/components/schemas/Moeda"
           },
           "ValorContingencia": {
             "type": "number"
@@ -24478,13 +24557,112 @@
             "type": "boolean"
           },
           "MoedaValorContingencia": {
-            "type": "integer"
+            "$ref": "#/components/schemas/Moeda"
           },
           "Pedidos": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DTOCasoPedidoSimples"
             }
+          },
+          "PrevistoPoloAtivo": {
+            "type": "number"
+          },
+          "ContingenciaPoloAtivo": {
+            "type": "number"
+          },
+          "DeferidoPoloAtivo": {
+            "type": "number"
+          },
+          "RiscoPoloAtivo": {
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
+          },
+          "TipoRiscoPoloAtivo": {
+            "$ref": "#/components/schemas/TipoExpectativaReivindicacao"
+          },
+          "ValorCausaPoloAtivo": {
+            "type": "number"
+          },
+          "MoedaValorCausaPoloAtivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorCausaAtualizadoPoloAtivo": {
+            "type": "number"
+          },
+          "MoedaPrevistoPoloAtivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorContingenciaAtualizadoPoloAtivo": {
+            "type": "number"
+          },
+          "MoedaValorContingenciaPoloAtivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "PrevistoPoloPassivo": {
+            "type": "number"
+          },
+          "ContingenciaPoloPassivo": {
+            "type": "number"
+          },
+          "DeferidoPoloPassivo": {
+            "type": "number"
+          },
+          "RiscoPoloPassivo": {
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
+          },
+          "TipoRiscoPoloPassivo": {
+            "$ref": "#/components/schemas/TipoExpectativaReivindicacao"
+          },
+          "ValorCausaPoloPassivo": {
+            "type": "number"
+          },
+          "MoedaValorCausaPoloPassivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorCausaAtualizadoPoloPassivo": {
+            "type": "number"
+          },
+          "MoedaPrevistoPoloPassivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorContingenciaAtualizadoPoloPassivo": {
+            "type": "number"
+          },
+          "MoedaValorContingenciaPoloPassivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "PrevistoPoloTerceiro": {
+            "type": "number"
+          },
+          "ContingenciaPoloTerceiro": {
+            "type": "number"
+          },
+          "DeferidoPoloTerceiro": {
+            "type": "number"
+          },
+          "RiscoPoloTerceiro": {
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
+          },
+          "TipoRiscoPoloTerceiro": {
+            "$ref": "#/components/schemas/TipoExpectativaReivindicacao"
+          },
+          "ValorCausaPoloTerceiro": {
+            "type": "number"
+          },
+          "MoedaValorCausaPoloTerceiro": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorCausaAtualizadoPoloTerceiro": {
+            "type": "number"
+          },
+          "MoedaPrevistoPoloTerceiro": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorContingenciaAtualizadoPoloTerceiro": {
+            "type": "number"
+          },
+          "MoedaValorContingenciaPoloTerceiro": {
+            "$ref": "#/components/schemas/Moeda"
           }
         }
       },
@@ -28184,6 +28362,58 @@
           }
         }
       },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "`BadRequest`<br />Indica que o formato da requisição está incorreto"
+          }
+        }
+      },
+      "UnauthorizedResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "ForbiddenResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "InternalServerErrorResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica um erro interno ocorrido no servidor."
+          }
+        }
+      },
       "DTOProduto": {
         "title": "DTOProduto",
         "type": "object",
@@ -28599,58 +28829,6 @@
           },
           "Custom_Fields": {
             "type": "string"
-          }
-        }
-      },
-      "BadRequestResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "`BadRequest`<br />Indica que o formato da requisição está incorreto"
-          }
-        }
-      },
-      "UnauthorizedResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica uma requisição não autorizada."
-          }
-        }
-      },
-      "ForbiddenResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica uma requisição não autorizada."
-          }
-        }
-      },
-      "InternalServerErrorResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica um erro interno ocorrido no servidor."
           }
         }
       },

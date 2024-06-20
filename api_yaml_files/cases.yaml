@@ -592,7 +592,10 @@ paths:
       $ref: './paths/cases/pedidos/public@api@casos@Pedidos@IDCasoPedido@IdsGarantias-get.yaml'
   /api/casos/pedidostmp:
     post:
-      $ref: './paths/cases/pedidos/public@api@pedidostmp-post.yaml'
+      $ref: './paths/cases/pedidos/public@api@pedidostmp-post.yaml'      
+  /api/casos/{IDCaso}/pedidosComValores:
+    post:
+      $ref: './paths/cases/pedidos/public@api@casos@IDCaso@pedidosComValores-post.yaml'     
       
   # Produtos
   /api/casos/{IDCaso}/produtos:
