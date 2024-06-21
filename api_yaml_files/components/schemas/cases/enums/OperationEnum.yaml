@@ -1,0 +1,14 @@
+title: OperationEnum
+example: 4
+description: |  
+  1: Test
+
+  2: Remove
+
+  3: Add
+
+  4: Replace
+
+  5: Move
+
+  6: Copy
