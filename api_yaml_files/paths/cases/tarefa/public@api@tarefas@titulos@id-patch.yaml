@@ -20,7 +20,9 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/cases/JsonPatchObject.yaml
+        type: array
+        items:
+          $ref: ../../../components/schemas/cases/JsonPatchObject.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
