@@ -51,3 +51,5 @@ properties:
     type: integer
   nomeCliente:
     type: string
+  nrCliente:
+    type: integer
