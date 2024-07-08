@@ -19,3 +19,9 @@ properties:
       type: string
   IdCaso:
     type: integer
+  Schema:
+    type: string
+    description: "O schema do dado complementar (se o tipo do dado complementar for JSON)"
+  UISchema:
+    type: string
+    description: "O UI Schema do dado complementar (se o tipo do dado complementar for JSON e se houver)"
