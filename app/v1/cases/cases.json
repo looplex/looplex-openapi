@@ -29776,8 +29776,8 @@
         "example": 4,
         "description": "1: Test\n\n2: Remove\n\n3: Add\n\n4: Replace\n\n5: Move\n\n6: Copy\n"
       },
-      "JsonPatchObject": {
-        "title": "JsonPatchObject",
+      "JsonPatchProperty": {
+        "title": "JsonPatchProperty",
         "type": "object",
         "properties": {
           "op": {
@@ -29814,6 +29814,22 @@
           "path",
           "value"
         ]
+      },
+      "JsonPatchObject": {
+        "title": "JsonPatchObject",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "O identificador do item em que quer modificar os valores"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JsonPatchProperty"
+            }
+          }
+        }
       },
       "TipoItemTimeline": {
         "type": "integer",
