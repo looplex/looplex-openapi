@@ -729,12 +729,11 @@ paths:
   /api/tarefas/titulos:
     get:
       $ref: './paths/cases/tarefa/public@api@tarefas@titulos-get.yaml'
+    patch: 
+      $ref: './paths/cases/tarefa/public@api@tarefas@titulos-patch.yaml'
   /api/tarefas/tarefa_subtarefas/{id}/{tipo}:
     get:
       $ref: './paths/cases/tarefa/public@api@tarefas@tarefa_subtarefas@id@tipo-get.yaml'
-  /api/tarefas/titulos/{id}:
-    patch: 
-      $ref: './paths/cases/tarefa/public@api@tarefas@titulos@id-patch.yaml'
 
   # Timeline
   /api/timeline/items:
