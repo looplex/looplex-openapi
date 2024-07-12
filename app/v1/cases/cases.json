@@ -24654,6 +24654,9 @@
           "PrevistoPoloAtivo": {
             "type": "number"
           },
+          "PrevistoAtualizadoPoloAtivo": {
+            "type": "number"
+          },
           "ContingenciaPoloAtivo": {
             "type": "number"
           },
@@ -24669,22 +24672,14 @@
           "ValorCausaPoloAtivo": {
             "type": "number"
           },
-          "MoedaValorCausaPoloAtivo": {
-            "$ref": "#/components/schemas/Moeda"
-          },
-          "ValorCausaAtualizadoPoloAtivo": {
-            "type": "number"
-          },
-          "MoedaPrevistoPoloAtivo": {
-            "$ref": "#/components/schemas/Moeda"
-          },
           "ValorContingenciaAtualizadoPoloAtivo": {
             "type": "number"
           },
-          "MoedaValorContingenciaPoloAtivo": {
-            "$ref": "#/components/schemas/Moeda"
-          },
+
           "PrevistoPoloPassivo": {
+            "type": "number"
+          },
+          "PrevistoAtualizadoPoloPassivo": {
             "type": "number"
           },
           "ContingenciaPoloPassivo": {
@@ -24701,23 +24696,14 @@
           },
           "ValorCausaPoloPassivo": {
             "type": "number"
-          },
-          "MoedaValorCausaPoloPassivo": {
-            "$ref": "#/components/schemas/Moeda"
-          },
-          "ValorCausaAtualizadoPoloPassivo": {
-            "type": "number"
-          },
-          "MoedaPrevistoPoloPassivo": {
-            "$ref": "#/components/schemas/Moeda"
-          },
+          },          
           "ValorContingenciaAtualizadoPoloPassivo": {
             "type": "number"
           },
-          "MoedaValorContingenciaPoloPassivo": {
-            "$ref": "#/components/schemas/Moeda"
-          },
           "PrevistoPoloTerceiro": {
+            "type": "number"
+          },
+          "PrevistoAtualizadoPoloTerceiro": {
             "type": "number"
           },
           "ContingenciaPoloTerceiro": {
@@ -24734,21 +24720,9 @@
           },
           "ValorCausaPoloTerceiro": {
             "type": "number"
-          },
-          "MoedaValorCausaPoloTerceiro": {
-            "$ref": "#/components/schemas/Moeda"
-          },
-          "ValorCausaAtualizadoPoloTerceiro": {
-            "type": "number"
-          },
-          "MoedaPrevistoPoloTerceiro": {
-            "$ref": "#/components/schemas/Moeda"
-          },
+          },          
           "ValorContingenciaAtualizadoPoloTerceiro": {
             "type": "number"
-          },
-          "MoedaValorContingenciaPoloTerceiro": {
-            "$ref": "#/components/schemas/Moeda"
           }
         }
       },

@@ -29,6 +29,8 @@ properties:
     type: string
   IdCasoPedido:
     type: integer
+  IdPedidoCausa:
+    type: integer
   IdCaso:
     type: integer
   Envolvimento:
