@@ -1,0 +1,17 @@
+title: DTOSchemaInformacaoAdicionalResponse
+type: object
+properties:
+  IdParamDadoComplementar:
+    description: "O identificador da informação adicional"
+    example: -2147483648
+    type: integer
+  title:
+    description: "O nome para a informação adicional"
+    type: string
+  schemas:
+    description: "As propriedades Json dessa informação adicional"
+    type: array
+    items:
+      $ref: "Schema.yaml"
+  tipo:
+    $ref: 'enums/TipoDadoComplementar.yaml'

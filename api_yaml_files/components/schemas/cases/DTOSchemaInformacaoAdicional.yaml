@@ -1,0 +1,11 @@
+title: DTOSchemaInformacaoAdicional
+type: object
+properties:
+  title:
+    description: "O nome para a informação adicional"
+    type: string
+  schemas:
+    description: "As propriedades Json dessa informação adicional"
+    type: array
+    items:
+      $ref: "Schema.yaml"

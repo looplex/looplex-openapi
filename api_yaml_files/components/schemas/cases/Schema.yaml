@@ -1,0 +1,34 @@
+title: Schema
+type: object
+properties:
+  id:
+    type: integer
+  order:
+    type: integer
+  type:
+    description: "O tipo da propriedade Json"
+    example: string
+    type: string
+  format:
+    description: "O formato do valor. (e.g. date para datas)"
+    example: date
+    type: string
+  mask:
+    description: "A máscara utilizada para formatar essa propriedade"
+    type: string
+  title:
+    description: "O nome da propriedade Json"
+    type: string
+  required:
+    description: "Indica se a propriedade é obrigatória"
+    example: false
+    type: boolean
+  enum:
+    description: "As opções dessa propriedade (e.g. Se for um dropdown)"
+    type: array
+    items:
+      type: string
+  maxLength:
+    description: "A quantidade máxima de caracteres permitida para essa propriedade"
+    example: 0
+    type: integer

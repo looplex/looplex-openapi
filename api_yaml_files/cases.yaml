@@ -485,7 +485,10 @@ paths:
   /api/dado_complementar/filtro:
     get:
       $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@filtro-get.yaml'   
-
+  /api/dado_complementar/json:
+    post:
+      $ref: './paths/cases/informacoes_adicionais/public@api@dado_complementar@json-post.yaml'
+  
   # Informações adicionais (Valor)
   /api/dado_complementar/valor:
     post:
@@ -510,6 +513,7 @@ paths:
       $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationTemplate-get.yaml'
     post:
       $ref: './paths/cases/liabilitiesCalculation/public@api@liabilitiesCalculationTemplate-post.yaml'
+  
   # Motivo de pedir
   /api/propositionStatements/{id}:
     get:

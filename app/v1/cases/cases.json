@@ -11670,6 +11670,84 @@
         }
       }
     },
+    "/api/dado_complementar/json": {
+      "post": {
+        "tags": [
+          "Informações adicionais"
+        ],
+        "summary": "Cadastra informação adicional de tipo JSON",
+        "operationId": "api-dado_complementar-json-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOSchemaInformacaoAdicional"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOSchemaInformacaoAdicionalResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/dado_complementar/valor": {
       "post": {
         "tags": [
@@ -24654,9 +24732,6 @@
           "PrevistoPoloAtivo": {
             "type": "number"
           },
-          "PrevistoAtualizadoPoloAtivo": {
-            "type": "number"
-          },
           "ContingenciaPoloAtivo": {
             "type": "number"
           },
@@ -24672,14 +24747,22 @@
           "ValorCausaPoloAtivo": {
             "type": "number"
           },
+          "MoedaValorCausaPoloAtivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorCausaAtualizadoPoloAtivo": {
+            "type": "number"
+          },
+          "MoedaPrevistoPoloAtivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
           "ValorContingenciaAtualizadoPoloAtivo": {
             "type": "number"
           },
-
-          "PrevistoPoloPassivo": {
-            "type": "number"
+          "MoedaValorContingenciaPoloAtivo": {
+            "$ref": "#/components/schemas/Moeda"
           },
-          "PrevistoAtualizadoPoloPassivo": {
+          "PrevistoPoloPassivo": {
             "type": "number"
           },
           "ContingenciaPoloPassivo": {
@@ -24696,14 +24779,23 @@
           },
           "ValorCausaPoloPassivo": {
             "type": "number"
-          },          
+          },
+          "MoedaValorCausaPoloPassivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorCausaAtualizadoPoloPassivo": {
+            "type": "number"
+          },
+          "MoedaPrevistoPoloPassivo": {
+            "$ref": "#/components/schemas/Moeda"
+          },
           "ValorContingenciaAtualizadoPoloPassivo": {
             "type": "number"
           },
-          "PrevistoPoloTerceiro": {
-            "type": "number"
+          "MoedaValorContingenciaPoloPassivo": {
+            "$ref": "#/components/schemas/Moeda"
           },
-          "PrevistoAtualizadoPoloTerceiro": {
+          "PrevistoPoloTerceiro": {
             "type": "number"
           },
           "ContingenciaPoloTerceiro": {
@@ -24720,9 +24812,21 @@
           },
           "ValorCausaPoloTerceiro": {
             "type": "number"
-          },          
+          },
+          "MoedaValorCausaPoloTerceiro": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorCausaAtualizadoPoloTerceiro": {
+            "type": "number"
+          },
+          "MoedaPrevistoPoloTerceiro": {
+            "$ref": "#/components/schemas/Moeda"
+          },
           "ValorContingenciaAtualizadoPoloTerceiro": {
             "type": "number"
+          },
+          "MoedaValorContingenciaPoloTerceiro": {
+            "$ref": "#/components/schemas/Moeda"
           }
         }
       },
@@ -25697,6 +25801,147 @@
           "UISchema": {
             "type": "string",
             "description": "O UI Schema do dado complementar (se o tipo do dado complementar for JSON e se houver)"
+          }
+        }
+      },
+      "Schema": {
+        "title": "Schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "type": {
+            "description": "O tipo da propriedade Json",
+            "example": "string",
+            "type": "string"
+          },
+          "format": {
+            "description": "O formato do valor. (e.g. date para datas)",
+            "example": "date",
+            "type": "string"
+          },
+          "mask": {
+            "description": "A máscara utilizada para formatar essa propriedade",
+            "type": "string"
+          },
+          "title": {
+            "description": "O nome da propriedade Json",
+            "type": "string"
+          },
+          "required": {
+            "description": "Indica se a propriedade é obrigatória",
+            "example": false,
+            "type": "boolean"
+          },
+          "enum": {
+            "description": "As opções dessa propriedade (e.g. Se for um dropdown)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "maxLength": {
+            "description": "A quantidade máxima de caracteres permitida para essa propriedade",
+            "example": 0,
+            "type": "integer"
+          }
+        }
+      },
+      "DTOSchemaInformacaoAdicional": {
+        "title": "DTOSchemaInformacaoAdicional",
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "O nome para a informação adicional",
+            "type": "string"
+          },
+          "schemas": {
+            "description": "As propriedades Json dessa informação adicional",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          }
+        }
+      },
+      "DTOSchemaInformacaoAdicionalResponse": {
+        "title": "DTOSchemaInformacaoAdicionalResponse",
+        "type": "object",
+        "properties": {
+          "IdParamDadoComplementar": {
+            "description": "O identificador da informação adicional",
+            "example": -2147483648,
+            "type": "integer"
+          },
+          "title": {
+            "description": "O nome para a informação adicional",
+            "type": "string"
+          },
+          "schemas": {
+            "description": "As propriedades Json dessa informação adicional",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/TipoDadoComplementar"
+          }
+        }
+      },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "`BadRequest`<br />Indica que o formato da requisição está incorreto"
+          }
+        }
+      },
+      "UnauthorizedResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "ForbiddenResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "InternalServerErrorResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica um erro interno ocorrido no servidor."
           }
         }
       },
@@ -28148,6 +28393,9 @@
           "IdCasoPedido": {
             "type": "integer"
           },
+          "IdPedidoCausa": {
+            "type": "integer"
+          },
           "IdCaso": {
             "type": "integer"
           },
@@ -28443,58 +28691,6 @@
                 "type": "boolean"
               }
             }
-          }
-        }
-      },
-      "BadRequestResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "`BadRequest`<br />Indica que o formato da requisição está incorreto"
-          }
-        }
-      },
-      "UnauthorizedResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica uma requisição não autorizada."
-          }
-        }
-      },
-      "ForbiddenResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica uma requisição não autorizada."
-          }
-        }
-      },
-      "InternalServerErrorResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica um erro interno ocorrido no servidor."
           }
         }
       },
