@@ -1,0 +1,15 @@
+title: ProdutoDto
+type: object
+properties:
+  idCliente:
+    description: "O identificador do cliente"
+    example: 1
+    type: integer
+  idProduto:
+    description: "O identificador do produto"
+    example: 1
+    type: integer
+  nomeProduto:
+    description: "O nome do produto"
+    example: Produto
+    type: string

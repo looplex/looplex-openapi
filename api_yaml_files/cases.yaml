@@ -608,6 +608,9 @@ paths:
   /api/casos/num/produtos:
     get:
       $ref: './paths/cases/produtos/public@api@casos@num@produtos-get.yaml'
+  /api/produtos/{idCliente}:
+    get:
+      $ref: './paths/cases/produtos/public@api@produtos@idCliente-get.yaml'
 
   # Push + Push Publicação
   /api/push/publicacoes:

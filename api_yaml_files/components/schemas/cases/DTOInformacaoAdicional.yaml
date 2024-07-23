@@ -34,12 +34,11 @@ properties:
     type: string
     example: "Global"
     description: "Indica quais os tipos de vínculo dessa Informação adicional.<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido."  
-  Schema:
-    type: string
+  Schemas:
     description: "O schema do dado complementar (se o tipo do dado complementar for JSON)"
-  UISchema:
-    type: string
-    description: "O UI Schema do dado complementar (se o tipo do dado complementar for JSON e se houver)"
+    type: array
+    items:
+      $ref: Schema.yaml
   Opcoes:
     description: "As opções da Informação adicional. <br />`Required apenas quando TipoCampoDadoComplementar for dos tipos 6: CaixaCombo ou 7: CaixaDeMarcacao`."
     type: array
