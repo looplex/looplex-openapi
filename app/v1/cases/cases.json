@@ -28786,23 +28786,37 @@
         "title": "DTOProduto",
         "type": "object",
         "properties": {
+          "idCliente": {
+            "type": "integer",
+            "description": "O identificador do cliente"
+          },
           "NomeCliente": {
-            "type": "string"
-          },
-          "TituloCaso": {
-            "type": "string"
-          },
-          "NumeroInterno": {
-            "type": "string"
-          },
-          "NumeroExterno": {
-            "type": "string"
-          },
-          "dsProduto": {
-            "type": "string"
+            "type": "string",
+            "description": "O nome do cliente"
           },
           "IdCaso": {
-            "type": "integer"
+            "type": "integer",
+            "description": "O identificador do caso"
+          },
+          "TituloCaso": {
+            "type": "string",
+            "description": "O titulo do caso"
+          },
+          "NumeroInterno": {
+            "type": "string",
+            "description": "O numero interno do caso"
+          },
+          "NumeroExterno": {
+            "type": "string",
+            "description": "O numero externo do caso"
+          },
+          "idProduto": {
+            "type": "integer",
+            "description": "O identificador do produto"
+          },
+          "dsProduto": {
+            "type": "string",
+            "description": "O nome do produto"
           }
         }
       },
