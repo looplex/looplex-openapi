@@ -11009,7 +11009,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTOInformacaoAdicional"
+                    "$ref": "#/components/schemas/DTOInformacaoAdicionalResponse"
                   }
                 }
               }
@@ -11098,7 +11098,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DTOInformacaoAdicional"
+                    "$ref": "#/components/schemas/DTOInformacaoAdicionalResponse"
                   }
                 }
               }
@@ -11496,7 +11496,7 @@
           "Informações adicionais"
         ],
         "summary": "Edita propriedades específicas da Informação adicional",
-        "description": "**Propriedades disponíveis para edição**<br /> `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`.",
+        "description": "**Propriedades disponíveis para edição**<br /> `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`, `Schemas (serializado)`.",
         "operationId": "api-dado_complementar-edit",
         "parameters": [
           {
@@ -25650,53 +25650,6 @@
         "title": "TipoDadoComplementar",
         "description": "-2147483648: None\n\n1: CaixaTexto\n\n2: NumericoDecimal\n\n3: NumericoInteiro\n\n4: DataHora\n\n5: CaixaTextoMultiLinha\n\n6: CaixaCombo\n\n7: CaixaDeMarcacao\n\n8: PagadorCombo\n\n9: EmpresaCombo\n\n10: ClienteCombo\n\n11: GrupoClienteCombo\n\n12: ContratoSelecao\n\n13: ClienteSelecao\n\n14: CasoSelecao\n\n15: AreaCombo\n\n16: ProfissionalCombo\n\n17: SchemasInformacaoAdicionalJSON\n"
       },
-      "Schema": {
-        "title": "Schema",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "order": {
-            "type": "integer"
-          },
-          "type": {
-            "description": "O tipo da propriedade Json",
-            "example": "string",
-            "type": "string"
-          },
-          "format": {
-            "description": "O formato do valor. (e.g. date para datas)",
-            "example": "date",
-            "type": "string"
-          },
-          "mask": {
-            "description": "A máscara utilizada para formatar essa propriedade",
-            "type": "string"
-          },
-          "title": {
-            "description": "O nome da propriedade Json",
-            "type": "string"
-          },
-          "required": {
-            "description": "Indica se a propriedade é obrigatória",
-            "example": false,
-            "type": "boolean"
-          },
-          "enum": {
-            "description": "As opções dessa propriedade (e.g. Se for um dropdown)",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "maxLength": {
-            "description": "A quantidade máxima de caracteres permitida para essa propriedade",
-            "example": 0,
-            "type": "integer"
-          }
-        }
-      },
       "DTOItemDadoComplementar": {
         "title": "DTOItemDadoComplementar",
         "type": "object",
@@ -25821,13 +25774,6 @@
             "example": "Global",
             "description": "Indica quais os tipos de vínculo dessa Informação adicional.<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido."
           },
-          "Schemas": {
-            "description": "O schema do dado complementar (se o tipo do dado complementar for JSON)",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Schema"
-            }
-          },
           "Opcoes": {
             "description": "As opções da Informação adicional. <br />`Required apenas quando TipoCampoDadoComplementar for dos tipos 6: CaixaCombo ou 7: CaixaDeMarcacao`.",
             "type": "array",
@@ -25859,6 +25805,129 @@
           "Ativo",
           "Opcoes"
         ]
+      },
+      "Schema": {
+        "title": "Schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "type": {
+            "description": "O tipo da propriedade Json",
+            "example": "string",
+            "type": "string"
+          },
+          "format": {
+            "description": "O formato do valor. (e.g. date para datas)",
+            "example": "date",
+            "type": "string"
+          },
+          "mask": {
+            "description": "A máscara utilizada para formatar essa propriedade",
+            "type": "string"
+          },
+          "title": {
+            "description": "O nome da propriedade Json",
+            "type": "string"
+          },
+          "required": {
+            "description": "Indica se a propriedade é obrigatória",
+            "example": false,
+            "type": "boolean"
+          },
+          "enum": {
+            "description": "As opções dessa propriedade (e.g. Se for um dropdown)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "maxLength": {
+            "description": "A quantidade máxima de caracteres permitida para essa propriedade",
+            "example": 0,
+            "type": "integer"
+          }
+        }
+      },
+      "DTOInformacaoAdicionalResponse": {
+        "title": "DTOInformacaoAdicionalResponse",
+        "type": "object",
+        "properties": {
+          "IDParametroDadoComplementar": {
+            "type": "integer",
+            "example": -2147483648,
+            "description": "O identificador da Informação adicional.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+          },
+          "IDCliente": {
+            "type": "integer",
+            "example": -2147483648,
+            "description": "O identificador do cliente. Se o valor for maior que 0, a Informação adicional será vinculada ao cliente."
+          },
+          "TipoCampoDadoComplementar": {
+            "$ref": "#/components/schemas/TipoDadoComplementar"
+          },
+          "TituloDadoComplementar": {
+            "description": "O titulo da Informação adicional",
+            "example": "Nova Informação adicional",
+            "type": "string"
+          },
+          "TamanhoCampo": {
+            "description": "O tamanho do campo.<br />`Required apenas quando TipoCampoDadoComplementar for de tipo 1: CaixaTexto`",
+            "example": 200,
+            "type": "integer"
+          },
+          "Obrigatorio": {
+            "description": "Indica se o preenchimento dessa Informação adicional é obrigatória",
+            "example": false,
+            "type": "boolean"
+          },
+          "Ativo": {
+            "type": "boolean",
+            "description": "Indica se essa Informação adicional está ativa ou inativa"
+          },
+          "Ordem": {
+            "type": "integer",
+            "example": 1,
+            "description": "A ordem de exibição dessa Informação adicional"
+          },
+          "TipoDeVinculo": {
+            "type": "string",
+            "example": "Global",
+            "description": "Indica quais os tipos de vínculo dessa Informação adicional.<br />`ReadOnly`: O campo deve ser enviado no objeto mas não deve ser preenchido."
+          },
+          "Opcoes": {
+            "description": "As opções da Informação adicional. <br />`Required apenas quando TipoCampoDadoComplementar for dos tipos 6: CaixaCombo ou 7: CaixaDeMarcacao`.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOItemDadoComplementar"
+            }
+          },
+          "VinculadoNosTiposDeProcesso": {
+            "type": "array",
+            "description": "Vincular dado complementar nos tipos de processos informados. <br />`No GET indica os tipos de processo em que a informação adicional está vinculada, em POST e PUT indica em quais tipos de processo a Informação adicional deve ser vinculada.`",
+            "items": {
+              "$ref": "#/components/schemas/DTOTipoProcesso"
+            }
+          },
+          "VinculadoNasAreas": {
+            "type": "array",
+            "description": "Vincular dado complementar nas áreas informadas. <br />`No GET indica as áreas em que a informação adicional está vinculada, em POST e PUT indica em quais áreas a Informação adicional deve ser vinculada.`",
+            "items": {
+              "$ref": "#/components/schemas/DTOAreaInformacaoAdicional"
+            }
+          },
+          "Schemas": {
+            "description": "Os schemas do dado complementar, caso o tipo seja JSON",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          }
+        }
       },
       "DTOInformacaoAdicionalSimples": {
         "title": "DTOInformacaoAdicionalSimples",
@@ -25943,9 +26012,33 @@
         "title": "DTOSchemaInformacaoAdicional",
         "type": "object",
         "properties": {
+          "IDParametroDadoComplementar": {
+            "type": "integer",
+            "example": -2147483648,
+            "description": "O identificador da Informação adicional.<br />`Required`<br />- **POST**: A propriedade deve ser enviada com o valor *-2147483648*<br />- **PUT e DELETE**: Preencher com o valor da propriedade já existente."
+          },
           "title": {
             "description": "O nome para a informação adicional",
             "type": "string"
+          },
+          "IDCliente": {
+            "type": "integer",
+            "example": -2147483648,
+            "description": "O identificador do cliente. Se o valor for maior que 0, a Informação adicional será vinculada ao cliente."
+          },
+          "VinculadoNosTiposDeProcesso": {
+            "type": "array",
+            "description": "Vincular dado complementar nos tipos de processos informados. <br />`No GET indica os tipos de processo em que a informação adicional está vinculada, em POST e PUT indica em quais tipos de processo a Informação adicional deve ser vinculada.`",
+            "items": {
+              "$ref": "#/components/schemas/DTOTipoProcesso"
+            }
+          },
+          "VinculadoNasAreas": {
+            "type": "array",
+            "description": "Vincular dado complementar nas áreas informadas. <br />`No GET indica as áreas em que a informação adicional está vinculada, em POST e PUT indica em quais áreas a Informação adicional deve ser vinculada.`",
+            "items": {
+              "$ref": "#/components/schemas/DTOAreaInformacaoAdicional"
+            }
           },
           "schemas": {
             "description": "As propriedades Json dessa informação adicional",

@@ -2,7 +2,7 @@
 tags:
   - Informações adicionais
 summary: Edita propriedades específicas da Informação adicional
-description: "**Propriedades disponíveis para edição**<br /> `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`."
+description: "**Propriedades disponíveis para edição**<br /> `TituloDadoComplementar`, `TamanhoCampo`, `Obrigatorio`, `Ativo`, `Schemas (serializado)`."
 operationId: api-dado_complementar-edit
 # Parâmetros da requisição
 parameters:

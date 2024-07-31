@@ -1,4 +1,4 @@
-title: DTOInformacaoAdicional
+title: DTOInformacaoAdicionalResponse
 type: object
 properties:
   IDParametroDadoComplementar:
@@ -48,12 +48,9 @@ properties:
     type: array
     description: "Vincular dado complementar nas áreas informadas. <br />`No GET indica as áreas em que a informação adicional está vinculada, em POST e PUT indica em quais áreas a Informação adicional deve ser vinculada.`"
     items: 
-      $ref: DTOAreaInformacaoAdicional.yaml         
-required: 
-  - IDParametroDadoComplementar
-  - TipoCampoDadoComplementar
-  - TituloDadoComplementar
-  - TamanhoCampo
-  - Obrigatorio
-  - Ativo
-  - Opcoes
+      $ref: DTOAreaInformacaoAdicional.yaml
+  Schemas:
+    description: "Os schemas do dado complementar, caso o tipo seja JSON"
+    type: array
+    items:
+      $ref: Schema.yaml

@@ -30,7 +30,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: ../../../components/schemas/cases/DTOInformacaoAdicional.yaml
+            $ref: ../../../components/schemas/cases/DTOInformacaoAdicionalResponse.yaml
   "401":
     description: "Unauthorized"
     content:
