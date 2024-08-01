@@ -13,6 +13,12 @@ parameters:
     required: true
     schema:
       type: string
+  - name: documento
+    in: query
+    description: "O documento para pesquisa<br />`Ignorado se menor que 4 caracteres`"
+    required: false
+    schema:
+      type: string
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

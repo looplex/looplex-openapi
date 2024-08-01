@@ -13323,6 +13323,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "documento",
+            "in": "query",
+            "description": "O documento para pesquisa<br />`Ignorado se menor que 4 caracteres`",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
