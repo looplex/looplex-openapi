@@ -1,5 +1,38 @@
 [
   {
+    "$comment": "TipoItemAgenda",
+    "enum": [
+      {
+        "name": "Atividade externa",
+        "value": 1
+      },
+      {
+        "name": "Prazo",
+        "value": 2
+      },
+      {
+        "name": "Audiência",
+        "value": 4
+      },
+      {
+        "name": "Compromisso de trabalho",
+        "value": 8
+      },
+      {
+        "name": "Compromisso particular",
+        "value": 9
+      },
+      {
+        "name": "Compromisso",
+        "value": 10
+      },
+      {
+        "name": "Publicação",
+        "value": 11
+      }
+    ]
+  },
+  {
     "$comment": "TipoAlocacaoDebito",
     "enum": [
       {
@@ -480,27 +513,27 @@
         "value": 1
       },
       {
-        "name": "Consultivo",
+        "name": "(Interno) Consultivo",
         "value": 2
       },
       {
-        "name": "JudicialEstadual",
+        "name": "Judicial Estadual",
         "value": 3
       },
       {
-        "name": "JudicialFederal",
+        "name": "Judicial Federal",
         "value": 4
       },
       {
-        "name": "JudicialTrabalhista",
+        "name": "Judicial Trabalhista",
         "value": 5
       },
       {
-        "name": "InternoEscritorio",
+        "name": "Interno do escritório",
         "value": 6
       },
       {
-        "name": "MilitarEstadual",
+        "name": "Militar Estadual",
         "value": 7
       },
       {
@@ -508,23 +541,23 @@
         "value": 8
       },
       {
-        "name": "MilitarUniao",
+        "name": "Militar da Uniao",
         "value": 9
       },
       {
-        "name": "ConsultivoContrato",
+        "name": "Contrato",
         "value": 10
       },
       {
-        "name": "AnaliseDocumental",
+        "name": "Análise Documental",
         "value": 11
       },
       {
-        "name": "GestaoDeAtivos",
+        "name": "Cobrança",
         "value": 12
       },
       {
-        "name": "Societario",
+        "name": "Societário",
         "value": 13
       }
     ]
