@@ -1,0 +1,532 @@
+[
+  {
+    "$comment": "TipoAlocacaoDebito",
+    "enum": [
+      {
+        "name": "Cliente",
+        "value": 1
+      },
+      {
+        "name": "Contrato",
+        "value": 2
+      },
+      {
+        "name": "Caso",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "$comment": "StatusVoucherFechamento",
+    "enum": [
+      {
+        "name": "LiberadoParaConciliacao",
+        "value": 1
+      },
+      {
+        "name": "AguardandoPagamento",
+        "value": 3
+      },
+      {
+        "name": "Pago",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "$comment": "ContratoSituacao",
+    "enum": [
+      {
+        "name": "Ativo",
+        "value": 1
+      },
+      {
+        "name": "Encerrado",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "$comment": "SituacaoLancamentoDespesa",
+    "enum": [
+      {
+        "name": "Aprovado",
+        "value": 1
+      },
+      {
+        "name": "AguardandoAprovacao",
+        "value": 2
+      },
+      {
+        "name": "PreAprovado",
+        "value": 3
+      },
+      {
+        "name": "NaoAprovado",
+        "value": 4
+      },
+      {
+        "name": "AprovadoEPreAprovado",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "$comment": "TipoFormaLancamento",
+    "enum": [
+      {
+        "name": "FundoFixo",
+        "value": 1
+      },
+      {
+        "name": "Voucher",
+        "value": 2
+      },
+      {
+        "name": "Reembolso",
+        "value": 3
+      },
+      {
+        "name": "ContasAPagar",
+        "value": 4
+      },
+      {
+        "name": "Estorno",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "$comment": "SituacaoDoProcesso",
+    "enum": [
+      {
+        "name": "Ativo",
+        "value": 1
+      },
+      {
+        "name": "ArquivoMorto",
+        "value": 2
+      },
+      {
+        "name": "Encerrado",
+        "value": 3
+      },
+      {
+        "name": "Excluido",
+        "value": 99
+      }
+    ]
+  },
+  {
+    "$comment": "eAlocacaoAreaTipo",
+    "enum": [
+      {
+        "name": "Fixa",
+        "value": 1
+      },
+      {
+        "name": "PorHora",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "$comment": "VinculoEmpregaticio",
+    "enum": [
+      {
+        "name": "Estagiario",
+        "value": 1
+      },
+      {
+        "name": "CLT",
+        "value": 2
+      },
+      {
+        "name": "Autonomo",
+        "value": 3
+      },
+      {
+        "name": "Terceirizado",
+        "value": 4
+      },
+      {
+        "name": "Outro",
+        "value": 5
+      },
+      {
+        "name": "Socio",
+        "value": 6
+      },
+      {
+        "name": "Correspondente",
+        "value": 7
+      },
+      {
+        "name": "Advogado",
+        "value": 8
+      },
+      {
+        "name": "Aprendiz",
+        "value": 9
+      }
+    ]
+  },
+  {
+    "$comment": "Moeda",
+    "enum": [
+      {
+        "name": "Real",
+        "value": 1
+      },
+      {
+        "name": "DolarAmericano",
+        "value": 2
+      },
+      {
+        "name": "Euro",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "$comment": "EstadoCivil",
+    "enum": [
+      {
+        "name": "Solteiro",
+        "value": 1
+      },
+      {
+        "name": "Casado",
+        "value": 2
+      },
+      {
+        "name": "Viuvo",
+        "value": 3
+      },
+      {
+        "name": "Desquitado",
+        "value": 4
+      },
+      {
+        "name": "Divorciado",
+        "value": 5
+      },
+      {
+        "name": "Outros",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "$comment": "SituacaoDaArea",
+    "enum": [
+      {
+        "name": "Ativa",
+        "value": 1
+      },
+      {
+        "name": "Inativa",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "$comment": "DiaDaFatura",
+    "enum": [
+      {
+        "name": "Cinco",
+        "value": 5
+      },
+      {
+        "name": "Dez",
+        "value": 10
+      },
+      {
+        "name": "Quinze",
+        "value": 15
+      },
+      {
+        "name": "Vinte",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "$comment": "TipoDeEndereco",
+    "enum": [
+      {
+        "name": "Residencial",
+        "value": 1
+      },
+      {
+        "name": "Comercial",
+        "value": 2
+      },
+      {
+        "name": "Outros",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "$comment": "Polo",
+    "enum": [
+      {
+        "name": "Ativo",
+        "value": 1
+      },
+      {
+        "name": "Passivo",
+        "value": 2
+      },
+      {
+        "name": "Terceiro",
+        "value": 3
+      },
+      {
+        "name": "Nenhum",
+        "value": 4
+      },
+      {
+        "name": "OutroEnvolvido",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "$comment": "SituacaoDeGrupoDeClientes",
+    "enum": [
+      {
+        "name": "Ativa",
+        "value": 1
+      },
+      {
+        "name": "Inativa",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "$comment": "SituacaoDeCliente",
+    "enum": [
+      {
+        "name": "Ativa",
+        "value": 1
+      },
+      {
+        "name": "Inativa",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "$comment": "MotivoDoEncerramento",
+    "enum": [
+      {
+        "name": "RetiradoDoEscritorio",
+        "value": 1
+      },
+      {
+        "name": "DecisaoFinal",
+        "value": 2
+      },
+      {
+        "name": "Acordo",
+        "value": 3
+      },
+      {
+        "name": "PerdaCliente",
+        "value": 4
+      },
+      {
+        "name": "Apensamento",
+        "value": 5
+      },
+      {
+        "name": "Arquivamento",
+        "value": 6
+      },
+      {
+        "name": "Desistencia",
+        "value": 7
+      },
+      {
+        "name": "ExclusaoLide",
+        "value": 8
+      },
+      {
+        "name": "ExtincaoComJulgamentoMerito",
+        "value": 9
+      },
+      {
+        "name": "ExtincaoSemJulgamentoMerito",
+        "value": 10
+      },
+      {
+        "name": "Improcedencia",
+        "value": 11
+      },
+      {
+        "name": "Pagamento",
+        "value": 12
+      },
+      {
+        "name": "Procedencia",
+        "value": 13
+      },
+      {
+        "name": "ProvidenciaRealizada",
+        "value": 14
+      },
+      {
+        "name": "Provisorio",
+        "value": 15
+      },
+      {
+        "name": "Renuncia",
+        "value": 16
+      },
+      {
+        "name": "Sentenca",
+        "value": 17
+      },
+      {
+        "name": "TransitoEmJulgado",
+        "value": 18
+      },
+      {
+        "name": "AtividadesFinalizadas",
+        "value": 19
+      },
+      {
+        "name": "ContinuaEmOutroCaso",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "$comment": "TipoDeDependente",
+    "enum": [
+      {
+        "name": "Conjuge",
+        "value": 1
+      },
+      {
+        "name": "Filho",
+        "value": 2
+      },
+      {
+        "name": "Pai",
+        "value": 3
+      },
+      {
+        "name": "Mae",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "$comment": "TipoDocumento",
+    "enum": [
+      {
+        "name": "CPF",
+        "value": 1
+      },
+      {
+        "name": "CNPJ",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "$comment": "TipoCliente",
+    "enum": [
+      {
+        "name": "PessoaFisica",
+        "value": 1
+      },
+      {
+        "name": "PessoaJuridica",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "$comment": "ClasseProcesso",
+    "enum": [
+      {
+        "name": "Processo",
+        "value": 1
+      },
+      {
+        "name": "SubProcesso",
+        "value": 2
+      },
+      {
+        "name": "Recurso",
+        "value": 3
+      },
+      {
+        "name": "Incidente",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "$comment": "RamosJudicial",
+    "enum": [
+      {
+        "name": "Administrativo",
+        "value": 1
+      },
+      {
+        "name": "Consultivo",
+        "value": 2
+      },
+      {
+        "name": "JudicialEstadual",
+        "value": 3
+      },
+      {
+        "name": "JudicialFederal",
+        "value": 4
+      },
+      {
+        "name": "JudicialTrabalhista",
+        "value": 5
+      },
+      {
+        "name": "InternoEscritorio",
+        "value": 6
+      },
+      {
+        "name": "MilitarEstadual",
+        "value": 7
+      },
+      {
+        "name": "Eleitoral",
+        "value": 8
+      },
+      {
+        "name": "MilitarUniao",
+        "value": 9
+      },
+      {
+        "name": "ConsultivoContrato",
+        "value": 10
+      },
+      {
+        "name": "AnaliseDocumental",
+        "value": 11
+      },
+      {
+        "name": "GestaoDeAtivos",
+        "value": 12
+      },
+      {
+        "name": "Societario",
+        "value": 13
+      }
+    ]
+  }
+]

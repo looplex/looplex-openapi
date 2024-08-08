@@ -7,6 +7,20 @@ const { Text } = Typography
 
 const apis = [
   {
+    key: 'enums',
+    label: 'Lista de enums',
+    children:
+      <>
+        <Text style={{ fontWeight: 'bold', fontSize: 16 }}>
+          Descrição dos enums
+        </Text>
+        <Divider />
+        <a href="/v1/enums" target="_blank">
+          Enums
+        </a>
+      </>
+  },
+  {
     key: 'actions',
     label: 'Actions',
     children:
