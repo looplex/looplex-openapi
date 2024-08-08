@@ -74,11 +74,12 @@ export default function Enums() {
               <p />
 
               {
-                item["enum"].map(i => {
+                item["enum"].map((i, index) => {
 
                   return (
 
                     <Title
+                      key={index}
                       level={4}
                       style={{ marginBottom: -20 }}
                     >
