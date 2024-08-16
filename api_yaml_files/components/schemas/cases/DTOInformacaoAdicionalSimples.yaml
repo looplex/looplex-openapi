@@ -24,6 +24,3 @@ properties:
     type: array
     items:
       $ref: Schema.yaml
-  UISchema:
-    type: string
-    description: "O UI Schema do dado complementar (se o tipo do dado complementar for JSON e se houver)"
