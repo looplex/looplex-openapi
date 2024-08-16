@@ -25970,8 +25970,11 @@
             "type": "integer"
           },
           "Schema": {
-            "type": "string",
-            "description": "O schema do dado complementar (se o tipo do dado complementar for JSON)"
+            "description": "O schema do dado complementar (se o tipo do dado complementar for JSON)",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
           },
           "UISchema": {
             "type": "string",
