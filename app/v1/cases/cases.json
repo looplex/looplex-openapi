@@ -25957,6 +25957,10 @@
           "Nome": {
             "type": "string"
           },
+          "IDParametroDadoComplementar": {
+            "type": "integer",
+            "description": "O identificador da informação adicional"
+          },
           "TipoCampo": {
             "type": "string"
           },
@@ -25974,6 +25978,20 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "ValorSchema": {
+            "type": "object",
+            "description": "O valor incluído nesse caso utilizando essa informação adicional.<br />**Se a informação adicional não for do tipo JSON, essa propriedade será** `null`**.**",
+            "properties": {
+              "IDProcessoValorDadoComplementar": {
+                "type": "integer",
+                "description": "O identificador desse valor"
+              },
+              "Conteudo": {
+                "type": "string",
+                "description": "O valor gravado serializado em JSON"
+              }
             }
           }
         }
