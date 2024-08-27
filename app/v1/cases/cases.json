@@ -25981,17 +25981,30 @@
             }
           },
           "ValorSchema": {
-            "type": "object",
-            "description": "O valor incluído nesse caso utilizando essa informação adicional.<br />**Se a informação adicional não for do tipo JSON, essa propriedade será** `null`**.**",
-            "properties": {
-              "IDProcessoValorDadoComplementar": {
-                "type": "integer",
-                "description": "O identificador desse valor"
-              },
-              "Conteudo": {
-                "type": "string",
-                "description": "O valor gravado serializado em JSON"
-              }
+            "type": "string"
+          },
+          "IDsProcessoValorDadoComplementar": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "Ordem": {
+            "type": "integer"
+          },
+          "TamanhoCampo": {
+            "type": "integer"
+          },
+          "Ativo": {
+            "type": "boolean"
+          },
+          "Obrigatorio": {
+            "type": "boolean"
+          },
+          "Opcoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOItemDadoComplementar"
             }
           }
         }
