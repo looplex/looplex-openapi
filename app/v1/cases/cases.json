@@ -11828,6 +11828,88 @@
         }
       }
     },
+    "/api/dado_complementar/valores": {
+      "delete": {
+        "tags": [
+          "Informações adicionais (valor)"
+        ],
+        "summary": "Exclui informação adicional por processo",
+        "operationId": "api-dado_complementar-valores-delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DTOProcessoValorDadoComplementarIds"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "Valor(es) excluído(s) com sucesso"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/liabilitiesCalculation/calculaCaso/{cdProcesso}": {
       "post": {
         "tags": [
@@ -26183,6 +26265,22 @@
             "description": "Indica um erro interno ocorrido no servidor."
           }
         }
+      },
+      "DTOProcessoValorDadoComplementarIds": {
+        "title": "DTOProcessoValorDadoComplementarIds",
+        "type": "object",
+        "properties": {
+          "IDCaso": {
+            "type": "integer"
+          },
+          "IDParametroDadoComplementar": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "IDCaso",
+          "IDParametroDadoComplementar"
+        ]
       },
       "DTOCurrencyValue": {
         "title": "DTOCurrencyValue",

@@ -493,7 +493,10 @@ paths:
   /api/dado_complementar/valor:
     post:
       $ref: './paths/cases/informacoes_adicionais_valor/public@api@dado_complementar@valor-post.yaml'
-  
+  /api/dado_complementar/valores:
+    delete: 
+      $ref: './paths\cases\informacoes_adicionais_valor\public@api@dado_complementar@valores-delete.yaml' 
+      
   # Liabilities Calculation
   /api/liabilitiesCalculation/calculaCaso/{cdProcesso}:
     post:

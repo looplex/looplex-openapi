@@ -1,0 +1,10 @@
+title: DTOProcessoValorDadoComplementarIds
+type: object
+properties:
+  IDCaso:
+    type: integer
+  IDParametroDadoComplementar:
+    type: integer
+required:
+  - IDCaso
+  - IDParametroDadoComplementar
