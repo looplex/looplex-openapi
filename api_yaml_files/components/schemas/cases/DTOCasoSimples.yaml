@@ -86,6 +86,8 @@ properties:
   PoloAtivo:
     type: string
   PoloPassivo:
+    type: string  
+  PoloTerceiro:
     type: string   
   StatusCaso:
     type: string
@@ -107,6 +109,8 @@ properties:
   PrimeiroPoloAtivo:
     type: string
   PrimeiroPoloPassivo:
+    type: string   
+  PrimeiroPoloTerceiro:
     type: string     
   NomeFornecedor:
     type: string
@@ -119,6 +123,8 @@ properties:
   CampoLivreHierarquiaAdm:
     type: string
     description: "Campo de texto livre para hierarquia de casos administrativos"
+  UltimoItemTimeLine:
+    $ref: DTOTimelineItem.yaml  
   
   
   

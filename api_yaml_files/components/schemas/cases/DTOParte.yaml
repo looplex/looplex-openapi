@@ -68,4 +68,6 @@ properties:
   NumeroExterno:
     type: string
     description: "Preenchido apenas na pesquisa de partes do caso"
+  EnvolvimentoText:
+    type: string
   
