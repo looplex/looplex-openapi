@@ -32,3 +32,6 @@ properties:
     description: "A quantidade máxima de caracteres permitida para essa propriedade"
     example: 0
     type: integer
+  span: 
+    example: 24
+    type: integer
