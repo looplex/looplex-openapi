@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "commit": "cz",
     "actions": "redocly preview-docs api_yaml_files/actions.yaml",
     "assembler": "redocly preview-doc sapi_yaml_files/assembler.yaml",
     "cases": "redocly preview-docs api_yaml_files/cases.yaml",
@@ -15,6 +16,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "commitizen": "^4.3.0",
     "@redocly/cli": "1.14.0",
     "antd": "^5.17.0",
     "core-js": "^3.37.0",
@@ -28,5 +30,10 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.2.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
