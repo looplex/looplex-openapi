@@ -104,6 +104,9 @@ paths:
       $ref: './paths/cases/calculo_monetario/public@api@casos@id@ValoresParaCalculo-get.yaml'
 
   # Caso
+  /api/casos/edit/custom_fields:
+    post:
+      $ref: './paths/cases/casos/public@api@casos@edit@custom_fields-post.yaml'
   /api/casos:
     get:
       $ref: './paths/cases/casos/public@api@casos-get.yaml'

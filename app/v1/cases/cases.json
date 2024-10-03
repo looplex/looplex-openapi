@@ -1625,6 +1625,105 @@
         }
       }
     },
+    "/api/casos/edit/custom_fields": {
+      "post": {
+        "tags": [
+          "Casos"
+        ],
+        "summary": "Atualiza custom fields",
+        "operationId": "api-casos-edit-custom_fields-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "idCaso",
+            "in": "query",
+            "required": true,
+            "description": "O identificador do caso",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "O identificador da integração",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DTOCustomFields"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCasoCompleto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos": {
       "get": {
         "tags": [
@@ -1796,7 +1895,7 @@
         "tags": [
           "Casos"
         ],
-        "summary": "Cadastra casos",
+        "summary": "Inclui casos",
         "operationId": "api-casos-inclui-post",
         "parameters": [
           {
@@ -1877,7 +1976,7 @@
         "tags": [
           "Casos"
         ],
-        "summary": "Edita informações do caso",
+        "summary": "Atualiza informações do caso",
         "description": "**As propriedades que podem ser editadas são as listadas na resposta 200 e devem ser enviadas com o respectivo nome**.<br />`Observação: Nem todas as propriedades podem ser atualizadas/editadas.`",
         "operationId": "api-casos-edit-put",
         "parameters": [
@@ -3165,6 +3264,15 @@
           },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "obtemUltimoItemTimeLine",
+            "in": "query",
+            "required": false,
+            "description": "Se o ultimo item de timeline será incluído na resposta.<br />`Default: false`",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -3396,7 +3504,7 @@
         "tags": [
           "Casos"
         ],
-        "summary": "Listagem de casos paginada",
+        "summary": "Lista de casos paginada",
         "operationId": "api-casos-por_pagina-get",
         "parameters": [
           {
@@ -11332,7 +11440,7 @@
         "tags": [
           "Informações adicionais"
         ],
-        "summary": "Cadastra Informações adicionais (completa)",
+        "summary": "Inclui Informações adicionais (completa)",
         "description": "Cadastrar novas Informações adicionais.",
         "operationId": "api-dado_complementar-post",
         "parameters": [
@@ -11675,7 +11783,7 @@
         "tags": [
           "Informações adicionais"
         ],
-        "summary": "Cadastra informação adicional de tipo JSON",
+        "summary": "Inclui informação adicional de tipo JSON",
         "operationId": "api-dado_complementar-json-post",
         "parameters": [
           {
@@ -12631,7 +12739,7 @@
         "tags": [
           "Motivo de pedir"
         ],
-        "summary": "Cadastra motivo de pedir",
+        "summary": "Inclui motivo de pedir",
         "description": "Cadastra um novo motivo de pedir",
         "operationId": "api-propositionStatement-post",
         "parameters": [
@@ -16556,7 +16664,7 @@
         "tags": [
           "Tarefa"
         ],
-        "summary": "Editar propriedades específicas",
+        "summary": "Edita propriedades específicas",
         "description": "**Propriedades que podem ser alteradas**<br />- Atividade externa: `ExecutionID`<br />- Audiência: `ExecutionID`<br />- Compromisso: `ExecutionID`",
         "operationId": "api-agenda-edit-put",
         "parameters": [
@@ -17431,7 +17539,7 @@
         "tags": [
           "Tarefa"
         ],
-        "summary": "Cadastra títulos de tarefa",
+        "summary": "Inclui títulos de tarefa",
         "operationId": "api-agenda-titulos-post",
         "parameters": [
           {
@@ -18077,7 +18185,7 @@
         "tags": [
           "Tarefa"
         ],
-        "summary": "Cadastra / atualiza Custom Fields",
+        "summary": "Inclui / atualiza Custom Fields",
         "description": "Esse endpoint é `exclusivo para criar ou atualizar valores de custom fields`",
         "operationId": "api-agenda-custom_field-post",
         "parameters": [
@@ -18187,7 +18295,7 @@
         "tags": [
           "Tarefa"
         ],
-        "summary": "Adiciona tarefas",
+        "summary": "Inclui tarefas",
         "description": "Cadastra tarefas vinculadas ou não a determinada publicação",
         "operationId": "api-publicacao-tarefas-post",
         "parameters": [
@@ -21310,9 +21418,33 @@
           }
         }
       },
-      "SituacaoDoProcesso": {
-        "title": "SituacaoDoProcesso",
-        "description": "1: Ativo\n\n2: Arquivo morto\n\n3: Encerrado\n\n99: Excluído\n"
+      "DTOCustomFields": {
+        "title": "DTOCustomFields",
+        "type": "object",
+        "properties": {
+          "Nome": {
+            "example": "Dado_complementar_exemplo",
+            "description": "O nome da propriedade a atualizar / cadastrar um json",
+            "type": "string"
+          },
+          "Valor": {
+            "description": "O json a ser gravado nessa propriedade de custom fields<br />`O conteúdo da propriedade 'Valor' no payload do 'Request sample' a ser enviado para o endpoint é um exemplo de Json a ser gravado, não precisa ser desse jeito.`",
+            "type": "object",
+            "example": {
+              "Tipo": "Campo de texto",
+              "Validacoes": {
+                "TamanhoCampo": 10,
+                "Obrigatorio": true
+              },
+              "Ativo": true,
+              "DataCadastro": "2024-03-27"
+            }
+          }
+        },
+        "required": [
+          "Nome",
+          "Valor"
+        ]
       },
       "ExpectativaReivindicacao": {
         "type": "integer",
@@ -22126,8 +22258,67 @@
           "CampoLivreHierarquiaAdm": {
             "type": "string",
             "description": "Campo de texto livre para hierarquia de casos administrativos"
+          },
+          "CustomFields": {
+            "type": "string"
           }
         }
+      },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "`BadRequest`<br />Indica que o formato da requisição está incorreto"
+          }
+        }
+      },
+      "UnauthorizedResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "ForbiddenResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica uma requisição não autorizada."
+          }
+        }
+      },
+      "InternalServerErrorResponse": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string",
+            "description": "Erro"
+          },
+          "ExceptionMessage": {
+            "type": "string",
+            "description": "Indica um erro interno ocorrido no servidor."
+          }
+        }
+      },
+      "SituacaoDoProcesso": {
+        "title": "SituacaoDoProcesso",
+        "description": "1: Ativo\n\n2: Arquivo morto\n\n3: Encerrado\n\n99: Excluído\n"
       },
       "TipoExpectativaReivindicacao": {
         "title": "TipoExpectativaReivindicacao",
@@ -26290,58 +26481,6 @@
           }
         }
       },
-      "BadRequestResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "`BadRequest`<br />Indica que o formato da requisição está incorreto"
-          }
-        }
-      },
-      "UnauthorizedResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica uma requisição não autorizada."
-          }
-        }
-      },
-      "ForbiddenResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica uma requisição não autorizada."
-          }
-        }
-      },
-      "InternalServerErrorResponse": {
-        "type": "object",
-        "properties": {
-          "Message": {
-            "type": "string",
-            "description": "Erro"
-          },
-          "ExceptionMessage": {
-            "type": "string",
-            "description": "Indica um erro interno ocorrido no servidor."
-          }
-        }
-      },
       "DTOProcessoValorDadoComplementarIds": {
         "title": "DTOProcessoValorDadoComplementarIds",
         "type": "object",
@@ -30099,34 +30238,6 @@
             "type": "string"
           }
         }
-      },
-      "DTOCustomFields": {
-        "title": "DTOCustomFields",
-        "type": "object",
-        "properties": {
-          "Nome": {
-            "example": "Dado_complementar_exemplo",
-            "description": "O nome da propriedade a atualizar / cadastrar um json",
-            "type": "string"
-          },
-          "Valor": {
-            "description": "O json a ser gravado nessa propriedade de custom fields<br />`O conteúdo da propriedade 'Valor' no payload do 'Request sample' a ser enviado para o endpoint é um exemplo de Json a ser gravado, não precisa ser desse jeito.`",
-            "type": "object",
-            "example": {
-              "Tipo": "Campo de texto",
-              "Validacoes": {
-                "TamanhoCampo": 10,
-                "Obrigatorio": true
-              },
-              "Ativo": true,
-              "DataCadastro": "2024-03-27"
-            }
-          }
-        },
-        "required": [
-          "Nome",
-          "Valor"
-        ]
       },
       "TipoTarefa": {
         "title": "TipoTarefa",

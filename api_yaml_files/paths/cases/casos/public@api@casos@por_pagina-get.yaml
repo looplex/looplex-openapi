@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Casos
-summary: "Listagem de casos paginada"
+summary: "Lista de casos paginada"
 operationId: api-casos-por_pagina-get
 # Parâmetros da requisição
 parameters:

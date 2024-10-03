@@ -1,18 +1,32 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Informações adicionais
-summary: "Inclui informação adicional de tipo JSON"
-operationId: api-dado_complementar-json-post
+  - Casos
+summary: "Atualiza custom fields"
+operationId: api-casos-edit-custom_fields-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: idCaso
+    in: query
+    required: true
+    description: "O identificador do caso"
+    schema:
+      type: integer
+  - name: client_id
+    in: header
+    required: true
+    description: "O identificador da integração"
+    schema: 
+      type: string
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/cases/DTOSchemaInformacaoAdicional.yaml
+        type: array
+        items: 
+          $ref: ../../../components/schemas/cases/DTOCustomFields.yaml
 # Responses
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
@@ -22,7 +36,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: "../../../components/schemas/cases/DTOSchemaInformacaoAdicionalResponse.yaml"
+          $ref: "../../../components/schemas/cases/DTOCasoCompleto.yaml"
   "400":
     description: "Bad Request"
     content:
