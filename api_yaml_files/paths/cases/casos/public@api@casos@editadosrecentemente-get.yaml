@@ -7,6 +7,12 @@ operationId: api-casos-editadosrecentemente-get
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: obtemUltimoItemTimeLine
+    in: query
+    required: false
+    description: "Se o ultimo item de timeline será incluído na resposta.<br />`Default: false`"
+    schema:
+      type: boolean
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

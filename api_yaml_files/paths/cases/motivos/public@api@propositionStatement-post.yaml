@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Motivo de pedir
-summary: "Cadastra motivo de pedir"
+summary: "Inclui motivo de pedir"
 description: "Cadastra um novo motivo de pedir"
 operationId: api-propositionStatement-post
 # Parâmetros da requisição

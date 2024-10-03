@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Cadastra / atualiza Custom Fields"
+summary: "Inclui / atualiza Custom Fields"
 description: "Esse endpoint é `exclusivo para criar ou atualizar valores de custom fields`"
 operationId: api-agenda-custom_field-post
 # Parâmetros da requisição

@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Adiciona tarefas"
+summary: "Inclui tarefas"
 description: "Cadastra tarefas vinculadas ou não a determinada publicação"
 operationId: api-publicacao-tarefas-post
 # Parâmetros da requisição

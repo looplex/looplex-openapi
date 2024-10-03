@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Cadastra títulos de tarefa"
+summary: "Inclui títulos de tarefa"
 operationId: api-agenda-titulos-post
 # Parâmetros da requisição
 parameters:

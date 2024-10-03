@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Ritos
-summary: "Cadastra ritos"
+summary: "Inclui ritos"
 operationId: v2-sequence-post
 parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml

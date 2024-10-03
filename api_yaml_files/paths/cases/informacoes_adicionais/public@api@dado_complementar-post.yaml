@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Informações adicionais
-summary: "Cadastra Informações adicionais (completa)"
+summary: "Inclui Informações adicionais (completa)"
 description: "Cadastrar novas Informações adicionais."
 operationId: api-dado_complementar-post
 # Parâmetros da requisição

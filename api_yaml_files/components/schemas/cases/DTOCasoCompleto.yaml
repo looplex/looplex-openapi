@@ -195,4 +195,5 @@ properties:
   CampoLivreHierarquiaAdm:
     type: string
     description: "Campo de texto livre para hierarquia de casos administrativos"
-  
+  CustomFields:
+    type: string
