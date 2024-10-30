@@ -1,7 +1,7 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Tarefa
-summary: "Lista itens de agenda por funcionários e filtro"
+summary: "Lista paginada de itens de agenda por funcionários e filtro"
 operationId: api-compromissos-get
 # Parâmetros da requisição
 parameters:
