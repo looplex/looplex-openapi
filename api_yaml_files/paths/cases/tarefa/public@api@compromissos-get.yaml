@@ -7,6 +7,18 @@ operationId: api-compromissos-get
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
+  - name: currentPage
+    in: query
+    required: false
+    description: "A página atual para pesquisa. `Default: 1`"
+    schema:
+      type: integer
+  - name: pageSize
+    in: query
+    required: false
+    description: "A quantidade de itens por página para retornar. `Default: 10`"
+    schema:
+      type: integer
   - name: idsFuncionarios
     in: query
     example: "\"1,15,20\""
@@ -58,9 +70,16 @@ responses:
     content:
       application/json:
         schema:
-          type: array
-          items:
-            $ref: ../../../components/schemas/cases/DTOCompromissoSimples.yaml
+          type: object
+          properties:
+            Result:
+              type: array
+              description: "Os compromissos da página pesquisada"
+              items:
+                $ref: ../../../components/schemas/cases/DTOCompromissoSimples.yaml
+            QuantidadeTarefasExistentes:
+              type: integer
+              description: "A quantidade de tarefas existentes para o filtro informado"
   "401":
     description: "Unauthorized"
     content:
