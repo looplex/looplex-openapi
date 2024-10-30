@@ -13925,6 +13925,114 @@
         }
       }
     },
+    "/api/partes/pesquisa": {
+      "get": {
+        "tags": [
+          "Partes"
+        ],
+        "summary": "Pesquisa de partes simplificada",
+        "operationId": "api-partes-pesquisa-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "nome",
+            "in": "query",
+            "required": true,
+            "description": "O termo de pesquisa por nome",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "documento",
+            "in": "query",
+            "required": false,
+            "description": "O documento para pesquisa",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "IdParte": {
+                        "type": "integer",
+                        "description": "O identificador da parte"
+                      },
+                      "NomeParte": {
+                        "type": "string",
+                        "description": "O nome da parte"
+                      },
+                      "CNPJ": {
+                        "type": "string",
+                        "description": "O CNPJ da parte (caso seja pessoa jurídica)"
+                      },
+                      "CPF": {
+                        "type": "string",
+                        "description": "O CNPJ da parte (caso seja pessoa física)"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/{IDCaso}/Pedidos": {
       "get": {
         "tags": [

@@ -575,6 +575,9 @@ paths:
   /api/partes/{idParte}:
     patch:
       $ref: './paths/cases/partes/public@api@partes@idParte-patch.yaml'
+  /api/partes/pesquisa:
+    get:
+      $ref: './paths/cases/partes/public@api@partes@pesquisa-get.yaml'
 
   # Pedidos
   /api/casos/{IDCaso}/Pedidos:
