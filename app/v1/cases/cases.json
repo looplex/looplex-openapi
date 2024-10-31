@@ -13942,7 +13942,7 @@
           {
             "name": "nome",
             "in": "query",
-            "required": true,
+            "required": false,
             "description": "O termo de pesquisa por nome",
             "schema": {
               "type": "string"
