@@ -22071,6 +22071,10 @@
             "example": 9030,
             "description": "Identificador do item de timeline"
           },
+          "Data": {
+            "type": "string",
+            "description": "A data do item de agenda em UTC"
+          },
           "DataFormatada": {
             "type": "string",
             "example": "01/07/2022 20:00",
@@ -30462,6 +30466,10 @@
             "description": "Local para a realização da tarefa <br />**Exemplo: Fórum central**",
             "example": "Fórum central",
             "type": "string"
+          },
+          "Concluido": {
+            "type": "boolean",
+            "description": "Indica se a tarefa está concluída"
           },
           "Observacao": {
             "description": "Observações da tarefa",

@@ -5,6 +5,9 @@ properties:
     type: integer
     example: 9030
     description: "Identificador do item de timeline"
+  Data:
+    type: string
+    description: "A data do item de agenda em UTC"
   DataFormatada:
     type: string
     example: "01/07/2022 20:00"

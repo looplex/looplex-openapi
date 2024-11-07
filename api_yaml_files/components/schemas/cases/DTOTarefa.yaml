@@ -61,6 +61,9 @@ properties:
     description: "Local para a realização da tarefa <br />**Exemplo: Fórum central**"
     example: "Fórum central"
     type: string
+  Concluido:
+    type: boolean
+    description: "Indica se a tarefa está concluída"
   Observacao: 
     description: "Observações da tarefa"
     example: "Essa tarefa não pode ultrapassar a data limite estabelecida"
