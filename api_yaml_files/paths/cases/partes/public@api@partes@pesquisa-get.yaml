@@ -19,6 +19,12 @@ parameters:
     description: "O documento para pesquisa"
     schema:
       type: string
+  - name: idCliente
+    in: query
+    description: "O id do cliente"
+    required: false
+    schema:
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
