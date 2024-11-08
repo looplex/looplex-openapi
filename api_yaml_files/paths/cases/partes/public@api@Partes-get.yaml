@@ -21,10 +21,10 @@ parameters:
       type: string
   - name: idCliente
     in: query
-    description: "O documento para pesquisa<br />`Ignorado se menor que 4 caracteres`"
+    description: "O id do cliente"
     required: false
     schema:
-      type: string
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
