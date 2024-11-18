@@ -1,0 +1,23 @@
+title: DTORecess
+type: object
+properties:
+  Data: 
+    type: string  
+  DiaValido: 
+    type: boolean
+  AnoMesDia:
+    type: integer
+  AnoMes:
+    type: integer
+  Ano:
+    type: integer
+  Mes:
+    type: integer
+  Dia:
+    type: integer
+  DiaSemana:
+    type: integer
+  Feriado:
+    type: string
+  Regiao:
+    type: string

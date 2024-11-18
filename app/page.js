@@ -89,6 +89,20 @@ const apis = [
           Varas e Foros v2
         </a>
       </>
+  },
+  {
+    key: 'recess',
+    label: 'Feriados',
+    children:
+      <>
+        <Text style={{ fontWeight: 'bold', fontSize: 16 }}>
+          Endpoints de Feriados
+        </Text>
+        <Divider />
+        <a href="/v1/recess" target="_blank">
+          Feriados
+        </a>
+      </>
   }
 ]
 
