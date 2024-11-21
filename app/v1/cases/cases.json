@@ -24249,6 +24249,48 @@
         "example": 1,
         "description": "-2147483648: None\n\n1: Ativa\n\n2: Inativa\n"
       },
+      "DTOEnderecoCliente": {
+        "title": "DTOEnderecoCliente",
+        "type": "object",
+        "properties": {
+          "IDCliente": {
+            "type": "integer"
+          },
+          "NumeroDoCliente": {
+            "type": "integer"
+          },
+          "TipoEndereco": {
+            "$ref": "#/components/schemas/TipoDeEndereco"
+          },
+          "Logradouro": {
+            "type": "string"
+          },
+          "Numero": {
+            "type": "string"
+          },
+          "Complemento": {
+            "type": "string"
+          },
+          "Bairro": {
+            "type": "string"
+          },
+          "Cidade": {
+            "type": "string"
+          },
+          "Estado": {
+            "type": "string"
+          },
+          "CEP": {
+            "type": "string"
+          },
+          "Pais": {
+            "type": "string"
+          },
+          "EnderecoPrincipal": {
+            "type": "integer"
+          }
+        }
+      },
       "DTOCliente": {
         "title": "DTOCliente",
         "type": "object",
@@ -24333,6 +24375,12 @@
           },
           "EnderecoPrincipal": {
             "type": "integer"
+          },
+          "Enderecos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOEnderecoCliente"
+            }
           }
         }
       },
@@ -24430,48 +24478,6 @@
           "Status": {
             "type": "integer",
             "description": "StatusCode definitions: https://docs.microsoft.com/en-us/dotnet/api/system.net.httpstatuscode?view=netframework-4.5"
-          }
-        }
-      },
-      "DTOEnderecoCliente": {
-        "title": "DTOEnderecoCliente",
-        "type": "object",
-        "properties": {
-          "IDCliente": {
-            "type": "integer"
-          },
-          "NumeroDoCliente": {
-            "type": "integer"
-          },
-          "TipoEndereco": {
-            "$ref": "#/components/schemas/TipoDeEndereco"
-          },
-          "Logradouro": {
-            "type": "string"
-          },
-          "Numero": {
-            "type": "string"
-          },
-          "Complemento": {
-            "type": "string"
-          },
-          "Bairro": {
-            "type": "string"
-          },
-          "Cidade": {
-            "type": "string"
-          },
-          "Estado": {
-            "type": "string"
-          },
-          "CEP": {
-            "type": "string"
-          },
-          "Pais": {
-            "type": "string"
-          },
-          "EnderecoPrincipal": {
-            "type": "integer"
           }
         }
       },

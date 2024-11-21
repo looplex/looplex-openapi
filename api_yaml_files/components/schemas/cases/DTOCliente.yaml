@@ -55,3 +55,7 @@ properties:
     type: string
   EnderecoPrincipal:
     type: integer
+  Enderecos:
+    type: array
+    items:
+      $ref: DTOEnderecoCliente.yaml
