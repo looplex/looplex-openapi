@@ -8,21 +8,22 @@ parameters:
   - $ref: ../../components/parameters/OcpApimSubscriptionKey.yaml
   - name: startDate
     in: query
-    required: true    
+    required: true
+    description: "<b>A data inicial para pesquisa</b>"    
     schema:
       type: string
   - name: endDate
     in: query
     required: true    
+    description: "<b>A data final para pesquisa</b>"
     schema:
       type: string
   - name: region
     in: query
     required: true    
+    description: "<b>A região para pesquisa.</b><br />Exemplo: `| BR | BR-MG |`"
     schema:
       type: string        
-  
-
 responses:
   # Adicione aqui outras respostas HTTP. Verificar menu "Copiar nova resposta HTTP"
   "200":

@@ -3,21 +3,31 @@ type: object
 properties:
   Data: 
     type: string  
+    example: "2005-01-01 00:00:00.000000"
   DiaValido: 
     type: boolean
+    example: true
   AnoMesDia:
     type: integer
+    example: 20050101
   AnoMes:
     type: integer
+    example: 200501
   Ano:
     type: integer
+    example: 2005
   Mes:
     type: integer
+    example: 1
   Dia:
     type: integer
+    example: 1
   DiaSemana:
     type: integer
+    example: 7
   Feriado:
     type: string
+    example: "Nome do feriado"
   Regiao:
     type: string
+    example: "| BR | BR-MG | BR-DF |"

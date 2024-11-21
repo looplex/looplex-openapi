@@ -107,7 +107,7 @@
         "tags": [
           "Varas e Foros"
         ],
-        "summary": "Cadastra foros / varas",
+        "summary": "Inclui foros / varas",
         "description": "Cadastra novos foros / varas",
         "operationId": "varas_foros-v2-court-post",
         "parameters": [
@@ -469,7 +469,7 @@
         "tags": [
           "Ritos"
         ],
-        "summary": "Cadastra ritos",
+        "summary": "Inclui ritos",
         "operationId": "v2-sequence-post",
         "parameters": [
           {
