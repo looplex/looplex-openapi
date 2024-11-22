@@ -82,3 +82,6 @@ properties:
   CustomFields:
     description: "Os custom fields definidos para essa tarefa (item de agenda)"
     type: object
+  AreaFormatada:
+    description: "O nome da área"
+    type: string
