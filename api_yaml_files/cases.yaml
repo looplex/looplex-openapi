@@ -640,6 +640,9 @@ paths:
   /api/publicacao/vincula:
     post:
       $ref: './paths/cases/push/public@api@publicacao@vincula-post.yaml'
+  /api/publicacao/desvincula:
+    post:
+      $ref: '.\paths\cases\push\public@api@publicacao@desvincula-post.yaml'
   /api/publicacao/aprova:
     post:
       $ref: './paths/cases/push/public@api@publicacao@aprova-post.yaml'
