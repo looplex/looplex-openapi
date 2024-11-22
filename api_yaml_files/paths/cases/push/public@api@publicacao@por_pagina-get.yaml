@@ -55,6 +55,15 @@ parameters:
     required: false
     schema:
       type: integer
+  - name: responsibleIDs
+    in: query
+    description: "Os identificadores dos responsáveis dos casos"
+    example: [1,2]
+    required: false
+    schema:
+      type: array
+      items:
+        type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
