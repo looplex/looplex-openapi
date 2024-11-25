@@ -21,7 +21,7 @@
   },
   "servers": [
     {
-      "url": "https://apim.looplex.com/recess",
+      "url": "https://apim.looplex.com/holidays",
       "description": "Feriados Server"
     }
   ],
@@ -60,7 +60,7 @@
           {
             "name": "region",
             "in": "query",
-            "required": true,
+            "required": false,
             "description": "<b>A região para pesquisa.</b><br />Exemplo: `| BR | BR-MG |`",
             "schema": {
               "type": "string"
