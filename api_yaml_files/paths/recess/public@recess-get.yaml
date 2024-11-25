@@ -20,7 +20,7 @@ parameters:
       type: string
   - name: region
     in: query
-    required: true    
+    required: false    
     description: "<b>A região para pesquisa.</b><br />Exemplo: `| BR | BR-MG |`"
     schema:
       type: string        

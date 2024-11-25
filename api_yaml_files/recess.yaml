@@ -18,7 +18,7 @@ info:
   description: >
     Essa é a documentação da API Feriados
 servers:
-  - url: "https://apim.looplex.com/recess"
+  - url: "https://apim.looplex.com/holidays"
     description: "Feriados Server"
 paths:
   # Feriados
