@@ -16132,6 +16132,252 @@
         }
       }
     },
+    "/api/push/casos/ativar_push_andamentos": {
+      "post": {
+        "tags": [
+          "Push de andamentos"
+        ],
+        "summary": "Ativar push de andamentos nos casos",
+        "description": "Ativa o push de andamento para os casos informados",
+        "operationId": "api-push-casos-ativar_push_andamentos-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "description": "Os identificadores dos casos"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Processo concluído com sucesso"
+                    },
+                    "processos_cadastrados": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cadastrado": {
+                            "type": "boolean"
+                          },
+                          "cdProcesso": {
+                            "type": "integer"
+                          },
+                          "erro": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "processos_nao_cadastrados": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cadastrado": {
+                            "type": "boolean"
+                          },
+                          "cdProcesso": {
+                            "type": "integer"
+                          },
+                          "erro": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/push/casos/descadastrar_push_andamentos": {
+      "post": {
+        "tags": [
+          "Push de andamentos"
+        ],
+        "summary": "Descadastrar push de andamentos nos casos",
+        "description": "Descadastra o push de andamentos para os casos informados",
+        "operationId": "api-push-casos-descadastrar_push_andamentos-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "description": "Os identificadores dos casos"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Processo concluído com sucesso"
+                    },
+                    "processos_descadastrados": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "descadastrado": {
+                            "type": "boolean"
+                          },
+                          "cdProcesso": {
+                            "type": "integer"
+                          },
+                          "erro": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "processos_nao_descadastrados": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "descadastrado": {
+                            "type": "boolean"
+                          },
+                          "cdProcesso": {
+                            "type": "integer"
+                          },
+                          "erro": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/solicitacao/{id}": {
       "get": {
         "tags": [

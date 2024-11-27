@@ -140,6 +140,11 @@
     "opcao": "cases/push/"
   },
   {
+    "label": "Push de andamentos",
+    "detail": "Endpoints de push de andamentos",
+    "opcao": "cases/push_andamentos/"
+  },
+  {
     "label": "Render",
     "detail": "Endpoints do Render",
     "opcao": "cases/render/"

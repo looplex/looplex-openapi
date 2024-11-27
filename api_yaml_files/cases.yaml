@@ -656,6 +656,14 @@ paths:
     get:
       $ref: '.\paths\cases\push\public@api@publicacao@por_pagina-get.yaml'
 
+  # Push de andamentos
+  /api/push/casos/ativar_push_andamentos:
+    post:
+      $ref: '.\paths\cases\push_andamentos\public@api@push@casos@ativar_push_andamentos-post.yaml'
+  /api/push/casos/descadastrar_push_andamentos:
+    post:
+      $ref: '.\paths\cases\push_andamentos\public@api@push@casos@descadastrar_push_andamentos-post.yaml'
+
   # Solicitação
   /api/solicitacao/{id}:
     get:
