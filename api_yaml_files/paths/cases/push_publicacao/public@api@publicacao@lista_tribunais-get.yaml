@@ -19,3 +19,27 @@ responses:
           type: array
           items:
             $ref: "../../../components/schemas/cases/Regiao.yaml"
+  "400":
+    description: "Bad Request"
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/schemas/responses/BadRequestResponse.yaml"
+  "401":
+    description: "Unauthorized"
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/schemas/responses/UnauthorizedResponse.yaml"
+  "403":
+    description: "Forbidden"
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/schemas/responses/ForbiddenResponse.yaml"
+  "500":
+    description: "Internal Server Error"
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/schemas/responses/InternalServerErrorResponse.yaml"
