@@ -1,0 +1,12 @@
+title: TermoPublicacaoOAB
+type: object
+properties:
+  Numero:
+    description: "O numero da OAB"
+    type: string
+  UF:
+    description: "A UF da OAB"
+    type: string
+required:
+  - Numero
+  - UF

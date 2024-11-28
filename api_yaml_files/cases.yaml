@@ -621,7 +621,7 @@ paths:
     get:
       $ref: './paths/cases/produtos/public@api@produtos@idCliente-get.yaml'
 
-  # Push + Push Publicação
+  # Push
   /api/push/publicacoes:
     get:
       $ref: './paths/cases/push/public@api@push@publicacoes-get.yaml'
@@ -663,6 +663,25 @@ paths:
   /api/push/casos/descadastrar_push_andamentos:
     post:
       $ref: '.\paths\cases\push_andamentos\public@api@push@casos@descadastrar_push_andamentos-post.yaml'
+
+  # Push de publicação
+  /api/publicacao/lista_tribunais:
+    get:
+      $ref: '.\paths\cases\push_publicacao\public@api@publicacao@lista_tribunais-get.yaml'
+  /api/publicacao/termo:
+    post:
+      $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termo-post.yaml'
+    put:
+      $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termo-put.yaml'
+  /api/publicacao/termos_ativos:
+    get:
+      $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termos_ativos-get.yaml'
+  /api/publicacao/termo/{IDTermo}:
+    get:
+      $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termo@IDTermo-get.yaml'
+  /api/publicacao/termo/{IDsTermos}:
+    delete:
+      $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termo@IDsTermos-delete.yaml'
 
   # Solicitação
   /api/solicitacao/{id}:

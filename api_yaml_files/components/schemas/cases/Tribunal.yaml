@@ -1,0 +1,17 @@
+title: Tribunal
+type: object
+properties:
+  ID:
+    description: "O identificador do tribunal"
+    example: 1
+    type: integer
+  Nome:
+    description: "O nome do tribunal"
+    example: Nome do tribunal
+    type: string
+  Sigla:
+    description: "Sigla do tribunal"
+    example: Sigla do tribunal
+    type: string
+  Regiao:
+    $ref: "Regiao.yaml"

@@ -16378,6 +16378,452 @@
         }
       }
     },
+    "/api/publicacao/lista_tribunais": {
+      "get": {
+        "tags": [
+          "Push de publicação"
+        ],
+        "summary": "Lista os tribunais disponíveis para cadastro de termo de publicação",
+        "operationId": "api-publicacao-lista_tribunais-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Regiao"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publicacao/termo": {
+      "post": {
+        "tags": [
+          "Push de publicação"
+        ],
+        "summary": "Cadastra termo de publicação",
+        "description": "`Tem certeza que deseja cadastrar um novo termo?<br />O cadastramento desse termo gerará uma cobrança adicional de R$ 30 por mês, a partir do mês atual.`",
+        "operationId": "api-publicacao-termo-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IDsTribunais",
+            "in": "query",
+            "required": true,
+            "description": "Os identificadores dos tribunais",
+            "example": [
+              0
+            ],
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermoPublicacao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TermoPublicacao"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Push de publicação"
+        ],
+        "summary": "Atualiza termo de publicação",
+        "description": "Atualiza as informações de um termo",
+        "operationId": "api-publicacao-termo-put",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IDsTribunais",
+            "in": "query",
+            "required": true,
+            "description": "Os identificadores dos tribunais",
+            "example": [
+              0
+            ],
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermoPublicacao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TermoPublicacao"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publicacao/termos_ativos": {
+      "get": {
+        "tags": [
+          "Push de publicação"
+        ],
+        "summary": "Lista os termos ativos (cadastrados)",
+        "operationId": "api-publicacao-termos_ativos-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TermoPublicacao"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publicacao/termo/{IDTermo}": {
+      "get": {
+        "tags": [
+          "Push de publicação"
+        ],
+        "summary": "Obtém termo cadastrado por identificador",
+        "operationId": "api-publicacao-termo-IDTermo-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IDTermo",
+            "in": "path",
+            "required": true,
+            "description": "O identificador do termo",
+            "example": 0,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TermoPublicacao"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publicacao/termo/{IDsTermos}": {
+      "delete": {
+        "tags": [
+          "Push de publicação"
+        ],
+        "summary": "Exclui termos",
+        "operationId": "api-publicacao-termo-IDsTermos-delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IDsTermos",
+            "in": "path",
+            "required": true,
+            "description": "Os identificadores dos termos",
+            "example": [
+              0
+            ],
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Termos exluídos"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/solicitacao/{id}": {
       "get": {
         "tags": [
@@ -30169,6 +30615,122 @@
             }
           }
         }
+      },
+      "Regiao": {
+        "title": "Regiao",
+        "type": "object",
+        "properties": {
+          "Nome": {
+            "description": "O nome da região",
+            "type": "string"
+          },
+          "Sigla": {
+            "description": "A sigla da região",
+            "type": "string"
+          },
+          "Tribunais": {
+            "description": "Os tribunais dessa região",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tribunal"
+            }
+          }
+        }
+      },
+      "Tribunal": {
+        "title": "Tribunal",
+        "type": "object",
+        "properties": {
+          "ID": {
+            "description": "O identificador do tribunal",
+            "example": 1,
+            "type": "integer"
+          },
+          "Nome": {
+            "description": "O nome do tribunal",
+            "example": "Nome do tribunal",
+            "type": "string"
+          },
+          "Sigla": {
+            "description": "Sigla do tribunal",
+            "example": "Sigla do tribunal",
+            "type": "string"
+          },
+          "Regiao": {
+            "$ref": "#/components/schemas/Regiao"
+          }
+        }
+      },
+      "TipoTermo": {
+        "title": "TipoTermo",
+        "example": 0,
+        "description": "0: Advogado\n\n1: Simples\n"
+      },
+      "TermoPublicacaoOAB": {
+        "title": "TermoPublicacaoOAB",
+        "type": "object",
+        "properties": {
+          "Numero": {
+            "description": "O numero da OAB",
+            "type": "string"
+          },
+          "UF": {
+            "description": "A UF da OAB",
+            "type": "string"
+          }
+        },
+        "required": [
+          "Numero",
+          "UF"
+        ]
+      },
+      "TermoPublicacao": {
+        "title": "TermoPublicacao",
+        "type": "object",
+        "properties": {
+          "ID": {
+            "description": "O identificador desse termo",
+            "example": 0,
+            "type": "integer"
+          },
+          "Termo": {
+            "description": "O termo para cadastro",
+            "example": "Nome do advogado ou termo",
+            "type": "string"
+          },
+          "Tipo": {
+            "description": "O tipo de termo para cadastro",
+            "$ref": "#/components/schemas/TipoTermo"
+          },
+          "IdNoFornecedor": {
+            "description": "O identificador do termo no fdornecedor",
+            "example": 0,
+            "type": "integer"
+          },
+          "DataCadastramento": {
+            "description": "A data de cadastro desse termo",
+            "example": "2024-11-28T12:00:00.000",
+            "type": "string"
+          },
+          "Abrangencia": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tribunal"
+            }
+          },
+          "NumerosOAB": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TermoPublicacaoOAB"
+            }
+          }
+        },
+        "required": [
+          "Termo",
+          "Tipo",
+          "Abrangencia",
+          "NumerosOAB"
+        ]
       },
       "DTOSolicitacaoResponse": {
         "title": "DTOSolicitacaoResponse",

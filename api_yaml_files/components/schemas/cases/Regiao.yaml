@@ -1,0 +1,14 @@
+title: Regiao
+type: object
+properties:
+  Nome:
+    description: "O nome da região"
+    type: string
+  Sigla:
+    description: "A sigla da região"
+    type: string
+  Tribunais:
+    description: "Os tribunais dessa região"
+    type: array
+    items:
+      $ref: "Tribunal.yaml"

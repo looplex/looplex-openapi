@@ -145,6 +145,11 @@
     "opcao": "cases/push_andamentos/"
   },
   {
+    "label": "Push de publicação",
+    "detail": "Endpoints de push de publicação",
+    "opcao": "cases/push_publicacao/"
+  },
+  {
     "label": "Render",
     "detail": "Endpoints do Render",
     "opcao": "cases/render/"
