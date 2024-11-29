@@ -780,6 +780,9 @@ paths:
   /api/tarefas/tarefa_subtarefas/{id}/{tipo}:
     get:
       $ref: './paths/cases/tarefa/public@api@tarefas@tarefa_subtarefas@id@tipo-get.yaml'
+  /api/tarefas/custom_field:
+    post:
+      $ref: '.\paths\cases\tarefa\public@api@tarefas@custom_field-post.yaml'
 
   # Timeline
   /api/timeline/items:
