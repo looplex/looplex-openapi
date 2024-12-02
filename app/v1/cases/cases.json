@@ -17408,6 +17408,91 @@
         }
       }
     },
+    "/api/tipo_decisao": {
+      "get": {
+        "tags": [
+          "Tipo Decisão"
+        ],
+        "summary": "Lista Tipo Decisão",
+        "operationId": "api-conteudo_julgamento-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IDCaso",
+            "in": "query",
+            "description": "Id do caso, o endpoint verifica em que instancia está o caso e lista os tipos decisão de acordo",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Instancia",
+            "in": "query",
+            "description": "Lista os tipos decisão desta instancia, se o IDCaso for indicado, este campo é ignorado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTipoDecisao"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}": {
       "get": {
         "tags": [
@@ -22867,6 +22952,9 @@
           },
           "UltimoItemTimeLine": {
             "$ref": "#/components/schemas/DTOTimelineItem"
+          },
+          "Instancia": {
+            "type": "integer"
           }
         }
       },
@@ -23478,6 +23566,9 @@
           },
           "CustomFields": {
             "type": "string"
+          },
+          "Instancia": {
+            "type": "integer"
           }
         }
       },
@@ -24440,6 +24531,9 @@
             }
           },
           "IDFornecedor": {
+            "type": "integer"
+          },
+          "Instancia": {
             "type": "integer"
           }
         }
@@ -31125,6 +31219,24 @@
           },
           "ValorHoraTrabalhadaPadrao": {
             "type": "number"
+          }
+        }
+      },
+      "DTOTipoDecisao": {
+        "title": "DTOTipoProcesso",
+        "type": "object",
+        "properties": {
+          "IDTipoDecisao": {
+            "type": "integer"
+          },
+          "TipoDecisao": {
+            "type": "string"
+          },
+          "Instancia": {
+            "type": "integer"
+          },
+          "TipoDecisaoEnUS": {
+            "type": "string"
           }
         }
       },

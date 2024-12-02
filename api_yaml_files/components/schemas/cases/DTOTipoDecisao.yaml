@@ -1,0 +1,11 @@
+title: DTOTipoProcesso
+type: object
+properties:
+  IDTipoDecisao:
+    type: integer
+  TipoDecisao:
+    type: string
+  Instancia:
+    type: integer
+  TipoDecisaoEnUS: 
+    type: string

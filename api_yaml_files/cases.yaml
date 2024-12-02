@@ -709,6 +709,10 @@ paths:
   /api/escritorios/{idEscritorio}/tabelasprecocategoria:
     get:
       $ref: './paths/cases/tabela_preco_categoria/public@api@escritorios@idEscritorio@tabelasprecocategoria-get.yaml'
+  # Tipo Decisao
+  /api/tipo_decisao:
+    get:
+      $ref: './paths/cases/tipo_decisao/public@api@tipo_decisao-get.yaml'
 
   # Agenda + Tarefa
   /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:
