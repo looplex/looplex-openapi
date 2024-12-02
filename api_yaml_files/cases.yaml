@@ -713,6 +713,13 @@ paths:
   /api/tipo_decisao:
     get:
       $ref: './paths/cases/tipo_decisao/public@api@tipo_decisao-get.yaml'
+  # Tipo Julgamento
+  /api/tipo_julgamento:
+    get:
+      $ref: './paths/cases/tipo_julgamento/public@api@tipo_julgamento-post.yaml'
+  /api/tipo_decisao/{IdTipoDecisao}/tipo_julgamento:
+    get:
+      $ref: './paths/cases/tipo_julgamento/public@api@tipo_decisao@{IdTipoDecisao}@tipo_julgamento-get.yaml'
 
   # Agenda + Tarefa
   /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:

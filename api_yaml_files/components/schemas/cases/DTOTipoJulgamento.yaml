@@ -1,0 +1,9 @@
+title: DTOTipoJulgamento
+type: object
+properties:
+  IDTipoJulgamento:
+    type: integer
+  TipoJulgamento:
+    type: string
+  TipoJulgamentoEnUs: 
+    type: string

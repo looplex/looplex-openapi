@@ -1,4 +1,4 @@
-title: DTOTipoProcesso
+title: DTOTipoDecisao
 type: object
 properties:
   IDTipoDecisao:

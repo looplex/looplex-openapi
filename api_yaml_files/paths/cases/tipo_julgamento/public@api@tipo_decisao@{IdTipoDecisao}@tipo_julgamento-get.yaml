@@ -1,23 +1,16 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
-  - Tipo Decisão
-summary: "Lista Tipo Decisão"
-operationId: api-tipo_decisao-get
+  - Tipo Julgamento
+summary: "Lista Tipo Julgamento por Tipo Decisao"
+operationId: api-tipo_decisao-{IdTipoDecisao}-tipo_julgamento-post
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  - name: IDCaso
-    in: query
-    description: "Id do caso, o endpoint verifica em que instancia está o caso e lista os tipos decisão de acordo"
+  - name: IdTipoDecisao
+    in: path 
     schema:
         type: integer
-  - name: Instancia
-    in: query
-    description: "Lista os tipos decisão desta instancia, se o IDCaso for indicado, este campo é ignorado"
-    schema:
-        type: integer
-  
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:
@@ -27,7 +20,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/cases/DTOTipoDecisao.yaml
+          $ref: ../../../components/schemas/cases/DTOTipoJulgamento.yaml
   "401":
     description: "Unauthorized"
     content:

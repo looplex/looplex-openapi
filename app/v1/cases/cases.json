@@ -17414,7 +17414,7 @@
           "Tipo Decisão"
         ],
         "summary": "Lista Tipo Decisão",
-        "operationId": "api-conteudo_julgamento-get",
+        "operationId": "api-tipo_decisao-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
@@ -17446,6 +17446,164 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DTOTipoDecisao"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tipo_julgamento": {
+      "get": {
+        "tags": [
+          "Tipo Julgamento"
+        ],
+        "summary": "Lista Tipo Julgamento",
+        "operationId": "api-tipo_julgamento-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "array": null,
+                "items": {
+                  "type": "integer",
+                  "description": "Identificadores de tipo julgamento"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTipoJulgamento"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tipo_decisao/{IdTipoDecisao}/tipo_julgamento": {
+      "get": {
+        "tags": [
+          "Tipo Julgamento"
+        ],
+        "summary": "Lista Tipo Julgamento por Tipo Decisao",
+        "operationId": "api-tipo_decisao-{IdTipoDecisao}-tipo_julgamento-post",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IdTipoDecisao",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTipoJulgamento"
                 }
               }
             }
@@ -31223,7 +31381,7 @@
         }
       },
       "DTOTipoDecisao": {
-        "title": "DTOTipoProcesso",
+        "title": "DTOTipoDecisao",
         "type": "object",
         "properties": {
           "IDTipoDecisao": {
@@ -31236,6 +31394,21 @@
             "type": "integer"
           },
           "TipoDecisaoEnUS": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTipoJulgamento": {
+        "title": "DTOTipoJulgamento",
+        "type": "object",
+        "properties": {
+          "IDTipoJulgamento": {
+            "type": "integer"
+          },
+          "TipoJulgamento": {
+            "type": "string"
+          },
+          "TipoJulgamentoEnUs": {
             "type": "string"
           }
         }
