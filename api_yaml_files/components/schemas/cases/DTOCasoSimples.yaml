@@ -125,6 +125,8 @@ properties:
     description: "Campo de texto livre para hierarquia de casos administrativos"
   UltimoItemTimeLine:
     $ref: DTOTimelineItem.yaml  
+  Instancia:
+    type: integer
   
   
   

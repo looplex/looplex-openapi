@@ -67,3 +67,5 @@ properties:
       type: integer
   IDFornecedor:
     type: integer
+  Instancia:
+    type: integer
