@@ -1,13 +1,18 @@
 # Linhas com # são comentários e podem ser removidas.
 tags:
   - Conteúdo Julgamento
-summary: "Lista Conteúdo Julgamento"
+summary: "Lista Conteúdo Julgamento por tipo julgamento"
 operationId: api-conteudo_julgamento-get
 # Parâmetros da requisição
 parameters:
   - $ref: ../../../components/parameters/cases/Profile.yaml
   - $ref: ../../../components/parameters/OcpApimSubscriptionKey.yaml
-  
+  - name: idTipoJulgamento
+    in: path
+    required: true
+    description: "O identificador do tipo julgamento"
+    schema:
+      type: integer
 # RequestBody aqui (se houver). Verificar menu "Copiar body da requisição"
 # Responses
 responses:

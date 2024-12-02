@@ -5455,18 +5455,96 @@
       }
     },
     "/api/conteudo_julgamento": {
-      "post": {
+      "get": {
         "tags": [
           "Conteúdo Julgamento"
         ],
         "summary": "Lista Conteúdo Julgamento",
-        "operationId": "api-conteudo_julgamento-post",
+        "operationId": "api-conteudo_julgamento-get",
         "parameters": [
           {
             "$ref": "#/components/parameters/Profile"
           },
           {
             "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOConteudoJulgamento"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tipo_julgamento/{idTipoJulgamento}/conteudo_julgamento": {
+      "get": {
+        "tags": [
+          "Conteúdo Julgamento"
+        ],
+        "summary": "Lista Conteúdo Julgamento por tipo julgamento",
+        "operationId": "api-conteudo_julgamento-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "idTipoJulgamento",
+            "in": "path",
+            "required": true,
+            "description": "O identificador do tipo julgamento",
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {

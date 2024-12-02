@@ -235,8 +235,11 @@ paths:
       $ref: ./paths/cases/contato/public@api@contatos@solicitantes-get.yaml
   # Conteudo Julgamento
   /api/conteudo_julgamento:
-    post:
+    get:
       $ref: './paths/cases/conteudo_julgamento/public@api@conteudo_julgamento-get.yaml'
+  /api/tipo_julgamento/{idTipoJulgamento}/conteudo_julgamento:
+    get:
+      $ref: './paths/cases/conteudo_julgamento/public@api@tipo_julgamento@{idTipoJulgamento}@conteudo_julgamento-get.yaml'
 
   # Contrato
   /api/contratos/{IDContrato}:
