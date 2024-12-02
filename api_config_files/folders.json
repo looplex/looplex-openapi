@@ -45,6 +45,11 @@
     "opcao": "cases/contato/"
   },
   {
+    "label": "Conteúdo Julgamento",
+    "detail": "Endpoints de Conteúdo Julgamento",
+    "opcao": "cases/conteudo_julgamento/"
+  },
+  {
     "label": "Contrato",
     "detail": "Endpoints de contrato",
     "opcao": "cases/contrato/"
