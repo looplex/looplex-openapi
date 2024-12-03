@@ -689,7 +689,10 @@ paths:
   /api/publicacao/termo/{IDsTermos}:
     delete:
       $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termo@IDsTermos-delete.yaml'
-
+# Questões Processuais
+  /api/questoes_processuais/relacao_caso/{IDCaso}:
+    post:
+      $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais@relacao_caso@{IDCaso}-post.yaml'
   # Solicitação
   /api/solicitacao/{id}:
     get:
@@ -715,7 +718,7 @@ paths:
       $ref: './paths/cases/tipo_decisao/public@api@tipo_decisao-get.yaml'
   # Tipo Julgamento
   /api/tipo_julgamento:
-    get:
+    post:
       $ref: './paths/cases/tipo_julgamento/public@api@tipo_julgamento-post.yaml'
   /api/tipo_decisao/{IdTipoDecisao}/tipo_julgamento:
     get:
