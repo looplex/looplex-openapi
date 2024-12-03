@@ -1,0 +1,14 @@
+title: SituacaoJulgamento
+example: -2147483648
+description: |  
+  -2147483648: None
+
+  1: Improcedência
+
+  2: Procedência
+
+  3: Procedência em parte
+
+  4: Prejudicado
+
+  5: Prejudicado (transação)

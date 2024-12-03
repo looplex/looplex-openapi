@@ -49,3 +49,11 @@ properties:
     type: array
     items: 
       type: integer
+  MultaSucumbencia:
+    $ref: enums/MultaSucumbencia.yaml
+  MultaSucumbenciaPorcentagem:
+    type: number
+  SituacaoJulgamento:
+    $ref: enums/SituacaoJulgamento.yaml
+  TipoTutela:
+    $ref: enums/TipoTutela.yaml

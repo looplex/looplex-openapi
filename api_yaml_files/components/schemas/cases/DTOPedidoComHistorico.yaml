@@ -41,4 +41,11 @@ properties:
     type: string
   DataVencimento:
     type: string 
-  
+  MultaSucumbencia:
+    $ref: enums/MultaSucumbencia.yaml
+  MultaSucumbenciaPorcentagem:
+    type: number
+  SituacaoJulgamento:
+    $ref: enums/SituacaoJulgamento.yaml
+  TipoTutela:
+    $ref: enums/TipoTutela.yaml
