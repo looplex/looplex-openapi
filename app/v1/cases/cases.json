@@ -26715,6 +26715,11 @@
           }
         }
       },
+      "ResultadoTutela": {
+        "title": "ResultadoTutela",
+        "example": -2147483648,
+        "description": "-2147483648: None\n\n1: Acolhido\n\n2: Acolhido em parte\n\n3: Rejeitado\n\n4: Não Conhecido\n"
+      },
       "DTOProcessoDecisaoValor": {
         "title": "DTOProcessoDecisaoValor",
         "type": "object",
@@ -26757,6 +26762,9 @@
           },
           "nrSituacao": {
             "type": "integer"
+          },
+          "ResultadoTutela": {
+            "$ref": "#/components/schemas/ResultadoTutela"
           }
         }
       },
