@@ -690,6 +690,9 @@ paths:
     delete:
       $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termo@IDsTermos-delete.yaml'
 # Questões Processuais
+  /api/questoes_processuais:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais-get.yaml'
   /api/questoes_processuais/relacao_caso/{IDCaso}:
     post:
       $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais@relacao_caso@{IDCaso}-post.yaml'
@@ -699,6 +702,9 @@ paths:
   /api/casos/{idCaso}/questoes_processuais:
     get:
       $ref: '.\paths\cases\questoes_processuais\public@api@casos@{idCaso}@questoes_processuais-get.yaml'
+  /api/decisoes/{idCasoDecisao}/questoes_processuais:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@decisoes@{idCasoDecisao}@questoes_processuais-get.yaml'
 
   # Solicitação
   /api/solicitacao/{id}:
