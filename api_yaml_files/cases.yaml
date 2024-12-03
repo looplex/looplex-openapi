@@ -696,6 +696,10 @@ paths:
   /api/questoes_processuais/relacao_decisao/{IDCasoDecisao}:
     post:
       $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais@relacao_decisao@{IDCasoDecisao}-post.yaml'
+  /api/casos/{idCaso}/questoes_processuais:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@casos@{idCaso}@questoes_processuais-get.yaml'
+
   # Solicitação
   /api/solicitacao/{id}:
     get:

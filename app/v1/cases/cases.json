@@ -17098,7 +17098,7 @@
         "tags": [
           "Questões Processuais"
         ],
-        "summary": "Cadastrar Relação de Caso com Questões Processuais",
+        "summary": "Cadastrar Relação de Decisão com Questões Processuais",
         "operationId": "api-questoes_processuais-relacao_decisao-{IDCasoDecisao}-post",
         "parameters": [
           {
@@ -17130,6 +17130,82 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/casos/{idCaso}/questoes_processuais": {
+      "get": {
+        "tags": [
+          "Questões Processuais"
+        ],
+        "summary": "Lista  Questões Processuais por caso",
+        "operationId": "api-casos--{IDCaso}-questoes_processuais-get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Profile"
+          },
+          {
+            "$ref": "#/components/parameters/OcpApimSubscriptionKey"
+          },
+          {
+            "name": "IDCaso",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOQuestoesProcessuais"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized",
@@ -31461,6 +31537,36 @@
           },
           "ResultadoPositivo": {
             "type": "boolean"
+          }
+        }
+      },
+      "DTOQuestoesProcessuais": {
+        "title": "DTOQuestoesProcessuais",
+        "type": "object",
+        "properties": {
+          "IdQuestoesProcessuais": {
+            "type": "integer"
+          },
+          "IdQuestoesProcessuaisPai": {
+            "type": "integer"
+          },
+          "QuestoesProcessuais": {
+            "type": "string"
+          },
+          "QuestoesProcessuaisEnUs": {
+            "type": "string"
+          },
+          "NomeAceito": {
+            "type": "string"
+          },
+          "NomeNaoAceito": {
+            "type": "string"
+          },
+          "ResultadoPositivo": {
+            "type": "boolean"
+          },
+          "Filhos": {
+            "$ref": "#/components/schemas/DTOQuestoesProcessuais"
           }
         }
       },
