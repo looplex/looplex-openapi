@@ -233,6 +233,13 @@ paths:
   /api/contatos/solicitantes:
     get:
       $ref: ./paths/cases/contato/public@api@contatos@solicitantes-get.yaml
+  # Conteudo Julgamento
+  /api/conteudo_julgamento:
+    get:
+      $ref: './paths/cases/conteudo_julgamento/public@api@conteudo_julgamento-get.yaml'
+  /api/tipo_julgamento/{idTipoJulgamento}/conteudo_julgamento:
+    get:
+      $ref: './paths/cases/conteudo_julgamento/public@api@tipo_julgamento@{idTipoJulgamento}@conteudo_julgamento-get.yaml'
 
   # Contrato
   /api/contratos/{IDContrato}:
@@ -682,6 +689,28 @@ paths:
   /api/publicacao/termo/{IDsTermos}:
     delete:
       $ref: '.\paths\cases\push_publicacao\public@api@publicacao@termo@IDsTermos-delete.yaml'
+# Questões Processuais
+  /api/questoes_processuais:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais-get.yaml'
+  /api/questoes_processuais/relacao_caso/{IDCaso}:
+    post:
+      $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais@relacao_caso@{IDCaso}-post.yaml'
+  /api/questoes_processuais/relacao_decisao/{IDCasoDecisao}:
+    post:
+      $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais@relacao_decisao@{IDCasoDecisao}-post.yaml'
+  /api/casos/{idCaso}/questoes_processuais:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@casos@{idCaso}@questoes_processuais-get.yaml'
+  /api/decisoes/{idCasoDecisao}/questoes_processuais:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@decisoes@{idCasoDecisao}@questoes_processuais-get.yaml'
+  /api/questoes_processuais/{idQuestoesProcessuais}/casos:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais@{idQuestoesProcessuais}@casos-get.yaml'
+  /api/questoes_processuais/{idQuestoesProcessuais}/decisoes:
+    get:
+      $ref: '.\paths\cases\questoes_processuais\public@api@questoes_processuais@{idQuestoesProcessuais}@decisoes-get.yaml'
 
   # Solicitação
   /api/solicitacao/{id}:
@@ -702,6 +731,17 @@ paths:
   /api/escritorios/{idEscritorio}/tabelasprecocategoria:
     get:
       $ref: './paths/cases/tabela_preco_categoria/public@api@escritorios@idEscritorio@tabelasprecocategoria-get.yaml'
+  # Tipo Decisao
+  /api/tipo_decisao:
+    get:
+      $ref: './paths/cases/tipo_decisao/public@api@tipo_decisao-get.yaml'
+  # Tipo Julgamento
+  /api/tipo_julgamento:
+    post:
+      $ref: './paths/cases/tipo_julgamento/public@api@tipo_julgamento-post.yaml'
+  /api/tipo_decisao/{IdTipoDecisao}/tipo_julgamento:
+    get:
+      $ref: './paths/cases/tipo_julgamento/public@api@tipo_decisao@{IdTipoDecisao}@tipo_julgamento-get.yaml'
 
   # Agenda + Tarefa
   /api/casos/tarefas/{cdProcesso}/{ignoraIdFuncionario}/{filtro}:

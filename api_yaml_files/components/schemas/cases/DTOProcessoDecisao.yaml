@@ -27,3 +27,17 @@ properties:
     type: integer
   IdCasoDecisao:
     type: integer
+  IDTipoDecisao:
+    type: integer
+  IDTipoJulgamento:
+    type: integer
+  IDDecisaoAnterior:
+    type: integer
+  Prequestionamento:
+    type: boolean
+  OutrasDeterminacoes:
+    type: string
+  MotivoExtincao:
+     $ref: enums/MotivoDeExtincao.yaml
+  IDConteudoJulgamento:
+    type: integer

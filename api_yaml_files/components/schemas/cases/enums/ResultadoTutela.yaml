@@ -1,0 +1,12 @@
+title: ResultadoTutela
+example: -2147483648
+description: |  
+  -2147483648: None
+
+  1: Acolhido
+
+  2: Acolhido em parte
+
+  3: Rejeitado
+
+  4: Não Conhecido

@@ -1,0 +1,9 @@
+title: DTORelacaoQuestaoDecisao
+type: object
+properties:
+  IdQuestoesProcessuais:
+    type: integer
+  IdCasoDecisao:
+    type: integer
+  ResultadoPositivo: 
+    type: boolean

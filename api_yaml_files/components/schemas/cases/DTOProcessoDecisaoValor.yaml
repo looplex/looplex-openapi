@@ -27,3 +27,5 @@ properties:
     type: number
   nrSituacao:
     type: integer
+  ResultadoTutela:
+    $ref: enums/ResultadoTutela.yaml
