@@ -1,0 +1,9 @@
+title: AdvogadoParte
+type: object
+properties:
+  nomeAdvogado:
+    type: string
+    description: "O nome do advogado"
+  OAB:
+    type: string
+    description: "A numero de Oab do advogado (numero e uf)"

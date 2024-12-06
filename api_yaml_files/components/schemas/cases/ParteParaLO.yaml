@@ -15,3 +15,9 @@ properties:
   tipoEnvolvimento:
     example: -2147483648
     type: integer
+  documento:
+    type: string
+  advogadosParte:
+    type: array
+    items:
+      $ref: "AdvogadoParte.yaml"

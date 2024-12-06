@@ -23418,6 +23418,20 @@
           }
         }
       },
+      "AdvogadoParte": {
+        "title": "AdvogadoParte",
+        "type": "object",
+        "properties": {
+          "nomeAdvogado": {
+            "type": "string",
+            "description": "O nome do advogado"
+          },
+          "OAB": {
+            "type": "string",
+            "description": "A numero de Oab do advogado (numero e uf)"
+          }
+        }
+      },
       "ParteParaLO": {
         "title": "ParteParaLO",
         "type": "object",
@@ -23441,6 +23455,15 @@
           "tipoEnvolvimento": {
             "example": -2147483648,
             "type": "integer"
+          },
+          "documento": {
+            "type": "string"
+          },
+          "advogadosParte": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdvogadoParte"
+            }
           }
         }
       },
