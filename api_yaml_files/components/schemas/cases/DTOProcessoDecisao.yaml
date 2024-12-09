@@ -41,3 +41,11 @@ properties:
      $ref: enums/MotivoDeExtincao.yaml
   IDConteudoJulgamento:
     type: integer
+  AlteraQuestoesProcessuais:
+    description: "se true utiliza o campo QuestoesProcessuais para atualizar as relacoes da decisao com as questoes processuais"
+    type: boolean
+  QuestoesProcessuais:
+    description: "Precisa que AlteraQuestoesProcessuais seja true para ter efeito"
+    type: array
+    items:
+      $ref: DTORelacaoQuestaoDecisao.yaml  

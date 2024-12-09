@@ -26787,6 +26787,21 @@
           }
         }
       },
+      "DTORelacaoQuestaoDecisao": {
+        "title": "DTORelacaoQuestaoDecisao",
+        "type": "object",
+        "properties": {
+          "IdQuestoesProcessuais": {
+            "type": "integer"
+          },
+          "IdCasoDecisao": {
+            "type": "integer"
+          },
+          "ResultadoPositivo": {
+            "type": "boolean"
+          }
+        }
+      },
       "DTOProcessoDecisao": {
         "title": "DTOProcessoDecisao",
         "type": "object",
@@ -26850,6 +26865,17 @@
           },
           "IDConteudoJulgamento": {
             "type": "integer"
+          },
+          "AlteraQuestoesProcessuais": {
+            "description": "se true utiliza o campo QuestoesProcessuais para atualizar as relacoes da decisao com as questoes processuais",
+            "type": "boolean"
+          },
+          "QuestoesProcessuais": {
+            "description": "Precisa que AlteraQuestoesProcessuais seja true para ter efeito",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTORelacaoQuestaoDecisao"
+            }
           }
         }
       },
@@ -32002,21 +32028,6 @@
           },
           "Filhos": {
             "$ref": "#/components/schemas/DTOQuestoesProcessuais"
-          }
-        }
-      },
-      "DTORelacaoQuestaoDecisao": {
-        "title": "DTORelacaoQuestaoDecisao",
-        "type": "object",
-        "properties": {
-          "IdQuestoesProcessuais": {
-            "type": "integer"
-          },
-          "IdCasoDecisao": {
-            "type": "integer"
-          },
-          "ResultadoPositivo": {
-            "type": "boolean"
           }
         }
       },
