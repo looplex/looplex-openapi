@@ -32289,6 +32289,10 @@
           "AreaFormatada": {
             "description": "O nome da área",
             "type": "string"
+          },
+          "IDTituloCobranca": {
+            "type": "integer",
+            "description": "O identificador do titulo de cobrança utilizado na tarefa"
           }
         }
       },
