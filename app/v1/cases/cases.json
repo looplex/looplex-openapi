@@ -24688,7 +24688,7 @@
       "SituacaoJulgamento": {
         "title": "SituacaoJulgamento",
         "example": -2147483648,
-        "description": "-2147483648: None\n\n1: Improcedência\n\n2: Procedência\n\n3: Procedência em parte\n\n4: Prejudicado\n\n5: Prejudicado (transação)\n"
+        "description": "-2147483648: None\n\n1: Improcedência\n\n2: Procedência\n\n3: Procedência em parte\n\n4: Prejudicado\n\n5: Acordo  \n\n6: Não julgado  \n"
       },
       "TipoTutela": {
         "title": "TipoTutela",
