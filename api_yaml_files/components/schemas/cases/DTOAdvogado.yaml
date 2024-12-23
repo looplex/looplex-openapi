@@ -1,0 +1,21 @@
+title: DTOAdvogado
+type: object
+properties:
+  AdvogadoID:
+    type: integer
+    description: "O identificador do advogado"
+  Nome:
+    type: string
+    description: "O nome do advogado"
+  Escritorio:
+    type: string
+    description: "O escritório do advogado"
+  Email:
+    type: string
+    description: "O email do advogado"
+  OabNumero:
+    type: string
+    description: "O numero de Oab do advogado"
+  OabUF:
+    type: string
+    description: "A uf da Oab do advogado"

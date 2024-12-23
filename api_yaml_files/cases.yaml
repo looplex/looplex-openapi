@@ -38,6 +38,36 @@ paths:
     post:
       $ref: ./paths/cases/login/public@api@logon-post.yaml
       
+  # Advogado
+  /api/advogado:
+    post:
+      $ref: '.\paths\cases\advogado\public@api@advogado-post.yaml'
+    put:
+      $ref: '.\paths\cases\advogado\public@api@advogado-put.yaml'
+  /api/advogado/{AdvogadoID}:
+    delete:
+      $ref: '.\paths\cases\advogado\public@api@advogado@AdvogadoID-delete.yaml'
+    get:
+      $ref: '.\paths\cases\advogado\public@api@advogado@AdvogadoID-get.yaml'
+  /api/advogado/{AdvogadoIDs}:
+    get:
+      $ref: '.\paths\cases\advogado\public@api@advogado@AdvogadoIDs-get.yaml'
+  /api/advogado/vinculo_por_advogado/{AdvogadoID}:
+    get:
+      $ref: '.\paths\cases\advogado\public@api@advogado@vinculo_por_advogado@AdvogadoID-get.yaml'
+  /api/advogado/vinculo_por_parte/{ParteID}:
+    get:
+      $ref: '.\paths\cases\advogado\public@api@advogado@vinculo_por_parte@ParteID-get.yaml'
+  /api/advogado/vinculo_por_processo/{CaseID}:
+    get:
+      $ref: '.\paths\cases\advogado\public@api@advogado@vinculo_por_processo@CaseID-get.yaml'
+  /api/advogado/vincula:
+    post:
+      $ref: '.\paths\cases\advogado\public@api@advogado@vincula-post.yaml'
+  /api/advogado/desvincula:
+    delete:
+      $ref: '.\paths\cases\advogado\public@api@advogado@desvincula-delete.yaml'
+
   # Andamentos
   /api/andamentos/templates:
     get:

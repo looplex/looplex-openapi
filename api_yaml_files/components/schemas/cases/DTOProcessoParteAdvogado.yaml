@@ -1,0 +1,12 @@
+title: DTOProcessoParteAdvogado
+type: object
+properties:
+  IDCaso:
+    type: integer
+    description: "O identificador do caso"
+  IDParte:
+    type: integer
+    description: "O identificador da parte"
+  IDAdvogado:
+    type: integer
+    description: "O identificador do advogado"

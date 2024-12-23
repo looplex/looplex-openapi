@@ -6,3 +6,6 @@ properties:
   ExceptionMessage: 
     type: string
     description: "`BadRequest`<br />Indica que o formato da requisição está incorreto"
+  ExceptionCode:
+    type: string
+    description: "O identificador do tipo de exception"

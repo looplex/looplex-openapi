@@ -1,5 +1,10 @@
 [
   {
+    "label": "Advogado",
+    "detail": "Endpoints de advogad",
+    "opcao": "cases/advogado/"
+  },
+  {
     "label": "Andamento",
     "detail": "Endpoints de andamento",
     "opcao": "cases/andamento/"
