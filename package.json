@@ -7,25 +7,25 @@
     "actions": "redocly preview-docs api_yaml_files/actions.yaml",
     "assembler": "redocly preview-doc sapi_yaml_files/assembler.yaml",
     "cases": "redocly preview-docs api_yaml_files/cases.yaml",
+    "updateCases": "redocly bundle ./api_yaml_files/cases.yaml -o ./app/v1/cases/cases --ext json",
     "looplex365": "redocly preview-docs api_yaml_files/looplex365.yaml",
     "varas_foros_v2": "redocly preview-docs api_yaml_files/varas_foros_v2.yaml",
-    
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "commitizen": "^4.3.0",
     "@redocly/cli": "1.14.0",
     "antd": "^5.17.0",
+    "commitizen": "^4.3.0",
     "core-js": "^3.37.0",
     "mobx": "^6.12.3",
-    "redoc": "^2.1.4",
-    "styled-components": "^6.1.11",
+    "next": "^14.2.18",
+    "package": "^1.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -1,16 +1,16 @@
 title: SituacaoJulgamento
-example: -2147483648
+type: integer
 description: |  
   -2147483648: None
 
-  1: Improcedência
+  1: Improcedencia
 
-  2: Procedência
+  2: Procedencia
 
-  3: Procedência em parte
+  3: ProcedenciaEmParte
 
   4: Prejudicado
 
-  5: Acordo  
+  5: Acordo
 
-  6: Não julgado  
+  6: NaoJulgado

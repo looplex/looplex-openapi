@@ -49,3 +49,7 @@ properties:
     type: array
     items:
       $ref: DTORelacaoQuestaoDecisao.yaml  
+  MultasSucumbencias:
+    type: array
+    items:
+      $ref: DTOMultaSucumbencia.yaml    

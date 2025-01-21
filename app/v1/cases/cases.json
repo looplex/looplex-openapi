@@ -25507,8 +25507,8 @@
       },
       "eSituacaoDePedido": {
         "title": "eSituacaoDePedido",
-        "example": 0,
-        "description": "0: None\n\n1: Procedente  \n\n2: ParcialmenteProcedente  \n\n3: Improcedente  \n\n4: Acordo  \n\n5: PrescricaoOuDecadencia\n\n6: LitispendenciaCoisaJulgadaPerempcao\n\n7: Ilegitimidade\n\n8: Desistencia\n"
+        "type": "integer",
+        "description": "-2147483648: None\n\n1: Procedente\n\n2: ParcialmenteProcedente\n\n3: Improcedente\n\n4: Acordo\n\n5: PrescricaoOuDecadencia\n\n6: LitispendenciaCoisaJulgadaPerempcao\n\n7: Ilegitimidade\n\n8: Desistencia\n"
       },
       "TipoDeRecorrencia": {
         "title": "TipoDeRecorrencia",
@@ -25522,13 +25522,13 @@
       },
       "MultaSucumbencia": {
         "title": "MultaSucumbencia",
-        "example": -2147483648,
-        "description": "-2147483648: None\n\n1: Multa\n\n2: Sucumbência\n"
+        "type": "integer",
+        "description": "-2147483648: None\n\n1: Multa\n\n2: Sucumbencia\n"
       },
       "SituacaoJulgamento": {
         "title": "SituacaoJulgamento",
-        "example": -2147483648,
-        "description": "-2147483648: None\n\n1: Improcedência\n\n2: Procedência\n\n3: Procedência em parte\n\n4: Prejudicado\n\n5: Acordo  \n\n6: Não julgado  \n"
+        "type": "integer",
+        "description": "-2147483648: None\n\n1: Improcedencia\n\n2: Procedencia\n\n3: ProcedenciaEmParte\n\n4: Prejudicado\n\n5: Acordo\n\n6: NaoJulgado\n"
       },
       "TipoTutela": {
         "title": "TipoTutela",
@@ -27642,6 +27642,118 @@
           }
         }
       },
+      "ValorApuradoExitoPerda": {
+        "title": "ValorApuradoExitoPerda",
+        "type": "integer",
+        "description": "-2147483648: None\n\n1: Provavel\n\n2: Possivel\n\n3: Remoto\n"
+      },
+      "DTOMultaSucumbencia": {
+        "title": "DTOMultaSucumbencia",
+        "type": "object",
+        "properties": {
+          "PedidoId": {
+            "type": "integer"
+          },
+          "PedidoCausaId": {
+            "type": "integer"
+          },
+          "CasoId": {
+            "type": "integer"
+          },
+          "ValorSolicitado": {
+            "type": "number"
+          },
+          "MoedaSolicitado": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "ValorContigenciado": {
+            "type": "number"
+          },
+          "MoedaContigenciado": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "PorcentagemExito": {
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
+          },
+          "JustificativaPedido": {
+            "type": "string"
+          },
+          "SituacaoPedido": {
+            "$ref": "#/components/schemas/eSituacaoDePedido"
+          },
+          "SituacaoJulgamento": {
+            "$ref": "#/components/schemas/SituacaoJulgamento"
+          },
+          "DataConstituicao": {
+            "type": "string"
+          },
+          "DataVencimento": {
+            "type": "string"
+          },
+          "ChangeReason": {
+            "type": "string"
+          },
+          "ChangeId": {
+            "type": "integer"
+          },
+          "EnvolvimentoParte": {
+            "$ref": "#/components/schemas/Polo"
+          },
+          "IsLiquido": {
+            "type": "boolean"
+          },
+          "TipoRecorrencia": {
+            "$ref": "#/components/schemas/TipoDeRecorrencia"
+          },
+          "IsLiminar": {
+            "type": "boolean"
+          },
+          "MotivoDePedirId": {
+            "type": "integer"
+          },
+          "TipoReparacao": {
+            "$ref": "#/components/schemas/TipoReparacao"
+          },
+          "MultaOuSucumbencia": {
+            "$ref": "#/components/schemas/MultaSucumbencia"
+          },
+          "MultaSucumbenciaPorcentagem": {
+            "type": "number"
+          },
+          "TipoTutela": {
+            "$ref": "#/components/schemas/TipoTutela"
+          },
+          "ProcessoDecisaoValorId": {
+            "type": "integer"
+          },
+          "ProcessoDecisaoId": {
+            "type": "integer"
+          },
+          "ExitoPerda": {
+            "$ref": "#/components/schemas/ValorApuradoExitoPerda"
+          },
+          "ValorDeferido": {
+            "type": "number"
+          },
+          "Moeda": {
+            "$ref": "#/components/schemas/Moeda"
+          },
+          "IsAlterado": {
+            "type": "boolean"
+          },
+          "ResultadoTutela": {
+            "$ref": "#/components/schemas/ResultadoTutela"
+          }
+        },
+        "required": [
+          "CasoId",
+          "ValorSolicitado",
+          "MoedaSolicitado",
+          "MultaOuSucumbencia",
+          "ValorDeferido",
+          "Moeda"
+        ]
+      },
       "DTOProcessoDecisao": {
         "title": "DTOProcessoDecisao",
         "type": "object",
@@ -27715,6 +27827,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DTORelacaoQuestaoDecisao"
+            }
+          },
+          "MultasSucumbencias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOMultaSucumbencia"
             }
           }
         }

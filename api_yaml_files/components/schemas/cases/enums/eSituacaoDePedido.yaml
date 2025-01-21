@@ -1,15 +1,15 @@
 title: eSituacaoDePedido
-example: 0
-description: |
-  0: None
+type: integer
+description: |  
+  -2147483648: None
 
-  1: Procedente  
+  1: Procedente
 
-  2: ParcialmenteProcedente  
+  2: ParcialmenteProcedente
 
-  3: Improcedente  
+  3: Improcedente
 
-  4: Acordo  
+  4: Acordo
 
   5: PrescricaoOuDecadencia
 
@@ -18,4 +18,3 @@ description: |
   7: Ilegitimidade
 
   8: Desistencia
-
