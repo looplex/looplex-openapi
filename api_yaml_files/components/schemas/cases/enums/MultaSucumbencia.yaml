@@ -1,8 +1,8 @@
 title: MultaSucumbencia
-example: -2147483648
-description: |  
+type: integer
+description: |
   -2147483648: None
 
   1: Multa
 
-  2: Sucumbência
+  2: Sucumbencia

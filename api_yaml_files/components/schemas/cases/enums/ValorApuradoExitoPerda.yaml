@@ -1,0 +1,10 @@
+title: ValorApuradoExitoPerda
+type: integer
+description: |
+  -2147483648: None
+
+  1: Provavel
+
+  2: Possivel
+
+  3: Remoto
