@@ -13,34 +13,8 @@ properties:
     type: string
   ValorContingenciadoPai:
     type: number
-  ValorContingenciadoAtualizado:
-    type: number
-  ValorPrevistoAtualizado:
-    type: number    
-  ValorDeferidoPelaUltimaDecisao:
-    type: number
-  MoedaDeferidoPelaUltimaDecisao:
-    type: string
-  IdProcessoExpectativaReivindicacao: 
-    type: integer  
-  Historico:
-    type: array
-    items: 
-      $ref: DTOPedidoHistorico.yaml
-  ValorPrevistoPelaUltimaDecisao:
-    type: number
-  ValorContingenciadoPelaUltimaDecisao:
-    type: number
-  RiscoUltimaDecisao:
+  IdProcessoExpectativaReivindicacao:
     type: integer
-  RiscoUltimaDecisaoText:
-    type: string
-  SituacaoUltimaDecisao:
-    type: string
-  DataConstituicao:
-    type: string
-  DataVencimento:
-    type: string 
   MultaSucumbencia:
     $ref: enums/MultaSucumbencia.yaml
   MultaSucumbenciaPorcentagem:
@@ -48,4 +22,38 @@ properties:
   SituacaoJulgamento:
     $ref: enums/SituacaoJulgamento.yaml
   TipoTutela:
-    $ref: enums/TipoTutela.yaml
+    $ref: enums/TipoTutela.yaml  
+  ValorContingenciadoAtualizado:
+    type: number
+  ValorPrevistoAtualizado:
+    type: number    
+  ResultadoTutelaPelaUltimaDecisao:
+    $ref: enums/ResultadoTutela.yaml
+  ValorDeferidoPelaUltimaDecisao:
+    type: number    
+  MoedaDeferidoPelaUltimaDecisao:
+    type: string  
+  Historico:
+    type: array
+    items: 
+      $ref: DTOPedidoHistorico.yaml
+  ValorPrevistoPelaUltimaDecisao:
+    type: number   
+  ValorContingenciadoPelaUltimaDecisao:
+    type: number  
+  RiscoUltimaDecisao:
+    type: integer
+  RiscoUltimaDecisaoText:
+    type: string
+  SituacaoUltimaDecisao:
+    type: string   
+  DataConstituicao:
+    type: string
+  DataVencimento:
+    type: string 
+  
+  
+  
+  
+  
+  

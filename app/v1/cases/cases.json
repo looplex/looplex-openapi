@@ -25535,6 +25535,11 @@
         "example": -2147483648,
         "description": "-2147483648: None\n\n1: Urgência satisfativa\n\n2: Evidência satisfativa\n"
       },
+      "ResultadoTutela": {
+        "title": "ResultadoTutela",
+        "example": -2147483648,
+        "description": "-2147483648: None\n\n1: Acolhido\n\n2: Acolhido em parte\n\n3: Rejeitado\n\n4: Não Conhecido\n"
+      },
       "DTOCasoPedidoSimples": {
         "title": "DTOCasoPedidoSimples",
         "type": "object",
@@ -25622,6 +25627,9 @@
               "type": "integer"
             }
           },
+          "ValorDeferido": {
+            "type": "number"
+          },
           "MultaSucumbencia": {
             "$ref": "#/components/schemas/MultaSucumbencia"
           },
@@ -25633,6 +25641,15 @@
           },
           "TipoTutela": {
             "$ref": "#/components/schemas/TipoTutela"
+          },
+          "ResultadoTutela": {
+            "$ref": "#/components/schemas/ResultadoTutela"
+          },
+          "changeReason": {
+            "type": "string"
+          },
+          "changeId": {
+            "type": "integer"
           }
         }
       },
@@ -27551,11 +27568,11 @@
           "OutrasDeterminacoes": {
             "type": "string"
           },
-          "MotivoExtincao": {
-            "$ref": "#/components/schemas/MotivoDeExtincao"
-          },
           "IDConteudoJulgamento": {
             "type": "integer"
+          },
+          "MotivoExtincao": {
+            "$ref": "#/components/schemas/MotivoDeExtincao"
           }
         }
       },
@@ -27573,11 +27590,6 @@
             "type": "string"
           }
         }
-      },
-      "ResultadoTutela": {
-        "title": "ResultadoTutela",
-        "example": -2147483648,
-        "description": "-2147483648: None\n\n1: Acolhido\n\n2: Acolhido em parte\n\n3: Rejeitado\n\n4: Não Conhecido\n"
       },
       "DTOProcessoDecisaoValor": {
         "title": "DTOProcessoDecisaoValor",
@@ -27624,6 +27636,21 @@
           },
           "ResultadoTutela": {
             "$ref": "#/components/schemas/ResultadoTutela"
+          },
+          "SituacaoJulgamento": {
+            "$ref": "#/components/schemas/SituacaoJulgamento"
+          }
+        }
+      },
+      "DTOValorPrevistoDePedido": {
+        "title": "DTOValorPrevistoDePedido",
+        "type": "object",
+        "properties": {
+          "cdProcessoExpectativaReivindicacao": {
+            "type": "integer"
+          },
+          "vlPrevisto": {
+            "type": "number"
           }
         }
       },
@@ -27680,9 +27707,6 @@
           },
           "SituacaoPedido": {
             "$ref": "#/components/schemas/eSituacaoDePedido"
-          },
-          "SituacaoJulgamento": {
-            "$ref": "#/components/schemas/SituacaoJulgamento"
           },
           "DataConstituicao": {
             "type": "string"
@@ -27743,6 +27767,20 @@
           },
           "ResultadoTutela": {
             "$ref": "#/components/schemas/ResultadoTutela"
+          },
+          "IDsParte": {
+            "example": null,
+            "oneOf": [
+              {
+                "type": null
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "int"
+                }
+              }
+            ]
           }
         },
         "required": [
@@ -27803,6 +27841,9 @@
           "IDTipoJulgamento": {
             "type": "integer"
           },
+          "IDConteudoJulgamento": {
+            "type": "integer"
+          },
           "IDDecisaoAnterior": {
             "type": "integer"
           },
@@ -27815,12 +27856,11 @@
           "MotivoExtincao": {
             "$ref": "#/components/schemas/MotivoDeExtincao"
           },
-          "IDConteudoJulgamento": {
-            "type": "integer"
-          },
-          "AlteraQuestoesProcessuais": {
-            "description": "se true utiliza o campo QuestoesProcessuais para atualizar as relacoes da decisao com as questoes processuais",
-            "type": "boolean"
+          "ValoresPrevistosASeremAlterados": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOValorPrevistoDePedido"
+            }
           },
           "QuestoesProcessuais": {
             "description": "Precisa que AlteraQuestoesProcessuais seja true para ter efeito",
@@ -27828,6 +27868,10 @@
             "items": {
               "$ref": "#/components/schemas/DTORelacaoQuestaoDecisao"
             }
+          },
+          "AlteraQuestoesProcessuais": {
+            "description": "se true utiliza o campo QuestoesProcessuais para atualizar as relacoes da decisao com as questoes processuais",
+            "type": "boolean"
           },
           "MultasSucumbencias": {
             "type": "array",
@@ -28500,20 +28544,35 @@
           "ValorContingenciadoPai": {
             "type": "number"
           },
+          "IdProcessoExpectativaReivindicacao": {
+            "type": "integer"
+          },
+          "MultaSucumbencia": {
+            "$ref": "#/components/schemas/MultaSucumbencia"
+          },
+          "MultaSucumbenciaPorcentagem": {
+            "type": "number"
+          },
+          "SituacaoJulgamento": {
+            "$ref": "#/components/schemas/SituacaoJulgamento"
+          },
+          "TipoTutela": {
+            "$ref": "#/components/schemas/TipoTutela"
+          },
           "ValorContingenciadoAtualizado": {
             "type": "number"
           },
           "ValorPrevistoAtualizado": {
             "type": "number"
           },
+          "ResultadoTutelaPelaUltimaDecisao": {
+            "$ref": "#/components/schemas/ResultadoTutela"
+          },
           "ValorDeferidoPelaUltimaDecisao": {
             "type": "number"
           },
           "MoedaDeferidoPelaUltimaDecisao": {
             "type": "string"
-          },
-          "IdProcessoExpectativaReivindicacao": {
-            "type": "integer"
           },
           "Historico": {
             "type": "array",
@@ -28541,18 +28600,6 @@
           },
           "DataVencimento": {
             "type": "string"
-          },
-          "MultaSucumbencia": {
-            "$ref": "#/components/schemas/MultaSucumbencia"
-          },
-          "MultaSucumbenciaPorcentagem": {
-            "type": "number"
-          },
-          "SituacaoJulgamento": {
-            "$ref": "#/components/schemas/SituacaoJulgamento"
-          },
-          "TipoTutela": {
-            "$ref": "#/components/schemas/TipoTutela"
           }
         }
       },
@@ -32081,6 +32128,9 @@
           "ValorDeferido": {
             "type": "number"
           },
+          "ResultadoTutela": {
+            "$ref": "#/components/schemas/ResultadoTutela"
+          },
           "ValorDeferidoMoeda": {
             "type": "string"
           },
@@ -32102,6 +32152,12 @@
           "IdCaso": {
             "type": "integer"
           },
+          "changeReason": {
+            "type": "string"
+          },
+          "changeId": {
+            "type": "integer"
+          },
           "Envolvimento": {
             "$ref": "#/components/schemas/Polo"
           },
@@ -32120,12 +32176,6 @@
           "TipoReparacao": {
             "$ref": "#/components/schemas/TipoReparacao"
           },
-          "IDsParte": {
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          },
           "MultaSucumbencia": {
             "$ref": "#/components/schemas/MultaSucumbencia"
           },
@@ -32137,6 +32187,12 @@
           },
           "TipoTutela": {
             "$ref": "#/components/schemas/TipoTutela"
+          },
+          "IDsParte": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
           }
         }
       },

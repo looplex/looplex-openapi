@@ -20,9 +20,7 @@ properties:
   JustificativaPedido:
     type: string
   SituacaoPedido:
-    $ref: "enums/eSituacaoDePedido.yaml"
-  SituacaoJulgamento:    
-    $ref: "enums/SituacaoJulgamento.yaml"
+    $ref: "enums/eSituacaoDePedido.yaml"  
   DataConstituicao:
     type: string
   DataVencimento:
@@ -63,6 +61,13 @@ properties:
     type: boolean
   ResultadoTutela:
     $ref: "enums/ResultadoTutela.yaml"
+  IDsParte:
+    example: null   
+    oneOf:
+      - type: null
+      - type: array
+        items:
+          type: int
 required:  
   - CasoId
   - ValorSolicitado

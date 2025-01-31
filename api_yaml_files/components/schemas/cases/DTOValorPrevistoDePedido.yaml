@@ -1,0 +1,8 @@
+title: DTOValorPrevistoDePedido
+type: object
+properties:
+  cdProcessoExpectativaReivindicacao:
+    type: integer
+  vlPrevisto:
+    type: number
+

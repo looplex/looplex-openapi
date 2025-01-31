@@ -37,7 +37,8 @@ properties:
     type: boolean
   OutrasDeterminacoes:
     type: string
+  IDConteudoJulgamento:
+    type: integer  
   MotivoExtincao:
      $ref: enums/MotivoDeExtincao.yaml
-  IDConteudoJulgamento:
-    type: integer
+  

@@ -61,6 +61,8 @@ properties:
     example: []
     items:
       type: integer
+  ValorDeferido:
+    type: number  
   MultaSucumbencia:
     $ref: enums/MultaSucumbencia.yaml
   MultaSucumbenciaPorcentagem:
@@ -69,3 +71,10 @@ properties:
     $ref: enums/SituacaoJulgamento.yaml
   TipoTutela:
     $ref: enums/TipoTutela.yaml
+  ResultadoTutela:
+    $ref: enums/ResultadoTutela.yaml
+  changeReason: 
+    type: string
+  changeId:
+    type: integer
+  

@@ -19,6 +19,8 @@ properties:
     type: string
   ValorDeferido:
     type: number
+  ResultadoTutela:
+    $ref: enums/ResultadoTutela.yaml
   ValorDeferidoMoeda:
     type: string
   ExitoPerda:
@@ -33,6 +35,10 @@ properties:
     type: integer
   IdCaso:
     type: integer
+  changeReason:
+    type: string
+  changeId:
+    type: integer
   Envolvimento:
     $ref: enums/Polo.yaml
   IsLiquido:
@@ -45,10 +51,6 @@ properties:
     type: integer
   TipoReparacao:
     $ref: enums/TipoReparacao.yaml
-  IDsParte: 
-    type: array
-    items: 
-      type: integer
   MultaSucumbencia:
     $ref: enums/MultaSucumbencia.yaml
   MultaSucumbenciaPorcentagem:
@@ -57,3 +59,8 @@ properties:
     $ref: enums/SituacaoJulgamento.yaml
   TipoTutela:
     $ref: enums/TipoTutela.yaml
+  IDsParte: 
+    type: array
+    items: 
+      type: integer
+  

@@ -31,6 +31,8 @@ properties:
     type: integer
   IDTipoJulgamento:
     type: integer
+  IDConteudoJulgamento:
+    type: integer
   IDDecisaoAnterior:
     type: integer
   Prequestionamento:
@@ -38,18 +40,22 @@ properties:
   OutrasDeterminacoes:
     type: string
   MotivoExtincao:
-     $ref: enums/MotivoDeExtincao.yaml
-  IDConteudoJulgamento:
-    type: integer
-  AlteraQuestoesProcessuais:
-    description: "se true utiliza o campo QuestoesProcessuais para atualizar as relacoes da decisao com as questoes processuais"
-    type: boolean
+     $ref: enums/MotivoDeExtincao.yaml  
+  ValoresPrevistosASeremAlterados:
+    type: array
+    items:
+      $ref: DTOValorPrevistoDePedido.yaml
   QuestoesProcessuais:
     description: "Precisa que AlteraQuestoesProcessuais seja true para ter efeito"
     type: array
     items:
-      $ref: DTORelacaoQuestaoDecisao.yaml  
+      $ref: DTORelacaoQuestaoDecisao.yaml    
+  AlteraQuestoesProcessuais:
+    description: "se true utiliza o campo QuestoesProcessuais para atualizar as relacoes da decisao com as questoes processuais"
+    type: boolean
   MultasSucumbencias:
     type: array
     items:
-      $ref: DTOMultaSucumbencia.yaml    
+      $ref: DTOMultaSucumbencia.yaml
+    
+     

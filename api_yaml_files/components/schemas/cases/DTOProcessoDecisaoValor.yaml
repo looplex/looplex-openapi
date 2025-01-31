@@ -29,3 +29,5 @@ properties:
     type: integer
   ResultadoTutela:
     $ref: enums/ResultadoTutela.yaml
+  SituacaoJulgamento:
+    $ref: enums/SituacaoJulgamento.yaml
