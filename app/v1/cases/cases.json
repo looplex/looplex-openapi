@@ -32138,7 +32138,7 @@
             "type": "string"
           },
           "Situacao": {
-            "type": "string"
+            "$ref": "#/components/schemas/eSituacaoDePedido"
           },
           "Justificativa": {
             "type": "string"
@@ -32193,6 +32193,23 @@
             "items": {
               "type": "integer"
             }
+          },
+          "DataConstituicao": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "DataVencimento": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "Risco": {
+            "$ref": "#/components/schemas/ExpectativaReivindicacao"
+          },
+          "ValorContingenciaAtualizado": {
+            "type": "number"
+          },
+          "ValorPrevistoAtualizado": {
+            "type": "number"
           }
         }
       },

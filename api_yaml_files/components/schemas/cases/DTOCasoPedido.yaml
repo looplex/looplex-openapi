@@ -26,7 +26,7 @@ properties:
   ExitoPerda:
     type: string
   Situacao:
-    type: string
+    $ref: enums/eSituacaoDePedido.yaml
   Justificativa:
     type: string
   IdCasoPedido:
@@ -63,4 +63,15 @@ properties:
     type: array
     items: 
       type: integer
-  
+  DataConstituicao:
+    type: string
+    format: datetime
+  DataVencimento:
+    type: string
+    format: datetime
+  Risco:
+    $ref: enums/ExpectativaReivindicacao.yaml
+  ValorContingenciaAtualizado:
+    type: number
+  ValorPrevistoAtualizado:
+    type: number
